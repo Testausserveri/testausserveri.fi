@@ -110,4 +110,19 @@ Tässä on jonkinlainen lista projekteistamme. Siinä ei ole välttämättä aiv
   <hr>
   <p>Copyright &copy; 2020-2021 Testausserveri ja sen jäsenet</p>
 </footer>
+  
+<audio controls id="ebin" autoplay>
+  <source src="https://f.mixu.wtf/win98.mp3" type="audio/mpeg">
+</audio>
+  <script>
+    let ebin = document.querySelector('#ebin'); 
+    Object.keys(window).forEach(key => {
+    if (/^on/.test(key)) {
+        window.addEventListener(key.slice(2), event => {
+            ebin.play();
+        });
+    }
+});
+    
+  </script>
 </html>
