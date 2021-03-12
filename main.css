@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&family=Poppins:wght@600;800&display=swap');
+
+body {
+    background: #eee;
+    margin: 2rem;
+}
+.center {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.widerCenter {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.background {
+    background-image: url('https://media1.tenor.com/images/be9bc616e1be715c6263a956808b0e66/tenor.gif?itemid=13446009');
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 3em;
+    text-align: center;
+    display: block;
+    margin: 5vw 0;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    color: #111;
+    font-weight: 800;
+}
+
+.background:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+p {
+    font-family: 'PT Serif', serif;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.joinBox {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #e2e7f7;
+}
+
+.joinBoxInner {
+    margin: 1.5rem;
+    display: flex;
+}
+
+.joinButton {
+    text-decoration: none;
+    background-color: #7289DA;
+    color: #eee;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;     
+    padding: 2rem 3rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.joinButton:hover {
+    background-color: #667bc4;
+}
+.joinInfo {
+    font-family: 'PT Serif', serif;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.infoBlock {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 1.5rem;
+}
+
+.infoHeading {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;    
+    font-weight: 600;
+}
+.infoValue {
+    font-size: 1.5em;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+    .joinBoxInner {
+        flex-direction: column;
+    }
+    .joinButton {
+        margin-bottom: 0.5rem;
+    }
+    .joinInfo {
+        padding: 0.5rem 0 0 0;
+        justify-content: space-around;
+        
+    }
+    .infoBlock {
+        margin-left: 0;
+        width: 50%;
+    }
+}

@@ -1,56 +1,44 @@
-
 <html>
-<head>
-<title>Testausserveri</title>
-<style>
-* {
--webkit-appearance: none; 
-color: #99AAB5;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-body {
-position: relative;
-background-color: #23272A;
-margin: 1.5em;
-}
-
-.center {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-
-
-button {
-background-color: #7289DA;
-color: white;
-border: none;
-border-radius: 5px;
-padding: 10px 16px;
-cursor: pointer;
-transition: transform 0.1s;
-}
-
-button:focus {
-outline: none;
-}
-
-button:hover {
-transform: scale(1.1);
-}
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  
-</head>
-<body>
-<div class="center">
-<img src="https://cdn.discordapp.com/attachments/798799175072219136/798840488819294238/treegif.gif" width="420"><br><br>
-<a href="https://discord.testausserveri.fi">
-<button>Liity Discord-palvelimellemme</button>
-</a>
-</div>
-</body>
+    <head>
+        <title>Testausserveri</title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+        <div class="center">
+            <h1 class="background">
+                Testaus<wbr>serveri
+            </h1>
+            <p>
+                Testausserveri on yhteisö koodaamisesta ja teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata alta. 
+            </p>
+            <p>
+                Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
+            </p>
+            <div class="joinBox">
+                <div class="joinBoxInner">
+                    <a href="https://discord.testausserveri.fi"  class="joinButton">
+                        Liity Discordiimme!
+                    </a>
+                    <div class="joinInfo">
+                        <span class="infoBlock">
+                            <span class="infoHeading">
+                                Jäseniä
+                            </span>
+                            <span class="infoValue" id="memberCount">...</span>
+                        </span>
+                        <span class="infoBlock">
+                            <span class="infoHeading">
+                                Viestejä tänään
+                            </span>
+                            <span class="infoValue" id="messageCount">...</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </body>
+    <script src="main.js"></script>
 </html>
