@@ -25,6 +25,9 @@ body {
     display: block;
     margin: 5vw 0;
 }
+.footer {
+    margin: 5vw 0;
+}
 
 h2 {
     font-family: 'Poppins', sans-serif;
@@ -109,6 +112,143 @@ p {
 }
 
 
+.projectsGrid .item {
+    aspect-ratio: 1/1;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    max-width: 100%;
+}
+
+.itemBackground {
+    margin: 1vw;
+    border-radius: 6px;
+    height: calc(100% - 2vw);
+    background-size: cover;
+    filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
+    opacity: 0.5;
+    background-position: center;
+    position: relative;
+}
+.itemBackground:after {
+    content: ' ';
+    border: 1px solid #000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    position: absolute;
+    border-radius: 6px;
+}
+video.itemBackground {
+    width: calc(100% - 2vw);
+    object-fit: cover;
+}
+
+
+.itemContent {
+    position: absolute;
+    top: 0; left: 0; width: calc(100% - 9vw); height: calc(100% - 9vw);
+    z-index: 10;
+    color: #333;
+    padding: 4.5vw;
+    font-size: 1.1rem;
+    display: flex;
+    font-family: 'PT Serif', serif;
+    flex-direction: column-reverse;
+}
+.CBig {
+    flex: 1;
+}
+.mediaLogo {
+    opacity: 0.7;
+    height: 1em;
+}
+.itemContent .piTitle {
+    margin: 0;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+}
+a[href] .itemContent .piTitle::after {
+    content: ' ';
+    background-image: url(assets/tab.svg);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 100% 100%;
+    opacity: 0.9;
+    margin-left: 0.5em;
+}
+.piOrg {
+    line-height: 1.7em;
+}
+.projectsGrid .item {
+    min-height: 50px;
+}
+
+
+.projectsGrid .item:nth-child(2) { grid-area: b; aspect-ratio: 2 / 1;}
+.projectsGrid .item:nth-child(6) { grid-area: f; aspect-ratio: 2 / 1;}
+
+.projectsGrid .item {
+    min-height: 50px;
+}
+
+.projectsGrid {
+    padding-top: 2rem;
+
+    display: grid;
+    
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "a b b"
+        "c d e";
+}
+
+@media only screen and (max-width: 1000px) {
+    .projectsGrid {
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-areas:
+            "b b"
+            "a c"
+            "d e"
+            "f f"
+            "g h";
+    }
+    
+  }
+  @media only screen and (max-width: 500px) {
+    .projectsGrid {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr;
+        grid-auto-rows: 1fr;
+        grid-auto-flow: column;
+    }
+    .projectsGrid .item {
+        aspect-ratio: 2/1;
+        grid-column: 1/4;
+    }
+    .itemContent {
+        top: 0; left: 0; width: calc(100% - 4rem); height: calc(100% - 4rem);
+        padding: 2rem; 
+    }
+  }
+  @media only screen and (max-width: 780px) {
+    .projectsGrid {
+        font-size: small;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .projectsGrid {
+        font-size: 0.9em;
+    }
+}
 
 @media only screen and (max-width: 650px) {
     .joinBoxInner {
