@@ -132,9 +132,13 @@ pain in the ass 🍑
     aspect-ratio: 1/1;
     position: relative;
     top: 0;
-    transition: top ease 0.5s;
+    transition: top ease 0.3s;
     max-width: 100%;
     text-decoration: none;
+}
+
+.projectsGrid .item[href]:hover {
+    top: -5px;
 }
 
 .itemBackground {
