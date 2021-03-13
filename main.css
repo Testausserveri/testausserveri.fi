@@ -112,15 +112,34 @@ p {
 }
 
 
+/*
+Projects grid
+pain in the ass 🍑
+*/
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    padding-top: 2rem;
+}
+.projectsGrid .item:nth-child(2) {
+    grid-column: 2 / 4;
+    aspect-ratio: 2 / 1;
+}
+
 .projectsGrid .item {
     aspect-ratio: 1/1;
     position: relative;
     top: 0;
     transition: top ease 0.5s;
     max-width: 100%;
+    text-decoration: none;
 }
 
 .itemBackground {
+    position: absolute;
+    top: 0; left: 0; width: calc(100% - 2vw); height: calc(100% - 2vw);
     margin: 1vw;
     border-radius: 6px;
     height: calc(100% - 2vw);
@@ -128,8 +147,10 @@ p {
     filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
     opacity: 0.5;
     background-position: center;
-    position: relative;
+    /* maybe even background-attachment: fixed; ? */
+    z-index: -20;
 }
+
 .itemBackground:after {
     content: ' ';
     border: 1px solid #000;
@@ -143,13 +164,11 @@ video.itemBackground {
     object-fit: cover;
 }
 
-
 .itemContent {
-    position: absolute;
-    top: 0; left: 0; width: calc(100% - 9vw); height: calc(100% - 9vw);
     z-index: 10;
     color: #333;
-    padding: 4.5vw;
+    margin: 1vw; /* this is what we use for the gap */
+    padding: 2.5rem;
     font-size: 1.1rem;
     display: flex;
     font-family: 'PT Serif', serif;
@@ -186,57 +205,35 @@ a[href] .itemContent .piTitle::after {
 .piOrg {
     line-height: 1.7em;
 }
-.projectsGrid .item {
-    min-height: 50px;
-}
-
-
-.projectsGrid .item:nth-child(2) { grid-area: b; aspect-ratio: 2 / 1;}
-.projectsGrid .item:nth-child(6) { grid-area: f; aspect-ratio: 2 / 1;}
-
-.projectsGrid .item {
-    min-height: 50px;
-}
-
-.projectsGrid {
-    padding-top: 2rem;
-
-    display: grid;
-    
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "a b b"
-        "c d e";
-}
 
 @media only screen and (max-width: 1000px) {
     .projectsGrid {
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr ;
-        grid-template-areas:
-            "b b"
-            "a c"
-            "d e"
-            "f f"
-            "g h";
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-  }
-  @media only screen and (max-width: 500px) {
-    .projectsGrid {
-        grid-template-columns: 1fr ;
-        grid-template-rows: 1fr;
-        grid-auto-rows: 1fr;
-        grid-auto-flow: column;
-    }
-    .projectsGrid .item {
-        aspect-ratio: 2/1;
-        grid-column: 1/4;
+    .projectsGrid .item:nth-child(2) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
     }
     .itemContent {
-        top: 0; left: 0; width: calc(100% - 4rem); height: calc(100% - 4rem);
-        padding: 2rem; 
+        padding: 2rem;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .projectsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-flow: column;
+        grid-auto-rows: fit-content(1em);
+        width: calc(100% + 2vw);
+        margin-left: -1vw;
+    }
+    .projectsGrid .item {
+        grid-column: 1 / 2;
+        aspect-ratio: unset;
+    }
+    .itemContent {
+        padding: 1.5rem;
     }
   }
   @media only screen and (max-width: 780px) {
