@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&family=Poppins:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Poppins:wght@600;800&display=swap');
 
 body {
     background: #eee;
@@ -47,7 +47,7 @@ h2 {
 }
 
 p {
-    font-family: 'PT Serif', serif;
+    font-family: 'Ubuntu', sans-serif;
     color: #333;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -85,7 +85,7 @@ p {
     background-color: #667bc4;
 }
 .joinInfo {
-    font-family: 'PT Serif', serif;
+    font-family: 'Ubuntu', sans-serif;
     color: #333;
     font-size: 1.2rem;
     padding: 0.5rem 0;
@@ -171,7 +171,7 @@ video.itemBackground {
     padding: 2.5rem;
     font-size: 1.1rem;
     display: flex;
-    font-family: 'PT Serif', serif;
+    font-family: 'Ubuntu', sans-serif;
     flex-direction: column-reverse;
 }
 .CBig {
