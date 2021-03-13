@@ -13,7 +13,7 @@ body {
     margin: 0 auto;
 }
 .background {
-    background-image: url('https://media1.tenor.com/images/be9bc616e1be715c6263a956808b0e66/tenor.gif?itemid=13446009');
+    background-image: url('assets/dog.gif');
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
