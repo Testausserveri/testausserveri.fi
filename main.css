@@ -23,10 +23,10 @@ body {
     font-size: 3em;
     text-align: center;
     display: block;
-    margin: 5vw 0;
+    margin: 5rem 0;
 }
 .footer {
-    margin: 5vw 0;
+    margin: 4rem 0;
 }
 
 h2 {
@@ -52,6 +52,33 @@ p {
     font-size: 1.2rem;
     line-height: 2rem;
     margin-bottom: 2rem;
+}
+
+.footer {
+    display: flex;
+}
+
+.footer .wide {
+    font-family: 'Ubuntu', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.footer .icons a {
+    text-decoration: none;
+}
+.footer .icons img {
+    width: 25px;
+    height: 25px;
+    filter: grayscale(1);
+    transition: filter 0.1s ease;
+}
+.footer .icons a + a  {
+    margin-left: 0.5rem;
+}
+.footer .icons a:hover img {
+    filter: grayscale(0);
 }
 
 .joinBox {
@@ -110,7 +137,6 @@ p {
 .infoValue {
     font-size: 1.5em;
 }
-
 
 /*
 Projects grid
@@ -238,6 +264,9 @@ a[href] .itemContent .piTitle::after {
     }
     .itemContent {
         padding: 1.5rem;
+    }
+    .background {
+        margin: 3rem 0;
     }
   }
   @media only screen and (max-width: 780px) {
