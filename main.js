@@ -10,10 +10,17 @@ fetch('projects.json')
 .then((data) => {
     console.log(data);
     data.forEach((item, i) => {
-        let domItem = document.createElement('a');
+        let domItem;
+        if (item.url) {
+            domItem = document.createElement('a');
+            domItem.href = item.url + '?utm_source=testausserveri&utm_medium=homepage&utm_campaign=projects'; // append some analytic magic
+            domItem.setAttribute('rel', 'noopener noreferrer');
+            domItem.setAttribute('target', '_blank');
+        } else {
+            domItem = document.createElement('div');
+        }
+
         domItem.className = 'item';
-        domItem.setAttribute('target', '_blank');
-        if (item.url) domItem.href = item.url + '?utm_source=testausserveri&utm_medium=homepage&utm_campaign=projects'; // append some analytic magic
 
         if (item.video) {
             let domBackground = document.createElement('video');
