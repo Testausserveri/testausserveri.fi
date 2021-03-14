@@ -41,7 +41,9 @@ function updateCounters() {
     }
 }
 updateCounters();
-window.addEventListener('focus', updateCounters);
+window.addEventListener('focus', () => {
+    setTimeout(updateCounters, 1000);
+});
 setInterval(updateCounters, 5100);
 
 /* projects */
