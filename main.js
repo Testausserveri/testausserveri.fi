@@ -1,3 +1,17 @@
+let darkMode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || false;
+updateTheme();
+
+// to-do: remember theme value, especially if we are going to have multiple pages
+function updateTheme() {
+    document.body.dataset.theme = (darkMode ? 'dark' : 'light');
+    if (document.querySelector('#theme-switch').checked != darkMode) document.querySelector('#theme-switch').checked = darkMode;
+}
+
+document.querySelector('#theme-switch').addEventListener('change', e => {
+    darkMode = e.target.checked;
+    updateTheme();
+});
+
 fetch('https://koira.testausserveri.fi/api/guildInfo')
 .then((res) => res.json())
 .then(data => {

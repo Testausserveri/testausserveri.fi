@@ -1,8 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Poppins:wght@600;800&display=swap');
 
+:root {
+    --background: #eee;
+    --text: #333;
+    --dc-background: #e2e7f7;
+    --dc: #7289DA;
+    --border: #ccc;
+    --title: #111;
+    --background-filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
+    --icon-filter: none;
+    --project-card-border: #000;
+}
+[data-theme="dark"] {
+    --background: #121212;
+    --text: #bbb;
+    --dc-background: #161b2b;
+    --dc: #5b6dae;
+    --border: #222;
+    --title: #ddd;
+    --background-filter: contrast(0.5) brightness(0.35) saturate(1.7) grayscale(0.2) opacity(1);
+    --icon-filter: invert(1);
+    --project-card-border: #fff;
+}
 body {
-    background: #eee;
+    background: var(--background);
     margin: 2rem;
+    transition: background-color 0.2s, color 0.2s, filter 0.2s, border 0.2s;
+
 }
 .center {
     max-width: 800px;
@@ -33,7 +57,7 @@ h2 {
     font-family: 'Poppins', sans-serif;
     margin-top: 4rem;
     margin-bottom: 2rem;
-    color: #111;
+    color: var(--title);
     font-weight: 800;
 }
 
@@ -48,7 +72,7 @@ h2 {
 
 p {
     font-family: 'Ubuntu', sans-serif;
-    color: #333;
+    color: var(--text);
     font-size: 1.2rem;
     line-height: 2rem;
     margin-bottom: 2rem;
@@ -60,7 +84,7 @@ p {
 
 .footer .wide {
     font-family: 'Ubuntu', sans-serif;
-    color: #333;
+    color: var(--text);
     font-size: 1.2rem;
     flex: 1;
 }
@@ -71,7 +95,7 @@ p {
 .footer .icons img {
     width: 25px;
     height: 25px;
-    filter: grayscale(1);
+    filter: grayscale(1) opacity(0.5);
     transition: filter 0.1s ease;
 }
 .footer .icons a + a  {
@@ -82,9 +106,9 @@ p {
 }
 
 .joinBox {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     border-radius: 6px;
-    background-color: #e2e7f7;
+    background-color: var(--dc-background);
 }
 
 .joinBoxInner {
@@ -94,7 +118,7 @@ p {
 
 .joinButton {
     text-decoration: none;
-    background-color: #7289DA;
+    background-color: var(--dc);
     color: #fff;
     border-radius: 6px;
     font-family: 'Poppins', sans-serif;     
@@ -113,7 +137,7 @@ p {
 }
 .joinInfo {
     font-family: 'Ubuntu', sans-serif;
-    color: #333;
+    color: var(--text);
     font-size: 1.2rem;
     padding: 0.5rem 0;
     display: flex;
@@ -174,7 +198,7 @@ pain in the ass 🍑
     border-radius: 6px;
     height: calc(100% - 2vw);
     background-size: cover;
-    filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
+    filter: var(--background-filter);
     opacity: 0.5;
     background-position: center;
     /* maybe even background-attachment: fixed; ? */
@@ -183,7 +207,7 @@ pain in the ass 🍑
 
 .itemBackground:after {
     content: ' ';
-    border: 1px solid #000;
+    border: 1px solid var(--project-card-border);
     top: 0; left: 0;
     width: 100%; height: 100%;
     position: absolute;
@@ -196,7 +220,7 @@ video.itemBackground {
 
 .itemContent {
     z-index: 10;
-    color: #333;
+    color: var(--text);
     margin: 1vw; /* this is what we use for the gap */
     padding: 2.5rem;
     font-size: 1.1rem;
@@ -217,7 +241,7 @@ video.itemBackground {
     margin-bottom: 0.5em;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    color: #111;
+    color: var(--title);
     font-weight: 600;
     display: block;
     text-decoration: none;
@@ -231,10 +255,112 @@ a[href] .itemContent .piTitle::after {
     background-size: 100% 100%;
     opacity: 0.9;
     margin-left: 0.5em;
+    filter: var(--icon-filter);
 }
 .piOrg {
     line-height: 1.7em;
 }
+
+/* theme switch */
+
+.switch {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    transform: scale(0.2);
+    transform-origin: bottom right;
+    z-index: 10000;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .toggle-slot {
+    position: relative;
+    height: 10em;
+    width: 20em;
+    border: 5px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: white;
+    /*box-shadow: 0px 10px 25px #e4e7ec;*/
+    transition: background-color 250ms;
+    cursor: pointer;
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot {
+    background-color: #374151;
+    border: 5px solid #222;
+
+  }
+  
+  .toggle-button {
+    transform: translate(11.75em, 1.75em);
+    position: absolute;
+    height: 6.5em;
+    width: 6.5em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(1.75em, 1.75em);
+  }
+  
+  .sun-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: #ffbb52;
+  }
+  
+  .sun-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(3em, 2em) rotate(0deg);
+  }
+  
+  .moon-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: white;
+  }
+  
+  .moon-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 0;
+    transform: translate(11em, 2em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(12em, 2em) rotate(-15deg);
+  }
+
+
+/* media queries */
 
 @media only screen and (max-width: 1000px) {
     .projectsGrid {

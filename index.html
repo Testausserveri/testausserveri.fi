@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="/assets/icon.png" />
+        <script src="https://code.iconify.design/1/1.0.4/iconify.min.js" integrity="sha384-TXq3VNFRHcngq17oVaakLnIhU8UQ4rE6XYAIM0OjlDJEs7mclOAm/gXzpGm1MuHm" crossorigin="anonymous"></script>
 
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://koira.testausserveri.fi; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://koira.testausserveri.fi; font-src https://fonts.gstatic.com; img-src 'self'; object-src 'none'; script-src 'self' https://code.iconify.design https://api.iconify.design; style-src 'self' https://fonts.googleapis.com">
 
         <meta name="description" content="Testausserveri on yhteisö koodaamisesta ja teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia koodausprojekteja.">
         <meta name="author" content="Miksu, Testausserveri">
@@ -25,6 +26,19 @@
     </head>
     <body>
         
+        <label class="switch">
+            <input class='toggle-checkbox' type='checkbox' id="theme-switch"></input>
+            <div class='toggle-slot'>
+                <div class='sun-icon-wrapper'>
+                    <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                </div>
+                <div class='toggle-button'></div>
+                <div class='moon-icon-wrapper'>
+                    <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                </div>
+            </div>
+        </label>
+
         <div class="center">
             <h1 class="background">
                 Testaus<wbr>serveri
