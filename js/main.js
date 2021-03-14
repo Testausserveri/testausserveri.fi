@@ -36,6 +36,8 @@ function updateCounters() {
             memberCounter.update(data.memberCount);
             messageCounter.update(data.messagesToday);
         })
+    } else {
+        console.log('Tab not focused, not updating...');
     }
 }
 updateCounters();
