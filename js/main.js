@@ -23,20 +23,23 @@ let memberCounter;
 let messageCounter;
 
 function updateCounters() {
-    fetch('https://koira.testausserveri.fi/api/guildInfo')
-    .then((res) => res.json())
-    .then(data => {
-        if (!memberCounter || !messageCounter) {
-            memberCounter = new countUp.CountUp('memberCount', data.memberCount, options);
-            messageCounter = new countUp.CountUp('messageCount', data.messagesToday, options);
-            memberCounter.start();
-            messageCounter.start();
-        }
-        memberCounter.update(data.memberCount);
-        messageCounter.update(data.messagesToday);
-    })
+    if (document.hasFocus() || !memberCounter || !messageCounter) {
+        fetch('https://koira.testausserveri.fi/api/guildInfo')
+        .then((res) => res.json())
+        .then(data => {
+            if (!memberCounter || !messageCounter) {
+                memberCounter = new countUp.CountUp('memberCount', data.memberCount, options);
+                messageCounter = new countUp.CountUp('messageCount', data.messagesToday, options);
+                memberCounter.start();
+                messageCounter.start();
+            }
+            memberCounter.update(data.memberCount);
+            messageCounter.update(data.messagesToday);
+        })
+    }
 }
 updateCounters();
+window.addEventListener('focus', updateCounters);
 setInterval(updateCounters, 5100);
 
 /* projects */
