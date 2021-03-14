@@ -1,3 +1,4 @@
+/* theme */
 let darkMode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || false;
 updateTheme();
 
@@ -12,13 +13,33 @@ document.querySelector('#theme-switch').addEventListener('change', e => {
     updateTheme();
 });
 
-fetch('https://koira.testausserveri.fi/api/guildInfo')
-.then((res) => res.json())
-.then(data => {
-    document.getElementById('memberCount').innerHTML = data.memberCount;
-    document.getElementById('messageCount').innerHTML = data.messagesToday;
-})
+/* counters */ 
+const options = {
+    duration: 0.5,
+    separator: ' ',
+};
 
+let memberCounter;
+let messageCounter;
+
+function updateCounters() {
+    fetch('https://koira.testausserveri.fi/api/guildInfo')
+    .then((res) => res.json())
+    .then(data => {
+        if (!memberCounter || !messageCounter) {
+            memberCounter = new countUp.CountUp('memberCount', data.memberCount, options);
+            messageCounter = new countUp.CountUp('messageCount', data.messagesToday, options);
+            memberCounter.start();
+            messageCounter.start();
+        }
+        memberCounter.update(data.memberCount);
+        messageCounter.update(data.messagesToday);
+    })
+}
+updateCounters();
+setInterval(updateCounters, 7000);
+
+/* projects */
 fetch('projects.json')
 .then(res => res.json())
 .then((data) => {
