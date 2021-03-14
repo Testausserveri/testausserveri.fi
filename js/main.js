@@ -37,7 +37,7 @@ function updateCounters() {
     })
 }
 updateCounters();
-setInterval(updateCounters, 7000);
+setInterval(updateCounters, 5100);
 
 /* projects */
 fetch('projects.json')
