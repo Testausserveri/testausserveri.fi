@@ -1,4 +1,4 @@
- [
+[
     {
         "name": "OpenWilma", 
         "desc": "OpenWilman kirjastot mahdollistavat Wilman APIa hyödyntävien sovellusten luomisen helppokäyttöisiä ja turvallisia kirjastoja hyödyntäen.",
@@ -26,5 +26,11 @@
         "name": "Antibitti",
         "desc": "Salainen WIP projekti. Kenties liittyy Abittiin?",
         "image": "assets/projects/antibitti.png"
+    },
+    {
+        "name": "TestausTime",
+        "desc": "Avoimen lähdekoodin ohjelmointiajantarkkailuohjelma",
+        "image": "assets/projects/testaustime.png",
+        "url": "https://time.testausserveri.fi"
     }
 ]
