@@ -1,30 +1,62 @@
- [
-    {
-        "name": "OpenWilma", 
-        "desc": "OpenWilman kirjastot mahdollistavat Wilman APIa hyödyntävien sovellusten luomisen helppokäyttöisiä ja turvallisia kirjastoja hyödyntäen.",
-        "image": "assets/projects/openwilma.png",
-        "url": "https://openwilma.testausserveri.fi"
-    },
-    {
-        "name": "Matikkaeditori.fi",
-        "desc": "​Matikkaeditori.fi on kehittämämme verkkopohjainen kaavaeditorijärjestelmä, joka pohjautuu tuttuun ja turvalliseen Abitin matikkaeditoriin.",
-        "image": "assets/projects/matikkaeditori.fi.png",
-        "url": "https://matikkaeditori.fi"
-    },
-    {
-        "name": "Karhu",
-        "desc": "Tekoälyrobotti, jonka kanssa voi jutella kaikista elämän askareista.",
-        "image": "assets/projects/karhu.png",
-        "url": "https://karhu.testausserveri.fi"
-    },
-    {
-        "name": "Torimies",
-        "desc": "Automaattiset ilmoitukset uusista Tori.fi myynti-ilmoituksista valittuihin suodattimiin.",
-        "image": "assets/projects/torimies.png"
-    },
-    {
-        "name": "Antibitti",
-        "desc": "Salainen WIP projekti. Kenties liittyy Abittiin?",
-        "image": "assets/projects/antibitti.png"
-    }
-]
+{
+    "projects": [
+        {
+            "name": "OpenWilma", 
+            "desc": "OpenWilman kirjastot mahdollistavat Wilman APIa hyödyntävien sovellusten luomisen helppokäyttöisiä ja turvallisia kirjastoja hyödyntäen.",
+            "image": "assets/projects/openwilma.png",
+            "url": "https://openwilma.testausserveri.fi"
+        },
+        {
+            "name": "Matikkaeditori.fi",
+            "desc": "​Matikkaeditori.fi on kehittämämme verkkopohjainen kaavaeditorijärjestelmä, joka pohjautuu tuttuun ja turvalliseen Abitin matikkaeditoriin.",
+            "image": "assets/projects/matikkaeditori.fi.png",
+            "url": "https://matikkaeditori.fi"
+        },
+        {
+            "name": "Karhu",
+            "desc": "Tekoälyrobotti, jonka kanssa voi jutella kaikista elämän askareista.",
+            "image": "assets/projects/karhu.png",
+            "url": "https://karhu.testausserveri.fi"
+        },
+        {
+            "name": "Torimies",
+            "desc": "Automaattiset ilmoitukset uusista Tori.fi myynti-ilmoituksista valittuihin suodattimiin.",
+            "image": "assets/projects/torimies.png"
+        },
+        {
+            "name": "Antibitti",
+            "desc": "Olemme ilmoittaneet YTL:lle lukuisia Abitista löydettyjä haavoittuvuuksia.",
+            "image": "assets/projects/antibitti.png",
+            "video": "assets/projects/antibitti.mp4",
+            "url": "https://abitti.testausserveri.fi"
+        },
+        {
+            "name": "Sähköpostiosoite",
+            "desc": "Tarjoamme kaikille jäsenillemme ilmaisen @testausserveri.fi-sähköpostiosoitteen jäsenetuna! Liity palvelimelle saadaksesi sen.",
+            "image": "assets/projects/mail.png"
+        },
+        {
+            "name": "TestausTime",
+            "desc": "Yhteisön kehittämä ajanseurantajärjestelmä. WIP.",
+            "url": "https://github.com/Testausserveri/TestausTime",
+            "image": "assets/projects/testaustime.png"
+        }
+    ],
+    "people": [
+        {
+            "name": "Miksu",
+            "real": "Mikael",
+            "image": "https://cdn.discordapp.com/avatars/639844207439118346/376a66b823965e63deb079f953d957eb.png?size=128"
+        },
+        {
+            "name": "Esinko",
+            "real": "Eemil",
+            "image": "https://cdn.discordapp.com/avatars/285089672974172161/732bb47d549a1736533f76bcdce8a6d1.png?size=128"
+        },
+        {
+            "name": "developerFromJokela",
+            "real": "Ruben",
+            "image": "https://cdn.discordapp.com/avatars/464685299214319616/f743812c83adae4a0efc204b662b1f0b.png?size=128"
+        }
+    ]
+}
