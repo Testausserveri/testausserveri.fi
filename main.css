@@ -22,6 +22,9 @@
     --icon-filter: invert(1);
     --project-card-border: #fff;
 }
+[data-theme="dark"] .github-icon {
+    filter: invert(1);
+}
 body {
     background: var(--background);
     margin: 2rem;
