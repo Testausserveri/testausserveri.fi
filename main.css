@@ -11,6 +11,7 @@
     --icon-filter: none;
     --project-card-border: #000;
 }
+
 [data-theme="dark"] {
     --background: #121212;
     --text: #bbb;
@@ -22,23 +23,32 @@
     --icon-filter: invert(1);
     --project-card-border: #fff;
 }
+
+[data-theme="dark"] .github-icon {
+    filter: invert(1);
+}
+
 body {
     background: var(--background);
     margin: 2rem;
     transition: background-color 0.2s, color 0.2s, filter 0.2s, border 0.2s;
 
 }
+
 .center {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .widerCenter {
     max-width: 1100px;
     margin: 0 auto;
 }
+
 .background {
     background-image: url('assets/dog.gif');
     background-size: cover;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #fff;
@@ -49,6 +59,7 @@ body {
     display: block;
     margin: 5rem 0;
 }
+
 .footer {
     margin: 4rem 0;
 }
@@ -92,15 +103,18 @@ p, ul {
 .footer .icons a {
     text-decoration: none;
 }
+
 .footer .icons img {
     width: 25px;
     height: 25px;
     filter: grayscale(1) opacity(0.5);
     transition: filter 0.1s ease;
 }
-.footer .icons a + a  {
+
+.footer .icons a + a {
     margin-left: 0.5rem;
 }
+
 .footer .icons a:hover img {
     filter: grayscale(0);
 }
@@ -121,7 +135,7 @@ p, ul {
     background-color: var(--dc);
     color: #fff;
     border-radius: 6px;
-    font-family: 'Poppins', sans-serif;     
+    font-family: 'Poppins', sans-serif;
     padding: 2rem 3rem;
     cursor: pointer;
     transition: background-color 0.1s ease;
@@ -135,6 +149,7 @@ p, ul {
 .joinButton:hover {
     background-color: #667bc4;
 }
+
 .joinInfo {
     font-family: 'Ubuntu', sans-serif;
     color: var(--text);
@@ -144,6 +159,7 @@ p, ul {
     flex-direction: row;
     justify-content: space-between;
 }
+
 .infoBlock {
     text-align: center;
     display: flex;
@@ -155,9 +171,10 @@ p, ul {
 .infoHeading {
     display: block;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;    
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
+
 .infoValue {
     font-size: 1.5em;
 }
@@ -173,17 +190,19 @@ pain in the ass 🍑
     grid-auto-rows: auto;
     padding-top: 2rem;
 }
-.grid#people {
-}
+
+.grid#people {}
 
 .grid#projects .item:nth-child(2) {
     grid-column: 2 / 4;
     aspect-ratio: 2 / 1;
 }
+
 .grid#projects .item:nth-child(6) {
     grid-column: 1 / 3;
     aspect-ratio: 2 / 1;
 }
+
 .grid .item {
     aspect-ratio: 1/1;
     position: relative;
@@ -192,15 +211,19 @@ pain in the ass 🍑
     max-width: 100%;
     text-decoration: none;
 }
-.grid#people .item {
-}
+
+.grid#people .item {}
+
 .grid .item[href]:hover {
     top: -5px;
 }
 
 .itemBackground {
     position: absolute;
-    top: 0; left: 0; width: calc(100% - 2vw); height: calc(100% - 2vw);
+    top: 0;
+    left: 0;
+    width: calc(100% - 2vw);
+    height: calc(100% - 2vw);
     margin: 1vw;
     border-radius: 6px;
     height: calc(100% - 2vw);
@@ -215,11 +238,14 @@ pain in the ass 🍑
 .itemBackground:after {
     content: ' ';
     border: 1px solid var(--project-card-border);
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     position: absolute;
     border-radius: 6px;
 }
+
 video.itemBackground {
     width: calc(100% - 2vw);
     object-fit: cover;
@@ -228,20 +254,24 @@ video.itemBackground {
 .itemContent {
     z-index: 10;
     color: var(--text);
-    margin: 1vw; /* this is what we use for the gap */
+    /* this is what we use for the gap */
+    margin: 1vw;
     padding: 2.5rem;
     font-size: 1.1rem;
     display: flex;
     font-family: 'Ubuntu', sans-serif;
     flex-direction: column-reverse;
 }
+
 .CBig {
     flex: 1;
 }
+
 .mediaLogo {
     opacity: 0.7;
     height: 1em;
 }
+
 .itemContent .piTitle {
     margin: 0;
     line-height: 1.5em;
@@ -253,6 +283,7 @@ video.itemBackground {
     display: block;
     text-decoration: none;
 }
+
 a[href] .itemContent .piTitle::after {
     content: ' ';
     background-image: url(assets/tab.svg);
@@ -264,6 +295,7 @@ a[href] .itemContent .piTitle::after {
     margin-left: 0.5em;
     filter: var(--icon-filter);
 }
+
 .piOrg {
     line-height: 1.7em;
 }
@@ -285,9 +317,9 @@ a[href] .itemContent .piTitle::after {
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  .toggle-slot {
+}
+
+.toggle-slot {
     position: relative;
     height: 10em;
     width: 20em;
@@ -297,15 +329,15 @@ a[href] .itemContent .piTitle::after {
     /*box-shadow: 0px 10px 25px #e4e7ec;*/
     transition: background-color 250ms;
     cursor: pointer;
-  }
-  
-  .toggle-checkbox:checked ~ .toggle-slot {
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
     background-color: #374151;
     border: 5px solid #222;
 
-  }
-  
-  .toggle-button {
+}
+
+.toggle-button {
     transform: translate(11.75em, 1.75em);
     position: absolute;
     height: 6.5em;
@@ -313,58 +345,58 @@ a[href] .itemContent .piTitle::after {
     border-radius: 50%;
     background-color: #ffeccf;
     box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
-    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
-  }
-  
-  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
     background-color: #485367;
     box-shadow: inset 0px 0px 0px 0.75em white;
     transform: translate(1.75em, 1.75em);
-  }
-  
-  .sun-icon {
+}
+
+.sun-icon {
     position: absolute;
     height: 6em;
     width: 6em;
     color: #ffbb52;
-  }
-  
-  .sun-icon-wrapper {
+}
+
+.sun-icon-wrapper {
     position: absolute;
     height: 6em;
     width: 6em;
     opacity: 1;
     transform: translate(2em, 2em) rotate(15deg);
     transform-origin: 50% 50%;
-    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
-  }
-  
-  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
     opacity: 0;
     transform: translate(3em, 2em) rotate(0deg);
-  }
-  
-  .moon-icon {
+}
+
+.moon-icon {
     position: absolute;
     height: 6em;
     width: 6em;
     color: white;
-  }
-  
-  .moon-icon-wrapper {
+}
+
+.moon-icon-wrapper {
     position: absolute;
     height: 6em;
     width: 6em;
     opacity: 0;
     transform: translate(11em, 2em) rotate(0deg);
     transform-origin: 50% 50%;
-    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
-  }
-  
-  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2.5, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
     opacity: 1;
     transform: translate(12em, 2em) rotate(-15deg);
-  }
+}
 
 
 /* media queries */
@@ -373,11 +405,13 @@ a[href] .itemContent .piTitle::after {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .grid .item:nth-child(2) {
         grid-column: 1 / 3;
         grid-row: 1;
         aspect-ratio: 2 / 1;
     }
+
     .itemContent {
         padding: 2rem;
     }
@@ -391,23 +425,28 @@ a[href] .itemContent .piTitle::after {
         width: calc(100% + 2vw);
         margin-left: -1vw;
     }
+
     .grid .item {
         grid-column: 1 / 2;
         aspect-ratio: unset;
     }
+
     .itemContent {
         padding: 1.5rem;
     }
+
     .background {
         margin: 3rem 0;
     }
-  }
-  @media only screen and (max-width: 780px) {
+}
+
+@media only screen and (max-width: 780px) {
     .grid {
         font-size: small;
     }
-  }
-  @media only screen and (max-width: 500px) {
+}
+
+@media only screen and (max-width: 500px) {
     .grid {
         font-size: 0.9em;
     }
@@ -417,14 +456,17 @@ a[href] .itemContent .piTitle::after {
     .joinBoxInner {
         flex-direction: column;
     }
+
     .joinButton {
         margin-bottom: 0.5rem;
     }
+
     .joinInfo {
         padding: 0.5rem 0 0 0;
         justify-content: space-around;
-        
+
     }
+
     .infoBlock {
         margin-left: 0;
         width: 50%;
