@@ -499,3 +499,12 @@ a[href] .itemContent .piTitle::after {
         width: 50%;
     }
 }
+
+@media only screen and (max-width: 440px) {
+    .footer {
+        flex-direction: column-reverse;
+    }
+    .footer .icons {
+        margin-bottom: 3rem;
+    }
+}
