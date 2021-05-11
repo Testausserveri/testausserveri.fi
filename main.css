@@ -450,6 +450,10 @@ a[href] .itemContent .piTitle::after {
     .grid {
         font-size: 0.9em;
     }
+    .grid .item, .grid#projects .item:nth-child(6) {
+        grid-column-end: span 3;
+        aspect-ratio: 1/1;
+    }
 }
 
 @media only screen and (max-width: 650px) {
