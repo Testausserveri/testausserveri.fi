@@ -401,7 +401,7 @@ a[href] .itemContent .piTitle::after {
 
 /* media queries */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -413,7 +413,7 @@ a[href] .itemContent .piTitle::after {
     }
 
     .itemContent {
-        padding: 2rem;
+        padding: 1rem;
     }
 }
 
