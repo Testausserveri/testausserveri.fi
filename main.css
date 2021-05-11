@@ -89,8 +89,22 @@ p, ul {
     margin-bottom: 2rem;
 }
 
+a:not(.joinButton) {
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: color 0.1s ease, opacity 0.1s ease;
+}
+
+a:not(.joinButton):hover {
+    opacity: 1;
+    color: var(--project-card-border);
+}
+
 .footer {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer .wide {
@@ -98,6 +112,11 @@ p, ul {
     color: var(--text);
     font-size: 1.2rem;
     flex: 1;
+    line-height: 2;
+}
+
+.footer .icons {
+    height: 25px;
 }
 
 .footer .icons a {
