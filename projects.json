@@ -25,7 +25,7 @@
             "name": "Torimies",
             "desc": "Automaattiset ilmoitukset uusista Tori.fi myynti-ilmoituksista valittuihin suodattimiin.",
             "image": "assets/projects/torimies.png",
-            "abitikkuFeaturedWeight": 
+            "abitikkuFeaturedWeight": 25
         },
         {
             "name": "Antibitti",
@@ -54,7 +54,7 @@
             "url": "https://testauserveri.fi",
             "image": "assets/projects/discord.png",
             "abitikkuFeaturedWeight": 7
-        },
+        }
     ],
     "people": [
         {
