@@ -4,31 +4,36 @@
             "name": "OpenWilma", 
             "desc": "OpenWilman kirjastot mahdollistavat Wilman APIa hyödyntävien sovellusten luomisen helppokäyttöisiä ja turvallisia kirjastoja hyödyntäen.",
             "image": "assets/projects/openwilma.png",
-            "url": "https://openwilma.testausserveri.fi"
+            "url": "https://openwilma.testausserveri.fi",
+            "abitikkuFeaturedWeight": 20
         },
         {
             "name": "Matikkaeditori.fi",
-            "desc": "​Matikkaeditori.fi on kehittämämme verkkopohjainen kaavaeditorijärjestelmä, joka pohjautuu tuttuun ja turvalliseen Abitin matikkaeditoriin.",
+            "desc": "Matikkaeditori.fi on kehittämämme verkkopohjainen kaavaeditorijärjestelmä, joka pohjautuu tuttuun ja turvalliseen Abitin matikkaeditoriin.",
             "image": "assets/projects/matikkaeditori.fi.png",
-            "url": "https://matikkaeditori.fi"
+            "url": "https://matikkaeditori.fi",
+            "abitikkuFeaturedWeight": 5
         },
         {
             "name": "Karhu",
             "desc": "Tekoälyrobotti, jonka kanssa voi jutella kaikista elämän askareista.",
             "image": "assets/projects/karhu.png",
-            "url": "https://karhu.testausserveri.fi"
+            "url": "https://karhu.testausserveri.fi",
+            "abitikkuFeaturedWeight": 10
         },
         {
             "name": "Torimies",
             "desc": "Automaattiset ilmoitukset uusista Tori.fi myynti-ilmoituksista valittuihin suodattimiin.",
-            "image": "assets/projects/torimies.png"
+            "image": "assets/projects/torimies.png",
+            "abitikkuFeaturedWeight": 
         },
         {
             "name": "Antibitti",
             "desc": "Olemme ilmoittaneet YTL:lle lukuisia Abitista löydettyjä haavoittuvuuksia.",
             "image": "assets/projects/antibitti.png",
             "video": "assets/projects/antibitti.mp4",
-            "url": "https://abitti.testausserveri.fi"
+            "url": "https://abitti.testausserveri.fi",
+            "abitikkuFeaturedWeight": 15
         },
         {
             "name": "Sähköpostiosoite",
@@ -41,6 +46,15 @@
             "url": "https://github.com/Testausserveri/TestausTime",
             "image": "assets/projects/testaustime.png"
         }
+    ],
+    "abitikkuExtras": [
+        {
+            "name": "Testausserveri",
+            "desc": "Meidän Discord-palvelimelta saat tukea Abitikun käyttöön, mutta myös koodaus- ja hakkerointihommiin!",
+            "url": "https://testauserveri.fi",
+            "image": "assets/projects/discord.png",
+            "abitikkuFeaturedWeight": 7
+        },
     ],
     "people": [
         {
