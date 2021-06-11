@@ -128,3 +128,7 @@ fetch('projects.json')
 
     
 })
+
+function metaRepoLink(event) {
+    alert('Muiden projektien lista näkyy ainoastaan Testausserverin jäsenille. Liity ensin palvelimellemme ja sitä kautta GitHub-organisaatioomme nähdäksesi tämän listan.')
+}
