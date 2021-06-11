@@ -89,7 +89,7 @@ p, ul {
     margin-bottom: 2rem;
 }
 
-a:not(.joinButton) {
+a:not(.joinButton):not(.item) {
     color: var(--text);
     text-decoration: none;
     opacity: 0.8;
