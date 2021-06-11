@@ -41,6 +41,12 @@
             "image": "assets/projects/mail.png"
         },
         {
+            "name": "Abitikku",
+            "desc": "Helpoin tapa luoda Abitti-tikku",
+            "image": "assets/projects/abitikku.png",
+            "url": "https://abitikku.testausserveri.fi"
+        },
+        {
             "name": "TestausTime",
             "desc": "Yhteisön kehittämä ajanseurantajärjestelmä. WIP.",
             "url": "https://github.com/Testausserveri/TestausTime",

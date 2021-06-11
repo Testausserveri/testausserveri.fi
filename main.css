@@ -217,10 +217,12 @@ pain in the ass 🍑
     aspect-ratio: 2 / 1;
 }
 
+/*
+
 .grid#projects .item:nth-child(6) {
     grid-column: 1 / 3;
     aspect-ratio: 2 / 1;
-}
+}*/
 
 .grid .item {
     aspect-ratio: 1/1;
