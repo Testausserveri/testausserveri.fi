@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Poppins:wght@600;800&display=swap');
+
+:root {
+    --background: #eee;
+    --text: #333;
+    --dc-background: #e2e7f7;
+    --dc: #7289DA;
+    --border: #ccc;
+    --title: #111;
+    --background-filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
+    --icon-filter: none;
+    --project-card-border: #000;
+}
+
+[data-theme="dark"] {
+    --background: #121212;
+    --text: #bbb;
+    --dc-background: #161b2b;
+    --dc: #445282;
+    --border: #222;
+    --title: #ddd;
+    --background-filter: contrast(0.5) brightness(0.35) saturate(1.7) grayscale(0.2) opacity(1);
+    --icon-filter: invert(1);
+    --project-card-border: #fff;
+}
+
+[data-theme="dark"] .github-icon {
+    filter: invert(1);
+}
+
+body {
+    background: var(--background);
+    margin: 2rem;
+    transition: background-color 0.2s, color 0.2s, filter 0.2s, border 0.2s;
+
+}
+
+.center {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.widerCenter {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.background {
+    background-image: url('../assets/dog.gif');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 3em;
+    text-align: center;
+    display: block;
+    margin: 5rem 0;
+}
+
+.footer {
+    margin: 4rem 0;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    color: var(--title);
+    font-weight: 800;
+}
+
+.background:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+}
+
+p, ul, fieldset {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 1.2rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+legend {
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2.5rem;
+    padding-top: 1.5rem;
+    margin-top: 4rem;
+}
+
+a:not(.joinButton):not(.item) {
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.8;
+    font-weight: bold;
+    transition: color 0.1s ease, opacity 0.1s ease;
+}
+
+a:not(.joinButton):hover {
+    opacity: 1;
+    color: var(--project-card-border);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .wide {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 1.2rem;
+    flex: 1;
+    line-height: 2;
+}
+
+.footer .icons {
+    height: 25px;
+}
+
+.footer .icons a {
+    text-decoration: none;
+}
+
+.footer .icons img {
+    width: 25px;
+    height: 25px;
+    filter: grayscale(1) opacity(0.5);
+    transition: filter 0.1s ease;
+}
+
+.footer .icons a + a {
+    margin-left: 0.5rem;
+}
+
+.footer .icons a:hover img {
+    filter: grayscale(0);
+}
+
+.joinBox {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--dc-background);
+}
+
+.joinBoxInner {
+    margin: 1.5rem;
+    display: flex;
+}
+
+.joinButton {
+    text-decoration: none;
+    background-color: var(--dc);
+    color: #fff;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem 3rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.joinButton:hover {
+    background-color: #667bc4;
+}
+
+.joinInfo {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infoBlock {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 1.5rem;
+}
+
+.infoHeading {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.infoValue {
+    font-size: 1.5em;
+}
+
+
+/* theme switch */
+
+.switch {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    transform: scale(0.2);
+    transform-origin: bottom right;
+    z-index: 10000;
+}
+
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle-slot {
+    position: relative;
+    height: 10em;
+    width: 20em;
+    border: 5px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: white;
+    /*box-shadow: 0px 10px 25px #e4e7ec;*/
+    transition: background-color 250ms;
+    cursor: pointer;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+    background-color: #374151;
+    border: 5px solid #222;
+
+}
+
+.toggle-button {
+    transform: translate(11.75em, 1.75em);
+    position: absolute;
+    height: 6.5em;
+    width: 6.5em;
+    border-radius: 50%;
+    background-color: #ffeccf;
+    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(1.75em, 1.75em);
+}
+
+.sun-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moon-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: white;
+}
+
+.moon-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 0;
+    transform: translate(11em, 2em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26, 2.5, .46, .71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(12em, 2em) rotate(-15deg);
+}
+
+
+/* media queries */
+
+@media only screen and (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid .item:nth-child(2), .grid#projects .item:nth-child(2) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
+    }
+
+    .itemContent {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-flow: column;
+        grid-auto-rows: fit-content(1em);
+        width: calc(100% + 2vw);
+        margin-left: -1vw;
+    }
+
+    .grid#projects .item:nth-child(2) {
+        grid-column: 1 / 3
+    }
+
+    .grid .item {
+        grid-column: 1 / 2;
+        aspect-ratio: unset;
+    }
+
+    .itemContent {
+        padding: 1.5rem;
+    }
+
+    .background {
+        margin: 3rem 0;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .grid {
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .grid {
+        font-size: 0.9em;
+    }
+    .grid .item, .grid#projects .item:nth-child(6) {
+        grid-column-end: span 3;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .joinBoxInner {
+        flex-direction: column;
+    }
+
+    .joinButton {
+        margin-bottom: 0.5rem;
+    }
+
+    .joinInfo {
+        padding: 0.5rem 0 0 0;
+        justify-content: space-around;
+
+    }
+
+    .infoBlock {
+        margin-left: 0;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .footer {
+        flex-direction: column-reverse;
+    }
+    .footer .icons {
+        margin-bottom: 3rem;
+    }
+}
