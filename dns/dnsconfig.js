@@ -1,8 +1,13 @@
 var REG_NONE = NewRegistrar('none', 'NONE');
 var DNS_CLOUDFLARE = NewDnsProvider('cloudflare', 'CLOUDFLAREAPI');
 
+var CF_PROXY_DEFAULT_ON = {'cloudflare_proxy_default': 'on'};
 var CF_PROXY_OFF = {'cloudflare_proxy': 'off'};     // Proxy disabled.
 var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
+
+DEFAULTS(
+	CF_PROXY_ON // turn proxy off when not specified otherwise
+);
 
 D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     ALIAS('testausserveri.fi.', 'testausserveri.github.io.'),
