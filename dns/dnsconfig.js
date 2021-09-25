@@ -5,7 +5,7 @@ var CF_PROXY_OFF = {'cloudflare_proxy': 'off'};     // Proxy disabled.
 var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
 
 D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
-    CNAME('@', 'testausserveri.github.io.'),
+    CNAME('testausserveri.fi', 'testausserveri.github.io.'),
     CNAME('www', '@'),
     A('teapot', '140.238.217.189', CF_PROXY_OFF),
 
@@ -32,8 +32,8 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('openwilma', 'openwilma.github.io.'), // OpenWilma - https://github.com/OpenWilma/
 
     // Other
-    CNAME('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
-    CNAME('@', 'google-site-verification=dAyNoa59zHryHFRXObQTpIqUCRhlWkKLPYJY601w_7c'), // Google site verification
+    TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
+    TXT('@', 'google-site-verification=dAyNoa59zHryHFRXObQTpIqUCRhlWkKLPYJY601w_7c'), // Google site verification
 
     // Mail
     Yandex(),
