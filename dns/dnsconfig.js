@@ -17,8 +17,8 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('karhu-fallback', 'mgh2-http.mixu.wtf.'), // Karhu - Mikael
     CNAME('karhu', 'mgh2-http.mixu.wtf.'), // Karhu - Mikael
     CNAME('koira', 'mgh2-http.mixu.wtf.'), // Testauskoira API - Mikael
-    A('mc', '95.216.205.24', CF_PROXY_OFF), // TestausSMP - Timo
     A('smp', '129.159.193.215', CF_PROXY_OFF), // TestausSMP - Timo
+    A('mc', '95.216.205.24', CF_PROXY_OFF), // TestausSMP - Timo
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
