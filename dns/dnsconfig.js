@@ -32,6 +32,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('ug', 'relay.dfjapis.com.', CF_PROXY_OFF), // TestausTime
     CNAME('openwilma_js', 'openwilma.github.io.'), // OpenWilma js documentation - https://github.com/OpenWilma/
     CNAME('openwilma', 'openwilma.github.io.'), // OpenWilma - https://github.com/OpenWilma/
+    CNAME('tet', 'testausserveri.github.io.'), // TET - Niilas
 
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
