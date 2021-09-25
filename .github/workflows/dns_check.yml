@@ -1,0 +1,19 @@
+name: Check DNS
+
+on:
+  pull_request:
+    paths:
+      - 'dns/dnsconfig.js'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: DNSControl check
+        uses: koenrh/dnscontrol-action@v3
+        with:
+          args: check
+
+          config_file: 'dns/dnsconfig.js'
