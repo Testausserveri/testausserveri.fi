@@ -1,7 +1,7 @@
 name: Check DNS
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'dns/dnsconfig.js'
 
