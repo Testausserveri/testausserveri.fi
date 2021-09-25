@@ -19,7 +19,7 @@ jobs:
         with:
           args: preview
 
-          config_file: 'dns/dnscontrol.js'
+          config_file: 'dns/dnsconfig.js'
           creds_file: 'dns/creds.json'
       - name: Preview pull request comment
         uses: unsplash/comment-on-pr@v1.2.0
