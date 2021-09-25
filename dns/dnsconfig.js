@@ -5,11 +5,12 @@ var CF_PROXY_DEFAULT_ON = {'cloudflare_proxy_default': 'on'};
 var CF_PROXY_OFF = {'cloudflare_proxy': 'off'};     // Proxy disabled.
 var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
 
-DEFAULTS(
-	CF_PROXY_ON // turn proxy off when not specified otherwise
-);
+
 
 D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
+    DEFAULTS(
+        CF_PROXY_ON // turn proxy on when not specified otherwise
+    ),
     ALIAS('testausserveri.fi.', 'testausserveri.github.io.'),
     CNAME('www', '@'),
     A('teapot', '140.238.217.189', CF_PROXY_OFF),
