@@ -36,7 +36,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
-    CNAME('arvojasen', 'arvojasen.midka.dev') // Arvojasen :D - Midka
+    CNAME('arvojasen', 'arvojasen.midka.dev.') // Arvojasen :D - Midka
     CNAME('eioikeutta', 'eioikeutta.netlify.app.', CF_PROXY_OFF), // Ei sulla oikeutta oo - Nikke
 
     // Other
