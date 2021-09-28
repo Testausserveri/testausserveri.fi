@@ -57,6 +57,7 @@ function Mailerlite() {
 
 function Google() {
     return [
+        MX('@', 1, 'ASPMX.L.GOOGLE.COM.'),
         MX('@', 5, 'ALT1.ASPMX.L.GOOGLE.COM.'),
         MX('@', 5, 'ALT2.ASPMX.L.GOOGLE.COM.'),
         MX('@', 10, 'ALT3.ASPMX.L.GOOGLE.COM.'),
