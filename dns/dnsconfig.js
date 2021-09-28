@@ -46,7 +46,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     //Yandex(),
     Google(),
     Mailerlite(),
-    TXT('@', 'v=spf1 include:_spf.mlsend.com redirect=_spf.yandex.net')
+    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
 );
 
 function Mailerlite() {
@@ -62,6 +62,7 @@ function Google() {
         MX('@', 5, 'ALT2.ASPMX.L.GOOGLE.COM.'),
         MX('@', 10, 'ALT3.ASPMX.L.GOOGLE.COM.'),
         MX('@', 10, 'ALT4.ASPMX.L.GOOGLE.COM.'),
+        CNAME('mail', 'ghs.googlehosted.com.')
     ]
 }
 function Yandex() {
