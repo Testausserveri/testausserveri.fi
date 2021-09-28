@@ -44,7 +44,8 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     TXT('@', 'google-site-verification=6XQ_v6tkh3jB_hl63IA4iMS8RV3bj9rzKfaQxomX6i4'), // Google site verification
 
     // Mail
-    Yandex(),
+    //Yandex(),
+    Google(),
     Mailerlite(),
     TXT('@', 'v=spf1 include:_spf.mlsend.com redirect=_spf.yandex.net')
 );
@@ -55,6 +56,14 @@ function Mailerlite() {
     ];
 }
 
+function Google() {
+    return [
+        MX('@', 5, 'ALT1.ASPMX.L.GOOGLE.COM'),
+        MX('@', 5, 'ALT2.ASPMX.L.GOOGLE.COM'),
+        MX('@', 10, 'ALT3.ASPMX.L.GOOGLE.COM'),
+        MX('@', 10, 'ALT4.ASPMX.L.GOOGLE.COM'),
+    ]
+}
 function Yandex() {
     return [
         TXT('@', 'yandex-verification: 223f0c4d9969e343'),
