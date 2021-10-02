@@ -32,6 +32,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('ug', 'relay.dfjapis.com.', CF_PROXY_OFF), // TestausTime
     CNAME('openwilma_js', 'openwilma.github.io.'), // OpenWilma js documentation - https://github.com/OpenWilma/
     CNAME('openwilma', 'openwilma.github.io.'), // OpenWilma - https://github.com/OpenWilma/
+    CNAME('lehti', 'testausserveri.github.io'), // Testauslehti
     
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
