@@ -45,6 +45,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
 
     // Mail
     //Yandex(),
+    MX('koira', 10, 'teapot.testausserveri.fi.'),
     Google(),
     Mailerlite(),
     TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
