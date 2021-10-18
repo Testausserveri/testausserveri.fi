@@ -7,7 +7,7 @@ var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
 
 
 
-D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
+D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CF_PROXY_DEFAULT_ON,
     ALIAS('testausserveri.fi.', 'testausserveri.github.io.'),
     CNAME('www', '@'),
@@ -45,7 +45,7 @@ D('testausserveri.fi', REG_NONE, DnsProvider(DNS_CLOUDFLARE),
 
     // Mail
     //Yandex(),
-    MX('koira', 10, 'teapot.testausserveri.fi.'),
+    // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
     Mailerlite(),
     TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
