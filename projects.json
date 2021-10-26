@@ -37,7 +37,7 @@
         },
         {
             "name": "Sähköpostiosoite",
-            "desc": "Tarjoamme kaikille jäsenillemme ilmaisen @testausserveri.fi-sähköpostiosoitteen jäsenetuna! Liity palvelimelle saadaksesi sen.",
+            "desc": "Tarjoamme kaikille jäsenillemme ilmaisen @koira.testausserveri.fi-sähköpostiosoitteen jäsenetuna! Liity palvelimelle saadaksesi sen.",
             "image": "assets/projects/mail.png"
         },
         {
@@ -45,12 +45,6 @@
             "desc": "Helpoin tapa luoda Abitti-tikku",
             "image": "assets/projects/abitikku.png",
             "url": "https://abitikku.testausserveri.fi"
-        },
-        {
-            "name": "TestausTime",
-            "desc": "Yhteisön kehittämä ajanseurantajärjestelmä. WIP.",
-            "url": "https://github.com/Testausserveri/TestausTime",
-            "image": "assets/projects/testaustime.png"
         }
     ],
     "abitikkuExtras": [
