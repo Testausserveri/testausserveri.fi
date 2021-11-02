@@ -45,6 +45,12 @@
             "desc": "Helpoin tapa luoda Abitti-tikku",
             "image": "assets/projects/abitikku.png",
             "url": "https://abitikku.testausserveri.fi"
+        },
+        {
+            "name": "Testausneule",
+            "desc": "Testausneule pelastaa ahkerat testaajat pakkasenpuremilta!",
+            "image": "https://alice.testausserveri.fi/neule/pieni-pari.png",
+            "url": "https://alice.testausserveri.fi/neule"
         }
     ],
     "abitikkuExtras": [
