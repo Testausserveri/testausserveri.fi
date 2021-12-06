@@ -120,13 +120,14 @@ class Grid {
         })
     }
 }
-fetch('projects.json')
+fetch('https://testausserveri.fi/projects.json')
 .then(res => res.json())
 .then((data) => {
     console.log(data);
     const projects = new Grid(data.projects, "#projects");
-
-    
+}).catch(e => {
+    console.error("Failed to get projects list", e)
+    document.getElementById("projects").innerHTML = "<p style=\"text-align: center;\">Projektilistaa ei voida näyttää. Tapahtui virhe :(</p>"
 })
 
 function metaRepoLink(event) {
