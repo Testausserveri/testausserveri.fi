@@ -34,6 +34,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('openwilma', 'openwilma.github.io.'), // OpenWilma - https://github.com/OpenWilma/
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
+    CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
     
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
