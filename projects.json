@@ -25,6 +25,7 @@
             "name": "Torimies",
             "desc": "Automaattiset ilmoitukset uusista Tori.fi myynti-ilmoituksista valittuihin suodattimiin.",
             "image": "assets/projects/torimies.png",
+            "url": "https://github.com/Testausserveri/torimies-rs",
             "abitikkuFeaturedWeight": 25
         },
         {
