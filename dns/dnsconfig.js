@@ -69,7 +69,8 @@ function Google() {
         MX('@', 5, 'ALT2.ASPMX.L.GOOGLE.COM.'),
         MX('@', 10, 'ALT3.ASPMX.L.GOOGLE.COM.'),
         MX('@', 10, 'ALT4.ASPMX.L.GOOGLE.COM.'),
-        CNAME('mail', 'ghs.googlehosted.com.')
+        CNAME('mail', 'ghs.googlehosted.com.'),
+        TXT('google._domainkey', 'v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApiJ3KsPqFMxDKbAyHtQPF6Sz3B8nfjQSJiOV1RZKAJwgVUK7Ez/krG47wl7lkOPa1esM031qnWaoRBYojBN/qMVvDoKsEW5YzZ0D0noWaYfHaqNoewtdBXGj8N6CTwk1cRbgAL6RARv61vmQrBTCVMVu7VDzbi+gxJv+50EHzrktW1FraJXV4saU6gVb6/t9Otw2bthak8jav1xLjMchj6WEaS+iLp0GmakDLa2wuU9EI1YUFMCqu5f7BGozt8Qcn7g4NpVjkNuRj0DUA5DTEWZPnTngF2RZZYJ14DWckbYg8UMSFq6xX0z/J3uCM/EKSfM/8L/kOMH4KZtbRchv+QIDAQAB')
     ]
 }
 function Yandex() {
