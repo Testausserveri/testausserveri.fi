@@ -40,9 +40,6 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
     CNAME('arvojasen', 'arvojasen.midka.dev.', CF_PROXY_OFF), // Arvojasen :D - Midka
     CNAME('eioikeutta', 'eioikeutta.netlify.app.', CF_PROXY_OFF), // Ei sulla oikeutta oo - Nikke
-
-    CNAME('akatemia', 'testausserveri.github.io.'), // TestausAkatemia (Niilas)
-    CNAME('akatemia-moodle', 'vps1.niilasoika.me.', CF_PROXY_OFF), // TestausAkatemia (Niilas)
     
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
