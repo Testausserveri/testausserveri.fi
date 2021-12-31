@@ -29,7 +29,7 @@
 }
 
 body {
-    background: var(--background);
+    background-image: url('/assets/fireworks.gif');
     margin: 2rem;
     transition: background-color 0.2s, color 0.2s, filter 0.2s, border 0.2s;
 
