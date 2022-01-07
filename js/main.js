@@ -186,6 +186,7 @@ function updateAnalytics() {
                         smallImage.className = "smallImage"
                         if (activity.name === "Spotify" && activity.type === "LISTENING") {
                             smallImage.src = "assets/icons/accounts/spotify.svg"
+                            smallImage.style.filter = "var(--logo-filter)"
                         } else {
                             smallImage.src = activity.assets.smallImage ?? ""
                         }
