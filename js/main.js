@@ -70,7 +70,7 @@ const flagLogos = {
 function updateAnalytics() {
     if (document.hasFocus() || !memberCounter || !messageCounter || !showcasedProfiles) {
         // Counters
-        fetch("http://api.testausserveri.f/v1/discord/guildInfo")
+        fetch("https://api.testausserveri.f/v1/discord/guildInfo")
             .then((res) => res.json())
             .then((data) => {
                 if (!memberCounter || !messageCounter) {
@@ -88,7 +88,7 @@ function updateAnalytics() {
             })
 
         // Profile showcases
-        fetch("http://api.testausserveri.fi/v1/discord/roleInfo?id=743950610080071801")
+        fetch("https://api.testausserveri.fi/v1/discord/roleInfo?id=743950610080071801")
             .then((res) => res.json())
             .then((data) => {
                 // TODO: Why is this like this?
