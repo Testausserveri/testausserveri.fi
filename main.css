@@ -10,6 +10,7 @@
     --background-filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
     --icon-filter: none;
     --project-card-border: #000;
+    --card-background: #fff
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
     --background-filter: contrast(0.5) brightness(0.35) saturate(1.7) grayscale(0.2) opacity(1);
     --icon-filter: invert(1);
     --project-card-border: #fff;
+    --card-background: #18191c
 }
 
 [data-theme="dark"] .github-icon {
@@ -143,6 +145,7 @@ a:not(.joinButton):hover {
     border: 1px solid var(--border);
     border-radius: 6px;
     background-color: var(--dc-background);
+    margin-bottom: 2rem;
 }
 
 .joinBoxInner {
@@ -420,6 +423,284 @@ a[href] .itemContent .piTitle::after {
     transform: translate(12em, 2em) rotate(-15deg);
 }
 
+/* member showcase */
+.founders {
+    display: flex;
+    max-width: 1000px;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+.founders .cards {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+}
+.founders .cards .card {
+    min-width: 247px;
+    width: 100%;
+    max-width: 304px;
+    height: fit-content;
+    min-height: 400px;
+    max-height: 800px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--card-background); 
+}
+.founders .cards .card::-webkit-scrollbar {
+    width: 10px;
+}
+.founders .cards .card::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--border);
+    border-radius: 10px;
+}
+.founders .cards .card::-webkit-scrollbar-thumb {
+    background: var(--dc);
+    border-radius: 10px;
+}
+.founders .cards .card .banner {
+    border-radius: 6px 6px 0px 0px;
+    width: 100%;
+    border: none;
+    height: 120px;
+    background-color: var(--dc);
+}
+.founders .cards .card .profile-picture {
+    background-color: var(--dc);
+    margin-top: -40px;
+    margin-left: 16px;
+    width: 80px;
+    height: 80px;
+    border: 6px solid var(--card-background);
+    border-radius: 50%;
+}
+.founders .cards .card .flags {
+    float: right;
+    display: flex;
+    height: 22px;
+    margin-top: 20px;
+    margin-right: 16px;
+    padding: 0px;
+    list-style: none;
+}
+.founders .cards .card .flags li {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    margin-right: 2px;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.founders .cards .card .displayname {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 20px;
+    height: auto;
+    line-height: 20px;
+    margin-top: -10px;
+    padding: 16px;
+    padding-bottom: 5px;
+}
+.founders .cards .card .name {
+    margin: 0px;
+    padding-left: 16px;
+    font-size: 16px;
+    height: 26px;
+    font-weight: 500;
+}
+.founders .cards .card .status {
+    margin: 0px;
+    padding-left: 16px;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.founders .cards .card .status img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+}
+
+.founders .cards .card .line {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: calc(100% - 32px);
+    height: 1px;
+    background-color: var(--border);
+}
+.founders .cards .card .about {
+    margin: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.founders .cards .card .about a {
+    color: var(--dc);
+    font-weight: bold;
+}
+.founders .cards .card .activity {
+    margin: 0px;
+    padding-left: 16px;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.founders .cards .card .activities {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    list-style: none;
+    min-height: 50px;
+}
+.founders .cards .card .activities li {
+    width: 100%;
+    margin-bottom: 12px;
+    max-height: 55px;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 0px;
+}
+.founders .cards .card .activities li .largeImage {
+    float: left;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 8px;
+    height: 50px;
+}
+.founders .cards .card .activities li .smallImage {
+    float: left;
+    width: 20px;
+    margin-left: -20px;
+    margin-top: 35px;
+    border-radius: 8px;
+    height: 20px;
+}
+.founders .cards .card .activities li .name {
+    margin: 0px;
+    margin-left: 50px;
+    line-height: 18px;
+    width: calc(100% - 40px);
+    font-size: 16px;
+    height: 16px;
+    font-weight: 600;
+}
+.founders .cards .card .activities li .text {
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 66px;
+    width: calc(100% - 40px);
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+}
+.founders .cards .card .accounts {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 5px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.founders .cards .card .accounts li {
+    height: 40px;
+    margin: 6px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+.founders .cards .card .accounts li a {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 4px;
+    background-color: transparent;
+}
+.founders .cards .card .accounts li .logo {
+    float: left;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 8px;
+    height: 30px;
+}
+.founders .cards .card .accounts li p {
+    margin: 0px;
+    margin-top: 7px;
+    float: left;
+    width: 80px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+
+.members {
+    width: 100%;
+    max-width: 1100px;
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.members li {
+    min-width: 242px;
+    height: 60px;
+    margin: 6px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+.members li img {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    float: left;
+    border-radius: 50%;
+}
+.members li .displayname {
+    margin: 10px;
+    margin-left: 65px;
+    line-height: 18px;
+    width: calc(100% - 65px);
+    font-size: 18px;
+    height: 18px;
+    font-weight: 600;
+}
+.members li .name {
+    margin: 5px;
+    margin-left: 65px;
+    line-height: 14px;
+    width: calc(100% - 65px);
+    font-size: 14px;
+    height: 14px;
+    font-weight: 500;
+    
+}
 
 /* media queries */
 
@@ -436,6 +717,16 @@ a[href] .itemContent .piTitle::after {
 
     .itemContent {
         padding: 1rem;
+    }
+
+    .founders .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .founders .cards .card {
+        max-width: 404px;
     }
 }
 
@@ -463,6 +754,21 @@ a[href] .itemContent .piTitle::after {
 
     .background {
         margin: 3rem 0;
+    }
+
+    .founders .cards {
+        flex-direction: column;
+    }
+
+    .founders .cards .card {
+        margin: 0px;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: unset;
+    }
+
+    .members li {
+        width: 100%;
     }
 }
 
