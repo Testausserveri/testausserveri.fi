@@ -206,11 +206,7 @@ function updateAnalytics() {
                         activities.appendChild(item)
                     }
                     card.appendChild(activities)
-                    if (activities.innerHTML === "") activities.innerText = "..."
-                    // Spacer
-                    const line2 = document.createElement("div")
-                    line2.className = "line"
-                    card.appendChild(line2)
+                    if (activities.innerHTML === "") activities.innerText = "AFK"
                     // Connected accounts
                     const accounts = document.createElement("ul")
                     accounts.className = "accounts"
@@ -230,7 +226,13 @@ function updateAnalytics() {
                         item.appendChild(link)
                         accounts.appendChild(item)
                     }
-                    if (accounts.children.length !== 0) card.appendChild(accounts)
+                    if (accounts.children.length !== 0) {
+                        // Spacer
+                        const line2 = document.createElement("div")
+                        line2.className = "line"
+                        card.appendChild(line2)
+                        card.appendChild(accounts)
+                    }
 
                     // Append to cards element
                     document.getElementById("cards").appendChild(card)

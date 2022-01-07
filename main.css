@@ -436,6 +436,7 @@ a[href] .itemContent .piTitle::after {
     display: flex;
     width: 100%;
     flex-direction: row;
+    align-items: center;
 }
 .founders .cards .card {
     min-width: 247px;
