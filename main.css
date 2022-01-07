@@ -625,13 +625,14 @@ a[href] .itemContent .piTitle::after {
 .founders .cards .card .accounts li {
     height: 40px;
     margin: 6px;
+    width: auto;
     background-color: var(--card-background);
     border: 1px solid var(--border);
     border-radius: 6px;
 }
 .founders .cards .card .accounts li a {
     cursor: pointer;
-    width: 100%;
+    width: auto;
     height: 100%;
     display: block;
     padding: 4px;
@@ -648,7 +649,7 @@ a[href] .itemContent .piTitle::after {
     margin: 0px;
     margin-top: 7px;
     float: left;
-    width: 80px;
+    min-width: 80px;
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
