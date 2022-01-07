@@ -435,7 +435,6 @@ a[href] .itemContent .piTitle::after {
 .founders .cards {
     display: flex;
     width: 100%;
-    align-items: center;
     flex-direction: row;
 }
 .founders .cards .card {
