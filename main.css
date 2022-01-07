@@ -9,6 +9,7 @@
     --title: #111;
     --background-filter: contrast(0.2) brightness(1.7) saturate(1.7) grayscale(0.3);
     --icon-filter: none;
+    --logo-filter: invert(1);
     --project-card-border: #000;
     --card-background: #fff
 }
@@ -22,6 +23,7 @@
     --title: #ddd;
     --background-filter: contrast(0.5) brightness(0.35) saturate(1.7) grayscale(0.2) opacity(1);
     --icon-filter: invert(1);
+    --logo-filter: none;
     --project-card-border: #fff;
     --card-background: #18191c
 }
@@ -603,6 +605,7 @@ a[href] .itemContent .piTitle::after {
     margin: 0px;
     margin-top: 5px;
     margin-left: 66px;
+    white-space: nowrap;
     width: calc(100% - 40px);
     font-size: 14px;
     line-height: 14px;
@@ -642,6 +645,7 @@ a[href] .itemContent .piTitle::after {
     float: left;
     width: 30px;
     margin-right: 10px;
+    filter: var(--logo-filter);
     border-radius: 8px;
     height: 30px;
 }
