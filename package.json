@@ -1,0 +1,25 @@
+{
+  "name": "testausserveri.fi",
+  "version": "1.0.0",
+  "description": "This repository holds the website of Testausserveri ry and DNS configurations of testausserveri.fi domain.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Testausserveri/testausserveri.fi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Testausserveri/testausserveri.fi/issues"
+  },
+  "homepage": "https://github.com/Testausserveri/testausserveri.fi#readme",
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0"
+  }
+}
