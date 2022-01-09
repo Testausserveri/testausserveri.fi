@@ -101,10 +101,15 @@ function updateAnalytics() {
                     const card = document.createElement("div")
                     card.className = "card"
                     // Banner
-                    const banner = document.createElement("img")
-                    banner.className = "banner"
-                    banner.src = member.banner ? `${member.banner}?size=600` : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                    banner.style.backgroundColor = member.color
+                    let banner
+                    if (member.banner) {
+                        banner = document.createElement("img")
+                        banner.className = "banner"
+                        banner.src = `${member.banner}?size=600`
+                    } else {
+                        banner = document.createElement("div")
+                        banner.className = "banner"
+                    }
                     card.appendChild(banner)
                     // Profile picture
                     const profilePicture = document.createElement("img")
@@ -178,18 +183,30 @@ function updateAnalytics() {
                     for (const activity of member.presence.filter((item) => item.type !== "CUSTOM")) {
                         const item = document.createElement("li")
                         // Image combo
-                        const largeImage = document.createElement("img")
-                        largeImage.className = "largeImage"
-                        largeImage.src = activity.assets.largeImage ?? ""
-                        largeImage.alt = activity.assets.largeImageText ?? ""
-                        const smallImage = document.createElement("img")
-                        smallImage.className = "smallImage"
+                        let largeImage
+                        if (activity.assets.largeImage) {
+                            largeImage = document.createElement("img")
+                            largeImage.className = "largeImage"
+                            largeImage.src = activity.assets.largeImage
+                        } else {
+                            largeImage = document.createElement("div")
+                            largeImage.className = "largeImage"
+                        }
+                        let smallImage
                         if (activity.name === "Spotify" && activity.type === "LISTENING") {
+                            smallImage = document.createElement("img")
+                            smallImage.className = "smallImage"
                             smallImage.src = "assets/icons/accounts/spotify.svg"
                             smallImage.style.filter = "var(--logo-filter)"
+                        } else if (activity.assets.smallImage) {
+                            smallImage = document.createElement("img")
+                            smallImage.className = "smallImage"
+                            smallImage.src = activity.assets.smallImage
                         } else {
-                            smallImage.src = activity.assets.smallImage ?? ""
+                            smallImage = document.createElement("div")
+                            smallImage.className = "smallImage"
                         }
+                        largeImage.alt = activity.assets.largeImageText ?? ""
                         smallImage.alt = activity.assets.smallImageText ?? ""
                         item.appendChild(largeImage)
                         item.appendChild(smallImage)
