@@ -35,7 +35,8 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
     CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
-    
+    CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
+  
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
     CNAME('arvojasen', 'arvojasen.midka.dev.', CF_PROXY_OFF), // Arvojasen :D - Midka
