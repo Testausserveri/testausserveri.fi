@@ -30,12 +30,12 @@ function processMarkdown(str) {
     return str
         // Escape HTML
         .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
+        // .replace(/</g, "&lt;")
+        // .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;")
         // Markdown processing
-        .replace(/&lt;(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)*?)&gt;/g, "<a href='$1'>$1</a>")
+        .replace(/<(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)*?)>/g, "<a href='$1'>$1</a>")
         .replace(/^> (.*$)/g, "<blockquote>$1</blockquote>")
         .replace(/\*\*(.*)\*\*/g, "<b>$1</b>")
         .replace(/\*(.*)\*/g, "<i>$1</i>")
@@ -62,10 +62,9 @@ function getAccountLink(account) {
 }
 
 const flagLogos = {
-    HOUSE_BRILLIANCE: "assets/icons/badges/h_brilliance.svg",
-    HOUSE_BALANCE: "assets/icons/badges/h_balance.svg",
-    HOUSE_BRAVERY: "assets/icons/badges/h_bravery.svg",
-    EARLY_VERIFIED_BOT_DEVELOPER: "assets/icons/badges/early_bot_developer.svg"
+    HOUSE_BRILLIANCE: "assets/icons/h_brilliance.svg",
+    HOUSE_BALANCE: "assets/icons/h_balance.svg",
+    HOUSE_BRAVERY: "assets/icons/h_bravery.svg"
 }
 
 function updateAnalytics() {

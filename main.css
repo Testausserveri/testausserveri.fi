@@ -49,16 +49,6 @@ body {
     margin: 0 auto;
 }
 
-.veryWideCenter {
-    display: flex;
-    width: 100%;
-    height: max-content;
-    justify-content: center;
-    flex-direction: row;
-    align-content: flex-start;
-    align-items: flex-start;
-}
-
 .background {
     background-image: url('assets/dog.gif');
     background-size: cover;
@@ -436,19 +426,19 @@ a[href] .itemContent .piTitle::after {
 }
 
 /* member showcase */
-.member-showcase {
+.founders {
     display: flex;
     max-width: 1000px;
     margin-bottom: 2rem;
     margin: 0 auto;
 }
-.member-showcase .cards {
+.founders .cards {
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: center;
 }
-.cards .card {
+.founders .cards .card {
     min-width: 247px;
     width: 100%;
     max-width: 304px;
@@ -463,25 +453,25 @@ a[href] .itemContent .piTitle::after {
     border-radius: 6px;
     background-color: var(--card-background); 
 }
-.cards .card::-webkit-scrollbar {
+.founders .cards .card::-webkit-scrollbar {
     width: 10px;
 }
-.cards .card::-webkit-scrollbar-track {
+.founders .cards .card::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px var(--border);
     border-radius: 10px;
 }
-.cards .card::-webkit-scrollbar-thumb {
+.founders .cards .card::-webkit-scrollbar-thumb {
     background: var(--dc);
     border-radius: 10px;
 }
-.cards .card .banner {
+.founders .cards .card .banner {
     border-radius: 6px 6px 0px 0px;
     width: 100%;
     border: none;
     height: 120px;
     background-color: var(--dc);
 }
-.cards .card .profile-picture {
+.founders .cards .card .profile-picture {
     background-color: var(--dc);
     margin-top: -40px;
     margin-left: 16px;
@@ -490,7 +480,7 @@ a[href] .itemContent .piTitle::after {
     border: 6px solid var(--card-background);
     border-radius: 50%;
 }
-.cards .card .flags {
+.founders .cards .card .flags {
     float: right;
     display: flex;
     height: 22px;
@@ -499,7 +489,7 @@ a[href] .itemContent .piTitle::after {
     padding: 0px;
     list-style: none;
 }
-.cards .card .flags li {
+.founders .cards .card .flags li {
     width: 24px;
     height: 24px;
     display: flex;
@@ -510,7 +500,7 @@ a[href] .itemContent .piTitle::after {
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.cards .card .displayname {
+.founders .cards .card .displayname {
     margin: 0px;
     font-weight: 600;
     font-size: 20px;
@@ -520,14 +510,14 @@ a[href] .itemContent .piTitle::after {
     padding: 16px;
     padding-bottom: 5px;
 }
-.cards .card .name {
+.founders .cards .card .name {
     margin: 0px;
     padding-left: 16px;
     font-size: 16px;
     height: 26px;
     font-weight: 500;
 }
-.cards .card .status {
+.founders .cards .card .status {
     margin: 0px;
     padding-left: 16px;
     margin-top: 2px;
@@ -535,14 +525,14 @@ a[href] .itemContent .piTitle::after {
     font-weight: 500;
 }
 
-.cards .card .status img {
+.founders .cards .card .status img {
     width: 20px;
     height: 20px;
     margin-bottom: -5px;
     margin-right: 5px;
 }
 
-.cards .card .line {
+.founders .cards .card .line {
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 5px;
@@ -551,7 +541,7 @@ a[href] .itemContent .piTitle::after {
     height: 1px;
     background-color: var(--border);
 }
-.cards .card .about {
+.founders .cards .card .about {
     margin: 0px;
     padding-left: 16px;
     padding-right: 16px;
@@ -559,18 +549,18 @@ a[href] .itemContent .piTitle::after {
     font-size: 13px;
     font-weight: 500;
 }
-.cards .card .about a {
+.founders .cards .card .about a {
     color: var(--dc);
     font-weight: bold;
 }
-.cards .card .activity {
+.founders .cards .card .activity {
     margin: 0px;
     padding-left: 16px;
     margin-top: 12px;
     font-size: 16px;
     font-weight: 700;
 }
-.cards .card .activities {
+.founders .cards .card .activities {
     margin-left: 16px;
     margin-right: 16px;
     padding: 0px;
@@ -579,7 +569,7 @@ a[href] .itemContent .piTitle::after {
     list-style: none;
     min-height: 50px;
 }
-.cards .card .activities li {
+.founders .cards .card .activities li {
     width: 100%;
     margin-bottom: 12px;
     max-height: 55px;
@@ -587,14 +577,14 @@ a[href] .itemContent .piTitle::after {
     max-width: 100%;
     padding: 0px;
 }
-.cards .card .activities li .largeImage {
+.founders .cards .card .activities li .largeImage {
     float: left;
     width: 50px;
     margin-right: 10px;
     border-radius: 8px;
     height: 50px;
 }
-.cards .card .activities li .smallImage {
+.founders .cards .card .activities li .smallImage {
     float: left;
     width: 20px;
     margin-left: -20px;
@@ -602,7 +592,7 @@ a[href] .itemContent .piTitle::after {
     border-radius: 8px;
     height: 20px;
 }
-.cards .card .activities li .name {
+.founders .cards .card .activities li .name {
     margin: 0px;
     margin-left: 50px;
     line-height: 18px;
@@ -611,7 +601,7 @@ a[href] .itemContent .piTitle::after {
     height: 16px;
     font-weight: 600;
 }
-.cards .card .activities li .text {
+.founders .cards .card .activities li .text {
     margin: 0px;
     margin-top: 5px;
     margin-left: 66px;
@@ -621,7 +611,7 @@ a[href] .itemContent .piTitle::after {
     line-height: 14px;
     font-weight: 500;
 }
-.cards .card .accounts {
+.founders .cards .card .accounts {
     list-style: none;
     width: 100%;
     margin-bottom: 16px;
@@ -635,7 +625,7 @@ a[href] .itemContent .piTitle::after {
     justify-content: center;
     align-items: center;
 }
-.cards .card .accounts li {
+.founders .cards .card .accounts li {
     height: 40px;
     margin: 6px;
     width: auto;
@@ -643,7 +633,7 @@ a[href] .itemContent .piTitle::after {
     border: 1px solid var(--border);
     border-radius: 6px;
 }
-.cards .card .accounts li a {
+.founders .cards .card .accounts li a {
     cursor: pointer;
     width: auto;
     height: 100%;
@@ -651,7 +641,7 @@ a[href] .itemContent .piTitle::after {
     padding: 4px;
     background-color: transparent;
 }
-.cards .card .accounts li .logo {
+.founders .cards .card .accounts li .logo {
     float: left;
     width: 30px;
     margin-right: 10px;
@@ -659,10 +649,7 @@ a[href] .itemContent .piTitle::after {
     border-radius: 8px;
     height: 30px;
 }
-.cards .card .accounts li .logo:only-child {
-    margin-right: 0px;
-}
-.cards .card .accounts li p {
+.founders .cards .card .accounts li p {
     margin: 0px;
     margin-top: 7px;
     float: left;
@@ -720,24 +707,6 @@ a[href] .itemContent .piTitle::after {
     
 }
 
-.member-list {
-    display: flex;
-    justify-content: center;
-}
-
-.member-list .member-showcase {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.member-list .member-showcase .card {
-    min-height: 280px;
-}
-
 /* media queries */
 
 @media only screen and (max-width: 1000px) {
@@ -755,13 +724,13 @@ a[href] .itemContent .piTitle::after {
         padding: 1rem;
     }
 
-    .member-showcase .cards {
+    .founders .cards {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
 
-    .member-showcase .cards .card {
+    .founders .cards .card {
         max-width: 404px;
     }
 }
@@ -792,11 +761,11 @@ a[href] .itemContent .piTitle::after {
         margin: 3rem 0;
     }
 
-    .member-showcase .cards {
+    .founders .cards {
         flex-direction: column;
     }
 
-    .member-showcase .cards .card {
+    .founders .cards .card {
         margin: 0px;
         margin-bottom: 15px;
         width: 100%;
