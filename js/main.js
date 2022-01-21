@@ -8,7 +8,7 @@ function updateTheme(set) {
     if (!set) document.body.dataset.theme = (darkMode ? "dark" : "light")
     else {
         document.body.dataset.theme = localStorage.getItem("theme")
-        document.querySelector("#theme-switch").click()
+        darkMode = document.body.dataset.theme === "dark" ? true : false 
     }
     localStorage.setItem("theme", document.body.dataset.theme)
     if (document.querySelector("#theme-switch").checked !== darkMode) document.querySelector("#theme-switch").checked = darkMode
