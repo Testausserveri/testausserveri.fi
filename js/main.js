@@ -5,11 +5,13 @@
 let darkMode = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false
 
 // to-do: remember theme value, especially if we are going to have multiple pages
-function updateTheme() {
-    document.body.dataset.theme = (darkMode ? "dark" : "light")
+function updateTheme(set) {
+    if (!set) document.body.dataset.theme = (darkMode ? "dark" : "light")
+    else document.body.dataset.theme = localStorage.getItem("theme")
+    localStorage.setItem("theme", document.body.dataset.theme)
     if (document.querySelector("#theme-switch").checked !== darkMode) document.querySelector("#theme-switch").checked = darkMode
 }
-updateTheme()
+updateTheme(true)
 
 document.querySelector("#theme-switch").addEventListener("change", (e) => {
     darkMode = e.target.checked
