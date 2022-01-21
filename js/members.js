@@ -19,7 +19,9 @@ function getAccountLink(account) {
     if (account.type === "twitter") return `https://twitter.com/${account.name}`
     if (account.type === "github") return `https://github.com/${account.name}`
     if (account.type === "spotify") return `https://open.spotify.com/user/${account.id}`
-    return null
+    if (account.type === "youtube") return `https://www.youtube.com/channel/${account.id}`
+    if (account.type === "twitch") return `https://www.twitch.tv/${account.name}`
+    return "#"
 }
 
 function processMarkdown(str) {
@@ -60,6 +62,28 @@ const flagLogos = {
 let showcasedProfiles
 
 const members = document.getElementById("members")
+let cards = []
+
+function sizeSort() {
+    if (window.innerWidth < 1040) {
+        let bit = members.children[0].children.length > members.children[1].children.length ? 1 : 0
+        const length = members.children[2].children.length
+        for (let i = 0; i < length; i++) {
+            members.children[bit].appendChild(members.children[2].children[0])
+            if (bit === 0) bit = 1
+            else bit = 0
+        }
+    } else if (window.innerWidth > 1040 || members.children[2].children.length == 0){
+        const cards_length = cards.length
+        const cards_clone = cards.slice(0)
+        const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
+        for (let i = 0; i < columns.length; i++) {
+            for (const element of columns[i]) {
+                members.children[i].appendChild(element)
+            }
+        }
+    }
+}
 
 function updateMembers() {
     if (document.hasFocus() && !showcasedProfiles) {
@@ -75,7 +99,6 @@ function updateMembers() {
                 const column = "<div class='member-showcase cards'></div>"
                 members.innerHTML = `${column}${column}${column}`
                 showcasedProfiles = data.members
-                let cards = []
                 for (const member of data.members) {
                     // Main element
                     const card = document.createElement("div")
@@ -229,13 +252,14 @@ function updateMembers() {
                     cards.push(card)
                 }
                 const cards_length = cards.length
-                const columns = new Array(3).fill(0).map((_, __, ar) => cards.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
-                console.log(columns)
+                const cards_clone = cards.slice(0)
+                const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.slice().splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
                 for (let i = 0; i < columns.length; i++) {
                     for (const element of columns[i]) {
                         members.children[i].appendChild(element)
                     }
                 }
+                sizeSort()
             })
     } else {
         // console.log('Tab not focused, not updating...');
@@ -246,3 +270,5 @@ window.addEventListener("focus", () => {
     setTimeout(updateMembers, 500)
 })
 setInterval(updateMembers, 5100)
+
+window.addEventListener("resize", sizeSort)

@@ -237,8 +237,6 @@ pain in the ass 🍑
     padding-top: 2rem;
 }
 
-.grid#people {}
-
 .grid#projects .item:nth-child(2) {
     grid-column: 2 / 4;
     aspect-ratio: 2 / 1;
@@ -260,8 +258,6 @@ pain in the ass 🍑
     max-width: 100%;
     text-decoration: none;
 }
-
-.grid#people .item {}
 
 .grid .item[href]:hover {
     top: -5px;
@@ -750,6 +746,17 @@ a[href] .itemContent .piTitle::after {
     min-height: 280px;
 }
 
+/* Code block */
+blockquote {
+    background: rgb(40, 42, 54);
+    line-height: 1.66667;
+    padding: 8px;
+    display: block;
+    font-family: monospace;
+    color: rgb(248, 248, 242);
+    border-radius: 3px;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 1000px) {
@@ -863,5 +870,33 @@ a[href] .itemContent .piTitle::after {
     }
     .footer .icons {
         margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .member-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .member-list .member-showcase {
+        max-width: unset;
+        width: calc(50% - 30px);
+    }
+    .member-list .member-showcase .card {
+        max-width: unset;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .member-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .member-list .member-showcase {
+        max-width: unset;
+        width: 100%;
+    }
+    .member-list .member-showcase .card {
+        max-width: unset;
     }
 }
