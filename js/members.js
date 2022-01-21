@@ -69,7 +69,7 @@ const members = document.getElementById("members")
 let cards = []
 
 function sizeSort() {
-    if (window.innerWidth < 1040) {
+    if (window.innerWidth < 1040 && window.innerWidth > 670) {
         let bit = members.children[0].children.length > members.children[1].children.length ? 1 : 0
         const length = members.children[2].children.length
         for (let i = 0; i < length; i++) {
@@ -103,6 +103,7 @@ function updateMembers() {
                 const column = "<div class='member-showcase cards'></div>"
                 members.innerHTML = `${column}${column}${column}`
                 showcasedProfiles = data.members
+                cards = []
                 for (const member of data.members) {
                     // Main element
                     const card = document.createElement("div")
@@ -257,7 +258,7 @@ function updateMembers() {
                 }
                 const cards_length = cards.length
                 const cards_clone = cards.slice(0)
-                const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.slice().splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
+                const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
                 for (let i = 0; i < columns.length; i++) {
                     for (const element of columns[i]) {
                         members.children[i].appendChild(element)
