@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-restricted-syntax */
-/* globals countUp */
 /* theme */
 let darkMode = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) || false
 
@@ -16,20 +13,20 @@ document.querySelector("#theme-switch").addEventListener("change", (e) => {
     updateTheme()
 })
 
-/* counters */
-const options = {
-    duration: 0.5,
-    separator: " "
+/* members */
+function getAccountLink(account) {
+    if (account.type === "steam") return `https://steamcommunity.com/profiles/${account.id}`
+    if (account.type === "twitter") return `https://twitter.com/${account.name}`
+    if (account.type === "github") return `https://github.com/${account.name}`
+    if (account.type === "spotify") return `https://open.spotify.com/user/${account.id}`
+    return null
 }
-
-let memberCounter
-let messageCounter
-let showcasedProfiles
 
 function processMarkdown(str) {
     return str
         // Escape HTML
         .replace(/&/g, "&amp;")
+        // TODO: When these fields become user controllable, this needs to be fixed
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
@@ -53,14 +50,6 @@ function getAverageColor(image) {
     ).data.slice(0, 3).join(", ")})`
 }
 
-function getAccountLink(account) {
-    if (account.type === "steam") return `https://steamcommunity.com/profiles/${account.id}`
-    if (account.type === "twitter") return `https://twitter.com/${account.name}`
-    if (account.type === "github") return `https://github.com/${account.name}`
-    if (account.type === "spotify") return `https://open.spotify.com/user/${account.id}`
-    return null
-}
-
 const flagLogos = {
     HOUSE_BRILLIANCE: "assets/icons/badges/h_brilliance.svg",
     HOUSE_BALANCE: "assets/icons/badges/h_balance.svg",
@@ -68,35 +57,25 @@ const flagLogos = {
     EARLY_VERIFIED_BOT_DEVELOPER: "assets/icons/badges/early_bot_developer.svg"
 }
 
-function updateAnalytics() {
-    if (document.hasFocus() || !memberCounter || !messageCounter || !showcasedProfiles) {
-        // Counters
-        fetch("https://api.testausserveri.fi/v1/discord/guildInfo")
-            .then((res) => res.json())
-            .then((data) => {
-                if (!memberCounter || !messageCounter) {
-                    memberCounter = new countUp.CountUp(
-                        "memberCount", data.memberCount, options
-                    )
-                    messageCounter = new countUp.CountUp(
-                        "messageCount", data.messagesToday, options
-                    )
-                    memberCounter.start()
-                    messageCounter.start()
-                }
-                memberCounter.update(data.memberCount)
-                messageCounter.update(data.messagesToday)
-            })
+let showcasedProfiles
 
+const members = document.getElementById("members")
+
+function updateMembers() {
+    if (document.hasFocus() && !showcasedProfiles) {
         // Profile showcases
-        fetch("https://api.testausserveri.fi/v1/discord/roleInfo?id=743950610080071801")
+        showcasedProfiles = "pending..."
+        fetch("https://api.testausserveri.fi/v1/discord/memberInfo?role=839072621060423771")
             .then((res) => res.json())
+            .catch((e) => console.error(e))
             .then((data) => {
                 // TODO: Why is this like this?
                 // eslint-disable-next-line eqeqeq
                 if (JSON.stringify(showcasedProfiles) == JSON.stringify(data.members)) return
-                document.getElementById("cards").innerHTML = ""
+                const column = "<div class='member-showcase cards'></div>"
+                members.innerHTML = `${column}${column}${column}`
                 showcasedProfiles = data.members
+                let cards = []
                 for (const member of data.members) {
                     // Main element
                     const card = document.createElement("div")
@@ -237,10 +216,6 @@ function updateAnalytics() {
                         image.src = `assets/icons/accounts/${account.type}.svg`
                         image.className = "logo"
                         link.appendChild(image)
-                        // Text
-                        const text = document.createElement("p")
-                        text.innerText = account.name
-                        link.appendChild(text)
                         item.appendChild(link)
                         accounts.appendChild(item)
                     }
@@ -251,104 +226,23 @@ function updateAnalytics() {
                         card.appendChild(line2)
                         card.appendChild(accounts)
                     }
-
-                    // Append to cards element
-                    document.getElementById("cards").appendChild(card)
+                    cards.push(card)
+                }
+                const cards_length = cards.length
+                const columns = new Array(3).fill(0).map((_, __, ar) => cards.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
+                console.log(columns)
+                for (let i = 0; i < columns.length; i++) {
+                    for (const element of columns[i]) {
+                        members.children[i].appendChild(element)
+                    }
                 }
             })
     } else {
         // console.log('Tab not focused, not updating...');
     }
 }
-updateAnalytics()
+updateMembers()
 window.addEventListener("focus", () => {
-    setTimeout(updateAnalytics, 500)
+    setTimeout(updateMembers, 500)
 })
-setInterval(updateAnalytics, 5100)
-
-/* projects */
-class Grid {
-    constructor(data, selector) {
-        this.data = data
-        this.target = document.querySelector(selector)
-        this.render()
-    }
-
-    render() {
-        this.data.forEach((item, i) => {
-            let domItem
-            if (item.url) {
-                domItem = document.createElement("a")
-                domItem.href = `${item.url}?utm_source=testausserveri&utm_medium=homepage&utm_campaign=projects` // append some analytic magic
-                domItem.setAttribute("rel", "noopener noreferrer")
-                domItem.setAttribute("target", "_blank")
-            } else {
-                domItem = document.createElement("div")
-            }
-
-            domItem.className = "item"
-
-            if (item.video) {
-                const domBackground = document.createElement("video")
-                domBackground.setAttribute("poster", item.image)
-                domBackground.autoplay = true
-                domBackground.loop = true
-                domBackground.muted = true
-                domBackground.setAttribute("playsinline", "")
-                domBackground.className = "itemBackground"
-                domBackground.id = `bg${i}`
-                const domBackgroundSource = document.createElement("source")
-                domBackgroundSource.setAttribute("src", item.video)
-                domBackgroundSource.setAttribute("type", "video/mp4")
-                domBackground.appendChild(domBackgroundSource)
-                domItem.appendChild(domBackground)
-            } else {
-                const domBackground = document.createElement("div")
-                domBackground.className = "itemBackground"
-                domBackground.style["background-image"] = `url('${item.image}')`
-                domItem.appendChild(domBackground)
-            }
-
-            const domContent = document.createElement("div")
-            domContent.className = "itemContent"
-
-            domContent.onclick = () => { document.querySelector(`#bg${i}`).play() }
-            const domContentBig = document.createElement("div")
-            domContentBig.className = "CBig"
-
-            const domTitle = document.createElement("h3")
-            domTitle.className = "piTitle"
-            domTitle.innerHTML = item.name
-
-            const domDesc = document.createElement("span")
-            domDesc.className = "piOrg"
-            domDesc.innerHTML = (item.desc ? item.desc.replace(/\n/g, "<br>") : item.real)
-            domContentBig.appendChild(domTitle)
-            domContentBig.appendChild(domDesc)
-            if (item.additionalCardHtml) {
-                const domContentSmall = document.createElement("div")
-                domContentSmall.innerHTML = item.additionalCardHtml
-                domContent.appendChild(domContentSmall)
-            }
-
-            domContent.appendChild(domContentBig)
-            domItem.appendChild(domContent)
-
-            this.target.className = "grid"
-            this.target.appendChild(domItem)
-        })
-    }
-}
-fetch("https://testausserveri.fi/projects.json")
-    .then((res) => res.json())
-    .then((data) => {
-        // eslint-disable-next-line no-unused-vars
-        const projects = new Grid(data.projects, "#projects")
-    }).catch((e) => {
-        console.error("Failed to get projects list", e)
-        document.getElementById("projects").innerHTML = "<p style=\"text-align: center;\">Projektilistaa ei voida näyttää. Tapahtui virhe :(</p>"
-    })
-
-function metaRepoLink() {
-    alert("Muiden projektien lista näkyy ainoastaan Testausserverin jäsenille. Liity ensin palvelimellemme ja sitä kautta GitHub-organisaatioomme nähdäksesi tämän listan.")
-}
+setInterval(updateMembers, 5100)

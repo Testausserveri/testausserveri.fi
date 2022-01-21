@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
     <head>
-        <!--
-            --------------------------------------------------------------------------------------------------------------
-            ████████ ███████ ███████ ████████  █████  ██    ██ ███████ ███████ ███████ ██████  ██    ██ ███████ ██████  ██ 
-               ██    ██      ██         ██    ██   ██ ██    ██ ██      ██      ██      ██   ██ ██    ██ ██      ██   ██ ██ 
-               ██    █████   ███████    ██    ███████ ██    ██ ███████ ███████ █████   ██████  ██    ██ █████   ██████  ██ 
-               ██    ██           ██    ██    ██   ██ ██    ██      ██      ██ ██      ██   ██  ██  ██  ██      ██   ██ ██ 
-               ██    ███████ ███████    ██    ██   ██  ██████  ███████ ███████ ███████ ██   ██   ████   ███████ ██   ██ ██ 
-            --------------------------------------------------------------------------------------------------------------                                                                                                   
-                Testausserveri ry
-        -->
         <title>Testausserveri</title>
         <link rel="stylesheet" href="main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,66 +42,24 @@
             <h1 class="background">
                 Testaus<wbr>serveri
             </h1>
-            <p>
-                Testausserveri on Testausserveri ry:n ylläpitämä kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille (ja nuorten mielisille). Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata alta. 
-            </p>
-            <p>
-                Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
-            </p>
-            <div class="joinBox">
-                <div class="joinBoxInner">
-                    <a href="https://discord.testausserveri.fi"  class="joinButton">
-                        Liity Discordiimme!
-                    </a>
-                    <div class="joinInfo">
-                        <span class="infoBlock">
-                            <span class="infoHeading">
-                                Jäseniä
-                            </span>
-                            <span class="infoValue" id="memberCount">...</span>
-                        </span>
-                        <span class="infoBlock">
-                            <span class="infoHeading">
-                                Viestejä tänään
-                            </span>
-                            <span class="infoValue" id="messageCount">...</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <a href="members" class="linkBlock">Tutustu jäseniimme!</a>
         </div>
 
-        <!-- Projects -->
+        <!-- Return to homepage -->
         <div class="center">
-            <h2>Projektit</h2>
-            <p>
-                Alla on esiteltynä yhteisömme kehittämiä projekteja. Lisää voi tulla kysymään palvelimeltamme!
-            </p>
-        </div>
-        <div class="widerCenter">
-            <div id="projects">
-            </div>
-        </div>
-        <div class="center">
-            <p style="text-align: center;">
-                ... ja <a href="https://github.com/testausserveri/meta" target="_blank" onclick="metaRepoLink(event)">25+ muuta projektia</a>!
-            </p>
+            <a href="/" class="linkBlock">Palaa etusivulle</a>
         </div>
 
         <!-- Member showcase -->
         <div class="center">
-            <h2>Perustajat</h2>
+            <h2>Arvojäsenet</h2>
             <p>
-                Tutustu alkuperäisiin yhteisön ja yhdistyksen perustajiin:
+                Yhdistyksen hallitus valitsee Arvojäsenet yhdessä muiden Arvojäsenten kanssa. Arvojäsenet ovat henkilöitä, jotka ovat
+                osallistuneet yhdistyksen yhteisön ylläpitämiseen, kehittämiseen tai ylipäätään toimintaan aktiivisesti.
+                Tutust näihin harvoin ja tarkkaan valittuihin Arvojäseniimme:
             </p>
         </div>
-        <div class="widerCenter">
-            <div class="member-showcase">
-                <div class="cards" id="cards">
-                    ...
-                </div>
-            </div>
+        <div class="veryWideCenter">
+            <div id="members" class="member-list"></div>
         </div>
 
         <!-- Footer -->
@@ -137,8 +85,7 @@
             </div>
         </div>
     </body>
-    <script src="js/countUp.umd.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/members.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK343J3856"></script>
