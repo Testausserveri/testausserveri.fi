@@ -255,7 +255,7 @@ function updateMembers() {
                         card.appendChild(accounts)
                     }
                     // Manually set max-height specifically for these types of cards
-                    card.style.maxHeight = "630px"
+                    card.style.maxHeight = "720px"
                     cards.push(card)
                 }
                 const cards_length = cards.length
