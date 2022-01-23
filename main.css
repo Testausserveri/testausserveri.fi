@@ -611,6 +611,7 @@ a[href] .itemContent .piTitle::after {
     height: 20px;
 }
 .cards .card .activities li .name {
+    white-space: nowrap;
     margin: 0px;
     margin-left: 50px;
     line-height: 18px;
