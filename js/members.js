@@ -81,6 +81,7 @@ function sizeSort() {
         const cards_length = cards.length
         const cards_clone = cards.slice(0)
         const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
+        cards_clone.forEach((card, index) => columns[2 - index].push(card))
         for (let i = 0; i < columns.length; i++) {
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
@@ -261,6 +262,7 @@ function updateMembers() {
                 const cards_length = cards.length
                 const cards_clone = cards.slice(0)
                 const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
+                cards_clone.forEach((card, index) => columns[2 - index].push(card))
                 for (let i = 0; i < columns.length; i++) {
                     for (const element of columns[i]) {
                         members.children[i].appendChild(element)
