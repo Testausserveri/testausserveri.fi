@@ -82,28 +82,28 @@ const members = document.getElementById("members")
 let cards = []
 
 function sizeSort() {
-    if (window.innerWidth < 1040 && window.innerWidth > 670) {
-        const column = "<div class='member-showcase cards'></div>"
-        members.innerHTML = `${column}${column}${column}`
-        const columns = sortBetween(3, cards.slice(0))
-        for (let i = 0; i < columns.length; i++) {
-            for (const element of columns[i]) {
-                members.children[i].appendChild(element)
-            }
-        }
-    } else if (window.innerWidth > 1040){
-        const column = "<div class='member-showcase cards'></div>"
-        members.innerHTML = `${column}${column}${column}`
-        const columns = sortBetween(3, cards.slice(0))
-        for (let i = 0; i < columns.length; i++) {
-            for (const element of columns[i]) {
-                members.children[i].appendChild(element)
-            }
-        }
-    } else if (window.innerWidth > 670) {
+    if (window.innerWidth < 670) {
         const column = "<div class='member-showcase cards'></div>"
         members.innerHTML = `${column}${column}${column}`
         const columns = sortBetween(1, cards.slice(0))
+        for (let i = 0; i < columns.length; i++) {
+            for (const element of columns[i]) {
+                members.children[i].appendChild(element)
+            }
+        }
+    } else if (window.innerWidth < 1040) {
+        const column = "<div class='member-showcase cards'></div>"
+        members.innerHTML = `${column}${column}${column}`
+        const columns = sortBetween(3, cards.slice(0))
+        for (let i = 0; i < columns.length; i++) {
+            for (const element of columns[i]) {
+                members.children[i].appendChild(element)
+            }
+        }
+    } else {
+        const column = "<div class='member-showcase cards'></div>"
+        members.innerHTML = `${column}${column}${column}`
+        const columns = sortBetween(3, cards.slice(0))
         for (let i = 0; i < columns.length; i++) {
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
