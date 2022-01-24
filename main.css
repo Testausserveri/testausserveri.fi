@@ -732,7 +732,6 @@ a[href] .itemContent .piTitle::after {
 .member-list {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .member-list .member-showcase {
@@ -893,6 +892,7 @@ blockquote {
     .member-list {
         flex-direction: row;
         flex-wrap: wrap;
+        width: 100%;
     }
     .member-list .member-showcase {
         max-width: unset;
