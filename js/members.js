@@ -83,16 +83,27 @@ let cards = []
 
 function sizeSort() {
     if (window.innerWidth < 1040 && window.innerWidth > 670) {
-        let bit = members.children[0].children.length > members.children[1].children.length ? 1 : 0
-        const length = members.children[2].children.length
-        for (let i = 0; i < length; i++) {
-            members.children[bit].appendChild(members.children[2].children[0])
-            if (bit === 0) bit = 1
-            else bit = 0
+        const column = "<div class='member-showcase cards'></div>"
+        members.innerHTML = `${column}${column}${column}`
+        const columns = sortBetween(3, cards.slice(0))
+        for (let i = 0; i < columns.length; i++) {
+            for (const element of columns[i]) {
+                members.children[i].appendChild(element)
+            }
         }
-    } else if (window.innerWidth > 1040 || members.children[2].children.length == 0){
-        const cards_clone = cards.slice(0)
-        const columns = sortBetween(3, cards_clone)
+    } else if (window.innerWidth > 1040){
+        const column = "<div class='member-showcase cards'></div>"
+        members.innerHTML = `${column}${column}${column}`
+        const columns = sortBetween(3, cards.slice(0))
+        for (let i = 0; i < columns.length; i++) {
+            for (const element of columns[i]) {
+                members.children[i].appendChild(element)
+            }
+        }
+    } else if (window.innerWidth > 670) {
+        const column = "<div class='member-showcase cards'></div>"
+        members.innerHTML = `${column}${column}${column}`
+        const columns = sortBetween(1, cards.slice(0))
         for (let i = 0; i < columns.length; i++) {
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
