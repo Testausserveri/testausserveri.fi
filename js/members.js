@@ -102,9 +102,7 @@ function sizeSort() {
 }
 
 function updateMembers() {
-    if (document.hasFocus() && !showcasedProfiles) {
-        // Profile showcases
-        showcasedProfiles = "pending..."
+    if (document.hasFocus()) {
         fetch("https://api.testausserveri.fi/v1/discord/memberInfo?role=839072621060423771")
             .then((res) => res.json())
             .catch((e) => console.error(e))
