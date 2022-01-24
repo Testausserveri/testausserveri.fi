@@ -41,7 +41,7 @@ function processMarkdown(str) {
         .replace(/'/g, "&#039;")
         // Markdown processing
         .replace(/&lt;(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)*?)&gt;/g, "<a href='$1'>$1</a>")
-        .replace(/^> (.*$)/g, "<blockquote>$1</blockquote>")
+        .replace(/^&gt; (.*$)/g, "<blockquote>$1</blockquote>")
         .replace(/\*\*(.*)\*\*/g, "<b>$1</b>")
         .replace(/\*(.*)\*/g, "<i>$1</i>")
         .replace(/\\n/g, "<br/>")
