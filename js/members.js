@@ -25,6 +25,10 @@ function getAccountLink(account) {
     if (account.type === "spotify") return `https://open.spotify.com/user/${account.id}`
     if (account.type === "youtube") return `https://www.youtube.com/channel/${account.id}`
     if (account.type === "twitch") return `https://www.twitch.tv/${account.name}`
+    if (account.type === "reddit") return `https://www.reddit.com/user/${account.name}`
+    if (account.type === "facebook") return `https://www.facebook.com/${account.name}`
+    if (account.type === "xbox") return `https://www.xboxgamertag.com/search/${account.name}`
+    
     return "#"
 }
 
