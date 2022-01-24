@@ -45,6 +45,17 @@ function processMarkdown(str) {
         .replace(/\\n/g, "<br/>")
 }
 
+function sortBetween(toSort, data) {
+    let bit = 0
+    const output = new Array(toSort).fill(0).map((_) => [])
+    for (const entry of data) {
+        output[bit].push(entry)
+        ++bit
+        if (bit === toSort) bit = 0
+    }
+    return output
+}
+
 function getAverageColor(image) {
     const context = document.createElement("canvas").getContext("2d")
     context.imageSmoothingEnabled = true
@@ -78,10 +89,8 @@ function sizeSort() {
             else bit = 0
         }
     } else if (window.innerWidth > 1040 || members.children[2].children.length == 0){
-        const cards_length = cards.length
         const cards_clone = cards.slice(0)
-        const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
-        cards_clone.forEach((card, index) => columns[2 - index].push(card))
+        const columns = sortBetween(3, cards_clone)
         for (let i = 0; i < columns.length; i++) {
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
@@ -259,10 +268,9 @@ function updateMembers() {
                     card.style.maxHeight = "720px"
                     cards.push(card)
                 }
-                const cards_length = cards.length
+                cards = cards.sort((a, b) => a.children[9].innerHTML === "AFK" ? (b.children[9].innerHTML === "AFK" ? 0 : 1) : -1)
                 const cards_clone = cards.slice(0)
-                const columns = new Array(3).fill(0).map((_, __, ar) => cards_clone.splice(0, cards_length < 3 ? 1 : Math.floor(cards_length / ar.length)))
-                cards_clone.forEach((card, index) => columns[2 - index].push(card))
+                const columns = sortBetween(3, cards_clone)
                 for (let i = 0; i < columns.length; i++) {
                     for (const element of columns[i]) {
                         members.children[i].appendChild(element)
