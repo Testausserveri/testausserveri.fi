@@ -5,7 +5,7 @@ function updateTheme(set) {
     if (!set) document.body.dataset.theme = (darkMode ? "dark" : "light")
     else {
         document.body.dataset.theme = localStorage.getItem("theme")
-        darkMode = document.body.dataset.theme === "dark" ? true : false 
+        darkMode = document.body.dataset.theme === "dark"
     }
     localStorage.setItem("theme", document.body.dataset.theme)
     if (document.querySelector("#theme-switch").checked !== darkMode) document.querySelector("#theme-switch").checked = darkMode
@@ -49,9 +49,11 @@ function processMarkdown(str) {
 
 function sortBetween(toSort, data) {
     let bit = 0
-    const output = new Array(toSort).fill(0).map((_) => [])
+    const output = new Array(toSort).fill(0).map(() => [])
+    // eslint-disable-next-line no-restricted-syntax
     for (const entry of data) {
         output[bit].push(entry)
+        // eslint-disable-next-line no-plusplus
         ++bit
         if (bit === toSort) bit = 0
     }
@@ -86,7 +88,9 @@ function sizeSort() {
         const column = "<div class='member-showcase cards'></div>"
         members.innerHTML = `${column}${column}${column}`
         const columns = sortBetween(1, cards.slice(0))
+        // eslint-disable-next-line no-plusplus
         for (let i = 0; i < columns.length; i++) {
+            // eslint-disable-next-line no-restricted-syntax
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
             }
@@ -95,7 +99,9 @@ function sizeSort() {
         const column = "<div class='member-showcase cards'></div>"
         members.innerHTML = `${column}${column}${column}`
         const columns = sortBetween(3, cards.slice(0))
+        // eslint-disable-next-line no-plusplus
         for (let i = 0; i < columns.length; i++) {
+            // eslint-disable-next-line no-restricted-syntax
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
             }
@@ -104,7 +110,9 @@ function sizeSort() {
         const column = "<div class='member-showcase cards'></div>"
         members.innerHTML = `${column}${column}${column}`
         const columns = sortBetween(3, cards.slice(0))
+        // eslint-disable-next-line no-plusplus
         for (let i = 0; i < columns.length; i++) {
+            // eslint-disable-next-line no-restricted-syntax
             for (const element of columns[i]) {
                 members.children[i].appendChild(element)
             }
@@ -125,6 +133,7 @@ function updateMembers() {
                 members.innerHTML = `${column}${column}${column}`
                 showcasedProfiles = data.members
                 cards = []
+                // eslint-disable-next-line no-restricted-syntax
                 for (const member of data.members) {
                     // Main element
                     const card = document.createElement("div")
@@ -147,12 +156,19 @@ function updateMembers() {
                     profilePicture.onload = () => {
                         banner.style.backgroundColor = member.color ?? getAverageColor(profilePicture)
                     }
+                    profilePicture.onerror = () => {
+                        // Display default profile picture
+                        const wantedDefault = member.avatar.split("/").reverse()[0]
+                        profilePicture.crossOrigin = undefined
+                        profilePicture.src = `assets/icons/discord_defaults/${wantedDefault ?? `${Math.floor(Math.random() * (5 + 1))}.png`}`
+                    }
                     profilePicture.crossOrigin = "Anonymous"
                     profilePicture.src = member.avatar
                     card.appendChild(profilePicture)
                     // Flags
                     const flags = document.createElement("ul")
                     flags.className = "flags"
+                    // eslint-disable-next-line no-restricted-syntax
                     for (const flag of member.flags) {
                         if (flagLogos[flag] !== undefined) {
                             const item = document.createElement("li")
@@ -204,11 +220,12 @@ function updateMembers() {
                     // Title
                     const title = document.createElement("p")
                     title.className = "activity"
-                    title.innerText = "TILA"
+                    title.innerText = "TILE"
                     card.appendChild(title)
                     // Activities
                     const activities = document.createElement("ul")
                     activities.className = "activities"
+                    // eslint-disable-next-line no-restricted-syntax
                     for (const activity of member.presence.filter((item) => item.type !== "CUSTOM")) {
                         const item = document.createElement("li")
                         // Image combo
@@ -256,6 +273,7 @@ function updateMembers() {
                     // Connected accounts
                     const accounts = document.createElement("ul")
                     accounts.className = "accounts"
+                    // eslint-disable-next-line no-restricted-syntax
                     for (const account of member.connectedAccounts) {
                         const item = document.createElement("li")
                         const link = document.createElement("a")
@@ -279,10 +297,13 @@ function updateMembers() {
                     card.style.maxHeight = "720px"
                     cards.push(card)
                 }
-                cards = cards.sort((a, b) => a.children[9].innerHTML === "AFK" ? (b.children[9].innerHTML === "AFK" ? 0 : 1) : -1)
-                const cards_clone = cards.slice(0)
-                const columns = sortBetween(3, cards_clone)
+                // eslint-disable-next-line no-nested-ternary
+                cards = cards.sort((a, b) => (a.children[9].innerHTML === "AFK" ? (b.children[9].innerHTML === "AFK" ? 0 : 1) : -1))
+                const cardsClone = cards.slice(0)
+                const columns = sortBetween(3, cardsClone)
+                // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < columns.length; i++) {
+                    // eslint-disable-next-line no-restricted-syntax
                     for (const element of columns[i]) {
                         members.children[i].appendChild(element)
                     }
