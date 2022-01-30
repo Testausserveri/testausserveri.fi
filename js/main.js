@@ -8,7 +8,7 @@ function updateTheme(set) {
     if (!set) document.body.dataset.theme = (darkMode ? "dark" : "light")
     else {
         document.body.dataset.theme = localStorage.getItem("theme")
-        darkMode = document.body.dataset.theme === "dark" ? true : false 
+        darkMode = document.body.dataset.theme === "dark"
     }
     localStorage.setItem("theme", document.body.dataset.theme)
     if (document.querySelector("#theme-switch").checked !== darkMode) document.querySelector("#theme-switch").checked = darkMode
@@ -122,6 +122,12 @@ function updateAnalytics() {
                     // Set banner color, if not present
                     profilePicture.onload = () => {
                         banner.style.backgroundColor = member.color ?? getAverageColor(profilePicture)
+                    }
+                    profilePicture.onerror = () => {
+                        // Display default profile picture
+                        const wantedDefault = member.avatar.split("/").reverse()[0]
+                        profilePicture.crossOrigin = undefined
+                        profilePicture.src = `assets/icons/discord_defaults/${wantedDefault ?? `${Math.floor(Math.random() * (5 + 1))}.png`}`
                     }
                     profilePicture.crossOrigin = "Anonymous"
                     profilePicture.src = member.avatar
