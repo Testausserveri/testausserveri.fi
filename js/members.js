@@ -220,7 +220,7 @@ function updateMembers() {
                     // Title
                     const title = document.createElement("p")
                     title.className = "activity"
-                    title.innerText = "TILE"
+                    title.innerText = "TILA"
                     card.appendChild(title)
                     // Activities
                     const activities = document.createElement("ul")
