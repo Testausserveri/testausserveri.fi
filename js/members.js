@@ -95,10 +95,10 @@ function sizeSort() {
                 members.children[i].appendChild(element)
             }
         }
-    } else if (window.innerWidth < 1040) {
+    } else if (window.innerWidth <= 1040) {
         const column = "<div class='member-showcase cards'></div>"
-        members.innerHTML = `${column}${column}${column}`
-        const columns = sortBetween(3, cards.slice(0))
+        members.innerHTML = `${column}${column}`
+        const columns = sortBetween(2, cards.slice(0))
         // eslint-disable-next-line no-plusplus
         for (let i = 0; i < columns.length; i++) {
             // eslint-disable-next-line no-restricted-syntax
