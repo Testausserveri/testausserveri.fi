@@ -44,7 +44,8 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
     TXT('@', 'google-site-verification=6XQ_v6tkh3jB_hl63IA4iMS8RV3bj9rzKfaQxomX6i4'), // Google site verification
-
+    TXT('_visual-studio-marketplace-testausserveri-ry.testausserveri.fi', 'ab22dccc-c009-44e6-ac28-f13794816bb8'),
+  
     // Mail
     //Yandex(),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
