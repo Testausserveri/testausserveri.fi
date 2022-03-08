@@ -34,6 +34,8 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
     CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
+    CNAME('id', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
+    CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
   
     // Memes
