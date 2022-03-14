@@ -1,0 +1,24 @@
+.statCard {
+    font-family: 'Poppins';
+    font-weight: 600;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba(108, 108, 108, 0.09);
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+.value {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}

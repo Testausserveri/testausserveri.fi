@@ -1,0 +1,20 @@
+.discordBackground {
+    aspect-ratio: 1.694 / 1;
+    width: 800px;
+    position: relative;
+    background-image: url("discord.png");
+    background-size: 100% 100%;
+}
+
+.liveArea {
+    top: 11.4%;
+    left: 34.49%;
+    width: 37.64%;
+    height: 67.91%;
+    background-color: #37393E;
+    position: absolute;
+}
+
+.discordMessages {
+    width: 100%;
+}
