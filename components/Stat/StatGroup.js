@@ -1,4 +1,4 @@
-import { StatCard } from '../StatCard/StatCard'
+import { StatCard } from './StatCard'
 import styles from './StatGroup.module.css'
 export function StatGroup({stats}) {
     if (!stats) return <></>

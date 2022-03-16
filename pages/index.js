@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import DiscordBox from '../components/DiscordBox/DiscordBox'
+import DiscordBox from '../components/Stat/DiscordBox'
 import Header from '../components/Header/Header'
 
 
