@@ -4,17 +4,28 @@
     position: relative;
     background-image: url("discord.png");
     background-size: 100% 100%;
+    zoom: 1.4;
 }
 
 .liveArea {
     top: 11.4%;
     left: 34.49%;
-    width: 37.64%;
+    width: 36.64%;
     height: 67.91%;
     background-color: #37393E;
     position: absolute;
+    font-size: 0.75rem;
+    overflow: auto;
 }
 
 .discordMessages {
-    width: 100%;
+    zoom: 0.75;
+    position: absolute;
+    bottom: 0;
+    border: none !important;
+}
+
+.liveAreaInner {
+    position: relative;
+    height: 100%;
 }

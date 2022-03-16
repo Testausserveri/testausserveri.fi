@@ -2,7 +2,7 @@ import { StatCard as StatCardComponent } from './StatCard';
 import { StatGroup as StatGroupComponent } from './StatGroup';
 
 export default {
-  title: 'Statistics',
+  title: 'Stat',
   component: StatCardComponent,
 }
 

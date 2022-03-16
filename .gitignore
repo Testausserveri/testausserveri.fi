@@ -3,3 +3,4 @@ old/
 node_modules
 .next
 storybook-static
+.env
