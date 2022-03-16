@@ -1,0 +1,20 @@
+.capsuleButton {
+    background-color: white;
+    padding: 1em 1.3em;
+    font-size: 1em;
+    font-family: 'Poppins';
+    font-weight: normal;
+    display: inline-block;
+    border-radius: 200px;
+    display: inline-flex;
+    align-items: center;
+}
+.buttonIcon {
+    display: flex;
+    margin-right: .8rem;
+    margin-bottom: 1px;
+}
+.buttonIcon img {
+    width: 1.4em !important;
+    height: 1.4em !important;
+}
