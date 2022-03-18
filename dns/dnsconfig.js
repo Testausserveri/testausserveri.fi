@@ -52,13 +52,14 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     //Yandex(),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
-    Mailerlite(),
-    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
+    Mailerlite()
 );
 
 function Mailerlite() {
     return [
         TXT('ml._domainkey', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZPVgEYMyfzZ2ybrXBQRS7uifdpzB0SNMoWMCYnsX46vU3KZ71Iz6tgcQGk4DOhRkAP5iLxNDm/s5SxD6Esn3rFHd2Cu5yIwCDLYBidyqoaa1QWmmglkFkglJXvQBp5XVX5ZXunTUHf2Sqy3MMQU9/5rY4xpRRaLVs8Yvt6i9Y7QIDAQAB'),
+        TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:dmarc@testausserveri.fi; adkim=s; aspf=s;'),
+        TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com -all')
     ];
 }
 
