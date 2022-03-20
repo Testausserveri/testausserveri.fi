@@ -53,7 +53,9 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
     Mailerlite(),
-    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
+  
+    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com -all'),
+    TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:dmarc@testausserveri.fi; adkim=s; aspf=s;')
 );
 
 function Mailerlite() {
