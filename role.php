@@ -35,7 +35,7 @@ function remasterBio($bio) {
 }
 
 function filterText($text) {
-    return preg_replace("[^\x1F-\x7F]+", "?", $text);
+    return  preg_replace('/[[:^print:]]/', '', $text);
 }
 
 foreach ($members as $key => $member) {
