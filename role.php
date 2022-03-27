@@ -95,7 +95,6 @@ function getAccountLink($account) {
             <th><img width="80" style="margin-left: 30px;margin-right: 30px;" src="<?php echo "img.php?url=".$member['avatar']?>"/> <br> <?php echo $member['displayName']?><br><?php echo $member['name']?>#<?php echo $member['discriminator']?></th>
             <th><i><?php echo filterText($member['bio'])?></i></th>
             <th>
-                Tila:
                 <center>
                 <table>
                 <?php foreach($member['presence'] as $memberActivity): ?>
