@@ -34,6 +34,10 @@ function remasterBio($bio) {
     return $bio;
 }
 
+function filterText($text) {
+    return preg_replace("[^\x1F-\x7F]+", "?", $text);
+}
+
 foreach ($members as $key => $member) {
     $members[$key]['bio'] = remasterBio($member['bio']);
 }
@@ -89,7 +93,7 @@ function getAccountLink($account) {
     <?php foreach($members as $member): ?>
         <tr>
             <th><img width="80" style="margin-left: 30px;margin-right: 30px;" src="<?php echo "img.php?url=".$member['avatar']?>"/> <br> <?php echo $member['displayName']?><br><?php echo $member['name']?>#<?php echo $member['discriminator']?></th>
-            <th><i><?php echo $member['bio']?></i></th>
+            <th><i><?php echo filterText($member['bio'])?></i></th>
             <th>
                 Tila:
                 <center>
