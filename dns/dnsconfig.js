@@ -23,7 +23,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
-    CNAME('antiikki', 'antiikki-testausserveri-fi.pages.dev.'), // Testausserveri.fi v1
+    CNAME('antiikki', 'relay.dfjapis.com.', CF_PROXY_OFF), // Testausserveri.fi v1
     CNAME('discord', 'testausserveri.github.io.'), // Discord forwarding
     CNAME('git', 'testausserveri.github.io.'), // GitHub forwarding
     CNAME('static', 'testausserveri.github.io.'), // Static files
