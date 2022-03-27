@@ -30,7 +30,7 @@ $messagesToday = $response["messagesToday"];
 <meta http-equiv="refresh" content="5">
 <meta name="author" content="@dfJ">
 <style type="text/css">
-  BODY {overflow: hidden; background:none transparent; color:white;}
+  BODY {overflow: hidden; background:transparent; color:white;}
  </style>
 </head>
 <BODY>
