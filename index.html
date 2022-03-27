@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
   <title>Testausserveri</title>
@@ -115,7 +115,9 @@ Tässä on jonkinlainen lista projekteistamme. Siinä ei ole välttämättä aiv
   <p>Copyright &copy; 2020-2021 Testausserveri ja jäsenet</p>
 </footer>
   
-<audio src="win98.wav"  controls id="ebin" autoplay></audio>
+<audio src="win98.wav"  controls id="ebin" autoplay>
+<bgsound src="win98.wav" loop="infinite">  
+</audio>
   <script>
     let ebin = document.querySelector('#ebin'); 
     Object.keys(window).forEach(key => {
