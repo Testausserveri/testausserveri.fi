@@ -141,7 +141,7 @@
     },
     {
         "author": {
-            "name": "romeq",
+            "name": "toke (@ on reply)",
             "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
             "color": "#ed00ff"
         },
@@ -161,7 +161,7 @@
     },
     {
         "author": {
-            "name": "romeq",
+            "name": "toke (@ on reply)",
             "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
             "color": "#ed00ff"
         },
@@ -212,8 +212,8 @@
     {
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/a5290c75c3806665c45139f61b79639b.webp",
-            "color": "#00ff0c"
+            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
+            "color": "#cca901"
         },
         "id": 22,
         "content": "Balls",
@@ -221,7 +221,7 @@
     },
     {
         "author": {
-            "name": "Luukasa",
+            "name": "Luukasa (pro git-user) 🦜",
             "avatar": "https://cdn.discordapp.com/avatars/328625071327412267/d4eaf4745d023e01921bc328480aadd1.webp",
             "color": "#ad1457"
         },
@@ -253,7 +253,7 @@
         "author": {
             "name": "Niilas",
             "avatar": "https://cdn.discordapp.com/avatars/867378729641574460/64ff6d68901a64079f8af9274fc940fb.webp",
-            "color": "#cca901"
+            "color": "#ed00ff"
         },
         "id": 26,
         "content": "helou",
@@ -302,8 +302,8 @@
     {
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/a5290c75c3806665c45139f61b79639b.webp",
-            "color": "#00ff0c"
+            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
+            "color": "#cca901"
         },
         "id": 31,
         "content": "https://cdn.discordapp.com/emojis/854176097120550912.gif",
@@ -342,8 +342,8 @@
     {
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/a5290c75c3806665c45139f61b79639b.webp",
-            "color": "#00ff0c"
+            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
+            "color": "#cca901"
         },
         "id": 35,
         "content": "näemmekö tämän jossain",
@@ -372,8 +372,8 @@
     {
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/a5290c75c3806665c45139f61b79639b.webp",
-            "color": "#00ff0c"
+            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
+            "color": "#cca901"
         },
         "id": 38,
         "content": "Alright",
@@ -386,16 +386,6 @@
             "color": "#206694"
         },
         "id": 39,
-        "content": "joo",
-        "timestamp": 1647443631951
-    },
-    {
-        "author": {
-            "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
-            "color": "#206694"
-        },
-        "id": 40,
         "content": "scrollbar puuttuu oikealta, pitää fix",
         "timestamp": 1647443642258
     },
@@ -405,8 +395,38 @@
             "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
             "color": "#ed00ff"
         },
-        "id": 41,
+        "id": 40,
         "content": "Ainii toi. Tost tulee khyl tosi magee",
         "timestamp": 1647443645912
+    },
+    {
+        "author": {
+            "name": "Miksu",
+            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "color": "#206694"
+        },
+        "id": 41,
+        "content": "https://coal.testausserveri.fi/?path=/story/discordlive--default",
+        "timestamp": 1647444229729
+    },
+    {
+        "author": {
+            "name": "Miksu",
+            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "color": "#206694"
+        },
+        "id": 42,
+        "content": "jotai tuunaamista viel mut kattoo myöhemmin, for now ok",
+        "timestamp": 1647444240005
+    },
+    {
+        "author": {
+            "name": "Miksu",
+            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "color": "#206694"
+        },
+        "id": 43,
+        "content": "ja myöhemmin skaalaus mobiilille mut se on helppo homma toho",
+        "timestamp": 1647444377934
     }
 ]

@@ -21,7 +21,7 @@ client.on("ready", async () => {
 
     const data = [...messages].reverse().map(([i, message]) => ({
         author: {
-            name: message.author.username,
+            name: message.member.displayName,
             avatar: message.author.displayAvatarURL(),
             color: message.member.displayHexColor
         },

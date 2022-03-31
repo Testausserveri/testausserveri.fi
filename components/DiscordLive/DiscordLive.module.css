@@ -7,6 +7,13 @@
     zoom: 1.4;
 }
 
+.discordBackground.mobile {
+    background-image: url("discord-mobile.png");
+    aspect-ratio: 0.6071 / 1;
+    max-width: 450px;
+    zoom: 1;
+}
+
 .liveArea {
     top: 11.4%;
     left: 34.49%;
@@ -16,6 +23,13 @@
     position: absolute;
     font-size: 0.75rem;
     overflow: auto;
+}
+
+.mobile .liveArea {
+    top: 13.80%;
+    left: 19.00%;
+    width: 62.08%;
+    height: 64.08%;
 }
 
 .discordMessages {
@@ -28,4 +42,8 @@
 .liveAreaInner {
     position: relative;
     height: 100%;
+}
+
+.mobile discord-message {
+    margin-top: 0.7rem !important;
 }

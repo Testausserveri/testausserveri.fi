@@ -18,7 +18,7 @@ function formatDiscordContent(content) {
     return wrapEmojis(content)
 }
 
-export function DiscordLive({}) {
+export function DiscordLive({mobile}) {
     const replayStartFrom = 8
     const replaySpeedUpMultiplier = 3
     const replayMaxWaitTime = 3000
@@ -48,7 +48,7 @@ export function DiscordLive({}) {
         }
     }
     return (
-        <div className={styles.discordBackground}>
+        <div className={(mobile ? `${styles.discordBackground} ${styles.mobile}` : styles.discordBackground)}>
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
                     <DiscordMessages className={styles.discordMessages}>
