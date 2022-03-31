@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #DBDBDB;
+    opacity: 0.74;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in-out;
+}
+
+li:hover {
+    opacity: 1;
+}
+
+ul li:not(:first-child) {
+    margin-left: 2rem;
+}
+
+li.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
