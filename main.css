@@ -774,6 +774,52 @@ blockquote {
     border-radius: 3px;
 }
 
+/* Notification */
+.notification {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 30px);
+    left: 0px;
+    top: 0px;
+    padding-top: 30px;
+    background-color: rgba(0, 0, 0, 0.582);
+    justify-content: center;
+    z-index: 99;
+    transition: ease-in-out opacity 0.2s;
+}
+
+.notification-body {
+    background-color: var(--dc-background);
+    min-height: 100px;
+    height: fit-content;
+    min-width: 40%;
+    max-width: 800px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.notification-body .title {
+    margin-top: 0px;
+}
+
+.notification-body .confirm {
+    background-color: var(--dc);
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+    border: 0px;
+    float: right;
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.notification-body .confirm:hover {
+    background-color: #667bc4;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 1000px) {
