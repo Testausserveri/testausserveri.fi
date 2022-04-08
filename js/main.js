@@ -362,3 +362,41 @@ fetch("https://testausserveri.fi/projects.json")
 function metaRepoLink() {
     alert("Muiden projektien lista näkyy ainoastaan Testausserverin jäsenille. Liity ensin palvelimellemme ja sitä kautta GitHub-organisaatioomme nähdäksesi tämän listan.")
 }
+
+/* notifications */
+const notifications = {
+    GithubJoin: {
+        title: "Tervetuloa!",
+        body: "Tervetuloa ja kiitos liittymisesi tiimoilta. Hyviä koodaushetkiä!\nMuistathan liittyä myös Discordiimme :)",
+        button: "OK, kiitos!"
+    }
+}
+
+const notification = document.getElementById("notification")
+const notificationTitle = document.getElementById("notification-title")
+const notificationBody = document.getElementById("notification-message")
+const notificationButton = document.getElementById("notification-button")
+
+notification.onclick = () => {
+    notification.style.opacity = 1
+    requestAnimationFrame(() => {
+        notification.style.opacity = 0
+        setTimeout(() => {
+            notification.style.display = "none"
+        }, 200)
+    })
+}
+
+// Notification type defined in the query
+const notificationQuery = new URL(window.location.search, "https://testausserveri.fi").searchParams.get("notification")
+if (notificationQuery !== null) {
+    const notificationData = notifications[notificationQuery]
+    if (notificationData) {
+        notificationTitle.innerText = notificationData.title
+        notificationBody.innerText = notificationData.body
+        notificationButton.innerText = notificationData.button
+        notification.style.display = "flex"
+    } else {
+        console.error("Unknown notification")
+    }
+}
