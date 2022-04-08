@@ -800,7 +800,7 @@ blockquote {
     border-radius: 6px;
 }
 
-.notification-body .title {
+.notification-body .notificationTitle {
     margin-top: 0px;
 }
 
