@@ -23,7 +23,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
-    CNAME('antiikki', 'antiikki-testausserveri-fi.pages.dev.'), // Testausserveri.fi v1
+    CNAME('antiikki', 'relay.dfjapis.com.', CF_PROXY_OFF), // Testausserveri.fi v1
     CNAME('discord', 'testausserveri.github.io.'), // Discord forwarding
     CNAME('git', 'testausserveri.github.io.'), // GitHub forwarding
     CNAME('static', 'testausserveri.github.io.'), // Static files
@@ -34,7 +34,10 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
     CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
+    CNAME('id', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
+    CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
+    CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
   
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
@@ -44,13 +47,16 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
     TXT('@', 'google-site-verification=6XQ_v6tkh3jB_hl63IA4iMS8RV3bj9rzKfaQxomX6i4'), // Google site verification
-
+    TXT('_visual-studio-marketplace-testausserveri-ry', 'ab22dccc-c009-44e6-ac28-f13794816bb8'),
+  
     // Mail
     //Yandex(),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
     Mailerlite(),
-    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
+  
+    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com -all'),
+    TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:dmarc@testausserveri.fi; adkim=s; aspf=s;')
 );
 
 function Mailerlite() {

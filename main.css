@@ -39,6 +39,22 @@ body {
 
 }
 
+/* Patch for title */
+.title {
+    line-height: 3rem;
+}
+.title span {
+    display: none;
+}
+.title:after {
+    content: "Testausserveri"
+}
+@media only screen and (max-width: 450px) {
+    .title:after {
+        content: "Testaus-serveri"
+    }
+}
+
 .center {
     max-width: 800px;
     margin: 0 auto;
