@@ -5,11 +5,11 @@ import styles from './Header.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 
 
-export function Header({}) {
+export function Header({pages, activePath}) {
     return (
         <div className={styles.header}>
-            <Logo className={styles.logo} />
-            <Navigation className={styles.navigation} />
+            <Logo className={styles.logo} showBeta={true} />
+            <Navigation className={styles.navigation} pages={pages} activePath={activePath} />
             <CapsuleButton className={styles.button} variant="small">
                 <ButtonIcon src={DiscordIcon} />
                 Discord

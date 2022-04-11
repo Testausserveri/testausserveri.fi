@@ -1,8 +1,8 @@
 import styles from './Capsule.module.css'
 
-export function Capsule({children}) {
+export function Capsule({children, className}) {
     return (
-        <span className={styles.capsule}>
+        <span className={`${styles.capsule} ${className}`}>
             {children}
         </span>
     )

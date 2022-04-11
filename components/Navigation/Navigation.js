@@ -1,19 +1,14 @@
+import Link from 'next/link'
 import styles from './Navigation.module.css'
 
-const pages = [
-    { label: "Etusivu", path: "/" },
-    { label: "Jäsenet", path: "/members" },
-    { label: "Projektit", path: "/projects" },
-    { label: "Mediassa", path: "/in-media" }
-]
-export function Navigation({className}) {
-    const activePath = "/"
-
+export function Navigation({className, pages, activePath}) {
     return (
         <div className={className}>
-            <ul>
+            <ul className={styles.items}>
                 {pages.map(page => (
-                    <li key={page.label} className={activePath == page.path ? styles.active : null}>{page.label}</li>
+                    <Link key={page.label} href={page.path}>
+                        <li className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>{page.label}</li>
+                    </Link>
                 ))}  
             </ul>
         </div>

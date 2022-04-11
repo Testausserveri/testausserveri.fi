@@ -4,5 +4,13 @@
     width: 2.6rem;
     height: 2.6rem;
     background-repeat: no-repeat;
+}
 
+.capsule {
+    margin-left: 0.3rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
 }
