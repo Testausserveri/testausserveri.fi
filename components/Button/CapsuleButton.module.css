@@ -17,7 +17,8 @@
     position: relative;
     overflow: hidden;
     mix-blend-mode:screen;
-
+    text-decoration: none;
+    color: black;
 }
 
 .capsuleButton:hover {

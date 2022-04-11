@@ -14,6 +14,9 @@ const Hero = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: -22rem;
+  @media only screen and (max-width: 670px) {
+    margin-bottom: -30rem;
+  }
   &:after {
     content: ' ';
     width: 100%;
@@ -23,6 +26,10 @@ const Hero = styled.div`
     height: 100%;
     z-index: 1;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 66.67%, #0D0D0D 96.87%);
+    @media only screen and (max-width: 670px) {
+      background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50%, #0D0D0D 96.87%);
+
+    }
   }
 `
 const Center = styled.div`
