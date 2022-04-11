@@ -6,6 +6,10 @@ import DiscordIcon from '../assets/DiscordIcon.svg'
 
 import { DiscordLive } from '../components/DiscordLive/DiscordLive'
 import { GradientTitle } from '../components/Title/GradientTitle';
+import { StatGroup } from '../components/Stat/StatGroup';
+import { Content } from '../components/Content/Content';
+import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
+import { useEffect, useState } from 'react';
 
 const Hero = styled.div`
   display: flex;
@@ -40,9 +44,34 @@ const Center = styled.div`
   z-index: 1;
   position: relative;
   flex-direction: column;
+  margin-bottom: 2.5rem;
 `
 
-export default function Home() {
+export default function Home({ssGuildInfo}) {
+  const guildInfo = useGuildInfo(ssGuildInfo)
+  const [stats, setStats] = useState([])
+
+  useEffect(() => {
+    setStats([
+      {
+        "label": "Jäseniä",
+        "value": guildInfo?.memberCount
+      },
+      {
+        "label": "Paikalla nyt",
+        "value": guildInfo?.membersOnline
+      },
+      {
+        "label": "Viestejä tänään",
+        "value": guildInfo?.messagesToday
+      },
+      {
+        "label": "Projekteja",
+        "value": 40
+      }
+    ])
+  }, [guildInfo])
+
   return (
     <div>
       <Head>
@@ -65,6 +94,15 @@ export default function Home() {
           </CapsuleButton>
         </a>
       </Center>
+      <Content>
+        <StatGroup stats={stats} />
+      </Content>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const guildInfo = await getGuildInfo()
+
+  return { props: { ssGuildInfo: guildInfo } }
 }

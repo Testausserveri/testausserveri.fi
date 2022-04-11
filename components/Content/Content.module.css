@@ -1,0 +1,7 @@
+.content {
+    z-index: 1;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.7rem;
+}
