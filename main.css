@@ -173,7 +173,7 @@ a:not(.joinButton):hover {
     border: 1px solid var(--border);
     border-radius: 6px;
     background-color: var(--dc-background);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .joinBoxInner {
@@ -211,7 +211,7 @@ a:not(.joinButton):hover {
     justify-content: space-between;
 }
 
-.infoBlock {
+.joinInfo .infoBlock {
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -219,15 +219,68 @@ a:not(.joinButton):hover {
     margin-left: 1.5rem;
 }
 
-.infoHeading {
+.joinInfo .infoHeading {
     display: block;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
-.infoValue {
+.joinInfo .infoValue {
     font-size: 1.5em;
+}
+
+.bottomInfo {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottomInfo .infoBlock {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 1.5rem;
+}
+
+.bottomInfo .infoHeading {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-left: 16px;
+}
+
+.bottomInfo .infoValue {
+    font-size: 20px;
+}
+
+.bottomInfo .infoGrid {
+    display: flex;
+    width: auto;
+    max-width: 0px;
+    transition: ease-in-out max-width 0.3s;
+    height: 30px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.bottomInfo .infoGrid:last-child {
+    padding-right: 10px;
+}
+
+.bottomInfo .infoGrid>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: -10px;
 }
 
 .linkBlock {

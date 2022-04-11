@@ -29,6 +29,8 @@ const options = {
 let memberCounter
 let messageCounter
 let showcasedProfiles
+let boosterCounter
+let showcasedBoosters
 
 function processMarkdown(str) {
     return str
@@ -74,26 +76,65 @@ const flagLogos = {
 
 function updateAnalytics() {
     if (document.hasFocus() || !memberCounter || !messageCounter || !showcasedProfiles) {
-        // Counters
+        // Counters & Boosters
         fetch("https://api.testausserveri.fi/v1/discord/guildInfo")
             .then((res) => res.json())
             .then((data) => {
-                if (!memberCounter || !messageCounter) {
+                // Boosters
+                const boosterImageList = []
+                for (const subscriber of data.premium.subscribers) {
+                    const img = document.createElement("img")
+                    img.src = subscriber.avatar
+                    img.setAttribute("alt", subscriber.name)
+                    boosterImageList.push(img)
+                }
+                if (boosterImageList.length < data.premium.subscriptions) {
+                    boosterImageList.push(...new Array(data.premium.subscriptions - boosterImageList.length)
+                        .fill(0)
+                        .map((_) => document.createElement("img"))
+                        .map((img) => { img.src = `assets/icons/discord_defaults/${Math.floor(Math.random() * (5 + 1))}.png`; return img }))
+                }
+                if (JSON.stringify(showcasedBoosters) !== JSON.stringify(data.premium.subscribers)) {
+                    showcasedBoosters = data.premium.subscribers
+                    const boosters = document.getElementById("boosters")
+                    if (boosters.style.maxWidth) {
+                        // Already displayed
+                        boosters.style.maxWidth = "0px"
+                        requestAnimationFrame(() => {
+                            setTimeout(() => {
+                                boosters.innerHTML = ""
+                                boosters.append(...boosterImageList)
+                                requestAnimationFrame(() => { boosters.style.maxWidth = "100%" })
+                            }, 300)
+                        })
+                    } else {
+                        boosters.append(...boosterImageList)
+                        requestAnimationFrame(() => { boosters.style.maxWidth = "100%" })
+                    }
+                }
+
+                // Counters
+                if (!memberCounter || !messageCounter || !boosterCounter) {
                     memberCounter = new countUp.CountUp(
                         "memberCount", data.memberCount, options
                     )
                     messageCounter = new countUp.CountUp(
                         "messageCount", data.messagesToday, options
                     )
+                    boosterCounter = new countUp.CountUp(
+                        "boostCount", data.premium.subscriptions, options
+                    )
                     memberCounter.start()
                     messageCounter.start()
+                    boosterCounter.start()
                 }
                 memberCounter.update(data.memberCount)
                 messageCounter.update(data.messagesToday)
+                boosterCounter.update(data.premium.subscriptions)
             })
 
         // Profile showcases
-        fetch("https://api.testausserveri.fi/v1/discord/roleInfo?id=743950610080071801")
+        fetch("https://api.testausserveri.fi/v1/discord/memberInfo?id=743950610080071801")
             .then((res) => res.json())
             .then((data) => {
                 // TODO: Why is this like this?
