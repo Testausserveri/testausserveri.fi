@@ -1,0 +1,10 @@
+.gradientTitle {
+    background: linear-gradient(95.61deg, #8BBAFF -8.65%, #6CE5FF 45.52%, rgba(120, 255, 231, 0.96) 96.41%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+}

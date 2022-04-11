@@ -27,7 +27,7 @@ export function DiscordLive({mobile}) {
     
     useEffect(() => {
         function next(index) {
-            const waitTime = Math.min((messages[index + 1].timestamp - messages[index].timestamp) / replaySpeedUpMultiplier, replayMaxWaitTime)
+            const waitTime = Math.min((messages[index + 1]?.timestamp - messages[index]?.timestamp) / replaySpeedUpMultiplier, replayMaxWaitTime)
             console.log(waitTime)
             setTimeout(() => {
                 setVisibleMessages(messages.slice(0, index + 1))
