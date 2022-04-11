@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header div {
+    /* flex: 1; */
+}
+
+.header>.logo {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.header>.navigation {
+    text-align: center;
+}
+
+.header>.button {
+    text-align: right;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+@media only screen and (max-width: 670px) {
+    .header>.navigation {
+        display: none;
+    }
+    
+    .header>.button {
+        display: none;
+    }
+} 
