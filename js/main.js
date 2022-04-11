@@ -97,19 +97,21 @@ function updateAnalytics() {
                 if (JSON.stringify(showcasedBoosters) !== JSON.stringify(data.premium.subscribers)) {
                     showcasedBoosters = data.premium.subscribers
                     const boosters = document.getElementById("boosters")
-                    if (boosters.style.maxWidth) {
+                    if (boosters.hasAttribute("visible")) {
                         // Already displayed
-                        boosters.style.maxWidth = "0px"
+                        for (const img of boosters.children) img.style.opacity = "0"
                         requestAnimationFrame(() => {
                             setTimeout(() => {
                                 boosters.innerHTML = ""
                                 boosters.append(...boosterImageList)
-                                requestAnimationFrame(() => { boosters.style.maxWidth = "100%" })
+                                // eslint-disable-next-line no-plusplus
+                                requestAnimationFrame(() => { requestAnimationFrame(() => { for (let i = 0; i < boosters.children.length; i++) setTimeout(() => { boosters.children[i].style.opacity = "1" }, i * 10) }) })
                             }, 300)
                         })
                     } else {
                         boosters.append(...boosterImageList)
-                        requestAnimationFrame(() => { boosters.style.maxWidth = "100%" })
+                        // eslint-disable-next-line no-plusplus
+                        requestAnimationFrame(() => { requestAnimationFrame(() => { for (let i = 0; i < boosters.children.length; i++) setTimeout(() => { boosters.children[i].style.opacity = "1" }, i * 10) }) })
                     }
                 }
 
