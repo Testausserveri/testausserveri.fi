@@ -38,6 +38,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
     CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
+    CNAME('coal', 'cname.vercel-dns.com.'),
   
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
