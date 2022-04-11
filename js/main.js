@@ -367,7 +367,7 @@ function metaRepoLink() {
 const notifications = {
     GithubJoin: {
         title: "Tervetuloa!",
-        body: "Tervetuloa ja kiitos liittymisesi tiimoilta. Hyviä koodaushetkiä!\nMuistathan liittyä myös Discordiimme :)",
+        body: "Tervetuloa ja kiitos Github ryhmään liittymisesi tiimoilta. Hyviä koodaushetkiä!\nMuistathan liittyä myös Discordiimme :)",
         button: "OK, kiitos!"
     }
 }

@@ -798,6 +798,8 @@ blockquote {
     padding: 15px;
     border: 1px solid var(--border);
     border-radius: 6px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .notification-body .notificationTitle {
