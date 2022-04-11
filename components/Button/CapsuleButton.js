@@ -9,10 +9,12 @@ export function ButtonIcon({src}) {
     )
 }
 
-export function CapsuleButton({children, variant}) {
+export function CapsuleButton({children, variant, className}) {
     return (
-        <div className={(variant === "small" ? `${styles.capsuleButton} ${styles.small}` : styles.capsuleButton)}>
-            {children}
+        <div className={className}>
+            <div className={(variant === "small" ? `${styles.capsuleButton} ${styles.small}` : styles.capsuleButton)}>
+                {children}
+            </div>
         </div>
     )
 }
