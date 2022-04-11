@@ -41,6 +41,7 @@ function HeroOuter({style, className}) {
     </div>
   )
 }
+
 const Hero = styled(HeroOuter)`
 `
 
