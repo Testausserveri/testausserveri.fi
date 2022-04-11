@@ -1,17 +1,19 @@
 import Head from 'next/head'
 import FadeIn from 'react-fade-in';
 import styled from 'styled-components'
+import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
+import DiscordIcon from '../assets/DiscordIcon.svg'
 
 import { DiscordLive } from '../components/DiscordLive/DiscordLive'
 import { GradientTitle } from '../components/Title/GradientTitle';
 
-const HeroInner = styled.div`
+const Hero = styled.div`
   display: flex;
   justify-content: center;
   margin-top: -1.5rem;
   position: relative;
   overflow: hidden;
-  transition: opacity 1s;
+  margin-bottom: -22rem;
   &:after {
     content: ' ';
     width: 100%;
@@ -28,21 +30,9 @@ const Center = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 0rem;
-`
-function HeroOuter({style, className}) {
-  return (
-    <div style={style} className={className}>
-      <HeroInner>
-        <FadeIn>
-          <DiscordLive />
-        </FadeIn>
-      </HeroInner>
-    </div>
-  )
-}
-
-const Hero = styled(HeroOuter)`
+  z-index: 1;
+  position: relative;
+  flex-direction: column;
 `
 
 export default function Home() {
@@ -51,12 +41,22 @@ export default function Home() {
       <Head>
           <title>Testausserveri</title>
       </Head>
-      <Hero />
+      <Hero>
+        <FadeIn>
+          <DiscordLive />
+        </FadeIn>
+      </Hero>
       <Center>
         <GradientTitle>
           Nettiyhteisö<br />
           nuorille hakkereille
         </GradientTitle>
+        <a href="https://discord.testausserveri.fi">
+          <CapsuleButton style={{marginTop: "0.5rem"}}>
+              <ButtonIcon src={DiscordIcon} />
+            Tule juttelemaan!
+          </CapsuleButton>
+        </a>
       </Center>
     </div>
   )

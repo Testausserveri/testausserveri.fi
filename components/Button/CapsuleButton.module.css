@@ -1,3 +1,6 @@
+.capsuleButton * {
+    pointer-events: none;
+}
 .capsuleButton {
     background-color: white;
     padding: 1em 1.3em;
@@ -8,6 +11,30 @@
     border-radius: 200px;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    mix-blend-mode:screen;
+
+}
+
+.capsuleButton:hover {
+}
+
+.ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0,0,0,0.09);
+    border-radius: 100px;
+    position: absolute;
+    transform: scale(var(--size));
+    transition: transform 0.2s;
+}
+.ripple.visible {
+    transform: scale(1) !important;
 }
 .buttonIcon {
     display: flex;

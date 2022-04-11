@@ -10,10 +10,12 @@ export function Header({pages, activePath}) {
         <div className={styles.header}>
             <Logo className={styles.logo} showBeta={true} />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} />
-            <CapsuleButton className={styles.button} variant="small">
-                <ButtonIcon src={DiscordIcon} />
-                Discord
-            </CapsuleButton>
+            <a href="https://discord.testausserveri.fi">
+                <CapsuleButton className={styles.button} variant="small">
+                    <ButtonIcon src={DiscordIcon} />
+                    Discord
+                </CapsuleButton>
+            </a>
         </div>
     )
 }
