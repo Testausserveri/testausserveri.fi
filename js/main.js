@@ -136,7 +136,7 @@ function updateAnalytics() {
             })
 
         // Profile showcases
-        fetch("https://api.testausserveri.fi/v1/discord/memberInfo?id=743950610080071801")
+        fetch("https://api.testausserveri.fi/v1/discord/memberInfo?role=743950610080071801")
             .then((res) => res.json())
             .then((data) => {
                 // TODO: Why is this like this?
