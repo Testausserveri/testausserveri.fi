@@ -45,6 +45,16 @@ const Center = styled.div`
   margin-bottom: 2.5rem;
 `
 
+const TextColumns = styled.div`
+  margin: 2.5rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #DBDBDB;
+  line-height: 1.4;
+  columns: 2;  
+`
+
 export default function Home({ssGuildInfo}) {
   const guildInfo = useGuildInfo(ssGuildInfo)
   const [stats, setStats] = useState([])
@@ -94,6 +104,11 @@ export default function Home({ssGuildInfo}) {
       </Center>
       <Content>
         <StatGroup stats={stats} />
+        <TextColumns>
+          Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
+          <br />
+          Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
+        </TextColumns>
       </Content>
     </div>
   )
