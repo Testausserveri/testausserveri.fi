@@ -27,7 +27,7 @@ export function CapsuleButton({style, children, variant, className}) {
     }
 
     return (
-        <div className={className} style={style}>
+        <div className={className} style={{...style, display: "inline-block"}}>
             <button 
                 onMouseLeave={() => setSize(0)} 
                 onMouseEnter={() => setSize(1)} 

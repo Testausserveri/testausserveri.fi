@@ -38,8 +38,6 @@ const Hero = styled.div`
 `
 const Center = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
   text-align: center;
   z-index: 1;
   position: relative;
