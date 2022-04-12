@@ -53,6 +53,9 @@ const TextColumns = styled.div`
   color: #DBDBDB;
   line-height: 1.4;
   columns: 2;  
+  @media only screen and (max-width: 670px) {
+    columns: 1;
+  }
 `
 
 export default function Home({ssGuildInfo}) {
@@ -106,7 +109,7 @@ export default function Home({ssGuildInfo}) {
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
-          <br />
+          <br /><br />
           Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
         </TextColumns>
       </Content>
