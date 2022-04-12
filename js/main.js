@@ -20,6 +20,44 @@ document.querySelector("#theme-switch").addEventListener("change", (e) => {
     updateTheme()
 })
 
+/* tooltip utility */
+/**
+ * @param {string} content
+ * @param {HTMLHtmlElement} element
+ * @returns {HTMLHtmlElement}
+ */
+function createToolTip(content, element) {
+    const span = document.createElement("span")
+    Object.assign(span.style, {
+        display: "block",
+        position: "absolute",
+        width: "auto",
+        marginTop: "10px",
+        borderRadius: "8px",
+        backgroundColor: "var(--card-background)",
+        border: "1px solid var(--border)",
+        color: "var(--text)",
+        fontFamily: "'Ubuntu', sans-serif",
+        padding: "6px",
+        fontSize: "1rem",
+        fontWeight: "600",
+        textAlign: "center",
+        transition: "ease-in-out opacity 0.3s",
+        zIndex: "99",
+        opacity: "0"
+    })
+    span.innerText = content
+    const dims = element.getBoundingClientRect()
+    document.body.appendChild(span)
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        const spanDims = span.getBoundingClientRect()
+        span.style.top = `${dims.top + dims.height}px`
+        span.style.left = `${dims.left + 15 - (spanDims.width / 2)}px`
+        span.style.opacity = "1"
+    }))
+    return span
+}
+
 /* counters */
 const options = {
     duration: 0.5,
@@ -81,22 +119,38 @@ function updateAnalytics() {
             .then((res) => res.json())
             .then((data) => {
                 // Boosters
+                const boosters = document.getElementById("boosters")
                 const boosterImageList = []
                 for (const subscriber of data.premium.subscribers) {
-                    const img = document.createElement("img")
-                    img.src = subscriber.avatar
-                    img.setAttribute("alt", subscriber.name)
-                    boosterImageList.push(img)
-                }
-                if (boosterImageList.length < data.premium.subscriptions) {
-                    boosterImageList.push(...new Array(data.premium.subscriptions - boosterImageList.length)
-                        .fill(0)
-                        .map((_) => document.createElement("img"))
-                        .map((img) => { img.src = `assets/icons/discord_defaults/${Math.floor(Math.random() * (5 + 1))}.png`; return img }))
+                    if (subscriber.isHidden) {
+                        const img = document.createElement("img")
+                        img.src = `assets/icons/discord_defaults/${Math.floor(Math.random() * (5 + 1))}.png`
+                        boosterImageList.push(img)
+                    } else {
+                        const img = document.createElement("img")
+                        img.src = subscriber.avatar
+                        let imgToolTip
+                        img.onmouseover = () => {
+                            img.style.zIndex = "99"
+                            for (const child of boosters.children) if (child !== img) { child.style.opacity = "0.3"; child.style.filter = "blur(1px)" }
+                            if (!imgToolTip) imgToolTip = createToolTip(subscriber.name, img)
+                        }
+                        img.onmouseout = () => {
+                            for (const child of boosters.children) { child.style.opacity = "1"; child.style.filter = "" }
+                            img.style.zIndex = ""
+                            if (imgToolTip) {
+                                imgToolTip.style.opacity = "0"
+                                const selfTooltip = imgToolTip
+                                requestAnimationFrame(() => setTimeout(() => selfTooltip.remove()))
+                                imgToolTip = undefined
+                            }
+                        }
+                        img.setAttribute("alt", subscriber.name)
+                        boosterImageList.push(img)
+                    }
                 }
                 if (JSON.stringify(showcasedBoosters) !== JSON.stringify(data.premium.subscribers)) {
                     showcasedBoosters = data.premium.subscribers
-                    const boosters = document.getElementById("boosters")
                     if (boosters.hasAttribute("visible")) {
                         // Already displayed
                         for (const img of boosters.children) img.style.opacity = "0"
