@@ -30,7 +30,7 @@ function createToolTip(content, element) {
     const span = document.createElement("span")
     Object.assign(span.style, {
         display: "block",
-        position: "absolute",
+        position: "fixed",
         width: "auto",
         marginTop: "10px",
         borderRadius: "8px",
@@ -136,7 +136,7 @@ function updateAnalytics() {
                             if (!imgToolTip) imgToolTip = createToolTip(subscriber.name, img)
                         }
                         img.onmouseout = () => {
-                            for (const child of boosters.children) { child.style.opacity = "1"; child.style.filter = "" }
+                            for (const child of boosters.children) if (child !== img) { child.style.opacity = "1"; child.style.filter = "" }
                             img.style.zIndex = ""
                             if (imgToolTip) {
                                 imgToolTip.style.opacity = "0"
