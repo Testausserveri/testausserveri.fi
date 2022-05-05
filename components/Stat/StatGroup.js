@@ -5,7 +5,7 @@ export function StatGroup({stats}) {
     return (
         <div className={styles.statGroup}>
             {stats.map(({label, value}) => (
-                <StatCard key={label} label={label} value={value} />            
+                <StatCard key={label} label={label} value={value} />            
             ))}   
         </div>
     )
