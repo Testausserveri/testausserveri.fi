@@ -17,6 +17,14 @@ function clamp(t, in_min, in_max, out_min, out_max) {
     return (t - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
+export function LeaderboardGroup({children}) {
+    return (
+        <div className={styles.group}>
+            {children}
+        </div>
+    )    
+}
+
 export function Leaderboard({data, title}) {
     data.sort((a, b) => (b.value - a.value))
     data = data.map(item => ({...item, percentage: Math.floor(clamp(item.value, data[data.length - 1].value, data[0].value, 40, 90))}))
