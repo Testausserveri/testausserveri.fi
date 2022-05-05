@@ -10,6 +10,7 @@ import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
 import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
 import { useEffect, useState } from 'react';
+import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
 
 const Hero = styled.div`
   display: flex;
@@ -53,8 +54,14 @@ const TextColumns = styled.div`
   color: #DBDBDB;
   line-height: 1.4;
   columns: 2;  
+  br.mobileBreak {
+    display: none;
+  }
   @media only screen and (max-width: 670px) {
     columns: 1;
+    br.mobileBreak {
+      display: block;
+    }
   }
 `
 
@@ -109,9 +116,29 @@ export default function Home({ssGuildInfo}) {
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
-          <br /><br />
+          <br /><br className="mobileBreak" />
           Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
         </TextColumns>
+        <LeaderboardGroup>
+          <Leaderboard 
+            data={[
+              {name: "Testauskoira", value: 1900},
+              {name: "Timo", value: 800},
+              {name: "Pasi", value: 3000},
+              {name: "Sonni", value: 200},
+              {name: "Vladimir", value: 8000},
+            ]}
+            title="Eniten viestejä tänään" />
+          <Leaderboard 
+            data={[
+              {name: "Testauskoira", value: 1900},
+              {name: "Timo", value: 800},
+              {name: "Pasi", value: 3000},
+              {name: "Sonni", value: 200},
+              {name: "Vladimir", value: 8000},
+            ]}
+            title="Eniten viestejä tänään" />
+        </LeaderboardGroup>
       </Content>
     </div>
   )
