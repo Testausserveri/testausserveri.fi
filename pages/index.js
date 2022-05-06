@@ -11,6 +11,10 @@ import { Content } from '../components/Content/Content';
 import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
 import { useEffect, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
+import { useLeaderboard } from '../hooks/useLeaderboard';
+import { TimeUtil } from '../utils/TimeUtil';
+
+const time = new TimeUtil()
 
 const Hero = styled.div`
   display: flex;
@@ -67,6 +71,8 @@ const TextColumns = styled.div`
 
 export default function Home({ssGuildInfo}) {
   const guildInfo = useGuildInfo(ssGuildInfo)
+  const codingLeaderboard = useLeaderboard()
+  
   const [stats, setStats] = useState([])
 
   useEffect(() => {
@@ -130,14 +136,9 @@ export default function Home({ssGuildInfo}) {
             ]}
             title="Eniten viestejä tänään" />
           <Leaderboard 
-            data={[
-              {name: "Testauskoira", value: 1900},
-              {name: "Timo", value: 800},
-              {name: "Pasi", value: 3000},
-              {name: "Sonni", value: 200},
-              {name: "Vladimir", value: 8000},
-            ]}
-            title="Eniten viestejä tänään" />
+            data={codingLeaderboard}
+            title="Eniten koodannut tällä viikolla"
+            valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
       </Content>
     </div>
