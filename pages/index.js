@@ -11,8 +11,9 @@ import { Content } from '../components/Content/Content';
 import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
 import { useEffect, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
-import { useLeaderboard } from '../hooks/useLeaderboard';
 import { TimeUtil } from '../utils/TimeUtil';
+
+const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
 const time = new TimeUtil()
 
@@ -70,8 +71,7 @@ const TextColumns = styled.div`
 `
 
 export default function Home({ssGuildInfo}) {
-  const guildInfo = useGuildInfo(ssGuildInfo)
-  const codingLeaderboard = useLeaderboard()
+  const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   
   const [stats, setStats] = useState([])
 
@@ -127,16 +127,11 @@ export default function Home({ssGuildInfo}) {
         </TextColumns>
         <LeaderboardGroup>
           <Leaderboard 
-            data={[
-              {name: "Testauskoira", value: 1900},
-              {name: "Timo", value: 800},
-              {name: "Pasi", value: 3000},
-              {name: "Sonni", value: 200},
-              {name: "Vladimir", value: 8000},
-            ]}
+            data={guildInfo.messagesLeaderboard}
             title="Eniten viestejä tänään" />
+          
           <Leaderboard 
-            data={codingLeaderboard}
+            data={guildInfo.codingLeaderboard}
             title="Eniten koodannut tällä viikolla"
             valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
@@ -146,7 +141,7 @@ export default function Home({ssGuildInfo}) {
 }
 
 export async function getServerSideProps() {
-  const guildInfo = await getGuildInfo()
+  const guildInfo = await getGuildInfo(guildInfoModel)
 
   return { props: { ssGuildInfo: guildInfo } }
 }

@@ -26,6 +26,7 @@ export function LeaderboardGroup({children}) {
 }
 
 export function Leaderboard({data, title, valueFormatter}) {
+    console.log("AAA", data)
     data.sort((a, b) => (b.value - a.value))
     data = data.map(item => ({...item, percentage: Math.floor(clamp(item.value, data[data.length - 1].value, data[0].value, 40, 90))}))
 
