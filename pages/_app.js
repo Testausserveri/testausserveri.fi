@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Header } from '../components/Header/Header'
 import '../styles/globals.css'
 
@@ -11,6 +12,8 @@ const pages = [
 function MyApp({ Component, pageProps, router }) {
   return (
     <div className="main">
+      <Head>
+      </Head>
       <Header 
         pages={pages}
         activePath={router.route} />

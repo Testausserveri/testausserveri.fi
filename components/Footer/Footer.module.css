@@ -1,0 +1,32 @@
+.footer {
+    background-color: white;
+    width: 100%;
+    padding: 2.5rem 0;
+}
+
+.row {
+    display: flex;
+}
+
+.row>div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.row>div:nth-child(2) {
+    justify-content: right;
+}
+
+.links {
+    line-height: 1.4;
+}
+
+.links li {
+    list-style-type: none;
+    text-align: right;
+}
+
+.footer img {
+    height: 100%;
+}

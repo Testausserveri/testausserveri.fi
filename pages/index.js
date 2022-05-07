@@ -99,7 +99,7 @@ export default function Home({ssGuildInfo}) {
   return (
     <div>
       <Head>
-          <title>Testausserveri</title>
+        <title>Testausserveri</title>
       </Head>
       <Hero>
         <FadeIn>
