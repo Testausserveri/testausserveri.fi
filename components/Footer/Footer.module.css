@@ -3,6 +3,7 @@
     width: 100%;
     padding: 2.5rem 0;
     color: #DBDBDB;
+    padding: 0.7rem;
 }
 
 .row {
@@ -10,11 +11,14 @@
 }
 
 .row>div {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2.5rem;
+}
+
+.row>div:first {
+    flex: 1;
 }
 
 .row>div>div {
