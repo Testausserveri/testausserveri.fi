@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import FadeIn from 'react-fade-in';
 import styled from 'styled-components'
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
-import { DiscordLive } from '../components/DiscordLive/DiscordLive'
+import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
 import { GradientTitle } from '../components/Title/GradientTitle';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
@@ -16,50 +15,6 @@ import { Footer } from '../components/Footer/Footer';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
-const time = new TimeUtil()
-
-const FadeCover = styled.div`
-content: ' ';
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 66.67%, #0D0D0D 96.87%);
-  @media only screen and (max-width: 670px) {
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50%, #0D0D0D 96.87%);
-  }
-  top: 0px;
-  transition: top 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);`
-
-const Hero = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: -1.5rem;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: -22rem;
-  perspective: 100px;
-  @media only screen and (max-width: 670px) {
-    margin-bottom: -30rem;
-  }
-  .fadeCover {
-    
-  }
-  &.focusHero .fadeCover {
-    top: 120px;
-  }
-  >div {
-    transition: transform 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);
-    transform-style: preserve-3d;
-    transform: rotateX(0deg);
-  }
-  &.focusHero>div {
-    transform: rotateX(-0.5deg);
-  }
-
-`
 const Center = styled.div`
   width: 100%;
   text-align: center;
@@ -90,7 +45,7 @@ const TextColumns = styled.div`
 
 export default function Home({ssGuildInfo}) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
-  const heroRef = useRef()
+  const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
 
   useEffect(() => {
@@ -119,12 +74,7 @@ export default function Home({ssGuildInfo}) {
       <Head>
         <title>Testausserveri</title>
       </Head>
-      <FadeCover />
-      <Hero ref={heroRef}>
-        <FadeIn>
-          <DiscordLive />
-        </FadeIn>
-      </Hero>
+      <HeroDiscordLive focused={heroFocused} />
       <Center>
         <GradientTitle>
           Nettiyhteisö<br />
@@ -133,8 +83,8 @@ export default function Home({ssGuildInfo}) {
         <a href="https://discord.testausserveri.fi">
           <CapsuleButton 
             style={{marginTop: "0.5rem"}} 
-            onMouseOver={() => {heroRef.current.classList.add("focusHero")}}
-            onMouseLeave={() => {heroRef.current.classList.remove("focusHero")}}>
+            onMouseOver={() => {setHeroFocused(true)}}
+            onMouseLeave={() => {setHeroFocused(false)}}>
               <ButtonIcon src={DiscordIcon} />
             Tule juttelemaan!
           </CapsuleButton>
