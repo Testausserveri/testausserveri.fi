@@ -1,9 +1,8 @@
 .footer {
     background-color: rgba(108, 108, 108, 0.09);
     width: 100%;
-    padding: 2.5rem 0;
+    padding: 2.5rem 0.7rem;
     color: #DBDBDB;
-    padding: 0.7rem;
 }
 
 .row {
@@ -17,7 +16,7 @@
     gap: 2.5rem;
 }
 
-.row>div:first {
+.row>div:nth-child(1) {
     flex: 1;
 }
 
