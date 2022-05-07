@@ -29,3 +29,46 @@
     font-weight: 600;
 }
 
+.mobileHeader {
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 4rem;
+    display: none;
+}
+.mobileButton {
+    display: flex;
+    justify-content: flex-end;
+    height: 4rem;
+}
+@media only screen and (max-width: 670px) {
+    .mobileHeader {
+        display: flex;
+    }
+    .items {
+        display: none;
+    }
+    .open .mobileHeader {
+        margin: 2rem;
+        margin-bottom: 1rem;
+        
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+    }
+    .open {
+        display: flex;
+        flex-direction: column;
+    }
+    .open .items {
+        display: block;
+    }
+    .open .item {
+        width: 100%;
+        padding: 2rem;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        margin-left: 0 !important;
+        text-align: left;
+    }
+    
+}

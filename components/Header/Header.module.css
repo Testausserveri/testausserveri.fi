@@ -24,11 +24,38 @@
 }
 
 @media only screen and (max-width: 670px) {
-    .header>.navigation {
-        display: none;
+    .header.open {
+        margin: 0;
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0D0D0D;
+        display: flex;
+        
+        flex-direction: column;
+
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     
+    .header.open>.logo {
+        display: none;
+    }
+
+    .header>.navigation {
+        width: 100%;
+    }
+
     .header>a {
         display: none;
     }
+
+    /*
+
+    body>div>div>*:not(.header) {
+        display: none;
+    }*/
 } 
