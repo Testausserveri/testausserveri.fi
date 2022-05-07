@@ -70,3 +70,9 @@
 .group>div {
     flex: 1;
 }
+
+@media only screen and (max-width: 670px) { 
+    .group {
+        flex-direction: column;
+    }
+}
