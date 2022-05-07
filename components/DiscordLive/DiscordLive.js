@@ -69,8 +69,12 @@ export function DiscordLive({mobile, className}) {
 }
 
 export function HeroDiscordLive({focused}) {
+    const notMobile = (typeof window !== "undefined") ? !(('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0)) : true
+
     return (
-        <div className={focused ? styles.focusHero : ""} style={{position: "relative"}}>
+        <div className={focused && notMobile ? styles.focusHero : ""} style={{position: "relative"}}>
             <div className={styles.cover} />
             <div className={styles.hero}>
                 <FadeIn>
