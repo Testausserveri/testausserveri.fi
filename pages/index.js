@@ -12,6 +12,7 @@ import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
 import { useEffect, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
 import { TimeUtil } from '../utils/TimeUtil';
+import { Footer } from '../components/Footer/Footer';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
@@ -136,6 +137,7 @@ export default function Home({ssGuildInfo}) {
             valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
       </Content>
+      <Footer />
     </div>
   )
 }

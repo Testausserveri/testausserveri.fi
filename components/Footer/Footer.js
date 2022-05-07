@@ -1,6 +1,9 @@
 import { Content } from '../Content/Content'
 import styles from './Footer.module.css'
 import TestausserveriLogo from '../../assets/TestausserveriFullLogo.svg'
+
+import GithubIcon from '../../assets/GithubIcon.svg'
+import InstagramIcon from '../../assets/InstagramIcon.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,6 +13,33 @@ const footerLinks = [
     { label: "Projektit", path: "/projects" },
     { label: "Mediassa", path: "/in-media" },
 ] 
+
+const socialMedias = [
+    {
+        icon: GithubIcon,
+        name: "GitHub",
+        url: "https://github.com/Testausserveri"
+    },
+    {
+        icon: InstagramIcon,
+        name: "Instagram",
+        url: "https://instagram.com/Testausserveri"
+    }
+] 
+
+function SocialMedias() {
+    return (
+        <ul className={styles.socials}>
+            {socialMedias.map(media => (
+                <li key={media.name}>
+                    <Link href={media.url}>
+                        <Image src={media.icon} height={24} width={24} unoptimized />
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    )
+}
 
 function FooterLinks() {
     return (
@@ -32,13 +62,23 @@ function FooterRow({children}) {
 export function Footer({}) {
     return (
         <div className={styles.footer}>
-            <Content>
+            <Content noMargin>
                 <FooterRow>
                     <div>
-                        <img src={TestausserveriLogo} />
+                        <div>
+                            <img src={TestausserveriLogo.src} />
+                        </div>
+                        <div>
+                            © 2022 Testausserveri ry
+                        </div>
                     </div>
                     <div>
-                        <FooterLinks />
+                        <div>
+                            <FooterLinks />
+                        </div>
+                        <div>
+                            <SocialMedias />
+                        </div>
                     </div>
                 </FooterRow>
             </Content>
