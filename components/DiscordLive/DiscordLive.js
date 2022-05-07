@@ -1,3 +1,4 @@
+import FadeIn from 'react-fade-in';
 import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import { useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
@@ -18,7 +19,7 @@ function formatDiscordContent(content) {
     return wrapEmojis(content)
 }
 
-export function DiscordLive({mobile}) {
+export function DiscordLive({mobile, className}) {
     const replayStartFrom = 8
     const replaySpeedUpMultiplier = 3
     const replayMaxWaitTime = 3000
@@ -48,7 +49,7 @@ export function DiscordLive({mobile}) {
         }
     }
     return (
-        <div className={(mobile ? `${styles.discordBackground} ${styles.mobile}` : styles.discordBackground)}>
+        <div className={(mobile ? `${styles.discordBackground} ${styles.mobile}` : styles.discordBackground) + " " + (className || "")}>
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
                     <DiscordMessages className={styles.discordMessages}>
@@ -62,6 +63,25 @@ export function DiscordLive({mobile}) {
                         )}
                     </DiscordMessages>
                 </div>
+            </div>
+        </div>
+    )
+}
+
+export function HeroDiscordLive({focused}) {
+    const notMobile = (typeof window !== "undefined") ? !(('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0)) : true
+
+    return (
+        <div className={focused && notMobile ? styles.focusHero : ""} style={{position: "relative"}}>
+            <div className={styles.cover} />
+            <div className={styles.hero}>
+                <FadeIn>
+                    <div style={{perspective: "100px"}}>
+                        <DiscordLive className={styles.heroDiscordLive} />
+                    </div>
+                </FadeIn>
             </div>
         </div>
     )

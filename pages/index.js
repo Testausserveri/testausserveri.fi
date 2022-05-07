@@ -1,48 +1,20 @@
 import Head from 'next/head'
-import FadeIn from 'react-fade-in';
 import styled from 'styled-components'
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
-import { DiscordLive } from '../components/DiscordLive/DiscordLive'
+import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
 import { GradientTitle } from '../components/Title/GradientTitle';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
 import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
 import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
-const time = new TimeUtil()
-
-const Hero = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: -1.5rem;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: -22rem;
-  @media only screen and (max-width: 670px) {
-    margin-bottom: -30rem;
-  }
-  &:after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-    left: 0;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 66.67%, #0D0D0D 96.87%);
-    @media only screen and (max-width: 670px) {
-      background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50%, #0D0D0D 96.87%);
-
-    }
-  }
-`
 const Center = styled.div`
   width: 100%;
   text-align: center;
@@ -73,7 +45,7 @@ const TextColumns = styled.div`
 
 export default function Home({ssGuildInfo}) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
-  
+  const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
 
   useEffect(() => {
@@ -102,18 +74,17 @@ export default function Home({ssGuildInfo}) {
       <Head>
         <title>Testausserveri</title>
       </Head>
-      <Hero>
-        <FadeIn>
-          <DiscordLive />
-        </FadeIn>
-      </Hero>
+      <HeroDiscordLive focused={heroFocused} />
       <Center>
         <GradientTitle>
           Nettiyhteisö<br />
           nuorille hakkereille
         </GradientTitle>
         <a href="https://discord.testausserveri.fi">
-          <CapsuleButton style={{marginTop: "0.5rem"}}>
+          <CapsuleButton 
+            style={{marginTop: "0.5rem"}} 
+            onMouseOver={() => {setHeroFocused(true)}}
+            onMouseLeave={() => {setHeroFocused(false)}}>
               <ButtonIcon src={DiscordIcon} />
             Tule juttelemaan!
           </CapsuleButton>

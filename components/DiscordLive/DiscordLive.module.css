@@ -62,3 +62,52 @@
         zoom: 1;
     }
 }
+
+
+.cover {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 66.67%, #0D0D0D 96.87%);
+    
+    top: 0px;
+    transition: top 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);
+    pointer-events: none;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -22rem;
+    perspective: 100px;
+}
+
+
+.heroDiscordLive {
+    transition: transform 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
+}
+
+.focusHero .cover {
+    top: 120px;
+}
+
+.focusHero .heroDiscordLive {
+    transform: rotateX(-0.5deg);
+}
+
+@media only screen and (max-width: 670px) {
+    .cover {
+        background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50%, #0D0D0D 96.87%);
+    }
+    .hero {
+        margin-bottom: -30rem;
+    }
+}

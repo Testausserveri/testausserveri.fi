@@ -10,7 +10,8 @@ export function ButtonIcon({src}) {
     )
 }
 
-export function CapsuleButton({style, children, variant, className}) {
+export function CapsuleButton(props) {
+    const {style, children, variant, className} = props
     const ripple = useRef()
     const [size, setSize] = useState(0)
 
@@ -27,7 +28,7 @@ export function CapsuleButton({style, children, variant, className}) {
     }
 
     return (
-        <div className={className} style={{...style, display: "inline-block"}}>
+        <div {...props} style={{...style, display: "inline-block"}}>
             <button 
                 onMouseLeave={() => setSize(0)} 
                 onMouseEnter={() => setSize(1)} 
