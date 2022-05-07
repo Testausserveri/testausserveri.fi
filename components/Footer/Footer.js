@@ -69,7 +69,7 @@ export function Footer({}) {
                     <div>
                         <div>
                             <Link href="/">
-                                <img src={TestausserveriLogo.src} />
+                                <img src={TestausserveriLogo.src}  className={styles.logo} />
                             </Link>
                         </div>
                         <div>
