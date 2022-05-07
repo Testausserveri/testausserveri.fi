@@ -78,7 +78,9 @@ export function HeroDiscordLive({focused}) {
             <div className={styles.cover} />
             <div className={styles.hero}>
                 <FadeIn>
-                    <DiscordLive className={styles.heroDiscordLive} />
+                    <div style={{perspective: "100px"}}>
+                        <DiscordLive className={styles.heroDiscordLive} />
+                    </div>
                 </FadeIn>
             </div>
         </div>
