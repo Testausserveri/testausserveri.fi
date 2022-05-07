@@ -40,7 +40,6 @@
 
 .footer img {
     height: 100%;
-    filter: invert(1);
     opacity: 0.85;
     transition: opacity 0.15s;
     cursor: pointer;
