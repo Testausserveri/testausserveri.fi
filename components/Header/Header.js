@@ -8,7 +8,7 @@ import DiscordIcon from '../../assets/DiscordIcon.svg'
 export function Header({pages, activePath}) {
     return (
         <div className={styles.header}>
-            <Logo className={styles.logo} showBeta={true} />
+            <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} />
             <a href="https://discord.testausserveri.fi">
                 <CapsuleButton className={styles.button} variant="small">

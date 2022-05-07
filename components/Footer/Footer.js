@@ -33,7 +33,9 @@ function SocialMedias() {
             {socialMedias.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
-                        <Image src={media.icon} height={24} width={24} unoptimized />
+                        <>
+                            <Image src={media.icon} height={24} width={24} unoptimized />
+                        </>
                     </Link>
                 </li>
             ))}
@@ -66,7 +68,9 @@ export function Footer({}) {
                 <FooterRow>
                     <div>
                         <div>
-                            <img src={TestausserveriLogo.src} />
+                            <Link href="/">
+                                <img src={TestausserveriLogo.src} />
+                            </Link>
                         </div>
                         <div>
                             © 2022 Testausserveri ry
