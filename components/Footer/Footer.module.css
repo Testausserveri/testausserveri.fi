@@ -1,7 +1,8 @@
 .footer {
-    background-color: white;
+    background-color: rgba(108, 108, 108, 0.09);
     width: 100%;
     padding: 2.5rem 0;
+    color: #DBDBDB;
 }
 
 .row {
@@ -36,6 +37,7 @@
 
 .footer img {
     height: 100%;
+    filter: invert(1);
 }
 
 .row ul {
