@@ -33,9 +33,9 @@ function SocialMedias() {
             {socialMedias.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
-                        <>
+                        <div>
                             <Image src={media.icon} height={24} width={24} unoptimized />
-                        </>
+                        </div>
                     </Link>
                 </li>
             ))}
