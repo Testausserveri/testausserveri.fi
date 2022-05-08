@@ -100,7 +100,7 @@ export default function Home({ssGuildInfo}) {
         </Title>
         <a href="https://discord.testausserveri.fi">
           <CapsuleButton 
-            style={{marginTop: "0.5rem"}} 
+            style={{margin: "-0.3rem 0 0.4rem 0"}} 
             onMouseOver={() => {setHeroFocused(true)}}
             onMouseLeave={() => {setHeroFocused(false)}}>
               <ButtonIcon src={DiscordIcon} />

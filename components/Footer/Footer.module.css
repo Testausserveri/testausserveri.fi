@@ -34,9 +34,22 @@
     line-height: 1.4;
 }
 
+.links a:before {
+    content: none;
+}
+
 .links li {
     list-style-type: none;
     text-align: right;
+}
+
+.links a {
+    opacity: 0.74;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.links a:hover {
+    opacity: 1;
 }
 
 .footer img {
