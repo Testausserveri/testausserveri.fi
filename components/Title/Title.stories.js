@@ -1,11 +1,11 @@
-import { GradientTitle as GradientTitleComponent } from './GradientTitle';
+import { Title as TitleComponent } from './Title';
 
 export default {
   title: 'Title',
-  component: GradientTitleComponent,
+  component: TitleComponent,
 }
 
-export const GradientTitle = {
+export const Title = {
   args: {
     children: "Oispa vaapukkamehua"
   }

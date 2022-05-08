@@ -40,7 +40,6 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
                     const Component = () => (
                         <Link 
                             shallow={true} 
-                            key={page.label} 
                             href={page.path}>
                             <li 
                                 className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
@@ -49,9 +48,9 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
                         </Link>
                     )
                     if (open) {
-                        return <FadeIn><Component /></FadeIn>
+                        return <FadeIn key={page.label} ><Component /></FadeIn>
                     } else {
-                        return <Component />
+                        return <Component key={page.label} />
                     }
                 })}  
             </ul>

@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import styled from 'styled-components'
+import TextLoop from "react-text-loop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
 import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
-import { GradientTitle } from '../components/Title/GradientTitle';
+import { Title } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
 import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
@@ -12,6 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
 import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
+import { GradientText } from '../components/GradientText/GradientText';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
@@ -40,6 +42,12 @@ const TextColumns = styled.div`
     br.mobileBreak {
       display: block;
     }
+  }
+`
+
+const TitleStaticGradientText = styled(GradientText)`
+  @media only screen and (max-width: 670px) {
+    display: block;
   }
 `
 
@@ -76,10 +84,20 @@ export default function Home({ssGuildInfo}) {
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
-        <GradientTitle>
-          Nettiyhteisö<br />
-          nuorille hakkereille
-        </GradientTitle>
+        <Title style={{overflow: "hidden"}}>
+          <TitleStaticGradientText>
+            Nettiyhteisö<br />
+            nuorille&nbsp;
+          </TitleStaticGradientText>
+          <TextLoop>
+              <GradientText>hakkereille</GradientText>
+              <GradientText>koodareille</GradientText>
+              <GradientText>Linux-velhoille</GradientText>
+              <GradientText>radioamatööreille</GradientText>
+              <GradientText>graafikoille</GradientText>
+              <GradientText>3D-artisteille</GradientText>
+          </TextLoop>
+        </Title>
         <a href="https://discord.testausserveri.fi">
           <CapsuleButton 
             style={{marginTop: "0.5rem"}} 
