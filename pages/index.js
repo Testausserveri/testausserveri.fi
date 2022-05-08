@@ -86,8 +86,8 @@ export default function Home({ssGuildInfo}) {
       <Center>
         <Title style={{overflow: "hidden"}}>
           <TitleStaticGradientText>
-            Nettiyhteisö<br />
-            nuorille&nbsp;
+            Yhteisö
+            nuorille<br />
           </TitleStaticGradientText>
           <TextLoop>
               <GradientText>hakkereille</GradientText>
