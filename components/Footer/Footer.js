@@ -72,9 +72,13 @@ export function Footer({}) {
                                 <img src={TestausserveriLogo.src}  className={styles.logo} />
                             </Link>
                         </div>
-                        <div>
+                        <p>
+                            <Link href="/credits">
+                                Kehittäjät ja lisenssit
+                            </Link>
+                            <br />
                             © 2022 Testausserveri ry
-                        </div>
+                        </p>
                     </div>
                     <div>
                         <div>
