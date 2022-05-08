@@ -100,11 +100,11 @@ export default function Home({ssGuildInfo}) {
         <LeaderboardGroup>
           <Leaderboard 
             data={guildInfo.messagesLeaderboard}
-            title="Eniten viestejä tänään" />
+            title="Eniten viestejä viikon sisään" />
           
           <Leaderboard 
             data={guildInfo.codingLeaderboard}
-            title="Eniten koodannut tällä viikolla"
+            title="Eniten koodannut viikon sisään"
             valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
       </Content>
