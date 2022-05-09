@@ -34,12 +34,12 @@ p a:before, ul a:before, table a:before {
   width: 100%;
   height: 100%;
   padding: .05rem .2rem;
-  background-color: rgba(255,255,255,.09);
+  background-color: rgba(255,255,255,.06);
   z-index: 0;
   border-radius: 9px;
   transition: background-color .1s;
 }
 
 p a:hover:before, ul a:hover:before, table a:hover:before {
-  background-color: rgba(255,255,255,.20);
+  background-color: rgba(255,255,255,.10);
 }
