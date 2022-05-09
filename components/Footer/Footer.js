@@ -77,7 +77,7 @@ export function Footer({}) {
                                 Kehittäjät ja lisenssit
                             </Link>
                             <br />
-                            © 2022 Testausserveri ry
+                            Copyright &copy; 2022 Testausserveri ry
                         </p>
                     </div>
                     <div>

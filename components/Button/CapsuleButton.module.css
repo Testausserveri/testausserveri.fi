@@ -2,13 +2,14 @@
     pointer-events: none;
 }
 .capsuleButton {
-    background-color: #f3f3f3;
-    padding: 1em 1.3em;
+    color: black;
+    background-color: #DBDBDB;
+    padding: .9em 1.5em;
     font-size: 1em;
     font-family: 'Poppins';
     font-weight: normal;
     display: inline-block;
-    border-radius: 200px;
+    border-radius: 20px;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -18,7 +19,6 @@
     overflow: hidden;
     mix-blend-mode:screen;
     text-decoration: none;
-    color: black;
 }
 
 .capsuleButton:hover {
@@ -26,10 +26,9 @@
 
 .ripple {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    padding: 50px;
     background: rgba(0,0,0,0.09);
-    border-radius: 100px;
+    border-radius: 50px;
     position: absolute;
     transform: scale(var(--size));
     transition: transform 0.2s;
@@ -39,8 +38,7 @@
 }
 .buttonIcon {
     display: flex;
-    margin-right: .8rem;
-    margin-bottom: 1px;
+    margin-right: 1rem;
 }
 .buttonIcon img {
     width: 1.4em !important;
