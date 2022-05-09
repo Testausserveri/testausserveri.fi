@@ -32,13 +32,13 @@ export function CapsuleButton(props) {
             <button 
                 onMouseLeave={() => setSize(0)} 
                 onMouseEnter={() => setSize(1)} 
-                onMouseDown={() => setSize(1.2)} 
+                onMouseDown={() => setSize(1.4)} 
                 onMouseUp={() => setSize(1)} 
 
                 onTouchStart={() => setSize(1)}
-                onTouchEnd={() => setSize(0)}
+                onTouchEnd={() => setSize(1)}
                 onTouchMove={onTouchMove}
-                onClick={() => setSize(0)}
+                onClick={() => setSize(1)}
 
                 onMouseMove={onMouseMove} 
                 className={(variant === "small" ? `${styles.capsuleButton} ${styles.small}` : styles.capsuleButton)}>
