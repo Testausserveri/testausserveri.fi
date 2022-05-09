@@ -12,7 +12,7 @@ export function Header({pages, activePath}) {
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
-            <a target="_blank" href="https://discord.testausserveri.fi">
+            <a target="_blank" href="https://github.com/testausserveri">
                 <Image src={GithubIcon} height={24} width={24} unoptimized />
             </a>
         </div>
