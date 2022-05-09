@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styled from 'styled-components'
 import TextLoop from "react-text-loop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
@@ -26,8 +27,22 @@ const Center = styled.div`
   margin-bottom: 2.5rem;
 `
 
+const Container = styled.div`
+  margin-top: 13em;
+  @media screen and (max-height: 900px) {
+    margin-top: 5em;
+  }
+  @media screen and (max-width: 670px) {
+    margin-top: 5em;
+  }
+`
+
+const MainContent = styled.div`
+  margin: 6em auto;
+`
+
 const TextColumns = styled.div`
-  margin: 2.5rem 0;
+  margin: 2.5rem .5rem;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -46,10 +61,25 @@ const TextColumns = styled.div`
 `
 
 const TitleStaticGradientText = styled(GradientText)`
+  font-size: 2.8rem;
+  width: 90%;
+  margin: 0 auto;
   @media only screen and (max-width: 670px) {
     display: block;
   }
+  @media screen and (max-width: 670px) {
+    font-size: 2.2rem;
+  }
 `
+
+
+const TitleGradientText = styled(GradientText)`
+  font-size: 2.8rem;
+  @media screen and (max-width: 670px) {
+    font-size: 2.2rem;
+  }
+`
+
 
 export default function Home({ssGuildInfo}) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
@@ -78,7 +108,7 @@ export default function Home({ssGuildInfo}) {
   }, [guildInfo])
 
   return (
-    <div>
+    <Container>
       <Head>
         <title>Testausserveri</title>
       </Head>
@@ -86,48 +116,50 @@ export default function Home({ssGuildInfo}) {
       <Center>
         <Title style={{overflow: "hidden"}}>
           <TitleStaticGradientText>
-            Yhteisö
-            nuorille<br />
+            Aktiivinen yhteisö 
+            kaikille<br />
           </TitleStaticGradientText>
           <TextLoop>
-              <GradientText>hakkereille</GradientText>
-              <GradientText>koodareille</GradientText>
-              <GradientText>Linux-velhoille</GradientText>
-              <GradientText>radioamatööreille</GradientText>
-              <GradientText>graafikoille</GradientText>
-              <GradientText>3D-artisteille</GradientText>
+          <TitleGradientText>hakkereille</TitleGradientText>
+              <TitleGradientText>koodareille</TitleGradientText>
+              <TitleGradientText>Linux-velhoille</TitleGradientText>
+              <TitleGradientText>radioamatööreille</TitleGradientText>
+              <TitleGradientText>graafikoille</TitleGradientText>
+              <TitleGradientText>3D-artisteille</TitleGradientText>
           </TextLoop>
         </Title>
-        <a href="https://discord.testausserveri.fi">
+        <a target="_blank" href="https://discord.testausserveri.fi">
           <CapsuleButton 
             style={{margin: "-0.3rem 0 0.4rem 0"}} 
             onMouseOver={() => {setHeroFocused(true)}}
             onMouseLeave={() => {setHeroFocused(false)}}>
               <ButtonIcon src={DiscordIcon} />
-            Tule juttelemaan!
+            Liity Discordiimme!
           </CapsuleButton>
         </a>
       </Center>
-      <Content>
-        <StatGroup stats={stats} />
-        <TextColumns>
-          Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
-          <br /><br className="mobileBreak" />
-          Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
-        </TextColumns>
-        <LeaderboardGroup>
-          <Leaderboard 
-            data={guildInfo.messagesLeaderboard}
-            title="Eniten viestejä viikon sisään" />
-          
-          <Leaderboard 
-            data={guildInfo.codingLeaderboard}
-            title="Eniten koodannut viikon sisään"
-            valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
-        </LeaderboardGroup>
-      </Content>
+      <MainContent>
+        <Content>
+          <StatGroup stats={stats} />
+          <TextColumns>
+            Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata <Link href="">täältä</Link>.
+            <br /><br className="mobileBreak" />
+            Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
+          </TextColumns>
+          <LeaderboardGroup>
+            <Leaderboard 
+              data={guildInfo.messagesLeaderboard}
+              title="Eniten viestejä viikon sisään" />
+            
+            <Leaderboard 
+              data={guildInfo.codingLeaderboard}
+              title="Eniten koodannut viikon sisään"
+              valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
+          </LeaderboardGroup>
+        </Content>
+      </MainContent>
       <Footer />
-    </div>
+    </Container>
   )
 }
 
