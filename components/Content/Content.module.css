@@ -1,9 +1,14 @@
 .content {
     z-index: 1;
     position: relative;
+    width: 80%;
     max-width: 1100px;
-    margin: 0 auto;
     padding: 0.7rem;
-    margin-bottom: 2.5rem;
-    padding-top: 0;
+    margin: 2em auto;
+}
+
+@media screen and (max-width: 670px) {
+    .content {
+        width: 90%;
+    }
 }

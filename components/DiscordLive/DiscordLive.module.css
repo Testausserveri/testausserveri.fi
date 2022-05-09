@@ -1,6 +1,6 @@
 .discordBackground {
     aspect-ratio: 1.694 / 1;
-    width: 800px;
+    width: 950px;
     position: relative;
     background-image: url("discord.png");
     background-size: 100% 100%;
@@ -40,13 +40,16 @@
 @media only screen and (max-width: 960px) {
     .discordBackground {
         zoom: 0.9;
+        width: 800px;
     }
 }
 @media only screen and (max-width: 800px) {
     .discordBackground {
         zoom: 0.8;
+        width: 700px;
     }
 }
+
 @media only screen and (max-width: 670px) {
     .liveArea {
         top: 13.80%;

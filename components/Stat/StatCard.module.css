@@ -26,8 +26,3 @@
     text-fill-color: transparent;
 }
 
-@media only screen and (max-width: 670px) {
-    .statCard {
-        aspect-ratio: 1/1;
-    }
-}
