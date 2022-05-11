@@ -40,7 +40,10 @@ export default function Home() {
               let license = licenses[pkg]?.licenses
               let repository = licenses[pkg]?.repository
               let url = licenses[pkg]?.url
-
+              if(url && !url.startsWith("http://") && !url.startsWith("https://")){
+                url = `https://${url}`;
+              } 
+              
               return (
                 <tr key={pkgName}>
                   <td>{repository ? <Link href={repository}>{pkgName}</Link> : pkgName}</td>
