@@ -66,7 +66,7 @@ export class TimeUtil {
                 .map(
                     ([u, v]) =>
                         `${v} ${
-                            v > 1
+                            v >= 1
                                 ? this.Suffixes[u.toUpperCase()].trim()
                                 : this.Suffixes[u.toUpperCase()].substring(
                                       0,
