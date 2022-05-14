@@ -55,6 +55,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
     Mailerlite(),
+    Mailgun(),
   
     TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com -all'),
     TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:dmarc@testausserveri.fi; adkim=s; aspf=s;')
@@ -64,6 +65,15 @@ function Mailerlite() {
     return [
         TXT('ml._domainkey', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZPVgEYMyfzZ2ybrXBQRS7uifdpzB0SNMoWMCYnsX46vU3KZ71Iz6tgcQGk4DOhRkAP5iLxNDm/s5SxD6Esn3rFHd2Cu5yIwCDLYBidyqoaa1QWmmglkFkglJXvQBp5XVX5ZXunTUHf2Sqy3MMQU9/5rY4xpRRaLVs8Yvt6i9Y7QIDAQAB'),
     ];
+}
+
+function Mailgun() {
+    return [
+        TXT('mg', 'v=spf1 include:mailgun.org ~all'),
+        TXT('mta._domainkey.mg', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCseJkjlSTzsHTTjCsr/DKwMqa0kdRaHRZ1YNxY5G938JQND9HbQhUv0pU+ZaXigIQhhvd4VxVRdPPUG16OpSuQVDdOgkYQWD3XQ/ayTI3OC1oeuISprymeGZ6Ff/+KHaXtVW/Avw2xr3I9PontaVzm46O9oXeDO3RtGVXWi02QxQIDAQAB'),
+        MX('mg', 10, 'mxa.eu.mailgun.org'),
+        MX('mg', 10, 'mxb.eu.mailgun.org')
+    ]
 }
 
 function Google() {
