@@ -71,8 +71,8 @@ function Mailgun() {
     return [
         TXT('mg', 'v=spf1 include:mailgun.org ~all'),
         TXT('mta._domainkey.mg', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCseJkjlSTzsHTTjCsr/DKwMqa0kdRaHRZ1YNxY5G938JQND9HbQhUv0pU+ZaXigIQhhvd4VxVRdPPUG16OpSuQVDdOgkYQWD3XQ/ayTI3OC1oeuISprymeGZ6Ff/+KHaXtVW/Avw2xr3I9PontaVzm46O9oXeDO3RtGVXWi02QxQIDAQAB'),
-        MX('mg', 10, 'mxa.eu.mailgun.org'),
-        MX('mg', 10, 'mxb.eu.mailgun.org')
+        MX('mg', 10, 'mxa.eu.mailgun.org.'),
+        MX('mg', 10, 'mxb.eu.mailgun.org.')
     ]
 }
 
