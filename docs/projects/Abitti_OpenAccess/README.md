@@ -5,7 +5,7 @@
 - Mikael
 - Eemil
 
-# Short Description
+## Short Description
 Löysimme lukuisia haavoittuvuuksista Abitti-koejärjestelmästä.
 
 ## Long description
