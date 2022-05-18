@@ -456,10 +456,6 @@ fetch("https://testausserveri.fi/projects.json")
         document.getElementById("projects").innerHTML = "<p style=\"text-align: center;\">Projektilistaa ei voida näyttää. Tapahtui virhe :(</p>"
     })
 
-function metaRepoLink() {
-    alert("Muiden projektien lista näkyy ainoastaan Testausserverin jäsenille. Liity ensin palvelimellemme ja sitä kautta GitHub-organisaatioomme nähdäksesi tämän listan.")
-}
-
 /* notifications */
 const notifications = {
     GithubJoin: {
