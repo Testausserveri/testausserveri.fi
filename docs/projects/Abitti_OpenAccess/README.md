@@ -5,7 +5,10 @@
 - Mikael
 - Eemil
 
-## Short description
+# Short Description
+Löysimme lukuisia haavoittuvuuksista Abitti-koejärjestelmästä.
+
+## Long description
 Löysimme lukuisia haavoittuvuuksista Abitti-koejärjestelmästä. Haavoittuvuussarja antoi hyökkääjälle täyden pääsyn koetilan palvelimelle ja jokaiseen siihen yhdistäneeseen kokelaan tietokoneeseen pääkäyttäjänä. Haavoittuvuudet koskettivat kaikkia Suomen lukioita ja sähköisiä ylioppilaskirjoituksia. Alttiina lukemiselle, muokkaamiselle, poistamiselle, ja häiriköinnille olivat muun muassa:
 - Tietokannat
     - Kaikkien kokelaiden henkilötiedot, ml. henkilötunnukset
