@@ -134,10 +134,7 @@
     "publisher": "Next.js Team",
     "email": "support@vercel.com"
   },
-  "@next/swc-linux-x64-gnu@12.1.4": {
-    "licenses": "MIT"
-  },
-  "@next/swc-linux-x64-musl@12.1.4": {
+  "@next/swc-darwin-arm64@12.1.4": {
     "licenses": "MIT"
   },
   "@skyra/discord-components-core@3.1.1": {
@@ -151,10 +148,10 @@
     "publisher": "@skyra"
   },
   "@splinetool/react-spline@2.2.1": {
-    "licenses": "Custom: https://raw.githubusercontent.com/splinetool/react-spline/main/.github/screenshots/hero.png"
+    "licenses": ""
   },
   "@splinetool/runtime@0.9.53": {
-    "licenses": "Custom: https://prod.spline.design/2qM3cW5Cx15m3cJ7/scene.splinecode"
+    "licenses": ""
   },
   "@stencil/core@2.14.2": {
     "licenses": "MIT",
