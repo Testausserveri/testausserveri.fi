@@ -1,6 +1,6 @@
 .projects3D {
   position: relative;
-  height: 450px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,31 +25,32 @@
 
   transition-property: filter;
   transition-duration: 0.5s;
-  transition-delay: 1s;
-}
-
-.splineWrapper::before {
-  content: '';
-  background-image: url('../../assets/projects-3d-placeholder.png');
-  opacity: 0;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  transition: opacity 1s;
-  background-size: auto 100%;
-  transform: scale(2);
-  background-position: center;
-  pointer-events: none;
+  transition-delay: 2s;
 }
 .loading .splineWrapper {
   transition: filter 0.5s;
   filter: blur(30px);
   pointer-events: none;
+}
 
+.loading .splineWrapper::before {
+  content: '';
+  background-image: url('../../assets/projects-3d-placeholder.png');
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: auto 100%;
+  transform: scale(2);
+  background-position: center;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity 1s;
 }
 .loading .splineWrapper::before {
   opacity: 1;
 }
+
 .splineWrapper::after {
   content: ' ';
   position: absolute;
