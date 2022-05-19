@@ -27,6 +27,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('discord', 'testausserveri.github.io.'), // Discord forwarding
     CNAME('git', 'testausserveri.github.io.'), // GitHub forwarding
     CNAME('static', 'testausserveri.github.io.'), // Static files
+    CNAME('status', 'status.protokolla.fi.'), // Status webpage
     CNAME('time', 'testausserveri.github.io.'), // TestausTime
     CNAME('ug', 'relay.dfjapis.com.', CF_PROXY_OFF), // TestausTime
     CNAME('openwilma_js', 'openwilma.github.io.'), // OpenWilma js documentation - https://github.com/OpenWilma/
