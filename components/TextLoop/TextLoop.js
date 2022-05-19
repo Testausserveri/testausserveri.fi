@@ -20,12 +20,6 @@ const TextLoopAnimation = (stayTimeRatio) => keyframes`
 `;
 
 const TextLoopElement = styled.span`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
   animation: ${props => TextLoopAnimation(props.stayTimeRatio)} ${(props) => props.duration}s ease-in-out;
 `
 

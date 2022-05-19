@@ -84,7 +84,12 @@ export default function Home({ssGuildInfo}) {
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
-        <Title style={{overflow: "hidden"}}>
+        <Title style={{ 
+          overflow: "hidden", 
+          display: "flex", 
+          alignItems: "center", 
+          flexDirection: "column" 
+        }}>
           <TitleStaticGradientText>
             Yhteisö
             nuorille<br />
