@@ -4,3 +4,4 @@ node_modules
 .next
 storybook-static
 .env
+dependency-licenses.json-e

@@ -8,7 +8,7 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "dump-licenses": "npx license-checker --json --production > dependency-licenses.json"
+    "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {
     "@skyra/discord-components-core": "^3.1.1",
