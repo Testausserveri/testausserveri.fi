@@ -3,590 +3,474 @@
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/traverse/node_modules/@babel/code-frame",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/traverse/node_modules/@babel/code-frame/LICENSE"
+    "url": "https://babel.dev/team"
   },
-  "@babel/generator@7.17.3": {
+  "@babel/generator@7.17.12": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/generator",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/generator/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-annotate-as-pure@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-annotate-as-pure",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-annotate-as-pure/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-environment-visitor@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-environment-visitor",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-environment-visitor/LICENSE"
+    "url": "https://babel.dev/team"
   },
-  "@babel/helper-function-name@7.16.7": {
+  "@babel/helper-function-name@7.17.9": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-function-name",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-function-name/LICENSE"
-  },
-  "@babel/helper-get-function-arity@7.16.7": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-get-function-arity",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-get-function-arity/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-hoist-variables@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-hoist-variables",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-hoist-variables/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-module-imports@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-module-imports",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-module-imports/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-split-export-declaration@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-split-export-declaration",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-split-export-declaration/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/helper-validator-identifier@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-validator-identifier",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/helper-validator-identifier/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/highlight@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/LICENSE"
+    "url": "https://babel.dev/team"
   },
-  "@babel/parser@7.17.3": {
+  "@babel/parser@7.17.12": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template/node_modules/@babel/parser",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template/node_modules/@babel/parser/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@babel/template@7.16.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template/LICENSE"
+    "url": "https://babel.dev/team"
   },
-  "@babel/traverse@7.17.3": {
+  "@babel/traverse@7.17.12": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/traverse",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/traverse/LICENSE"
+    "url": "https://babel.dev/team"
   },
-  "@babel/types@7.16.7": {
+  "@babel/types@7.17.12": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template/node_modules/@babel/types",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/template/node_modules/@babel/types/LICENSE"
-  },
-  "@babel/types@7.17.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/types",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/types/LICENSE"
+    "url": "https://babel.dev/team"
   },
   "@emotion/is-prop-valid@1.1.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/emotion-js/emotion/tree/main/packages/is-prop-valid",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-components/node_modules/@emotion/is-prop-valid",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-components/node_modules/@emotion/is-prop-valid/LICENSE"
+    "repository": "https://github.com/emotion-js/emotion/tree/main/packages/is-prop-valid"
   },
   "@emotion/memoize@0.7.4": {
     "licenses": "MIT",
-    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/memoize",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/memoize",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/memoize/LICENSE"
+    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/memoize"
   },
   "@emotion/stylis@0.8.5": {
     "licenses": "MIT",
-    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/stylis",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/stylis",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/stylis/LICENSE"
+    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/stylis"
   },
   "@emotion/unitless@0.7.5": {
     "licenses": "MIT",
-    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/unitless",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/unitless",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@emotion/unitless/LICENSE"
+    "repository": "https://github.com/emotion-js/emotion/tree/master/packages/unitless"
+  },
+  "@jridgewell/gen-mapping@0.3.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/gen-mapping",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name"
+  },
+  "@jridgewell/resolve-uri@3.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/resolve-uri",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name"
+  },
+  "@jridgewell/set-array@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/set-array",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name"
+  },
+  "@jridgewell/sourcemap-codec@1.4.11": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/sourcemap-codec",
+    "publisher": "Rich Harris"
+  },
+  "@jridgewell/trace-mapping@0.3.13": {
+    "licenses": "MIT",
+    "repository": "https://github.com/jridgewell/trace-mapping",
+    "publisher": "Justin Ridgewell",
+    "email": "justin@ridgewell.name"
   },
   "@next/env@12.1.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js",
     "publisher": "Next.js Team",
-    "email": "support@vercel.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@next/env",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@next/env/license.md"
+    "email": "support@vercel.com"
   },
-  "@next/swc-darwin-arm64@12.1.4": {
-    "licenses": "MIT",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@next/swc-darwin-arm64",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@next/swc-darwin-arm64/README.md"
+  "@next/swc-linux-x64-gnu@12.1.4": {
+    "licenses": "MIT"
+  },
+  "@next/swc-linux-x64-musl@12.1.4": {
+    "licenses": "MIT"
   },
   "@skyra/discord-components-core@3.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/skyra-project/discord-components",
-    "publisher": "@skyra",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@skyra/discord-components-core",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@skyra/discord-components-core/README.md"
+    "publisher": "@skyra"
   },
   "@skyra/discord-components-react@3.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/skyra-project/discord-components",
-    "publisher": "@skyra",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@skyra/discord-components-react",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@skyra/discord-components-react/README.md"
+    "publisher": "@skyra"
+  },
+  "@splinetool/react-spline@2.2.1": {
+    "licenses": "Custom: https://raw.githubusercontent.com/splinetool/react-spline/main/.github/screenshots/hero.png"
+  },
+  "@splinetool/runtime@0.9.53": {
+    "licenses": "Custom: https://prod.spline.design/2qM3cW5Cx15m3cJ7/scene.splinecode"
   },
   "@stencil/core@2.14.2": {
     "licenses": "MIT",
     "repository": "https://github.com/ionic-team/stencil",
-    "publisher": "Ionic Team",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@stencil/core",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@stencil/core/LICENSE.md"
+    "publisher": "Ionic Team"
   },
   "ansi-styles@3.2.1": {
     "licenses": "MIT",
     "repository": "https://github.com/chalk/ansi-styles",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/ansi-styles",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/ansi-styles/license"
+    "url": "sindresorhus.com"
   },
   "babel-plugin-styled-components@2.0.7": {
     "licenses": "MIT",
-    "repository": "https://github.com/styled-components/babel-plugin-styled-components",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/babel-plugin-styled-components",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/babel-plugin-styled-components/LICENSE.md"
+    "repository": "https://github.com/styled-components/babel-plugin-styled-components"
   },
   "babel-plugin-syntax-jsx@6.18.0": {
     "licenses": "MIT",
-    "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/babel-plugin-syntax-jsx",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/babel-plugin-syntax-jsx/README.md"
+    "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
   },
   "camelize@1.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/substack/camelize",
     "publisher": "James Halliday",
     "email": "mail@substack.net",
-    "url": "http://substack.net",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/camelize",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/camelize/LICENSE"
+    "url": "http://substack.net"
   },
-  "caniuse-lite@1.0.30001327": {
+  "caniuse-lite@1.0.30001341": {
     "licenses": "CC-BY-4.0",
     "repository": "https://github.com/browserslist/caniuse-lite",
     "publisher": "Ben Briggs",
     "email": "beneb.info@gmail.com",
-    "url": "http://beneb.info",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/caniuse-lite",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/caniuse-lite/LICENSE"
+    "url": "http://beneb.info"
   },
   "chalk@2.4.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/chalk/chalk",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/chalk",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/chalk/license"
+    "repository": "https://github.com/chalk/chalk"
   },
   "clsx@1.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/lukeed/clsx",
     "publisher": "Luke Edwards",
     "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/clsx",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/clsx/license"
+    "url": "https://lukeed.com"
   },
   "color-convert@1.9.3": {
     "licenses": "MIT",
     "repository": "https://github.com/Qix-/color-convert",
     "publisher": "Heather Arthur",
-    "email": "fayearthur@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/color-convert",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/color-convert/LICENSE"
+    "email": "fayearthur@gmail.com"
   },
   "color-name@1.1.3": {
     "licenses": "MIT",
     "repository": "https://github.com/dfcreative/color-name",
     "publisher": "DY",
-    "email": "dfcreative@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/color-name",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/color-name/LICENSE"
+    "email": "dfcreative@gmail.com"
   },
   "countup.js@2.0.8": {
     "licenses": "MIT",
     "repository": "https://github.com/inorganik/countUp.js",
-    "publisher": "@inorganik",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/countup.js",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/countup.js/LICENSE.md"
+    "publisher": "@inorganik"
   },
   "css-color-keywords@1.0.0": {
     "licenses": "ISC",
     "repository": "https://github.com/sonicdoe/css-color-keywords",
     "publisher": "Jakob Krigovsky",
-    "email": "jakob@krigovsky.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/css-color-keywords",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/css-color-keywords/LICENSE"
+    "email": "jakob@krigovsky.com"
   },
   "css-to-react-native@3.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/styled-components/css-to-react-native",
-    "publisher": "Jacob Parker",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/css-to-react-native",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/css-to-react-native/LICENSE.md"
+    "publisher": "Jacob Parker"
   },
   "cxs@6.2.0": {
     "licenses": "MIT",
-    "publisher": "Brent Jackson",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/cxs",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/cxs/LICENSE.md"
+    "publisher": "Brent Jackson"
   },
   "debug@4.3.3": {
     "licenses": "MIT",
     "repository": "https://github.com/debug-js/debug",
     "publisher": "Josh Junon",
-    "email": "josh.junon@protonmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/debug",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/debug/LICENSE"
+    "email": "josh.junon@protonmail.com"
   },
   "escape-string-regexp@1.0.5": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/escape-string-regexp",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/escape-string-regexp",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/escape-string-regexp/license"
+    "url": "sindresorhus.com"
   },
   "globals@11.12.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/globals",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/globals",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/globals/license"
+    "url": "sindresorhus.com"
   },
   "hamburger-react@2.4.1": {
     "licenses": "MIT",
     "repository": "https://github.com/luukdv/hamburger-react",
     "publisher": "Luuk de Vlieger",
     "email": "info@luuk.site",
-    "url": "https://www.luuk.site",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hamburger-react",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hamburger-react/license.md"
+    "url": "https://www.luuk.site"
   },
   "has-flag@3.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/has-flag",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/has-flag",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/has-flag/license"
+    "url": "sindresorhus.com"
   },
   "hex-to-rgba@2.0.1": {
     "licenses": "GPL-3.0",
     "repository": "https://github.com/misund/hex-to-rgba",
-    "publisher": "Just Thomas Hiorth Misund",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hex-to-rgba",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hex-to-rgba/LICENSE"
+    "publisher": "Just Thomas Hiorth Misund"
   },
   "hoist-non-react-statics@3.3.2": {
     "licenses": "BSD-3-Clause",
     "repository": "https://github.com/mridgway/hoist-non-react-statics",
     "publisher": "Michael Ridgway",
-    "email": "mcridgway@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hoist-non-react-statics",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/hoist-non-react-statics/LICENSE.md"
+    "email": "mcridgway@gmail.com"
   },
   "js-tokens@4.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/lydell/js-tokens",
-    "publisher": "Simon Lydell",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/js-tokens",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/js-tokens/LICENSE"
+    "publisher": "Simon Lydell"
   },
   "jsesc@2.5.2": {
     "licenses": "MIT",
     "repository": "https://github.com/mathiasbynens/jsesc",
     "publisher": "Mathias Bynens",
-    "url": "https://mathiasbynens.be/",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/jsesc",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/jsesc/LICENSE-MIT.txt"
+    "url": "https://mathiasbynens.be/"
   },
   "lodash@4.17.21": {
     "licenses": "MIT",
     "repository": "https://github.com/lodash/lodash",
     "publisher": "John-David Dalton",
-    "email": "john.david.dalton@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/lodash",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/lodash/LICENSE"
+    "email": "john.david.dalton@gmail.com"
   },
   "loose-envify@1.4.0": {
     "licenses": "MIT",
     "repository": "https://github.com/zertosh/loose-envify",
     "publisher": "Andres Suarez",
-    "email": "zertosh@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/loose-envify",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/loose-envify/LICENSE"
+    "email": "zertosh@gmail.com"
   },
   "ms@2.1.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/zeit/ms",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/debug/node_modules/ms",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/debug/node_modules/ms/license.md"
+    "repository": "https://github.com/zeit/ms"
   },
   "nanoid@3.3.2": {
     "licenses": "MIT",
     "repository": "https://github.com/ai/nanoid",
     "publisher": "Andrey Sitnik",
-    "email": "andrey@sitnik.ru",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/nanoid",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/nanoid/LICENSE"
+    "email": "andrey@sitnik.ru"
   },
   "next@12.1.4": {
     "licenses": "MIT",
-    "repository": "https://github.com/vercel/next.js",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next/license.md"
+    "repository": "https://github.com/vercel/next.js"
   },
   "object-assign@4.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/object-assign",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/object-assign",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/object-assign/license"
+    "url": "sindresorhus.com"
+  },
+  "on-change@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/on-change",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
   },
   "performance-now@0.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/meryn/performance-now",
     "publisher": "Meryn Stol",
-    "email": "merynstol@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/performance-now",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/performance-now/license.txt"
+    "email": "merynstol@gmail.com"
   },
   "performance-now@2.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/braveg1rl/performance-now",
     "publisher": "Braveg1rl",
-    "email": "braveg1rl@outlook.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/raf/node_modules/performance-now",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/raf/node_modules/performance-now/license.txt"
+    "email": "braveg1rl@outlook.com"
   },
   "picocolors@1.0.0": {
     "licenses": "ISC",
     "repository": "https://github.com/alexeyraspopov/picocolors",
-    "publisher": "Alexey Raspopov",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next/node_modules/picocolors",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next/node_modules/picocolors/LICENSE"
+    "publisher": "Alexey Raspopov"
   },
   "picomatch@2.3.1": {
     "licenses": "MIT",
     "repository": "https://github.com/micromatch/picomatch",
     "publisher": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/picomatch",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/picomatch/LICENSE"
+    "url": "https://github.com/jonschlinkert"
   },
   "postcss-value-parser@4.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/TrySound/postcss-value-parser",
     "publisher": "Bogdan Chadkin",
-    "email": "trysound@yandex.ru",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/postcss-value-parser",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/postcss-value-parser/LICENSE"
+    "email": "trysound@yandex.ru"
   },
   "postcss@8.4.5": {
     "licenses": "MIT",
     "repository": "https://github.com/postcss/postcss",
     "publisher": "Andrey Sitnik",
-    "email": "andrey@sitnik.ru",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next/node_modules/postcss",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/next/node_modules/postcss/LICENSE"
+    "email": "andrey@sitnik.ru"
   },
   "prop-types@15.8.1": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/prop-types",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-motion/node_modules/prop-types",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-motion/node_modules/prop-types/LICENSE"
+    "repository": "https://github.com/facebook/prop-types"
   },
   "raf@3.4.1": {
     "licenses": "MIT",
     "repository": "https://github.com/chrisdickinson/raf",
     "publisher": "Chris Dickinson",
-    "email": "chris@neversaw.us",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/raf",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/raf/LICENSE"
+    "email": "chris@neversaw.us"
   },
   "react-countup@6.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/glennreyes/react-countup",
     "publisher": "Glenn Reyes",
     "email": "glenn@glennreyes.com",
-    "url": "https://twitter.com/glnnrys",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-countup",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-countup/LICENSE"
+    "url": "https://twitter.com/glnnrys"
   },
   "react-dom@17.0.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/react",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-dom",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-dom/LICENSE"
+    "repository": "https://github.com/facebook/react"
   },
   "react-fade-in@2.0.1": {
     "licenses": "MIT",
     "repository": "https://github.com/gkaemmer/react-fade-in",
-    "publisher": "Graham Kaemmer",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-fade-in",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-fade-in/LICENSE"
+    "publisher": "Graham Kaemmer"
   },
   "react-fast-compare@2.0.4": {
     "licenses": "MIT",
     "repository": "https://github.com/FormidableLabs/react-fast-compare",
-    "publisher": "Chris Bolin",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-text-loop/node_modules/react-fast-compare",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-text-loop/node_modules/react-fast-compare/LICENSE"
+    "publisher": "Chris Bolin"
   },
   "react-is@16.13.1": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/react",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-is",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-is/LICENSE"
+    "repository": "https://github.com/facebook/react"
+  },
+  "react-merge-refs@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/gregberge/react-merge-refs",
+    "publisher": "Greg Bergé",
+    "email": "berge.greg@gmail.com"
   },
   "react-motion@0.5.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/chenglou/react-motion",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-motion",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-motion/LICENSE"
+    "repository": "https://github.com/chenglou/react-motion"
   },
   "react-text-loop@2.3.0": {
     "licenses": "MIT",
     "repository": "https://github.com/braposo/react-text-loop",
     "publisher": "Bernardo Raposo",
     "email": "hi@bernardoraposo.com",
-    "url": "http://bernardoraposo.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-text-loop",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react-text-loop/LICENSE"
+    "url": "http://bernardoraposo.com"
   },
   "react@17.0.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/react",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/react/LICENSE"
+    "repository": "https://github.com/facebook/react"
   },
   "scheduler@0.20.2": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/react",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/scheduler",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/scheduler/LICENSE"
+    "repository": "https://github.com/facebook/react"
   },
   "shallowequal@1.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/dashed/shallowequal",
     "publisher": "Alberto Leal",
     "email": "mailforalberto@gmail.com",
-    "url": "github.com/dashed",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/shallowequal",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/shallowequal/LICENSE"
+    "url": "github.com/dashed"
   },
   "source-map-js@1.0.2": {
     "licenses": "BSD-3-Clause",
     "repository": "https://github.com/7rulnik/source-map-js",
     "publisher": "Valentin 7rulnik Semirulnik",
-    "email": "v7rulnik@gmail.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/source-map-js",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/source-map-js/LICENSE"
-  },
-  "source-map@0.5.7": {
-    "licenses": "BSD-3-Clause",
-    "repository": "https://github.com/mozilla/source-map",
-    "publisher": "Nick Fitzgerald",
-    "email": "nfitzgerald@mozilla.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/generator/node_modules/source-map",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/generator/node_modules/source-map/LICENSE"
+    "email": "v7rulnik@gmail.com"
   },
   "styled-components@5.3.5": {
     "licenses": "MIT",
     "repository": "https://github.com/styled-components/styled-components",
-    "publisher": "Glen Maddern",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-components",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-components/README.md"
+    "publisher": "Glen Maddern"
   },
   "styled-jsx@5.0.1": {
     "licenses": "MIT",
-    "repository": "https://github.com/vercel/styled-jsx",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-jsx",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/styled-jsx/license.md"
+    "repository": "https://github.com/vercel/styled-jsx"
   },
   "supports-color@5.5.0": {
     "licenses": "MIT",
     "repository": "https://github.com/chalk/supports-color",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/supports-color",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/@babel/highlight/node_modules/supports-color/license"
+    "url": "sindresorhus.com"
   },
   "to-fast-properties@2.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/to-fast-properties",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/to-fast-properties",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/to-fast-properties/license"
+    "url": "sindresorhus.com"
   },
   "tslib@2.3.1": {
     "licenses": "0BSD",
     "repository": "https://github.com/Microsoft/tslib",
-    "publisher": "Microsoft Corp.",
-    "path": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/tslib",
-    "licenseFile": "/Users/mikael/Documents/GitHub/testausserveri.fi/node_modules/tslib/LICENSE.txt"
+    "publisher": "Microsoft Corp."
+  },
+  "yoctodelay@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/yoctodelay",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
   }
 }
 
