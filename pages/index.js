@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components'
-import TextLoop from "react-text-loop";
+import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
