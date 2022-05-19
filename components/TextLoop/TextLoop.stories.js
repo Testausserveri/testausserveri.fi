@@ -14,5 +14,5 @@ Default.args = {
     "Fourth text"
   ],
   duration: 2,
-  stayTimeRatio: 0.9 // This should be between 0 and 1
+  stayTimeRatio: 90 // This should be between 0 and 100
 }

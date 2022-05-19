@@ -1,36 +1,45 @@
-import { motion } from 'framer-motion'
-import { useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 import { useWrappingCounter } from '../../hooks/useWrappingCounter';
 
-export const TextLoop = ({ children, duration = 3, stayTimeRatio = 0.95 }) => {
-  const [index, incrementIndex] = useWrappingCounter(children ? children.length : 0);
+const TextLoopAnimation = (stayTimeRatio) => keyframes`
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  ${100 - stayTimeRatio}% {
+    opacity: 1;
+  }
+  ${stayTimeRatio}% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+`;
 
-  useEffect(() => {
-    const id = setTimeout(incrementIndex, duration * 1000);
-    return () => clearTimeout(id);
-  }, [index])
+const TextLoopElement = styled.span`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  animation: ${props => TextLoopAnimation(props.stayTimeRatio)} ${(props) => props.duration}s ease-in-out;
+`
+
+export const TextLoop = ({ children, duration = 3, stayTimeRatio = 95 }) => {
+  const [index, incrementIndex] = useWrappingCounter(children ? children.length : 0);
 
   if (!children) return null;
 
-  return <motion.div
-    animate={{
-      opacity: [0, 1, 1, 0],
-      y: 35
-    }}
+  return <TextLoopElement
     key={index}
-    transition={{
-      repeat: Infinity,
-      duration,
-      opacity: {
-        duration,
-        times: [0, 0.1, 0.9, 1]
-      },
-      y: {
-        duration: duration * (1 - stayTimeRatio),
-        delay: duration * stayTimeRatio,
-      },
-    }}
+    duration={duration}
+    stayTimeRatio={stayTimeRatio}
+    onAnimationEnd={incrementIndex}
   >
     {children[index]}
-  </motion.div>
+  </TextLoopElement>;
 }
