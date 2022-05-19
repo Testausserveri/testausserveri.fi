@@ -2,9 +2,9 @@
 	"licenseFile": false,
 	"licenseText": false,
 	"licenseModified": false,
-  "path": false,
-  "copyright": false,
-  "description": false,
-	"name": false,
-  "version": false
+    "path": false,
+    "copyright": false,
+    "description": false,
+    "name": false,
+    "version": false
 }
