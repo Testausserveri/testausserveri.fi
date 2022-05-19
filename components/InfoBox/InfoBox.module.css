@@ -1,0 +1,34 @@
+.infoBox {
+    background-color: rgba(108, 108, 108, 0.09);
+    border-radius: 0.5rem;
+    display: flex;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1rem;
+    font-family: 'Poppins';
+    font-size: 1rem;
+}
+
+.infoBox div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoBox div:last-child {
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.content span:nth-child(1) {
+    font-weight: 600;
+}
+
+.infoBox p {
+    margin: 0;
+}
