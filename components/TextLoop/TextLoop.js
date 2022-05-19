@@ -14,8 +14,8 @@ export const TextLoop = ({ children, duration = 3, stayTimeRatio = 0.95 }) => {
 
   return <motion.div
     animate={{
-      y: 35,
-      opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+      opacity: [0, 1, 1, 0],
+      y: 35
     }}
     key={index}
     transition={{
@@ -23,7 +23,7 @@ export const TextLoop = ({ children, duration = 3, stayTimeRatio = 0.95 }) => {
       duration,
       opacity: {
         duration,
-        values: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+        times: [0, 0.1, 0.9, 1]
       },
       y: {
         duration: duration * (1 - stayTimeRatio),
