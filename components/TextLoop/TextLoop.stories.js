@@ -5,8 +5,8 @@ export default {
   component: TextLoopComponent,
 }
 
-export const TextLoop = ((args) => <TextLoopComponent {...args} />).bind({})
-TextLoop.args = {
+export const Default = ((args) => <TextLoopComponent {...args} />).bind({})
+Default.args = {
   children: [
     "First text",
     "Second text",
