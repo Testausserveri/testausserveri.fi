@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components'
-import TextLoop from "react-text-loop";
+import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
@@ -84,7 +84,12 @@ export default function Home({ssGuildInfo}) {
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
-        <Title style={{overflow: "hidden"}}>
+        <Title style={{ 
+          overflow: "hidden", 
+          display: "flex", 
+          alignItems: "center", 
+          flexDirection: "column" 
+        }}>
           <TitleStaticGradientText>
             Yhteisö
             nuorille<br />
