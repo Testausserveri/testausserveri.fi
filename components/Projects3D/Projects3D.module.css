@@ -62,3 +62,18 @@
   box-shadow: inset 0px 0px 26px 20px #0D0D0D;
   pointer-events: none;
 }
+
+.tip {
+  position: absolute;
+  bottom: 2rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tipVisible .tip {
+  opacity: 1;
+}
+
+.tipVisible {
+  cursor: pointer;
+}

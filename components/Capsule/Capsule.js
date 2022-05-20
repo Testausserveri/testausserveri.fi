@@ -1,9 +1,8 @@
+import { forwardRef } from 'react'
 import styles from './Capsule.module.css'
 
-export function Capsule({children, className}) {
-    return (
-        <span className={`${styles.capsule} ${className}`}>
-            {children}
-        </span>
-    )
-}
+export const Capsule = forwardRef((props, ref) => ((
+    <span {...props} ref={ref} className={props.className ? `${styles.capsule} ${props.className}` : styles.capsule}>
+        {props.children}
+    </span>
+)))
