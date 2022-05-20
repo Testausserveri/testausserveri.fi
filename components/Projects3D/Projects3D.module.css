@@ -29,23 +29,26 @@
 }
 .loading .splineWrapper {
   transition: filter 0.5s;
-  filter: blur(30px);
+  /*filter: blur(30px);*/
   pointer-events: none;
+  position: relative;
 }
 
 .loading .splineWrapper::before {
   content: '';
-  background-image: url('../../assets/projects-3d-placeholder.png');
+  background-image: url('../../assets/projects-3d-placeholder.jpg');
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-size: auto 100%;
-  transform: scale(2);
+  background-size: auto 200%;
   background-position: center;
   pointer-events: none;
+  transform: scale(0.98);
 
   opacity: 0;
   transition: opacity 1s;
+  z-index: -3;
+
 }
 .loading .splineWrapper::before {
   opacity: 1;
@@ -61,6 +64,7 @@
   -webkit-box-shadow: inset 0px 0px 26px 20px #0D0D0D; 
   box-shadow: inset 0px 0px 26px 20px #0D0D0D;
   pointer-events: none;
+  z-index: 1;
 }
 
 .tip {
@@ -72,8 +76,4 @@
 
 .tipVisible .tip {
   opacity: 1;
-}
-
-.tipVisible {
-  cursor: pointer;
 }

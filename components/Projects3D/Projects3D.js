@@ -58,7 +58,6 @@ export function Projects3D(props) {
     function hover(e) {
         const project = findProject(e)
         if (!project) return
-        console.log(tipCapsule)
         if(tipCapsule.current) tipCapsule.current.innerHTML = project.name
 
         if (tipTimeout || previousTimeout) clearTimeout(tipTimeout || previousTimeout)
@@ -83,15 +82,17 @@ export function Projects3D(props) {
                 <Loading />
             </div>
             <div className={styles.splineWrapper}>
+                
                 <Spline 
                 scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
                 onMouseHover={hover}
-                onMouseDown={click}
+                onMouseUp={click}
                 onLoad={() => {
                     console.log("Spline loaded")
                     setSplineLoading(false)
                 }}
                 />
+            
             </div>
             <Capsule className={styles.tip} ref={tipCapsule} />
         </div>
