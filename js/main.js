@@ -58,6 +58,12 @@ function createToolTip(content, element) {
     return span
 }
 
+/* scrolling causes mouseout on images globally */
+window.addEventListener("scroll", () => {
+    const images = document.querySelectorAll("img")
+    for (const image of images) if (typeof image.onmouseout === "function") image.onmouseout()
+})
+
 /* counters */
 const options = {
     duration: 0.5,
