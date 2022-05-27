@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Content } from '../components/Content/Content'
+import { Footer } from '../components/Footer/Footer'
 import { Title } from '../components/Title/Title'
 import licenses from '../dependency-licenses.json'
 
@@ -59,6 +60,7 @@ export default function Home() {
             })}
           </table>
         </Content>
+        <Footer />
     </article>
   )
 }
