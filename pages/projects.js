@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link';
 import { Content } from '../components/Content/Content'
+import { Footer } from '../components/Footer/Footer';
 import { InfoBox } from '../components/InfoBox/InfoBox';
 import { ProjectRow } from '../components/ProjectRow/ProjectRow';
 
@@ -8,7 +9,7 @@ import { Projects3D } from '../components/Projects3D/Projects3D';
 
 export default function Projects({projectsList}) {
   return (
-    <article>
+    <div>
         <Head>
             <title>Projektit | Testausserveri</title>
         </Head>
@@ -24,7 +25,8 @@ export default function Projects({projectsList}) {
             <ProjectRow key={project._id} project={project} />
           ))}
         </Content>
-    </article>
+        <Footer />
+    </div>
   )
 }
 
