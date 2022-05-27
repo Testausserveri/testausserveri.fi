@@ -6,7 +6,8 @@ import licenses from '../dependency-licenses.json'
 
 const developers = [
   { name: "Miksu", url: "https://github.com/ahnl" },
-  { name: "Eldemarkki", url: "https://github.com/Eldemarkki" }
+  { name: "Eldemarkki", url: "https://github.com/Eldemarkki" },
+  { name: "Esinko", url: "https://github.com/Esinko" }
 ]
 export default function Home() {
   return (
