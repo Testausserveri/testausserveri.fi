@@ -8,10 +8,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const footerLinks = [
-    { label: "Etusivu", path: "/" },
-    { label: "Jäsenet", path: "/members" },
-    { label: "Projektit", path: "/projects" },
-    { label: "Tietoa", path: "/about-us" }
+    { label: "Status", path: "https://status.testausserveri.fi" },
+    { label: "Tietosuojaseloste", path: "/privacy" },
+    { label: "Testausserveri Wiki", path: "https://wiki.testausserveri.fi" },
+    { label: "Yhdistyksen säännöt", path: "https://testausserveri.fi/yhdistyksen-saannot.pdf" },
 ] 
 
 const socialMedias = [
