@@ -68,9 +68,12 @@ export function Footer({}) {
                 <FooterRow>
                     <div>
                         <div>
-                            <Link href="/">
-                                <img src={TestausserveriLogo.src}  className={styles.logo} />
-                            </Link>
+                            <div>
+                                <Link href="/">
+                                    <img src={TestausserveriLogo.src}  className={styles.logo} />
+                                </Link>
+                                <span className={styles.businessId}>Y-tunnus: 3235794-4</span>
+                            </div>
                         </div>
                         <p>
                             <Link href="/credits">
