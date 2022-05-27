@@ -11,7 +11,7 @@ const footerLinks = [
     { label: "Etusivu", path: "/" },
     { label: "Jäsenet", path: "/members" },
     { label: "Projektit", path: "/projects" },
-    { label: "Mediassa", path: "/in-media" },
+    { label: "Tietoa", path: "/about-us" }
 ] 
 
 const socialMedias = [
