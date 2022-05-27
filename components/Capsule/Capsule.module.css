@@ -1,9 +1,8 @@
 .capsule {
-    background-color: rgba(255,255,255,0.44);
+    background-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.65);
     border-radius: 0.5rem;
-    padding: 0 0.2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: black;
+    padding: 0.2rem 0.5rem;
+    font-weight: normal;
     font-size: 0.9em;
 }
