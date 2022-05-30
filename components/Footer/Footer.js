@@ -12,7 +12,7 @@ const footerLinks = [
     { label: "Tietosuojaseloste", path: "/privacy" },
     { label: "Testausserveri Wiki", path: "https://wiki.testausserveri.fi" },
     { label: "Yhdistyksen säännöt", path: "https://testausserveri.fi/yhdistyksen-saannot.pdf" },
-] 
+]
 
 const socialMedias = [
     {
@@ -25,7 +25,7 @@ const socialMedias = [
         name: "Instagram",
         url: "https://instagram.com/Testausserveri"
     }
-] 
+]
 
 function SocialMedias() {
     return (
@@ -33,9 +33,9 @@ function SocialMedias() {
             {socialMedias.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
-                        <div>
+                        <a>
                             <Image src={media.icon} height={24} width={24} unoptimized />
-                        </div>
+                        </a>
                     </Link>
                 </li>
             ))}
@@ -56,12 +56,12 @@ function FooterLinks() {
         </ul>
     )
 }
-function FooterRow({children}) {
+function FooterRow({ children }) {
     return (
         <div className={styles.row}>{children}</div>
     )
 }
-export function Footer({}) {
+export function Footer({ }) {
     return (
         <div className={styles.footer}>
             <Content noMargin>
@@ -69,7 +69,7 @@ export function Footer({}) {
                     <div>
                         <div>
                             <Link href="/">
-                                <img src={TestausserveriLogo.src}  className={styles.logo} />
+                                <img src={TestausserveriLogo.src} className={styles.logo} />
                             </Link>
                         </div>
                         <p>
