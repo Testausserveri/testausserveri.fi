@@ -4,9 +4,9 @@ import '../styles/globals.css'
 
 const pages = [
   { label: "Etusivu", path: "/" },
-  { label: "Jäsenet", path: "/members" },
+  //{ label: "Jäsenet", path: "/members" },
   { label: "Projektit", path: "/projects" },
-  { label: "Tietoa", path: "/about-us" }
+  //{ label: "Tietoa", path: "/about-us" }
 ]
 
 function MyApp({ Component, pageProps, router }) {
