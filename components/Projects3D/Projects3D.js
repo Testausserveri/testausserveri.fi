@@ -1,10 +1,10 @@
 import styles from './Projects3D.module.css'
 import dynamic from 'next/dynamic';
-import { Loading } from '../Loading/Loading';
-import { forwardRef, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Capsule } from '../Capsule/Capsule';
-
+import { HiOutlineCubeTransparent } from 'react-icons/hi'
+import Tippy from '@tippyjs/react';
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
     ssr: false,
 });
@@ -74,15 +74,9 @@ export function Projects3D(props) {
     }
 
     return (
-        <div className={`
-        ${splineLoading ? styles.loading : ""}  
-        ${tipTimeout > 0 ? styles.tipVisible : ""}  
-        ${styles.projects3D}`}>
-            <div className={styles.spinner}>
-                <Loading />
-            </div>
+        <div className={`${styles.projects3D} 
+        ${splineLoading ? styles.loading : ""} ${tipTimeout > 0 ? styles.tipVisible : ""}`}>
             <div className={styles.splineWrapper}>
-                
                 <Spline 
                 scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
                 onMouseHover={hover}
@@ -92,9 +86,13 @@ export function Projects3D(props) {
                     setSplineLoading(false)
                 }}
                 />
-            
             </div>
             <Capsule className={styles.tip} ref={tipCapsule} />
+            <Tippy content="Voit pyörittää 3D-mallia raahaamalla hiirtä!">
+                <span className={styles.cube}>
+                    <HiOutlineCubeTransparent />
+                </span>
+            </Tippy>
         </div>
     )
 }

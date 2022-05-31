@@ -77,3 +77,27 @@
 .tipVisible .tip {
   opacity: 1;
 }
+
+.cube {
+  color: white;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  font-size: 2rem;
+  opacity: 0.6;
+  transition: opacity 5s;
+  animation: flickerAnimation 5s infinite;
+  cursor: help;
+  z-index: 2;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:0.6; }
+  50%  { opacity:0.3; }
+  100% { opacity:0.6; }
+}
+
+.projects3D.loading .cube {
+  opacity: 0;
+  animation: none;
+}
