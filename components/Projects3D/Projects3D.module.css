@@ -36,7 +36,7 @@
 
 .loading .splineWrapper::before {
   content: '';
-  background-image: url('../../assets/projects-3d-placeholder.png');
+  background-image: url('../../assets/projects3d/placeholder.png');
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;

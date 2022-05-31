@@ -1,9 +1,14 @@
+
 import styles from './Projects3D.module.css'
 import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
 import { Capsule } from '../Capsule/Capsule';
 import { HiOutlineCubeTransparent } from 'react-icons/hi'
 import Tippy from '@tippyjs/react';
+import { BrowserView, MobileView } from 'react-device-detect';
+import Image from 'next/image';
+import Projects3DMobile from '../../assets/projects3d/mobile.png'
+
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
     ssr: false,
 });
@@ -66,24 +71,36 @@ export function Projects3D(props) {
     }
 
     return (
-        <div className={`${styles.projects3D} 
-        ${splineLoading ? styles.loading : ""} ${tipTimeout > 0 ? styles.tipVisible : ""}`}>
-            <div className={styles.splineWrapper}>
-                <Spline 
-                scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
-                onMouseHover={hover}
-                onLoad={() => {
-                    console.log("Spline loaded")
-                    setSplineLoading(false)
-                }}
-                />
-            </div>
-            <Capsule className={styles.tip} ref={tipCapsule} />
-            <Tippy content="Voit pyörittää 3D-mallia raahaamalla hiirtä!">
-                <span className={styles.cube}>
-                    <HiOutlineCubeTransparent />
-                </span>
-            </Tippy>
-        </div>
+        <>
+            <BrowserView>
+                <div className={`${styles.projects3D} 
+                ${splineLoading ? styles.loading : ""} ${tipTimeout > 0 ? styles.tipVisible : ""}`}>
+                    <div className={styles.splineWrapper}>
+                        <Spline 
+                        scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
+                        onMouseHover={hover}
+                        onLoad={() => {
+                            console.log("Spline loaded")
+                            setSplineLoading(false)
+                        }}
+                        />
+                    </div>
+                    <Capsule className={styles.tip} ref={tipCapsule} />
+                    <Tippy content="Voit pyörittää 3D-mallia raahaamalla hiirtä!">
+                        <span className={styles.cube}>
+                            <HiOutlineCubeTransparent />
+                        </span>
+                    </Tippy>
+                </div>
+            </BrowserView>
+            <MobileView>
+                <div style={{marginBottom: "2rem"}}>
+                    <Image 
+                        src={Projects3DMobile} 
+                        layout="responsive" 
+                        />
+                </div>
+            </MobileView>
+        </>
     )
 }
