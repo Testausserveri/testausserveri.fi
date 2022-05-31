@@ -1,7 +1,6 @@
 import styles from './Projects3D.module.css'
 import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 import { Capsule } from '../Capsule/Capsule';
 import { HiOutlineCubeTransparent } from 'react-icons/hi'
 import Tippy from '@tippyjs/react';
@@ -40,7 +39,6 @@ export function Projects3D(props) {
         }
     ]
 
-    const router = useRouter()
     const [splineLoading, setSplineLoading] = useState(true)
 
     const tipCapsule = useRef()
@@ -66,12 +64,6 @@ export function Projects3D(props) {
         }, 1000)
         setTipTimeout(previousTimeout)
     }
-    function click(e) {
-        const project = findProject(e)
-        if (!project) return
-
-        router.push(`/projects/${project.slug}`)
-    }
 
     return (
         <div className={`${styles.projects3D} 
@@ -80,7 +72,6 @@ export function Projects3D(props) {
                 <Spline 
                 scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
                 onMouseHover={hover}
-                onMouseUp={click}
                 onLoad={() => {
                     console.log("Spline loaded")
                     setSplineLoading(false)
