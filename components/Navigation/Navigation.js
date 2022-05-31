@@ -7,7 +7,7 @@ import { Logo } from '../Logo/Logo'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export function Navigation({ className, pages, activePath, open, setOpen }) {
+export function Navigation({className, pages, activePath, open, setOpen}) {
     const router = useRouter()
 
     useEffect(() => {
@@ -27,25 +27,32 @@ export function Navigation({ className, pages, activePath, open, setOpen }) {
         <div className={className ? `${className} ${openClassName}` : openClassName}>
 
             <div className={styles.mobileHeader}>
-                {open ?
+                {open ? 
                     <Logo className={styles.logo} showBeta link />
-                    : null}
+                : null}
                 <div className={styles.mobileButton}>
                     <Hamburger rounded color="#FFF" toggled={open} toggle={setOpen} />
                 </div>
             </div>
 
             <ul className={styles.items}>
-                {pages.map(page => (
-                    <li
-                        key={page.label}
-                        className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}
-                    >
-                        <Link shallow={true} href={page.path}>
-                            {open ? <FadeIn>{page.label}</FadeIn> : page.label}
+                {pages.map(page => {
+                    const Component = () => (
+                        <Link 
+                            shallow={true} 
+                            href={page.path}>
+                            <li 
+                                className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                                {page.label}
+                            </li>
                         </Link>
-                    </li>
-                ))}
+                    )
+                    if (open) {
+                        return <FadeIn key={page.label} ><Component /></FadeIn>
+                    } else {
+                        return <Component key={page.label} />
+                    }
+                })}  
             </ul>
         </div>
     )
