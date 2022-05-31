@@ -72,6 +72,10 @@
     margin-left: 0.7rem;
 }
 
+.socials a:before {
+    content: none;
+}
+
 .logo {
     max-height: 5.4rem;
 }
