@@ -1,432 +1,552 @@
 [
     {
+        "id": 1,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 1,
         "content": "testi keskustelua testi dataa varten, varoitus menee githubiin",
         "timestamp": 1647441467108
     },
     {
+        "id": 2,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 2,
         "content": "tänää on lämmin päivä",
         "timestamp": 1647441478913
     },
     {
+        "id": 3,
         "author": {
             "name": "nakki1029",
-            "avatar": "https://cdn.discordapp.com/avatars/637332884319109140/15a0f695af1b7ffbf2838e9393be8f87.webp",
+            "avatar": "1.webp",
             "color": "#ff00b5"
         },
-        "id": 3,
         "content": "Ei oo",
         "timestamp": 1647441496221
     },
     {
+        "id": 4,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 4,
         "content": "appreciatteisin kovasti jos jotkut muutkin tulis jättää viestiä",
         "timestamp": 1647441497474
     },
     {
+        "id": 5,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 5,
         "content": "kiitos nakki",
         "timestamp": 1647441501576
     },
     {
+        "id": 6,
         "author": {
             "name": "taavi",
-            "avatar": "https://cdn.discordapp.com/avatars/144425737930145792/3582b49c4ee293c26fb7cf977e6073f1.webp",
+            "avatar": "2.webp",
             "color": "#ed00ff"
         },
-        "id": 6,
         "content": "onhan",
         "timestamp": 1647441508847
     },
     {
+        "id": 7,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 7,
         "content": "mitkä on tei lempivärit?",
         "timestamp": 1647441518012
     },
     {
+        "id": 8,
         "author": {
             "name": "taavi",
-            "avatar": "https://cdn.discordapp.com/avatars/144425737930145792/3582b49c4ee293c26fb7cf977e6073f1.webp",
+            "avatar": "2.webp",
             "color": "#ed00ff"
         },
-        "id": 8,
         "content": "punanen",
         "timestamp": 1647441524525
     },
     {
+        "id": 9,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 9,
         "content": "ai",
         "timestamp": 1647441527935
     },
     {
+        "id": 10,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 10,
         "content": "hö",
         "timestamp": 1647441530164
     },
     {
+        "id": 11,
         "author": {
-            "name": "Hipparkos",
-            "avatar": "https://cdn.discordapp.com/avatars/503327160384356353/9c9e992095a532f40b4cae950164c9fc.webp",
+            "name": "Happirikos",
+            "avatar": "3.webp",
             "color": "#ed00ff"
         },
-        "id": 11,
         "content": "musta on kiva",
         "timestamp": 1647441532390
     },
     {
+        "id": 12,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 12,
         "content": "mäki tykkään kyl punasest",
         "timestamp": 1647441545009
     },
     {
+        "id": 13,
         "author": {
             "name": "nakki1029",
-            "avatar": "https://cdn.discordapp.com/avatars/637332884319109140/15a0f695af1b7ffbf2838e9393be8f87.webp",
+            "avatar": "1.webp",
             "color": "#ff00b5"
         },
-        "id": 13,
         "content": "onko?",
         "timestamp": 1647441725785
     },
     {
+        "id": 14,
         "author": {
             "name": "taavi",
-            "avatar": "https://cdn.discordapp.com/avatars/144425737930145792/3582b49c4ee293c26fb7cf977e6073f1.webp",
+            "avatar": "2.webp",
             "color": "#ed00ff"
         },
-        "id": 14,
         "content": "on ainakin täällä helsingissä",
         "timestamp": 1647441739781
     },
     {
-        "author": {
-            "name": "toke (@ on reply)",
-            "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
-            "color": "#ed00ff"
-        },
         "id": 15,
+        "author": {
+            "name": "toke",
+            "avatar": "4.png",
+            "color": "#f1c40f"
+        },
         "content": "vihreä",
         "timestamp": 1647441794459
     },
     {
+        "id": 16,
         "author": {
-            "name": "Hipparkos",
-            "avatar": "https://cdn.discordapp.com/avatars/503327160384356353/9c9e992095a532f40b4cae950164c9fc.webp",
+            "name": "Happirikos",
+            "avatar": "3.webp",
             "color": "#ed00ff"
         },
-        "id": 16,
         "content": "oi voi",
         "timestamp": 1647441805001
     },
     {
-        "author": {
-            "name": "toke (@ on reply)",
-            "avatar": "https://cdn.discordapp.com/embed/avatars/3.png",
-            "color": "#ed00ff"
-        },
         "id": 17,
+        "author": {
+            "name": "toke",
+            "avatar": "4.png",
+            "color": "#f1c40f"
+        },
         "content": "oivoivoi",
         "timestamp": 1647441818661
     },
     {
+        "id": 18,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 18,
         "content": "sika söi sipsin",
         "timestamp": 1647441921815
     },
     {
+        "id": 19,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 19,
         "content": "tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti",
         "timestamp": 1647441942470
     },
     {
+        "id": 20,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 20,
         "content": "😛 <:contabo_hymio:800452666588528700>",
         "timestamp": 1647441958023
     },
     {
+        "id": 21,
         "author": {
-            "name": "Hipparkos",
-            "avatar": "https://cdn.discordapp.com/avatars/503327160384356353/9c9e992095a532f40b4cae950164c9fc.webp",
+            "name": "Happirikos",
+            "avatar": "3.webp",
             "color": "#ed00ff"
         },
-        "id": 21,
         "content": "<:pickle:830430401133805568> suolakurkku testi",
         "timestamp": 1647441959794
     },
     {
+        "id": 22,
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
-            "color": "#cca901"
+            "avatar": "5.webp",
+            "color": "#00ff0c"
         },
-        "id": 22,
         "content": "Balls",
         "timestamp": 1647441970672
     },
     {
+        "id": 23,
         "author": {
             "name": "Luukasa (pro git-user) 🦜",
-            "avatar": "https://cdn.discordapp.com/avatars/328625071327412267/d4eaf4745d023e01921bc328480aadd1.webp",
+            "avatar": "6.webp",
             "color": "#ad1457"
         },
-        "id": 23,
         "content": "balls",
         "timestamp": 1647441999627
     },
     {
+        "id": 24,
         "author": {
-            "name": "Hipparkos",
-            "avatar": "https://cdn.discordapp.com/avatars/503327160384356353/9c9e992095a532f40b4cae950164c9fc.webp",
+            "name": "Happirikos",
+            "avatar": "3.webp",
             "color": "#ed00ff"
         },
-        "id": 24,
         "content": "balls",
         "timestamp": 1647442011763
     },
     {
+        "id": 25,
         "author": {
             "name": "rke",
-            "avatar": "https://cdn.discordapp.com/avatars/183661567655673867/a_1f5cdce31e2e48caae20b40292968550.webp",
-            "color": "#ff00b5"
+            "avatar": "7.webp",
+            "color": "#f1c40f"
         },
-        "id": 25,
         "content": "huge balls",
         "timestamp": 1647442265963
     },
     {
+        "id": 26,
         "author": {
             "name": "Niilas",
-            "avatar": "https://cdn.discordapp.com/avatars/867378729641574460/64ff6d68901a64079f8af9274fc940fb.webp",
-            "color": "#ed00ff"
+            "avatar": "8.webp",
+            "color": "#f1c40f"
         },
-        "id": 26,
         "content": "helou",
         "timestamp": 1647442797315
     },
     {
+        "id": 27,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 27,
         "content": "Vi",
         "timestamp": 1647442801108
     },
     {
+        "id": 28,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 28,
         "content": "Hi*",
         "timestamp": 1647442804037
     },
     {
+        "id": 29,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 29,
         "content": "Meneekö myös kuvat githubii?",
         "timestamp": 1647442826505
     },
     {
+        "id": 30,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 30,
         "content": "",
         "timestamp": 1647442844776
     },
     {
+        "id": 31,
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
-            "color": "#cca901"
+            "avatar": "5.webp",
+            "color": "#00ff0c"
         },
-        "id": 31,
         "content": "https://cdn.discordapp.com/emojis/854176097120550912.gif",
         "timestamp": 1647443093363
     },
     {
+        "id": 32,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 32,
         "content": "pitää implaa",
         "timestamp": 1647443574387
     },
     {
+        "id": 33,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 33,
         "content": "nyt emojitki toimii",
         "timestamp": 1647443583226
     },
     {
+        "id": 34,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 34,
         "content": "Vou!",
         "timestamp": 1647443588685
     },
     {
+        "id": 35,
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
-            "color": "#cca901"
+            "avatar": "5.webp",
+            "color": "#00ff0c"
         },
-        "id": 35,
         "content": "näemmekö tämän jossain",
         "timestamp": 1647443608963
     },
     {
+        "id": 36,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 36,
         "content": "Tää siis menee githubii, mut mitä varte? Onks tää sitä nettisivui varte?",
         "timestamp": 1647443610754
     },
     {
+        "id": 37,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 37,
         "content": "soon",
         "timestamp": 1647443616605
     },
     {
+        "id": 38,
         "author": {
             "name": "DrVilepis",
-            "avatar": "https://cdn.discordapp.com/avatars/580388989291462667/50fb269cff535f0f465f60c455185628.webp",
-            "color": "#cca901"
+            "avatar": "5.webp",
+            "color": "#00ff0c"
         },
-        "id": 38,
         "content": "Alright",
         "timestamp": 1647443621677
     },
     {
+        "id": 39,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 39,
         "content": "scrollbar puuttuu oikealta, pitää fix",
         "timestamp": 1647443642258
     },
     {
+        "id": 40,
         "author": {
             "name": "Erikoisjääkäri",
-            "avatar": "https://cdn.discordapp.com/avatars/396677673159622666/d7514a885159aadc511857d4aa38fd97.webp",
-            "color": "#ed00ff"
+            "avatar": "9.webp",
+            "color": "#f1c40f"
         },
-        "id": 40,
         "content": "Ainii toi. Tost tulee khyl tosi magee",
         "timestamp": 1647443645912
     },
     {
+        "id": 41,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 41,
         "content": "https://coal.testausserveri.fi/?path=/story/discordlive--default",
         "timestamp": 1647444229729
     },
     {
+        "id": 42,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 42,
         "content": "jotai tuunaamista viel mut kattoo myöhemmin, for now ok",
         "timestamp": 1647444240005
     },
     {
+        "id": 43,
         "author": {
             "name": "Miksu",
-            "avatar": "https://cdn.discordapp.com/avatars/639844207439118346/e4a5d63cd7beb79415aba1d06736ad27.webp",
+            "avatar": "0.webp",
             "color": "#206694"
         },
-        "id": 43,
         "content": "ja myöhemmin skaalaus mobiilille mut se on helppo homma toho",
         "timestamp": 1647444377934
+    },
+    {
+        "id": 44,
+        "author": {
+            "name": "Turtleb01",
+            "avatar": "10.webp",
+            "color": "#f1c40f"
+        },
+        "content": "outdated ass threadi mutta ilmeisesti pfpt ei päivity :D",
+        "timestamp": 1652047396326
+    },
+    {
+        "id": 45,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "<@639844207439118346>",
+        "timestamp": 1652047418996
+    },
+    {
+        "id": 46,
+        "author": {
+            "name": "Turtleb01",
+            "avatar": "10.webp",
+            "color": "#f1c40f"
+        },
+        "content": "vai olenko väärällä channelilla",
+        "timestamp": 1652047460971
+    },
+    {
+        "id": 47,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "eiku toi on kai staattinen",
+        "timestamp": 1652047462519
+    },
+    {
+        "id": 48,
+        "author": {
+            "name": "rke",
+            "avatar": "7.webp",
+            "color": "#f1c40f"
+        },
+        "content": "joo kattoin kans et oma kuva siellä borked ku olin sen aiemmi vaihtanu",
+        "timestamp": 1652047463195
+    },
+    {
+        "id": 49,
+        "author": {
+            "name": "Turtleb01",
+            "avatar": "10.webp",
+            "color": "#f1c40f"
+        },
+        "content": "Jep",
+        "timestamp": 1652047467816
+    },
+    {
+        "id": 50,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "eiku aivan katos joo :D",
+        "timestamp": 1652047499294
+    },
+    {
+        "id": 51,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "en ees huomannu miksua, huomasin vaa oman kuvani",
+        "timestamp": 1652047507558
+    },
+    {
+        "id": 52,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "miksu on ihan fucked",
+        "timestamp": 1652047510532
+    },
+    {
+        "id": 53,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "miksu puhuu asiaa",
+        "timestamp": 1652047526069
+    },
+    {
+        "id": 54,
+        "author": {
+            "name": "Miksu",
+            "avatar": "0.webp",
+            "color": "#206694"
+        },
+        "content": "dumppaan uusiks ja lataan kuvat discordilta talteen myöhemmi",
+        "timestamp": 1652072493679
+    },
+    {
+        "id": 55,
+        "author": {
+            "name": "DrVilepis",
+            "avatar": "5.webp",
+            "color": "#00ff0c"
+        },
+        "content": "pls",
+        "timestamp": 1653655112343
     }
 ]

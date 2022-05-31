@@ -2,7 +2,6 @@ import FadeIn from 'react-fade-in';
 import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import { useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
-import messages from "./dump.json"
 
 function formatDiscordContent(content) {
     const wrapEmojis = (text) => {
@@ -23,6 +22,14 @@ export function DiscordLive({mobile, className}) {
     const replayStartFrom = 8
     const replaySpeedUpMultiplier = 3
     const replayMaxWaitTime = 3000
+    const [messages, setMessages] = useState([])
+    
+    useEffect(async () => {
+        const response = await fetch("/discordlive/replay.json")
+        const data = await response.json()
+        console.log(data)
+        setMessages(data)
+    }, [])
 
     const [visibleMessages, setVisibleMessages] = useState(messages.slice(0, replayStartFrom))
     
@@ -36,7 +43,7 @@ export function DiscordLive({mobile, className}) {
             }, waitTime)
         }
         next(replayStartFrom)
-    }, [])
+    }, [messages])
 
     function recursiveContent(i) {
         if (!visibleMessages[i + 1]) return
@@ -55,7 +62,7 @@ export function DiscordLive({mobile, className}) {
                     <DiscordMessages className={styles.discordMessages}>
                         {visibleMessages.map((message, i) => 
                             visibleMessages[i - 1]?.author?.name != visibleMessages[i].author.name ? (
-                                <DiscordMessage key={message.id} avatar={message.author.avatar} author={message.author.name} roleColor={message.author.color}>
+                                <DiscordMessage key={message.id} avatar={`/discordlive/avatars/${message.author.avatar}`} author={message.author.name} roleColor={message.author.color}>
                                     <span className="discord-message-markup">{formatDiscordContent(message.content)}</span>
                                     <span className="discord-message-markup">{recursiveContent(i)}</span>
                                 </DiscordMessage>
