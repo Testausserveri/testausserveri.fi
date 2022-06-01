@@ -29,6 +29,10 @@
     font-weight: 600;
 }
 
+.item a:before {
+    content: none;
+}
+
 .mobileHeader {
     flex-direction: row;
     justify-content: flex-end;

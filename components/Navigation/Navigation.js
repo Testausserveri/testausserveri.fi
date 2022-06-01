@@ -38,14 +38,13 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
             <ul className={styles.items}>
                 {pages.map(page => {
                     const Component = () => (
-                        <Link 
-                            shallow={true} 
-                            href={page.path}>
-                            <li 
-                                className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                        <li className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                            <Link
+                                shallow={true}
+                                href={page.path}>
                                 {page.label}
-                            </li>
-                        </Link>
+                            </Link>
+                        </li>
                     )
                     if (open) {
                         return <FadeIn key={page.label} ><Component /></FadeIn>
