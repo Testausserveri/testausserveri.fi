@@ -76,7 +76,6 @@
     
     top: 0px;
     transition: top 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);
-    pointer-events: none;
 }
 .hero {
     display: flex;
