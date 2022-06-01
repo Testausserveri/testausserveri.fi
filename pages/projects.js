@@ -1,20 +1,30 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import Image from 'next/image';
+
 import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer';
 import { InfoBox } from '../components/InfoBox/InfoBox';
 import { ProjectRow } from '../components/ProjectRow/ProjectRow';
 
 import { Projects3D } from '../components/Projects3D/Projects3D';
+import Projects3DMobile from '../assets/projects3d/mobile.png'
 
-export default function Projects({projectsList}) {
+export default function Projects({projectsList, isMobile}) {
   return (
     <div>
         <Head>
             <title>Projektit | Testausserveri</title>
         </Head>
         <Content>
-          <Projects3D />
+          { !isMobile ? <Projects3D /> : 
+          <div style={{marginBottom: "2rem"}}>
+              <Image 
+                  src={Projects3DMobile} 
+                  layout="responsive" 
+                  />
+          </div>
+          }
           <InfoBox>
             <span>Tämä projektilistaus on vielä keskeneräinen.</span>
             <span>
@@ -30,10 +40,15 @@ export default function Projects({projectsList}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({req}) {
   const response = await fetch("https://api.testausserveri.fi/v1/projects")
   const data = await response.json()
 
-  return { props: { projectsList: data } }
+  const UA = req.headers['user-agent'];
+  const isMobile = Boolean(UA.match(
+    /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+  ))
+
+  return { props: { projectsList: data, isMobile } }
 }
 
