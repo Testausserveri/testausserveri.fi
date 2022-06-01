@@ -1,5 +1,10 @@
 import styles from './Leaderboard.module.css'
 
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
+
+import { RiQuestionLine } from "react-icons/ri"
+
 function LeaderboardItem({index, data, valueFormatter}) {
     return (
         <li>
@@ -25,7 +30,7 @@ export function LeaderboardGroup({children}) {
     )    
 }
 
-export function Leaderboard({data, title, valueFormatter}) {
+export function Leaderboard({data, title, valueFormatter, explanation}) {
     data.sort((a, b) => (b.value - a.value))
     data = data.map(item => (
         {
@@ -42,7 +47,17 @@ export function Leaderboard({data, title, valueFormatter}) {
 
     return (
         <div className={styles.container}>
-            <h3>{title}</h3>
+            <h3>
+                {title}
+                {explanation ? 
+                    <Tippy 
+                        className="tip"
+                        interactive={true} 
+                        content={explanation}>
+                        <span className={styles.explanation}><RiQuestionLine /></span>
+                    </Tippy>
+                : null}
+            </h3>
             <ul className={styles.items}>
                 {data.map((item, i) => (
                     <LeaderboardItem 

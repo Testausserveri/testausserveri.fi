@@ -76,3 +76,10 @@
         flex-direction: column;
     }
 }
+
+.explanation {
+    cursor: help;
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+    opacity: 0.7;
+}

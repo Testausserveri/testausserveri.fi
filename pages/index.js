@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styled from 'styled-components'
 import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
@@ -128,6 +129,9 @@ export default function Home({ssGuildInfo}) {
           <Leaderboard 
             data={guildInfo.codingLeaderboard}
             title="Eniten koodannut viikon sisään"
+            explanation={<span>
+              Tilasto kerätään koodieditoreiden <Link href="/projects/testaustime">Testaustime-lisäosalla</Link>
+            </span>}
             valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
       </Content>
