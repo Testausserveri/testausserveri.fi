@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer'
-import { Title } from '../components/Title/Title'
+import { H1 } from '../components/Title/Title'
 import licenses from '../dependency-licenses.json'
 
 const developers = [
@@ -17,7 +17,7 @@ export default function Home() {
             <title>Kehittäjät ja lisenssit | Testausserveri</title>
         </Head>
         <Content>
-          <Title>Kehittäjät</Title>
+          <H1>Kehittäjät</H1>
           <p>
             Seuraavat henkilöt ovat olleet mukana kehittämässä tätä sivustoa.
           </p>
@@ -30,7 +30,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Title>Lisenssit</Title>
+          <H1>Lisenssit</H1>
           <p>
             Tämän sivuston toteutuksessa käytettyjen avointen lähdekoodin ohjelmistojen tai kirjastojen lisenssit ja tekijänoikeudet ovat esitetty alla.
           </p>
