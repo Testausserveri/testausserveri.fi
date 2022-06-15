@@ -44,7 +44,7 @@ class ProjectLink {
     get title() {
         if (this.type == "link" && this.name) return this.name
         if (this.type == "homepage") return "Kotisivut"
-        if (this.github == "github") return "GitHub"
+        if (this.type == "github") return "GitHub"
 
         return ""
     }
@@ -54,11 +54,8 @@ class ProjectLink {
      * It's the url for display purposes, but a short variant
      */
     get displayURL() {
-        if (this.type == "github") {
-            return this.url.match(/github.com\/([^\/]+)\/([^\/]+)/).slice(1,3).join("/")
-        } else {
-            return ""
-        }
+        if (this.type == "github") return this.url.match(/github.com\/([^\/]+)\/([^\/]+)/).slice(1,3).join("/")
+        return new URL(this.url).hostname
     }
 }
 export class Project {
@@ -70,6 +67,7 @@ export class Project {
     media
     tags
     links
+    contributors
 
     constructor(data) {
         if (data._id) this.id = data._id
@@ -95,5 +93,7 @@ export class Project {
         if (data.links) {
             this.links = data.links.map(link => new ProjectLink(link))
         }
+
+        this.contributors = data.contributors
     }
 }

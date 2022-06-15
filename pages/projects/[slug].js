@@ -3,17 +3,59 @@ import { useRouter } from 'next/router'
 import { Content } from '../../components/Content/Content'
 import styled from 'styled-components'
 import Link from 'next/link'
-import api from '../../utils/api'
+import api, { projects } from '../../utils/api'
 import { useEffect, useState } from 'react'
 import { Project } from '../../utils/Project'
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
+import { H1, H2 } from '../../components/Title/Title'
+import { AvatarRow } from '../../components/AvatarRow/AvatarRow'
+import { Explanation } from '../../components/Explanation/Explanation'
+import { TagsRow } from '../../components/TagsRow/TagsRow'
 
-const Center = styled.p`
-  position: absolute;
-  left: 50%;
-  top: 50%;  
-  transform: translate(-50%, -50%);
-  text-align: center;
-  max-width: 500px;
+const Layout = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  >div:nth-child(1) {
+    flex: 1;
+  }
+  >div:nth-child(2) {
+    width: 32%;
+  }
+`
+
+const AvatarRowExtended = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  span {
+    margin-left: .5rem;
+    font-size: 0.95em;
+    flex: 1;
+  }
+`
+
+const ProjectLinks = styled.div`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    background-color: rgba(108, 108, 108, 0.09);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s;
+  }
+  li:hover {
+    background-color: rgba(108, 108, 108, 0.15);
+  }
+  h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Poppins';
+  }
 `
 
 export default function ProjectPage({projectData}) {
@@ -22,10 +64,53 @@ export default function ProjectPage({projectData}) {
   return (
     <article>
         <Head>
-            <title>Projekti | Testausserveri</title>
+            <title>{project.name} | Testausserveri</title>
         </Head>
         <Content>
-          mojdo
+          <Breadcrumbs 
+            route={[
+              {path: "/projects/", name: "Projektit"},
+              {path: `/projects/${project.slug}`, name: project.name}
+            ]} />
+
+          <Layout>
+            <div>
+              <H1>{project.name}</H1>
+            </div>
+            <div>
+              <H2>Omistajat</H2>
+              <AvatarRowExtended>
+                <AvatarRow members={project.members} />
+                <span>{project.members.map(member => member.name).join("; ")}</span>
+              </AvatarRowExtended>
+
+              {project.contributors.length > 0 ? <>
+                <H2>Kontribuuttorit 
+                  <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
+                </H2>
+                <AvatarRow members={project.contributors} />
+              </> : null}
+
+              {project.links.length > 0 ? <>
+                <H2>Linkit</H2>
+                <ProjectLinks>
+                  {project.links.map(link => (
+                    <a href={link.url} key={link.url}>
+                      <li>
+                        <h3>{link.title}</h3>
+                        <span>{link.displayURL}</span>
+                      </li>
+                    </a>
+                  ))}
+                </ProjectLinks>
+              </> : null}
+
+              {project.tags.length > 0 ? <>
+                <H2>Tagit</H2>
+                <TagsRow tags={project.tags} />
+              </>: null}
+            </div>
+          </Layout>
         </Content>
     </article>
   )
