@@ -1,31 +1,8 @@
 import Link from 'next/link'
+import { AvatarRow } from '../AvatarRow/AvatarRow'
 import { Capsule } from '../Capsule/Capsule'
+import { TagsRow } from '../TagsRow/TagsRow'
 import styles from './ProjectRow.module.css'
-
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
-
-function AvatarRow({members}) {
-    return (
-        <ul className={styles.avatarRow}>
-            {members.map(member => (
-                <Tippy content={member.name} key={member._id}>
-                    <li data-tip={member.name}><img src={member.avatar} width={40} height={40} /></li>
-                </Tippy>
-            ))}
-        </ul>
-    )
-}
-
-function TagsRow({tags}) {
-    return (
-        <ul className={styles.tagsRow}>
-            {tags.map(tag => (
-                <li key={tag}><Capsule>{tag}</Capsule></li>
-            ))}
-        </ul>
-    )
-}
 
 export function ProjectRow({project}) {
     return (
