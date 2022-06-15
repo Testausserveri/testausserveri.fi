@@ -10,7 +10,7 @@ export function ProjectRow({project}) {
             <div className={styles.row}>
                 <div className={styles.inner}>
                     <div className={styles.image}>
-                        <img src={project.media.url} />
+                        <img src={project.cover.url} />
                     </div>
                     <div className={styles.content}>
                         <h2>{project.name}</h2>

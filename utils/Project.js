@@ -4,10 +4,12 @@ import { Member } from "./Member"
 class ProjectMedia {
     type
     filename
+    cover
 
     constructor(data) {
         this.type = data.type
         this.filename = data.filename
+        this.cover = data.cover
     }
     get url() {
         return `${apiServerMedia}/v1/media/projects/${this.filename}`
@@ -86,7 +88,7 @@ export class Project {
         if (data.media.constructor === Array) {
             this.media = data.media.map(data => new ProjectMedia(data))
         } else {
-            this.media = new ProjectMedia(data.media)
+            this.media = [new ProjectMedia({...data.media, cover: true})]
         }
         this.tags = data.tags
 
@@ -95,5 +97,9 @@ export class Project {
         }
 
         this.contributors = data.contributors
+    }
+
+    get cover() {
+        return this.media.find(item => item.cover)
     }
 }
