@@ -1,0 +1,26 @@
+.breadcrumbs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li {
+    display: inline-block;
+    font-family: 'Poppins';
+    color: #DBDBDB;
+    opacity: 0.74;
+    cursor: pointer;
+    transition: opacity 0.1s;
+}
+
+.breadcrumbs li:hover {
+    opacity: 1;
+}
+
+.breadcrumbs li:not(:nth-last-child(1))::after {
+    content: '›';
+    margin: 0 .7rem;
+}
+
+.breadcrumbs li:nth-last-child(1) {
+    opacity: 1;
+}
