@@ -6,7 +6,7 @@ import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
 import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
-import { Title } from '../components/Title/Title';
+import { H1 } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
 import { useGuildInfo } from '../hooks/useGuildInfo';
@@ -86,11 +86,12 @@ export default function Home({ssGuildInfo}) {
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
-        <Title style={{ 
+        <H1 style={{ 
           overflow: "hidden", 
           display: "flex", 
           alignItems: "center", 
-          flexDirection: "column" 
+          flexDirection: "column",
+          fontWeight: "bold"
         }}>
           <TitleStaticGradientText>
             Yhteisö
@@ -104,7 +105,7 @@ export default function Home({ssGuildInfo}) {
               <GradientText>graafikoille</GradientText>
               <GradientText>3D-artisteille</GradientText>
           </TextLoop>
-        </Title>
+        </H1>
         <a href="https://discord.testausserveri.fi">
           <CapsuleButton 
             style={{margin: "-0.3rem 0 0.4rem 0"}} 

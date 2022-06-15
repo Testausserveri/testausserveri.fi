@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 import { Content } from '../components/Content/Content'
-import { Title } from '../components/Title/Title'
+import { H1 } from '../components/Title/Title'
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
 import { Footer } from '../components/Footer/Footer'
 
@@ -36,7 +36,7 @@ export default function Home() {
           <title>Tietosuojaseloste | Testausserveri</title>
       </Head>
       <Content>
-        <Title>Rekisteri - ja tietosuojaseloste</Title>
+        <H1>Rekisteri - ja tietosuojaseloste</H1>
         <p>
           Tämä on Testausserveri ry:n EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 27. toukokuuta 2022. Viimeisin muutos 27. toukokuuta 2022.
         </p>

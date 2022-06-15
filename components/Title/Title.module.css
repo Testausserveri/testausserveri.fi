@@ -1,12 +1,17 @@
 .title {
-    color: white;
+    color: #F0F0F0;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     margin-top: 0;
     margin-bottom: 2.5rem;
 }
 
 .title:not(:nth-child(1)) {
     margin-top: 2.5rem;
+}
+
+h2.title {
+    font-size: 1.25rem;
+    font-weight: 600;
 }

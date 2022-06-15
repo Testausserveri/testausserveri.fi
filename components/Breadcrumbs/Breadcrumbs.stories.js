@@ -9,7 +9,7 @@ const Template = (args) => <Breadcrumbs {...args} />
 
 export const Default = {
   args: {
-    data: [
+    route: [
       {path: "/projects/", name: "Projektit"},
       {path: "/projects/juustohoyla", name: "Juustohöylä"}
     ]

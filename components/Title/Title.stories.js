@@ -1,4 +1,4 @@
-import { Title as TitleComponent } from './Title';
+import { H1 as TitleComponent } from './Title';
 
 export default {
   title: 'Title',
