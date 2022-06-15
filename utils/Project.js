@@ -4,7 +4,7 @@ import { Member } from "./Member"
 class ProjectMedia {
     type
     filename
-    
+
     constructor(data) {
         this.type = data.type
         this.filename = data.filename
@@ -85,7 +85,7 @@ export class Project {
         }
         this.members = data.members.map(data => new Member(data))
         
-        if (typeof data.media == "object") {
+        if (data.media.constructor === Array) {
             this.media = data.media.map(data => new ProjectMedia(data))
         } else {
             this.media = new ProjectMedia(data.media)
