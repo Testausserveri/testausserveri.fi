@@ -5,15 +5,12 @@ import styles from './ProjectRow.module.css'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
-const avatarURL = (id) => `https://api.testausserveri.fi/v1/media/avatars/${id}`
-const projectMediaURL = (filename) => `https://api.testausserveri.fi/v1/media/projects/${filename}`
-
 function AvatarRow({members}) {
     return (
         <ul className={styles.avatarRow}>
             {members.map(member => (
                 <Tippy content={member.name} key={member._id}>
-                    <li data-tip={member.name}><img src={avatarURL(member._id)} width={40} height={40} /></li>
+                    <li data-tip={member.name}><img src={member.avatar} width={40} height={40} /></li>
                 </Tippy>
             ))}
         </ul>
@@ -36,12 +33,12 @@ export function ProjectRow({project}) {
             <div className={styles.row}>
                 <div className={styles.inner}>
                     <div className={styles.image}>
-                        <img src={projectMediaURL(project.media.filename)} />
+                        <img src={project.media.url} />
                     </div>
                     <div className={styles.content}>
                         <h2>{project.name}</h2>
                         <p>
-                            {project.description}
+                            {project.description.short}
                         </p>
                         <div className={styles.bottom}>
                             <AvatarRow members={project.members} />

@@ -9,8 +9,12 @@ import { ProjectRow } from '../components/ProjectRow/ProjectRow';
 
 import { Projects3D } from '../components/Projects3D/Projects3D';
 import Projects3DMobile from '../assets/projects3d/mobile.png'
+import api from '../utils/api';
+import { Project } from '../utils/Project';
 
-export default function Projects({projectsList, isMobile}) {
+export default function Projects({projectsData, isMobile}) {
+  const projects = projectsData.map(data => new Project(data))
+
   return (
     <div>
         <Head>
@@ -31,7 +35,7 @@ export default function Projects({projectsList, isMobile}) {
               <p>Voit auttaa täydentämällä sitä <Link href="https://github.com/Testausserveri/testausserveri.fi/issues/47">tekemällä dokumentointia GitHubiin</Link>.</p>
             </span>
           </InfoBox>
-          {projectsList.map((project) => (
+          {projects.map((project) => (
             <ProjectRow key={project._id} project={project} />
           ))}
         </Content>
@@ -41,14 +45,12 @@ export default function Projects({projectsList, isMobile}) {
 }
 
 export async function getServerSideProps({req}) {
-  const response = await fetch("https://api.testausserveri.fi/v1/projects")
-  const data = await response.json()
-
+  const data = await api.projects.all()
   const UA = req.headers['user-agent'];
   const isMobile = Boolean(UA.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   ))
 
-  return { props: { projectsList: data, isMobile } }
+  return { props: { projectsData: data, isMobile } }
 }
 

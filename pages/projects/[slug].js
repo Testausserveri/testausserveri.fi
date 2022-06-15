@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import { Content } from '../../components/Content/Content'
 import styled from 'styled-components'
 import Link from 'next/link'
+import api from '../../utils/api'
+import { useEffect, useState } from 'react'
+import { Project } from '../../utils/Project'
 
 const Center = styled.p`
   position: absolute;
@@ -13,21 +16,23 @@ const Center = styled.p`
   max-width: 500px;
 `
 
-export default function Project() {
-  const router = useRouter()
-  const { slug } = router.query
-
+export default function ProjectPage({projectData}) {
+  const project = new Project(projectData)
+  console.log(project)
   return (
     <article>
         <Head>
             <title>Projekti | Testausserveri</title>
         </Head>
-        <Center> 
-          Projektisivut ovat vielä keskeneräinen ominaisuus. Hakemasi projekti tunnisteella <b>{slug}</b> näkyisi täällä.
-          <br />
-          <br />
-          <Link href="/projects">Palaa takaisin projektilistaukseen</Link>
-        </Center>
+        <Content>
+          mojdo
+        </Content>
     </article>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { slug } = context.query
+  const data = await api.projects.find(slug)
+  return { props: { projectData: data } }
 }

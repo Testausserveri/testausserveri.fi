@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react"
-
-export async function getGuildInfo(guildInfoModel) {
-    const response = await fetch(`https://api.testausserveri.fi/v1/discord/guildInfo${guildInfoModel ? "?r=" + guildInfoModel.join(",") : ""}`)
-    const data = await response.json()
-
-    return data
-}
+import api from "../utils/api.js"
 
 export function useGuildInfo(guildInfoModel, ss) {
     const [guildInfo, setGuildInfo] = useState(ss || {})
 
     async function update() {
         console.log("Updating gi")
-        setGuildInfo(await getGuildInfo(guildInfoModel))
+        setGuildInfo(await api.getGuildInfo(guildInfoModel))
     }
     useEffect(() => {
         setInterval(update, 5000)

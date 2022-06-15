@@ -9,12 +9,13 @@ import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordL
 import { Title } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
-import { getGuildInfo, useGuildInfo } from '../hooks/useGuildInfo';
+import { useGuildInfo } from '../hooks/useGuildInfo';
 import { useEffect, useRef, useState } from 'react';
 import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderboard';
 import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
+import api from '../utils/api';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
@@ -141,7 +142,7 @@ export default function Home({ssGuildInfo}) {
 }
 
 export async function getServerSideProps() {
-  const guildInfo = await getGuildInfo(guildInfoModel)
+  const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   return { props: { ssGuildInfo: guildInfo } }
 }
