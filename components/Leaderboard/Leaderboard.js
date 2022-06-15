@@ -4,6 +4,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
 import { RiQuestionLine } from "react-icons/ri"
+import { Explanation } from '../Explanation/Explanation';
 
 function LeaderboardItem({index, data, valueFormatter}) {
     return (
@@ -50,12 +51,7 @@ export function Leaderboard({data, title, valueFormatter, explanation}) {
             <h3>
                 {title}
                 {explanation ? 
-                    <Tippy 
-                        className="tip"
-                        interactive={true} 
-                        content={explanation}>
-                        <span className={styles.explanation}><RiQuestionLine /></span>
-                    </Tippy>
+                    <Explanation>{explanation}</Explanation>
                 : null}
             </h3>
             <ul className={styles.items}>
