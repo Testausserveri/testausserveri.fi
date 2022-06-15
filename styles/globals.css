@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+html {
+  background-color: #0D0D0D;
+}
+
 html,
 body {
   padding: 0;
@@ -7,7 +11,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --gradient: linear-gradient(95.61deg, #8BBAFF -8.65%, #6CE5FF 45.52%, rgba(120, 255, 231, 0.96) 96.41%);
-  background-color: #0D0D0D;
   overflow-x: hidden;
   color: #DBDBDB;
 }

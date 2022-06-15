@@ -58,11 +58,38 @@ const ProjectLinks = styled.div`
   }
 `
 
+const FadeBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35rem;
+  background-size: cover;
+  filter: blur(5px);
+  transform: scale(1.2);
+  opacity: 0.3;
+  z-index: -5;
+
+  &::after {
+    content: ' ';
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(0,0,0,0.7) 40.67%, #0D0D0D 96.87%);
+    
+    top: 0px;
+  }  
+`
+
 export default function ProjectPage({projectData}) {
   const project = new Project(projectData)
   console.log(project)
   return (
     <article>
+        <FadeBackground style={{backgroundImage: `url('${project.cover.url}')`}} />
         <Head>
             <title>{project.name} | Testausserveri</title>
         </Head>
