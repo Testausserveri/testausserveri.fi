@@ -5,3 +5,4 @@ node_modules
 storybook-static
 .env
 dependency-licenses.json-e
+.env.local
