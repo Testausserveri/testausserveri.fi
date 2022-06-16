@@ -35,16 +35,17 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
                 </div>
             </div>
 
-            <ul className={styles.items}>
+            <ul className={`${styles.items} noLinkStyles`}>
                 {pages.map(page => {
                     const Component = () => (
                         <Link 
                             shallow={true} 
                             href={page.path}>
-                            <li 
-                                className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
-                                {page.label}
-                            </li>
+                            <a className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                                <li>
+                                    {page.label}
+                                </li>
+                            </a>
                         </Link>
                     )
                     if (open) {
