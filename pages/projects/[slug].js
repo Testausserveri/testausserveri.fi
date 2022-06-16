@@ -93,6 +93,9 @@ const FadeBackground = styled.div`
     background-size: cover;
     opacity: 0.3;
     z-index: -10;
+    @-moz-document url-prefix() {
+      opacity: 0.15;
+    }
   }
   &::after {
     content: ' ';
@@ -104,7 +107,6 @@ const FadeBackground = styled.div`
     z-index: -1;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(0,0,0,0.7) 40.67%, #0D0D0D 96.87%);
     backdrop-filter: blur(5px);
-    
     top: 0px;
   }  
 `
