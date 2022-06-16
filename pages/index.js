@@ -16,6 +16,7 @@ import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
 import api from '../utils/api';
+import { Collaborations } from '../components/Collaborations/Collaborations';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
@@ -136,6 +137,7 @@ export default function Home({ssGuildInfo}) {
             </span>}
             valueFormatter={(sec) => TimeUtil.formatSecond(sec)} />
         </LeaderboardGroup>
+        <Collaborations />
       </Content>
       <Footer />
     </div>

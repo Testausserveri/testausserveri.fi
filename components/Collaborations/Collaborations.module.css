@@ -1,0 +1,27 @@
+.collaborations {
+    width: 100%;
+    text-align: center;
+}
+.collaborations ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.collaborations ul li {
+    opacity: 0.9;
+    cursor: pointer;
+    transition: opacity 0.1s;
+}
+.collaborations ul li:hover {
+    opacity: 1;
+}
+
+.collaborations h2 {
+    color: #F0F0F0;
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    margin: 2.5rem;
+}
