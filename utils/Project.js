@@ -97,6 +97,7 @@ export class Project {
         }
 
         this.contributors = data.contributors
+        this.readmes = data.readmes
     }
 
     get cover() {

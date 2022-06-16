@@ -12,6 +12,10 @@ import { AvatarRow } from '../../components/AvatarRow/AvatarRow'
 import { Explanation } from '../../components/Explanation/Explanation'
 import { TagsRow } from '../../components/TagsRow/TagsRow'
 import { Footer } from '../../components/Footer/Footer'
+import { Gallery } from '../../components/Gallery/Gallery'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { FaGithub } from "react-icons/fa"
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -102,7 +106,42 @@ const FadeBackground = styled.div`
   }  
 `
 
-export default function ProjectPage({projectData}) {
+const RepositoryReadme = styled.div`
+  position: relative;
+  width: 100%;
+  background-color: rgba(108, 108, 108, 0.09);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  >span:nth-child(1) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #474747;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    >span:nth-child(2) {
+      gap: 0.5rem;
+      align-item: center;
+      display: flex;
+    }
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1 { font-size: 1.6em; }
+  h2 { font-size: 1.4em; }
+  h3 { font-size: 1.2em; }
+`
+
+const P = styled.p`
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+`
+export default function ProjectPage({projectData, readmes}) {
   const project = new Project(projectData)
   //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
   return (
@@ -120,7 +159,39 @@ export default function ProjectPage({projectData}) {
 
             <Layout>
               <div>
-                <H1>{project.name}</H1>
+                <Gallery media={project.media} />
+                <H1 style={{margin: "1rem 0"}}>{project.name}</H1>
+                <P>
+                  <b 
+                    style={{
+                      fontFamily: "Poppins", 
+                      fontWeight: 600,
+                      display: "block"
+                    }}>{project.description.short}</b>
+                </P>
+                {project.description.full ? 
+                  project.description.full.split("\n\n").map((paragraph, i) => (
+                    <P key={i}>{paragraph}</P>
+                  ))
+                : null}
+                <div style={{marginTop: "2rem"}}>
+                  {Object.keys(readmes).length > 0 ? 
+                    Object.keys(readmes).map(repository => (
+                      <RepositoryReadme>
+                        <span>
+                          <span>
+                            README.md-dokumentaatio GitHub-repositoriolle
+                          </span>
+                          <span>
+                            <FaGithub />
+                            <a className="link" href={`https://github.com/${repository}`}>{repository}</a>
+                          </span>
+                        </span>
+                        <MDXRemote {...readmes[repository]} />
+                      </RepositoryReadme>
+                    ))
+                  : null }
+                </div>
               </div>
               <div>
                 <H2>Omistajat</H2>
@@ -166,5 +237,16 @@ export default function ProjectPage({projectData}) {
 export async function getServerSideProps(context) {
   const { slug } = context.query
   const data = await api.projects.find(slug)
-  return { props: { projectData: data } }
+
+  // Serialize markdowns for readmes
+  const readmes = {}
+  for (const repository in data.readmes) {
+    readmes[repository] = await serialize(data.readmes[repository], {
+      mdxOptions: {
+        format: "md"
+      }
+    })
+  }
+
+  return { props: { projectData: data, readmes } }
 }

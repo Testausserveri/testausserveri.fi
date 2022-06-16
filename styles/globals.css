@@ -29,7 +29,11 @@ ul {
   box-sizing: border-box;
 }
 
-p a:before, ul a:before, table a:before, .tip a:before {
+p:not(.noLinkStyles) a:before, 
+ul:not(.noLinkStyles) a:before, 
+table:not(.noLinkStyles) a:before, 
+.link:before,
+.tip a:before {
   content: "";
   position: absolute;
   top: -.05rem;
@@ -43,7 +47,7 @@ p a:before, ul a:before, table a:before, .tip a:before {
   transition: background-color .1s;
 }
 
-p a:hover:before, ul a:hover:before, table a:hover:before, .tip a:hover:before {
+p a:hover:before, ul a:hover:before, table a:hover:before, .tip a:hover:before, .link:hover:before {
   background-color: rgba(255,255,255,.20);
 }
 
