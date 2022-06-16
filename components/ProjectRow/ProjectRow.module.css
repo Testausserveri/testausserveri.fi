@@ -27,8 +27,8 @@
 
 .image img {
     object-fit: cover;
-    width: 9rem;
-    height: 9rem;
+    width: 8.5rem;
+    height: 8.5rem;
     border-radius: 1rem;
     background-color: #474747;
 }
@@ -42,11 +42,14 @@
 .content h2 {
     margin: 0;
     font-weight: 600;
+    font-family: 'Poppins';
+    font-size: 1.25rem;
 }
 
 .content p {
     flex: 1;
     line-height: 1.5;
+    margin: 0.5rem 0;
 }
 
 .bottom {
