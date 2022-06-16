@@ -1,0 +1,36 @@
+.display {
+    aspect-ratio: 2.414 / 1;
+    width: 100%;
+    background-color: rgba(108, 108, 108, 0.09);
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.display img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.chooser {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.chooser li {
+    aspect-ratio: 1.7 / 1;
+    height: 3rem;
+    background-color: rgba(108, 108, 108, 0.19);
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-right: .5rem;
+    position: relative;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.chooser li img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
