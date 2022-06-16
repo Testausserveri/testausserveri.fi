@@ -1,9 +1,6 @@
 import styles from './Leaderboard.module.css'
 
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
 
-import { RiQuestionLine } from "react-icons/ri"
 import { Explanation } from '../Explanation/Explanation';
 
 function LeaderboardItem({index, data, valueFormatter}) {

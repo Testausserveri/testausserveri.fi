@@ -22,6 +22,21 @@ const Layout = styled.div`
   >div:nth-child(2) {
     width: 32%;
   }
+
+  @media only screen and (max-width: 970px) {
+    >div:nth-child(2) {
+      width: 50%;
+    }
+  } 
+
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    >div:nth-child(2) {
+      width: 100%;
+      flex: 1;
+    }
+  } 
 `
 
 const AvatarRowExtended = styled.div`
@@ -59,26 +74,28 @@ const ProjectLinks = styled.div`
 `
 
 const FadeBackground = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 35rem;
-  background-size: cover;
-  filter: blur(5px);
-  transform: scale(1.2);
-  opacity: 0.3;
-  z-index: -5;
-
+  &::before {
+    content: '';
+    background-image: var(--bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35rem;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -10;
+  }
   &::after {
     content: ' ';
     width: 100%;
     bottom: 0;
     position: absolute;
     left: 0;
-    height: 100%;
-    z-index: 1;
+    height: 35rem;
+    z-index: -1;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(0,0,0,0.7) 40.67%, #0D0D0D 96.87%);
+    backdrop-filter: blur(5px);
     
     top: 0px;
   }  
@@ -86,59 +103,61 @@ const FadeBackground = styled.div`
 
 export default function ProjectPage({projectData}) {
   const project = new Project(projectData)
-  console.log(project)
+  //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
   return (
     <article>
-        <FadeBackground style={{backgroundImage: `url('${project.cover.url}')`}} />
+        
         <Head>
             <title>{project.name} | Testausserveri</title>
         </Head>
-        <Content>
-          <Breadcrumbs 
-            route={[
-              {path: "/projects/", name: "Projektit"},
-              {path: `/projects/${project.slug}`, name: project.name}
-            ]} />
+        <FadeBackground style={{"--bg": `url('${project.cover.url}')`}}>
+          <Content>
+            <Breadcrumbs 
+              route={[
+                {path: "/projects/", name: "Projektit"},
+                {path: `/projects/${project.slug}`, name: project.name}
+              ]} />
 
-          <Layout>
-            <div>
-              <H1>{project.name}</H1>
-            </div>
-            <div>
-              <H2>Omistajat</H2>
-              <AvatarRowExtended>
-                <AvatarRow members={project.members} />
-                <span>{project.members.map(member => member.name).join("; ")}</span>
-              </AvatarRowExtended>
+            <Layout>
+              <div>
+                <H1>{project.name}</H1>
+              </div>
+              <div>
+                <H2>Omistajat</H2>
+                <AvatarRowExtended>
+                  <AvatarRow members={project.members} />
+                  <span>{project.members.map(member => member.name).join("; ")}</span>
+                </AvatarRowExtended>
 
-              {project.contributors.length > 0 ? <>
-                <H2>Kontribuuttorit 
-                  <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
-                </H2>
-                <AvatarRow members={project.contributors} />
-              </> : null}
+                {project.contributors.length > 0 ? <>
+                  <H2>Kontribuuttorit 
+                    <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
+                  </H2>
+                  <AvatarRow members={project.contributors} />
+                </> : null}
 
-              {project.links.length > 0 ? <>
-                <H2>Linkit</H2>
-                <ProjectLinks>
-                  {project.links.map(link => (
-                    <a href={link.url} key={link.url}>
-                      <li>
-                        <h3>{link.title}</h3>
-                        <span>{link.displayURL}</span>
-                      </li>
-                    </a>
-                  ))}
-                </ProjectLinks>
-              </> : null}
+                {project.links.length > 0 ? <>
+                  <H2>Linkit</H2>
+                  <ProjectLinks>
+                    {project.links.map(link => (
+                      <a href={link.url} key={link.url}>
+                        <li>
+                          <h3>{link.title}</h3>
+                          <span>{link.displayURL}</span>
+                        </li>
+                      </a>
+                    ))}
+                  </ProjectLinks>
+                </> : null}
 
-              {project.tags.length > 0 ? <>
-                <H2>Tagit</H2>
-                <TagsRow tags={project.tags} />
-              </>: null}
-            </div>
-          </Layout>
-        </Content>
+                {project.tags.length > 0 ? <>
+                  <H2>Tagit</H2>
+                  <TagsRow tags={project.tags} />
+                </>: null}
+              </div>
+            </Layout>
+          </Content>
+        </FadeBackground>
     </article>
   )
 }
