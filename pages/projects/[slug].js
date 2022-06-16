@@ -16,6 +16,7 @@ import { Gallery } from '../../components/Gallery/Gallery'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { FaGithub } from "react-icons/fa"
+import { ProjectRow } from '../../components/ProjectRow/ProjectRow'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -140,14 +141,16 @@ const RepositoryReadme = styled.div`
   h1 { font-size: 1.6em; }
   h2 { font-size: 1.4em; }
   h3 { font-size: 1.2em; }
+  p { line-height: 1.5; }
 `
 
 const P = styled.p`
   line-height: 1.5;
   margin-bottom: 1.5rem;
 `
-export default function ProjectPage({projectData, readmes}) {
+export default function ProjectPage({projectData, readmes, suggestedProjectsData}) {
   const project = new Project(projectData)
+  const suggestedProjects = suggestedProjectsData.map(data => new Project(data))
   //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
   return (
     <div>
@@ -230,6 +233,11 @@ export default function ProjectPage({projectData, readmes}) {
                   <H2>Tagit</H2>
                   <TagsRow tags={project.tags} />
                 </>: null}
+
+                <H2>Samankaltaisia projekteja</H2>
+                {suggestedProjects.map((project) => (
+                  <ProjectRow key={project._id} project={project} compact />
+                ))}
               </div>
             </Layout>
           </Content>
@@ -242,6 +250,7 @@ export default function ProjectPage({projectData, readmes}) {
 export async function getServerSideProps(context) {
   const { slug } = context.query
   const data = await api.projects.find(slug)
+  const suggestedProjectsData = await api.projects.all()
 
   // Serialize markdowns for readmes
   const readmes = {}
@@ -253,5 +262,5 @@ export async function getServerSideProps(context) {
     })
   }
 
-  return { props: { projectData: data, readmes } }
+  return { props: { projectData: data, readmes, suggestedProjectsData } }
 }

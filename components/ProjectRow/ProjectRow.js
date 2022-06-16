@@ -4,11 +4,11 @@ import { Capsule } from '../Capsule/Capsule'
 import { TagsRow } from '../TagsRow/TagsRow'
 import styles from './ProjectRow.module.css'
 
-export function ProjectRow({project}) {
+export function ProjectRow({project, compact}) {
     return (
         <Link href={`/projects/${project.slug}`}>
             <a>
-                <div className={styles.row}>
+                <div className={`${styles.row} ${compact ? styles.compact : ""}`}>
                     <div className={styles.inner}>
                         <div className={styles.image}>
                             <img src={project.cover.url} />
