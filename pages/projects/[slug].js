@@ -66,6 +66,9 @@ const ProjectLinks = styled.div`
     padding: 1rem;
     cursor: pointer;
     transition: background-color 0.1s;
+    @media only screen and (max-width: 600px) {
+      padding: 1.5rem;
+    }
   }
   li:hover {
     background-color: rgba(108, 108, 108, 0.15);
