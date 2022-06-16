@@ -29,7 +29,7 @@ const socialMedias = [
 
 function SocialMedias() {
     return (
-        <ul className={styles.socials}>
+        <ul className={`noLinkStyles ${styles.socials}`}>
             {socialMedias.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
@@ -45,7 +45,7 @@ function SocialMedias() {
 
 function FooterLinks() {
     return (
-        <ul className={styles.links}>
+        <ul className={`noLinkStyles ${styles.links}`}>
             {footerLinks.map(link => (
                 <li key={link.path}>
                     <Link href={link.path}>
