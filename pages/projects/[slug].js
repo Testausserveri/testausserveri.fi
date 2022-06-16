@@ -11,6 +11,7 @@ import { H1, H2 } from '../../components/Title/Title'
 import { AvatarRow } from '../../components/AvatarRow/AvatarRow'
 import { Explanation } from '../../components/Explanation/Explanation'
 import { TagsRow } from '../../components/TagsRow/TagsRow'
+import { Footer } from '../../components/Footer/Footer'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -105,8 +106,7 @@ export default function ProjectPage({projectData}) {
   const project = new Project(projectData)
   //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
   return (
-    <article>
-        
+    <div>
         <Head>
             <title>{project.name} | Testausserveri</title>
         </Head>
@@ -158,7 +158,8 @@ export default function ProjectPage({projectData}) {
             </Layout>
           </Content>
         </FadeBackground>
-    </article>
+        <Footer />
+    </div>
   )
 }
 
