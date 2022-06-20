@@ -40,7 +40,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
     CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
-    CNAME('hallofshame', 'cname.vercel-dns.com.', CF_PROXY_OFF), // Testausserveri Hall of shame
+    CNAME('hallofshame', 'hallofshame.netfliy.app.', CF_PROXY_OFF), // Testausserveri Hall of shame
     CNAME('coal', 'cname.vercel-dns.com.', CF_PROXY_OFF),
   
     // Memes
