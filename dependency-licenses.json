@@ -128,14 +128,34 @@
     "publisher": "Justin Ridgewell",
     "email": "justin@ridgewell.name"
   },
+  "@mdx-js/mdx@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mdx-js/mdx",
+    "publisher": "John Otander",
+    "email": "johnotander@gmail.com",
+    "url": "https://johno.com"
+  },
+  "@mdx-js/react@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mdx-js/mdx",
+    "publisher": "John Otander",
+    "email": "johnotander@gmail.com",
+    "url": "https://johno.com"
+  },
   "@next/env@12.1.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js",
     "publisher": "Next.js Team",
     "email": "support@vercel.com"
   },
-  "@next/swc-darwin-arm64@12.1.4": {
+  "@next/swc-darwin-x64@12.1.4": {
     "licenses": "MIT"
+  },
+  "@popperjs/core@2.11.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/popperjs/popper-core",
+    "publisher": "Federico Zivolo",
+    "email": "federico.zivolo@gmail.com"
   },
   "@skyra/discord-components-core@3.1.1": {
     "licenses": "MIT",
@@ -158,12 +178,91 @@
     "repository": "https://github.com/ionic-team/stencil",
     "publisher": "Ionic Team"
   },
+  "@tippyjs/react@4.2.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/atomiks/tippyjs-react",
+    "publisher": "atomiks"
+  },
+  "@types/acorn@4.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/debug@4.1.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/estree-jsx@0.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/estree@0.0.51": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/hast@2.3.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/js-yaml@4.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/mdast@3.0.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/mdurl@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/mdx@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/ms@0.7.31": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/prop-types@15.7.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/react@18.0.9": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/scheduler@0.16.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@types/unist@2.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "acorn-jsx@5.3.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/acornjs/acorn-jsx"
+  },
+  "acorn@8.5.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/acornjs/acorn"
+  },
   "ansi-styles@3.2.1": {
     "licenses": "MIT",
     "repository": "https://github.com/chalk/ansi-styles",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
+  },
+  "argparse@2.0.1": {
+    "licenses": "Python-2.0",
+    "repository": "https://github.com/nodeca/argparse"
+  },
+  "astring@1.8.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/davidbonnet/astring",
+    "publisher": "David Bonnet",
+    "email": "david@bonnet.cc"
   },
   "babel-plugin-styled-components@2.0.7": {
     "licenses": "MIT",
@@ -172,6 +271,13 @@
   "babel-plugin-syntax-jsx@6.18.0": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+  },
+  "bail@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/bail",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   },
   "camelize@1.0.0": {
     "licenses": "MIT",
@@ -187,9 +293,44 @@
     "email": "beneb.info@gmail.com",
     "url": "http://beneb.info"
   },
+  "ccount@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/ccount",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
   "chalk@2.4.2": {
     "licenses": "MIT",
     "repository": "https://github.com/chalk/chalk"
+  },
+  "character-entities-html4@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities-html4",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "character-entities-legacy@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities-legacy",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "character-entities@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "character-reference-invalid@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/character-reference-invalid",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   },
   "clsx@1.1.1": {
     "licenses": "MIT",
@@ -210,6 +351,13 @@
     "publisher": "DY",
     "email": "dfcreative@gmail.com"
   },
+  "comma-separated-tokens@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/comma-separated-tokens",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
   "countup.js@2.0.8": {
     "licenses": "MIT",
     "repository": "https://github.com/inorganik/countUp.js",
@@ -226,9 +374,11 @@
     "repository": "https://github.com/styled-components/css-to-react-native",
     "publisher": "Jacob Parker"
   },
-  "cxs@6.2.0": {
+  "csstype@3.1.0": {
     "licenses": "MIT",
-    "publisher": "Brent Jackson"
+    "repository": "https://github.com/frenic/csstype",
+    "publisher": "Fredrik Nicol",
+    "email": "fredrik.nicol@gmail.com"
   },
   "debug@4.3.3": {
     "licenses": "MIT",
@@ -236,12 +386,76 @@
     "publisher": "Josh Junon",
     "email": "josh.junon@protonmail.com"
   },
+  "debug@4.3.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/debug-js/debug",
+    "publisher": "Josh Junon",
+    "email": "josh.junon@protonmail.com"
+  },
+  "decode-named-character-reference@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/decode-named-character-reference",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "dequal@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/dequal",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "diff@5.1.0": {
+    "licenses": "BSD-3-Clause",
+    "repository": "https://github.com/kpdecker/jsdiff"
+  },
   "escape-string-regexp@1.0.5": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/escape-string-regexp",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
+  },
+  "estree-util-attach-comments@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/estree-util-attach-comments",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "estree-util-build-jsx@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/estree-util-build-jsx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "estree-util-is-identifier-name@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/estree-util-is-identifier-name",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "estree-util-visit@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/estree-util-visit",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "estree-walker@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Rich-Harris/estree-walker",
+    "publisher": "Rich Harris"
+  },
+  "extend@3.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/justmoon/node-extend",
+    "publisher": "Stefan Thomas",
+    "email": "justmoon@members.fsf.org",
+    "url": "http://www.justmoon.net"
   },
   "globals@11.12.0": {
     "licenses": "MIT",
@@ -264,6 +478,20 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
+  "hast-util-to-estree@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-to-estree",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "hast-util-whitespace@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/hast-util-whitespace",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
   "hex-to-rgba@2.0.1": {
     "licenses": "GPL-3.0",
     "repository": "https://github.com/misund/hex-to-rgba",
@@ -275,10 +503,67 @@
     "publisher": "Michael Ridgway",
     "email": "mcridgway@gmail.com"
   },
+  "inline-style-parser@0.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkablemark/inline-style-parser"
+  },
+  "is-alphabetical@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-alphabetical",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "is-alphanumerical@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-alphanumerical",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "is-buffer@2.0.5": {
+    "licenses": "MIT",
+    "repository": "https://github.com/feross/is-buffer",
+    "publisher": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "is-decimal@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-decimal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "is-hexadecimal@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/is-hexadecimal",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "is-plain-obj@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/is-plain-obj",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "is-reference@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/Rich-Harris/is-reference",
+    "publisher": "Rich Harris"
+  },
   "js-tokens@4.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/lydell/js-tokens",
     "publisher": "Simon Lydell"
+  },
+  "js-yaml@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/nodeca/js-yaml",
+    "publisher": "Vladimir Zapparov",
+    "email": "dervus.grim@gmail.com"
   },
   "jsesc@2.5.2": {
     "licenses": "MIT",
@@ -286,17 +571,308 @@
     "publisher": "Mathias Bynens",
     "url": "https://mathiasbynens.be/"
   },
+  "kleur@4.1.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/kleur",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
   "lodash@4.17.21": {
     "licenses": "MIT",
     "repository": "https://github.com/lodash/lodash",
     "publisher": "John-David Dalton",
     "email": "john.david.dalton@gmail.com"
   },
+  "longest-streak@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/longest-streak",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
   "loose-envify@1.4.0": {
     "licenses": "MIT",
     "repository": "https://github.com/zertosh/loose-envify",
     "publisher": "Andres Suarez",
     "email": "zertosh@gmail.com"
+  },
+  "markdown-extensions@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/sindresorhus/markdown-extensions",
+    "publisher": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "mdast-util-definitions@5.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-definitions",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-from-markdown@1.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-from-markdown",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-mdx-expression@1.2.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdx-expression",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-mdx-jsx@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdx-jsx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-mdx@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-mdxjs-esm@1.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-mdxjs-esm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-to-hast@12.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-hast",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-to-markdown@1.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-markdown",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdast-util-to-string@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/mdast-util-to-string",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mdurl@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/markdown-it/mdurl"
+  },
+  "micromark-core-commonmark@1.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-core-commonmark",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-extension-mdx-expression@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdx-expression/tree/main/packages/micromark-extension-mdx-expression",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-extension-mdx-jsx@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdx-jsx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-extension-mdx-md@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdx-md",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-extension-mdxjs-esm@1.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdxjs-esm",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-extension-mdxjs@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdxjs",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-destination@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-destination",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-label@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-label",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-mdx-expression@1.0.6": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdx-expression/tree/main/packages/micromark-factory-mdx-expression",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-space@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-space",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-title@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-title",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-factory-whitespace@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-factory-whitespace",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-character@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-character",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-chunked@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-chunked",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-classify-character@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-classify-character",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-combine-extensions@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-combine-extensions",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-decode-numeric-character-reference@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-decode-numeric-character-reference",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-decode-string@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-decode-string",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-encode@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-encode",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-events-to-acorn@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark-extension-mdx-expression/tree/main/packages/micromark-util-events-to-acorn",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-html-tag-name@1.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-html-tag-name",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-normalize-identifier@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-normalize-identifier",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-resolve-all@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-resolve-all",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-sanitize-uri@1.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-sanitize-uri",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-subtokenize@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-subtokenize",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-symbol@1.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-symbol",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark-util-types@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark-util-types",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "micromark@3.0.10": {
+    "licenses": "MIT",
+    "repository": "https://github.com/micromark/micromark/tree/main/packages/micromark",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "mri@1.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/mri",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
   },
   "ms@2.1.2": {
     "licenses": "MIT",
@@ -307,6 +883,11 @@
     "repository": "https://github.com/ai/nanoid",
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru"
+  },
+  "next-mdx-remote@4.0.3": {
+    "licenses": "MPL-2.0",
+    "repository": "https://github.com/hashicorp/next-mdx-remote",
+    "publisher": "Jeff Escalante"
   },
   "next@12.1.4": {
     "licenses": "MIT",
@@ -326,17 +907,16 @@
     "email": "sindresorhus@gmail.com",
     "url": "https://sindresorhus.com"
   },
-  "performance-now@0.2.0": {
+  "parse-entities@4.0.0": {
     "licenses": "MIT",
-    "repository": "https://github.com/meryn/performance-now",
-    "publisher": "Meryn Stol",
-    "email": "merynstol@gmail.com"
+    "repository": "https://github.com/wooorm/parse-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   },
-  "performance-now@2.1.0": {
+  "periscopic@3.0.4": {
     "licenses": "MIT",
-    "repository": "https://github.com/braveg1rl/performance-now",
-    "publisher": "Braveg1rl",
-    "email": "braveg1rl@outlook.com"
+    "repository": "https://github.com/Rich-Harris/periscopic"
   },
   "picocolors@1.0.0": {
     "licenses": "ISC",
@@ -361,15 +941,12 @@
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru"
   },
-  "prop-types@15.8.1": {
+  "property-information@6.1.1": {
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/prop-types"
-  },
-  "raf@3.4.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/chrisdickinson/raf",
-    "publisher": "Chris Dickinson",
-    "email": "chris@neversaw.us"
+    "repository": "https://github.com/wooorm/property-information",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   },
   "react-countup@6.1.1": {
     "licenses": "MIT",
@@ -377,6 +954,12 @@
     "publisher": "Glenn Reyes",
     "email": "glenn@glennreyes.com",
     "url": "https://twitter.com/glnnrys"
+  },
+  "react-device-detect@2.2.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/duskload/react-device-detect",
+    "publisher": "Michael Laktionov",
+    "email": "duskload@gmail.com"
   },
   "react-dom@17.0.2": {
     "licenses": "MIT",
@@ -387,10 +970,10 @@
     "repository": "https://github.com/gkaemmer/react-fade-in",
     "publisher": "Graham Kaemmer"
   },
-  "react-fast-compare@2.0.4": {
+  "react-icons@4.3.1": {
     "licenses": "MIT",
-    "repository": "https://github.com/FormidableLabs/react-fast-compare",
-    "publisher": "Chris Bolin"
+    "repository": "https://github.com/react-icons/react-icons",
+    "publisher": "Goran Gajic"
   },
   "react-is@16.13.1": {
     "licenses": "MIT",
@@ -402,20 +985,37 @@
     "publisher": "Greg Bergé",
     "email": "berge.greg@gmail.com"
   },
-  "react-motion@0.5.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/chenglou/react-motion"
-  },
-  "react-text-loop@2.3.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/braposo/react-text-loop",
-    "publisher": "Bernardo Raposo",
-    "email": "hi@bernardoraposo.com",
-    "url": "http://bernardoraposo.com"
-  },
   "react@17.0.2": {
     "licenses": "MIT",
     "repository": "https://github.com/facebook/react"
+  },
+  "remark-mdx@2.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/mdx-js/mdx",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "remark-parse@10.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-parse",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "remark-rehype@10.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkjs/remark-rehype",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "sade@1.8.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/sade",
+    "publisher": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
   },
   "scheduler@0.20.2": {
     "licenses": "MIT",
@@ -434,6 +1034,26 @@
     "publisher": "Valentin 7rulnik Semirulnik",
     "email": "v7rulnik@gmail.com"
   },
+  "space-separated-tokens@2.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/space-separated-tokens",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "stringify-entities@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/stringify-entities",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "style-to-object@0.3.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/remarkablemark/style-to-object",
+    "publisher": "Mark",
+    "email": "mark@remarkablemark.org"
+  },
   "styled-components@5.3.5": {
     "licenses": "MIT",
     "repository": "https://github.com/styled-components/styled-components",
@@ -450,6 +1070,11 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
+  "tippy.js@6.3.7": {
+    "licenses": "MIT",
+    "repository": "https://github.com/atomiks/tippyjs",
+    "publisher": "atomiks"
+  },
   "to-fast-properties@2.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/to-fast-properties",
@@ -457,10 +1082,139 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
+  "trough@2.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/trough",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
   "tslib@2.3.1": {
     "licenses": "0BSD",
     "repository": "https://github.com/Microsoft/tslib",
     "publisher": "Microsoft Corp."
+  },
+  "ua-parser-js@1.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/faisalman/ua-parser-js",
+    "publisher": "Faisal Salman",
+    "email": "f@faisalman.com",
+    "url": "http://faisalman.com"
+  },
+  "unified@10.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/unifiedjs/unified",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-builder@3.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-builder",
+    "publisher": "Eugene Sharygin",
+    "email": "eush77@gmail.com"
+  },
+  "unist-util-generated@2.0.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-generated",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-is@5.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-is",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-position-from-estree@1.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-position-from-estree",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-position@4.0.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-position",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-remove-position@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-remove-position",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-stringify-position@3.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-stringify-position",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-visit-parents@4.1.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit-parents",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-visit-parents@5.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit-parents",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-visit@3.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "unist-util-visit@4.1.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/syntax-tree/unist-util-visit",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "uvu@0.5.3": {
+    "licenses": "MIT",
+    "repository": "https://github.com/lukeed/uvu"
+  },
+  "vfile-location@4.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile-location",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "vfile-matter@3.0.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile-matter",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "vfile-message@3.1.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile-message",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
+  },
+  "vfile@5.3.4": {
+    "licenses": "MIT",
+    "repository": "https://github.com/vfile/vfile",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   },
   "yoctodelay@2.0.0": {
     "licenses": "MIT",
@@ -468,6 +1222,13 @@
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "https://sindresorhus.com"
+  },
+  "zwitch@2.0.2": {
+    "licenses": "MIT",
+    "repository": "https://github.com/wooorm/zwitch",
+    "publisher": "Titus Wormer",
+    "email": "tituswormer@gmail.com",
+    "url": "https://wooorm.com"
   }
 }
 
