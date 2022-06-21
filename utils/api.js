@@ -8,10 +8,16 @@ export async function getGuildInfo(guildInfoModel) {
 }
 
 export const projects = {
-    all: async function () {
-        const response = await fetch(`${apiServer}/v1/projects`)
+    all: async function (query) {
+        if (query) query = "?" + new URLSearchParams(query).toString()
+        const response = await fetch(`${apiServer}/v1/projects${query || ""}`)
         const projects = await response.json()
         return projects
+    },
+    suggest: async function (slug) {
+        return (await this.all({
+            suggested: true
+        })).filter(project => project.slug != slug)
     },
     find: async function (slug) {
         const response = await fetch(`${apiServer}/v1/projects/${slug}`)

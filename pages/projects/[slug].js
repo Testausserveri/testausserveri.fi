@@ -250,7 +250,8 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
 export async function getServerSideProps(context) {
   const { slug } = context.query
   const data = await api.projects.find(slug)
-  const suggestedProjectsData = await api.projects.all()
+  console.log(data)
+  const suggestedProjectsData = await api.projects.suggest(data.slug)
 
   // Serialize markdowns for readmes
   const readmes = {}
