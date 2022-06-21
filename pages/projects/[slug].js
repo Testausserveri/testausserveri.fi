@@ -156,6 +156,11 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
     <div>
         <Head>
             <title>{project.name} | Testausserveri</title>
+            <meta property="og:site_name" content="Testausserveri"></meta>
+            <meta property="og:title" content={project.name} />
+            <meta property="og:image" content={project.cover.url} />
+            <meta property="og:description" content={project.description.short} />
+            <meta name="twitter:card" content="summary_large_image"></meta>
         </Head>
         <FadeBackground style={{"--bg": `url('${project.cover.url}')`}}>
           <Content>
