@@ -19,6 +19,11 @@ export const projects = {
             suggested: true
         })).filter(project => project.slug != slug)
     },
+    slugs: async function () {
+        return this.all({
+            slugs: true
+        })
+    },
     find: async function (slug) {
         const response = await fetch(`${apiServer}/v1/projects/${slug}`)
         const project = await response.json()

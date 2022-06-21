@@ -247,8 +247,8 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
   )
 }
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query
+export async function getStaticProps(context) {
+  const { slug } = context.query || context.params
   const data = await api.projects.find(slug)
   console.log(data)
   const suggestedProjectsData = await api.projects.suggest(data.slug)
@@ -263,5 +263,23 @@ export async function getServerSideProps(context) {
     })
   }
 
-  return { props: { projectData: data, readmes, suggestedProjectsData } }
+  return { 
+    props: 
+      { 
+        projectData: data, 
+        readmes, 
+        suggestedProjectsData 
+      },
+    revalidate: 60,
+  }
+}
+
+export async function getStaticPaths() {
+  const data = await api.projects.slugs()
+  const paths = data.map(slug => ({ params: { slug } }))
+  console.log("static paths", paths)
+  return {
+    paths,
+    fallback: true // false or 'blocking'
+  };
 }

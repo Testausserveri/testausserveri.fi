@@ -44,12 +44,17 @@ export default function Projects({projectsData, isMobile}) {
   )
 }
 
-export async function getServerSideProps({req}) {
+export async function getServerSideProps({req, res}) {
   const data = await api.projects.all()
   const UA = req.headers['user-agent'];
   const isMobile = Boolean(UA.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   ))
+
+  res.setHeader(
+    'Cache-Control',
+    'public, maxage=86400, stale-if-error=600'
+  )
 
   return { props: { projectsData: data, isMobile } }
 }

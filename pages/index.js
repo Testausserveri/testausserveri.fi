@@ -144,8 +144,13 @@ export default function Home({ssGuildInfo}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({req, res}) {
   const guildInfo = await api.getGuildInfo(guildInfoModel)
+
+  res.setHeader(
+    'Cache-Control',
+    'public, maxage=300, stale-if-error=300'
+  )
 
   return { props: { ssGuildInfo: guildInfo } }
 }
