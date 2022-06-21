@@ -4,12 +4,9 @@ import DiscordIcon from '../../assets/DiscordIcon.svg'
 export default {
   title: 'Button',
   component: CapsuleButton,
-  argTypes: {
-    variant: {
-      options: ['small', 'medium'],
-      control: { type: 'radio' },
-      defaultValue: 'medium'
-    }
+  args: {
+    small: false,
+    secondary: false
   }
 }
 

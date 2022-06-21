@@ -23,6 +23,12 @@
     flex-basis: 0;
 }
 
+.navButtons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: right;
+}
+
 @media only screen and (max-width: 670px) {
     .header.open {
         margin: 0;

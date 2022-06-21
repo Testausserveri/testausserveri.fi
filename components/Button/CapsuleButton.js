@@ -11,7 +11,7 @@ export function ButtonIcon({src}) {
 }
 
 export function CapsuleButton(props) {
-    const {style, children, variant, className} = props
+    const {style, children, small, secondary, className} = props
     const ripple = useRef()
     const [size, setSize] = useState(0)
 
@@ -41,7 +41,8 @@ export function CapsuleButton(props) {
                 onClick={() => setSize(0)}
 
                 onMouseMove={onMouseMove} 
-                className={(variant === "small" ? `${styles.capsuleButton} ${styles.small}` : styles.capsuleButton)}>
+                className={`${styles.capsuleButton} ${small ? styles.small : ""} ${secondary ? styles.secondary : ""}`}
+                >
                 {children}
                 <div ref={ripple} className={styles.ripple} style={{"--size": size}}></div>
             </button>
