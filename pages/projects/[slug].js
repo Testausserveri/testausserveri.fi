@@ -250,7 +250,11 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
 export async function getStaticProps(context) {
   const { slug } = context.query || context.params
   const data = await api.projects.find(slug)
-  console.log(data)
+
+  console.log("Loaded static props for", data.slug)
+
+  if (data.status == "not found") return { notFound: true }
+  
   const suggestedProjectsData = await api.projects.suggest(data.slug)
 
   // Serialize markdowns for readmes
@@ -277,9 +281,9 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const data = await api.projects.slugs()
   const paths = data.map(slug => ({ params: { slug } }))
-  console.log("static paths", paths)
+  console.log("Loaded static paths", paths)
   return {
     paths,
-    fallback: true // false or 'blocking'
+    fallback: "blocking"
   };
 }
