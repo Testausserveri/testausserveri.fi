@@ -15,7 +15,7 @@
     "@skyra/discord-components-react": "^3.1.1",
     "@splinetool/react-spline": "^2.2.1",
     "@splinetool/runtime": "^0.9.53",
-    "@testausserveri/react-testausid": "^1.0.1",
+    "@testausserveri/react-testausid": "^1.0.2",
     "@tippyjs/react": "^4.2.6",
     "hamburger-react": "^2.4.1",
     "next": "^12.1.4",
