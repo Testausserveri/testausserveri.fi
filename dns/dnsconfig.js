@@ -12,6 +12,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     ALIAS('testausserveri.fi.', 'testausserveri.github.io.'),
     CNAME('www', '@'),
     A('teapot', '152.67.70.55', CF_PROXY_OFF),
+    A('lumi', '129.151.194.131', CF_PROXY_OFF),
 
     // Projects
     // Please append to the record line a comment with the project name and the person responsible for its server.
