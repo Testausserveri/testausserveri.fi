@@ -2467,7 +2467,7 @@
 
 "@testausserveri/react-testausid@file:../react-testausid":
   "resolved" "file:../react-testausid"
-  "version" "1.0.1"
+  "version" "1.0.2"
   dependencies:
     "@tippyjs/react" "^4.2.6"
     "babel-plugin-react-css-modules" "^5.2.6"
