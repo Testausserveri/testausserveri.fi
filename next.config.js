@@ -1,10 +1,7 @@
-const withPlugins = require('next-compose-plugins')
-const withTM = require('next-transpile-modules')(['@testausserveri/react-testausid'])
-
-module.exports = withPlugins([withTM], {
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ['localhost'],
     domains: ['api.testausserveri.fi'],
   },
-})
+}

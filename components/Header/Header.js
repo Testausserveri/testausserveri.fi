@@ -5,7 +5,7 @@ import styles from './Header.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { useState } from 'react'
 import { IoMdKey } from "react-icons/io"
-import { LoginView } from '../../pages/login'
+import { LoginView } from '../Login/Login'
 
 export function Header({pages, activePath}) {
     const [open, setOpen] = useState(false)
@@ -13,7 +13,7 @@ export function Header({pages, activePath}) {
 
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
-            {loginVisible ? <LoginView /> : null}
+            <LoginView visible={loginVisible} />
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <a className={styles.navButtons}>
