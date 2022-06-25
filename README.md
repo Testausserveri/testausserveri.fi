@@ -1,3 +1,7 @@
+> **Note**
+> 
+> We are currently developing a new version of the website. See the [*coal* branch](https://github.com/Testausserveri/testausserveri.fi/tree/coal) or deployment at https://coal.testausserveri.fi.
+
 # Testausserveri.fi
 
 This repository holds the website of Testausserveri ry and DNS configurations of testausserveri.fi domain. 
