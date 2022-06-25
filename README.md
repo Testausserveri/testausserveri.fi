@@ -1,3 +1,7 @@
+> **Note**
+> 
+> We are currently developing a new version of the website. See the [*coal* branch](https://github.com/Testausserveri/testausserveri.fi/tree/coal) or deployment at https://coal.testausserveri.fi.
+
 # Testausserveri.fi
 
 This is a work-in-progress version of Testausserveri's new site. It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
