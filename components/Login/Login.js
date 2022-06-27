@@ -11,7 +11,7 @@ const DynamicTestausid = dynamic(() => import('@testausserveri/react-testausid')
 import TestausserverifiLogo from '../../assets/TestausserverifiLogo.svg'
 import FadeIn from 'react-fade-in';
 
-export function LoginDialog() {
+export function LoginDialog({ onClose }) {
     const accept = [
       'discord',
       'google',
@@ -26,14 +26,18 @@ export function LoginDialog() {
       scopes: ['id', 'contact']
     }
   
-    return <DynamicTestausid accept={accept} target={target} />  
+    return <DynamicTestausid onClose={onClose} accept={accept} target={target} onClick={e => {
+      e.preventDefault()
+      e.stopPropagation()
+    }} />  
 }
   
-export function LoginView({visible}) {
+export function LoginView({visible, setLoginVisible}) {
+  const close = () => setLoginVisible(false)
     return (
-        <div className={`${styles.loginCover} ${visible ? styles.visible : ""}`}>
+        <div className={`${styles.loginCover} ${visible ? styles.visible : ""}`} onClick={close}>
             <FadeIn>
-                <LoginDialog />
+                <LoginDialog onClose={close}/>
             </FadeIn>
         </div>
     )

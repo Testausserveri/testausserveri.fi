@@ -15,7 +15,7 @@
     "@skyra/discord-components-react": "^3.1.1",
     "@splinetool/react-spline": "^2.2.1",
     "@splinetool/runtime": "^0.9.53",
-    "@testausserveri/react-testausid": "^1.0.4",
+    "@testausserveri/react-testausid": "^1.1.0",
     "@tippyjs/react": "^4.2.6",
     "hamburger-react": "^2.4.1",
     "next": "^12.1.4",
@@ -25,7 +25,7 @@
     "react": "^17.0.2",
     "react-countup": "^6.1.1",
     "react-device-detect": "^2.2.2",
-    "react-dom": "17.0.2",
+    "react-dom": "^17.0.2",
     "react-fade-in": "^2.0.1",
     "react-icons": "^4.3.1",
     "styled-components": "^5.3.5"

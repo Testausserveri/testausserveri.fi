@@ -13,7 +13,7 @@ export function Header({pages, activePath}) {
 
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
-            <LoginView visible={loginVisible} />
+            <LoginView visible={loginVisible} setLoginVisible={setLoginVisible} />
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <a className={styles.navButtons}>
