@@ -15,7 +15,7 @@ export function LoginDialog({ onClose }) {
       'members'
     ]
     const client = '181937620043556561658238287560538816854'
-    const scopes = ['id', 'name', 'account']
+    const scopes = ['id', 'account']
   
     return <DynamicTestausid onClose={onClose} accept={accept} client={client} scopes={scopes} onClick={e => {
       e.preventDefault()
