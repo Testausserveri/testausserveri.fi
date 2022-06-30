@@ -8,25 +8,16 @@ const DynamicTestausid = dynamic(() => import('@testausserveri/react-testausid')
   ssr: false
 })
 
-import TestausserverifiLogo from '../../assets/TestausserverifiLogo.svg'
 import FadeIn from 'react-fade-in';
 
 export function LoginDialog({ onClose }) {
     const accept = [
-      'discord',
-      'google',
-      'twitter',
-      'github',
-      'testausserveri',
-      'wilmaplus'
+      'members'
     ]
-    const target = {
-      name: 'Testausserveri',
-      image: TestausserverifiLogo.src,
-      scopes: ['id', 'contact']
-    }
+    const client = '181937620043556561658238287560538816854'
+    const scopes = ['id', 'name', 'account']
   
-    return <DynamicTestausid onClose={onClose} accept={accept} target={target} onClick={e => {
+    return <DynamicTestausid onClose={onClose} accept={accept} client={client} scopes={scopes} onClick={e => {
       e.preventDefault()
       e.stopPropagation()
     }} />  
