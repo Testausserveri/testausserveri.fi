@@ -19,7 +19,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // If the project is available under the Testausserveri GitHub organization, then just the project name is enough.
     A('ctf', '152.67.67.152'), // TestausCTF - #midnighter
     A('h-challenge', '167.172.167.138', CF_PROXY_OFF), // TestausCTF - #midnighter
-    CNAME('karhu', 'mixu.wtf.'), // Karhu - Mikael
+    CNAME('karhu', 'misha.dfjapis.com.'), // Karhu - Mikael&Ruben
     CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
