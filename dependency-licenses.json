@@ -239,7 +239,7 @@
   "@splinetool/react-spline@2.2.2": {
     "licenses": "MIT*"
   },
-  "@splinetool/runtime@0.9.53": {
+  "@splinetool/runtime@0.9.106": {
     "licenses": ""
   },
   "@stencil/core@2.18.0": {
@@ -1649,13 +1649,6 @@
     "publisher": "Titus Wormer",
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
-  },
-  "yoctodelay@2.0.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/sindresorhus/yoctodelay",
-    "publisher": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "https://sindresorhus.com"
   },
   "zwitch@2.0.2": {
     "licenses": "MIT",
