@@ -41,7 +41,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
     CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
-    CNAME('maven', 'teapot.testausserveri.fi.'), // Testausserveri Maven Repository
+    CNAME('maven', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Testausserveri Maven Repository - Ruben
     CNAME('coal', 'cname.vercel-dns.com.', CF_PROXY_OFF),
     CNAME('bitwarden', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Bitwarden - Antti
   
