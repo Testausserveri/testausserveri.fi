@@ -37,6 +37,7 @@ class ProjectLink {
     constructor(data) {
         this.type = data.type
         this.url = data.url
+        this.url = (this.url.indexOf('://') === -1) ? 'https://' + this.url : this.url;
         this.name = data.name
     }
 
