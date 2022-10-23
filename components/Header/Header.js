@@ -17,12 +17,15 @@ export function Header({pages, activePath}) {
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <a className={styles.navButtons}>
+                {process.env.NODE_ENV != "production" ? 
+                (
                 <a onClick={() => setLoginVisible(true)}>
                     <CapsuleButton className={styles.button} small secondary>
                         <IoMdKey />
                         Jäsensivut
                     </CapsuleButton>
                 </a>
+                ) : null}
                 <a href="https://discord.testausserveri.fi">
                     <CapsuleButton className={styles.button} small>
                         <ButtonIcon src={DiscordIcon} />
