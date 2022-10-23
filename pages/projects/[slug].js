@@ -17,6 +17,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { FaGithub } from "react-icons/fa"
 import { ProjectRow } from '../../components/ProjectRow/ProjectRow'
+import { MDXProvider } from '@mdx-js/react'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -148,7 +149,7 @@ const P = styled.p`
   line-height: 1.5;
   margin-bottom: 1.5rem;
 `
-export default function ProjectPage({projectData, readmes, suggestedProjectsData}) {
+export default function ProjectPage({projectData, mdxSerialized, suggestedProjectsData}) {
   const project = new Project(projectData)
   const suggestedProjects = suggestedProjectsData.map(data => new Project(data))
   //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
@@ -182,14 +183,14 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
                       display: "block"
                     }}>{project.description.short}</b>
                 </P>
+                
                 {project.description.full ? 
-                  project.description.full.split("\n\n").map((paragraph, i) => (
-                    <P key={i}>{paragraph}</P>
-                  ))
+                 <MDXRemote {...mdxSerialized.fullDescription} />
                 : null}
+                
                 <div style={{marginTop: "2rem"}}>
-                  {Object.keys(readmes).length > 0 ? 
-                    Object.keys(readmes).map(repository => (
+                  {Object.keys(mdxSerialized.readmes).length > 0 ? 
+                    Object.keys(mdxSerialized.readmes).map(repository => (
                       <RepositoryReadme>
                         <span>
                           <span>
@@ -200,7 +201,7 @@ export default function ProjectPage({projectData, readmes, suggestedProjectsData
                             <a className="link" href={`https://github.com/${repository}`}>{repository}</a>
                           </span>
                         </span>
-                        <MDXRemote {...readmes[repository]} />
+                        <MDXRemote {...mdxSerialized.readmes[repository]} />
                       </RepositoryReadme>
                     ))
                   : null }
@@ -262,21 +263,28 @@ export async function getStaticProps(context) {
   
   const suggestedProjectsData = await api.projects.suggest(data.slug)
 
+  const mdxOptions = {
+    mdxOptions: {
+      format: "md"
+    }
+  }
+
   // Serialize markdowns for readmes
   const readmes = {}
   for (const repository in data.readmes) {
-    readmes[repository] = await serialize(data.readmes[repository], {
-      mdxOptions: {
-        format: "md"
-      }
-    })
+    readmes[repository] = await serialize(data.readmes[repository], mdxOptions)
   }
+
+  const fullDescription = await serialize(data.description.full, mdxOptions)
 
   return { 
     props: 
       { 
         projectData: data, 
-        readmes, 
+        mdxSerialized: {
+          readmes, 
+          fullDescription
+        },
         suggestedProjectsData 
       },
     revalidate: 60,
