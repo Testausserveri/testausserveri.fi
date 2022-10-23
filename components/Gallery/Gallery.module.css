@@ -8,7 +8,7 @@
 
 .display img {
     border-radius: 0.5rem;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .chooser {

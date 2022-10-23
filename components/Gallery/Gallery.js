@@ -1,18 +1,27 @@
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import styles from './Gallery.module.css'
 
 
 export function Gallery({media}) {
-    const cover = media.find(item => item.cover)
+    const [ activeMedia, setActiveMedia ] = useState(0)
+    const items = media.sort((a, b) => (a.cover ? -1 : 0))
+
+    useEffect(() => {
+        setActiveMedia(0)
+    }, [media])
 
     return (
         <div>
             <div className={styles.display}>
-                <Image src={cover.url} layout="fill" />
+                {items[activeMedia]?.url ? 
+                    <Image src={items[activeMedia].url} layout="fill" />
+                : null}
             </div>
             <ul className={styles.chooser}>
-                <li><Image src={cover.url} layout="fill" /></li>
-                <li></li>
+                {items.map((item, i) => (
+                    <li key={i} onClick={() => setActiveMedia(i)}><Image src={item.url} layout="fill" /></li>
+                ))}
             </ul>
         </div>
     )
