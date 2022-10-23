@@ -9,25 +9,27 @@ var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
 
 D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CF_PROXY_DEFAULT_ON,
-    ALIAS('testausserveri.fi.', 'testausserveri.github.io.'),
+    A('testausserveri.fi.', '76.76.21.21'),
     CNAME('www', '@'),
-    A('teapot', '140.238.217.189', CF_PROXY_OFF),
+    A('teapot', '152.67.70.55', CF_PROXY_OFF),
+    A('lumi', '129.151.194.131', CF_PROXY_OFF),
 
     // Projects
     // Please append to the record line a comment with the project name and the person responsible for its server.
     // If the project is available under the Testausserveri GitHub organization, then just the project name is enough.
     A('ctf', '152.67.67.152'), // TestausCTF - #midnighter
     A('h-challenge', '167.172.167.138', CF_PROXY_OFF), // TestausCTF - #midnighter
-    CNAME('karhu-fallback', 'mgh2-http.mixu.wtf.'), // Karhu - Mikael
-    CNAME('karhu', 'mgh2-http.mixu.wtf.'), // Karhu - Mikael
-    CNAME('koira', 'mgh2-http.mixu.wtf.'), // Testauskoira API - Mikael
+    CNAME('karhu', 'relay.dfjapis.com.', CF_PROXY_OFF), // Karhu - Mikael&Ruben
+    CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
-    CNAME('antiikki', 'antiikki-testausserveri-fi.pages.dev.'), // Testausserveri.fi v1
+    CNAME('antiikki', 'relay.dfjapis.com.', CF_PROXY_OFF), // Testausserveri.fi v1
     CNAME('discord', 'testausserveri.github.io.'), // Discord forwarding
     CNAME('git', 'testausserveri.github.io.'), // GitHub forwarding
     CNAME('static', 'testausserveri.github.io.'), // Static files
+    CNAME('status', 'status.protokolla.fi.', CF_PROXY_OFF), // Status webpage
+    CNAME('members.status', 'status.protokolla.fi.', CF_PROXY_OFF), // Status webpage for members
     CNAME('time', 'testausserveri.github.io.'), // TestausTime
     CNAME('ug', 'relay.dfjapis.com.', CF_PROXY_OFF), // TestausTime
     CNAME('openwilma_js', 'openwilma.github.io.'), // OpenWilma js documentation - https://github.com/OpenWilma/
@@ -35,7 +37,14 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
     CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
-    
+    CNAME('id', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
+    CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
+    CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
+    CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
+    CNAME('maven', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Testausserveri Maven Repository - Ruben
+    CNAME('coal', 'cname.vercel-dns.com.', CF_PROXY_OFF),
+    CNAME('bitwarden', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Bitwarden - Antti
+  
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
     CNAME('arvojasen', 'arvojasen.midka.dev.', CF_PROXY_OFF), // Arvojasen :D - Midka
@@ -44,19 +53,32 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
     TXT('@', 'google-site-verification=6XQ_v6tkh3jB_hl63IA4iMS8RV3bj9rzKfaQxomX6i4'), // Google site verification
-
+    TXT('_visual-studio-marketplace-testausserveri-ry', 'ab22dccc-c009-44e6-ac28-f13794816bb8'),
+  
     // Mail
     //Yandex(),
     // MX('koira', 10, 'teapot.testausserveri.fi.'), this is defined on CF, DNSControl doesn't like this line
     Google(),
     Mailerlite(),
-    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com ~all')
+    Mailgun(),
+  
+    TXT('@', 'v=spf1 include:_spf.mlsend.com include:_spf.google.com -all'),
+    TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:dmarc@testausserveri.fi; adkim=s; aspf=s;')
 );
 
 function Mailerlite() {
     return [
         TXT('ml._domainkey', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZPVgEYMyfzZ2ybrXBQRS7uifdpzB0SNMoWMCYnsX46vU3KZ71Iz6tgcQGk4DOhRkAP5iLxNDm/s5SxD6Esn3rFHd2Cu5yIwCDLYBidyqoaa1QWmmglkFkglJXvQBp5XVX5ZXunTUHf2Sqy3MMQU9/5rY4xpRRaLVs8Yvt6i9Y7QIDAQAB'),
     ];
+}
+
+function Mailgun() {
+    return [
+        TXT('mg', 'v=spf1 include:mailgun.org ~all'),
+        TXT('mta._domainkey.mg', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCseJkjlSTzsHTTjCsr/DKwMqa0kdRaHRZ1YNxY5G938JQND9HbQhUv0pU+ZaXigIQhhvd4VxVRdPPUG16OpSuQVDdOgkYQWD3XQ/ayTI3OC1oeuISprymeGZ6Ff/+KHaXtVW/Avw2xr3I9PontaVzm46O9oXeDO3RtGVXWi02QxQIDAQAB'),
+        MX('mg', 10, 'mxa.eu.mailgun.org.'),
+        MX('mg', 10, 'mxb.eu.mailgun.org.')
+    ]
 }
 
 function Google() {

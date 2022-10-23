@@ -3,7 +3,7 @@ name: Push DNS
 on:
   push:
     branches:
-       - main
+       - coal
     paths:
       - 'dns/dnsconfig.js'
 
