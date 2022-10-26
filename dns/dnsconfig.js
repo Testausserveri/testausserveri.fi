@@ -21,7 +21,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     A('h-challenge', '167.172.167.138', CF_PROXY_OFF), // TestausCTF - #midnighter
     CNAME('karhu', 'relay.dfjapis.com.', CF_PROXY_OFF), // Karhu - Mikael&Ruben
     CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
-    CNAME('link', 'link.testausserveri.fi.'), // Kutt link shortening - Mikael
+    CNAME('link', 'teapot.testausserveri.fi.'), // Kutt link shortening - Mikael
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
