@@ -4,8 +4,16 @@
 $curl = curl_init();
 header("Content-Type: image/jpeg");
 
+$url = urldecode($_GET['url']);
+
+$urlInfo = parse_url($url);
+
+if ($urlInfo['host'] !== "cdn.discordapp.com") {
+    exit;
+}
+
 curl_setopt_array($curl, array(
-    CURLOPT_URL => urldecode($_GET['url']),
+    CURLOPT_URL => $url,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 0,
