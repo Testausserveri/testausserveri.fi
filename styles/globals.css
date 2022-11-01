@@ -15,6 +15,10 @@ body {
   color: #DBDBDB;
 }
 
+p {
+  line-height: 1.5;
+}
+
 a {
   position: relative;
   color: inherit;
@@ -29,26 +33,28 @@ ul {
   box-sizing: border-box;
 }
 
-p:not(.noLinkStyles) a:before, 
-ul:not(.noLinkStyles) a:before, 
-table:not(.noLinkStyles) a:before, 
-.link:before,
-.tip a:before {
-  content: "";
-  position: absolute;
-  top: -.05rem;
-  left: -.2rem;
-  width: 100%;
-  height: 100%;
-  padding: .05rem .2rem;
-  background-color: rgba(255,255,255,.09);
-  z-index: 0;
-  border-radius: 9px;
+p:not(.noLinkStyles) a, 
+ul:not(.noLinkStyles) a, 
+table:not(.noLinkStyles) a, 
+.link,
+.tip a {
+  background-color: #282828;
+  border-radius: 4px;
+  padding: 2px 6px;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  filter: url('/roundfilter.svg#roundfilter');
+  position: relative;
   transition: background-color .1s;
+
 }
 
-p a:hover:before, ul a:hover:before, table a:hover:before, .tip a:hover:before, .link:hover:before {
-  background-color: rgba(255,255,255,.20);
+p:not(.noLinkStyles) a:hover, 
+ul:not(.noLinkStyles) a:hover, 
+table:not(.noLinkStyles) a:hover, 
+.tip a:hover, .link:hover {
+  background-color: #333;
 }
 
 .tip {
