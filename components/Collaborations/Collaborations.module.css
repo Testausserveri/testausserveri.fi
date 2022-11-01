@@ -7,8 +7,12 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     gap: 2.5rem;
+    margin-bottom: -0.4rem;  
+    margin-top: -1rem;  
+    row-gap: 1.5rem;
 }
 .collaborations ul li {
     opacity: 0.9;
