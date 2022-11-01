@@ -60,12 +60,12 @@
         flex-direction: column;
     }
     .open .items {
+        margin-top: 1rem;
         display: block;
     }
     .open .item {
         width: 100%;
-        padding: 2rem;
-        padding-bottom: 0;
+        padding: 1rem 2rem;
         box-sizing: border-box;
         margin-left: 0 !important;
         text-align: left;
