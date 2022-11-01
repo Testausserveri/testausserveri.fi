@@ -11,7 +11,7 @@
 }
 .row:nth-child(2) div>div:nth-child(2) {
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
 }
 .row {

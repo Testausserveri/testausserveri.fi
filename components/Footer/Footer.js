@@ -85,6 +85,9 @@ export function Footer({ }) {
                         <p style={{margin: 0}}>
                             <Link href="/credits">
                                 Kehittäjät ja lisenssit
+                            </Link> <br />
+                            <Link href="mailto:board@testausserveri.fi">
+                                board@testausserveri.fi
                             </Link>
                             <br />
                             © 2022 Testausserveri ry
