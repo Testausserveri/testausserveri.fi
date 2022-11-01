@@ -6,13 +6,21 @@
     line-height: 1.4;
 }
 
+.row:nth-child(1) {
+    margin-bottom: 2rem;    
+}
+.row:nth-child(2) div>div:nth-child(2) {
+    flex-direction: column;
+    justify-content: end;
+    display: flex;
+}
 .row {
     display: flex;
 }
 
 .row>div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
 }
@@ -21,10 +29,6 @@
     flex: 1;
 }
 
-.row>div>div {
-    display: flex;
-    align-items: center;
-}
 
 .row>div:nth-child(2)>div {
     justify-content: right;
@@ -32,6 +36,11 @@
 
 .links {
     line-height: 1.4;
+}
+
+.row ul {
+    margin: 0;
+    padding: 0;
 }
 
 .links a:before {
@@ -82,7 +91,20 @@
 
 .businessId {
     display: block;
-    font-size: 0.4rem;
+    font-size: 0.8em;
     font-family: 'Poppins';
     color: rgba(255,255,255,0.4);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .row:nth-child(1)>div {
+        flex-direction: column;
+    }
+    .row>div:nth-child(2)>div {
+        justify-content: left;
+    }
+    .links li {
+        text-align: left;
+    }
 }

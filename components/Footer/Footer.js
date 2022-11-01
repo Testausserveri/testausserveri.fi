@@ -75,18 +75,20 @@ export function Footer({ }) {
                                 <span className={styles.businessId}>Y-tunnus: 3235794-4</span>
                             </div>
                         </div>
-                        <p>
+                        <div>
+                            <FooterLinks />
+                        </div>
+                    </div>
+                </FooterRow>
+                <FooterRow>
+                    <div>
+                        <p style={{margin: 0}}>
                             <Link href="/credits">
                                 Kehittäjät ja lisenssit
                             </Link>
                             <br />
                             © 2022 Testausserveri ry
                         </p>
-                    </div>
-                    <div>
-                        <div>
-                            <FooterLinks />
-                        </div>
                         <div>
                             <SocialMedias />
                         </div>
