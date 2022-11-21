@@ -1,5 +1,6 @@
 {
   "redirects": [
-    { "source": "/link/(.*)", "destination": "https://link.testausserveri.fi/$1" }
+    { "source": "/link/(.*)", "destination": "https://link.testausserveri.fi/$1" },
+    { "source": "/.well-known/webfinger", "destination": "https://mastodon.testausserveri.fi/.well-known/webfinger" }
   ]
 }
