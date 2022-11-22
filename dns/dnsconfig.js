@@ -21,7 +21,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     A('h-challenge', '167.172.167.138', CF_PROXY_OFF), // TestausCTF - #midnighter
     CNAME('karhu', 'relay.dfjapis.com.', CF_PROXY_OFF), // Karhu - Mikael&Ruben
     CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
-    CNAME('link', 'teapot.testausserveri.fi.'), // Kutt link shortening - Mikael
+    CNAME('link', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Kutt link shortening - Mikael
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitti', 'abittiopenaccess.pages.dev.'), // Abitti OpenAccess
@@ -38,10 +38,10 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('lehti', 'testausserveri.github.io.'), // Testauslehti
     CNAME('alice', 'ihmemaassa.github.io.'), // Testausneule - Alice
     CNAME('api', 'teapot.testausserveri.fi.'), // testausserveri/testausapis
-    CNAME('id', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
-    CNAME('idexample', 'teapot.testausserveri.fi.'), // testausserveri/testausserveri-id
+    CNAME('id', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // testausserveri/testausserveri-id
+    CNAME('idexample', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // testausserveri/testausserveri-id
     CNAME('tutor', 'teapot.testausserveri.fi.'), // Tutoring project testing site
-    CNAME('wiki', 'teapot.testausserveri.fi.'), // Testausserveri Wiki
+    CNAME('wiki', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Testausserveri Wiki
     CNAME('maven', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Testausserveri Maven Repository - Ruben
     CNAME('coal', 'cname.vercel-dns.com.', CF_PROXY_OFF),
     CNAME('bitwarden', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Bitwarden - Antti
