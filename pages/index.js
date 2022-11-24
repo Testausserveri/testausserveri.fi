@@ -29,12 +29,11 @@ const Center = styled.div`
   margin-bottom: 2.5rem;
 `
 
-const TextColumns = styled.div`
+const TextColumns = styled.p`
   margin: 2.5rem 0;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  color: #DBDBDB;
   line-height: 1.4;
   columns: 2;  
   br.mobileBreak {

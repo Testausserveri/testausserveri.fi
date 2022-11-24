@@ -1,11 +1,11 @@
-import { Explanation } from './Explanation';
+import { TagsRow } from './TagsRow';
 
 export default {
-  title: 'Explanation',
-  component: Explanation,
+  title: 'TagsRow',
+  component: TagsRow,
 }
 
-const Template = (args) => <Explanation {...args} />
+const Template = (args) => <TagsRow {...args} />
 
 export const Default = {
   args: {

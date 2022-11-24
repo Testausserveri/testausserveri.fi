@@ -1,0 +1,17 @@
+.gridGallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    width: 100%;
+    margin: 2.5rem 0;
+}
+
+.gridGallery img {
+    border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .gridGallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}

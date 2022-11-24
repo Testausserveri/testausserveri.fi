@@ -6,6 +6,7 @@ const pages = [
   { label: "Etusivu", path: "/" },
   //{ label: "Jäsenet", path: "/members" },
   { label: "Projektit", path: "/projects" },
+  { label: "Tietoa", path: "/about" },
   //{ label: "Tietoa", path: "/about-us" }
 ]
 

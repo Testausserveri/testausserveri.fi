@@ -17,12 +17,14 @@ body {
 
 p {
   line-height: 1.5;
+  color: rgba(255,255,255, 0.7);
 }
 
 a {
   position: relative;
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 ul {
@@ -47,7 +49,6 @@ table:not(.noLinkStyles) a,
   filter: url('/roundfilter.svg#roundfilter');
   position: relative;
   transition: background-color .1s;
-
 }
 
 p:not(.noLinkStyles) a:hover, 
