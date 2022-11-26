@@ -11,11 +11,11 @@ import styles from './GridGallery.module.css'
  * X | X
  * X | X
  */
-export function GridGallery({media}) {
+export function GridGallery({media, imageProps}) {
     return (
         <div className={styles.gridGallery}>
            {media.map(url => (
-            <Image src={url} key={url} />
+            <Image src={url} key={url} {...imageProps} />
            ))}
         </div>
     )

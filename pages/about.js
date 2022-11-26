@@ -82,14 +82,14 @@ export default function LoginPage({ssGuildInfo}) {
           <title>Tietoa | Testausserveri</title>
       </Head>
       <Content>
-        <DisplayImage src={testausmeetImg} />
+        <DisplayImage placeholder="blur" src={testausmeetImg} />
         <p style={{marginTop: "2.5rem"}}>
           Testausserveri ry on vuonna 2021 perustettu yhdistys, jonka tavoitteena on edistää nuorten tietotekniikka- ja kyberharrastuneisuutta. Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa. 
         </p>
         <p>
           Yhteisö kannustaa nuoria harrastuksen parissa kehittymiseen. Lisäksi osallistumme moniin alan tapahtumiin ja kilpailuihin, kuten hackathonit, alan festivaalit, CTFät ja hack dayt. Yhteisön jäsenten on mahdollista osallistua yhteisiin avointen lähdekoodien projekteihin. 
         </p>
-        <GridGallery media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
+        <GridGallery imageProps={{placeholder: "blur"}} media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
         <p>
           Tavoitteenamme on luoda hyvä ilmapiiri ja tasavertaiset mahdollisuudet kaikille nuorille kehittyä harrastuksen parissa.
         </p>
