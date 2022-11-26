@@ -3,11 +3,13 @@ import styles from './Collaborations.module.css'
 import saucesoft from '../../assets/collaborations/saucesoft.svg'
 import genz from '../../assets/collaborations/genz.png'
 
-export function Collaborations() {
+export function Collaborations(props) {
     return (
-        <div className={styles.collaborations}>
-            <h2>Yhteistyössä</h2>
-            <ul className="noLinkStyles">
+        <div className={styles.collaborations} style={props.style}>
+            {!props.noTitle ?
+                <h2>Yhteistyössä</h2>
+            : null}
+            <ul className="noLinkStyles" style={props.noTitle ? {marginTop: "1rem"} : {}}>
                 <li>
                     <a href="https://saucesoft.io" target="_blank">
                         <img src={saucesoft.src} height={80} />
