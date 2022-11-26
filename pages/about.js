@@ -4,12 +4,22 @@ import { H2 } from '../components/Title/Title'
 import styled from 'styled-components'
 import Image from 'next/image'
 
+// pictures
 import testausmeetImg from '../assets/about/testausmeet.jpg'
 import assemblyImg from '../assets/about/grid/assembly.jpg'
 import hackdayImg from '../assets/about/grid/hackday.jpg'
 import junctionImg from '../assets/about/grid/junction.jpg'
 import tacobellImg from '../assets/about/grid/tacobell.jpg'
 
+// board pictures
+import hanBoardImg from '../assets/about/board/han.jpeg'
+import ellBoardImg from '../assets/about/board/ell.jpeg'
+import mkrBoardImg from '../assets/about/board/mkr.jpeg'
+import sinBoardImg from '../assets/about/board/sin.jpeg'
+import heiBoardImg from '../assets/about/board/hei.jpeg'
+import steveBoardImg from '../assets/about/board/steve.jpeg'
+
+// icons
 import GithubIcon from '../assets/GithubIcon.svg'
 import InstagramIcon from '../assets/InstagramIcon.svg'
 import YoutubeIcon from '../assets/YoutubeIcon.svg'
@@ -120,14 +130,16 @@ export default function LoginPage({ssGuildInfo}) {
         </p>
         <Grid className="board">
             {[
-              ["61d8b737a16588f423624ed5", "Mikael Hannolainen", "puheenjohtaja"],
-              ["61d8846356a221b65bfae359", "Eemil Sinkko", "varapuheenjohtaja"],
-              ["61d8a2b6955c44fe1def464c", "Ruben Mkrtumyan", "hallituksen jäsen"],
-              ["628fdc44ab7f1e9af65af1c8", "Petri Heinämäki", "hallituksen jäsen, viestintä"],
-              ["61ea7506d66ff6e90380220f", "Antti Ellilä", "hallituksen jäsen, tietojärjestelmät"]
+              [hanBoardImg, "Mikael Hannolainen", "puheenjohtaja"],
+              [sinBoardImg, "Eemil Sinkko", "varapuheenjohtaja"],
+              [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
+              [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintä"],
+              [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmät"]
             ].map((person) => (
               <a>
-                <img src={"https://api.testausserveri.fi/v1/media/avatars/" + person[0]} />
+                <span>
+                <Image width="64" height="64" src={person[0]} />
+                </span>
 
                 <span>{person[1]}</span>
                 <span>{person[2]}</span>
