@@ -76,6 +76,12 @@ const Grid = styled.div`
   >a:hover {
     background-color: rgba(108, 108, 108, 0.15);
   }
+  &.board>a {
+    cursor: default;
+  }
+  &.board>a:hover {
+    background-color: rgba(108, 108, 108, 0.09);
+  }
 `
 
 
