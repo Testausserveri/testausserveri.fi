@@ -138,7 +138,7 @@ export default function LoginPage({ssGuildInfo}) {
             ].map((person) => (
               <a>
                 <span>
-                <Image width="64" height="64" src={person[0]} />
+                <Image width="64" height="64" src={person[0]} placeholder="blur" />
                 </span>
 
                 <span>{person[1]}</span>
