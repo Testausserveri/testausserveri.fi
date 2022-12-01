@@ -46,7 +46,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('coal', 'cname.vercel-dns.com.', CF_PROXY_OFF),
     CNAME('bitwarden', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Bitwarden - Antti
     CNAME('mastodon', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Mastodon - Antti
-    CNAME('aoc', 'teapot.testausserveri.fi', CF_PROXY_OFF), // aocleaderboard - Antti
+    CNAME('aoc', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // aocleaderboard - Antti
   
     // Memes
     CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
