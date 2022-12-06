@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
+    "create-component": "node scripts/create-component/",
     "build-storybook": "storybook build",
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
