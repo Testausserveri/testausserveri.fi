@@ -22,3 +22,9 @@ npm run dev
 # or
 yarn dev
 ```
+
+### Creating a new component
+New component broilerplate
+```
+npm run create-component ComponentName
+```
