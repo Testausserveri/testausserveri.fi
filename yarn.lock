@@ -2677,6 +2677,13 @@
   dependencies:
     "axios" "^0.27.0"
 
+"@tryghost/helpers@^1.1.75":
+  "integrity" "sha512-iUp80FuxSWR2s2/fus7e88u6NSaab5aVxHFc8pyI/yrL9UrXtMgiIxIumMULo7RRE1OjKhP5qsFla1n0b+Oy8w=="
+  "resolved" "https://registry.npmjs.org/@tryghost/helpers/-/helpers-1.1.75.tgz"
+  "version" "1.1.75"
+  dependencies:
+    "lodash-es" "^4.17.11"
+
 "@types/acorn@^4.0.0":
   "integrity" "sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ=="
   "resolved" "https://registry.npmjs.org/@types/acorn/-/acorn-4.0.6.tgz"
@@ -7673,6 +7680,11 @@
   "version" "6.0.0"
   dependencies:
     "p-locate" "^5.0.0"
+
+"lodash-es@^4.17.11":
+  "integrity" "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="
+  "resolved" "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
+  "version" "4.17.21"
 
 "lodash._arrayeach@^3.0.0":
   "integrity" "sha512-Mn7HidOVcl3mkQtbPsuKR0Fj0N6Q6DQB77CtYncZcJc0bx5qv2q4Gl6a0LC1AN+GSxpnBDNnK3CKEm9XNA4zqQ=="

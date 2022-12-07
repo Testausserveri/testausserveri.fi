@@ -17,6 +17,8 @@ import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
 import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
+import { GhostArticles } from '../components/GhostArticles/GhostArticles';
+import ghost from '../utils/ghost';
 
 const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
 
@@ -53,7 +55,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ssGuildInfo}) {
+export default function Home({ssGuildInfo, posts}) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
@@ -123,6 +125,7 @@ export default function Home({ssGuildInfo}) {
           <br /><br className="mobileBreak" />
           Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
         </TextColumns>
+        <GhostArticles posts={posts} />
         <LeaderboardGroup>
           <Leaderboard 
             data={guildInfo.messagesLeaderboard}
@@ -145,11 +148,12 @@ export default function Home({ssGuildInfo}) {
 
 export async function getServerSideProps({req, res}) {
   const guildInfo = await api.getGuildInfo(guildInfoModel)
-
+  const posts = await ghost.getPosts()
+  
   res.setHeader(
     'Cache-Control',
     'public, maxage=300, stale-if-error=300'
   )
 
-  return { props: { ssGuildInfo: guildInfo } }
+  return { props: { ssGuildInfo: guildInfo, posts } }
 }
