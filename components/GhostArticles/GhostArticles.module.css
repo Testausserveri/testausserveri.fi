@@ -5,6 +5,11 @@
     margin-bottom: 2.5rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
 .post {
     display: flex;
     flex-direction: column;
