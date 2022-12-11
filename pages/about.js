@@ -108,7 +108,8 @@ export default function LoginPage({ssGuildInfo}) {
         <DisplayImage placeholder="blur" src={testausmeetImg} />
         <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0"}}>Testausmeet 5/2022</p>
         <p style={{marginTop: "1.5rem"}}>
-          Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta. Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa.
+          Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta.
+          Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa.
         </p>
         <p>
           Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
@@ -124,14 +125,19 @@ export default function LoginPage({ssGuildInfo}) {
           Tavoitteemme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioda olemassa olevia taitojaan.
         </p>
         <p>
-          Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistytahojen kanssa kuin mediassakin. Tavoiteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
+          Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistytahojen kanssa kuin mediassakin.
+          Tavoiteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
         </p>
         <H2>Yhdistyksen järjestäytyminen</H2>
         <p>
-          Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>. Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta. Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin. Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
+          Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>.
+          Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta.
+          Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin.
+          Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
         </p>
         <p>  
-          Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin. Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan ja osallistuminen on ilmaista.
+          Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin.
+          Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan ja osallistuminen on ilmaista.
         </p>
 
         <H2>Tutustu toimintaamme</H2>
