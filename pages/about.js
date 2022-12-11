@@ -32,6 +32,7 @@ import { Footer } from '../components/Footer/Footer'
 import Link from 'next/link'
 import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { Collaborations } from '../components/Collaborations/Collaborations'
+import { useEffect } from 'react'
 
 const Grid = styled.div`
   display: grid;
@@ -39,6 +40,9 @@ const Grid = styled.div`
   grid-gap: 1rem;
   width: 100%;
   margin: 2.5rem 0;
+  @media only screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
   @media only screen and (max-width: 650px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -46,6 +50,9 @@ const Grid = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     @media only screen and (max-width: 650px) {
       grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and (max-width: 450px) {
+      grid-template-columns: 1fr;
     }
     span:nth-child(3) {
       color: rgba(255,255,255,0.5);
@@ -95,24 +102,45 @@ export default function LoginPage({ssGuildInfo}) {
   return (
     <div>
       <Head>
-          <title>Tietoa | Testausserveri</title>
+          <title>Tietoa meistä | Testausserveri</title>
       </Head>
       <Content>
         <DisplayImage placeholder="blur" src={testausmeetImg} />
-        <p style={{marginTop: "2.5rem"}}>
-          Testausserveri ry on vuonna 2021 perustettu yhdistys, jonka tavoitteena on edistää nuorten tietotekniikka- ja kyberharrastuneisuutta. Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa. 
+        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0"}}>Testausmeet 5/2022</p>
+        <p style={{marginTop: "1.5rem"}}>
+          Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta.
+          Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa.
         </p>
         <p>
-          Yhteisö kannustaa nuoria harrastuksen parissa kehittymiseen. Lisäksi osallistumme moniin alan tapahtumiin ja kilpailuihin, kuten hackathonit, alan festivaalit, CTFät ja hack dayt. Yhteisön jäsenten on mahdollista osallistua yhteisiin avointen lähdekoodien projekteihin. 
+          Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
+          Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme. Yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin perjaatteisiin.
+          Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistykemme Github-sivuilla.
+          Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
         <GridGallery imageProps={{placeholder: "blur"}} media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
+        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "-2rem"}}>Testausserveri Assembly, Junction ja LähiTapiola hack day -tapahtumissa, sekä perinteinen Testausmeet illallinen</p>
+
+        <H2 style={{marginTop: "1.5rem"}}>Tavoitteemme</H2>
         <p>
-          Tavoitteenamme on luoda hyvä ilmapiiri ja tasavertaiset mahdollisuudet kaikille nuorille kehittyä harrastuksen parissa.
+          Tavoitteemme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioda olemassa olevia taitojaan.
+        </p>
+        <p>
+          Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistytahojen kanssa kuin mediassakin.
+          Tavoiteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
         </p>
         <H2>Yhdistyksen järjestäytyminen</H2>
         <p>
-          Yhdistys järjestää muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>. Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa ja nauttia päivästä yhdessä. Kutsu tulee Discordin tiedotteissa ja yhdistyksen jäsenten henkilökohtaisiin sähköpostiosoitteisiin. Testausmeetin ohella järjestetään yhdistyksen kokous, jossa päätetään formaalisti yhdistyksen asioista.  
+          Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>.
+          Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta.
+          Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin.
+          Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
         </p>
+        <p>  
+          Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin.
+          Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan ja osallistuminen on ilmaista.
+        </p>
+
+        <H2>Tutustu toimintaamme</H2>
         <p>
           Testausserveri tuottaa sisältöä seuraaviin sosiaalisiin medioihin ja palveluihin. Etenkin Instagramissa pääsee tutustumaan yhteisömme kohohetkiin.
         </p>
@@ -131,6 +159,8 @@ export default function LoginPage({ssGuildInfo}) {
             </Link>
           ))}
         </Grid>
+
+        <H2>Yhdistysjärjestys</H2>
         <p>
           Yhdistyksen hallitukseen kuuluvat toimikaudella 2022 seuraavat henkilöt.
         </p>
@@ -139,8 +169,8 @@ export default function LoginPage({ssGuildInfo}) {
               [hanBoardImg, "Mikael Hannolainen", "puheenjohtaja"],
               [sinBoardImg, "Eemil Sinkko", "varapuheenjohtaja"],
               [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
-              [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintä"],
-              [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmät"]
+              [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintävastaava"],
+              [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmävastaava"]
             ].map((person) => (
               <a>
                 <span>
@@ -152,23 +182,24 @@ export default function LoginPage({ssGuildInfo}) {
               </a>
             ))}
         </Grid>
-        <H2>Jäsenyys yhdistyksessä</H2>
+
+        <H2>Jäsenyys yhdistyksessämme</H2>
         <p>
-          Yhteisön toimintaan osallistuminen ei vaadi jäsenyyttä yhdistyksessä. Kaikki ovat tervetulleita!
+          Yhteisön toimintaan osallistuminen ei vaadi jäsenyyttä yhdistyksessä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi yhdistyksen toimintaan aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
         </p>
         <a href="https://testausserveri.fi/link/jasenhakemus"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
         <p>
-          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saat äänioikeuden ja myös jäsenetuna @testausserveri.fi-sähköpostiosoitteen.
+          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saat äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti, Mastodon ja BitWarden palveluihin.
         </p>
+
         <H2>Ketkä tukevat meitä?</H2>
         <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa.</p>
         <Collaborations style={{margin: "2rem 0"}} noTitle />
         <p>
-          Lisäksi jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen raha on läpinäkyvää ja nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollectivessa</a>.
+          Lisäksi jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>
       </Content>
       <Footer />
-
     </div> 
   )
 }

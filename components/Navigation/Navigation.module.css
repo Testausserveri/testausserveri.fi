@@ -40,7 +40,7 @@
     justify-content: flex-end;
     height: 4rem;
 }
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 920px) {
     .mobileHeader {
         display: flex;
     }
