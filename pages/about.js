@@ -128,7 +128,7 @@ export default function LoginPage({ssGuildInfo}) {
         </p>
         <H2>Yhdistyksen järjestäytyminen</H2>
         <p>
-          Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>. Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta. Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin. Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään formaalisti yhdistyksen asioista.  
+          Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>. Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta. Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin. Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
         </p>
         <p>  
           Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin. Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan ja osallistuminen on ilmaista.
