@@ -86,6 +86,7 @@ export function Footer({ }) {
                             <Link href="/credits">
                                 Kehittäjät ja lisenssit
                             </Link> <br />
+                            <span style={{ height: ".4rem", display: "block"}} />
                             <Link href="mailto:board@testausserveri.fi">
                                 board@testausserveri.fi
                             </Link>
