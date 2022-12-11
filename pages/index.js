@@ -119,9 +119,11 @@ export default function Home({ssGuildInfo}) {
       <Content>
         <StatGroup stats={stats} />
         <TextColumns>
-          Testausserveri kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
+          Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
           <br /><br className="mobileBreak" />
           Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
+          <br /><br className="mobileBreak" />
+          Lue listää yhdistyksestämme: <Link href="/about">Tietoa meistä sivulta</Link>
         </TextColumns>
         <LeaderboardGroup>
           <Leaderboard 
