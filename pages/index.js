@@ -123,7 +123,7 @@ export default function Home({ssGuildInfo}) {
           <br /><br className="mobileBreak" />
           Keskusteluihimme on helppo liittyä matalalla kynnyksellä, sekä kannustamme jäseniämme kehittymään kanssamme.
           <br /><br className="mobileBreak" />
-          Lue lisää yhdistyksestämme <Link href="/about">tietoa meistä sivulta</Link>
+          Lue lisää yhdistyksestämme <Link href="/about">Tietoa meistä -sivulta.</Link>
         </TextColumns>
         <LeaderboardGroup>
           <Leaderboard 
