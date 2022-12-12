@@ -114,7 +114,7 @@ export default function LoginPage({ssGuildInfo}) {
         <p>
           Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
           Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme: yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin perjaatteisiin.
-          Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistykemme Github-sivuilla.
+          Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistyksemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
         <GridGallery imageProps={{placeholder: "blur"}} media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
@@ -122,22 +122,22 @@ export default function LoginPage({ssGuildInfo}) {
 
         <H2 style={{marginTop: "1.5rem"}}>Tavoitteemme</H2>
         <p>
-          Tavoitteemme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioda olemassa olevia taitojaan.
+          Tavoitteenamme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioa olemassa olevia taitojaan.
         </p>
         <p>
-          Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistytahojen kanssa kuin mediassakin.
+          Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistyökumppaniemme kanssa, kuin mediassakin.
           Tavoiteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
         </p>
         <H2>Yhdistyksen järjestäytyminen</H2>
         <p>
           Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>.
-          Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkoistoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta.
+          Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkostoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta.
           Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin.
           Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
         </p>
         <p>  
           Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin.
-          Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan ja osallistuminen on ilmaista.
+          Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan näihin tapahtumiin ja kilpailuihin ilmaiseksi.
         </p>
 
         <H2>Tutustu toimintaamme</H2>
@@ -185,18 +185,18 @@ export default function LoginPage({ssGuildInfo}) {
 
         <H2>Jäsenyys yhdistyksessämme</H2>
         <p>
-          Yhteisön toimintaan osallistuminen ei vaadi jäsenyyttä yhdistyksessä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi yhdistyksen toimintaan aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
+          Yhteisön toimintaan osallistuminen ei vaadi yhdistyksemme jäsenyyttä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi toimintaamme aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
         </p>
         <a href="https://testausserveri.fi/link/jasenhakemus"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
         <p>
-          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti, Mastodon ja BitWarden palveluihin.
+          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti-, Mastodon- ja BitWarden-palveluihin.
         </p>
 
         <H2>Ketkä tukevat meitä?</H2>
-        <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa.</p>
+        <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa:</p>
         <Collaborations style={{margin: "2rem 0"}} noTitle />
         <p>
-          Lisäksi jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
+          Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>
       </Content>
       <Footer />
