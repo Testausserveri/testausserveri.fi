@@ -113,7 +113,7 @@ export default function LoginPage({ssGuildInfo}) {
         </p>
         <p>
           Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
-          Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme. Yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin perjaatteisiin.
+          Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme: yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin perjaatteisiin.
           Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistykemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
@@ -162,7 +162,7 @@ export default function LoginPage({ssGuildInfo}) {
 
         <H2>Yhdistysjärjestys</H2>
         <p>
-          Yhdistyksen hallitukseen kuuluvat toimikaudella 2022 seuraavat henkilöt.
+          Yhdistyksen hallitukseen kuuluvat toimikaudella 2022 seuraavat henkilöt:
         </p>
         <Grid className="board">
             {[
@@ -189,7 +189,7 @@ export default function LoginPage({ssGuildInfo}) {
         </p>
         <a href="https://testausserveri.fi/link/jasenhakemus"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
         <p>
-          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saat äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti, Mastodon ja BitWarden palveluihin.
+          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti, Mastodon ja BitWarden palveluihin.
         </p>
 
         <H2>Ketkä tukevat meitä?</H2>
