@@ -12,7 +12,8 @@ import FadeIn from 'react-fade-in';
 
 export function LoginDialog({ onClose }) {
     const accept = [
-      'members'
+      'members',
+      'discord'
     ]
     const client = '181937620043556561658238287560538816854'
     const scopes = ['id', 'account']
