@@ -45,7 +45,7 @@ export function LoginDialog({ onClose }) {
         }).then(async res => {
           if (res.status === 200) {
             if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(cookieRegex, "")
-            document.cookie += `${!document.cookie.endsWith(";") ? ";" : ""}code=${await res.text()};Domain=${allowedDomain};Path=${allowedPath};Secure;HttpOnly;`
+            document.cookie += `${!document.cookie.endsWith(";") && document.cookie.length > 0 ? ";" : ""}code=${await res.text()};Domain=${allowedDomain};Path=${allowedPath};`
             window.location.href = `${apiServer}/v1/members`
           }
           else console.error("Failed to login.") // TODO: display to user
