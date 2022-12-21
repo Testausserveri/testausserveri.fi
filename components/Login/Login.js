@@ -33,14 +33,13 @@ export function LoginDialog({ onClose }) {
         fetch(`${apiServer}/v1/members/login`, {
           method: "POST",
           body: JSON.stringify(token),
-          redirect: "manual",
           headers: {
             "Content-Type": "application/json"
           }
         }).then(async res => {
           if (res.status === 200) {
-            if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(/code=(.{1,}|);( |)domain=\.testausserveri\.fi;( |)path=\/(;|$)/, "")
-            document.cookie += `code=${await res.text()};domain=.testausserveri.fi;path=/;`
+            if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(/code=(.{1,}|);( |)domain=api\.testausserveri\.fi;( |)path=\/(;|$)/, "")
+            document.cookie += `code=${await res.text()};domain=api.testausserveri.fi;path=/;` // Note: when modifying the domain here, do not forget to change the regex above
             window.location.href = `${apiServer}/v1/members`
           }
           else console.error("Failed to login.") // TODO: display to user
