@@ -12,7 +12,7 @@ import FadeIn from 'react-fade-in';
 import { apiServer } from '../../utils/api';
 
 // Which domain and path can access the session cookie
-const allowedDomain = "api.testausserveri.fi"
+const allowedDomain = ".testausserveri.fi"
 const allowedPath = "/"
 
 const cookieRegex = new RegExp(`(^|;)code=(.{1,}|);( |)domain=${allowedDomain.replace(/\./g, "\\.")};( |)secure;( |)httpOnly( |);path=${allowedPath.replace(/\//g, "\\/")}(;|$)`, "i")
