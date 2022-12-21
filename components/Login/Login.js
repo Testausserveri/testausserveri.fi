@@ -11,6 +11,12 @@ const DynamicTestausid = dynamic(() => import('@testausserveri/react-testausid')
 import FadeIn from 'react-fade-in';
 import { apiServer } from '../../utils/api';
 
+// Which domain and path can access the session cookie
+const allowedDomain = "api.testausserveri.fi"
+const allowedPath = "/"
+
+const cookieRegex = new RegExp(`code=(.{1,}|);( |)domain=${allowedDomain.replace(/\./g, "\\.")};( |)secure;( |)httpOnly( |);path=${allowedPath.replace(/\//g, "\\/")}(;|$)`, "i")
+
 export function LoginDialog({ onClose }) {
     const accept = [
       'members',
@@ -38,8 +44,8 @@ export function LoginDialog({ onClose }) {
           }
         }).then(async res => {
           if (res.status === 200) {
-            if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(/code=(.{1,}|);( |)domain=api\.testausserveri\.fi;( |)path=\/(;|$)/, "")
-            document.cookie += `code=${await res.text()};domain=api.testausserveri.fi;path=/;` // Note: when modifying the domain here, do not forget to change the regex above
+            if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(cookieRegex, "")
+            document.cookie += `code=${await res.text()};Domain=${allowedDomain};Path=${allowedPath};Secure;HttpOnly;`
             window.location.href = `${apiServer}/v1/members`
           }
           else console.error("Failed to login.") // TODO: display to user
