@@ -15,7 +15,7 @@ import { apiServer } from '../../utils/api';
 const allowedDomain = "api.testausserveri.fi"
 const allowedPath = "/"
 
-const cookieRegex = new RegExp(`code=(.{1,}|);( |)domain=${allowedDomain.replace(/\./g, "\\.")};( |)secure;( |)httpOnly( |);path=${allowedPath.replace(/\//g, "\\/")}(;|$)`, "i")
+const cookieRegex = new RegExp(`(^|;)code=(.{1,}|);( |)domain=${allowedDomain.replace(/\./g, "\\.")};( |)secure;( |)httpOnly( |);path=${allowedPath.replace(/\//g, "\\/")}(;|$)`, "i")
 
 export function LoginDialog({ onClose }) {
     const accept = [
@@ -45,7 +45,7 @@ export function LoginDialog({ onClose }) {
         }).then(async res => {
           if (res.status === 200) {
             if (document.cookie.includes("code=")) document.cookie = document.cookie.replace(cookieRegex, "")
-            document.cookie += `code=${await res.text()};Domain=${allowedDomain};Path=${allowedPath};Secure;HttpOnly;`
+            document.cookie += `${!document.cookie.endsWith(";") ? ";" : ""}code=${await res.text()};Domain=${allowedDomain};Path=${allowedPath};Secure;HttpOnly;`
             window.location.href = `${apiServer}/v1/members`
           }
           else console.error("Failed to login.") // TODO: display to user
