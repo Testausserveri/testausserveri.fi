@@ -18,6 +18,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // Please append to the record line a comment with the project name and the person responsible for its server.
     // If the project is available under the Testausserveri GitHub organization, then just the project name is enough.
     A('ctf', '152.67.67.152'), // TestausCTF - #midnighter
+    A('testausmineserveri', '95.216.165.45', CF_PROXY_OFF), // New year minecraft server - Mikael
     A('h-challenge', '167.172.167.138', CF_PROXY_OFF), // TestausCTF - #midnighter
     CNAME('karhu', 'relay.dfjapis.com.', CF_PROXY_OFF), // Karhu - Mikael&Ruben
     CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
