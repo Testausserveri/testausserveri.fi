@@ -31,7 +31,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('discord', 'testausserveri.github.io.'), // Discord forwarding
     CNAME('git', 'testausserveri.github.io.'), // GitHub forwarding
     CNAME('static', 'testausserveri.github.io.'), // Static files
-    CNAME('status', 'status.protokolla.fi.', CF_PROXY_OFF), // Status webpage
+    CNAME('status', 'testausserveri.status.protokolla.fi.', CF_PROXY_OFF), // Status webpage
     CNAME('members.status', 'status.protokolla.fi.', CF_PROXY_OFF), // Status webpage for members
     CNAME('time', 'testausserveri.github.io.'), // TestausTime
     CNAME('ug', 'relay.dfjapis.com.', CF_PROXY_OFF), // TestausTime
