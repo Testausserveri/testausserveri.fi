@@ -149,6 +149,20 @@ const P = styled.p`
   line-height: 1.5;
   margin-bottom: 1.5rem;
 `
+
+const ProjectLink = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+`;
+
+const ProjectLinkTitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+`
+
 export default function ProjectPage({projectData, mdxSerialized, suggestedProjectsData}) {
   const project = new Project(projectData)
   const suggestedProjects = suggestedProjectsData.map(data => new Project(data))
@@ -226,10 +240,13 @@ export default function ProjectPage({projectData, mdxSerialized, suggestedProjec
                   <ProjectLinks>
                     {project.links.map(link => (
                       <a href={link.url} key={link.url}>
-                        <li>
-                          <h3>{link.title}</h3>
+                        <ProjectLink>
+                          <ProjectLinkTitleContainer>
+                            {link.icon}
+                            <h3>{link.title}</h3>
+                          </ProjectLinkTitleContainer>
                           <span>{link.displayURL}</span>
-                        </li>
+                        </ProjectLink>
                       </a>
                     ))}
                   </ProjectLinks>

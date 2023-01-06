@@ -1,5 +1,8 @@
 import { apiServerMedia } from "./api"
 import { Member } from "./Member"
+import GithubIcon from '../assets/GithubIcon.svg'
+import { BiHome, BiLink } from "react-icons/bi";
+import Image from 'next/image'
 
 class ProjectMedia {
     type
@@ -50,6 +53,17 @@ class ProjectLink {
         if (this.type == "github") return "GitHub"
 
         return ""
+    }
+
+    /**
+     * Display icon
+     */
+    get icon() {
+        if (this.type === "link") return <BiLink size={20} />
+        if (this.type === "homepage") return <BiHome size={20} />
+        if (this.type === "github") return <Image src={GithubIcon} height={20} width={20} unoptimized />
+
+        return null;
     }
 
     /**
