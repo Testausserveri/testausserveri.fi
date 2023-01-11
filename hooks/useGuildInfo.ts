@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import api from "../utils/api.js"
+import api, { GuildInfo, GuildInfoModelOption } from "../utils/api"
 
-export function useGuildInfo(guildInfoModel, ss) {
-    const [guildInfo, setGuildInfo] = useState(ss || {})
+export function useGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T, ss: GuildInfo<T>) {
+    const [guildInfo, setGuildInfo] = useState(ss)
 
     async function update() {
         console.log("Updating gi")
