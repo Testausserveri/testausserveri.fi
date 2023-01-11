@@ -1,7 +1,8 @@
 import styled, { keyframes } from "styled-components";
 import { useWrappingCounter } from '../../hooks/useWrappingCounter';
+import React, { PropsWithChildren } from "react";
 
-const TextLoopAnimation = (stayTimeRatio) => keyframes`
+const TextLoopAnimation = (stayTimeRatio: number) => keyframes`
   0% {
     transform: translateY(0);
     opacity: 0;
@@ -19,12 +20,21 @@ const TextLoopAnimation = (stayTimeRatio) => keyframes`
   }
 `;
 
-const TextLoopElement = styled.span`
+const TextLoopElement = styled.span<{
+  stayTimeRatio: number;
+  duration: number;
+}>`
   animation: ${props => TextLoopAnimation(props.stayTimeRatio)} ${(props) => props.duration}s ease-in-out;
 `
 
-export const TextLoop = ({ children, duration = 3, stayTimeRatio = 95 }) => {
-  const [index, incrementIndex] = useWrappingCounter(children ? children.length : 0);
+type TextLoopProps = PropsWithChildren<{
+  duration?: number;
+  stayTimeRatio?: number;
+}>
+
+export const TextLoop = ({ children, duration = 3, stayTimeRatio = 95 }: TextLoopProps) => {
+  const childrenArray = children && Array.isArray(children) ? children : [children];
+  const [index, incrementIndex] = useWrappingCounter(childrenArray.length);
 
   if (!children) return null;
 
@@ -34,6 +44,6 @@ export const TextLoop = ({ children, duration = 3, stayTimeRatio = 95 }) => {
     stayTimeRatio={stayTimeRatio}
     onAnimationEnd={incrementIndex}
   >
-    {children[index]}
+    {childrenArray[index]}
   </TextLoopElement>;
 }
