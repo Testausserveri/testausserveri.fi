@@ -5,7 +5,7 @@ import styles from './Header.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { useState } from 'react'
 import { IoMdKey } from "react-icons/io"
-import { LoginView } from '../Login/Login.tsx'
+import { LoginView } from '../Login/Login'
 
 export type HeaderProps = {
     pages: {

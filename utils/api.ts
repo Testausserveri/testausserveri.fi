@@ -27,7 +27,7 @@ export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoMo
     return data as GuildInfo<T>
 }
 
-type Project = {
+export type ApiProject = {
     _id: string,
     description: string,
     members: never[],
@@ -44,7 +44,7 @@ const all = async function (query: string | string[][] | Record<string, string> 
     if (query) query = "?" + new URLSearchParams(query).toString()
     const response = await fetch(`${apiServer}/v1/projects${query || ""}`)
     const projects = await response.json()
-    return projects as Project[]
+    return projects as ApiProject[]
 }
 const suggest = async function (slug: string) {
     return (await all({
@@ -57,9 +57,10 @@ const slugs = async function () {
     })
 }
 
-type FindProject = {
+export type FindProject = {
     description: {
-        short: string
+        short: string,
+        full: string
     },
     members: {
         _id: string,
@@ -82,7 +83,8 @@ type FindProject = {
         name: string,
         avatar: string
     }[],
-    readmes: Record<string, string>
+    readmes: Record<string, string>,
+    status: "not found"
 }
 
 const find = async function (slug: string) {
