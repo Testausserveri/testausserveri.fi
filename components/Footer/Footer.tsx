@@ -6,13 +6,14 @@ import GithubIcon from '../../assets/GithubIcon.svg'
 import InstagramIcon from '../../assets/InstagramIcon.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PropsWithChildren } from 'react'
 
 const footerLinks = [
     { label: "Status", path: "https://status.testausserveri.fi" },
     { label: "Tietosuojaseloste", path: "/privacy" },
     { label: "Testausserveri Wiki", path: "https://wiki.testausserveri.fi" },
     { label: "Yhdistyksen säännöt", path: "https://testausserveri.fi/yhdistyksen-saannot.pdf" },
-]
+] as const
 
 const socialMedias = [
     {
@@ -25,7 +26,7 @@ const socialMedias = [
         name: "Instagram",
         url: "https://instagram.com/Testausserveri"
     }
-]
+] as const
 
 function SocialMedias() {
     return (
@@ -56,12 +57,12 @@ function FooterLinks() {
         </ul>
     )
 }
-function FooterRow({ children }) {
+function FooterRow({ children }: PropsWithChildren) {
     return (
         <div className={styles.row}>{children}</div>
     )
 }
-export function Footer({ }) {
+export function Footer() {
     return (
         <div className={styles.footer}>
             <Content noMargin>
