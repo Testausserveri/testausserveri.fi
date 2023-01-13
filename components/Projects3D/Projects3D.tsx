@@ -17,7 +17,7 @@ const elements = {
     "9471749D-42FB-4E19-9215-192DAF72236C": "d"
 }
 
-export function Projects3D(props) {
+export function Projects3D() {
     const projects = [
         {
             id: "a",
@@ -43,7 +43,7 @@ export function Projects3D(props) {
 
     const [splineLoading, setSplineLoading] = useState(true)
 
-    const tipCapsule = useRef()
+    const tipCapsule = useRef<HTMLSpanElement>(null)
     const [tipTimeout, setTipTimeout] = useState(0)
     let previousTimeout
 
@@ -58,7 +58,7 @@ export function Projects3D(props) {
     function hover(e) {
         const project = findProject(e)
         if (!project) return
-        if(tipCapsule.current) tipCapsule.current.innerHTML = project.name
+        if (tipCapsule.current) tipCapsule.current.innerHTML = project.name
 
         if (tipTimeout || previousTimeout) clearTimeout(tipTimeout || previousTimeout)
         previousTimeout = setTimeout(() => {
@@ -71,13 +71,13 @@ export function Projects3D(props) {
         <div className={`${styles.projects3D} 
         ${splineLoading ? styles.loading : ""} ${tipTimeout > 0 ? styles.tipVisible : ""}`}>
             <div className={styles.splineWrapper}>
-                <Spline 
-                scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
-                onMouseHover={hover}
-                onLoad={() => {
-                    console.log("Spline loaded")
-                    setSplineLoading(false)
-                }}
+                <Spline
+                    scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
+                    onMouseHover={hover}
+                    onLoad={() => {
+                        console.log("Spline loaded")
+                        setSplineLoading(false)
+                    }}
                 />
             </div>
             <Capsule className={styles.tip} ref={tipCapsule} />
