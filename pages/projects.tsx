@@ -9,8 +9,9 @@ import { ProjectRow } from '../components/ProjectRow/ProjectRow';
 
 import { Projects3D } from '../components/Projects3D/Projects3D';
 import Projects3DMobile from '../assets/projects3d/mobile.png'
-import api, { ApiProject } from '../utils/api';
+import api from '../utils/api';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { ShallowProject } from '../utils/types';
 
 export default function Projects({ projectsData: projects, isMobile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
@@ -43,7 +44,7 @@ export default function Projects({ projectsData: projects, isMobile }: InferGetS
 }
 
 export const getServerSideProps: GetServerSideProps<{
-  projectsData: ApiProject[],
+  projectsData: ShallowProject[],
   isMobile: boolean
 }> = async ({ req, res }) => {
   const data = await api.projects.all()

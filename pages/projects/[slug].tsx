@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Content } from '../../components/Content/Content'
 import styled from 'styled-components'
-import api, { FindProject, ApiProject } from '../../utils/api'
+import api from '../../utils/api'
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
 import { H1, H2 } from '../../components/Title/Title'
 import { AvatarRow } from '../../components/AvatarRow/AvatarRow'
@@ -17,6 +17,7 @@ import { MDXRemoteSerializeResult, SerializeOptions } from 'next-mdx-remote/dist
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getProjectLinkIcon, getProjectLinkTitle, getProjectLinkUrl, getProjectMediaUrl } from "../../utils/Project";
 import { getMemberAvatarUrl } from '../../utils/Member'
+import { DetailedProject, ShallowProject } from "../../utils/types";
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -269,21 +270,21 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
 }
 
 export const getStaticProps: GetStaticProps<{
-  projectData: FindProject,
+  projectData: DetailedProject,
   mdxSerialized: {
     readmes: Record<string, MDXRemoteSerializeResult>,
     fullDescription: MDXRemoteSerializeResult
   },
-  suggestedProjectsData: ApiProject[]
+  suggestedProjectsData: ShallowProject[]
 }> = async (context) => {
   const { slug } = context.params
   if (typeof slug !== "string") throw new Error("Slug must be a string")
 
   const data = await api.projects.find(slug)
 
-  console.log("Loaded static props for", data.slug)
+  if ("status" in data) return { notFound: true }
 
-  if (data.status == "not found") return { notFound: true }
+  console.log("Loaded static props for", data.slug)
 
   const suggestedProjectsData = await api.projects.suggest(data.slug)
 

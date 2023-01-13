@@ -26,7 +26,7 @@ import YoutubeIcon from '../assets/YoutubeIcon.svg'
 import TwitterIcon from '../assets/TwitterIcon.svg'
 
 import { useGuildInfo } from '../hooks/useGuildInfo'
-import api, { GuildInfo } from '../utils/api'
+import api from '../utils/api'
 import { GridGallery } from '../components/GridGallery/GridGallery'
 import { Footer } from '../components/Footer/Footer'
 import Link from 'next/link'
@@ -34,6 +34,7 @@ import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { Collaborations } from '../components/Collaborations/Collaborations'
 import { useEffect } from 'react'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { GuildInfo } from '../utils/types'
 
 const Grid = styled.div`
   display: grid;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import api, { GuildInfo, GuildInfoModelOption } from "../utils/api"
+import api from "../utils/api"
+import { GuildInfo, GuildInfoModelOption } from "../utils/types"
 
 export function useGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T, ss: GuildInfo<T>) {
     const [guildInfo, setGuildInfo] = useState(ss)

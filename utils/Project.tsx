@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { ApiProject, FindProject, apiServerMedia } from "./api"
+import { ShallowProject, DetailedProject, apiServerMedia } from "./api"
 import { Member } from "./Member"
 import GithubIcon from '../assets/GithubIcon.svg'
 import { BiHome, BiLink } from "react-icons/bi";

@@ -15,9 +15,10 @@ import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderb
 import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
-import api, { GuildInfoModelOption } from '../utils/api';
+import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps } from 'next';
+import { GuildInfoModelOption } from '../utils/types';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 

@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { AvatarRow } from '../AvatarRow/AvatarRow'
 import { TagsRow } from '../TagsRow/TagsRow'
 import styles from './ProjectRow.module.css'
-import { ApiProject, FindProject } from '../../utils/api'
 import { getProjectMediaUrl } from '../../utils/Project'
 import { getMemberAvatarUrl } from '../../utils/Member'
+import { DetailedProject, ShallowProject } from '../../utils/types'
 
 export type ProjectRowProps = {
-    project: FindProject | ApiProject,
+    project: DetailedProject | ShallowProject,
     compact?: boolean
 }
 
