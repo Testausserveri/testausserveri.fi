@@ -3,13 +3,6 @@
  */
 
 export class TimeUtil {
-    /**
-     * @property {number} SECOND
-     * @property {number} MINUTE
-     * @property {number} HOUR
-     * @property {number} DAY
-     * @property {number} WEEK
-     */
     static Multipliers = {
         SECOND: 1,
         MINUTE: 60,
@@ -19,13 +12,6 @@ export class TimeUtil {
         MONTH: 60 * 60 * 24 * 30,
     };
 
-    /**
-     * @property {string} SECONDS
-     * @property {string} MINUTES
-     * @property {string} HOURS
-     * @property {string} DAYS
-     * @property {string} WEEKS
-     */
     static Suffixes = {
         SECONDS: "s",
         MINUTES: "m",
@@ -36,10 +22,8 @@ export class TimeUtil {
 
     /**
      * Format seconds into a readable string
-     * @param {number} seconds
-     * @returns {string} formatted string
      */
-    static formatSecond(seconds) {
+    static formatSecond(seconds: number) {
         const weeks = Math.floor(seconds / this.Multipliers.WEEK);
         seconds -= weeks * this.Multipliers.WEEK;
 
@@ -54,7 +38,7 @@ export class TimeUtil {
 
         return (
             Object.entries(
-                /** @type {Record<string, number>} */ ({
+                ({
                     weeks,
                     days,
                     hours,
