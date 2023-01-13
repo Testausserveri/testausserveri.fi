@@ -1,7 +1,10 @@
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import Image, { ImageProps } from 'next/image'
 import styles from './GridGallery.module.css'
 
+export type GridGalleryProps = {
+    media: string[],
+    imageProps?: ImageProps
+}
 
 /**
  * On desktop 4 columns photo grid
@@ -11,7 +14,7 @@ import styles from './GridGallery.module.css'
  * X | X
  * X | X
  */
-export function GridGallery({media, imageProps}) {
+export function GridGallery({media, imageProps}: GridGalleryProps) {
     return (
         <div className={styles.gridGallery}>
            {media.map(url => (
