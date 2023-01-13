@@ -2,8 +2,11 @@ import styles from './Explanation.module.css'
 import { RiQuestionLine } from "react-icons/ri"
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
+import { PropsWithChildren } from 'react';
 
-export function Explanation({children}) {
+export type ExplanationProps = PropsWithChildren<{}>
+
+export function Explanation({ children }: ExplanationProps) {
     return (
         <Tippy 
             className="tip"
