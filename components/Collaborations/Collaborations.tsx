@@ -3,8 +3,14 @@ import styles from './Collaborations.module.css'
 import saucesoft from '../../assets/collaborations/saucesoft.svg'
 import genz from '../../assets/collaborations/genz.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
+import { CSSProperties } from 'react'
 
-export function Collaborations(props) {
+export type CollaborationsProps = {
+    style: CSSProperties
+    noTitle?: boolean
+}
+
+export function Collaborations(props: CollaborationsProps) {
     return (
         <div className={styles.collaborations} style={props.style}>
             {!props.noTitle ?
