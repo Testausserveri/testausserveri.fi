@@ -3,7 +3,11 @@ import styles from './AvatarRow.module.css'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
-export function AvatarRow({members}) {
+export type AvatarRowProps = {
+    members: { id: string, name: string, avatar: string }[]
+}
+
+export function AvatarRow({ members }: AvatarRowProps) {
     return (
         <ul className={styles.avatarRow}>
             {members.map(member => (
