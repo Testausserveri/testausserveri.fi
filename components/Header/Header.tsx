@@ -7,7 +7,15 @@ import { useState } from 'react'
 import { IoMdKey } from "react-icons/io"
 import { LoginView } from '../Login/Login'
 
-export function Header({pages, activePath}) {
+export type HeaderProps = {
+    pages: {
+        label: string,
+        path: string
+    }[],
+    activePath: string
+}
+
+export function Header({ pages, activePath }: HeaderProps) {
     const [open, setOpen] = useState(false)
     const [loginVisible, setLoginVisible] = useState(false)
 
@@ -17,7 +25,7 @@ export function Header({pages, activePath}) {
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <a className={styles.navButtons}>
-                <a onClick={() => setLoginVisible(true)} style={{ display: process.env.NODE_ENV != "production" ? "block" : "none"}}>
+                <a onClick={() => setLoginVisible(true)} style={{ display: process.env.NODE_ENV != "production" ? "block" : "none" }}>
                     <CapsuleButton className={styles.button} small secondary>
                         <IoMdKey />
                         Jäsensivut
