@@ -1,8 +1,12 @@
 import styles from './CapsuleButton.module.css'
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { PropsWithChildren, useRef, useState } from 'react';
 
-export function ButtonIcon({src}) {
+export type ButtonIconProps = {
+    src: string
+}
+
+export function ButtonIcon({ src }: ButtonIconProps) {
     return (
         <div className={styles.buttonIcon}>
             <Image src={src} width={32} height={32} unoptimized />
@@ -10,9 +14,16 @@ export function ButtonIcon({src}) {
     )
 }
 
+export type CapsuleButtonProps = PropsWithChildren<{
+    style: React.CSSProperties,
+    small?: boolean,
+    secondary?: boolean,
+    className?: string
+}>
+
 export function CapsuleButton(props) {
-    const {style, children, small, secondary, className} = props
-    const ripple = useRef()
+    const { style, children, small, secondary, className } = props
+    const ripple = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState(0)
 
     function onMouseMove(e) {
@@ -28,23 +39,24 @@ export function CapsuleButton(props) {
     }
 
     return (
-        <div {...props} style={{...style, display: "inline-block"}}>
-            <button 
-                onMouseLeave={() => setSize(0)} 
-                onMouseEnter={() => setSize(1)} 
-                onMouseDown={() => setSize(1.2)} 
-                onMouseUp={() => setSize(1)} 
+        <div {...props} style={{ ...style, display: "inline-block" }}>
+            <button
+                onMouseLeave={() => setSize(0)}
+                onMouseEnter={() => setSize(1)}
+                onMouseDown={() => setSize(1.2)}
+                onMouseUp={() => setSize(1)}
 
                 onTouchStart={() => setSize(1)}
                 onTouchEnd={() => setSize(0)}
                 onTouchMove={onTouchMove}
                 onClick={() => setSize(0)}
 
-                onMouseMove={onMouseMove} 
+                onMouseMove={onMouseMove}
                 className={`${styles.capsuleButton} ${small ? styles.small : ""} ${secondary ? styles.secondary : ""}`}
-                >
+            >
                 {children}
-                <div ref={ripple} className={styles.ripple} style={{"--size": size}}></div>
+                {/* @ts-ignore */}
+                <div ref={ripple} className={styles.ripple} style={{ "--size": size }}></div>
             </button>
         </div>
     )
