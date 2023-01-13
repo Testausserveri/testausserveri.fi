@@ -9,9 +9,8 @@ export default function LoginPage() {
         <title>Kirjaudu sisään | Testausserveri</title>
       </Head>
       <Content>
-        <LoginView />
+        <LoginView visible={false} setLoginVisible={() => console.log("Not implemented")} />
       </Content>
     </div>
   )
 }
-  
