@@ -1,10 +1,29 @@
 import Link from 'next/link'
 import { AvatarRow } from '../AvatarRow/AvatarRow'
-import { Capsule } from '../Capsule/Capsule'
 import { TagsRow } from '../TagsRow/TagsRow'
 import styles from './ProjectRow.module.css'
 
-export function ProjectRow({project, compact}) {
+export type ProjectRowProps = {
+    project: {
+        slug: string,
+        name: string,
+        description: {
+            short: string
+        },
+        cover: {
+            url: string
+        },
+        members: {
+            id: string;
+            name: string;
+            avatar: string;
+        }[],
+        tags: string[]
+    },
+    compact?: boolean
+}
+
+export function ProjectRow({ project, compact }: ProjectRowProps) {
     return (
         <Link href={`/projects/${project.slug}`}>
             <a>
