@@ -1,7 +1,11 @@
 import styles from './TagsRow.module.css'
 import { Capsule } from '../Capsule/Capsule'
 
-export function TagsRow({tags}) {
+export type TagsRowProps = {
+    tags: string[]
+}
+
+export function TagsRow({tags}: TagsRowProps) {
     return (
         <ul className={styles.tagsRow}>
             {tags.map(tag => (
