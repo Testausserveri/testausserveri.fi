@@ -40,7 +40,7 @@ export type ApiProject = {
     slug: string
 }
 
-const all = async function (query: string | string[][] | Record<string, string> | URLSearchParams | undefined) {
+const all = async function (query?: string | string[][] | Record<string, string> | URLSearchParams | undefined) {
     if (query) query = "?" + new URLSearchParams(query).toString()
     const response = await fetch(`${apiServer}/v1/projects${query || ""}`)
     const projects = await response.json()
