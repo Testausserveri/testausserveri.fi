@@ -2,43 +2,34 @@ import Link from 'next/link'
 import { AvatarRow } from '../AvatarRow/AvatarRow'
 import { TagsRow } from '../TagsRow/TagsRow'
 import styles from './ProjectRow.module.css'
+import { ApiProject, FindProject } from '../../utils/api'
+import { getProjectMediaUrl } from '../../utils/Project'
+import { getMemberAvatarUrl } from '../../utils/Member'
 
 export type ProjectRowProps = {
-    project: {
-        slug: string,
-        name: string,
-        description: {
-            short: string
-        },
-        cover: {
-            url: string
-        },
-        members: {
-            id: string;
-            name: string;
-            avatar: string;
-        }[],
-        tags: string[]
-    },
+    project: FindProject | ApiProject,
     compact?: boolean
 }
 
 export function ProjectRow({ project, compact }: ProjectRowProps) {
+    const projectMedia = Array.isArray(project.media) ? project.media : [{ ...project.media, cover: true }];
+    const cover = projectMedia.find(m => m.cover === true);
+
+    const description = typeof project.description === "string" ? project.description : project.description.short;
+
     return (
         <Link href={`/projects/${project.slug}`}>
             <a>
                 <div className={`${styles.row} ${compact ? styles.compact : ""}`}>
                     <div className={styles.inner}>
                         <div className={styles.image}>
-                            <img src={project.cover.url} />
+                            {cover && <img src={getProjectMediaUrl(cover.filename)} />}
                         </div>
                         <div className={styles.content}>
                             <h2>{project.name}</h2>
-                            <p>
-                                {project.description.short}
-                            </p>
+                            <p>{description}</p>
                             <div className={styles.bottom}>
-                                <AvatarRow members={project.members} />
+                                <AvatarRow members={project.members.map(m => ({ ...m, id: m._id, avatar: getMemberAvatarUrl(m._id) }))} />
                                 <TagsRow tags={project.tags} />
                             </div>
                         </div>

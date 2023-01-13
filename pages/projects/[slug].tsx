@@ -15,7 +15,8 @@ import { FaGithub } from "react-icons/fa"
 import { ProjectRow } from '../../components/ProjectRow/ProjectRow'
 import { MDXRemoteSerializeResult, SerializeOptions } from 'next-mdx-remote/dist/types'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Project } from "../../utils/Project";
+import { getProjectLinkIcon, getProjectLinkTitle, getProjectLinkUrl, getProjectMediaUrl } from "../../utils/Project";
+import { getMemberAvatarUrl } from '../../utils/Member'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -161,22 +162,20 @@ const ProjectLinkTitleContainer = styled.div`
   align-items: center;
 `
 
-export default function ProjectPage({ projectData, mdxSerialized, suggestedProjectsData }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const project = new Project(projectData)
-  const suggestedProjects = suggestedProjectsData.map(data => new Project(data))
-  //<FadeBackground style={{"--bg": `url('${project.cover.url}')`}} />
+export default function ProjectPage({ projectData: project, mdxSerialized, suggestedProjectsData: suggestedProjects }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const cover = project.media.find(item => item.cover === true)
   return (
     <div>
       <Head>
         <title>{project.name} | Testausserveri</title>
         <meta property="og:site_name" content="Testausserveri"></meta>
         <meta property="og:title" content={project.name} />
-        <meta property="og:image" content={project.cover.url} />
+        {cover && <meta property="og:image" content={getProjectMediaUrl(cover.filename)} />}
         <meta property="og:description" content={project.description.short} />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       {/* @ts-ignore */}
-      <FadeBackground style={{ "--bg": `url('${project.cover.url}')` }}>
+      <FadeBackground style={{ "--bg": `url('${getProjectMediaUrl(cover.filename)}')` }}>
         <Content>
           <Breadcrumbs
             route={[
@@ -186,7 +185,7 @@ export default function ProjectPage({ projectData, mdxSerialized, suggestedProje
 
           <Layout>
             <div>
-              <Gallery media={project.media} />
+              <Gallery media={project.media.map(m => ({ ...m, url: getProjectMediaUrl(m.filename) }))} />
               <H1 style={{ margin: "1rem 0" }}>{project.name}</H1>
               <P>
                 <b
@@ -223,7 +222,7 @@ export default function ProjectPage({ projectData, mdxSerialized, suggestedProje
             <div>
               <H2>Omistajat</H2>
               <AvatarRowExtended>
-                <AvatarRow members={project.members} />
+                <AvatarRow members={project.members.map(m => ({ ...m, id: m._id, avatar: getMemberAvatarUrl(m._id) }))} />
                 <span>{project.members.map(member => member.name).join("; ")}</span>
               </AvatarRowExtended>
 
@@ -231,7 +230,7 @@ export default function ProjectPage({ projectData, mdxSerialized, suggestedProje
                 <H2>Kontribuuttorit
                   <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
                 </H2>
-                <AvatarRow members={project.contributors} />
+                <AvatarRow members={project.contributors.map(c => ({ ...c, id: String(c.id) }))} />
               </> : null}
 
               {project.links.length > 0 ? <>
@@ -241,10 +240,10 @@ export default function ProjectPage({ projectData, mdxSerialized, suggestedProje
                     <a href={link.url} key={link.url}>
                       <ProjectLink>
                         <ProjectLinkTitleContainer>
-                          {link.icon}
-                          <h3>{link.title}</h3>
+                          {getProjectLinkIcon(link.type)}
+                          <h3>{getProjectLinkTitle(link.type, link.name)}</h3>
                         </ProjectLinkTitleContainer>
-                        <span>{link.displayURL}</span>
+                        <span>{getProjectLinkUrl(link.type, link.url)}</span>
                       </ProjectLink>
                     </a>
                   ))}
@@ -258,7 +257,7 @@ export default function ProjectPage({ projectData, mdxSerialized, suggestedProje
 
               <H2>Samankaltaisia projekteja</H2>
               {suggestedProjects.map((project) => (
-                <ProjectRow key={project.id} project={project} compact />
+                <ProjectRow key={project._id} project={project} compact />
               ))}
             </div>
           </Layout>

@@ -1,3 +1,5 @@
+import { ProjectLinkType } from "./types"
+
 export const apiServer = process.env.NEXT_PUBLIC_API_SERVER
 export const apiServerMedia = process.env.NEXT_PUBLIC_API_SERVER_MEDIA
 
@@ -30,7 +32,10 @@ export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoMo
 export type ApiProject = {
     _id: string,
     description: string,
-    members: never[],
+    members: {
+        _id: string,
+        name: string
+    }[],
     tags: string[],
     media: {
         type: "image",
@@ -65,16 +70,17 @@ export type FindProject = {
     members: {
         _id: string,
         name: string
-    },
+    }[],
     tags: string[],
     media: {
         type: "image",
         filename: string,
-        cover: boolean
+        cover?: boolean
     }[],
     links: {
-        type: "github" | "homepage" | "link",
-        url: string
+        type: ProjectLinkType,
+        url: string,
+        name?: string
     }[],
     name: string,
     slug: string

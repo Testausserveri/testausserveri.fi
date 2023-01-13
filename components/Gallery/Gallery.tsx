@@ -5,7 +5,7 @@ import styles from './Gallery.module.css'
 export type GalleryProps = {
     media: {
         cover?: boolean,
-        url?: string
+        url: string
     }[]
 }
 

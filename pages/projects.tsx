@@ -10,12 +10,9 @@ import { ProjectRow } from '../components/ProjectRow/ProjectRow';
 import { Projects3D } from '../components/Projects3D/Projects3D';
 import Projects3DMobile from '../assets/projects3d/mobile.png'
 import api, { ApiProject } from '../utils/api';
-import { Project } from '../utils/Project';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
-export default function Projects({ projectsData, isMobile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const projects = projectsData.map(data => new Project(data))
-
+export default function Projects({ projectsData: projects, isMobile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
       <Head>
@@ -37,7 +34,7 @@ export default function Projects({ projectsData, isMobile }: InferGetServerSideP
           </span>
         </InfoBox>
         {projects.map((project) => (
-          <ProjectRow key={project.id} project={project} />
+          <ProjectRow key={project._id} project={project} />
         ))}
       </Content>
       <Footer />
