@@ -7,7 +7,18 @@ import { Logo } from '../Logo/Logo'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-export function Navigation({className, pages, activePath, open, setOpen}) {
+export type NavigationProps = {
+    className?: string,
+    pages: {
+        label: string,
+        path: string
+    }[],
+    activePath: string,
+    open: boolean,
+    setOpen: (open: boolean) => void
+}
+
+export function Navigation({ className, pages, activePath, open, setOpen }: NavigationProps) {
     const router = useRouter()
 
     useEffect(() => {
@@ -27,9 +38,9 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
         <div className={className ? `${className} ${openClassName}` : openClassName}>
 
             <div className={styles.mobileHeader}>
-                {open ? 
+                {open ?
                     <Logo className={styles.logo} showBeta link />
-                : null}
+                    : null}
                 <div className={styles.mobileButton}>
                     <Hamburger rounded color="#FFF" toggled={open} toggle={setOpen} />
                 </div>
@@ -38,8 +49,8 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
             <ul className={`${styles.items} noLinkStyles`}>
                 {pages.map(page => {
                     const Component = () => (
-                        <Link 
-                            shallow={true} 
+                        <Link
+                            shallow={true}
                             href={page.path}>
                             <a className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
                                 <li>
@@ -53,7 +64,7 @@ export function Navigation({className, pages, activePath, open, setOpen}) {
                     } else {
                         return <Component key={page.label} />
                     }
-                })}  
+                })}
             </ul>
         </div>
     )
