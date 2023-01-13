@@ -26,13 +26,14 @@ import YoutubeIcon from '../assets/YoutubeIcon.svg'
 import TwitterIcon from '../assets/TwitterIcon.svg'
 
 import { useGuildInfo } from '../hooks/useGuildInfo'
-import api from '../utils/api'
+import api, { GuildInfo } from '../utils/api'
 import { GridGallery } from '../components/GridGallery/GridGallery'
 import { Footer } from '../components/Footer/Footer'
 import Link from 'next/link'
 import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { Collaborations } from '../components/Collaborations/Collaborations'
 import { useEffect } from 'react'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
 const Grid = styled.div`
   display: grid;
@@ -96,18 +97,18 @@ const Grid = styled.div`
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
 `
-export default function LoginPage({ssGuildInfo}) {
-  const {memberCount} = useGuildInfo(["memberCount"], ssGuildInfo)
+export default function LoginPage({ ssGuildInfo }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const { memberCount } = useGuildInfo(["memberCount"], ssGuildInfo)
 
   return (
     <div>
       <Head>
-          <title>Tietoa meistä | Testausserveri</title>
+        <title>Tietoa meistä | Testausserveri</title>
       </Head>
       <Content>
         <DisplayImage placeholder="blur" src={testausmeetImg} />
-        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0"}}>Testausmeet 5/2022</p>
-        <p style={{marginTop: "1.5rem"}}>
+        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0" }}>Testausmeet 5/2022</p>
+        <p style={{ marginTop: "1.5rem" }}>
           Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta.
           Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa.
         </p>
@@ -117,10 +118,10 @@ export default function LoginPage({ssGuildInfo}) {
           Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistyksemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
-        <GridGallery imageProps={{placeholder: "blur"}} media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
-        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "-2rem"}}>Testausserveri Assembly, Junction ja LähiTapiola hack day -tapahtumissa, sekä perinteinen Testausmeet illallinen</p>
+        <GridGallery imageProps={{ placeholder: "blur" }} media={[assemblyImg, junctionImg, hackdayImg, tacobellImg]} />
+        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "-2rem" }}>Testausserveri Assembly, Junction ja LähiTapiola hack day -tapahtumissa, sekä perinteinen Testausmeet illallinen</p>
 
-        <H2 style={{marginTop: "1.5rem"}}>Tavoitteemme</H2>
+        <H2 style={{ marginTop: "1.5rem" }}>Tavoitteemme</H2>
         <p>
           Tavoitteenamme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioa olemassa olevia taitojaan.
         </p>
@@ -133,9 +134,9 @@ export default function LoginPage({ssGuildInfo}) {
           Järjestämme muutaman kerran vuodessa <a href="https://wiki.testausserveri.fi/wiki/Testausmeet">Testausmeetin</a>.
           Tapahtumassa pääsee tapaamaan kasvoja nimimerkkien takaa, verkostoitumaan, puhumaan kaikesta "tech" ja ennen kaikkea nauttimaan rennosta ajanvietosta.
           Kutsu tulee Discordiin tiedotteena, sekä yhdistyksemme jäsenten henkilökohtaisiin sähköpostiosoitteisiin.
-          Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.  
+          Testausmeetin ohella järjestetään yleensä yhdistyksen kokous, jossa päätetään virallisesti yhdistyksen asioista.
         </p>
-        <p>  
+        <p>
           Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin.
           Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan näihin tapahtumiin ja kilpailuihin ilmaiseksi.
         </p>
@@ -165,22 +166,22 @@ export default function LoginPage({ssGuildInfo}) {
           Yhdistyksen hallitukseen kuuluvat toimikaudella 2022 seuraavat henkilöt:
         </p>
         <Grid className="board">
-            {[
-              [hanBoardImg, "Mikael Hannolainen", "puheenjohtaja"],
-              [sinBoardImg, "Eemil Sinkko", "varapuheenjohtaja"],
-              [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
-              [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintävastaava"],
-              [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmävastaava"]
-            ].map((person) => (
-              <a>
-                <span>
+          {([
+            [hanBoardImg, "Mikael Hannolainen", "puheenjohtaja"],
+            [sinBoardImg, "Eemil Sinkko", "varapuheenjohtaja"],
+            [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
+            [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintävastaava"],
+            [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmävastaava"]
+          ] as const).map(person => (
+            <a>
+              <span>
                 <Image width="64" height="64" src={person[0]} placeholder="blur" />
-                </span>
+              </span>
 
-                <span>{person[1]}</span>
-                <span>{person[2]}</span>
-              </a>
-            ))}
+              <span>{person[1]}</span>
+              <span>{person[2]}</span>
+            </a>
+          ))}
         </Grid>
 
         <H2>Jäsenyys yhdistyksessämme</H2>
@@ -194,17 +195,19 @@ export default function LoginPage({ssGuildInfo}) {
 
         <H2>Ketkä tukevat meitä?</H2>
         <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa:</p>
-        <Collaborations style={{margin: "2rem 0"}} noTitle />
+        <Collaborations style={{ margin: "2rem 0" }} noTitle />
         <p>
           Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>
       </Content>
       <Footer />
-    </div> 
+    </div>
   )
 }
-  
-export async function getServerSideProps({req, res}) {
+
+export const getServerSideProps: GetServerSideProps<{
+  ssGuildInfo: GuildInfo<"memberCount"[]>
+}> = async ({ req, res }) => {
   const guildInfo = await api.getGuildInfo(["memberCount"])
 
   res.setHeader(

@@ -1,9 +1,9 @@
-import Image, { ImageProps } from 'next/image'
+import Image, { ImageProps, StaticImageData } from 'next/image'
 import styles from './GridGallery.module.css'
 
 export type GridGalleryProps = {
-    media: string[],
-    imageProps?: ImageProps
+    media: (string | StaticImageData)[],
+    imageProps?: Omit<ImageProps, 'src'>
 }
 
 /**
@@ -18,7 +18,7 @@ export function GridGallery({media, imageProps}: GridGalleryProps) {
     return (
         <div className={styles.gridGallery}>
            {media.map(url => (
-            <Image src={url} key={url} {...imageProps} />
+            <Image src={url} key={typeof url === "string" ? url : url.src} {...imageProps} />
            ))}
         </div>
     )
