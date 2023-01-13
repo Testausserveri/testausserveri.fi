@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Header } from '../components/Header/Header'
 import '../styles/globals.css'
+import { AppProps } from 'next/app'
 
 const pages = [
   { label: "Etusivu", path: "/" },
@@ -10,7 +11,7 @@ const pages = [
   //{ label: "Tietoa", path: "/about-us" }
 ]
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <div className="main">
       <Head>
