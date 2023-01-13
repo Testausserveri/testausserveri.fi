@@ -1,6 +1,4 @@
-// @ts-nocheck
-import { ShallowProject, DetailedProject, apiServerMedia } from "./api"
-import { Member } from "./Member"
+import { apiServerMedia } from "./api"
 import GithubIcon from '../assets/GithubIcon.svg'
 import { BiHome, BiLink } from "react-icons/bi";
 import Image from 'next/image'
