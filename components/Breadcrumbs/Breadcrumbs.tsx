@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import styles from './Breadcrumbs.module.css'
 
-export function Breadcrumbs({route}) {
+export type BreadcrumbsProps = {
+    route: {
+        name: string
+        path: string
+    }[]
+}
+
+export function Breadcrumbs({ route }: BreadcrumbsProps) {
     return (
         <ul className={styles.breadcrumbs}>
             {route.map(breadcrumb => (
