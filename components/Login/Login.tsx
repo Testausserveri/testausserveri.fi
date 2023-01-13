@@ -1,5 +1,4 @@
 import styles from './Login.module.css'
-import React from 'react';
 
 import dynamic from 'next/dynamic'
 
@@ -17,7 +16,11 @@ const allowedPath = "/"
 
 const cookieRegex = new RegExp(`(^|;)code=(.{1,}|);( |)domain=${allowedDomain.replace(/\./g, "\\.")};( |)secure;( |)httpOnly( |);path=${allowedPath.replace(/\//g, "\\/")}(;|$)`, "i")
 
-export function LoginDialog({ onClose }) {
+export type LoginDialogProps = {
+  onClose: () => void
+}
+
+export function LoginDialog({ onClose }: LoginDialogProps) {
     const accept = [
       'members',
       'discord'
@@ -26,6 +29,7 @@ export function LoginDialog({ onClose }) {
     const scopes = ['id', 'account', 'contact']
   
     return <DynamicTestausid
+      // @ts-ignore
       onClose={onClose}
       accept={accept}
       client={client}
@@ -53,7 +57,12 @@ export function LoginDialog({ onClose }) {
       }}
     />  
 }
-  
+
+export type LoginViewProps = {
+  visible: boolean
+  setLoginVisible: (visible: boolean) => void
+}
+
 export function LoginView({visible, setLoginVisible}) {
   const close = () => setLoginVisible(false)
     return (
