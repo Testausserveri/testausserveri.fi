@@ -15,10 +15,11 @@ import { Leaderboard, LeaderboardGroup } from '../components/Leaderboard/Leaderb
 import { TimeUtil } from '../utils/TimeUtil';
 import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
-import api from '../utils/api';
+import api, { GuildInfoModelOption } from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
+import { GetServerSideProps } from 'next';
 
-const guildInfoModel = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"]
+const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
 const Center = styled.div`
   width: 100%;
@@ -53,7 +54,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ssGuildInfo}) {
+export default function Home({ ssGuildInfo }) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
@@ -86,10 +87,10 @@ export default function Home({ssGuildInfo}) {
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
-        <H1 style={{ 
-          overflow: "hidden", 
-          display: "flex", 
-          alignItems: "center", 
+        <H1 style={{
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
           flexDirection: "column",
           fontWeight: "bold"
         }}>
@@ -98,20 +99,20 @@ export default function Home({ssGuildInfo}) {
             nuorille<br />
           </TitleStaticGradientText>
           <TextLoop>
-              <GradientText>hakkereille</GradientText>
-              <GradientText>koodareille</GradientText>
-              <GradientText>Linux-velhoille</GradientText>
-              <GradientText>radioamatööreille</GradientText>
-              <GradientText>graafikoille</GradientText>
-              <GradientText>3D-artisteille</GradientText>
+            <GradientText>hakkereille</GradientText>
+            <GradientText>koodareille</GradientText>
+            <GradientText>Linux-velhoille</GradientText>
+            <GradientText>radioamatööreille</GradientText>
+            <GradientText>graafikoille</GradientText>
+            <GradientText>3D-artisteille</GradientText>
           </TextLoop>
         </H1>
         <a href="https://discord.testausserveri.fi">
-          <CapsuleButton 
-            style={{margin: "-0.3rem 0 0.4rem 0"}} 
-            onMouseOver={() => {setHeroFocused(true)}}
-            onMouseLeave={() => {setHeroFocused(false)}}>
-              <ButtonIcon src={DiscordIcon} />
+          <CapsuleButton
+            style={{ margin: "-0.3rem 0 0.4rem 0" }}
+            onMouseOver={() => { setHeroFocused(true) }}
+            onMouseLeave={() => { setHeroFocused(false) }}>
+            <ButtonIcon src={DiscordIcon} />
             Tule juttelemaan!
           </CapsuleButton>
         </a>
@@ -126,11 +127,11 @@ export default function Home({ssGuildInfo}) {
           Lue lisää yhdistyksestämme <Link href="/about">Tietoa meistä -sivulta.</Link>
         </TextColumns>
         <LeaderboardGroup>
-          <Leaderboard 
+          <Leaderboard
             data={guildInfo.messagesLeaderboard}
             title="Eniten viestejä viikon sisään" />
-          
-          <Leaderboard 
+
+          <Leaderboard
             data={guildInfo.codingLeaderboard}
             title="Eniten koodannut viikon sisään"
             explanation={<span>
@@ -145,7 +146,7 @@ export default function Home({ssGuildInfo}) {
   )
 }
 
-export async function getServerSideProps({req, res}) {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   res.setHeader(

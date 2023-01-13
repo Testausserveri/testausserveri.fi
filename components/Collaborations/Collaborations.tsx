@@ -6,7 +6,7 @@ import w4cfi from '../../assets/collaborations/w4cfi.png'
 import { CSSProperties } from 'react'
 
 export type CollaborationsProps = {
-    style: CSSProperties
+    style?: CSSProperties
     noTitle?: boolean
 }
 

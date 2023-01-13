@@ -2,7 +2,7 @@ import styles from './Leaderboard.module.css'
 
 
 import { Explanation } from '../Explanation/Explanation';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
 
 type LeaderboardItemProps = {
     index: number,
@@ -46,22 +46,21 @@ export type LeaderboardProps = {
     data: {
         name: string,
         value: number,
-        percentage: number
     }[],
     title: string,
     valueFormatter?: (value: number) => string,
-    explanation?: string
+    explanation?: ReactNode
 }
 
 export function Leaderboard({ data, title, valueFormatter, explanation }: LeaderboardProps) {
-    data.sort((a, b) => (b.value - a.value))
-    data = data.map(item => (
+    const dataSorted = data.sort((a, b) => (b.value - a.value))
+    const dataWithPercentages = dataSorted.map(item => (
         {
             ...item,
             percentage: Math.floor(remap(
                 item.value,
-                data[data.length - 1].value,
-                data[0].value,
+                dataSorted[dataSorted.length - 1].value,
+                dataSorted[0].value,
                 40,
                 90)
             )
@@ -77,7 +76,7 @@ export function Leaderboard({ data, title, valueFormatter, explanation }: Leader
                     : null}
             </h3>
             <ul className={styles.items}>
-                {data.map((item, i) => (
+                {dataWithPercentages.map((item, i) => (
                     <LeaderboardItem
                         key={i}
                         index={i}
