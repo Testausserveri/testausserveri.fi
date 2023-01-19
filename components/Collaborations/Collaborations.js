@@ -3,6 +3,7 @@ import styles from './Collaborations.module.css'
 import saucesoft from '../../assets/collaborations/saucesoft.svg'
 import genz from '../../assets/collaborations/genz.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
+import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
 
 export function Collaborations(props) {
     return (
@@ -24,6 +25,11 @@ export function Collaborations(props) {
                 <li>
                     <a href="https://www.women4cyberfinland.com/" target="_blank">
                         <img src={w4cfi.src} height={80} />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://koodiasuomesta.fi/" target="_blank">
+                        <img src={koodiasuomesta.src} height={80} />
                     </a>
                 </li>
             </ul>
