@@ -53,7 +53,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ssGuildInfo}) {
+export default function Home({ ssGuildInfo, copyrightYear }) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
@@ -140,7 +140,7 @@ export default function Home({ssGuildInfo}) {
         </LeaderboardGroup>
         <Collaborations />
       </Content>
-      <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </div>
   )
 }
@@ -153,5 +153,10 @@ export async function getServerSideProps({req, res}) {
     'public, maxage=300, stale-if-error=300'
   )
 
-  return { props: { ssGuildInfo: guildInfo } }
+  return {
+    props: {
+      ssGuildInfo: guildInfo,
+      copyrightYear: new Date().getFullYear()
+    }
+  }
 }
