@@ -8,7 +8,8 @@ $url = urldecode($_GET['url']);
 
 $urlInfo = parse_url($url);
 
-if ($urlInfo['host'] !== "cdn.discordapp.com") {
+
+if ($urlInfo['host'] !== "cdn.discordapp.com" && $urlInfo['host'] !== "i.scdn.co") {
     exit;
 }
 
