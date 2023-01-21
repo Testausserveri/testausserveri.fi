@@ -86,7 +86,7 @@ Tässä on jonkinlainen lista projekteistamme. Siinä ei ole välttämättä aiv
 </body>
 <footer>
   <hr>
-  <p>Copyright &copy; 2020-2022 Testausserveri ja jäsenet. <a href="https://testausserveri.fi"><i>Palaa takaisin normaalisivuille</i></a> </p>
+  <p>Copyright &copy; 2020-<?php echo date('Y')?> Testausserveri ja jäsenet. <a href="https://testausserveri.fi"><i>Palaa takaisin normaalisivuille</i></a> </p>
 </footer>
   
 <audio src="win98.wav"  controls id="ebin" autoplay>
