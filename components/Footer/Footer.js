@@ -91,7 +91,7 @@ export function Footer({ }) {
                                 board@testausserveri.fi
                             </Link>
                             <br />
-                            © 2023 Testausserveri ry
+                            © {new Date().getFullYear()} Testausserveri ry
                         </p>
                         <div>
                             <SocialMedias />
