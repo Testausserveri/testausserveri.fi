@@ -61,7 +61,7 @@ function FooterRow({ children }) {
         <div className={styles.row}>{children}</div>
     )
 }
-export function Footer({ }) {
+export function Footer({ copyrightYear }) {
     return (
         <div className={styles.footer}>
             <Content noMargin>
@@ -91,7 +91,7 @@ export function Footer({ }) {
                                 board@testausserveri.fi
                             </Link>
                             <br />
-                            © {new Date().getFullYear()} Testausserveri ry
+                            © {copyrightYear} Testausserveri ry
                         </p>
                         <div>
                             <SocialMedias />
@@ -102,3 +102,4 @@ export function Footer({ }) {
         </div>
     )
 }
+
