@@ -55,7 +55,7 @@ export function Leaderboard({data, title, valueFormatter, explanation}) {
                 {data.map((item, i) => (
                     <LeaderboardItem 
                         key={i} 
-                        index={i} 
+                        index={i + 1} 
                         data={item} 
                         valueFormatter={valueFormatter} />
                 ))}
