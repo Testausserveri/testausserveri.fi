@@ -98,7 +98,7 @@ const Grid = styled.div`
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
 `
-export default function LoginPage({ ssGuildInfo }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { memberCount } = useGuildInfo(["memberCount"], ssGuildInfo)
 
   return (
@@ -201,13 +201,14 @@ export default function LoginPage({ ssGuildInfo }: InferGetServerSidePropsType<t
           Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>
       </Content>
-      <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </div>
   )
 }
 
 export const getServerSideProps: GetServerSideProps<{
-  ssGuildInfo: GuildInfo<"memberCount"[]>
+  ssGuildInfo: GuildInfo<"memberCount"[]>,
+  copyrightYear: number
 }> = async ({ req, res }) => {
   const guildInfo = await api.getGuildInfo(["memberCount"])
 
@@ -216,5 +217,10 @@ export const getServerSideProps: GetServerSideProps<{
     'public, maxage=300, stale-if-error=300'
   )
 
-  return { props: { ssGuildInfo: guildInfo } }
+  return {
+    props: {
+      ssGuildInfo: guildInfo,
+      copyrightYear: new Date().getFullYear()
+    }
+  }
 }

@@ -13,7 +13,7 @@ import api from '../utils/api';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { ShallowProject } from '../utils/types';
 
-export default function Projects({ projectsData: projects, isMobile }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Projects({ projectsData: projects, isMobile, copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
       <Head>
@@ -38,14 +38,15 @@ export default function Projects({ projectsData: projects, isMobile }: InferGetS
           <ProjectRow key={project._id} project={project} />
         ))}
       </Content>
-      <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </div>
   )
 }
 
 export const getServerSideProps: GetServerSideProps<{
   projectsData: ShallowProject[],
-  isMobile: boolean
+  isMobile: boolean,
+  copyrightYear: number
 }> = async ({ req, res }) => {
   const data = await api.projects.all()
   const UA = req.headers['user-agent'];
@@ -58,6 +59,12 @@ export const getServerSideProps: GetServerSideProps<{
     'public, maxage=86400, stale-if-error=600'
   )
 
-  return { props: { projectsData: data, isMobile } }
+  return {
+    props: {
+      projectsData: data,
+      isMobile,
+      copyrightYear: new Date().getFullYear()
+    }
+  }
 }
 

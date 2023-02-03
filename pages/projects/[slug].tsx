@@ -163,7 +163,7 @@ const ProjectLinkTitleContainer = styled.div`
   align-items: center;
 `
 
-export default function ProjectPage({ projectData: project, mdxSerialized, suggestedProjectsData: suggestedProjects }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function ProjectPage({ projectData: project, mdxSerialized, suggestedProjectsData: suggestedProjects, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const cover = project.media.find(item => item.cover === true)
   return (
     <div>
@@ -264,7 +264,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
           </Layout>
         </Content>
       </FadeBackground>
-      <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </div>
   )
 }
@@ -275,7 +275,8 @@ export const getStaticProps: GetStaticProps<{
     readmes: Record<string, MDXRemoteSerializeResult>,
     fullDescription: MDXRemoteSerializeResult
   },
-  suggestedProjectsData: ShallowProject[]
+  suggestedProjectsData: ShallowProject[],
+  copyrightYear: number
 }> = async (context) => {
   const { slug } = context.params
   if (typeof slug !== "string") throw new Error("Slug must be a string")
@@ -310,7 +311,8 @@ export const getStaticProps: GetStaticProps<{
         readmes,
         fullDescription
       },
-      suggestedProjectsData
+      suggestedProjectsData,
+      copyrightYear: new Date().getFullYear()
     },
     revalidate: 60,
   }

@@ -4,13 +4,14 @@ import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer'
 import { H1 } from '../components/Title/Title'
 import licenses from '../dependency-licenses.json'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
 const developers = [
   { name: "Miksu", url: "https://github.com/ahnl" },
   { name: "Eldemarkki", url: "https://github.com/Eldemarkki" },
   { name: "Esinko", url: "https://github.com/Esinko" }
 ]
-export default function Home() {
+export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <article>
         <Head>
@@ -60,7 +61,22 @@ export default function Home() {
             })}
           </table>
         </Content>
-        <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </article>
   )
+}
+
+export const getServerSideProps: GetServerSideProps<{
+  copyrightYear: number
+}> = async ({ req, res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, maxage=300, stale-if-error=300'
+  )
+
+  return {
+    props: {
+      copyrightYear: new Date().getFullYear()
+    }
+  }
 }

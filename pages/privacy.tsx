@@ -4,6 +4,7 @@ import { Content } from '../components/Content/Content'
 import { H1 } from '../components/Title/Title'
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
 import { Footer } from '../components/Footer/Footer'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
 const Section = styled.div`
   
@@ -29,7 +30,7 @@ const Section = styled.div`
   }
 `
 
-export default function Home() {
+export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
       <Head>
@@ -159,8 +160,22 @@ export default function Home() {
           </p>
         </Section>
       </Content>
-      <Footer />
+      <Footer copyrightYear={copyrightYear} />
     </div>
     )
   }
-  
+
+export const getServerSideProps: GetServerSideProps<{
+  copyrightYear: number
+}> = async ({ req, res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, maxage=300, stale-if-error=300'
+  )
+
+  return {
+    props: {
+      copyrightYear: new Date().getFullYear()
+    }
+  }
+}
