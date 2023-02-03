@@ -62,7 +62,12 @@ function FooterRow({ children }: PropsWithChildren) {
         <div className={styles.row}>{children}</div>
     )
 }
-export function Footer() {
+
+export type FooterProps = {
+    copyrightYear: number
+}
+
+export function Footer({ copyrightYear }: FooterProps) {
     return (
         <div className={styles.footer}>
             <Content noMargin>
@@ -92,7 +97,7 @@ export function Footer() {
                                 board@testausserveri.fi
                             </Link>
                             <br />
-                            © 2022 Testausserveri ry
+                            © {copyrightYear} Testausserveri ry
                         </p>
                         <div>
                             <SocialMedias />
