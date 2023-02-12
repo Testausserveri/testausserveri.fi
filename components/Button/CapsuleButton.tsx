@@ -15,14 +15,14 @@ export function ButtonIcon({ src }: ButtonIconProps) {
 }
 
 export type CapsuleButtonProps = PropsWithChildren<{
-    style: React.CSSProperties,
+    style?: React.CSSProperties,
     small?: boolean,
     secondary?: boolean,
     className?: string
 }>
 
-export function CapsuleButton(props) {
-    const { style, children, small, secondary, className } = props
+export function CapsuleButton(props: CapsuleButtonProps) {
+    const { style, children, small, secondary } = props
     const ripple = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState(0)
 
