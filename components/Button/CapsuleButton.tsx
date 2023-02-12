@@ -22,7 +22,7 @@ export type CapsuleButtonProps = PropsWithChildren<{
 }>
 
 export function CapsuleButton(props: CapsuleButtonProps) {
-    const { style, children, small, secondary } = props
+    const { style, children, small, secondary, ...otherProps } = props
     const ripple = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState(0)
 
@@ -39,7 +39,7 @@ export function CapsuleButton(props: CapsuleButtonProps) {
     }
 
     return (
-        <div {...props} style={{ ...style, display: "inline-block" }}>
+        <div {...otherProps} style={{ ...style, display: "inline-block" }}>
             <button
                 onMouseLeave={() => setSize(0)}
                 onMouseEnter={() => setSize(1)}
