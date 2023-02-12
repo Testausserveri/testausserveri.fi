@@ -11,8 +11,8 @@
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {
-    "@skyra/discord-components-core": "^3.1.1",
-    "@skyra/discord-components-react": "^3.1.1",
+    "@skyra/discord-components-core": "^3.5.0",
+    "@skyra/discord-components-react": "^3.5.0",
     "@splinetool/react-spline": "^2.2.1",
     "@splinetool/runtime": "^0.9.53",
     "@testausserveri/react-testausid": "^1.3.4",

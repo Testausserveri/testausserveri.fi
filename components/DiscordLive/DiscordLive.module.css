@@ -1,10 +1,9 @@
 .discordBackground {
     aspect-ratio: 1.694 / 1;
-    width: 800px;
+    width: 1120px;
     position: relative;
     background-image: url("discord.png");
     background-size: 100% 100%;
-    zoom: 1.4;
 }
 
 .liveArea {
@@ -19,7 +18,6 @@
 }
 
 .discordMessages {
-    zoom: 0.75;
     position: absolute;
     bottom: 0;
     border: none !important;
@@ -34,17 +32,17 @@
 }
 @media only screen and (max-width: 1100px) {
     .discordBackground {
-        zoom: 1.1;
+        width: 880px;
     }
 }
 @media only screen and (max-width: 960px) {
     .discordBackground {
-        zoom: 0.9;
+        width: 720px;
     }
 }
 @media only screen and (max-width: 800px) {
     .discordBackground {
-        zoom: 0.8;
+        width: 640px;
     }
 }
 @media only screen and (max-width: 670px) {
@@ -59,7 +57,6 @@
         background-image: url("discord-mobile.png");
         aspect-ratio: 0.6071 / 1;
         max-width: 450px;
-        zoom: 1;
     }
 }
 
