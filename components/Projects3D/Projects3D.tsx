@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { Capsule } from '../Capsule/Capsule';
 import { HiOutlineCubeTransparent } from 'react-icons/hi'
 import Tippy from '@tippyjs/react';
+import { SplineEvent } from '@splinetool/runtime';
 
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
     ssr: false,
@@ -44,18 +45,21 @@ export function Projects3D() {
     const [splineLoading, setSplineLoading] = useState(true)
 
     const tipCapsule = useRef<HTMLSpanElement>(null)
-    const [tipTimeout, setTipTimeout] = useState(0)
-    let previousTimeout
+    const [tipTimeout, setTipTimeout] = useState<NodeJS.Timeout | number | null>(0)
+    let previousTimeout: NodeJS.Timeout | number | null = null
 
-    function findProject(e) {
-        const projectId = elements[e.target.id]
-        if (!projectId) return false
-        const project = projects.find(p => p.id == projectId)
-        if (!project) return false
-        return project
+    function findProject(e: SplineEvent) {
+        const id = e.target.id;
+        if (id in elements) {
+            const projectId = elements[id as keyof typeof elements] // the `as` cast is safe because we know that `id` is a key of `elements`, checked on the line above this one
+            if (!projectId) return false
+            const project = projects.find(p => p.id == projectId)
+            if (!project) return false
+            return project
+        }
     }
 
-    function hover(e) {
+    function hover(e: SplineEvent) {
         const project = findProject(e)
         if (!project) return
         if (tipCapsule.current) tipCapsule.current.innerHTML = project.name
@@ -69,7 +73,7 @@ export function Projects3D() {
 
     return (
         <div className={`${styles.projects3D} 
-        ${splineLoading ? styles.loading : ""} ${tipTimeout > 0 ? styles.tipVisible : ""}`}>
+        ${splineLoading ? styles.loading : ""} ${(typeof tipTimeout === "number" && tipTimeout > 0) ? styles.tipVisible : ""}`}>
             <div className={styles.splineWrapper}>
                 <Spline
                     scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"

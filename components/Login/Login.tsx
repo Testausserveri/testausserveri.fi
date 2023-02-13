@@ -2,6 +2,7 @@ import styles from './Login.module.css'
 
 import dynamic from 'next/dynamic'
 
+// @ts-ignore
 const DynamicTestausid = dynamic(() => import('@testausserveri/react-testausid').then((mod) => mod.LoginDialog), {
   suspense: false,
   ssr: false
@@ -34,12 +35,14 @@ export function LoginDialog({ onClose }: LoginDialogProps) {
       accept={accept}
       client={client}
       scopes={scopes}
-      onClick={e => {
+      onClick={(e: unknown) => {
+        // @ts-ignore
         e.preventDefault()
+        // @ts-ignore
         e.stopPropagation()
       }}
       onlyToken={true}
-      onLogin={token => {
+      onLogin={(token: unknown) => {
         fetch(`${apiServer}/v1/members/login`, {
           method: "POST",
           body: JSON.stringify(token),
@@ -63,7 +66,7 @@ export type LoginViewProps = {
   setLoginVisible: (visible: boolean) => void
 }
 
-export function LoginView({visible, setLoginVisible}) {
+export function LoginView({ visible, setLoginVisible }: LoginViewProps) {
   const close = () => setLoginVisible(false)
     return (
         <div className={`${styles.loginCover} ${visible ? styles.visible : ""}`} onClick={close}>

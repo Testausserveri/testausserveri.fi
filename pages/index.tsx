@@ -5,7 +5,7 @@ import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
 
-import { DiscordLive, HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
+import { HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
 import { H1 } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
@@ -17,8 +17,8 @@ import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
 import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
-import { GetServerSideProps } from 'next';
-import { GuildInfoModelOption } from '../utils/types';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GuildInfo, GuildInfoModelOption } from '../utils/types';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -55,7 +55,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ ssGuildInfo, copyrightYear }) {
+export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
@@ -147,7 +147,10 @@ export default function Home({ ssGuildInfo, copyrightYear }) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps<{
+  ssGuildInfo: GuildInfo<GuildInfoModelOption[]>,
+  copyrightYear: number
+}> = async ({ req, res }) => {
   const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   res.setHeader(

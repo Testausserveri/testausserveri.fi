@@ -49,14 +49,15 @@ export class TimeUtil {
                 .slice(0, 3) // Let's only care about the 3 largest units
                 .map(
                     ([u, v]) =>
-                        `${v} ${
-                            v >= 1
-                                ? this.Suffixes[u.toUpperCase()].trim()
-                                : this.Suffixes[u.toUpperCase()].substring(
-                                      0,
-                                      this.Suffixes[u.toUpperCase()].length - 1
-                                  )
-                        }`
+                    {
+                        let suffixKey: keyof typeof this.Suffixes = u.toUpperCase() as keyof typeof this.Suffixes;
+                        return `${v} ${v >= 1
+                            ? this.Suffixes[suffixKey].trim()
+                            : this.Suffixes[suffixKey].substring(
+                                0,
+                                this.Suffixes[suffixKey].length - 1
+                            )}`;
+                    }
                 )
                 .join(" ") || "0 secs"
         );

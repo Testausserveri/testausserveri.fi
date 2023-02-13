@@ -3,10 +3,10 @@ import { StatCard } from './StatCard'
 import styles from './StatGroup.module.css'
 
 export type StatGroupProps = {
-    stats?: { label: ReactNode, value: ReactNode }[]
+    stats?: { label: string, value: ReactNode }[]
 }
 
-export function StatGroup({ stats }) {
+export function StatGroup({ stats }: StatGroupProps) {
     if (!stats) return <></>
 
     return (

@@ -1,6 +1,6 @@
 import FadeIn from 'react-fade-in';
 import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
 
 type DiscordMessage = {
@@ -63,8 +63,8 @@ export function DiscordLive({ mobile, className }: {
         next(replayStartFrom)
     }, [messages])
 
-    function recursiveContent(i: number) {
-        if (!visibleMessages[i + 1]) return
+    function recursiveContent(i: number): ReactNode {
+        if (!visibleMessages[i + 1]) return null
         if (visibleMessages[i + 1].author.name == visibleMessages[i].author.name) {
             return <>
                 <br />

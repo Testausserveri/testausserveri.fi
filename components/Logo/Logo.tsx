@@ -3,7 +3,6 @@ import Image from 'next/image';
 import TestausserveriLogo from '../../assets/TestausserveriLogo.svg'
 import { Capsule } from '../Capsule/Capsule';
 import Link from 'next/link';
-import React from 'react';
 
 type InnerLogoProps = {
     showBeta?: boolean,
@@ -19,7 +18,13 @@ function InnerLogo({ showBeta, className }: InnerLogoProps) {
     </div>;
 }
 
-export function Logo({ className, showBeta, link }) {
+type LogoProps = {
+    showBeta?: boolean,
+    link?: boolean,
+    className?: string
+}
+
+export function Logo({ className, showBeta, link }: LogoProps) {
     if (link) {
         return (
             <div className={className}>

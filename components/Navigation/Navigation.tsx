@@ -2,7 +2,6 @@ import FadeIn from 'react-fade-in';
 import Link from 'next/link'
 import styles from './Navigation.module.css'
 import Hamburger from 'hamburger-react'
-import styled from 'styled-components'
 import { Logo } from '../Logo/Logo'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -22,7 +21,7 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
     const router = useRouter()
 
     useEffect(() => {
-        const onHashChangeStart = (url) => {
+        const onHashChangeStart = () => {
             setOpen(false)
         }
 

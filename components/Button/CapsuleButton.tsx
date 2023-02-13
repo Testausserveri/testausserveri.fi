@@ -1,6 +1,6 @@
 import styles from './CapsuleButton.module.css'
 import Image from 'next/image';
-import { PropsWithChildren, useRef, useState } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, MouseEventHandler, PropsWithChildren, TouchEventHandler, useRef, useState } from 'react';
 
 export type ButtonIconProps = {
     src: string
@@ -18,22 +18,21 @@ export type CapsuleButtonProps = PropsWithChildren<{
     style?: React.CSSProperties,
     small?: boolean,
     secondary?: boolean,
-    className?: string
-}>
+}> & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 export function CapsuleButton(props: CapsuleButtonProps) {
     const { style, children, small, secondary, ...otherProps } = props
     const ripple = useRef<HTMLDivElement>(null);
     const [size, setSize] = useState(0)
 
-    function onMouseMove(e) {
-        let rect = e.target.getBoundingClientRect()
+    const onMouseMove: MouseEventHandler<HTMLButtonElement> = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect()
         ripple.current.style.top = `${e.clientY - rect.top - 50}px`;
         ripple.current.style.left = `${e.clientX - rect.left - 50}px`;
     }
-    function onTouchMove(e) {
-        let rect = e.target.getBoundingClientRect()
-        let touch = e.touches[0]
+    const onTouchMove: TouchEventHandler<HTMLButtonElement> = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect()
+        const touch = e.touches[0]
         ripple.current.style.top = `${touch.clientY - rect.top - 50}px`;
         ripple.current.style.left = `${touch.clientX - rect.left - 50}px`;
     }

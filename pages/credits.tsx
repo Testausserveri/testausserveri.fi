@@ -11,6 +11,7 @@ const developers = [
   { name: "Eldemarkki", url: "https://github.com/Eldemarkki" },
   { name: "Esinko", url: "https://github.com/Esinko" }
 ]
+
 export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <article>
@@ -36,28 +37,27 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
             Tämän sivuston toteutuksessa käytettyjen avointen lähdekoodin ohjelmistojen tai kirjastojen lisenssit ja tekijänoikeudet ovat esitetty alla.
           </p>
           <table>
-            {Object.keys(licenses).map(pkg => {
-              let pkgName = pkg.slice(0, pkg.lastIndexOf("@"))
-              let publisher = licenses[pkg]?.publisher
-              publisher = publisher ? `© ${publisher}` : ""
-              let license = licenses[pkg]?.licenses
-              let repository = licenses[pkg]?.repository
-              let url = licenses[pkg]?.url
-              if(url && !url.startsWith("http://") && !url.startsWith("https://")){
-                url = `https://${url}`;
-              } 
-              
-              return (
-                <tr key={pkgName}>
-                  <td>{repository ? <Link href={repository}>{pkgName}</Link> : pkgName}</td>
-                  <td>{license}</td>
-                  <td>
-                    {url ? 
-                    <Link href={url}>{publisher}</Link> 
+          {Object.entries(licenses).map(([pkg, pkgObj]) => {
+            let pkgName = pkg.slice(0, pkg.lastIndexOf("@"));
+            let publisher = "publisher" in pkgObj ? `© ${pkgObj.publisher}` : "";
+            let license = pkgObj.licenses
+            let repository = "repository" in pkgObj ? pkgObj.repository : null
+            let url = "url" in pkgObj ? pkgObj.url : null;
+            if (url && !url.startsWith("http://") && !url.startsWith("https://")) {
+              url = `https://${url}`;
+            }
+
+            return (
+              <tr key={pkgName}>
+                <td>{repository ? <Link href={repository}>{pkgName}</Link> : pkgName}</td>
+                <td>{license}</td>
+                <td>
+                  {url ?
+                    <Link href={url}>{publisher}</Link>
                     : publisher}
-                  </td>
-                </tr>
-              )
+                </td>
+              </tr>
+            )
             })}
           </table>
         </Content>

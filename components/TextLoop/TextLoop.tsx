@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { useWrappingCounter } from '../../hooks/useWrappingCounter';
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 const TextLoopAnimation = (stayTimeRatio: number) => keyframes`
   0% {
