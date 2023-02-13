@@ -24,9 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-,
-"components/Login/Login.tsx"
-],
+  ],
   "exclude": [
     "node_modules"
   ]
