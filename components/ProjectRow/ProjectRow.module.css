@@ -23,13 +23,6 @@
 
 .image {
     border-radius: 1rem;
-}
-
-.image img {
-    object-fit: cover;
-    width: 8.5rem;
-    height: 8.5rem;
-    border-radius: 1rem;
     background-color: #474747;
 }
 
@@ -64,31 +57,33 @@
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #474747;
 }
+
 .compact.row .inner {
     flex-direction: column;
     gap: 1rem;
     padding: 0 0 1rem 0;
 }
-.compact .image img {
-    width: 100%;
-    height: 6rem;
+
+.compact .image {
     border-radius: 0.5rem;
 }
+
 @media only screen and (max-width: 600px) {
     .compact.row {
         margin-bottom: 2rem;
     }
+
     .row .inner {
         flex-direction: column;
         gap: 1rem;
         padding: 2rem 0 0 0;
     }
+
     .compact.row .inner {
         padding: 0 0 1.5rem 0;
     }
-    .image img {
-        width: 100%;
-        height: 6rem;
+
+    .image {
         border-radius: 0.5rem;
     }
 }

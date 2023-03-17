@@ -5,6 +5,7 @@ import styles from './ProjectRow.module.css'
 import { getProjectMediaUrl } from '../../utils/Project'
 import { getMemberAvatarUrl } from '../../utils/Member'
 import { DetailedProject, ShallowProject } from '../../utils/types'
+import Image from 'next/image'
 
 export type ProjectRowProps = {
     project: DetailedProject | ShallowProject,
@@ -22,8 +23,13 @@ export function ProjectRow({ project, compact }: ProjectRowProps) {
             <a>
                 <div className={`${styles.row} ${compact ? styles.compact : ""}`}>
                     <div className={styles.inner}>
-                        <div className={styles.image}>
-                            {cover && <img src={getProjectMediaUrl(cover.filename)} />}
+                        <div style={{ position: "relative", height: (compact ? 96 : 136) }}>
+                            {cover && <Image
+                                src={getProjectMediaUrl(cover.filename)}
+                                layout="fill"
+                                objectFit="cover"
+                                className={styles.image}
+                            />}
                         </div>
                         <div className={styles.content}>
                             <h2>{project.name}</h2>
