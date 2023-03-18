@@ -4,7 +4,7 @@ module.exports = {
     domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com'],
   },
   i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+    locales: ['fi'],
+    defaultLocale: 'fi',
   }
 }
