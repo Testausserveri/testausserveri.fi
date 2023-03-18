@@ -1,23 +1,5 @@
 {
-  "@ampproject/remapping@2.2.0": {
-    "licenses": "Apache-2.0",
-    "repository": "https://github.com/ampproject/remapping",
-    "publisher": "Justin Ridgewell",
-    "email": "jridgewell@google.com"
-  },
   "@babel/code-frame@7.18.6": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/compat-data@7.21.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/core@7.21.3": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -30,12 +12,6 @@
     "url": "https://babel.dev/team"
   },
   "@babel/helper-annotate-as-pure@7.18.6": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/helper-compilation-targets@7.20.7": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -65,18 +41,6 @@
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/helper-module-transforms@7.21.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/helper-simple-access@7.20.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
   "@babel/helper-split-export-declaration@7.18.6": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
@@ -90,18 +54,6 @@
     "url": "https://babel.dev/team"
   },
   "@babel/helper-validator-identifier@7.19.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/helper-validator-option@7.21.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/babel/babel",
-    "publisher": "The Babel Team",
-    "url": "https://babel.dev/team"
-  },
-  "@babel/helpers@7.21.0": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -163,12 +115,6 @@
     "repository": "https://github.com/floating-ui/floating-ui",
     "publisher": "atomiks"
   },
-  "@jridgewell/gen-mapping@0.1.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/jridgewell/gen-mapping",
-    "publisher": "Justin Ridgewell",
-    "email": "justin@ridgewell.name"
-  },
   "@jridgewell/gen-mapping@0.3.2": {
     "licenses": "MIT",
     "repository": "https://github.com/jridgewell/gen-mapping",
@@ -223,17 +169,6 @@
   },
   "@next/swc-linux-x64-musl@13.2.4": {
     "licenses": "MIT"
-  },
-  "@rollup/plugin-babel@6.0.3": {
-    "licenses": "MIT",
-    "repository": "https://github.com/rollup/plugins",
-    "publisher": "Rich Harris"
-  },
-  "@rollup/pluginutils@5.0.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/rollup/plugins",
-    "publisher": "Rich Harris",
-    "email": "richard.a.harris@gmail.com"
   },
   "@skyra/discord-components-core@3.6.0": {
     "licenses": "MIT",
@@ -362,12 +297,6 @@
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
   },
-  "browserslist@4.21.5": {
-    "licenses": "MIT",
-    "repository": "https://github.com/browserslist/browserslist",
-    "publisher": "Andrey Sitnik",
-    "email": "andrey@sitnik.ru"
-  },
   "camelize@1.0.1": {
     "licenses": "MIT",
     "repository": "https://github.com/ljharb/camelize",
@@ -455,18 +384,6 @@
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
   },
-  "convert-source-map@1.9.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/thlorenz/convert-source-map",
-    "publisher": "Thorsten Lorenz",
-    "email": "thlorenz@gmx.de",
-    "url": "http://thlorenz.com"
-  },
-  "countup.js@2.6.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/inorganik/countUp.js",
-    "publisher": "@inorganik"
-  },
   "css-color-keywords@1.0.0": {
     "licenses": "ISC",
     "repository": "https://github.com/sonicdoe/css-color-keywords",
@@ -507,23 +424,6 @@
   "diff@5.1.0": {
     "licenses": "BSD-3-Clause",
     "repository": "https://github.com/kpdecker/jsdiff"
-  },
-  "electron-to-chromium@1.4.332": {
-    "licenses": "ISC",
-    "repository": "https://github.com/kilian/electron-to-chromium",
-    "publisher": "Kilian Valkhof"
-  },
-  "enhanced-resolve@5.12.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/webpack/enhanced-resolve",
-    "publisher": "Tobias Koppers @sokra"
-  },
-  "escalade@3.1.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/lukeed/escalade",
-    "publisher": "Luke Edwards",
-    "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com"
   },
   "escape-string-regexp@1.0.5": {
     "licenses": "MIT",
@@ -567,11 +467,6 @@
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
   },
-  "estree-walker@2.0.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/Rich-Harris/estree-walker",
-    "publisher": "Rich Harris"
-  },
   "estree-walker@3.0.3": {
     "licenses": "MIT",
     "repository": "https://github.com/Rich-Harris/estree-walker",
@@ -584,22 +479,12 @@
     "email": "justmoon@members.fsf.org",
     "url": "http://www.justmoon.net"
   },
-  "gensync@1.0.0-beta.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/loganfsmyth/gensync",
-    "publisher": "Logan Smyth",
-    "email": "loganfsmyth@gmail.com"
-  },
   "globals@11.12.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/globals",
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
-  },
-  "graceful-fs@4.2.11": {
-    "licenses": "ISC",
-    "repository": "https://github.com/isaacs/node-graceful-fs"
   },
   "hamburger-react@2.5.0": {
     "licenses": "MIT",
@@ -708,12 +593,6 @@
     "publisher": "Mathias Bynens",
     "url": "https://mathiasbynens.be/"
   },
-  "json5@2.2.3": {
-    "licenses": "MIT",
-    "repository": "https://github.com/json5/json5",
-    "publisher": "Aseem Kishore",
-    "email": "aseem.kishore@gmail.com"
-  },
   "kleur@4.1.5": {
     "licenses": "MIT",
     "repository": "https://github.com/lukeed/kleur",
@@ -746,12 +625,6 @@
     "repository": "https://github.com/zertosh/loose-envify",
     "publisher": "Andres Suarez",
     "email": "zertosh@gmail.com"
-  },
-  "lru-cache@5.1.1": {
-    "licenses": "ISC",
-    "repository": "https://github.com/isaacs/node-lru-cache",
-    "publisher": "Isaac Z. Schlueter",
-    "email": "i@izs.me"
   },
   "markdown-extensions@1.1.1": {
     "licenses": "MIT",
@@ -1043,32 +916,14 @@
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru"
   },
-  "next-compose-plugins@2.2.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/cyrilwanner/next-compose-plugins",
-    "publisher": "Cyril Wanner",
-    "email": "info@cyr.li"
-  },
   "next-mdx-remote@4.4.1": {
     "licenses": "MPL-2.0",
     "repository": "https://github.com/hashicorp/next-mdx-remote",
     "publisher": "Jeff Escalante"
   },
-  "next-transpile-modules@9.1.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/martpie/next-transpile-modules",
-    "publisher": "Pierre de la Martinière",
-    "email": "pierre.de.la.martiniere@gmail.com"
-  },
   "next@13.2.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
-  },
-  "node-releases@2.0.10": {
-    "licenses": "MIT",
-    "repository": "https://github.com/chicoxyzzy/node-releases",
-    "publisher": "Sergey Rubanov",
-    "email": "chi187@gmail.com"
   },
   "on-change@4.0.2": {
     "licenses": "MIT",
@@ -1117,19 +972,6 @@
     "publisher": "Titus Wormer",
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
-  },
-  "react-countup@6.4.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/glennreyes/react-countup",
-    "publisher": "Glenn Reyes",
-    "email": "glenn@glennreyes.com",
-    "url": "https://twitter.com/glnnrys"
-  },
-  "react-device-detect@2.2.3": {
-    "licenses": "MIT",
-    "repository": "https://github.com/duskload/react-device-detect",
-    "publisher": "Michael Laktionov",
-    "email": "duskload@gmail.com"
   },
   "react-dom@18.2.0": {
     "licenses": "MIT",
@@ -1202,10 +1044,6 @@
     "email": "mail@substack.net",
     "url": "http://substack.net"
   },
-  "semver@6.3.0": {
-    "licenses": "ISC",
-    "repository": "https://github.com/npm/node-semver"
-  },
   "shallowequal@1.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/dashed/shallowequal",
@@ -1261,11 +1099,6 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "tapable@2.2.1": {
-    "licenses": "MIT",
-    "repository": "https://github.com/webpack/tapable",
-    "publisher": "Tobias Koppers @sokra"
-  },
   "to-fast-properties@2.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/sindresorhus/to-fast-properties",
@@ -1291,13 +1124,6 @@
     "licenses": "0BSD",
     "repository": "https://github.com/Microsoft/tslib",
     "publisher": "Microsoft Corp."
-  },
-  "ua-parser-js@1.0.34": {
-    "licenses": "MIT",
-    "repository": "https://github.com/faisalman/ua-parser-js",
-    "publisher": "Faisal Salman",
-    "email": "f@faisalman.com",
-    "url": "http://faisalman.com"
   },
   "unified@10.1.2": {
     "licenses": "MIT",
@@ -1362,12 +1188,6 @@
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
   },
-  "update-browserslist-db@1.0.10": {
-    "licenses": "MIT",
-    "repository": "https://github.com/browserslist/update-db",
-    "publisher": "Andrey Sitnik",
-    "email": "andrey@sitnik.ru"
-  },
   "uvu@0.5.6": {
     "licenses": "MIT",
     "repository": "https://github.com/lukeed/uvu"
@@ -1399,13 +1219,6 @@
     "publisher": "Titus Wormer",
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com"
-  },
-  "yallist@3.1.1": {
-    "licenses": "ISC",
-    "repository": "https://github.com/isaacs/yallist",
-    "publisher": "Isaac Z. Schlueter",
-    "email": "i@izs.me",
-    "url": "http://blog.izs.me/"
   },
   "zwitch@2.0.4": {
     "licenses": "MIT",
