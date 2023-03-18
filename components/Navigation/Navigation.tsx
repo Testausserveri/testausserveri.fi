@@ -4,6 +4,7 @@ import Hamburger from 'hamburger-react'
 import { Logo } from '../Logo/Logo'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { FadeIn } from '../FadeIn/FadeIn';
 
 export type NavigationProps = {
     className?: string,
@@ -45,15 +46,19 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
             </div>
 
             <ul className={`${styles.items} noLinkStyles`}>
-                {pages.map(page => (
-                    <li key={page.path}>
-                        <Link
-                            shallow={true}
-                            href={page.path}
-                            className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
-                            {page.label}
-                        </Link>
-                    </li>))}
+                {pages.map(page => {
+                    const Component = () => <Link
+                        shallow={true}
+                        href={page.path}
+                        className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                        {page.label}
+                    </Link>;
+                    return (
+                        <li key={page.path}>
+                            {open ? <FadeIn><Component /></FadeIn> : <Component />}
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     )
