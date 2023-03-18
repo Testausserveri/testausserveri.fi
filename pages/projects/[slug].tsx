@@ -169,7 +169,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
   return (
     <div>
       <Head>
-        <title>{project.name} | Testausserveri</title>
+        <title>{`${project.name} | Testausserveri`}</title>
         <meta property="og:site_name" content="Testausserveri"></meta>
         <meta property="og:title" content={project.name} />
         {cover && <meta property="og:image" content={getProjectMediaUrl(cover.filename)} />}
