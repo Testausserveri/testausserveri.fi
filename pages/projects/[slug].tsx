@@ -173,6 +173,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
         <meta property="og:title" content={project.name} />
         {cover && <meta property="og:image" content={getProjectMediaUrl(cover.filename)} />}
         <meta property="og:description" content={project.description.short} />
+        <meta name="description" content={project.description.short} />
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       {/* @ts-ignore */}

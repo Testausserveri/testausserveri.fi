@@ -84,6 +84,7 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
     <div>
       <Head>
         <title>Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>

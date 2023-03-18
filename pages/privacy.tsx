@@ -35,6 +35,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
     <div>
       <Head>
           <title>Tietosuojaseloste | Testausserveri</title>
+          <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
         <H1>Rekisteri - ja tietosuojaseloste</H1>

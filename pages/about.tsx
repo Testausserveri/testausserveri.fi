@@ -105,6 +105,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
     <div>
       <Head>
         <title>Tietoa meistä | Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
         <DisplayImage placeholder="blur" src={testausmeetImg} />

@@ -18,6 +18,7 @@ export default function Projects({ projectsData: projects, isMobile, copyrightYe
     <div>
       <Head>
         <title>Projektit | Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
         {!isMobile ? <Projects3D /> :

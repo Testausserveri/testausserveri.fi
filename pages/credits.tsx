@@ -17,6 +17,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
     <article>
         <Head>
             <title>Kehittäjät ja lisenssit | Testausserveri</title>
+            <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
         </Head>
         <Content>
           <H1>Kehittäjät</H1>
