@@ -24,6 +24,7 @@
 .image {
     border-radius: 1rem;
     background-color: #474747;
+    object-fit: cover;
 }
 
 .content {

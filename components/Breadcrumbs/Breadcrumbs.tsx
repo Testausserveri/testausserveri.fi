@@ -10,11 +10,11 @@ export type BreadcrumbsProps = {
 
 export function Breadcrumbs({ route }: BreadcrumbsProps) {
     return (
-        <ul className={styles.breadcrumbs}>
+        <ul className={styles.breadcrumbs + " noLinkStyles"}>
             {route.map(breadcrumb => (
-                <Link href={breadcrumb.path}>
-                    <li key={breadcrumb.name}>{breadcrumb.name}</li>
-                </Link>
+                <li key={breadcrumb.name}>
+                    <Link href={breadcrumb.path}>{breadcrumb.name}</Link>
+                </li>
             ))}
         </ul>
     )

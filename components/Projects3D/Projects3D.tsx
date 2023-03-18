@@ -4,8 +4,9 @@ import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
 import { Capsule } from '../Capsule/Capsule';
 import { HiOutlineCubeTransparent } from 'react-icons/hi'
-import Tippy from '@tippyjs/react';
 import { SplineEvent } from '@splinetool/runtime';
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
     ssr: false,
@@ -85,11 +86,10 @@ export function Projects3D() {
                 />
             </div>
             <Capsule className={styles.tip} ref={tipCapsule} />
-            <Tippy content="Voit pyörittää 3D-mallia raahaamalla hiirtä!">
-                <span className={styles.cube}>
-                    <HiOutlineCubeTransparent />
-                </span>
-            </Tippy>
+            <Tooltip id="rotate-3d-tooltip">Voit pyörittää 3D-mallia raahaamalla hiirtä!</Tooltip>
+            <span className={styles.cube} data-tooltip-id="rotate-3d-tooltip">
+                <HiOutlineCubeTransparent />
+            </span>
         </div>
     )
 }

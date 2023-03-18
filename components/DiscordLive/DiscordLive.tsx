@@ -1,7 +1,7 @@
-import FadeIn from 'react-fade-in';
 import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
+import { FadeIn } from '../FadeIn/FadeIn'
 
 type DiscordMessage = {
     id: number,
@@ -113,3 +113,5 @@ export function HeroDiscordLive({ focused }: {
         </div>
     )
 }
+
+export default HeroDiscordLive;

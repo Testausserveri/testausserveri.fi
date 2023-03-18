@@ -1,7 +1,7 @@
 import { apiServerMedia } from "./api"
 import GithubIcon from '../assets/GithubIcon.svg'
 import { BiHome, BiLink } from "react-icons/bi";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { ProjectLinkType, ProjectMediaType } from "./types";
 
 export type ProjectMedia = {

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer';

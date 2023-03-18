@@ -1,4 +1,3 @@
-import FadeIn from 'react-fade-in';
 import Link from 'next/link'
 import styles from './Navigation.module.css'
 import Hamburger from 'hamburger-react'
@@ -50,19 +49,15 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
                     const Component = () => (
                         <Link
                             shallow={true}
-                            href={page.path}>
-                            <a className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
-                                <li>
-                                    {page.label}
-                                </li>
-                            </a>
+                            href={page.path}
+                            className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                            <li>
+                                {page.label}
+                            </li>
                         </Link>
                     )
-                    if (open) {
-                        return <FadeIn key={page.label} ><Component /></FadeIn>
-                    } else {
-                        return <Component key={page.label} />
-                    }
+
+                    return <Component key={page.label} />
                 })}
             </ul>
         </div>

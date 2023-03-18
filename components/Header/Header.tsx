@@ -20,13 +20,11 @@ export function Header({ pages, activePath }: HeaderProps) {
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
             <Logo className={styles.logo} showBeta link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
-            <a className={styles.navButtons}>
-                <a href="https://discord.testausserveri.fi">
-                    <CapsuleButton className={styles.button} small>
-                        <ButtonIcon src={DiscordIcon} />
-                        Discord
-                    </CapsuleButton>
-                </a>
+            <a href="https://discord.testausserveri.fi" className={styles.navButtons}>
+                <CapsuleButton className={styles.button} small>
+                    <ButtonIcon src={DiscordIcon} alt="Discord logo" />
+                    Discord
+                </CapsuleButton>
             </a>
         </div>
     )

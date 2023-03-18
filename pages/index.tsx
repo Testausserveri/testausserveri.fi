@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
-
-import { HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
+import dynamic from 'next/dynamic'
+const HeroDiscordLive = dynamic(() => import('../components/DiscordLive/DiscordLive'), { ssr: false })
 import { H1 } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
@@ -108,15 +108,15 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
             <GradientText>3D-artisteille</GradientText>
           </TextLoop>
         </H1>
-        <a href="https://discord.testausserveri.fi">
+        <Link href="https://discord.testausserveri.fi">
           <CapsuleButton
             style={{ margin: "-0.3rem 0 0.4rem 0" }}
             onMouseOver={() => { setHeroFocused(true) }}
             onMouseLeave={() => { setHeroFocused(false) }}>
-            <ButtonIcon src={DiscordIcon} />
+            <ButtonIcon src={DiscordIcon} alt="Discord logo" />
             Tule juttelemaan!
           </CapsuleButton>
-        </a>
+        </Link>
       </Center>
       <Content>
         <StatGroup stats={stats} />

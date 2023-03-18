@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Content } from '../components/Content/Content'
 import { H2 } from '../components/Title/Title'
 import styled from 'styled-components'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 // pictures
 import testausmeetImg from '../assets/about/testausmeet.jpg'
@@ -153,12 +153,10 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             ["Github", "https://github.com/testausserveri", GithubIcon],
             ["Twitter", "https://twitter.com/testausserveri", TwitterIcon],
           ].map((social) => (
-            <Link href={social[1]}>
-              <a key={social[0]}>
-                <Image src={social[2]} height={24} width={24} unoptimized />
-                {social[0]}
-              </a>
-            </Link>
+            (<Link href={social[1]} key={social[0]}>
+              <Image src={social[2]} height={24} width={24} unoptimized />
+              {social[0]}
+            </Link>)
           ))}
         </Grid>
 

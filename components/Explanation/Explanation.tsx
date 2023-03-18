@@ -1,18 +1,20 @@
 import styles from './Explanation.module.css'
 import { RiQuestionLine } from "react-icons/ri"
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css'; // optional
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useId } from 'react';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css'
 
 export type ExplanationProps = PropsWithChildren<{}>
 
 export function Explanation({ children }: ExplanationProps) {
+    const id = useId();
+
     return (
-        <Tippy 
-            className="tip"
-            interactive={true} 
-            content={children}>
-            <span className={styles.explanation}><RiQuestionLine /></span>
-        </Tippy>
+        <>
+            <Tooltip id={id}>
+                {children}
+            </Tooltip>
+            <span className={styles.explanation} data-tooltip-id={id}><RiQuestionLine /></span>
+        </>
     )
 }

@@ -6,6 +6,7 @@ import w4cfi from '../../assets/collaborations/w4cfi.png'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
 import krp from '../../assets/collaborations/logo_krp.png'
+import Link from 'next/link'
 
 export type CollaborationsProps = {
     style?: CSSProperties
@@ -20,29 +21,29 @@ export function Collaborations(props: CollaborationsProps) {
             : null}
             <ul className="noLinkStyles" style={props.noTitle ? {marginTop: "1rem"} : {}}>
                 <li>
-                    <a href="https://saucesoft.io" target="_blank">
+                    <Link href="https://saucesoft.io" target="_blank">
                         <img src={saucesoft.src} height={80} />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://challenge.fi" target="_blank">
+                    <Link href="https://challenge.fi" target="_blank">
                         <img src={genz.src} height={80} />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://www.women4cyberfinland.com/" target="_blank">
+                    <Link href="https://www.women4cyberfinland.com/" target="_blank">
                         <img src={w4cfi.src} height={80} />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://poliisi.fi/cybercrime-exit" target="_blank">
+                    <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
                         <img src={krp.src} height={80} />
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://koodiasuomesta.fi/" target="_blank">
+                    <Link href="https://koodiasuomesta.fi/" target="_blank">
                         <img src={koodiasuomesta.src} height={80} />
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>

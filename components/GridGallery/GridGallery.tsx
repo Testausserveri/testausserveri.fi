@@ -1,4 +1,4 @@
-import Image, { ImageProps, StaticImageData } from 'next/image'
+import Image, { ImageProps, StaticImageData } from "next/legacy/image"
 import styles from './GridGallery.module.css'
 
 export type GridGalleryProps = {
