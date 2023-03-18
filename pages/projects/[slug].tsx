@@ -18,6 +18,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getProjectLinkIcon, getProjectLinkTitle, getProjectLinkUrl, getProjectMediaUrl } from "../../utils/Project";
 import { getMemberAvatarUrl } from '../../utils/Member'
 import { DetailedProject, ShallowProject } from "../../utils/types";
+import Link from 'next/link'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -57,7 +58,7 @@ const AvatarRowExtended = styled.div`
   }
 `
 
-const ProjectLinks = styled.div`
+const ProjectLinks = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -237,17 +238,17 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
 
               {project.links.length > 0 ? <>
                 <H2>Linkit</H2>
-                <ProjectLinks>
+                <ProjectLinks className="noLinkStyles">
                   {project.links.map(link => (
-                    <a href={link.url} key={link.url}>
-                      <ProjectLink>
+                    <ProjectLink key={link.url}>
+                      <Link href={link.url} >
                         <ProjectLinkTitleContainer>
                           {getProjectLinkIcon(link.type)}
                           <h3>{getProjectLinkTitle(link.type, link.name)}</h3>
                         </ProjectLinkTitleContainer>
                         <span>{getProjectLinkUrl(link.type, link.url)}</span>
-                      </ProjectLink>
-                    </a>
+                      </Link>
+                    </ProjectLink>
                   ))}
                 </ProjectLinks>
               </> : null}
