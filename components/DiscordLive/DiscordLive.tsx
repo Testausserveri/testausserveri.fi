@@ -4,6 +4,8 @@ import styles from './DiscordLive.module.css'
 import { FadeIn } from '../FadeIn/FadeIn'
 import Image from 'next/image'
 import DiscordImage from './discord.png'
+import dynamic from 'next/dynamic'
+const DiscordMessageList = dynamic(() => import('./DiscordMessageList'), { ssr: false })
 
 type DiscordMessage = {
     id: number,
@@ -27,7 +29,7 @@ const wrapEmojis = (text: string) => {
     });
 }
 
-function formatDiscordContent(content: string) {
+export function formatDiscordContent(content: string) {
     return wrapEmojis(content)
 }
 
@@ -84,16 +86,7 @@ export function DiscordLive({ mobile, className }: {
             />
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
-                    <DiscordMessages className={styles.discordMessages}>
-                        {visibleMessages.map((message, i) =>
-                            visibleMessages[i - 1]?.author?.name != visibleMessages[i].author.name ? (
-                                <DiscordMessage key={message.id} avatar={`/discordlive/avatars/${message.author.avatar}`} author={message.author.name} roleColor={message.author.color}>
-                                    <span className="discord-message-markup">{formatDiscordContent(message.content)}</span>
-                                    <span className="discord-message-markup">{recursiveContent(i)}</span>
-                                </DiscordMessage>
-                            ) : null
-                        )}
-                    </DiscordMessages>
+                    <DiscordMessageList visibleMessages={visibleMessages} recursiveContent={recursiveContent} />
                 </div>
             </div>
         </div>

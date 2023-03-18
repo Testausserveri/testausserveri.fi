@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
-import dynamic from 'next/dynamic'
-const HeroDiscordLive = dynamic(() => import('../components/DiscordLive/DiscordLive'), { ssr: false })
 import { H1 } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
@@ -19,6 +17,7 @@ import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption } from '../utils/types';
+import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
