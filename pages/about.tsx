@@ -70,18 +70,6 @@ const Grid = styled.div`
   &.soc img {
     opacity: 0.8;
   }
-  >a {
-    border-radius: 0.5rem;
-    background-color: rgba(108, 108, 108, 0.09);
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-item: center;
-    flex-direction: column;
-    text-align: center;
-    gap: .5rem;
-    transition: background-color 0.1s;
-  }
   >a:hover {
     background-color: rgba(108, 108, 108, 0.15);
   }
@@ -93,7 +81,31 @@ const Grid = styled.div`
   }
 `
 
+const SocialLink = styled(Link)`
+  border-radius: 0.5rem;
+  background-color: rgba(108, 108, 108, 0.09);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  flex-direction: column;
+  text-align: center;
+  gap: .5rem;
+  transition: background-color 0.1s;
+`
 
+const PersonIntroduction = styled.div`
+  border-radius: 0.5rem;
+  background-color: rgba(108, 108, 108, 0.09);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  flex-direction: column;
+  text-align: center;
+  gap: .5rem;
+  transition: background-color 0.1s;
+`
 
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
@@ -108,7 +120,11 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
-        <DisplayImage placeholder="blur" src={testausmeetImg} />
+        <DisplayImage
+          placeholder="blur"
+          src={testausmeetImg}
+          alt="Kuva Testausmeetistä. Noin 20 Testausserverin jäsentä istuu pöydän ääressä ja katsoo suurta näyttöä, jossa esitellään hallitusehdokkaita."
+        />
         <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0" }}>Testausmeet 5/2022</p>
         <p style={{ marginTop: "1.5rem" }}>
           Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta.
@@ -172,10 +188,10 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             ["Github", "https://github.com/testausserveri", GithubIcon],
             ["Twitter", "https://twitter.com/testausserveri", TwitterIcon],
           ].map((social) => (
-            (<Link href={social[1]} key={social[0]}>
+            (<SocialLink href={social[1]} key={social[0]}>
               <Image src={social[2]} alt={`${social[0]} logo`} height={24} width={24} unoptimized />
               {social[0]}
-            </Link>)
+            </SocialLink>)
           ))}
         </Grid>
 
@@ -191,14 +207,13 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintävastaava"],
             [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmävastaava"]
           ] as const).map(person => (
-            <a key={person[1]}>
+            <PersonIntroduction key={person[1]}>
               <span>
-                <Image width="64" height="64" src={person[0]} placeholder="blur" alt={`${person[1]}`} />
+                <Image width="64" height="64" src={person[0]} placeholder="blur" alt={person[1]} />
               </span>
-
               <span>{person[1]}</span>
               <span>{person[2]}</span>
-            </a>
+            </PersonIntroduction>
           ))}
         </Grid>
 
