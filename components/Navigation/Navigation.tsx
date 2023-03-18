@@ -45,20 +45,15 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
             </div>
 
             <ul className={`${styles.items} noLinkStyles`}>
-                {pages.map(page => {
-                    const Component = () => (
+                {pages.map(page => (
+                    <li key={page.path}>
                         <Link
                             shallow={true}
                             href={page.path}
                             className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
-                            <li>
-                                {page.label}
-                            </li>
+                            {page.label}
                         </Link>
-                    )
-
-                    return <Component key={page.label} />
-                })}
+                    </li>))}
             </ul>
         </div>
     )
