@@ -2,6 +2,8 @@ import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/disc
 import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
 import { FadeIn } from '../FadeIn/FadeIn'
+import Image from 'next/image'
+import DiscordImage from './discord.png'
 
 type DiscordMessage = {
     id: number,
@@ -75,6 +77,11 @@ export function DiscordLive({ mobile, className }: {
     }
     return (
         <div className={(mobile ? `${styles.discordBackground} ${styles.mobile}` : styles.discordBackground) + " " + (className || "")}>
+            <Image
+                src={DiscordImage}
+                alt="Discord application"
+                fill
+            />
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
                     <DiscordMessages className={styles.discordMessages}>

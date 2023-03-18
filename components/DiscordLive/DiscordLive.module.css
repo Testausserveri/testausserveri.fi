@@ -2,8 +2,6 @@
     aspect-ratio: 1.694 / 1;
     width: 1120px;
     position: relative;
-    background-image: url("discord.png");
-    background-size: 100% 100%;
 }
 
 .liveArea {
@@ -107,3 +105,4 @@
         margin-bottom: -32rem;
     }
 }
+

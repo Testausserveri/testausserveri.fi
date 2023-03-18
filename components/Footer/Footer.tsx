@@ -74,7 +74,11 @@ export function Footer({ copyrightYear }: FooterProps) {
                         <div>
                             <div>
                                 <Link href="/">
-                                    <img src={TestausserveriLogo.src}  className={styles.logo} />
+                                    <Image
+                                        src={TestausserveriLogo}
+                                        alt="Testausserveri logo"
+                                        className={styles.logo}
+                                    />
                                 </Link>
                                 <span className={styles.businessId}>Y-tunnus: 3235794-4</span>
                             </div>
