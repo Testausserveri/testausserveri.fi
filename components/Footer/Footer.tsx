@@ -4,7 +4,7 @@ import TestausserveriLogo from '../../assets/TestausserveriFullLogo.svg'
 
 import GithubIcon from '../../assets/GithubIcon.svg'
 import InstagramIcon from '../../assets/InstagramIcon.svg'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 

@@ -29,7 +29,7 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
         return () => {
             router.events.off("routeChangeComplete", onHashChangeStart)
         }
-    }, [router.events])
+    }, [router.events, setOpen])
 
     const openClassName = open ? styles.open : ""
     return (

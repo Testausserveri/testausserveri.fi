@@ -1,4 +1,4 @@
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useEffect, useState } from 'react'
 import styles from './Gallery.module.css'
 
@@ -21,12 +21,17 @@ export function Gallery({ media }: GalleryProps) {
         <div>
             <div className={styles.display}>
                 {items[activeMedia]?.url ?
-                    <Image src={items[activeMedia].url} layout="fill" />
+                    <Image
+                        src={items[activeMedia].url}
+                        alt=""
+                        fill />
                     : null}
             </div>
             <ul className={styles.chooser}>
                 {items.map((item, i) => (
-                    <li key={i} onClick={() => setActiveMedia(i)}><Image src={item.url} layout="fill" /></li>
+                    <li key={i} onClick={() => setActiveMedia(i)}>
+                        <Image src={item.url} alt="" fill />
+                    </li>
                 ))}
             </ul>
         </div>

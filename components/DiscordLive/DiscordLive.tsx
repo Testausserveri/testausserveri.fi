@@ -1,4 +1,4 @@
-import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordCustomEmoji, DiscordMessage } from '@skyra/discord-components-react'
 import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
 import { FadeIn } from '../FadeIn/FadeIn'
@@ -23,7 +23,7 @@ const wrapEmojis = (text: string) => {
     return textArray.map(str => {
         const params = /:.+?:(\d+)/gi.exec(str)
         if (params) {
-            return <DiscordCustomEmoji url={"https://cdn.discordapp.com/emojis/" + params[1] + ".png"} />;
+            return <DiscordCustomEmoji key={str + "-" + params.join(".")} url={"https://cdn.discordapp.com/emojis/" + params[1] + ".png"} />;
         }
         return str;
     });

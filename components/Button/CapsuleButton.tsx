@@ -1,5 +1,5 @@
 import styles from './CapsuleButton.module.css'
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { DetailedHTMLProps, HTMLAttributes, MouseEventHandler, PropsWithChildren, TouchEventHandler, useRef, useState } from 'react';
 
 export type ButtonIconProps = {

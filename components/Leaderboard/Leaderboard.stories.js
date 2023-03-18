@@ -19,7 +19,8 @@ Default.args = {
 export const Group = ((args) => <LeaderboardGroup {...args} />).bind({})
 Group.args = {
   children: [
-    <Leaderboard 
+    <Leaderboard
+      key="1"
       data={[
         {name: "Testauskoira", value: 1900},
         {name: "Timo", value: 800},
@@ -28,7 +29,8 @@ Group.args = {
         {name: "Vladimir", value: 8000},
       ]}
       title="Eniten viestejä tänään" />,
-    <Leaderboard 
+    <Leaderboard
+      key="2"
       data={[
         {name: "Testauskoira", value: 1900},
         {name: "Timo", value: 800},

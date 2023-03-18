@@ -1,8 +1,13 @@
 import Image, { ImageProps, StaticImageData } from "next/legacy/image"
 import styles from './GridGallery.module.css'
 
+type MediaImage = {
+    image: string | StaticImageData,
+    alt: string
+}
+
 export type GridGalleryProps = {
-    media: (string | StaticImageData)[],
+    media: MediaImage[],
     imageProps?: Omit<ImageProps, 'src'>
 }
 
@@ -14,12 +19,16 @@ export type GridGalleryProps = {
  * X | X
  * X | X
  */
-export function GridGallery({media, imageProps}: GridGalleryProps) {
+export function GridGallery({ media, imageProps }: GridGalleryProps) {
     return (
         <div className={styles.gridGallery}>
-           {media.map(url => (
-            <Image src={url} key={typeof url === "string" ? url : url.src} {...imageProps} />
-           ))}
+            {media.map(m => (
+                <Image
+                    src={m.image}
+                    key={typeof m === "string" ? m : m.alt}
+                    alt={m.alt}
+                    {...imageProps} />
+            ))}
         </div>
     )
 }

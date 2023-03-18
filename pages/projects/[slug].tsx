@@ -204,7 +204,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
               <div style={{ marginTop: "2rem" }}>
                 {Object.keys(mdxSerialized.readmes).length > 0 ?
                   Object.keys(mdxSerialized.readmes).map(repository => (
-                    <RepositoryReadme>
+                    <RepositoryReadme key={repository}>
                       <span>
                         <span>
                           README.md-dokumentaatio GitHub-repositoriolle
