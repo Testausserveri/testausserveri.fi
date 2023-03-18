@@ -1,8 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
-    domains: ['api.testausserveri.fi'],
+    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com'],
   },
   i18n: {
     locales: ['en'],
