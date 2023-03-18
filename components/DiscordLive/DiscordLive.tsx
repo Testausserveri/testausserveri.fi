@@ -4,6 +4,7 @@ import styles from './DiscordLive.module.css'
 import { FadeIn } from '../FadeIn/FadeIn'
 import Image from 'next/image'
 import DiscordImage from './discord.png'
+import DiscordImageMobile from './discord-mobile.png'
 import dynamic from 'next/dynamic'
 const DiscordMessageList = dynamic(() => import('./DiscordMessageList'), { ssr: false })
 
@@ -83,6 +84,13 @@ export function DiscordLive({ mobile, className }: {
                 src={DiscordImage}
                 alt="Discord application"
                 fill
+                className={styles.desktopImage}
+            />
+            <Image
+                src={DiscordImageMobile}
+                alt="Discord application"
+                fill
+                className={styles.mobileImage}
             />
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
