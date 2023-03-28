@@ -17,6 +17,7 @@ import ellBoardImg from '../assets/about/board/ell.jpeg'
 import mkrBoardImg from '../assets/about/board/mkr.jpeg'
 import sinBoardImg from '../assets/about/board/sin.jpeg'
 import heiBoardImg from '../assets/about/board/hei.jpeg'
+import serBoardImg from '../assets/about/board/ser.jpeg'
 import steveBoardImg from '../assets/about/board/steve.jpeg'
 
 // icons
@@ -49,7 +50,7 @@ const Grid = styled.div`
     grid-template-columns: 1fr 1fr;
   }
   &.board {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     @media only screen and (max-width: 650px) {
       grid-template-columns: 1fr 1fr;
     }
@@ -164,15 +165,16 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
 
         <H2>Yhdistysjärjestys</H2>
         <p>
-          Yhdistyksen hallitukseen kuuluvat toimikaudella 2022 seuraavat henkilöt:
+          Yhdistyksen hallitukseen kuuluvat toimikaudella 2023 seuraavat henkilöt:
         </p>
         <Grid className="board">
           {([
-            [hanBoardImg, "Mikael Hannolainen", "puheenjohtaja"],
-            [sinBoardImg, "Eemil Sinkko", "varapuheenjohtaja"],
+            [sinBoardImg, "Eemil Sinkko", "puheenjohtaja, talous"],
+            [ellBoardImg, "Antti Ellilä", "varapuheenjohtaja, tietojärjestelmät"],
+            [hanBoardImg, "Mikael Hannolainen", "sihteeri"],
             [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
-            [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintävastaava"],
-            [ellBoardImg, "Antti Ellilä", "hallituksen jäsen, tietojärjestelmävastaava"]
+            [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintä"],
+            [serBoardImg, "Sergey Ichtchenko", "hallituksen jäsen, yhteistyöt"],
           ] as const).map(person => (
             <a>
               <span>
