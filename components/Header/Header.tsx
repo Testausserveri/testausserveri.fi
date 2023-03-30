@@ -32,8 +32,6 @@ const Avatar = styled.img`
 export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
     const [open, setOpen] = useState(false)
 
-    const [loginVisible, setLoginVisible] = useState(false)
-
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
             <Logo className={styles.logo} showBeta link />

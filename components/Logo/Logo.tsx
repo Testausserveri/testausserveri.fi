@@ -1,5 +1,5 @@
 import styles from './Logo.module.css'
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import TestausserveriLogo from '../../assets/TestausserveriLogo.svg'
 import { Capsule } from '../Capsule/Capsule';
 import Link from 'next/link';
@@ -29,9 +29,7 @@ export function Logo({ className, showBeta, link }: LogoProps) {
         return (
             <div className={className}>
                 <Link href="/" passHref>
-                    <a>
-                        <InnerLogo showBeta={showBeta} />
-                    </a>
+                    <InnerLogo showBeta={showBeta} />
                 </Link>
             </div>
         )

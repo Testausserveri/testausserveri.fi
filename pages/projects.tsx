@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer';
@@ -18,6 +18,7 @@ export default function Projects({ projectsData: projects, isMobile, copyrightYe
     <div>
       <Head>
         <title>Projektit | Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
         {!isMobile ? <Projects3D /> :
@@ -25,6 +26,7 @@ export default function Projects({ projectsData: projects, isMobile, copyrightYe
             <Image
               src={Projects3DMobile}
               layout="responsive"
+              alt="Kuva, jossa näkyy 3D-mallit pöydästä, usb-tikusa, herätyskellosta, tietokoneesta sekä polkupyörästä jonka kyljessä on QR-koodi"
             />
           </div>
         }

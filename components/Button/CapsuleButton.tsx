@@ -1,15 +1,16 @@
 import styles from './CapsuleButton.module.css'
-import Image from 'next/image';
+import Image from "next/image";
 import { DetailedHTMLProps, HTMLAttributes, MouseEventHandler, PropsWithChildren, TouchEventHandler, useRef, useState } from 'react';
 
 export type ButtonIconProps = {
-    src: string
+    src: string,
+    alt: string,
 }
 
-export function ButtonIcon({ src }: ButtonIconProps) {
+export function ButtonIcon({ src, alt }: ButtonIconProps) {
     return (
         <div className={styles.buttonIcon}>
-            <Image src={src} width={32} height={32} unoptimized />
+            <Image src={src} alt={alt} width={32} height={32} unoptimized />
         </div>
     )
 }

@@ -4,7 +4,7 @@ import TestausserveriLogo from '../../assets/TestausserveriFullLogo.svg'
 
 import GithubIcon from '../../assets/GithubIcon.svg'
 import InstagramIcon from '../../assets/InstagramIcon.svg'
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 
@@ -34,9 +34,7 @@ function SocialMedias() {
             {socialMedias.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
-                        <a>
-                            <Image src={media.icon} height={24} width={24} unoptimized />
-                        </a>
+                        <Image src={media.icon} alt={`${media.name} logo`} height={24} width={24} unoptimized />
                     </Link>
                 </li>
             ))}
@@ -55,7 +53,7 @@ function FooterLinks() {
                 </li>
             ))}
         </ul>
-    )
+    );
 }
 function FooterRow({ children }: PropsWithChildren) {
     return (
@@ -76,7 +74,11 @@ export function Footer({ copyrightYear }: FooterProps) {
                         <div>
                             <div>
                                 <Link href="/">
-                                    <img src={TestausserveriLogo.src}  className={styles.logo} />
+                                    <Image
+                                        src={TestausserveriLogo}
+                                        alt="Testausserveri logo"
+                                        className={styles.logo}
+                                    />
                                 </Link>
                                 <span className={styles.businessId}>Y-tunnus: 3235794-4</span>
                             </div>
@@ -106,5 +108,5 @@ export function Footer({ copyrightYear }: FooterProps) {
                 </FooterRow>
             </Content>
         </div>
-    )
+    );
 }

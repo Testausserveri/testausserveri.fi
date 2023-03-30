@@ -15,52 +15,56 @@ const developers = [
 export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <article>
-        <Head>
-            <title>Kehittäjät ja lisenssit | Testausserveri</title>
-        </Head>
-        <Content>
-          <H1>Kehittäjät</H1>
-          <p>
-            Seuraavat henkilöt ovat olleet mukana kehittämässä tätä sivustoa.
-          </p>
-          <ul>
-            {developers.map(developer => (
-              <li key={developer.name}>
-                <Link href={developer.url}>
-                  {developer.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <H1>Lisenssit</H1>
-          <p>
-            Tämän sivuston toteutuksessa käytettyjen avointen lähdekoodin ohjelmistojen tai kirjastojen lisenssit ja tekijänoikeudet ovat esitetty alla.
-          </p>
-          <table>
-          {Object.entries(licenses).map(([pkg, pkgObj]) => {
-            let pkgName = pkg.slice(0, pkg.lastIndexOf("@"));
-            let publisher = "publisher" in pkgObj ? `© ${pkgObj.publisher}` : "";
-            let license = pkgObj.licenses
-            let repository = "repository" in pkgObj ? pkgObj.repository : null
-            let url = "url" in pkgObj ? pkgObj.url : null;
-            if (url && !url.startsWith("http://") && !url.startsWith("https://")) {
-              url = `https://${url}`;
-            }
+      <Head>
+        <title>Kehittäjät ja lisenssit | Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
+      </Head>
+      <Content>
+        <H1>Kehittäjät</H1>
+        <p>
+          Seuraavat henkilöt ovat olleet mukana kehittämässä tätä sivustoa.
+        </p>
+        <ul>
+          {developers.map(developer => (
+            <li key={developer.name}>
+              <Link href={developer.url}>
+                {developer.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <H1>Lisenssit</H1>
+        <p>
+          Tämän sivuston toteutuksessa käytettyjen avointen lähdekoodin ohjelmistojen tai kirjastojen lisenssit ja tekijänoikeudet ovat esitetty alla.
+        </p>
+        <table>
+          <tbody>
+            {Object.entries(licenses).map(([pkg, pkgObj]) => {
+              const version = pkg.slice(pkg.lastIndexOf("@") + 1);
+              const publisher = "publisher" in pkgObj ? `© ${pkgObj.publisher}` : "";
+              const license = pkgObj.licenses
+              const repository = "repository" in pkgObj ? pkgObj.repository : null
 
-            return (
-              <tr key={pkgName}>
-                <td>{repository ? <Link href={repository}>{pkgName}</Link> : pkgName}</td>
-                <td>{license}</td>
-                <td>
-                  {url ?
-                    <Link href={url}>{publisher}</Link>
-                    : publisher}
-                </td>
-              </tr>
-            )
+              let url = "url" in pkgObj ? pkgObj.url : null;
+              if (url && !url.startsWith("http://") && !url.startsWith("https://")) {
+                url = `https://${url}`;
+              }
+
+              return (
+                <tr key={pkg + "@" + version}>
+                  <td>{repository ? <Link href={repository}>{pkg}</Link> : pkg}</td>
+                  <td>{license}</td>
+                  <td>
+                    {url ?
+                      <Link href={url}>{publisher}</Link>
+                      : publisher}
+                  </td>
+                </tr>
+              )
             })}
-          </table>
-        </Content>
+          </tbody>
+        </table>
+      </Content>
       <Footer copyrightYear={copyrightYear} />
     </article>
   )

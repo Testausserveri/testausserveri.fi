@@ -13,8 +13,7 @@ const MEDIA_API_SERVER = 'https://api.testausserveri.fi'
 module.exports = (phase) => ({
   reactStrictMode: true,
   images: {
-    domains: ['localhost'],
-    domains: ['api.testausserveri.fi'],
+    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com'],
   },
   env: {
     NEXT_PUBLIC_API_SERVER_MEDIA: MEDIA_API_SERVER,
@@ -27,5 +26,13 @@ module.exports = (phase) => ({
 				destination: (phase === PHASE_DEVELOPMENT_SERVER ? API_SERVER_DEV : API_SERVER_PROD) + '/v1/:path*',
 			},
 		]
-	}
+	},
+  i18n: {
+    locales: ['fi'],
+    defaultLocale: 'fi',
+  },
+  compiler: {
+    styledComponents: true
+  }
 })
+

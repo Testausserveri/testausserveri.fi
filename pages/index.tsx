@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import { TextLoop } from "../components/TextLoop/TextLoop";
 import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import DiscordIcon from '../assets/DiscordIcon.svg'
-
-import { HeroDiscordLive } from '../components/DiscordLive/DiscordLive'
 import { H1 } from '../components/Title/Title';
 import { StatGroup } from '../components/Stat/StatGroup';
 import { Content } from '../components/Content/Content';
@@ -19,6 +17,7 @@ import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption } from '../utils/types';
+import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -85,6 +84,7 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
     <div>
       <Head>
         <title>Testausserveri</title>
+        <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <HeroDiscordLive focused={heroFocused} />
       <Center>
@@ -108,15 +108,15 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
             <GradientText>3D-artisteille</GradientText>
           </TextLoop>
         </H1>
-        <a href="https://discord.testausserveri.fi">
+        <Link href="https://discord.testausserveri.fi">
           <CapsuleButton
             style={{ margin: "-0.3rem 0 0.4rem 0" }}
             onMouseOver={() => { setHeroFocused(true) }}
             onMouseLeave={() => { setHeroFocused(false) }}>
-            <ButtonIcon src={DiscordIcon} />
+            <ButtonIcon src={DiscordIcon} alt="Discord logo" />
             Tule juttelemaan!
           </CapsuleButton>
-        </a>
+        </Link>
       </Center>
       <Content>
         <StatGroup stats={stats} />

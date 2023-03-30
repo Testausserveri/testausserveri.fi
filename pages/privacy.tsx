@@ -35,6 +35,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
     <div>
       <Head>
           <title>Tietosuojaseloste | Testausserveri</title>
+          <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
         <H1>Rekisteri - ja tietosuojaseloste</H1>
@@ -156,7 +157,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
         <Section>
           <h2>10. Muut henkilötietojen käsittelyyn liittyvät oikeudet</h2>
           <p>
-          Rekisterissä olevalla henkilöllä on oikeus pyytää häntä koskevien henkilötietojen poistamiseen rekisteristä ("oikeus tulla unohdetuksi"). Niin ikään rekisteröidyillä on <a href="http://eur-lex.europa.eu/legal-content/FI/TXT/?uri=CELEX%3A32016R0679#d1e2144-1-1">muut EU:n yleisen tietosuoja-asetuksen mukaiset oikeudet</a> kuten henkilötietojen käsittelyn rajoittaminen tietyissä tilanteissa. Pyynnöt tulee lähettää sähköisesti rekisterinpitäjälle. Rekisterinpitäjä voi pyytää tarvittaessa pyynnön esittäjää todistamaan henkilöllisyytensä. Rekisterinpitäjä vastaa asiakkaalle EU:n tietosuoja-asetuksessa säädetyssä ajassa (pääsääntöisesti kuukauden kuluessa).
+            Rekisterissä olevalla henkilöllä on oikeus pyytää häntä koskevien henkilötietojen poistamiseen rekisteristä (&quot;oikeus tulla unohdetuksi&quot;). Niin ikään rekisteröidyillä on <a href="http://eur-lex.europa.eu/legal-content/FI/TXT/?uri=CELEX%3A32016R0679#d1e2144-1-1">muut EU:n yleisen tietosuoja-asetuksen mukaiset oikeudet</a> kuten henkilötietojen käsittelyn rajoittaminen tietyissä tilanteissa. Pyynnöt tulee lähettää sähköisesti rekisterinpitäjälle. Rekisterinpitäjä voi pyytää tarvittaessa pyynnön esittäjää todistamaan henkilöllisyytensä. Rekisterinpitäjä vastaa asiakkaalle EU:n tietosuoja-asetuksessa säädetyssä ajassa (pääsääntöisesti kuukauden kuluessa).
           </p>
         </Section>
       </Content>

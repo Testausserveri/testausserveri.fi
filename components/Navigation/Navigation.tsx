@@ -1,10 +1,10 @@
-import FadeIn from 'react-fade-in';
 import Link from 'next/link'
 import styles from './Navigation.module.css'
 import Hamburger from 'hamburger-react'
 import { Logo } from '../Logo/Logo'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { FadeIn } from '../FadeIn/FadeIn';
 
 export type NavigationProps = {
     className?: string,
@@ -30,7 +30,7 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
         return () => {
             router.events.off("routeChangeComplete", onHashChangeStart)
         }
-    }, [router.events])
+    }, [router.events, setOpen])
 
     const openClassName = open ? styles.open : ""
     return (
@@ -47,22 +47,17 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
 
             <ul className={`${styles.items} noLinkStyles`}>
                 {pages.map(page => {
-                    const Component = () => (
-                        <Link
-                            shallow={true}
-                            href={page.path}>
-                            <a className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
-                                <li>
-                                    {page.label}
-                                </li>
-                            </a>
-                        </Link>
-                    )
-                    if (open) {
-                        return <FadeIn key={page.label} ><Component /></FadeIn>
-                    } else {
-                        return <Component key={page.label} />
-                    }
+                    const Component = () => <Link
+                        shallow={true}
+                        href={page.path}
+                        className={activePath == page.path ? `${styles.active} ${styles.item}` : styles.item}>
+                        {page.label}
+                    </Link>;
+                    return (
+                        <li key={page.path}>
+                            {open ? <FadeIn><Component /></FadeIn> : <Component />}
+                        </li>
+                    );
                 })}
             </ul>
         </div>
