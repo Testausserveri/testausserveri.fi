@@ -1,7 +1,12 @@
-import FadeIn from 'react-fade-in';
-import { DiscordCustomEmoji, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordCustomEmoji, DiscordMessage } from '@skyra/discord-components-react'
 import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
+import { FadeIn } from '../FadeIn/FadeIn'
+import Image from 'next/image'
+import DiscordImage from './discord.png'
+import DiscordImageMobile from './discord-mobile.png'
+import dynamic from 'next/dynamic'
+const DiscordMessageList = dynamic(() => import('./DiscordMessageList'), { ssr: false })
 
 type DiscordMessage = {
     id: number,
@@ -19,13 +24,13 @@ const wrapEmojis = (text: string) => {
     return textArray.map(str => {
         const params = /:.+?:(\d+)/gi.exec(str)
         if (params) {
-            return <DiscordCustomEmoji url={"https://cdn.discordapp.com/emojis/" + params[1] + ".png"} />;
+            return <DiscordCustomEmoji key={str + "-" + params.join(".")} url={"https://cdn.discordapp.com/emojis/" + params[1] + ".png"} />;
         }
         return str;
     });
 }
 
-function formatDiscordContent(content: string) {
+export function formatDiscordContent(content: string) {
     return wrapEmojis(content)
 }
 
@@ -75,18 +80,21 @@ export function DiscordLive({ mobile, className }: {
     }
     return (
         <div className={(mobile ? `${styles.discordBackground} ${styles.mobile}` : styles.discordBackground) + " " + (className || "")}>
+            <Image
+                src={DiscordImage}
+                alt="Discord application"
+                fill
+                className={styles.desktopImage}
+            />
+            <Image
+                src={DiscordImageMobile}
+                alt="Discord application"
+                fill
+                className={styles.mobileImage}
+            />
             <div className={styles.liveArea}>
                 <div className={styles.liveAreaInner}>
-                    <DiscordMessages className={styles.discordMessages}>
-                        {visibleMessages.map((message, i) =>
-                            visibleMessages[i - 1]?.author?.name != visibleMessages[i].author.name ? (
-                                <DiscordMessage key={message.id} avatar={`/discordlive/avatars/${message.author.avatar}`} author={message.author.name} roleColor={message.author.color}>
-                                    <span className="discord-message-markup">{formatDiscordContent(message.content)}</span>
-                                    <span className="discord-message-markup">{recursiveContent(i)}</span>
-                                </DiscordMessage>
-                            ) : null
-                        )}
-                    </DiscordMessages>
+                    <DiscordMessageList visibleMessages={visibleMessages} recursiveContent={recursiveContent} />
                 </div>
             </div>
         </div>
@@ -113,3 +121,5 @@ export function HeroDiscordLive({ focused }: {
         </div>
     )
 }
+
+export default HeroDiscordLive;

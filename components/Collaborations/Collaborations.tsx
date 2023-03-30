@@ -6,6 +6,8 @@ import w4cfi from '../../assets/collaborations/w4cfi.png'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
 import krp from '../../assets/collaborations/logo_krp.png'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export type CollaborationsProps = {
     style?: CSSProperties
@@ -20,29 +22,29 @@ export function Collaborations(props: CollaborationsProps) {
             : null}
             <ul className="noLinkStyles" style={props.noTitle ? {marginTop: "1rem"} : {}}>
                 <li>
-                    <a href="https://saucesoft.io" target="_blank">
-                        <img src={saucesoft.src} height={80} />
-                    </a>
+                    <Link href="https://saucesoft.io" target="_blank">
+                        <Image src={saucesoft} height={80} alt="Saucesoft logo" />
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://challenge.fi" target="_blank">
-                        <img src={genz.src} height={80} />
-                    </a>
+                    <Link href="https://challenge.fi" target="_blank">
+                        <Image src={genz} height={80} alt="GenZ logo" />
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://www.women4cyberfinland.com/" target="_blank">
-                        <img src={w4cfi.src} height={80} />
-                    </a>
+                    <Link href="https://www.women4cyberfinland.com/" target="_blank">
+                        <Image src={w4cfi} height={80} alt="W4CFI logo" />
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://poliisi.fi/cybercrime-exit" target="_blank">
-                        <img src={krp.src} height={80} />
-                    </a>
+                    <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
+                        <Image src={krp} height={80} alt="KRP logo" />
+                    </Link>
                 </li>
                 <li>
-                    <a href="https://koodiasuomesta.fi/" target="_blank">
-                        <img src={koodiasuomesta.src} height={80} />
-                    </a>
+                    <Link href="https://koodiasuomesta.fi/" target="_blank">
+                        <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
+                    </Link>
                 </li>
             </ul>
         </div>

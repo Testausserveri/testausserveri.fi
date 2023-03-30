@@ -1,7 +1,7 @@
 import { apiServerMedia } from "./api"
 import GithubIcon from '../assets/GithubIcon.svg'
 import { BiHome, BiLink } from "react-icons/bi";
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { ProjectLinkType, ProjectMediaType } from "./types";
 
 export type ProjectMedia = {
@@ -29,7 +29,7 @@ export const getProjectLinkTitle = (type: ProjectLinkType, name: string) => {
 export const getProjectLinkIcon = (type: ProjectLinkType) => {
     if (type === "link") return <BiLink size={20} />
     if (type === "homepage") return <BiHome size={20} />
-    if (type === "github") return <Image src={GithubIcon} height={20} width={20} unoptimized />
+    if (type === "github") return <Image src={GithubIcon} alt="Github icon" height={20} width={20} unoptimized />
     throw new Error("Invalid project link type")
 }
 
