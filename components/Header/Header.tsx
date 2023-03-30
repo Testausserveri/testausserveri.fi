@@ -62,7 +62,7 @@ export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
                 
                 <a href="https://discord.testausserveri.fi">
                     <CapsuleButton className={styles.button} small>
-                        <ButtonIcon src={DiscordIcon} />
+                        <ButtonIcon alt="Discord" src={DiscordIcon} />
                         Discord
                     </CapsuleButton>
                 </a>
