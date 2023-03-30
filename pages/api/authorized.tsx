@@ -6,6 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!code) res.status(400).end("Bad Request")
 
   // TODO: check for authentication errors.
+  console.log(apiServer)
   const response = await fetch(apiServer + `/v1/authenticate`, {
     body: JSON.stringify({ code }),
     headers: {
@@ -15,9 +16,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   })
 
   console.log(response.headers, response.headers.get("set-cookie"))
-  if (response.headers.get("set-cookie")) {
-    res.setHeader("set-cookie", response.headers.get("set-cookie"))
-  }
+  res.setHeader("set-cookie", response.headers.get("set-cookie"))
 
   res.redirect("/")
+
 }

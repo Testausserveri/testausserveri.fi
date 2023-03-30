@@ -17,16 +17,14 @@
     text-align: center;
 }
 
-.header>a {
-    text-align: right;
-    flex-grow: 1;
-    flex-basis: 0;
-}
-
 .navButtons {
     display: flex;
     gap: 0.5rem;
     justify-content: right;
+
+    text-align: right;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 @media only screen and (max-width: 920px) {

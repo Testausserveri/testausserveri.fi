@@ -6,6 +6,9 @@ import { H1, H2 } from '../components/Title/Title'
 import { Me } from '../utils/types';
 import styled from 'styled-components'
 import { getMemberAvatarUrl } from '../utils/Member';
+import Image from 'next/image';
+import { GradientText } from '../components/GradientText/GradientText';
+import { Explanation } from '../components/Explanation/Explanation';
 
 interface Props {
   authenticated: Me;
@@ -25,8 +28,106 @@ const UserRow = styled.div`
   >div:nth-child(2) {
     flex: 1;
   }
-    
 `
+
+const AssociationMembershipCardRoot = styled.div`
+  border-radius: 0.5rem;
+  width: 100%;
+  position: relative;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(108, 108, 108, 0.09);
+
+  .member { 
+    display: flex;
+
+    p {
+      margin: 0 0 0.5em 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  
+    >div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+    }
+  
+    &.disabled {
+      user-select: none; 
+    }
+  
+    &.disabled::after {
+      content: ' ';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(9px);
+      border-radius: 0.5rem;
+    }
+  }
+  .notMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+    p {
+      margin-top: 0;
+    }
+  }
+`
+
+function AssociationMembershipCard({authenticated}: Props) {
+  const notMember = authenticated.associationMembership.status != "MEMBER"
+
+  return (
+    <AssociationMembershipCardRoot >
+      <div className={(notMember ? "disabled member" : "member")}>
+        <div>
+          <H2>
+            <GradientText>
+              {notMember ? "Testaus" : authenticated.associationMembership.firstName} {notMember ? "Koiranen" : authenticated.associationMembership.lastName}
+            </GradientText>
+          </H2>
+          <p>
+            {notMember ? "Tuotantoserveri" : authenticated.associationMembership.city}
+            <Explanation>
+              Yhdistyslaki velvoittaa meitä pitämään luetteloa kunkin jäsenen nimestä ja asuinkunnasta. (Yhdistyslaki 503/1989, 11 §)
+            </Explanation>  
+          </p>
+          <p>
+            {notMember ? "hauhau@koira.testausserveri.fi" : authenticated.associationMembership.email}
+            <Explanation>
+              Sähköpostiisi tulee mm. tärkeitä tiedotteita kuten tapahtumakutsuja.
+            </Explanation>  
+          </p>
+        </div>
+        <div>
+          <p>
+            Olet Testausserveri ry:n jäsen.
+          </p>
+          <p>
+            Mikäli haluat muuttaa jäsentietojasi tai erota yhdistyksestä, niin ota yhteyttä yhdistyksen hallitukseen. Yhdistys ei toistaiseksi kerää jäsenmaksua.
+          </p>
+        </div>
+      </div>
+      <div className="notMember" style={!notMember ? { display: "none" } : {}}>
+        <p>Et ole vielä yhdistyksen jäsen. Skill issue. </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCjpgkvsdgPN-X5R10n74qA7hO0hE_gK3VAEjzMh03uHKDlg/viewform">
+        <CapsuleButton small>Jätä jäsenhakemus</CapsuleButton>
+
+        </a>
+      </div>
+    </AssociationMembershipCardRoot>
+  )
+}
 
 export default function MembersAreaHome({authenticated}: Props) {
   return (
@@ -44,17 +145,13 @@ export default function MembersAreaHome({authenticated}: Props) {
           : 
           <>
             <p>
-            Tervetuloa työmaalle. Tämä toiminto on vasta kehityksessä.
+            Tämä toiminto on vielä kehityksessä.
             </p>
             <UserRow>
               <div>
-                <img src={getMemberAvatarUrl(authenticated._id)} />
+                <Image width="50" height="50" alt="Avatar" src={getMemberAvatarUrl(authenticated._id)} />
               </div>
               <div>
-                { authenticated.associationMembership.firstName ? <>
-                  <span>{authenticated.associationMembership.firstName} {authenticated.associationMembership.lastName}</span>
-                  <br />
-                </> : null}
                 { authenticated.username }
               </div>
               <div>
@@ -64,10 +161,8 @@ export default function MembersAreaHome({authenticated}: Props) {
               </div>
             </UserRow>
             
-            <H2>Jäsenrekisterin tiedot</H2>
-            <p>
-              <pre>{JSON.stringify(authenticated.associationMembership, null, 2)}</pre>
-            </p>
+            <AssociationMembershipCard authenticated={authenticated} />
+            
           </>
           }
           

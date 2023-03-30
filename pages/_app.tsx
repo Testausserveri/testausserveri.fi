@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps, router, props }: MyAppProps) {
 }
 
 MyApp.getInitialProps = async ({ ctx }) => {
-  if (ctx.req.headers.cookie.includes("connect.sid=")) {
+  if (ctx.req.headers.cookie && ctx.req.headers.cookie.includes("connect.sid=")) {
       const data = await api.membersArea.me(ctx.req.headers.cookie)
 
       if (data) {
