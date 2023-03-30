@@ -5,6 +5,7 @@ import { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import api from '../utils/api'
 import { Me } from '../utils/types'
+import { NextPageContext } from 'next/types'
 
 const pages = [
   { label: "Etusivu", path: "/" },
@@ -33,7 +34,10 @@ function MyApp({ Component, pageProps, router, props }: MyAppProps) {
   )
 }
 
-MyApp.getInitialProps = async ({ ctx }) => {
+type Ctx = {
+  ctx: NextPageContext
+}
+MyApp.getInitialProps = async ({ctx}: Ctx) => {
   let data = {}
   if ((ctx?.req?.headers?.cookie && ctx.req.headers.cookie.includes("connect.sid="))) {
     data = await api.membersArea.me(ctx.req.headers.cookie)
