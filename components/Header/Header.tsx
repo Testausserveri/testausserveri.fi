@@ -10,6 +10,8 @@ import api from '../../utils/api'
 import { getMemberAvatarUrl } from '../../utils/Member'
 import styled from 'styled-components'
 import Image from 'next/image'
+import { Me } from '../../utils/types'
+import Link from 'next/link'
 
 
 export type HeaderProps = {
@@ -28,6 +30,7 @@ const Avatar = styled(Image)`
     border-radius: 50%;
     vertical-align: middle;
     margin-right: 0.7em;
+    z-index: 50;
 `
 
 export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
@@ -41,12 +44,12 @@ export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
             <div className={styles.navButtons}>
                 { authenticated.username ? 
                     <>
-                        <a href="/me">
+                        <Link href="/me" passHref>
                             <CapsuleButton className={styles.button} small secondary>
                                 <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id)} /> 
                                 { authenticated.username }
                             </CapsuleButton>
-                        </a>
+                        </Link>
                     </>
                 : 
                     <>

@@ -34,21 +34,16 @@ function MyApp({ Component, pageProps, router, props }: MyAppProps) {
 }
 
 MyApp.getInitialProps = async ({ ctx }) => {
-  if (ctx.req.headers.cookie && ctx.req.headers.cookie.includes("connect.sid=")) {
-      const data = await api.membersArea.me(ctx.req.headers.cookie)
-
-      if (data) {
-        return {
-          props: {
-            authenticated: data
-          }
-        }
-      }
+  let data = {}
+  if ((ctx?.req?.headers?.cookie && ctx.req.headers.cookie.includes("connect.sid="))) {
+    data = await api.membersArea.me(ctx.req.headers.cookie)
+  } else if (ctx?.req?.headers?.cookie == undefined) {
+    data = await api.membersArea.me()
   }
 
   return {
     props: {
-      authenticated: {}
+      authenticated: data
     }
   }
 }
