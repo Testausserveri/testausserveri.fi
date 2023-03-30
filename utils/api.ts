@@ -1,6 +1,6 @@
-import { DetailedProject, GuildInfo, GuildInfoModelOption, ShallowProject } from "./types"
+import { DetailedProject, GuildInfo, GuildInfoModelOption, Me, ShallowProject } from "./types"
 
-export const apiServer = process.env.NEXT_PUBLIC_API_SERVER
+export const apiServer = `${process.env.NEXT_PUBLIC_URL}/api` // proxied in next.config.js
 export const apiServerMedia = process.env.NEXT_PUBLIC_API_SERVER_MEDIA
 
 export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T) {
@@ -8,8 +8,6 @@ export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoMo
     const data = await response.json()
     return data as GuildInfo<T>
 }
-
-
 
 const all = async function (query?: string | string[][] | Record<string, string> | URLSearchParams | undefined) {
     if (query) query = "?" + new URLSearchParams(query).toString()
@@ -36,6 +34,19 @@ const find = async function (slug: string) {
     return project
 }
 
+const me = async function (cookies?: string) {
+    const response = await fetch(`${apiServer}/v1/me`, {
+        credentials: 'include',
+        ...(cookies ? { 
+            headers: {
+                Cookie: cookies
+            } 
+        } : {} )
+    })
+    const data = await response.json() as Me
+    return data
+}
+
 const api = {
     getGuildInfo,
     projects: {
@@ -43,6 +54,9 @@ const api = {
         suggest,
         slugs,
         find
+    },
+    membersArea: {
+        me
     }
 }
 

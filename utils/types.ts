@@ -65,3 +65,17 @@ export type DetailedProject = {
   }[],
   readmes: Record<string, string>,
 }
+
+export type Me = {
+  username?: string,
+  _id?: string,
+  associationMembership?: {
+      firstName?: string,
+      lastName?: string,
+      city?: string,
+      googleWorkspaceName?: string,
+      email?: string,
+      handledIn?: string,
+      status?: string
+  }
+}
