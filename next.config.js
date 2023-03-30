@@ -17,6 +17,7 @@ module.exports = (phase) => ({
   },
   env: {
     NEXT_PUBLIC_API_SERVER_MEDIA: MEDIA_API_SERVER,
+    NEXT_PUBLIC_API_SERVER: API_SERVER,
     NEXT_PUBLIC_URL: (phase === PHASE_DEVELOPMENT_SERVER ? URL_DEV : URL_PROD)
   },
   async rewrites() {

@@ -1,6 +1,8 @@
+import { PHASE_PRODUCTION_BUILD } from "next/dist/shared/lib/constants"
 import { DetailedProject, GuildInfo, GuildInfoModelOption, Me, ShallowProject } from "./types"
 
-export const apiServer = `${process.env.NEXT_PUBLIC_URL}/api` // proxied in next.config.js
+
+export const apiServer = ( process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD ? process.env.NEXT_PUBLIC_API_SERVER : `${process.env.NEXT_PUBLIC_URL}/api`) // proxied in next.config.js
 export const apiServerMedia = process.env.NEXT_PUBLIC_API_SERVER_MEDIA
 
 export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T) {
