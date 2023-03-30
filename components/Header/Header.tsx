@@ -5,7 +5,6 @@ import styles from './Header.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { useEffect, useState } from 'react'
 import { IoMdKey } from "react-icons/io"
-import { LoginView } from '../Login/Login'
 import api from '../../utils/api'
 import { getMemberAvatarUrl } from '../../utils/Member'
 import styled from 'styled-components'
