@@ -47,7 +47,7 @@ export function DiscordLive({ mobile, className }: {
         fetch("/discordlive/replay.json").then(response => {
             if (response.ok) {
                 response.json().then(data => {
-                    console.log(data)
+                    //console.log(data)
                     setMessages(data)
                 })
             }
@@ -59,7 +59,7 @@ export function DiscordLive({ mobile, className }: {
     useEffect(() => {
         function next(index: number) {
             const waitTime = Math.min((messages[index + 1]?.timestamp - messages[index]?.timestamp) / replaySpeedUpMultiplier, replayMaxWaitTime)
-            console.log(waitTime)
+            // console.log(waitTime)
             setTimeout(() => {
                 setVisibleMessages(messages.slice(0, index + 1))
                 if (index < messages.length) next(index + 1)

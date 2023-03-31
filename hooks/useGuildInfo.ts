@@ -6,11 +6,17 @@ export function useGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T
     const [guildInfo, setGuildInfo] = useState(ss)
 
     async function update() {
-        console.log("Updating gi")
+        console.log("Updating guildInfo")
         setGuildInfo(await api.getGuildInfo(guildInfoModel))
     }
     useEffect(() => {
-        setInterval(update, 5000)
+        const interval = setInterval(update, 5000)
+        console.log(`Hooking useGuildInfo (${guildInfoModel.join()})`, interval)
+
+        return () => {
+            console.log("Unhooking useGuildInfo", interval)
+            clearInterval(interval)
+        }   
     }, [])
 
     return guildInfo
