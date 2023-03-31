@@ -19,6 +19,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   console.log(await response.json())
   res.setHeader("set-cookie", response.headers.get("set-cookie"))
 
-  res.redirect("/")
+  res.redirect("/me")
 
 }
