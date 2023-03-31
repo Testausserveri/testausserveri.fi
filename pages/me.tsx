@@ -53,7 +53,16 @@ const AssociationMembershipCardRoot = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-  
+    }
+
+    @media only screen and (max-width: 850px) {
+      flex-direction: column;
+      >div {
+        width: 100%;
+      }
+      >div:last-child {
+        margin-top: 0.5rem;
+      }
     }
   
     &.disabled {
