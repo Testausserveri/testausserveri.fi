@@ -58,15 +58,7 @@ const AssociationMembershipCardRoot = styled.div`
   
     &.disabled {
       user-select: none; 
-    }
-  
-    &.disabled::after {
-      content: ' ';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      backdrop-filter: blur(9px);
-      border-radius: 0.5rem;
+      filter: blur(10px);
     }
   }
   .notMember {
