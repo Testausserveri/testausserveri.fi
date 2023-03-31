@@ -67,6 +67,7 @@ export type DetailedProject = {
 }
 
 export type Me = {
+  status?: string,
   username?: string,
   _id?: string,
   associationMembership?: {
