@@ -38,7 +38,7 @@ export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
 
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
-            <Logo className={styles.logo} showBeta link />
+            <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
                 { authenticated.username ? 
