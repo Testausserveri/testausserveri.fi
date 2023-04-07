@@ -37,11 +37,6 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
-                        <Image src={krp} height={80} alt="KRP logo" />
-                    </Link>
-                </li>
-                <li>
                     <Link href="https://koodiasuomesta.fi/" target="_blank">
                         <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
                     </Link>
