@@ -38,7 +38,7 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
 
             <div className={styles.mobileHeader}>
                 {open ?
-                    <Logo className={styles.logo} showBeta link />
+                    <Logo className={styles.logo} link />
                     : null}
                 <div className={styles.mobileButton}>
                     <Hamburger rounded color="#FFF" toggled={open} toggle={setOpen} />
