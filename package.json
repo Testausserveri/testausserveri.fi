@@ -6,8 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {
@@ -25,19 +25,18 @@
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/addons": "^6.5.16",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
-    "@storybook/theming": "^6.5.16",
+    "@storybook/addon-essentials": "^7.0.4",
+    "@storybook/addons": "^7.0.4",
+    "@storybook/nextjs": "^7.0.4",
+    "@storybook/react": "^7.0.4",
+    "@storybook/theming": "^7.0.4",
     "@types/node": "^18.15.3",
     "@types/react": "^18.0.28",
     "@types/styled-components": "^5.1.26",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "eslint-plugin-storybook": "^0.6.11",
+    "storybook": "^7.0.4",
     "storybook-css-modules-preset": "^1.1.1",
     "typescript": "^5.0.2"
   }
