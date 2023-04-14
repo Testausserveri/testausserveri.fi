@@ -24,7 +24,7 @@ const TextLoopElement = styled.span<{
   stayTimeRatio: number;
   duration: number;
 }>`
-  animation: ${props => TextLoopAnimation(props.stayTimeRatio)} ${(props) => props.duration}s ease-in-out;
+  animation: ${props => TextLoopAnimation(props.stayTimeRatio)} ${(props) => props.duration}s ease-in-out infinite;
 `
 
 type TextLoopProps = PropsWithChildren<{
@@ -42,7 +42,7 @@ export const TextLoop = ({ children, duration = 3, stayTimeRatio = 95 }: TextLoo
     key={index}
     duration={duration}
     stayTimeRatio={stayTimeRatio}
-    onAnimationEnd={incrementIndex}
+    onAnimationIteration={incrementIndex}
   >
     {childrenArray[index]}
   </TextLoopElement>;
