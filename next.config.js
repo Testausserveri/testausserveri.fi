@@ -37,9 +37,11 @@ module.exports = (phase) => ({
   },
   async redirects() {
     return [
-      { "source": "/link/(.*)", "destination": "https://link.testausserveri.fi/$1", permanent: true },
       { "source": "/.well-known/webfinger", "destination": "https://mastodon.testausserveri.fi/.well-known/webfinger", permanent: true },
-      { "source": "/github", "destination": "https://api.testausserveri.fi/v1/github/authorize", permanent: true }
+      { "source": "/github", "destination": "https://api.testausserveri.fi/v1/github/authorize", permanent: true },
+      { "source": "/jasenhakemus", "destination": "https://forms.gle/UV9nPmTD2pyDE9gW7", permament: true },
+      { "source": "/link/jasenhakemus", "destination": "https://forms.gle/UV9nPmTD2pyDE9gW7", permament: true },
+      { "source": "/link/(.*)", "destination": "https://link.testausserveri.fi/$1", permanent: true }
     ];
   },
 })
