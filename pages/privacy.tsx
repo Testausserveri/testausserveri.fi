@@ -38,7 +38,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
-        <H1>Rekisteri - ja tietosuojaseloste</H1>
+        <H1>Rekisteri- ja tietosuojaseloste</H1>
         <p>
           Tämä on Testausserveri ry:n EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 27. toukokuuta 2022. Viimeisin muutos 27. toukokuuta 2022.
         </p>
@@ -86,7 +86,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           <h2>5. Rekisterin tietosisältö</h2>
           <p>
             <IoLogoGithub />
-            <a href="https://github.com/Testausserveri/testausapis/blob/715fe1fa313327124909aa94c16bcc3b059911da/src/database/schemas/userInfo.js">Rekisterin tietokantarakenne on avointa lähdekoodia ja tarkasteltavissa myös GitHubissa</a>.
+            <a href="https://github.com/Testausserveri/testausapis/blob/main/src/database/schemas/userInfo.js">Rekisterin tietokantarakenne on avointa lähdekoodia ja tarkasteltavissa myös GitHubissa</a>.
           </p>
           <p>Rekisteriin tallennettavia tietoja ovat: </p>
           <ul>
@@ -96,7 +96,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
                 <li>Etu- ja sukunimi</li>
                 <li>Asuinkunta</li>
                 <li>Sähköpostiosoite</li>
-                <li>Reksiterinpitäjän merkinnät
+                <li>Rekisterinpitäjän merkinnät
                   <ul>
                     <li>Jäsenyys käsitelty kokouksessa</li>
                     <li>Myönnetyn Google Workspace -käyttäjätilin nimi</li>
