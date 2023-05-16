@@ -41,7 +41,7 @@ export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
             <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
-                { authenticated.username ? 
+                {/* authenticated.username ? 
                     <>
                         <Link href="/me" passHref>
                             <CapsuleButton className={styles.button} small secondary>
@@ -58,7 +58,7 @@ export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
                                 Jäsensivut
                             </CapsuleButton>
                         </a>
-                    </>}
+                    </> */}
                 
                 <a href="https://discord.testausserveri.fi">
                     <CapsuleButton className={styles.button} small>
