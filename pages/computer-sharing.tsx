@@ -148,7 +148,7 @@ const ResponsiveSplitFlex = styled.div`
 
       ul > li {
         height: 3rem;
-        margin-right: unset;
+        margin-right: 0.5rem;
       }
     }
   }
