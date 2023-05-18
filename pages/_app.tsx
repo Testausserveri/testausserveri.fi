@@ -13,6 +13,7 @@ const pages = [
   { label: "Projektit", path: "/projects" },
   { label: "Tietoa meistä", path: "/about" },
   //{ label: "Tietoa", path: "/about-us" }
+  { label: "Koneet kiertoon", path: "/computerSharing" }
 ]
 
 interface MyAppProps extends AppProps {
