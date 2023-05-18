@@ -143,6 +143,7 @@ const ResponsiveSplitFlex = styled.div`
       ul {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        margin-left: unset;
       }
 
       ul > li {
