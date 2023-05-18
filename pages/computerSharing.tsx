@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Content } from '../components/Content/Content'
 import { H1 } from '../components/Title/Title'
 import { Footer } from '../components/Footer/Footer'
-import { InferGetServerSidePropsType, getServerSideProps } from 'next'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Gallery } from '../components/Gallery/Gallery'
 
 const Section = styled.div`
@@ -297,3 +297,18 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
     </div>
     )
   }
+
+export const getServerSideProps: GetServerSideProps<{
+  copyrightYear: number
+}> = async ({ req, res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, maxage=300, stale-if-error=300'
+  )
+
+  return {
+    props: {
+      copyrightYear: new Date().getFullYear()
+    }
+  }
+}
