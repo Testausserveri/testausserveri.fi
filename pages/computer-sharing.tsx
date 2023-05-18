@@ -163,10 +163,10 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
       </Head>
       <Content>
         <H1>Koneet kiertoon kampanja</H1>
-        <p><b>Tämän sivun tietoja täydennetään vielä. Kampanjan alkamisesta tiedoitetaan erikseen.</b></p>
+        <p><b>Tämän sivun tietoja täydennetään vielä. Kampanjan alkamisesta tiedotetaan erikseen.</b></p>
         <p>
           Testausserveri ry organisoi yksityisen lahjoittajan lahjoittamien tietokoneiden ja palvelimien jakamisen yhdistyksen jäsenille ja hyväntekeväisyyteen.
-          Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moneen eri käyttötarkoituksiin sopiville, tietokoneille ja palvelimille uusi elämä.
+          Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville tietokoneille ja palvelimille uusi elämä.
           Jaossa on toimistokäytössä olleita pöytäkoneita ja kannettavia, sekä tuotantovalmiita palvelimia.*
         </p>
         <Section>
@@ -242,7 +242,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
                 [
                   "/computer-sharing-assets/workstationFrontSide.png",
                   "/computer-sharing-assets/workstationInternalsSide.png",
-                  "/computer-sharing-assets/worksationBackSide.png"
+                  "/computer-sharing-assets/workstationBackSide.png"
                 ].map((str) => ({ url: str }))
               }/>
             </ResponsiveSplitFlex>
@@ -251,7 +251,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           <Device>
             <h3>HP EliteBook 840 G5 (? kpl)</h3>
             <p>
-              Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat hyvässä kunnossa muutamia pintanaarmuja lukuunottamatta.
+              Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat hyvässä kunnossa muutamia pintanaarmuja lukuun ottamatta.
               Kokonaisuutena tämä HP:n kannettava on oikein toimiva päivittäiseen käyttöön esimerkiksi ohjelmointia, kevyttä pelaamista tai opiskelua varten.
               Modernit ominaisuudet, kuten Windows Hello, antavat tälle kannettavalle modernin tuntuman sen tukevien metallisten rakenteiden kanssa.
             </p>
@@ -346,15 +346,15 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
         <Section>
           <h2>Lahjoituksen saamisen kynnysehdot</h2>
           <p>
-            Koneet kiertoon -kampanjan tavoitteena on yhdistyksemme tavoitteiden mukaisesti edistää tietotekniikka- ja kyberturvallisuus harrastuneisuutta.
-            Lahjoutuksen vastaanottaminen edellyttää kyselyyn vastaamista, jossa toivomme lahjoitusta hakevien kirjoittavan hieman laajemmin eri käyttötarkoituksista, joihin lahjoitettava laite/laitteet menisivät.
+            Koneet kiertoon -kampanjan tavoitteena on yhdistyksemme tavoitteiden mukaisesti edistää tietotekniikka- ja kyberturvallisuusharrastuneisuutta.
+            Lahjoituksen vastaanottaminen edellyttää kyselyyn vastaamista, jossa toivomme lahjoitusta hakevien kirjoittavan hieman laajemmin eri käyttötarkoituksista, joihin lahjoitettava laite/laitteet menisivät.
           </p>
           <p>
             Kynnysehdot tarkemmin:
             TBD
           </p>
           <p>
-            Vastaa kyselyyn ja hae lahjoutusta:
+            Vastaa kyselyyn ja hae lahjoitusta:
             TBA
           </p>
         </Section>
