@@ -5,6 +5,7 @@ import { H1 } from '../components/Title/Title'
 import { Footer } from '../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Gallery } from '../components/Gallery/Gallery'
+import { InfoBox } from '../components/InfoBox/InfoBox'
 
 const Section = styled.div`
 
@@ -79,6 +80,7 @@ const Device = styled.div`
   div > ul > li {
     height: 70%;
   }
+`;
 
 const DeviceAmount = styled.div`
   text-transform: uppercase;
@@ -172,8 +174,11 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
       </Head>
       <Content>
 
-        <H1>Koneet kiertoon kampanja</H1>
-        <p><b>Tämän sivun tietoja täydennetään vielä. Kampanjan alkamisesta tiedotetaan erikseen.</b></p>
+        <H1>Koneet kiertoon -kampanja</H1>
+        <InfoBox>
+          <span>Tämän sivun tietoja täydennetään vielä.</span>
+          <span>Kampanjan alkamisesta tiedotetaan erikseen.</span>
+        </InfoBox>
         <p>
           Testausserveri ry organisoi yksityisen lahjoittajan lahjoittamien tietokoneiden ja palvelimien jakamisen yhdistyksen jäsenille ja hyväntekeväisyyteen.
           Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville tietokoneille ja palvelimille uusi elämä.
@@ -372,13 +377,18 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           </p>
         </Section>
         <p>
-          * Testausserveri ry ei korvaa mahdollisia postituskuluja (mahdollisista toimituksista sovitaan erikseen), eikä anna lahjoitettaville laitteille minkäänlaista takuuta toimivuudesta tai sopivuudesta mihinkään käyttötarkoitukseen.
-          Lahjoittajan saajan vastuulla on taata lahjoitetun laitteen toimivuus ja kunto ennen lahjoituksen vastaanottamista.
-          Lahjoituksesta voi kieltäytyä missä tahansa lahjoituksen käsittelyn vaiheessa ennen laitteen virallista luovuttamista.
-          Testausserveri ry ei ota vastaan mistään syistä laitteiden palautuksia niiden virallisen luovuttamisen jälkeen.
-          Virallinen luovutus todennetaan luovutus-sopimuksella, jonka lahjoitustapahtuman molemmat osapuolet allekirjoittavat (sopimus vielä kesken).
+          <small>
+            * Testausserveri ry ei korvaa mahdollisia postituskuluja (mahdollisista toimituksista sovitaan erikseen), eikä anna lahjoitettaville laitteille minkäänlaista takuuta toimivuudesta tai sopivuudesta mihinkään käyttötarkoitukseen.
+            Lahjoittajan saajan vastuulla on taata lahjoitetun laitteen toimivuus ja kunto ennen lahjoituksen vastaanottamista.
+            Lahjoituksesta voi kieltäytyä missä tahansa lahjoituksen käsittelyn vaiheessa ennen laitteen virallista luovuttamista.
+            Testausserveri ry ei ota vastaan mistään syistä laitteiden palautuksia niiden virallisen luovuttamisen jälkeen.
+            Virallinen luovutus todennetaan luovutus-sopimuksella, jonka lahjoitustapahtuman molemmat osapuolet allekirjoittavat (sopimus vielä kesken).
+          </small>
+        
         </p>
-        <p>Kuvat: Testausserveri ry (kaikki oikeudet pidetään)</p>
+        <p>
+          <small>Kuvat: Testausserveri ry (kaikki oikeudet pidetään)</small>
+        </p>
       </Content>
       <Footer copyrightYear={copyrightYear} />
     </div>
