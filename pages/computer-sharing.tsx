@@ -54,7 +54,9 @@ const Device = styled.div`
   flex-wrap: wrap;
   background-color: rgba(108, 108, 108, 0.09);
   padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
+  box-sizing: border-box;
 
   p, h3 {
     width: 100%;
@@ -77,6 +79,13 @@ const Device = styled.div`
   div > ul > li {
     height: 70%;
   }
+
+const DeviceAmount = styled.div`
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  width: auto !important;
+  text-align: left;
+  margin: 0 0 1rem 0 !important;
 `
 const SpecList = styled.div`
 
@@ -162,6 +171,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
+
         <H1>Koneet kiertoon kampanja</H1>
         <p><b>Tämän sivun tietoja täydennetään vielä. Kampanjan alkamisesta tiedotetaan erikseen.</b></p>
         <p>
@@ -178,7 +188,8 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <b>Kaikkien laitteiden yhteydessä annetaan kyseiseen laitteeseen sopiva virtalähde/kaapeli.</b>
           </p>
           <Device>
-            <h3>HP Workstation Z240 (15 kpl)</h3>
+            <DeviceAmount>Jäljellä 15 / 15 ⤬</DeviceAmount>
+            <h3>HP Workstation Z240</h3>
             <p>
               Nämä HP:n Workstation koneet ovat täydellisiä kevyeen jokapäiväiseen käyttöön ja palvelimeksi hurisemaan vaikka oman huoneen nurkkaan.
               Koneet ovat hyvässä kunnossa, mutta niiden lämpötahna on suhteellisen vanhaa, joten sen vaihtamisella koneista saa varmasti lisää tehoa.
@@ -249,7 +260,8 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <p>Huom. kuvassa olevasta koneesta puuttuu kiintolevy. Tämä oli kuvaajan moka. Kaikissa koneissa on joku ylhäällä mainituista kiintolevyistä.</p>
           </Device>
           <Device>
-            <h3>HP EliteBook 840 G5 (? kpl)</h3>
+            <DeviceAmount>Jäljellä 0 / 0 ⤬</DeviceAmount>
+            <h3>HP EliteBook 840 G5</h3>
             <p>
               Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat hyvässä kunnossa muutamia pintanaarmuja lukuun ottamatta.
               Kokonaisuutena tämä HP:n kannettava on oikein toimiva päivittäiseen käyttöön esimerkiksi ohjelmointia, kevyttä pelaamista tai opiskelua varten.
@@ -295,7 +307,8 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             </ResponsiveSplitFlex>
           </Device>
           <Device>
-            <h3>HP EliteBook 820 G4 (? kpl)</h3>
+            <DeviceAmount>Jäljellä 0 / 0 ⤬</DeviceAmount>
+            <h3>HP EliteBook 820 G4</h3>
             <p>
               Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat suhteellisen hyvässä kunnossa. Kannettavissa on kaikenlaisia naarmuja ja käytön jälkiä.
               Kokonaisuutena tämä HP:n kannettava on hyvä kevyempään käyttöön. Ikänsä takia näiden kannettavien näytöissä saattaa olla &quot;burn-in&quot; jälkiä.
