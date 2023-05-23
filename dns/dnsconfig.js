@@ -23,6 +23,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('karhu', 'relay.dfjapis.com.', CF_PROXY_OFF), // Karhu - Mikael&Ruben
     CNAME('koira', 'teapot.testausserveri.fi.'), // Testauskoira API - Mikael
     CNAME('blog', 'teapot.testausserveri.fi.'), // Headless Ghost CMS - Mikael
+    CNAME('autot', 'teapot.testausserveri.fi.'), // Autot
     CNAME('link', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // Kutt link shortening - Mikael
     CNAME('abitikku', 'testausserveri.github.io.'), // Abitikku
     CNAME('abitikku-versions', 'testausserveri.github.io.'), // Abitikku
