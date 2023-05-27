@@ -1,7 +1,7 @@
 import styles from './Collaborations.module.css'
 
 import saucesoft from '../../assets/collaborations/saucesoft.svg'
-import genz from '../../assets/collaborations/genz.png'
+import nextgen from '../../assets/collaborations/nextgen.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
@@ -28,7 +28,7 @@ export function Collaborations(props: CollaborationsProps) {
                 </li>
                 <li>
                     <Link href="https://challenge.fi" target="_blank">
-                        <Image src={genz} height={80} alt="GenZ logo" />
+                        <Image src={nextgen} height={80} alt="Next Gen logo" />
                     </Link>
                 </li>
                 <li>
