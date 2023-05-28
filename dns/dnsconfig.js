@@ -52,8 +52,8 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CNAME('aoc', 'teapot.testausserveri.fi.', CF_PROXY_OFF), // aocleaderboard - Antti
   
     // Memes
-    CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
-    CNAME('arvojasen', 'arvojasen.midka.dev.', CF_PROXY_OFF), // Arvojasen :D - Midka
+    // CNAME('datanomi', 'datanomi.net.', CF_PROXY_OFF), // datanomi - Cumpal
+    // CNAME('arvojasen', 'arvojasen.midka.dev.', CF_PROXY_OFF), // Arvojasen :D - Midka
     CNAME('eioikeutta', 'eioikeutta.netlify.app.', CF_PROXY_OFF), // Ei sulla oikeutta oo - Nikke
     
     // Other
