@@ -59,7 +59,7 @@ D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     // Other
     TXT('_github-challenge-testausserveri', 'f037aa581f'), // GitHub organization challenge
     TXT('@', 'google-site-verification=6XQ_v6tkh3jB_hl63IA4iMS8RV3bj9rzKfaQxomX6i4'), // Google site verification
-    TXT('autot', 'google-site-verification=tj8rdcQQa2VjqxCSAv7uS8PaZBQiFiDj3E345kA5rsI'), // G Site
+    TXT('autot.testausserveri.fi', 'google-site-verification=tj8rdcQQa2VjqxCSAv7uS8PaZBQiFiDj3E345kA5rsI'), // G Site
     TXT('_visual-studio-marketplace-testausserveri-ry', 'ab22dccc-c009-44e6-ac28-f13794816bb8'),
   
     // Mail
