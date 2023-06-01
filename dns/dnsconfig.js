@@ -6,7 +6,6 @@ var CF_PROXY_OFF = {'cloudflare_proxy': 'off'};     // Proxy disabled.
 var CF_PROXY_ON = {'cloudflare_proxy': 'on'};       // Proxy enabled.
 
 
-
 D('testausserveri.fi', REG_NONE, NO_PURGE, DnsProvider(DNS_CLOUDFLARE),
     CF_PROXY_DEFAULT_ON,
     A('testausserveri.fi.', '76.76.21.21', CF_PROXY_OFF),
