@@ -18,7 +18,6 @@ import mkrBoardImg from '../assets/about/board/mkr.jpeg'
 import sinBoardImg from '../assets/about/board/sin.jpeg'
 import heiBoardImg from '../assets/about/board/hei.jpeg'
 import serBoardImg from '../assets/about/board/ser.jpeg'
-import steveBoardImg from '../assets/about/board/steve.jpeg'
 
 // icons
 import GithubIcon from '../assets/GithubIcon.svg'
@@ -33,7 +32,6 @@ import { Footer } from '../components/Footer/Footer'
 import Link from 'next/link'
 import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { Collaborations } from '../components/Collaborations/Collaborations'
-import { useEffect } from 'react'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { GuildInfo } from '../utils/types'
 
@@ -133,7 +131,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         </p>
         <p>
           Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
-          Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme: yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin perjaatteisiin.
+          Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme: yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin periaatteisiin.
           Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistyksemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
@@ -160,11 +158,11 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
 
         <H2 style={{ marginTop: "1.5rem" }}>Tavoitteemme</H2>
         <p>
-          Tavoitteenamme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiiriiä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioa olemassa olevia taitojaan.
+          Tavoitteenamme on ylläpitää yhdistyksessämme ja Discord-yhteisössämme hyvää ilmapiiriä, joka antaa tasavertaiset mahdollisuudet kaikille oppia uutta tietotekniikasta tai hioa olemassa olevia taitojaan.
         </p>
         <p>
           Pyrimme myös toimimaan tietotekniikka- ja kyberaloilla nuorten eduksi erilaisten yhteistyökumppaniemme kanssa, kuin mediassakin.
-          Tavoiteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
+          Tavoitteenamme on tuoda ohjelmointia ja eettistä hakkerointia harrastuksina entistä enemmän suurten yleisöjen eteen.
         </p>
         <H2>Yhdistyksen järjestäytyminen</H2>
         <p>
@@ -225,14 +223,14 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         </p>
         <a href="https://testausserveri.fi/link/jasenhakemus"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
         <p>
-          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti-, Mastodon- ja BitWarden-palveluihin.
+          Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti-, Mastodon- ja Bitwarden-palveluihin.
         </p>
 
         <H2>Ketkä tukevat meitä?</H2>
         <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa:</p>
         <Collaborations style={{ margin: "2rem 0" }} noTitle />
         <p>
-          Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahakäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
+          Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahankäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>
       </Content>
       <Footer copyrightYear={copyrightYear} />

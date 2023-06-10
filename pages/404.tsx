@@ -17,6 +17,5 @@ export default function Home() {
       </Head>
       <Meme src="https://c.tenor.com/aQ9O2r9eBxgAAAAC/apm-apmtv3.gif" />
     </article>
-    )
-  }
-  
+  )
+}

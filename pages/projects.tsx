@@ -26,7 +26,7 @@ export default function Projects({ projectsData: projects, isMobile, copyrightYe
             <Image
               src={Projects3DMobile}
               layout="responsive"
-              alt="Kuva, jossa näkyy 3D-mallit pöydästä, usb-tikusa, herätyskellosta, tietokoneesta sekä polkupyörästä jonka kyljessä on QR-koodi"
+              alt="Kuva, jossa näkyy 3D-mallit pöydästä, USB-tikusta, herätyskellosta, tietokoneesta sekä polkupyörästä jonka kyljessä on QR-koodi"
             />
           </div>
         }

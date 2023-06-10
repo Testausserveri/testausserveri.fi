@@ -85,7 +85,7 @@ const AssociationMembershipCardRoot = styled.div`
   }
 `
 
-function AssociationMembershipCard({authenticated}: Props) {
+function AssociationMembershipCard({ authenticated }: Props) {
   const notMember = authenticated.associationMembership.status != "MEMBER"
 
   return (
@@ -101,13 +101,13 @@ function AssociationMembershipCard({authenticated}: Props) {
             {notMember ? "Tuotantoserveri" : authenticated.associationMembership.city}
             <Explanation>
               Yhdistyslaki velvoittaa meitä pitämään luetteloa kunkin jäsenen nimestä ja asuinkunnasta. (Yhdistyslaki 503/1989, 11 §)
-            </Explanation>  
+            </Explanation>
           </p>
           <p>
             {notMember ? "hauhau@koira.testausserveri.fi" : authenticated.associationMembership.email}
             <Explanation>
               Sähköpostiisi tulee mm. tärkeitä tiedotteita kuten tapahtumakutsuja.
-            </Explanation>  
+            </Explanation>
           </p>
         </div>
         <div>
@@ -122,52 +122,51 @@ function AssociationMembershipCard({authenticated}: Props) {
       <div className="notMember" style={!notMember ? { display: "none" } : {}}>
         <p>Et ole vielä yhdistyksen jäsen. Skill issue. </p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCjpgkvsdgPN-X5R10n74qA7hO0hE_gK3VAEjzMh03uHKDlg/viewform">
-        <CapsuleButton small>Jätä jäsenhakemus</CapsuleButton>
-
+          <CapsuleButton small>Jätä jäsenhakemus</CapsuleButton>
         </a>
       </div>
     </AssociationMembershipCardRoot>
   )
 }
 
-export default function MembersAreaHome({authenticated}: Props) {
+export default function MembersAreaHome({ authenticated }: Props) {
   return (
     <article>
-        <Head>
-            <title>Testausserveri</title>
-        </Head>
-        <Content>
-          <H1>Jäsensivut</H1>
+      <Head>
+        <title>Testausserveri</title>
+      </Head>
+      <Content>
+        <H1>Jäsensivut</H1>
 
-          { authenticated.username == null ? 
+        {authenticated.username == null ?
           <>
             <p>Et ole kirjautunut sisään.</p>
           </>
-          : 
+          :
           <>
             <p>
-            Tämä toiminto on vielä kehityksessä.
+              Tämä toiminto on vielä kehityksessä.
             </p>
             <UserRow>
               <div>
                 <Image width="50" height="50" alt="Avatar" src={getMemberAvatarUrl(authenticated._id)} />
               </div>
               <div>
-                { authenticated.username }
+                {authenticated.username}
               </div>
               <div>
-              <a href="/api/v1/logout">
-                <CapsuleButton small secondary>Kirjaudu ulos</CapsuleButton>
-              </a>
+                <a href="/api/v1/logout">
+                  <CapsuleButton small secondary>Kirjaudu ulos</CapsuleButton>
+                </a>
               </div>
             </UserRow>
-            
+
             <AssociationMembershipCard authenticated={authenticated} />
-            
+
           </>
-          }
-          
-        </Content>
+        }
+
+      </Content>
       <Footer copyrightYear={new Date().getFullYear()} />
     </article>
   )
