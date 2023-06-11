@@ -54,7 +54,6 @@ const Device = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   background-color: rgba(108, 108, 108, 0.09);
-  padding: 1rem;
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -87,7 +86,7 @@ const DeviceAmount = styled.div`
   color: rgba(255,255,255,0.6);
   width: auto !important;
   text-align: left;
-  margin: 0 0 1rem 0 !important;
+  margin-bottom: 1rem !important;
 `
 const SpecList = styled.div`
 
@@ -152,8 +151,7 @@ const ResponsiveSplitFlex = styled.div`
       height: 25rem !important;
 
       ul {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-block: 1rem;
         margin-left: unset;
       }
 
@@ -177,10 +175,9 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
         <H1>Koneet kiertoon -kampanja</H1>
         <InfoBox>
           <span>Tämän sivun tietoja täydennetään vielä.</span>
-          <span>Kampanjan alkamisesta tiedotetaan erikseen.</span>
         </InfoBox>
         <p>
-          Testausserveri ry organisoi yksityisen lahjoittajan lahjoittamien tietokoneiden ja palvelimien jakamisen yhdistyksen jäsenille ja hyväntekeväisyyteen.
+          Testausserveri ry organisoi Koneet Kiertoon kampanjan yhdistykselle lahjoitettujen tietokoneiden ja palvelimien eteenpäin lahjoittamista varten.
           Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville tietokoneille ja palvelimille uusi elämä.
           Jaossa on toimistokäytössä olleita pöytäkoneita ja kannettavia, sekä tuotantovalmiita palvelimia.*
         </p>
@@ -265,7 +262,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <p>Huom. kuvassa olevasta koneesta puuttuu kiintolevy. Tämä oli kuvaajan moka. Kaikissa koneissa on joku ylhäällä mainituista kiintolevyistä.</p>
           </Device>
           <Device>
-            <DeviceAmount>Jäljellä 0 / 0 ⤬</DeviceAmount>
+            <DeviceAmount>Jäljellä 9 / 9 ⤬</DeviceAmount>
             <h3>HP EliteBook 840 G5</h3>
             <p>
               Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat hyvässä kunnossa muutamia pintanaarmuja lukuun ottamatta.
@@ -312,7 +309,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             </ResponsiveSplitFlex>
           </Device>
           <Device>
-            <DeviceAmount>Jäljellä 0 / 0 ⤬</DeviceAmount>
+            <DeviceAmount>Jäljellä 11 / 11 x</DeviceAmount>
             <h3>HP EliteBook 820 G4</h3>
             <p>
               Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat suhteellisen hyvässä kunnossa. Kannettavissa on kaikenlaisia naarmuja ja käytön jälkiä.
@@ -362,18 +359,15 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           </Device>
         </Section>
         <Section>
-          <h2>Lahjoituksen saamisen kynnysehdot</h2>
+          <h2>Lahjoituksen hakeminen</h2>
           <p>
             Koneet kiertoon -kampanjan tavoitteena on yhdistyksemme tavoitteiden mukaisesti edistää tietotekniikka- ja kyberturvallisuusharrastuneisuutta.
             Lahjoituksen vastaanottaminen edellyttää kyselyyn vastaamista, jossa toivomme lahjoitusta hakevien kirjoittavan hieman laajemmin eri käyttötarkoituksista, joihin lahjoitettava laite/laitteet menisivät.
           </p>
+          <p>Hakemukset käsitellään saapumisjärjestyksessä. Mikäli hakemuksesi hyväksytään, teihin ollaan yhteydessä yhdistys-sähköpostinne (nimi@testausserveri.fi) kautta.</p>
           <p>
-            Kynnysehdot tarkemmin:
-            TBD
-          </p>
-          <p>
-            Vastaa kyselyyn ja hae lahjoitusta:
-            TBA
+            Kynnysehdot ovat lahjoituksen hakemuslomakkeessa, jonka voit täyttää täältä:
+            <a href="https://forms.gle/s77YCSEmvtrtujAY8">https://forms.gle/s77YCSEmvtrtujAY8</a>
           </p>
         </Section>
         <p>
@@ -381,10 +375,8 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             * Testausserveri ry ei korvaa mahdollisia postituskuluja (mahdollisista toimituksista sovitaan erikseen), eikä anna lahjoitettaville laitteille minkäänlaista takuuta toimivuudesta tai sopivuudesta mihinkään käyttötarkoitukseen.
             Lahjoittajan saajan vastuulla on taata lahjoitetun laitteen toimivuus ja kunto ennen lahjoituksen vastaanottamista.
             Lahjoituksesta voi kieltäytyä missä tahansa lahjoituksen käsittelyn vaiheessa ennen laitteen virallista luovuttamista.
-            Testausserveri ry ei ota vastaan mistään syistä laitteiden palautuksia niiden virallisen luovuttamisen jälkeen.
-            Virallinen luovutus todennetaan luovutus-sopimuksella, jonka lahjoitustapahtuman molemmat osapuolet allekirjoittavat (sopimus vielä kesken).
+            Laitteiden konfiguraatiot vaihtelevat.
           </small>
-        
         </p>
         <p>
           <small>Kuvat: Testausserveri ry (kaikki oikeudet pidetään)</small>
