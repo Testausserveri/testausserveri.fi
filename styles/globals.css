@@ -63,3 +63,7 @@ table:not(.noLinkStyles) a:hover,
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+small {
+  color: rgba(255,255,255,0.4) !important;
+}
