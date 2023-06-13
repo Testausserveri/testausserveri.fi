@@ -32,6 +32,14 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
         }
     }, [router.events, setOpen])
 
+    useEffect(() => {
+        const originalStyle = window.getComputedStyle(document.documentElement).overflowY 
+        document.documentElement.style.overflowY = open ? "hidden" : originalStyle 
+        return () => {
+            document.documentElement.style.overflowY = originalStyle
+        }
+    }, [open])
+
     const openClassName = open ? styles.open : ""
     return (
         <div className={className ? `${className} ${openClassName}` : openClassName}>
