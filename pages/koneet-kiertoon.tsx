@@ -177,9 +177,10 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           <span>Tämän sivun tietoja täydennetään vielä.</span>
         </InfoBox>
         <p>
-          Testausserveri ry organisoi Koneet Kiertoon kampanjan yhdistykselle lahjoitettujen tietokoneiden ja palvelimien eteenpäin lahjoittamista varten.
-          Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville tietokoneille ja palvelimille uusi elämä.
+          Testausserveri ry organisoi Koneet Kiertoon kampanjan anonyymin lahjoittajan käytettyjen tietokoneiden ja palvelimien lahjoittamista varten.
+          Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville, tietokoneille ja palvelimille uusi elämä.
           Jaossa on toimistokäytössä olleita pöytäkoneita ja kannettavia, sekä tuotantovalmiita palvelimia.*
+          Jos perheessänne on pientä päivitystä kaipaava nuori lupaus, oma läppäri vetelee viimeisiä tai haluat kehittää testaus-GPT:n, täytä hakemus ja kerro mitä tekisit lahjoitetulla laitteella!
         </p>
         <Section>
           <h2>Lahjoitettavat laitteet</h2>
@@ -223,9 +224,9 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
                 <p>
                   <b>Kiintolevy:</b>
                   <br />
-                  &nbsp;Samsung 860 EVO (? Gt, ? Gt/s) /
+                  &nbsp;Samsung 860 EVO (1 Tt) /
                   <br />
-                  &nbsp;Micron 1100 (256 Gt, 6 Gt/s) /
+                  &nbsp;Micron 1100 (256 Gt) /
                   <br />
                   &nbsp;PCIe M.2 SSD ??? (? Gt, ?Gt/s)
                 </p>
@@ -246,7 +247,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
                   <br />
                 </p>
                 <p><b>Liitännät:</b>                 &nbsp;SD-korttipaikka (1 kpl, edessä)</p>
-                <p><b>Käyttöjärjestelmä:</b> ?</p>
+                <p><b>Käyttöjärjestelmä:</b>                 &nbsp;Osassa Windows lisenssi.</p>
                 <p><b>Virtalähde:</b> 400W (80 PLUS PLATINUM, HP)</p>
                 <p><b>Mitat:</b> 40 x 44 x 17 (cm)</p>
                 <p><b>Paino:</b> n. ?kg (riippuen kokoonpanosta)</p>
@@ -366,8 +367,12 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           </p>
           <p>Hakemukset käsitellään saapumisjärjestyksessä. Mikäli hakemuksesi hyväksytään, teihin ollaan yhteydessä yhdistys-sähköpostinne (nimi@testausserveri.fi) kautta.</p>
           <p>
-            Kynnysehdot ovat lahjoituksen hakemuslomakkeessa, jonka voit täyttää täältä:
+            Lahjoituksen hakulomakkeen voi voit täyttää täältä:
             <a href="https://forms.gle/s77YCSEmvtrtujAY8">https://forms.gle/s77YCSEmvtrtujAY8</a>
+          </p>
+          <p>
+            Lahjoitukset jaetaan erissä, joista ensimmäisissä priorisoidaan yhdistyksen jäseniä.
+            Lue lisää eri erien kriteereistä ja seuraa kampanjan etenemistä Discord-palvelimemme <a href="https://discord.com/channels/697710787636101202/825456228653072435">Tiedotteet-kanavalla</a>
           </p>
         </Section>
         <p>
