@@ -190,7 +190,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           <title>Koneet kiertoon | Testausserveri</title>
           <meta name="description" content="Testausserveri ry:n Koneet Kiertoon -kampanjassa lahjoitetaan käytettyjä tietokoneita ja palvelimia. Vanhoille laitteille haetaan uusi elämä. Täytä hakemus ja kerro, miten käyttäisit lahjoitettua laitetta!" />
           <meta property="og:site_name" content="Testausserveri" />
-          <meta property="og:title" content="Koneet kiertoon" />
+          <meta property="og:title" content="Koneet kiertoon -kampanja" />
           <meta property="og:image" content={"https://testausserveri.fi" + ComputersInCarImg.src} />
           <meta property="og:description" content="Testausserveri ry:n Koneet Kiertoon -kampanjassa lahjoitetaan käytettyjä tietokoneita ja palvelimia. Vanhoille laitteille haetaan uusi elämä. Täytä hakemus ja kerro, miten käyttäisit lahjoitettua laitetta!" />
           <meta name="twitter:card" content="summary_large_image" />
