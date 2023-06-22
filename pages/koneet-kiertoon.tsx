@@ -203,7 +203,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
         </InfoBox>
 
         <SideFigure>
-          <Image src={ComputersInCarImg} alt="Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi" width="300" style={{borderRadius: "0.5rem", marginBottom: "0.5rem"}} />
+          <Image src={ComputersInCarImg} placeholder="blur" alt="Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi" width="300" style={{borderRadius: "0.5rem", marginBottom: "0.5rem"}} />
           <figcaption>Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi</figcaption>
         </SideFigure>
         <p>
