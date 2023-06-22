@@ -118,13 +118,15 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         <title>Tietoa meistä | Testausserveri</title>
         <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
-      <Content>
+      <Content wider>
         <DisplayImage
           placeholder="blur"
           src={testausmeetImg}
           alt="Kuva Testausmeetistä. Noin 20 Testausserverin jäsentä istuu pöydän ääressä ja katsoo suurta näyttöä, jossa esitellään hallitusehdokkaita."
         />
-        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0" }}>Testausmeet 5/2022</p>
+      </Content>
+      <Content>
+        {/*<p style={{ textAlign: "right", fontStyle: "italic", marginTop: "0" }}>Testausmeet 5/2022</p>*/}
         <p style={{ marginTop: "1.5rem" }}>
           Testausserveri ry on vuonna 2021 perustettu voittoa tavoittelematon yhdistys, jonka tavoitteena on edistää ja mahdollistaa nuorten tietotekniikka- ja kyberharrastuneisuutta.
           Yhdistyksen keskeisin toiminto on sen {memberCount} jäsenen Discord-yhteisö, jossa nuoret pääsevät verkostoitumaan vertaistensa kanssa.
@@ -135,6 +137,9 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
           Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistyksemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>
+      </Content>
+      <Content wider>
+
         <GridGallery
           imageProps={{ placeholder: "blur" }}
           media={[
@@ -154,7 +159,10 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
               image: tacobellImg,
               alt: "Valokuva Taco Bell -ravintolasta, jossa näkyy Testausserverin jäseniä syömässä tacoja."
             }]} />
-        <p style={{ textAlign: "right", fontStyle: "italic", marginTop: "-2rem" }}>Testausserveri Assembly, Junction ja LähiTapiola hack day -tapahtumissa, sekä perinteinen Testausmeet illallinen</p>
+      </Content>
+      <Content>
+
+        {/*<p style={{ textAlign: "right", fontStyle: "italic", marginTop: "-2rem" }}>Testausserveri Assembly, Junction ja LähiTapiola hack day -tapahtumissa, sekä perinteinen Testausmeet illallinen</p>*/}
 
         <H2 style={{ marginTop: "1.5rem" }}>Tavoitteemme</H2>
         <p>
@@ -193,7 +201,6 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             </SocialLink>)
           ))}
         </Grid>
-
         <H2>Yhdistysjärjestys</H2>
         <p>
           Yhdistyksen hallitukseen kuuluvat toimikaudella 2023 seuraavat henkilöt:
@@ -216,7 +223,6 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             </PersonIntroduction>
           ))}
         </Grid>
-
         <H2>Jäsenyys yhdistyksessämme</H2>
         <p>
           Yhteisön toimintaan osallistuminen ei vaadi yhdistyksemme jäsenyyttä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi toimintaamme aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
@@ -228,7 +234,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
 
         <H2>Ketkä tukevat meitä?</H2>
         <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa:</p>
-        <Collaborations style={{ margin: "2rem 0" }} noTitle />
+        <Collaborations style={{ margin: "2.5rem 0" }} noTitle />
         <p>
           Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahankäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
         </p>

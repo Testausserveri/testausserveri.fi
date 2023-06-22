@@ -68,7 +68,7 @@ export type FooterProps = {
 export function Footer({ copyrightYear }: FooterProps) {
     return (
         <div className={styles.footer}>
-            <Content noMargin>
+            <Content noMargin wider>
                 <FooterRow>
                     <div>
                         <div>

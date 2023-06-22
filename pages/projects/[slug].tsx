@@ -179,7 +179,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
       </Head>
       {/* @ts-ignore */}
       <FadeBackground style={{ "--bg": `url('${getProjectMediaUrl(cover.filename)}')` }}>
-        <Content>
+        <Content wider>
           <Breadcrumbs
             route={[
               { path: "/projects/", name: "Projektit" },

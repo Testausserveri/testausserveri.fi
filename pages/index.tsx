@@ -118,7 +118,7 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
           </CapsuleButton>
         </Link>
       </Center>
-      <Content>
+      <Content wider>
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
