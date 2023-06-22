@@ -6,6 +6,9 @@ import { Footer } from '../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Gallery } from '../components/Gallery/Gallery'
 import { InfoBox } from '../components/InfoBox/InfoBox'
+import ComputersInCarImg from '../assets/koneet-kiertoon.jpeg'
+import Image from 'next/image'
+import { CapsuleButton } from '../components/Button/CapsuleButton'
 
 const Section = styled.div`
 
@@ -63,12 +66,15 @@ const Device = styled.div`
   }
 
   div {
-    width: 50%;
+    width: 65%;
     margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
+  }
+  div:nth-child(2) {
+    width: 35%;
   }
 
   div > ul {
@@ -163,12 +169,31 @@ const ResponsiveSplitFlex = styled.div`
   }
 `
 
+const SideFigure = styled.figure`
+  width: 300px;
+  float: right;
+  margin: 0 0 0 1rem;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin: 0.5rem 0 1.5rem 0;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+`
+
 export default function ComputerShare({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
       <Head>
           <title>Koneet kiertoon | Testausserveri</title>
-          <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
+          <meta name="description" content="Testausserveri ry:n Koneet Kiertoon -kampanjassa lahjoitetaan käytettyjä tietokoneita ja palvelimia. Vanhoille laitteille haetaan uusi elämä. Täytä hakemus ja kerro, miten käyttäisit lahjoitettua laitetta!" />
+          <meta property="og:site_name" content="Testausserveri" />
+          <meta property="og:title" content="Koneet kiertoon" />
+          <meta property="og:image" content={"https://testausserveri.fi" + ComputersInCarImg.src} />
+          <meta property="og:description" content="Testausserveri ry:n Koneet Kiertoon -kampanjassa lahjoitetaan käytettyjä tietokoneita ja palvelimia. Vanhoille laitteille haetaan uusi elämä. Täytä hakemus ja kerro, miten käyttäisit lahjoitettua laitetta!" />
+          <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Content>
 
@@ -176,10 +201,19 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
         <InfoBox>
           <span>Tämän sivun tietoja täydennetään vielä.</span>
         </InfoBox>
+
+        <SideFigure>
+          <Image src={ComputersInCarImg} alt="Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi" width="300" style={{borderRadius: "0.5rem", marginBottom: "0.5rem"}} />
+          <figcaption>Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi</figcaption>
+        </SideFigure>
         <p>
           Testausserveri ry organisoi Koneet Kiertoon kampanjan anonyymin lahjoittajan käytettyjen tietokoneiden ja palvelimien lahjoittamista varten.
+        </p>
+        <p>
           Kampanjan tavoitteena on antaa turhiksi jääneille vanhoille, mutta edelleen moniin eri käyttötarkoituksiin sopiville, tietokoneille ja palvelimille uusi elämä.
-          Jaossa on toimistokäytössä olleita pöytäkoneita ja kannettavia, sekä tuotantovalmiita palvelimia.*
+          Jaossa on toimistokäytössä olleita pöytäkoneita ja kannettavia, sekä tuotantovalmiita palvelimia.
+        </p>
+        <p>
           Jos perheessänne on pientä päivitystä kaipaava nuori lupaus, oma läppäri vetelee viimeisiä tai haluat kehittää testaus-GPT:n, täytä hakemus ja kerro mitä tekisit lahjoitetulla laitteella!
         </p>
         <Section>
@@ -367,25 +401,27 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           </p>
           <p>Hakemukset käsitellään saapumisjärjestyksessä. Mikäli hakemuksesi hyväksytään, teihin ollaan yhteydessä yhdistys-sähköpostinne (nimi@testausserveri.fi) kautta.</p>
           <p>
-            Lahjoituksen hakulomakkeen voi voit täyttää täältä:
-            <a href="https://forms.gle/s77YCSEmvtrtujAY8">https://forms.gle/s77YCSEmvtrtujAY8</a>
+            Lahjoituksen hakulomakkeen voi voit täyttää täältä: (huom. lomake toistaiseksi auki vain kaikille yhdistyksen jäsenille, vaatii yhdistys-sähköpostin)
+            <br />
+            <br />
           </p>
+          <a href="https://forms.gle/s77YCSEmvtrtujAY8">
+            <CapsuleButton>Täytä hakulomake</CapsuleButton>
+          </a>
           <p>
             Lahjoitukset jaetaan erissä, joista ensimmäisissä priorisoidaan yhdistyksen jäseniä.
             Lue lisää eri erien kriteereistä ja seuraa kampanjan etenemistä Discord-palvelimemme <a href="https://discord.com/channels/697710787636101202/825456228653072435">Tiedotteet-kanavalla</a>
           </p>
         </Section>
-        <p>
-          <small>
-            * Testausserveri ry ei korvaa mahdollisia postituskuluja (mahdollisista toimituksista sovitaan erikseen), eikä anna lahjoitettaville laitteille minkäänlaista takuuta toimivuudesta tai sopivuudesta mihinkään käyttötarkoitukseen.
+        <Section>
+          <h2>Kampanjaehdot</h2>
+          <p>
+            Testausserveri ry ei korvaa mahdollisia postituskuluja (mahdollisista toimituksista sovitaan erikseen), eikä anna lahjoitettaville laitteille minkäänlaista takuuta toimivuudesta tai sopivuudesta mihinkään käyttötarkoitukseen.
             Lahjoittajan saajan vastuulla on taata lahjoitetun laitteen toimivuus ja kunto ennen lahjoituksen vastaanottamista.
             Lahjoituksesta voi kieltäytyä missä tahansa lahjoituksen käsittelyn vaiheessa ennen laitteen virallista luovuttamista.
             Laitteiden konfiguraatiot vaihtelevat.
-          </small>
-        </p>
-        <p>
-          <small>Kuvat: Testausserveri ry (kaikki oikeudet pidetään)</small>
-        </p>
+          </p>
+        </Section>
       </Content>
       <Footer copyrightYear={copyrightYear} />
     </div>

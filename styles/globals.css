@@ -68,6 +68,7 @@ table:not(.noLinkStyles) a:hover,
 
 }
 
-small {
-  color: rgba(255,255,255,0.4) !important;
+small, figcaption {
+  font-size: 0.9em;
+  color: rgba(255,255,255,0.5) !important;
 }
