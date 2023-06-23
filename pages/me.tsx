@@ -9,6 +9,7 @@ import { getMemberAvatarUrl } from '../utils/Member';
 import Image from 'next/image';
 import { GradientText } from '../components/GradientText/GradientText';
 import { Explanation } from '../components/Explanation/Explanation';
+import { GetServerSideProps } from 'next';
 
 interface Props {
   authenticated: Me;
@@ -170,4 +171,9 @@ export default function MembersAreaHome({ authenticated }: Props) {
       <Footer copyrightYear={new Date().getFullYear()} />
     </article>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  res.setHeader('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
+  return {}
 }
