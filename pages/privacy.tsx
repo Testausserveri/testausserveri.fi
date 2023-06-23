@@ -52,8 +52,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
         <Section>
           <h2>2. Rekisteristä vastaava yhteyshenkilö</h2>
           <p>
-            Mikael Hannolainen<br />
-            hallituksen puheenjohtaja
+            Mikael Hannolainen
           </p>
           <p>
             <IoIosMail /> <a href="mailto:mikael@testausserveri.fi">mikael@testausserveri.fi</a><br />
