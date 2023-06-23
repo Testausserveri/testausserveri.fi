@@ -64,6 +64,13 @@ MyApp.getInitialProps = async ({ctx}: Ctx) => {
     }
   }
   
+  // temporary solution to disable authenticated
+  return {
+    props: {
+      authenticated: {}
+    }
+  }
+
   return {
     props: {
       authenticated: data
