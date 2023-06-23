@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { Me } from '../../utils/types'
 import Link from 'next/link'
+import { useMesiExperiment } from '../../hooks/useMesiExperiment'
 
 
 export type HeaderProps = {
@@ -31,35 +32,38 @@ const Avatar = styled(Image)`
     margin-right: 0.7em;
     z-index: 50;
 `
-
+function LoginButton({authenticated = {}}: {authenticated: Me}) {
+    return (authenticated.username ? 
+        <>
+            <Link href="/me" passHref>
+                <CapsuleButton className={styles.button} small secondary>
+                    <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id)} /> 
+                    { authenticated.username }
+                </CapsuleButton>
+            </Link>
+        </>
+    : 
+        <>
+            <a href={process.env.LOGIN_URL}>
+                <CapsuleButton className={styles.button} small secondary>
+                    <IoMdKey />
+                    Jäsensivut
+                </CapsuleButton>
+            </a>
+        </>
+    ) 
+}
 export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
     const [open, setOpen] = useState(false)
-
-
+    const experimentEnabled = useMesiExperiment()
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
             <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
-                {/* authenticated.username ? 
-                    <>
-                        <Link href="/me" passHref>
-                            <CapsuleButton className={styles.button} small secondary>
-                                <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id)} /> 
-                                { authenticated.username }
-                            </CapsuleButton>
-                        </Link>
-                    </>
-                : 
-                    <>
-                        <a href={process.env.LOGIN_URL}>
-                            <CapsuleButton className={styles.button} small secondary>
-                                <IoMdKey />
-                                Jäsensivut
-                            </CapsuleButton>
-                        </a>
-                    </> */}
-                
+                {experimentEnabled ? 
+                    <LoginButton authenticated={authenticated} />
+                : null}
                 <a href="https://discord.testausserveri.fi">
                     <CapsuleButton className={styles.button} small>
                         <ButtonIcon alt="Discord" src={DiscordIcon} />

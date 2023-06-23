@@ -5,6 +5,8 @@ import { Footer } from '../components/Footer/Footer'
 import { H1 } from '../components/Title/Title'
 import licenses from '../dependency-licenses.json'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { CapsuleButton } from '../components/Button/CapsuleButton'
+import { useMesiExperiment } from '../hooks/useMesiExperiment'
 
 const developers = [
   { name: "Miksu", url: "https://github.com/ahnl" },
@@ -13,6 +15,8 @@ const developers = [
 ]
 
 export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const experimentEnabled = useMesiExperiment()
+  
   return (
     <article>
       <Head>
@@ -33,6 +37,11 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
             </li>
           ))}
         </ul>
+        <H1>Area 51</H1>
+        {!experimentEnabled ? 
+          <CapsuleButton small onClick={() => {document.cookie = "mesiexperiment=true;"; location.reload();}}>Kytke jäsensivukokeilu käyttöön</CapsuleButton>
+        : <b>Jäsensivukokeilu on käytössä</b>}
+        
         <H1>Lisenssit</H1>
         <p>
           Tämän sivuston toteutuksessa käytettyjen avointen lähdekoodin ohjelmistojen tai kirjastojen lisenssit ja tekijänoikeudet ovat esitetty alla.

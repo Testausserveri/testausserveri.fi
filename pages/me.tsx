@@ -138,7 +138,7 @@ export default function MembersAreaHome({ authenticated }: Props) {
       <Content>
         <H1>Jäsensivut</H1>
 
-        {authenticated.username == null ?
+        {authenticated?.username == null ?
           <>
             <p>Et ole kirjautunut sisään.</p>
           </>
