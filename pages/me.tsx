@@ -175,5 +175,7 @@ export default function MembersAreaHome({ authenticated }: Props) {
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   res.setHeader('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
-  return {}
+  return {
+    props: {}
+  }
 }
