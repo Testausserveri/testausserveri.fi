@@ -7,7 +7,7 @@ export type TextAreaProps = {
     text: string;
 }
 
-const autosizeTextArea = (
+const useAutosizeTextArea = (
     textArea: HTMLTextAreaElement | null,
     value: string
   ) => {
@@ -24,7 +24,7 @@ export function TextArea({ maxLength = 250 , text = ""}: TextAreaProps) {
     const [value, setValue] = useState(text);
     const textArea = useRef<HTMLTextAreaElement>(null);
 
-    autosizeTextArea(textArea.current, value);
+    useAutosizeTextArea(textArea.current, value);
 
     const sizeChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
         const val = evt.target?.value;
