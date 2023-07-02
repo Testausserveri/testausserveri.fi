@@ -15,7 +15,7 @@ body {
   color: #DBDBDB;
 }
 
-p {
+p, ul, ol {
   line-height: 1.5;
   color: rgba(255,255,255, 0.7);
 }
@@ -25,10 +25,6 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-}
-
-ul {
-  line-height: 1.5;
 }
 
 * {

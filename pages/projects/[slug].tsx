@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import { Content } from '../../components/Content/Content'
 import styled from 'styled-components'
@@ -19,6 +20,8 @@ import { getProjectLinkIcon, getProjectLinkTitle, getProjectLinkUrl, getProjectM
 import { getMemberAvatarUrl } from '../../utils/Member'
 import { DetailedProject, ShallowProject } from "../../utils/types";
 import Link from 'next/link'
+import Image from 'next/image'
+import { Key } from 'react'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -31,14 +34,15 @@ const Layout = styled.div`
     width: 32%;
   }
 
-  @media only screen and (max-width: 970px) {
+  
+  @media only screen and (max-width: 920px) {
     >div:nth-child(2) {
-      width: 50%;
+      width: 39%;
     }
   } 
 
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     flex-direction: column;
     >div:nth-child(2) {
       width: 100%;
@@ -164,6 +168,75 @@ const ProjectLinkTitleContainer = styled.div`
   align-items: center;
 `
 
+const Blockquote = styled.blockquote`
+  text-align: center;
+  margin: 3rem 0;
+  color: rgba(255,255,255, 0.7);
+`
+
+const MdxImageParent = styled.div`
+  &.inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 500px;
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+      max-height: 100%;
+      gap: 1rem;
+    }
+    .img-wrapper {
+      flex: 1;
+      height: 100%;
+      margin-right: 10px; 
+    }
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  img {
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+  }
+  small {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: .5rem 0 1rem 0;
+  }
+`
+
+type MdxImageProps = {
+  src: string,
+  caption?: string
+}
+
+const MdxImage = (props: MdxImageProps) => {
+  if (Array.isArray(props.src)) {
+    return <MdxImageParent className="inline">
+      {props.src.map((url: string, index: number)=> (
+        <div key={url as Key} className="img-wrapper">
+          <img src={url} alt={`Kuva ${index} ${props?.caption ? ": " + props.caption : ""}`} />
+        </div>
+      ))}
+    </MdxImageParent>
+  } else {
+    return <MdxImageParent>
+      <img src={props.src} alt={props?.caption} />
+      {props.caption ?
+        <small>{props.caption}</small>
+      : null}
+    </MdxImageParent>
+  }
+}
+const components = { Blockquote, Image: MdxImage}
+
 export default function ProjectPage({ projectData: project, mdxSerialized, suggestedProjectsData: suggestedProjects, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const cover = project.media.find(item => item.cover === true)
   return (
@@ -178,7 +251,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       {/* @ts-ignore */}
-      <FadeBackground style={{ "--bg": `url('${getProjectMediaUrl(cover.filename)}')` }}>
+      <FadeBackground style={cover?.filename ? { "--bg": `url('${getProjectMediaUrl(cover.filename)}')` } : {}}>
         <Content wider>
           <Breadcrumbs
             route={[
@@ -200,7 +273,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
               </P>
 
               {project.description.full ?
-                <MDXRemote {...mdxSerialized.fullDescription} />
+                <MDXRemote {...mdxSerialized.fullDescription} components={components}/>
                 : null}
 
               <div style={{ marginTop: "2rem" }}>
@@ -303,7 +376,7 @@ export const getStaticProps: GetStaticProps<{
     readmes[repository] = await serialize(data.readmes[repository], mdxOptions)
   }
 
-  const fullDescription = await serialize(data.description.full, mdxOptions)
+  const fullDescription = await serialize(data.description.full)
 
   return {
     props:
