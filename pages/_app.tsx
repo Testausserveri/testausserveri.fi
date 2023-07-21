@@ -39,6 +39,14 @@ type Ctx = {
   ctx: NextPageContext
 }
 MyApp.getInitialProps = async ({ctx}: Ctx) => {
+
+  // temporary solution to disable authenticated
+  return {
+    props: {
+      authenticated: {}
+    }
+  }
+  
   let data
   if ((ctx?.req?.headers)) {
     if (ctx.req.headers.cookie && ctx.req.headers.cookie.includes("connect.sid=")) {
@@ -64,12 +72,7 @@ MyApp.getInitialProps = async ({ctx}: Ctx) => {
     }
   }
   
-  // temporary solution to disable authenticated
-  return {
-    props: {
-      authenticated: {}
-    }
-  }
+
 
   return {
     props: {
