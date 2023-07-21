@@ -53,7 +53,7 @@ export type LeaderboardProps = {
 }
 
 export function Leaderboard({ data, title, valueFormatter, explanation }: LeaderboardProps) {
-    const dataSorted = data.sort((a, b) => (b.value - a.value))
+    const dataSorted = data.filter(x => x).sort((a, b) => (b.value - a.value))
     const dataWithPercentages = dataSorted.map(item => (
         {
             ...item,
