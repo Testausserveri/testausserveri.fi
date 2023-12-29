@@ -225,7 +225,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <b>Kaikkien laitteiden yhteydessä annetaan kyseiseen laitteeseen sopiva virtalähde/kaapeli.</b>
           </p>
           <Device>
-            <DeviceAmount>Jäljellä 15 / 15 ⤬</DeviceAmount>
+            <DeviceAmount>Jäljellä 13 / 15 ⤬</DeviceAmount>
             <h3>HP Workstation Z240</h3>
             <p>
               Nämä HP:n Workstation koneet ovat täydellisiä kevyeen jokapäiväiseen käyttöön ja palvelimeksi hurisemaan vaikka oman huoneen nurkkaan.
@@ -297,7 +297,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <p>Huom. kuvassa olevasta koneesta puuttuu kiintolevy. Tämä oli kuvaajan moka. Kaikissa koneissa on joku ylhäällä mainituista kiintolevyistä.</p>
           </Device>
           <Device>
-            <DeviceAmount>Jäljellä 9 / 9 ⤬</DeviceAmount>
+            <DeviceAmount>Jäljellä 2 / 9 ⤬</DeviceAmount>
             <h3>HP EliteBook 840 G5</h3>
             <p>
               Nämä päivittäisessä toimistokäytössä olleet kannettavat ovat hyvässä kunnossa muutamia pintanaarmuja lukuun ottamatta.
