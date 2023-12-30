@@ -225,7 +225,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
             <b>Kaikkien laitteiden yhteydessä annetaan kyseiseen laitteeseen sopiva virtalähde/kaapeli.</b>
           </p>
           <Device>
-            <DeviceAmount>Jäljellä 13 / 15 ⤬</DeviceAmount>
+            <DeviceAmount>Jäljellä 12 / 15 ⤬</DeviceAmount>
             <h3>HP Workstation Z240</h3>
             <p>
               Nämä HP:n Workstation koneet ovat täydellisiä kevyeen jokapäiväiseen käyttöön ja palvelimeksi hurisemaan vaikka oman huoneen nurkkaan.
