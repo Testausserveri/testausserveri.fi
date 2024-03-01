@@ -16,8 +16,8 @@ import hanBoardImg from '../assets/about/board/han.jpeg'
 import ellBoardImg from '../assets/about/board/ell.jpeg'
 import mkrBoardImg from '../assets/about/board/mkr.jpeg'
 import sinBoardImg from '../assets/about/board/sin.jpeg'
-import heiBoardImg from '../assets/about/board/hei.jpeg'
 import serBoardImg from '../assets/about/board/ser.jpeg'
+import oikBoardImg from '../assets/about/board/oik.jpeg'
 
 // icons
 import GithubIcon from '../assets/GithubIcon.svg'
@@ -203,7 +203,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         </Grid>
         <H2>Yhdistysjärjestys</H2>
         <p>
-          Yhdistyksen hallitukseen kuuluvat toimikaudella 2023 seuraavat henkilöt:
+          Yhdistyksen hallitukseen kuuluvat toimikaudella 2024 seuraavat henkilöt:
         </p>
         <Grid className="board">
           {([
@@ -211,8 +211,8 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
             [ellBoardImg, "Antti Ellilä", "varapuheenjohtaja, tietojärjestelmät"],
             [hanBoardImg, "Mikael Hannolainen", "sihteeri"],
             [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
-            [heiBoardImg, "Petri Heinämäki", "hallituksen jäsen, viestintä"],
             [serBoardImg, "Sergey Ichtchenko", "hallituksen jäsen, yhteistyöt"],
+            [oikBoardImg, "Niilas Oikarainen", "hallituksen jäsen"]
           ] as const).map(person => (
             <PersonIntroduction key={person[1]}>
               <span>
