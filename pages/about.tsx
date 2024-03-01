@@ -203,7 +203,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         </Grid>
         <H2>Yhdistysjärjestys</H2>
         <p>
-          Yhdistyksen hallitukseen kuuluvat toimikaudella 2024 seuraavat henkilöt:
+          Yhdistyksen hallitukseen kuuluvat toimikaudella 2024 seuraavat henkilöt (henkilökohtaiset sähköpostiosoitteet etunimi@testausserveri.fi, jollei toisin mainittu):
         </p>
         <Grid className="board">
           {([
