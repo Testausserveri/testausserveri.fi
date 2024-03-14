@@ -1,6 +1,7 @@
 import styles from './Collaborations.module.css'
 
 import saucesoft from '../../assets/collaborations/saucesoft.svg'
+import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
 import { CSSProperties } from 'react'
@@ -22,13 +23,18 @@ export function Collaborations(props: CollaborationsProps) {
             : null}
             <ul className="noLinkStyles" style={props.noTitle ? {marginTop: "1rem"} : {}}>
                 <li>
-                    <Link href="https://saucesoft.io" target="_blank">
-                        <Image src={saucesoft} height={80} alt="Saucesoft logo" />
+                    <Link href="https://challenge.fi" target="_blank">
+                        <Image src={nextgen} height={80} alt="Next Gen logo" />
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://challenge.fi" target="_blank">
-                        <Image src={nextgen} height={80} alt="Next Gen logo" />
+                    <Link href="https://aatos.app/" target="_blank">
+                        <Image src={aatos} height={80} alt="Aatos Legal Technology logo" />
+                    </Link>
+                </li>
+                <li>
+                    <Link href="https://saucesoft.io" target="_blank">
+                        <Image src={saucesoft} height={80} alt="Saucesoft logo" />
                     </Link>
                 </li>
                 <li>
