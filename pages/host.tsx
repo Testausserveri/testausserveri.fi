@@ -12,6 +12,7 @@ import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { IoMdKey } from "react-icons/io"
 import { NavigateLink } from '../components/NavigateLink/NavigateLink'
 import { Capsule } from '../components/Capsule/Capsule'
+import Link from 'next/link'
 
 
 export default function Host({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -37,17 +38,17 @@ export default function Host({ copyrightYear }: InferGetServerSidePropsType<type
         <p>Palvelimella voit ajaa mm. omaa www-sivua, NodeJS- tai Python-ohjelmia. Oletuksena saat alidomainin muodossa nimi.txx.fi, jossa nimi on sama kuin jäsensähköpostiosoitteessasi.</p>
         <p>Saatavilla on myös sähköposti ja DNS omalle domainille! Näitä lisäpalveluita voit pyytää sähköpostitse <a href="mailto:host@testausserveri.fi">host@testausserveri.fi</a>.</p>
         <p>Jäsenetu on toteutettu yhteistyössä Testausserveri ry:n ja Osphostin kanssa. Mikäli tarvitset enemmän palvelinkapasiteettia valmiille avoimen lähdekoodin projektillesi, voit hakea sitä suoraan <a href="https://osphost.fi">Osphostilta</a>.</p>
-        <a href="/host/enable">
+        <Link href="/host/enable">
           <CapsuleButton style={{marginRight: ".75em", marginTop: ".75em"}}>
             <IoMdKey style={{fontSize: "1em", transform: "scale(1.3)"}} />
             Ota sivutila käyttöön
           </CapsuleButton>
-        </a>
-        <a href="/apply">
+        </Link>
+        <Link href="/apply">
           <CapsuleButton style={{marginTop: ".75em"}} secondary>
             Täytä jäsenhakemus
           </CapsuleButton>
-        </a>
+        </Link>
         <H2>Käyttöehdot ja tietosuoja</H2>
         <NavigateLink href="/host/terms">Käyttöehtosopimus</NavigateLink>
         <NavigateLink href="/host/dpa">Henkilötietojen käsittelyn vakiolausekkeet ja lisäliitteet</NavigateLink>
