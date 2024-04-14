@@ -12,6 +12,7 @@ import { useState } from 'react';
 import api from '../utils/api';
 import { Breadcrumbs } from '../components/Breadcrumbs/Breadcrumbs';
 import testausmeetImg from '../assets/about/testausmeet2.jpeg'
+import { NavigateLink } from '../components/NavigateLink/NavigateLink';
 
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
@@ -68,6 +69,8 @@ export default function MembersAreaHome() {
           <p>
             Yhdistyslaki määrää, että jäsenistä on pidettävä luetteloa, johon on merkittävä kunkin jäsenen täydellinen nimi ja kotipaikka (Yhdistyslaki 503/1989 11 §). Lisäksi Testausserveri ry kerää jäsenrekisteriinsä kunkin jäsenen sähköpostiosoitteen ja Discord-käyttäjänimen yhteydenottoja sekä tunnistautumista varten.
           </p>
+          <NavigateLink href="/privacy">Tietosuojaseloste</NavigateLink>
+          <br />
             <InputFlow>
               <InputText label="Etunimi" autoComplete="given-name" autoFocus={true} update={setFirstName} />
               <InputText label="Sukunimi" autoComplete="last-name" update={setLastName} />
