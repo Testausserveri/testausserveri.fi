@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { IoMdKey } from "react-icons/io"
 import { NavigateLink } from '../components/NavigateLink/NavigateLink'
+import { Capsule } from '../components/Capsule/Capsule'
 
 
 export default function Host({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -26,7 +27,7 @@ export default function Host({ copyrightYear }: InferGetServerSidePropsType<type
           <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Content>
-        <H1>Palvelintila</H1>
+        <H1>Palvelintila <Capsule style={{fontSize: ".8rem", transform: "translateY(-6px)", marginLeft: "0.3em", display: "inline-block"}}>BETA</Capsule></H1>
         <p>Testausserveri ry:n jäsenet saavat maksutta käyttöoikeuden palvelimelle, johon jäsenelle on varattu:</p>
         <ul>
           <li>3 Gt tallennustilaa </li>
