@@ -56,7 +56,7 @@ export const InputDiscord = ((props: InputDiscordProps) => {
                 </>
             :
                 <div className={classNames.join(' ')}>
-                    <a href={process.env.LOGIN_URL_APPLY} target="_blank" rel="opener">
+                    <a href={process.env.NEXT_PUBLIC_LOGIN_URL_APPLY} target="_blank" rel="opener">
                         <CapsuleButton small>
                             <ButtonIcon alt="Discord" src={DiscordIcon} />
                             Linkitä Discord-käyttäjäsi
