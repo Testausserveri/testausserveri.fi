@@ -80,3 +80,15 @@ export type Me = {
       status?: string
   }
 }
+
+export type ApplyForm = {
+  firstName: string,
+  lastName: string,
+  city: string,
+  email: string,
+  discordToken: string
+}
+
+export type ApplyResponse = {
+  status: "ok" | "error"
+}

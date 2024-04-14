@@ -19,6 +19,7 @@ export type CapsuleButtonProps = PropsWithChildren<{
     style?: React.CSSProperties,
     small?: boolean,
     secondary?: boolean,
+    disabled?: boolean
 }> & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 export function CapsuleButton(props: CapsuleButtonProps) {
@@ -37,7 +38,17 @@ export function CapsuleButton(props: CapsuleButtonProps) {
         ripple.current.style.top = `${touch.clientY - rect.top - 50}px`;
         ripple.current.style.left = `${touch.clientX - rect.left - 50}px`;
     }
-
+    if (props.disabled) {
+        return (
+            <div {...otherProps} style={{ ...style, display: "inline-block" }}>
+                <button
+                    className={`${styles.capsuleButton} ${small ? styles.small : ""} ${secondary ? styles.secondary : ""}` + ` ${styles.disabled}`}
+                >
+                    {children}
+                </button>
+            </div>
+        )
+    }
     return (
         <div {...otherProps} style={{ ...style, display: "inline-block" }}>
             <button
