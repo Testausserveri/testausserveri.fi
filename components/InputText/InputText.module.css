@@ -1,0 +1,24 @@
+.inputtext label {
+    display: block;
+    font-family: 'Poppins';
+    color: rgba(255,255,255, 0.7);
+    font-size: .95em;
+    margin-bottom: .3em;
+}
+
+.inputtext input[type=text] {
+    display: block;
+    background-color: #161616;
+    border-radius: 0.5rem;
+    padding: 1em;
+    border: none;
+    color: rgba(255,255,255, 0.7);
+    font-size: 1em;
+    border: 1px solid #161616;
+    width: 100%;
+    max-width: 30vw;
+}
+.inputtext input[type=text]:focus {
+    outline: none;
+    border: 1px solid #383232;
+}
