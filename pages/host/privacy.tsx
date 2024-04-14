@@ -68,12 +68,12 @@ export default function HostPrivacy({ copyrightYear }: InferGetServerSidePropsTy
         <Section>
           <h2>2.	Henkilötietojen käsittelyn tarkoitus ja oikeusperuste</h2>
           <p>Henkilötietojen käsittelyn tarkoitus on käyttäjälle rekisteröityjen webhosting-, shell-, DNS-, sähköposti- tai muiden internet-palveluiden toteuttaminen. </p>
-          <p>Henkilötietojen käsittelyn oikeusperuste on henkilön ja Testausserveri ry:n välinen sopi-mus.</p>
+          <p>Henkilötietojen käsittelyn oikeusperuste on henkilön ja Testausserveri ry:n välinen sopimus.</p>
           <p>Tietoja ei käytetä automatisoituun päätöksentekoon tai profilointiin.</p>
         </Section>
         <Section>
           <h2>3.	Henkilötietojen säilytysaika</h2>
-          <p>Henkilötietoja säilytetään toistaiseksi tietojen antamisesta alkaen, mutta enintään 30 vuo-rokautta tietojen antamisesta alkaen, mikäli käyttöoikeutta ei hyväksytä. Puretun käyttöoi-keuden jälkeen henkilötietoja säilytetään enintään 30 vuorokautta. </p>
+          <p>Henkilötietoja säilytetään toistaiseksi tietojen antamisesta alkaen, mutta enintään 30 vuorokautta tietojen antamisesta alkaen, mikäli käyttöoikeutta ei hyväksytä. Puretun käyttöoikeuden jälkeen henkilötietoja säilytetään enintään 30 vuorokautta. </p>
         </Section>
         <Section>
           <h2>4.	Käsiteltävät henkilötiedot</h2>
@@ -97,7 +97,7 @@ export default function HostPrivacy({ copyrightYear }: InferGetServerSidePropsTy
         </Section>
         <Section>
           <h2>5.	Säännönmukaiset tietolähteet</h2>
-          <p>Yhdistyksen jäsenen tiedot saadaan yhdistyksen jäsenrekisteristä. Jäsen tunnistetaan käyt-töoikeuden hakemisen yhteydessä henkilökohtaisilla jäsentunnuksilla kirjautumalla.</p>
+          <p>Yhdistyksen jäsenen tiedot saadaan yhdistyksen jäsenrekisteristä. Jäsen tunnistetaan käyttöoikeuden hakemisen yhteydessä henkilökohtaisilla jäsentunnuksilla kirjautumalla.</p>
         </Section>
         <Section>
           <h2>6.	Henkilötietojen käsittelijät ja vastaanottajat</h2>
