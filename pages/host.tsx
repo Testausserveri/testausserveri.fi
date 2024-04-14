@@ -33,7 +33,8 @@ export default function Host({ copyrightYear }: InferGetServerSidePropsType<type
           <li>512 Mt muistia</li>
           <li>SSH / SFTP -yhteysmahdollisuudet</li>
         </ul>
-        <p>Palvelimella voit ajaa mm. omaa www-sivua, NodeJS- tai Python-ohjelmia. Saatavilla on myös sähköposti ja DNS omalle domainille! Näitä lisäpalveluita voit pyytää sähköpostitse <a href="mailto:host@testausserveri.fi">host@testausserveri.fi</a>.</p>
+        <p>Palvelimella voit ajaa mm. omaa www-sivua, NodeJS- tai Python-ohjelmia. Oletuksena saat alidomainin muodossa nimi.txx.fi, jossa nimi on sama kuin jäsensähköpostiosoitteessasi.</p>
+        <p>Saatavilla on myös sähköposti ja DNS omalle domainille! Näitä lisäpalveluita voit pyytää sähköpostitse <a href="mailto:host@testausserveri.fi">host@testausserveri.fi</a>.</p>
         <p>Jäsenetu on toteutettu yhteistyössä Testausserveri ry:n ja Osphostin kanssa. Mikäli tarvitset enemmän palvelinkapasiteettia valmiille avoimen lähdekoodin projektillesi, voit hakea sitä suoraan <a href="https://osphost.org">Osphostilta</a>.</p>
         <a href="/host/enable">
           <CapsuleButton style={{marginRight: ".75em"}}>
