@@ -3,7 +3,7 @@ import styles from './Capsule.module.css'
 
 export type CapsuleProps = PropsWithChildren<{
     className?: string,
-    style: React.CSSProperties
+    style?: React.CSSProperties
 }>
 
 export const Capsule = forwardRef<HTMLSpanElement, CapsuleProps>((props, ref) => ((
