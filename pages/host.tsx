@@ -38,13 +38,13 @@ export default function Host({ copyrightYear }: InferGetServerSidePropsType<type
         <p>Saatavilla on myös sähköposti ja DNS omalle domainille! Näitä lisäpalveluita voit pyytää sähköpostitse <a href="mailto:host@testausserveri.fi">host@testausserveri.fi</a>.</p>
         <p>Jäsenetu on toteutettu yhteistyössä Testausserveri ry:n ja Osphostin kanssa. Mikäli tarvitset enemmän palvelinkapasiteettia valmiille avoimen lähdekoodin projektillesi, voit hakea sitä suoraan <a href="https://osphost.fi">Osphostilta</a>.</p>
         <a href="/host/enable">
-          <CapsuleButton style={{marginRight: ".75em"}}>
+          <CapsuleButton style={{marginRight: ".75em", marginTop: ".75em"}}>
             <IoMdKey style={{fontSize: "1em", transform: "scale(1.3)"}} />
             Ota sivutila käyttöön
           </CapsuleButton>
         </a>
         <a href="/apply">
-          <CapsuleButton secondary>
+          <CapsuleButton style={{marginTop: ".75em"}} secondary>
             Täytä jäsenhakemus
           </CapsuleButton>
         </a>
