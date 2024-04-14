@@ -227,7 +227,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         <p>
           Yhteisön toimintaan osallistuminen ei vaadi yhdistyksemme jäsenyyttä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi toimintaamme aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
         </p>
-        <a href="https://testausserveri.fi/link/jasenhakemus"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
+        <a href="https://testausserveri.fi/apply"><CapsuleButton>Täytä jäsenhakemus</CapsuleButton></a>
         <p>
           Jäsenhakemukset käsitellään aina seuraavassa yhdistyksen kokouksessa. Jäsenenä saa äänioikeuden, sekä pääsyn Testausserverin @testausserveri.fi sähköposti-, Mastodon- ja Bitwarden-palveluihin.
         </p>

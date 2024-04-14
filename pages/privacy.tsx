@@ -6,18 +6,24 @@ import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
 import { Footer } from '../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
-const Section = styled.div`
+export const Section = styled.div`
   
   padding: 1.5rem;
   background-color: rgba(108, 108, 108, 0.09);
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  h2 {
+  h2, h3 {
     margin: 0;
     padding: 0;
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 1rem;
+  }
+  h3 {
+    font-size: 0.9em; 
+    font-weight: 550; 
+    margin-top: 1.5em;
+    color: rgba(255,255,255,0.8);
   }
   p {
     margin-bottom: 0;
@@ -28,6 +34,37 @@ const Section = styled.div`
     opacity: 0.7;
     margin-right: 0.3rem;
   }
+  ol {
+    list-style-type: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+}
+ol li {
+    counter-increment: list-counter;
+    padding-left: 1.5em; /* Adjust padding to align the text vertically */
+}
+ol li::before {
+    content: counter(list-counter, lower-alpha) ") ";
+    position: absolute;
+    margin-left: -1.5em; /* Negative margin to hang the labels outside the text block */
+}
+ol li ol {
+    list-style-type: none;
+    counter-reset: inner-counter;
+    padding-left: 1.5em; /* Additional padding for nested lists */
+}
+ol li ol li {
+    counter-increment: inner-counter;
+}
+ol li ol li::before {
+    content: counter(inner-counter) ") ";
+    position: absolute;
+    margin-left: -1.5em; /* Negative margin for nested list labels */
+}
+p>p {
+  margin-top: 0;
+  padding-left: 30px;
+}
 `
 
 export default function Home({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
