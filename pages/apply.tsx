@@ -74,7 +74,7 @@ export default function MembersAreaHome() {
             <InputFlow>
               <InputText label="Etunimi" autoComplete="given-name" autoFocus={true} update={setFirstName} />
               <InputText label="Sukunimi" autoComplete="last-name" update={setLastName} />
-              <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} />
+              <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} municipalityList />
               <InputText label="Sähköpostiosoite" autoComplete="email" update={setEmail} />
             </InputFlow>
             <InputDiscord discordData={discordData} setDiscordData={setDiscordData} />
