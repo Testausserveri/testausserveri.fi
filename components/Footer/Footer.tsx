@@ -12,7 +12,7 @@ const footerLinks = [
     { label: "Status", path: "https://status.testausserveri.fi" },
     { label: "Tietosuojaseloste", path: "/privacy" },
     { label: "Testausserveri Wiki", path: "https://wiki.testausserveri.fi" },
-    { label: "Yhdistyksen säännöt", path: "https://testausserveri.fi/yhdistyksen-saannot.pdf" },
+    { label: "Yhdistyksen säännöt", path: "/association-rules" },
 ] as const
 
 const socialMedias = [

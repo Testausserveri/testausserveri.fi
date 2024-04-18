@@ -34,29 +34,29 @@ export const Section = styled.div`
     opacity: 0.7;
     margin-right: 0.3rem;
   }
-  ol {
+  ol:not(.num) {
     list-style-type: none;
     counter-reset: list-counter;
     padding-left: 0;
 }
-ol li {
+ol:not(.num) li {
     counter-increment: list-counter;
     padding-left: 1.5em; /* Adjust padding to align the text vertically */
 }
-ol li::before {
+ol:not(.num) li::before {
     content: counter(list-counter, lower-alpha) ") ";
     position: absolute;
     margin-left: -1.5em; /* Negative margin to hang the labels outside the text block */
 }
-ol li ol {
+ol:not(.num) li ol {
     list-style-type: none;
     counter-reset: inner-counter;
     padding-left: 1.5em; /* Additional padding for nested lists */
 }
-ol li ol li {
+ol:not(.num) li ol li {
     counter-increment: inner-counter;
 }
-ol li ol li::before {
+ol:not(.num) li ol li::before {
     content: counter(inner-counter) ") ";
     position: absolute;
     margin-left: -1.5em; /* Negative margin for nested list labels */

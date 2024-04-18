@@ -69,6 +69,7 @@ export default function MembersAreaHome() {
           <p>
             Yhdistyslaki määrää, että jäsenistä on pidettävä luetteloa, johon on merkittävä kunkin jäsenen täydellinen nimi ja kotipaikka (Yhdistyslaki 503/1989 11 §). Lisäksi Testausserveri ry kerää jäsenrekisteriinsä kunkin jäsenen sähköpostiosoitteen ja Discord-käyttäjänimen yhteydenottoja sekä tunnistautumista varten.
           </p>
+          <NavigateLink href="/association-rules">Yhdistyksen säännöt</NavigateLink>
           <NavigateLink href="/privacy">Tietosuojaseloste</NavigateLink>
           <br />
             <InputFlow>
