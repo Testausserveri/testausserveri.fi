@@ -15,7 +15,7 @@ export default function AssociationRules({ copyrightYear }: InferGetServerSidePr
                 <meta property="og:site_name" content="Testausserveri" />
                 <meta property="og:title" content="Yhdistyksen säännöt" />
                 <meta property="og:image" content={"https://testausserveri.fi" + Testausmeet2Img.src} />
-                <meta property="og:description" content="Testausserveri ry: tarkoituksena on edistää nuorten tietotekniikka- ja tietoturvaharrastuneisuutta, sekä järjestää aiheeseen liittyviä tapahtumia ja tapaamisia." />
+                <meta property="og:description" content="Testausserveri ry:n tarkoituksena on edistää nuorten tietotekniikka- ja tietoturvaharrastuneisuutta, sekä järjestää aiheeseen liittyviä tapahtumia ja tapaamisia." />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Content>
