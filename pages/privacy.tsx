@@ -83,7 +83,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           <h2>1. Rekisterinpitäjä</h2>
           <p>
             Testausserveri ry<br />
-            <IoIosMail /> <a href="mailto:masterminds@testausserveri.fi">masterminds@testausserveri.fi</a>
+            <IoIosMail /> <a href="mailto:board@testausserveri.fi">board@testausserveri.fi</a>
           </p>
         </Section>
         <Section>
