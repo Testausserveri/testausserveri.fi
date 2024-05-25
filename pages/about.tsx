@@ -55,7 +55,8 @@ const Grid = styled.div`
     @media only screen and (max-width: 450px) {
       grid-template-columns: 1fr;
     }
-    span:nth-child(3) {
+    span:nth-child(4) {
+      margin-top: -1.5rem;
       color: rgba(255,255,255,0.5);
     }
     img {
@@ -218,7 +219,7 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
               <span>
                 <Image width="64" height="64" src={person[0]} placeholder="blur" alt={person[1]} />
               </span>
-              <span>{person[1]}</span>
+              <span>{person[1]}</span><br />
               <span>{person[2]}</span>
             </PersonIntroduction>
           ))}
