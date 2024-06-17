@@ -1,552 +1,964 @@
 [
     {
-        "id": 1,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "testi keskustelua testi dataa varten, varoitus menee githubiin",
-        "timestamp": 1647441467108
-    },
-    {
         "id": 2,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "tänää on lämmin päivä",
-        "timestamp": 1647441478913
-    },
-    {
-        "id": 3,
-        "author": {
-            "name": "nakki1029",
+            "name": "hegez",
             "avatar": "1.webp",
-            "color": "#ff00b5"
-        },
-        "content": "Ei oo",
-        "timestamp": 1647441496221
-    },
-    {
-        "id": 4,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "appreciatteisin kovasti jos jotkut muutkin tulis jättää viestiä",
-        "timestamp": 1647441497474
-    },
-    {
-        "id": 5,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "kiitos nakki",
-        "timestamp": 1647441501576
-    },
-    {
-        "id": 6,
-        "author": {
-            "name": "taavi",
-            "avatar": "2.webp",
-            "color": "#ed00ff"
-        },
-        "content": "onhan",
-        "timestamp": 1647441508847
-    },
-    {
-        "id": 7,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "mitkä on tei lempivärit?",
-        "timestamp": 1647441518012
-    },
-    {
-        "id": 8,
-        "author": {
-            "name": "taavi",
-            "avatar": "2.webp",
-            "color": "#ed00ff"
-        },
-        "content": "punanen",
-        "timestamp": 1647441524525
-    },
-    {
-        "id": 9,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "ai",
-        "timestamp": 1647441527935
-    },
-    {
-        "id": 10,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "hö",
-        "timestamp": 1647441530164
-    },
-    {
-        "id": 11,
-        "author": {
-            "name": "Happirikos",
-            "avatar": "3.webp",
-            "color": "#ed00ff"
-        },
-        "content": "musta on kiva",
-        "timestamp": 1647441532390
-    },
-    {
-        "id": 12,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "mäki tykkään kyl punasest",
-        "timestamp": 1647441545009
-    },
-    {
-        "id": 13,
-        "author": {
-            "name": "nakki1029",
-            "avatar": "1.webp",
-            "color": "#ff00b5"
-        },
-        "content": "onko?",
-        "timestamp": 1647441725785
-    },
-    {
-        "id": 14,
-        "author": {
-            "name": "taavi",
-            "avatar": "2.webp",
-            "color": "#ed00ff"
-        },
-        "content": "on ainakin täällä helsingissä",
-        "timestamp": 1647441739781
-    },
-    {
-        "id": 15,
-        "author": {
-            "name": "toke",
-            "avatar": "4.png",
             "color": "#f1c40f"
         },
-        "content": "vihreä",
-        "timestamp": 1647441794459
-    },
-    {
-        "id": 16,
-        "author": {
-            "name": "Happirikos",
-            "avatar": "3.webp",
-            "color": "#ed00ff"
-        },
-        "content": "oi voi",
-        "timestamp": 1647441805001
-    },
-    {
-        "id": 17,
-        "author": {
-            "name": "toke",
-            "avatar": "4.png",
-            "color": "#f1c40f"
-        },
-        "content": "oivoivoi",
-        "timestamp": 1647441818661
-    },
-    {
-        "id": 18,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "sika söi sipsin",
-        "timestamp": 1647441921815
-    },
-    {
-        "id": 19,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti tämä on pitkä viesti",
-        "timestamp": 1647441942470
-    },
-    {
-        "id": 20,
-        "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
-        },
-        "content": "😛 <:contabo_hymio:800452666588528700>",
-        "timestamp": 1647441958023
-    },
-    {
-        "id": 21,
-        "author": {
-            "name": "Happirikos",
-            "avatar": "3.webp",
-            "color": "#ed00ff"
-        },
-        "content": "<:pickle:830430401133805568> suolakurkku testi",
-        "timestamp": 1647441959794
-    },
-    {
-        "id": 22,
-        "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
-        },
-        "content": "Balls",
-        "timestamp": 1647441970672
-    },
-    {
-        "id": 23,
-        "author": {
-            "name": "Luukasa (pro git-user) 🦜",
-            "avatar": "6.webp",
-            "color": "#ad1457"
-        },
-        "content": "balls",
-        "timestamp": 1647441999627
-    },
-    {
-        "id": 24,
-        "author": {
-            "name": "Happirikos",
-            "avatar": "3.webp",
-            "color": "#ed00ff"
-        },
-        "content": "balls",
-        "timestamp": 1647442011763
-    },
-    {
-        "id": 25,
-        "author": {
-            "name": "rke",
-            "avatar": "7.webp",
-            "color": "#f1c40f"
-        },
-        "content": "huge balls",
-        "timestamp": 1647442265963
-    },
-    {
-        "id": 26,
-        "author": {
-            "name": "Niilas",
-            "avatar": "8.webp",
-            "color": "#f1c40f"
-        },
-        "content": "helou",
-        "timestamp": 1647442797315
-    },
-    {
-        "id": 27,
-        "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
-        },
-        "content": "Vi",
-        "timestamp": 1647442801108
-    },
-    {
-        "id": 28,
-        "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
-        },
-        "content": "Hi*",
-        "timestamp": 1647442804037
-    },
-    {
-        "id": 29,
-        "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
-        },
-        "content": "Meneekö myös kuvat githubii?",
-        "timestamp": 1647442826505
-    },
-    {
-        "id": 30,
-        "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
-        },
-        "content": "",
-        "timestamp": 1647442844776
+        "content": "Korjaan, UUID tulee myös clientiltä mutta login start -paketissa se username tosiaan annetaan",
+        "timestamp": 1717690672932
     },
     {
         "id": 31,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
         },
-        "content": "https://cdn.discordapp.com/emojis/854176097120550912.gif",
-        "timestamp": 1647443093363
+        "content": "Osaako kukaan sanoa miten saan linux mintille ulkoset kovalevyt toimimaan, oli ennen windowsilla ja nyt vaihdoin mutta ne on read-only",
+        "timestamp": 1717873117706
     },
     {
         "id": 32,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
         },
-        "content": "pitää implaa",
-        "timestamp": 1647443574387
+        "content": "ne levyt on windowsin jäljiltä varmaan ntfssänä joten ei tuu suoraan writeä mutta sen saa kyllä toimimaan en vaa nyt muista ulkoa miten",
+        "timestamp": 1717874290382
     },
     {
         "id": 33,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
         },
-        "content": "nyt emojitki toimii",
-        "timestamp": 1647443583226
+        "content": "Sain toimiin",
+        "timestamp": 1717874363217
     },
     {
         "id": 34,
         "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "Vou!",
-        "timestamp": 1647443588685
+        "content": "GG",
+        "timestamp": 1717925901406
     },
-    {
-        "id": 35,
-        "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
-        },
-        "content": "näemmekö tämän jossain",
-        "timestamp": 1647443608963
-    },
+
     {
         "id": 36,
         "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "Tää siis menee githubii, mut mitä varte? Onks tää sitä nettisivui varte?",
-        "timestamp": 1647443610754
+        "content": "En pääse ees kirjautuu",
+        "timestamp": 1717926190014
     },
     {
         "id": 37,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "soon",
-        "timestamp": 1647443616605
+        "content": "Tulikohan tästä tiiliskivi",
+        "timestamp": 1717926373899
     },
     {
         "id": 38,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "Alright",
-        "timestamp": 1647443621677
+        "content": "asesin kde:n uudestaa",
+        "timestamp": 1717927783829
     },
     {
         "id": 39,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "scrollbar puuttuu oikealta, pitää fix",
-        "timestamp": 1647443642258
+        "content": "En saa sitä davinci resolve ongelmaa korjattua",
+        "timestamp": 1717941481403
     },
     {
         "id": 40,
         "author": {
-            "name": "Erikoisjääkäri",
-            "avatar": "9.webp",
-            "color": "#f1c40f"
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
         },
-        "content": "Ainii toi. Tost tulee khyl tosi magee",
-        "timestamp": 1647443645912
+        "content": "Osaako kukaan sanoa miten voisin muuttaa ntfs ext4",
+        "timestamp": 1717952794735
     },
     {
         "id": 41,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
         },
-        "content": "https://coal.testausserveri.fi/?path=/story/discordlive--default",
-        "timestamp": 1647444229729
+        "content": "kopio tiedot muualle, `mkfs.ext4 <levy>`, kopioi tiedot takas",
+        "timestamp": 1717952870033
     },
     {
         "id": 42,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "discape",
+            "avatar": "10.webp",
+            "color": "#9b59b6"
         },
-        "content": "jotai tuunaamista viel mut kattoo myöhemmin, for now ok",
-        "timestamp": 1647444240005
+        "content": "^^^^",
+        "timestamp": 1717952877110
     },
     {
         "id": 43,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
-            "color": "#206694"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "ja myöhemmin skaalaus mobiilille mut se on helppo homma toho",
-        "timestamp": 1647444377934
+        "content": "miten vaihtaa discordin cursori",
+        "timestamp": 1718006235679
     },
     {
         "id": 44,
         "author": {
-            "name": "Turtleb01",
-            "avatar": "10.webp",
-            "color": "#f1c40f"
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
         },
-        "content": "outdated ass threadi mutta ilmeisesti pfpt ei päivity :D",
-        "timestamp": 1652047396326
+        "content": "tää on joku kde classic :D",
+        "timestamp": 1718006241833
     },
     {
         "id": 45,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
         },
-        "content": "<@639844207439118346>",
-        "timestamp": 1652047418996
+        "content": "Asensin tässä dockeria ja siinä asennuksessa kun pitää lisätä sun user dokcer grouppiin niin unohin usermod komennosta -a flagin. Eli nyt mun user ei oo sudon groupissa",
+        "timestamp": 1718126238393
     },
     {
         "id": 46,
         "author": {
-            "name": "Turtleb01",
-            "avatar": "10.webp",
-            "color": "#f1c40f"
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
         },
-        "content": "vai olenko väärällä channelilla",
-        "timestamp": 1652047460971
+        "content": "Eli käytännössä oon softlocked",
+        "timestamp": 1718126250825
     },
     {
         "id": 47,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
         },
-        "content": "eiku toi on kai staattinen",
-        "timestamp": 1652047462519
+        "content": "klassikko",
+        "timestamp": 1718126319073
     },
     {
         "id": 48,
         "author": {
-            "name": "rke",
-            "avatar": "7.webp",
-            "color": "#f1c40f"
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
         },
-        "content": "joo kattoin kans et oma kuva siellä borked ku olin sen aiemmi vaihtanu",
-        "timestamp": 1652047463195
+        "content": "Eikai täs voi muutakaan kun laittaa tikku kiinni ja muuttaa sudo config",
+        "timestamp": 1718126468549
     },
     {
         "id": 49,
         "author": {
-            "name": "Turtleb01",
-            "avatar": "10.webp",
-            "color": "#f1c40f"
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
         },
-        "content": "Jep",
-        "timestamp": 1652047467816
+        "content": "etkö voi rootille kirjautua",
+        "timestamp": 1718126498393
     },
     {
         "id": 50,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
         },
-        "content": "eiku aivan katos joo :D",
-        "timestamp": 1652047499294
+        "content": "Stock fedora niin sillä ei oo salasanaa",
+        "timestamp": 1718126531387
     },
     {
         "id": 51,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
+            "name": "rakastaniwawi",
+            "avatar": "2.webp",
             "color": "#00ff0c"
         },
-        "content": "en ees huomannu miksua, huomasin vaa oman kuvani",
-        "timestamp": 1652047507558
+        "content": "jos sul on vanha terminaali viel auki nii eikös siinä oo vanhat groupit",
+        "timestamp": 1718126881151
     },
     {
         "id": 52,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
         },
-        "content": "miksu on ihan fucked",
-        "timestamp": 1652047510532
+        "content": "Asensin dockerin eilen ja tajusin vasta nytte",
+        "timestamp": 1718126912841
     },
     {
         "id": 53,
         "author": {
-            "name": "DrVilepis",
-            "avatar": "5.webp",
-            "color": "#00ff0c"
+            "name": "takajalka",
+            "avatar": "13.webp",
+            "color": "#f1c40f"
         },
-        "content": "miksu puhuu asiaa",
-        "timestamp": 1652047526069
+        "content": "Mitä tästä opimme. Aina ekana ku kone asennettu ni rootin käyttöönotto",
+        "timestamp": 1718127008206
     },
     {
         "id": 54,
         "author": {
-            "name": "Miksu",
-            "avatar": "0.webp",
+            "name": "Antti",
+            "avatar": "12.webp",
             "color": "#206694"
         },
-        "content": "dumppaan uusiks ja lataan kuvat discordilta talteen myöhemmi",
-        "timestamp": 1652072493679
+        "content": "kannatan",
+        "timestamp": 1718127261676
     },
     {
         "id": 55,
         "author": {
-            "name": "DrVilepis",
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
+        },
+        "content": "kerran jaetulla servulla kaveri rikko sudoers filun ja roottia ei ollu käyttöönotettu",
+        "timestamp": 1718127285846
+    },
+    {
+        "id": 56,
+        "author": {
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
+        },
+        "content": "uudelleenasennukseen meni ...",
+        "timestamp": 1718127293113
+    },
+    {
+        "id": 57,
+        "author": {
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
+        },
+        "content": "Mä luulen et mä saan onneks ton vielä hackattua auki",
+        "timestamp": 1718127325089
+    },
+    {
+        "id": 58,
+        "author": {
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
+        },
+        "content": "juuh fyysinen kone se o helppo vetästä tikulla auki",
+        "timestamp": 1718127425710
+    },
+    {
+        "id": 59,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "jos käyttää vaan ilman sudoa <:contabo_hymio:800452666588528700>",
+        "timestamp": 1718127899138
+    },
+    {
+        "id": 60,
+        "author": {
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
+        },
+        "content": "onneks roottia ei tarvii mihinkään <:contabo_lattu:926905987884007465>",
+        "timestamp": 1718128188306
+    },
+    {
+        "id": 61,
+        "author": {
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
+        },
+        "content": "joo o",
+        "timestamp": 1718129189920
+    },
+    {
+        "id": 62,
+        "author": {
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
+        },
+        "content": "miettiny täs nyt vartin miks tikku ei boottaa",
+        "timestamp": 1718129199764
+    },
+    {
+        "id": 63,
+        "author": {
+            "name": "RakastanRust™",
+            "avatar": "11.webp",
+            "color": "#9b59b6"
+        },
+        "content": "mul on kaks samanlaista kingston tikkua ja käytin sit sitä väärää",
+        "timestamp": 1718129217721
+    },
+    {
+        "id": 64,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Mikä distro grafiikka/animaatio/pelimoottorikehitykseen? Tarviin siis, että se pyöris VM:llä Windowsin päällä mahdollisimman vaivattomasti.",
+        "timestamp": 1718368152027
+    },
+    {
+        "id": 65,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Erityisesti en halua säätää näytönohjainajureiden kanssa",
+        "timestamp": 1718368166599
+    },
+    {
+        "id": 66,
+        "author": {
+            "name": "vilepis (kotona)",
+            "avatar": "15.webp",
+            "color": "#ff00b5"
+        },
+        "content": "ööh",
+        "timestamp": 1718368529032
+    },
+    {
+        "id": 67,
+        "author": {
+            "name": "vilepis (kotona)",
+            "avatar": "15.webp",
+            "color": "#ff00b5"
+        },
+        "content": "se on vähän monimutkasempi juttu",
+        "timestamp": 1718368535475
+    },
+    {
+        "id": 68,
+        "author": {
+            "name": "vilepis (kotona)",
+            "avatar": "15.webp",
+            "color": "#ff00b5"
+        },
+        "content": "kun sulla ei oikeen ole gputa vmmässä lähtökohtasesti",
+        "timestamp": 1718368547846
+    },
+    {
+        "id": 69,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Ah damn, virtuaalikoneella ei siis oikein voi devaa opengl",
+        "timestamp": 1718368715480
+    },
+    {
+        "id": 70,
+        "author": {
+            "name": "vilepis (kotona)",
+            "avatar": "15.webp",
+            "color": "#ff00b5"
+        },
+        "content": "wsl ehkä toimii",
+        "timestamp": 1718368750100
+    },
+    {
+        "id": 71,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "kyllähän sitä voi aina käyttää puolet elämästä gpu passthroughn yrittämiseen",
+        "timestamp": 1718369349308
+    },
+    {
+        "id": 72,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Jotkut muinaiset OpenGL versiot on tuettuja mut ei oikein kiinnostais",
+        "timestamp": 1718369394971
+    },
+    {
+        "id": 73,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Oiskohan se uuden (käytetyn) ThinkPadin aika niin vois tehdä kaikkea kivaa",
+        "timestamp": 1718369449161
+    },
+    {
+        "id": 74,
+        "author": {
+            "name": "discape",
+            "avatar": "10.webp",
+            "color": "#9b59b6"
+        },
+        "content": "fedora",
+        "timestamp": 1718369597008
+    },
+    {
+        "id": 75,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "On natiivina",
+        "timestamp": 1718369611068
+    },
+    {
+        "id": 76,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Ongelmana et sillä koneella ei oo GPU:ta",
+        "timestamp": 1718369624710
+    },
+    {
+        "id": 77,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Mut kai sen pitäis integroitua jotenkin tukea",
+        "timestamp": 1718369643018
+    },
+    {
+        "id": 78,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "hm, varmasti mesan avulla",
+        "timestamp": 1718369753247
+    },
+    {
+        "id": 79,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "https://wiki.archlinux.org/title/Intel_GVT-g",
+        "timestamp": 1718369845771
+    },
+    {
+        "id": 80,
+        "author": {
+            "name": "Turtle",
             "avatar": "5.webp",
+            "color": "#f1c40f"
+        },
+        "content": "Tolla saa hauskoja kernel crasheja aikaan",
+        "timestamp": 1718370217300
+    },
+    {
+        "id": 81,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Nyt on saatu OpenGL toimimaan Fedoralla",
+        "timestamp": 1718540727807
+    },
+    {
+        "id": 82,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Sit vaan porttaamaan vanhaa koodia",
+        "timestamp": 1718540734467
+    },
+    {
+        "id": 83,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "CMaken kanssa säätäminen ekaa kertaa oli helpompaa kuin aikoinaan lähes päivittäinen säätö Visual Studion kanssa",
+        "timestamp": 1718540779582
+    },
+    {
+        "id": 84,
+        "author": {
+            "name": "noradrenalyn",
+            "avatar": "14.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Tai no, koska mun projekti scope on niin pieni et ei oikein tarvitse Visual Studiota. CMake ja VSC tyydyttää tarpeeni oikein hyvin.",
+        "timestamp": 1718540816290
+    },
+    {
+        "id": 85,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "ajeleeko täällä joku traefikkia ja plausiblea dockerissa",
+        "timestamp": 1718579094437
+    },
+    {
+        "id": 86,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "plausible hajoaa jos käynnistän/stoppaan jonkun iha minkä vaan muun kontin jossa traefik kans enabloitu",
+        "timestamp": 1718579115952
+    },
+    {
+        "id": 87,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "sit plausible alkaa toimii ku plausiblen webbiä käynnistelee uudestaan randomisti 1-3 kertaa",
+        "timestamp": 1718579140820
+    },
+    {
+        "id": 88,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "tuntuu että kuun asennosta riippuu et toimiiko se",
+        "timestamp": 1718579152161
+    },
+    {
+        "id": 89,
+        "author": {
+            "name": "Antti",
+            "avatar": "12.webp",
+            "color": "#206694"
+        },
+        "content": "en oo yhdessä käyttänyt mutta erillään\nen usko et plausible mitään ihmeellistä tekee vaan riippuu vaan traefikistä",
+        "timestamp": 1718605404037
+    },
+    {
+        "id": 90,
+        "author": {
+            "name": "takajalka",
+            "avatar": "13.webp",
+            "color": "#f1c40f"
+        },
+        "content": "..tai kuu",
+        "timestamp": 1718605707724
+    },
+    {
+        "id": 91,
+        "author": {
+            "name": "takajalka",
+            "avatar": "13.webp",
+            "color": "#f1c40f"
+        },
+        "content": "kuusta\\*",
+        "timestamp": 1718605714638
+    },
+    {
+        "id": 92,
+        "author": {
+            "name": "adventune",
+            "avatar": "17.webp",
+            "color": "#9b59b6"
+        },
+        "content": "Ite oon todennut lähes poikkeuksetta että vastaus on älä käytä traefikkia",
+        "timestamp": 1718608601854
+    },
+    {
+        "id": 93,
+        "author": {
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
+        },
+        "content": "ite todennu et se toimii aina joskus, yleensä jossain kohtaa hajoaa",
+        "timestamp": 1718608968427
+    },
+    {
+        "id": 94,
+        "author": {
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
+        },
+        "content": "Miten sulla o conffattu? Docker labels? Jos on nii varmista et jokasella kontilla on eri router",
+        "timestamp": 1718609024848
+    },
+    {
+        "id": 95,
+        "author": {
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
+        },
+        "content": "vähä kuulostaa siltä et ne koittaa käyttää samaa routeria jolloin uusin overwritaa muut",
+        "timestamp": 1718609050371
+    },
+    {
+        "id": 96,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "joo",
+        "timestamp": 1718609158648
+    },
+    {
+        "id": 97,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "hm pitää kokeilla",
+        "timestamp": 1718609162201
+    },
+    {
+        "id": 98,
+        "author": {
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
+        },
+        "content": "en oikeestaan muuta syytä keksi",
+        "timestamp": 1718609190469
+    },
+    {
+        "id": 99,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "ei ollu ja traefik kyl yleensä logittaa jos on samaa routeria käytössä ja se ei nyt ainakaan tossa jossain muussa uudessa kontissa oo tilanne",
+        "timestamp": 1718613226928
+    },
+    {
+        "id": 100,
+        "author": {
+            "name": "matias",
+            "avatar": "16.webp",
+            "color": "#9b59b6"
+        },
+        "content": "myös sit ku jonkun muun kontin sammuttaa ni plausible vaan päättää hajota ;_;",
+        "timestamp": 1718613268717
+    },
+        {
+        "id": 3,
+        "author": {
+            "name": "rakastaniwawi",
+            "avatar": "2.webp",
             "color": "#00ff0c"
         },
-        "content": "pls",
-        "timestamp": 1653655112343
+        "content": "based ubuntu-ravintola",
+        "timestamp": 1717690776166
+    },
+    {
+        "id": 4,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "POP ravintola mutta ei POP os smh",
+        "timestamp": 1717690840800
+    },
+    {
+        "id": 5,
+        "author": {
+            "name": "rakastaniwawi",
+            "avatar": "2.webp",
+            "color": "#00ff0c"
+        },
+        "content": ":DDD pitää ehdottaa",
+        "timestamp": 1717690981893
+    },
+    {
+        "id": 6,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "f11",
+        "timestamp": 1717698595768
+    },
+    {
+        "id": 7,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "öö onks jotain helppoa tapaa avata steam peli ilman että steam avautuu",
+        "timestamp": 1717700814599
+    },
+    {
+        "id": 8,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "käytössä neljä gigaa ramia ja steam vie päälle gigan tekemättä mitään",
+        "timestamp": 1717700859932
+    },
+    {
+        "id": 9,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "voit ajaa suoraan sen executablen sieltä mihin se on asennettu",
+        "timestamp": 1717700926157
+    },
+    {
+        "id": 10,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "mutta sitte mitkään steam jutut ei toimi",
+        "timestamp": 1717700939694
+    },
+    {
+        "id": 11,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "ja jos siinä on mitään drm niin se ei toimi",
+        "timestamp": 1717700957643
+    },
+    {
+        "id": 12,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "nii",
+        "timestamp": 1717700960922
+    },
+    {
+        "id": 13,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "pelkästään steam taustalla",
+        "timestamp": 1717701120073
+    },
+    {
+        "id": 14,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "ubuntu käyttää vähän päälle gigan",
+        "timestamp": 1717701136373
+    },
+    {
+        "id": 16,
+        "author": {
+            "name": "Turtle",
+            "avatar": "5.webp",
+            "color": "#f1c40f"
+        },
+        "content": "steam steam://run/730 tyyppiset toimii",
+        "timestamp": 1717748344701
+    },
+    {
+        "id": 17,
+        "author": {
+            "name": "Turtle",
+            "avatar": "5.webp",
+            "color": "#f1c40f"
+        },
+        "content": "tai rungameid tai jotai",
+        "timestamp": 1717748352422
+    },
+    {
+        "id": 18,
+        "author": {
+            "name": "Turtle",
+            "avatar": "5.webp",
+            "color": "#f1c40f"
+        },
+        "content": "https://github.com/Turtleb01/scripts/blob/master/dmenu_steam ei taida toimia enää mutta tosta voi lähteä",
+        "timestamp": 1717748391758
+    },
+    {
+        "id": 19,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "noi kaikki käynnistää steamin taustallle vaikka se ei avautuis muuten",
+        "timestamp": 1717761853196
+    },
+   
+    {
+        "id": 21,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "ainoa ongelma on ettei .net asennu mitenkään käyttäen winetricksiä tai virallisisa asennusohjelmia",
+        "timestamp": 1717762206030
+    },
+    {
+        "id": 22,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "mutta sitä tarvittiin vaan sen pelin launcherin toimintaan joten ei paljoo väliä",
+        "timestamp": 1717762286332
+    },
+    {
+        "id": 23,
+        "author": {
+            "name": "Turtle",
+            "avatar": "5.webp",
+            "color": "#f1c40f"
+        },
+        "content": "aa, luulin että tarkoitit vaan steam ui:ta, sehän kaiken cpun ja ramin vie",
+        "timestamp": 1717763401141
+    },
+    {
+        "id": 24,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "no siis kun ajaa sen höskän box64 läpi niin se taustaprosessikin vie vitusti ramia",
+        "timestamp": 1717763449654
+    },
+    {
+        "id": 25,
+        "author": {
+            "name": "emppu",
+            "avatar": "6.webp",
+            "color": "#ff00b5"
+        },
+        "content": "et varmaan pysty pelaa multiplayer pelejä jos ei oo steami taustalla päällä",
+        "timestamp": 1717766348507
+    },
+    {
+        "id": 26,
+        "author": {
+            "name": "emppu",
+            "avatar": "6.webp",
+            "color": "#ff00b5"
+        },
+        "content": "hmm",
+        "timestamp": 1717785476857
+    },
+    {
+        "id": 27,
+        "author": {
+            "name": "emppu",
+            "avatar": "6.webp",
+            "color": "#ff00b5"
+        },
+        "content": "nää tykkää aina mennä itestään rikki",
+        "timestamp": 1717785482724
+    },
+    {
+        "id": 28,
+        "author": {
+            "name": "rakastaniwawi",
+            "avatar": "2.webp",
+            "color": "#00ff0c"
+        },
+        "content": "mikä noissa on vikana",
+        "timestamp": 1717790810130
+    },
+    {
+        "id": 29,
+        "author": {
+            "name": "rakastanR",
+            "avatar": "4.webp",
+            "color": "#9b59b6"
+        },
+        "content": "puolet liian pieniä",
+        "timestamp": 1717794943731
+    },
+    {
+        "id": 30,
+        "author": {
+            "name": "emppu",
+            "avatar": "6.webp",
+            "color": "#ff00b5"
+        },
+        "content": "tältä niitten pitäis näyttää",
+        "timestamp": 1717803914942
     }
 ]
