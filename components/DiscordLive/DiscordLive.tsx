@@ -60,8 +60,8 @@ export function DiscordLive({ mobile, className }: {
         function next(index: number) {
             const waitTime = Math.min((messages[index + 1]?.timestamp - messages[index]?.timestamp) / replaySpeedUpMultiplier, replayMaxWaitTime)
             // console.log(waitTime)
+            setVisibleMessages(messages.slice(0, index + 1))
             setTimeout(() => {
-                setVisibleMessages(messages.slice(0, index + 1))
                 if (index < messages.length) next(index + 1)
             }, waitTime)
         }
