@@ -1,146 +1,5 @@
 [
     {
-        "id": 2,
-        "author": {
-            "name": "hegez",
-            "avatar": "1.webp",
-            "color": "#f1c40f"
-        },
-        "content": "Korjaan, UUID tulee myös clientiltä mutta login start -paketissa se username tosiaan annetaan",
-        "timestamp": 1717690672932
-    },
-    {
-        "id": 31,
-        "author": {
-            "name": "rakastanGodot",
-            "avatar": "7.webp",
-            "color": "#ff00b5"
-        },
-        "content": "Osaako kukaan sanoa miten saan linux mintille ulkoset kovalevyt toimimaan, oli ennen windowsilla ja nyt vaihdoin mutta ne on read-only",
-        "timestamp": 1717873117706
-    },
-    {
-        "id": 32,
-        "author": {
-            "name": "rakastanJavascript",
-            "avatar": "3.webp",
-            "color": "#f6d85f"
-        },
-        "content": "ne levyt on windowsin jäljiltä varmaan ntfssänä joten ei tuu suoraan writeä mutta sen saa kyllä toimimaan en vaa nyt muista ulkoa miten",
-        "timestamp": 1717874290382
-    },
-    {
-        "id": 33,
-        "author": {
-            "name": "rakastanGodot",
-            "avatar": "7.webp",
-            "color": "#ff00b5"
-        },
-        "content": "Sain toimiin",
-        "timestamp": 1717874363217
-    },
-    {
-        "id": 34,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "GG",
-        "timestamp": 1717925901406
-    },
-
-    {
-        "id": 36,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "En pääse ees kirjautuu",
-        "timestamp": 1717926190014
-    },
-    {
-        "id": 37,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "Tulikohan tästä tiiliskivi",
-        "timestamp": 1717926373899
-    },
-    {
-        "id": 38,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "asesin kde:n uudestaa",
-        "timestamp": 1717927783829
-    },
-    {
-        "id": 39,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "En saa sitä davinci resolve ongelmaa korjattua",
-        "timestamp": 1717941481403
-    },
-    {
-        "id": 40,
-        "author": {
-            "name": "rakastanGodot",
-            "avatar": "7.webp",
-            "color": "#ff00b5"
-        },
-        "content": "Osaako kukaan sanoa miten voisin muuttaa ntfs ext4",
-        "timestamp": 1717952794735
-    },
-    {
-        "id": 41,
-        "author": {
-            "name": "Midka",
-            "avatar": "9.webp",
-            "color": "#cca901"
-        },
-        "content": "kopio tiedot muualle, `mkfs.ext4 <levy>`, kopioi tiedot takas",
-        "timestamp": 1717952870033
-    },
-    {
-        "id": 42,
-        "author": {
-            "name": "discape",
-            "avatar": "10.webp",
-            "color": "#9b59b6"
-        },
-        "content": "^^^^",
-        "timestamp": 1717952877110
-    },
-    {
-        "id": 43,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "miten vaihtaa discordin cursori",
-        "timestamp": 1718006235679
-    },
-    {
-        "id": 44,
-        "author": {
-            "name": "RakastanStalkaaminen",
-            "avatar": "8.webp",
-            "color": "#9b59b6"
-        },
-        "content": "tää on joku kde classic :D",
-        "timestamp": 1718006241833
-    },
-    {
         "id": 45,
         "author": {
             "name": "RakastanRust™",
@@ -960,5 +819,105 @@
         },
         "content": "tältä niitten pitäis näyttää",
         "timestamp": 1717803914942
+    },
+    {
+        "id": 2,
+        "author": {
+            "name": "hegez",
+            "avatar": "1.webp",
+            "color": "#f1c40f"
+        },
+        "content": "Korjaan, UUID tulee myös clientiltä mutta login start -paketissa se username tosiaan annetaan",
+        "timestamp": 1717690672932
+    },
+    {
+        "id": 31,
+        "author": {
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Osaako kukaan sanoa miten saan linux mintille ulkoset kovalevyt toimimaan, oli ennen windowsilla ja nyt vaihdoin mutta ne on read-only",
+        "timestamp": 1717873117706
+    },
+    {
+        "id": 32,
+        "author": {
+            "name": "rakastanJavascript",
+            "avatar": "3.webp",
+            "color": "#f6d85f"
+        },
+        "content": "ne levyt on windowsin jäljiltä varmaan ntfssänä joten ei tuu suoraan writeä mutta sen saa kyllä toimimaan en vaa nyt muista ulkoa miten",
+        "timestamp": 1717874290382
+    },
+    {
+        "id": 33,
+        "author": {
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Sain toimiin",
+        "timestamp": 1717874363217
+    },
+    {
+        "id": 37,
+        "author": {
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
+        },
+        "content": "Tulikohan tästä tiiliskivi",
+        "timestamp": 1717926373899
+    },
+    {
+        "id": 38,
+        "author": {
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
+        },
+        "content": "asesin kde:n uudestaa",
+        "timestamp": 1717927783829
+    },
+    {
+        "id": 39,
+        "author": {
+            "name": "RakastanStalkaaminen",
+            "avatar": "8.webp",
+            "color": "#9b59b6"
+        },
+        "content": "En saa sitä davinci resolve ongelmaa korjattua",
+        "timestamp": 1717941481403
+    },
+    {
+        "id": 40,
+        "author": {
+            "name": "rakastanGodot",
+            "avatar": "7.webp",
+            "color": "#ff00b5"
+        },
+        "content": "Osaako kukaan sanoa miten voisin muuttaa ntfs ext4",
+        "timestamp": 1717952794735
+    },
+    {
+        "id": 41,
+        "author": {
+            "name": "Midka",
+            "avatar": "9.webp",
+            "color": "#cca901"
+        },
+        "content": "kopio tiedot muualle, `mkfs.ext4 <levy>`, kopioi tiedot takas",
+        "timestamp": 1717952870033
+    },
+    {
+        "id": 42,
+        "author": {
+            "name": "discape",
+            "avatar": "10.webp",
+            "color": "#9b59b6"
+        },
+        "content": "^^^^",
+        "timestamp": 1717952877110
     }
 ]
