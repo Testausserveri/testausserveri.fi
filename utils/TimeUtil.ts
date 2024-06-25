@@ -62,4 +62,16 @@ export class TimeUtil {
                 .join(" ") || "0 secs"
         );
     }
+
+    /**
+     * Formats a timestamp into a string representation of the date and time.
+     * 
+     * Format: DD.MM.YYYY hh.mm
+     */
+    static formatTimestamp(timestamp: number) {
+        const date = new Date(timestamp);
+        const day = date.toLocaleDateString("Fi");
+        const time = date.toLocaleTimeString("Fi", {timeStyle: "short"});
+        return `${day} ${time}`;
+    }
 }
