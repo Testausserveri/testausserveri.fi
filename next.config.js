@@ -1,4 +1,5 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
+const withMDX = require('@next/mdx')()
 
 // The lines API_SERVER_DEV and URL_DEV are the most significant to you
 const API_SERVER_DEV = `http://localhost:8080`
@@ -35,6 +36,8 @@ module.exports = (phase) => ({
   compiler: {
     styledComponents: true
   },
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  ...withMDX({}),
   async redirects() {
     return [
       { "source": "/.well-known/webfinger", "destination": "https://mastodon.testausserveri.fi/.well-known/webfinger", permanent: true },
@@ -47,4 +50,3 @@ module.exports = (phase) => ({
     ];
   },
 })
-
