@@ -1,10 +1,7 @@
 .discordBackground {
     aspect-ratio: 1.694 / 1;
-    width: 800px;
+    width: 1120px;
     position: relative;
-    background-image: url("discord.png");
-    background-size: 100% 100%;
-    zoom: 1.4;
 }
 
 .liveArea {
@@ -19,7 +16,6 @@
 }
 
 .discordMessages {
-    zoom: 0.75;
     position: absolute;
     bottom: 0;
     border: none !important;
@@ -29,24 +25,29 @@
     position: relative;
     height: 100%;
 }
+
 .liveArea discord-message {
     margin-top: 0.7em !important;
 }
+
 @media only screen and (max-width: 1100px) {
     .discordBackground {
-        zoom: 1.1;
+        width: 880px;
     }
 }
+
 @media only screen and (max-width: 960px) {
     .discordBackground {
-        zoom: 0.9;
+        width: 720px;
     }
 }
+
 @media only screen and (max-width: 800px) {
     .discordBackground {
-        zoom: 0.8;
+        width: 640px;
     }
 }
+
 @media only screen and (max-width: 670px) {
     .liveArea {
         top: 13.80%;
@@ -54,12 +55,10 @@
         width: 62.08%;
         height: 64.08%;
     }
-    
+
     .discordBackground {
-        background-image: url("discord-mobile.png");
         aspect-ratio: 0.6071 / 1;
         max-width: 450px;
-        zoom: 1;
     }
 }
 
@@ -73,10 +72,11 @@
     height: 100%;
     z-index: 1;
     background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 66.67%, #0D0D0D 96.87%);
-    
+
     top: 0px;
     transition: top 2s cubic-bezier(0.080, 0.715, 0.390, 0.945);
 }
+
 .hero {
     display: flex;
     justify-content: center;
@@ -106,7 +106,22 @@
     .cover {
         background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 50%, #0D0D0D 96.87%);
     }
+
     .hero {
         margin-bottom: -32rem;
+    }
+}
+
+.mobileImage {
+    display: none;
+}
+
+@media only screen and (max-width: 670px) {
+    .desktopImage {
+        display: none;
+    }
+
+    .mobileImage {
+        display: block;
     }
 }

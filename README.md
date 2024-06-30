@@ -15,7 +15,7 @@ Explore and develop React components
 ```bash
 npm run storybook
 ```
-### Developement server
+### Development server
 Develop Next.js app
 ```bash
 npm run dev
