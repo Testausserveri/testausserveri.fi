@@ -2,6 +2,11 @@
     width: 100%;
     text-align: center;
 }
+
+.collaborations h2 {
+    font-size: 1.2rem;
+}
+
 .collaborations ul {
     list-style-type: none;
     margin: 0;
