@@ -92,3 +92,13 @@ export type ApplyForm = {
 export type ApplyResponse = {
   status: "ok" | "error"
 }
+
+export type PostDetails = {
+  title: string;
+  category: string;
+  feature_image: string;
+  excerpt: string;
+  authors: string[];
+  datetime: Date;
+  slug: string;
+};
