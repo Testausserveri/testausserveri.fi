@@ -15,8 +15,8 @@ import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
 import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
-import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType } from 'next';
-import { GuildInfo, GuildInfoModelOption } from '../utils/types';
+import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
+import { GuildInfo, GuildInfoModelOption, PostDetails } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -37,7 +37,7 @@ const TextColumns = styled.p`
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.6;
   columns: 2;  
   br.mobileBreak {
     display: none;
@@ -56,7 +56,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ ssGuildInfo, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
