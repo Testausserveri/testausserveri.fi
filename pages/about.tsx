@@ -135,6 +135,8 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         <p>
           Yhteisömme tavoitteena on innostaa nuoria oppimaan uutta ja hiomaan jo olemassaolevia taitojaan tietotekniikka- ja kyberalalla.
           Yhdistyksemme jäsenistön laaja asiantuntemus mahdollistaa tukevaa toimintaamme: yhteisössämme voi saada apua kaikesta koodaamisen perusteista eettisen hakkeroinnin periaatteisiin.
+        </p>
+        <p>
           Tuemme avoimen lähdekoodin projekteja ja työstämämme projektit julkaistaan kaikille nähtäväksi yhdistyksemme Github-sivuilla.
           Kaikki yhdistyksemme ja yhteisömme tuottamat palvelut ovat ilmaisia!
         </p>

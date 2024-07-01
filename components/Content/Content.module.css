@@ -1,9 +1,11 @@
 .content {
     z-index: 1;
     position: relative;
-    max-width: 800px; /* 1100px */
     margin: 0 auto;
     padding: 0.7rem;
     margin-bottom: calc(2.5rem - 0.7rem);
     padding-top: 0;
+    font-size: 107%;
+    max-width: 700px;
+
 }
