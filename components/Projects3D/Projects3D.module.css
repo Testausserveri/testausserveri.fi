@@ -26,6 +26,27 @@
   transition-property: filter;
   transition-duration: 0.5s;
   transition-delay: 2s;
+
+}
+@keyframes loaded {
+  0% { filter: brightness(1); } 
+  50% { filter: brightness(2); } 
+  100% { filter: brightness(1); } 
+}
+
+.loaded .splineWrapper canvas {
+  filter: brightness(1); 
+  animation: loaded .5s ease-in;
+  cursor: grab;
+  z-index: 10;
+}
+
+.splineWrapper canvas {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.loading .splineWrapper canvas {
+  opacity: 0;
 }
 .loading .splineWrapper {
   transition: filter 0.5s;
@@ -34,7 +55,7 @@
   position: relative;
 }
 
-.loading .splineWrapper::before {
+.splineWrapper::before {
   content: '';
   background-image: url('../../assets/projects3d/placeholder.png');
   position: absolute;
@@ -46,8 +67,8 @@
   transform: scale(0.98);
 
   opacity: 0;
-  transition: opacity 1s;
-  z-index: -3;
+  transition: opacity .5s;
+  z-index: 2;
 
 }
 .loading .splineWrapper::before {
@@ -82,7 +103,7 @@
   color: white;
   position: absolute;
   bottom: 2rem;
-  right: 0;
+  right: -40px;
   font-size: 2rem;
   opacity: 0.6;
   transition: opacity 5s;
