@@ -108,8 +108,10 @@ const SpecList = styled.div`
     margin-top: 0.2rem;
   }
 
-  @media(max-width: 1090px) {
     width: 100% !important;
+    width: 100% !important;
+  }
+  width: 100% !important;
   }
 `
 
@@ -125,46 +127,42 @@ const ResponsiveSplitFlex = styled.div`
   }
 
 
-  @media(max-width: 1090px) {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+  flex-direction: column-reverse;
+  align-items: flex-start;
 
-    div:nth-child(2) {
-      flex-wrap: nowrap;
-      width: 100%;
-      height: 20rem;
+  div:nth-child(2) {
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 20rem;
 
-      ul {
-        margin-top: 1rem;
-        margin-left: 1rem;
-      }
+    ul {
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
 
-      ul > li {
-        height: 3rem;
-        margin-right: 100%;
-        margin-bottom: 0.5rem;
-      }
+    ul > li {
+      height: 3rem;
+      margin-right: 100%;
+      margin-bottom: 0.5rem;
     }
   }
 
-  @media(max-width: 776px) {
 
-    div:nth-child(2) {
-      width: 100%;
-      height: auto;
-      flex-wrap: wrap;
-      margin-top: unset;
-      height: 25rem !important;
+  div:nth-child(2) {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    margin-top: unset;
+    height: 25rem !important;
 
-      ul {
-        margin-block: 1rem;
-        margin-left: unset;
-      }
+    ul {
+      margin-block: 1rem;
+      margin-left: unset;
+    }
 
-      ul > li {
-        height: 3rem;
-        margin-right: 0.5rem;
-      }
+    ul > li {
+      height: 3rem;
+      margin-right: 0.5rem;
     }
   }
 `
@@ -179,7 +177,6 @@ const SideFigure = styled.figure`
     img {
       width: 100%;
       object-fit: cover;
-    }
   }
 `
 
@@ -198,9 +195,6 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
       <Content>
 
         <H1>Koneet kiertoon -kampanja</H1>
-        <InfoBox>
-          <span>Tämän sivun tietoja täydennetään vielä.</span>
-        </InfoBox>
 
         <SideFigure>
           <Image src={ComputersInCarImg} placeholder="blur" alt="Muutama kampanjan tietokone tuotu kesäkuun 2023 Testausmeetiin jaettavaksi" width="300" style={{borderRadius: "0.5rem", marginBottom: "0.5rem"}} />
