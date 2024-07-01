@@ -74,14 +74,16 @@ export function Projects3D() {
 
     return (
         <div className={`${styles.projects3D} 
-        ${splineLoading ? styles.loading : ""} ${(typeof tipTimeout === "number" && tipTimeout > 0) ? styles.tipVisible : ""}`}>
+        ${splineLoading ? styles.loading : styles.loaded} ${(typeof tipTimeout === "number" && tipTimeout > 0) ? styles.tipVisible : ""}`} style={{marginRight: "70px", marginBottom: "20px"}}>
             <div className={styles.splineWrapper}>
                 <Spline
                     scene="https://prod.spline.design/9xyPHvl-sfGpOW9a/scene.splinecode"
                     onMouseHover={hover}
                     onLoad={() => {
                         console.log("Spline loaded")
-                        setSplineLoading(false)
+                        setTimeout(() => {
+                            setSplineLoading(false)
+                        }, 1000);
                     }}
                 />
             </div>
