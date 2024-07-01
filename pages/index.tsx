@@ -15,9 +15,11 @@ import { Footer } from '../components/Footer/Footer';
 import { GradientText } from '../components/GradientText/GradientText';
 import api from '../utils/api';
 import { Collaborations } from '../components/Collaborations/Collaborations';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -147,16 +149,11 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetServerSideP
   )
 }
 
-export const getServerSideProps: GetServerSideProps<{
+export const getStaticProps: GetStaticProps<{
   ssGuildInfo: GuildInfo<GuildInfoModelOption[]>,
   copyrightYear: number
-}> = async ({ req, res }) => {
+}> = async () => {
   const guildInfo = await api.getGuildInfo(guildInfoModel)
-
-  res.setHeader(
-    'Cache-Control',
-    'public, maxage=300, stale-if-error=300'
-  )
 
   return {
     props: {
