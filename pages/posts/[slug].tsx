@@ -8,22 +8,19 @@ import { Content } from '../../components/Content/Content';
 import { H1 } from '../../components/Title/Title';
 import { AvatarRow, AvatarRowProps } from '../../components/AvatarRow/AvatarRow';
 import { getMemberAvatarUrl } from '../../utils/Member';
+import { PostDetails } from '../../utils/types';
 
-type Frontmatter = {
-  title: string;
-  authors: string[];
-  datetime: string;
-};
+
 
 type Post<TFrontmatter> = {
   serialized: MDXRemoteSerializeResult;
   frontmatter: TFrontmatter;
 };
 
-async function getPost(filepath: string): Promise<Post<Frontmatter>> {
+async function getPost(filepath: string): Promise<Post<PostDetails>> {
   const raw = await fs.readFile(filepath, 'utf-8');
   const serialized = await serialize(raw, { parseFrontmatter: true });
-  const frontmatter = serialized.frontmatter as Frontmatter;
+  const frontmatter = serialized.frontmatter as PostDetails;
 
   return {
     frontmatter,
@@ -60,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 type PostPageProps = {
   serialized: MDXRemoteSerializeResult;
-  frontmatter: Frontmatter;
+  frontmatter: PostDetails;
 };
 
 export default function PostPage({ serialized, frontmatter }: PostPageProps) {
@@ -76,7 +73,6 @@ export default function PostPage({ serialized, frontmatter }: PostPageProps) {
     <Content>
     <H1>{frontmatter.title}</H1>
       <AvatarRow members={members} />
-      <p>Julkaistu {frontmatter.datetime}</p>
       <hr />
       <MdxContent source={serialized} />
     </Content>
