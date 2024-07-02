@@ -4,7 +4,7 @@ import { H1 } from '../components/Title/Title'
 import { Footer } from '../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import Testausmeet2Img from '../assets/about/testausmeet2.jpeg'
-import { Section } from './privacy';
+import { Section } from './privacy/members';
 
 export default function AssociationRules({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return (

@@ -52,7 +52,7 @@ export default function Host({ copyrightYear }: InferGetServerSidePropsType<type
         <H2>Käyttöehdot ja tietosuoja</H2>
         <NavigateLink href="/host/terms">Käyttöehtosopimus</NavigateLink>
         <NavigateLink href="/host/dpa">Henkilötietojen käsittelyn vakiolausekkeet ja lisäliitteet</NavigateLink>
-        <NavigateLink href="/host/privacy">Tietosuojakäytäntö</NavigateLink>
+        <NavigateLink href="/privacy/host">Tietosuojakäytäntö</NavigateLink>
       </Content>
       <Footer copyrightYear={copyrightYear} />
     </div>

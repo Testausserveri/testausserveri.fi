@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import TestaushostBannerImg from '../../assets/testaushost-banner.png'
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
-import { Section } from '../privacy';
+import { Section } from './members';
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
 
 export const TwoColumn = styled.div`
@@ -34,8 +34,8 @@ export default function HostPrivacy({ copyrightYear }: InferGetServerSidePropsTy
       <Content>
         <Breadcrumbs
           route={[
-            { path: "/host/", name: "Palvelintila" },
-            { path: `/host/privacy`, name: "Tietosuojakäytäntö" }
+            { path: "/privacy/", name: "Tietosuoja" },
+            { path: `/privacy/host`, name: "Testaushost" }
           ]} />
         <H1>Testaushost tietosuojakäytäntö</H1>
         <p>
