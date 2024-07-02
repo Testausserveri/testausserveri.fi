@@ -8,7 +8,7 @@ import TestaushostBannerImg from '../../assets/testaushost-banner.png'
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
 import { Section } from '../privacy/members';
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
-import { TwoColumn } from '../privacy/privacy'
+import { TwoColumn } from '../privacy/host'
 
 export default function HostDPA({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
