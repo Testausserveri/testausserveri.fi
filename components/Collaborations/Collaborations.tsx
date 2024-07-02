@@ -1,6 +1,6 @@
 import styles from './Collaborations.module.css'
 
-import saucesoft from '../../assets/collaborations/saucesoft.svg'
+import assembly from '../../assets/collaborations/assembly.svg'
 import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
@@ -33,8 +33,8 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://saucesoft.io" target="_blank">
-                        <Image src={saucesoft} height={80} alt="Saucesoft logo" />
+                    <Link href="https://assembly.org/" target="_blank">
+                        <Image src={assembly} height={80} alt="Assembly logo" />
                     </Link>
                 </li>
                 <li>
