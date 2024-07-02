@@ -10,7 +10,7 @@ import { PropsWithChildren } from 'react'
 
 const footerLinks = [
     { label: "Status", path: "https://status.testausserveri.fi" },
-    { label: "Tietosuojaseloste", path: "/privacy" },
+    { label: "Tietosuoja", path: "/privacy" },
     { label: "Testausserveri Wiki", path: "https://wiki.testausserveri.fi" },
     { label: "Yhdistyksen säännöt", path: "/association-rules" },
 ] as const
