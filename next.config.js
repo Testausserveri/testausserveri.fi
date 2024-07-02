@@ -42,7 +42,7 @@ module.exports = (phase) => ({
       { "source": "/jasenhakemus", "destination": "/apply", permanent: false },
       { "source": "/host/enable", "destination": "https://forms.gle/Z9oTUEKAdHheBcVT6", permanent: false },
       { "source": "/link/jasenhakemus", "destination": "/apply", permanent: false },
-      { "source": "/link/(.*)", "destination": "https://link.testausserveri.fi/$1", permanent: true },
+      { "source": "/link/:path*", "destination": "https://link.testausserveri.fi/:path*", permanent: true },
       { "source": "/yhdistyksen-saannot.pdf", "destination": "/association-rules", permanent: true },
       { "source": "/host/privacy", "destination": "/privacy/host", permanent: true }
     ];
