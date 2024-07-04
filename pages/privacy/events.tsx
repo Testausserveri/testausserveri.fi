@@ -105,7 +105,7 @@ export default function EventsPrivacy({ copyrightYear }: InferGetServerSideProps
           <p>Rekisteröidyllä on oikeus siihen, että rekisterinpitäjä rajoittaa käsittelyä, jos rekisteröity esimerkiksi kiistää henkilötietojen paikkansapitävyyden. Tällöin käsittelyä rajoitetaan ajaksi, jonka kuluessa rekisterinpitäjä voi varmistaa niiden paikkansapitävyyden.</p>
 
           <h3>10.4.	Oikeus vaatia tietojen poistamista tai vastustaa tietojen käsittelyä</h3>
-          <p>Rekisteröidyllä on oikeus vaatia henkilötietojensa poistamista tai vastustaa niiden käsittelyä silloin kun se perustuu oikeutettuun etuun lähettämällä sähköpostia osoitteeseen <a href="mailto:host@testausserveri.fi">host@testausserveri.fi</a>.</p>
+          <p>Rekisteröidyllä on oikeus vaatia henkilötietojensa poistamista tai vastustaa niiden käsittelyä silloin kun se perustuu oikeutettuun etuun lähettämällä sähköpostia osoitteeseen <a href="mailto:board@testausserveri.fi">board@testausserveri.fi</a>.</p>
 
           <h3>10.5.	Oikeus tehdä valitus valvontaviranomaiselle</h3>
           <p>Rekisteröity voi tehdä henkilötietojen käsittelystä valituksen valvovalle viranomaiselle, joka on tietosuojavaltuutettu.</p>
