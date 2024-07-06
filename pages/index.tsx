@@ -18,10 +18,8 @@ import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption, PostDetails } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
-import { promises as fs } from 'fs';
-import path from 'path';
-import { serialize } from 'next-mdx-remote/serialize';
-import { Posts } from '../components/Posts/Posts';
+import { RecentPostsRow } from '../components/RecentPostsRow/RecentPostsRow';
+import post from '../utils/posts';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -58,7 +56,7 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ ssGuildInfo, posts, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState([])
@@ -123,7 +121,7 @@ export default function Home({ ssGuildInfo, posts, copyrightYear }: InferGetStat
         </Link>
       </Center>
       <Content wider>
-        <Posts posts={posts}/>
+        <RecentPostsRow posts={recentPosts}/>
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
@@ -154,31 +152,16 @@ export default function Home({ ssGuildInfo, posts, copyrightYear }: InferGetStat
 
 export const getStaticProps: GetStaticProps<{
   ssGuildInfo: GuildInfo<GuildInfoModelOption[]>,
-  posts: PostDetails[]
+  recentPosts: PostDetails[]
   copyrightYear: number
 }> = async () => {
-  const posts = (await Promise.allSettled(
-    (await fs.readdir(path.join(process.cwd(), 'posts')))
-      .filter(fileName => fileName.endsWith(".mdx"))
-      .map(async (fileName) => {
-        const slug = fileName.replace(/\.mdx$/, '');
-        const filePath = path.join(process.cwd(), 'posts', fileName);
-        console.log(filePath)
-        const raw = await fs.readFile(filePath, 'utf-8');
-        const frontmatterRaw = raw.match(/^(---[\s\S]*?---)/)[1].trim();
-        const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
-        const postDetails = {slug, ...serialized.frontmatter} as PostDetails;
-        return postDetails;
-      })))
-    .filter((p): p is PromiseFulfilledResult<any> => p.status === 'fulfilled') 
-    .map(settled => settled.value);
-  console.log(posts)
+  const recentPosts = await post.list(3);
   const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   return {
     props: {
       ssGuildInfo: guildInfo,
-      posts: JSON.parse(JSON.stringify(posts)),
+      recentPosts: JSON.parse(JSON.stringify(recentPosts)),
       copyrightYear: new Date().getFullYear()
     }
   }

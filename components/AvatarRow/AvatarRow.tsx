@@ -2,9 +2,12 @@ import Image from 'next/image';
 import styles from './AvatarRow.module.css'
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'
+import { Member } from '../../utils/types';
+import { getMemberAvatarUrl } from '../../utils/Member';
+import testausorveli from '../../assets/testausorveli.png';
 
 export type AvatarRowProps = {
-    members: { id: string, name: string, avatar: string }[]
+    members: Member[]
 }
 
 export function AvatarRow({ members }: AvatarRowProps) {
@@ -15,8 +18,8 @@ export function AvatarRow({ members }: AvatarRowProps) {
             ))}
             <ul className={styles.avatarRow}>
                 {members.map(member => (
-                    <li key={member.id} data-tooltip-id={`avatar-row-tooltip-${member.name}`}>
-                        <Image src={member.avatar} alt={member.name} width={40} height={40} />
+                    <li key={member._id} data-tooltip-id={`avatar-row-tooltip-${member.name}`}>
+                        <Image src={member._id.startsWith('ts:') ? getMemberAvatarUrl(member._id.replace('ts:', '')) : testausorveli} alt={member.name} width={40} height={40} />
                     </li>
                 ))}
             </ul>

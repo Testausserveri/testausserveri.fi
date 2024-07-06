@@ -93,12 +93,34 @@ export type ApplyResponse = {
   status: "ok" | "error"
 }
 
-export type PostDetails = {
+enum MemberDisplayNameKind {
+  FirstNameAndLastNameInitial = 1,
+  Nickname = 2,
+  Username = 3,
+  Id = 4
+}
+
+export type MemberDisplayNameResponse = {
+  displayName: string,
+  kind: MemberDisplayNameKind
+}
+
+export type PostDetailsFrontmatter = {
   title: string;
   category: string;
   feature_image: string;
   excerpt: string;
   authors: string[];
+  datetime: Date;
+  slug: string;
+};
+
+export type PostDetails = {
+  title: string;
+  category: string;
+  feature_image: string;
+  excerpt: string;
+  authors: Member[];
   datetime: Date;
   slug: string;
 };

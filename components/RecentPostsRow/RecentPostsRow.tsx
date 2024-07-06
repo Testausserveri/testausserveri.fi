@@ -1,4 +1,4 @@
-import styles from './Posts.module.css'
+import styles from './RecentPostsRow.module.css'
 import Image from 'next/image';
 import { getMemberAvatarUrl } from '../../utils/Member';
 import { AvatarRow } from '../AvatarRow/AvatarRow';
@@ -12,10 +12,6 @@ type PostColumnProps = {
 
 function PostColumn(props: PostColumnProps) {
   const { authors, category, feature_image, title, excerpt, slug } = props.post
-  const authorMembers = authors.map(author => {
-    const [id, name] = author.split(':');
-    return ({ id: id, name: name, avatar: getMemberAvatarUrl(id)})
-  })
 
   return (
     <a>
@@ -31,7 +27,7 @@ function PostColumn(props: PostColumnProps) {
           {excerpt}
         </span>
         <span className={styles.bottom}>
-          <AvatarRow members={authorMembers} />
+          <AvatarRow members={authors} />
           {/*
                     <span className={styles.readingTime}>
                         <AiOutlineRead />
@@ -48,7 +44,7 @@ type PostsProps = {
   posts: PostDetails[];
 }
 
-export function Posts(props: PostsProps) {
+export function RecentPostsRow(props: PostsProps) {
   return (
     <div className={styles.row}>
       {props.posts.map(post => (
