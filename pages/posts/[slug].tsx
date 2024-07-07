@@ -8,7 +8,7 @@ import { Content } from '../../components/Content/Content';
 import { H1 } from '../../components/Title/Title';
 import { AvatarRow, AvatarRowProps } from '../../components/AvatarRow/AvatarRow';
 import { getMemberAvatarUrl } from '../../utils/Member';
-import { PostDetails } from '../../utils/types';
+import { PostDetails, PostDetailsFrontmatter } from '../../utils/types';
 
 
 
@@ -17,14 +17,16 @@ type Post<TFrontmatter> = {
   frontmatter: TFrontmatter;
 };
 
-async function getPost(filepath: string): Promise<Post<PostDetails>> {
+async function getPost(filepath: string): Promise<Post<PostDetailsFrontmatter>> {
   const raw = await fs.readFile(filepath, 'utf-8');
   const serialized = await serialize(raw, { parseFrontmatter: true });
-  const frontmatter = serialized.frontmatter as PostDetails;
+  let frontmatter = serialized.frontmatter as PostDetails;
+  frontmatter.datetime = new Date();
+  const { frontmatter: _, ...serializedWithoutFrontmatter } = serialized;
 
   return {
-    frontmatter,
-    serialized,
+    frontmatter: JSON.parse(JSON.stringify(frontmatter)),
+    serialized: serializedWithoutFrontmatter as MDXRemoteSerializeResult,
   };
 }
 
