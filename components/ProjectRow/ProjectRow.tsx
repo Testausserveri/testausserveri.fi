@@ -35,7 +35,7 @@ export function ProjectRow({ project, compact }: ProjectRowProps) {
                         <h2>{project.name}</h2>
                         <p>{description}</p>
                         <div className={styles.bottom}>
-                            <AvatarRow members={project.members.map(m => ({ ...m, id: m._id, avatar: getMemberAvatarUrl(m._id) }))} />
+                            <AvatarRow members={project.members.map(m => ({ ...m, id: m._id, avatar: getMemberAvatarUrl(String(m._id)) }))} />
                             <TagsRow tags={project.tags} />
                         </div>
                     </div>
