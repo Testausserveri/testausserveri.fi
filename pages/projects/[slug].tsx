@@ -298,7 +298,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
             <div>
               <H2>Omistajat</H2>
               <AvatarRowExtended>
-                <AvatarRow members={project.members.map(m => ({ ...m, id: m._id, avatar: getMemberAvatarUrl(m._id) }))} />
+                <AvatarRow members={project.members.map(m => ({ _id: `ts:${m._id}`, name: m.name }))} />
                 <span>{project.members.map(member => member.name).join("; ")}</span>
               </AvatarRowExtended>
 
@@ -306,7 +306,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
                 <H2>Kontribuuttorit
                   <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
                 </H2>
-                <AvatarRow members={project.contributors.map(contributor => ({ ...contributor, _id: String(contributor.id) }))} />
+                <AvatarRow members={project.contributors.map(c => ({ _id: c.id, ...c }))} />
               </> : null}
 
               {project.links.length > 0 ? <>
