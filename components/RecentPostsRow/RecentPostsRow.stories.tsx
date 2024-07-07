@@ -1,3 +1,4 @@
+import { PostDetails } from '../../utils/types';
 import { RecentPostsRow } from './RecentPostsRow';
 
 export default {
@@ -5,7 +6,7 @@ export default {
   component: RecentPostsRow,
 }
 
-const Template = (args) => <RecentPostsRow {...args} />
+const Template = (args: JSX.IntrinsicAttributes & { posts: PostDetails[]; }) => <RecentPostsRow {...args} />
 
 export const Default = {
   args: {
