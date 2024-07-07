@@ -27,7 +27,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
         const raw = await fs.readFile(filePath, 'utf-8');
         const frontmatterRaw = raw.match(/^(---[\s\S]*?---)/)[1].trim();
         const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
-        const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 200); // 200 words per minute.
+        const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
         return {...serialized.frontmatter, slug, readingTime} as PostDetailsFrontmatter;
     }
     

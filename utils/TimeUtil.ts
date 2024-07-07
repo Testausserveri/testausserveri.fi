@@ -70,50 +70,61 @@ export class TimeUtil {
         );
     }
 
+    // Helper function to format the date as "d. mmmm." or "d. mmmm yyyy."
+    static formatFinnishDate = (date: Date): string => {
+        const day = date.getDate();
+        const month = this.MonthNames[date.getMonth()];
+        const year = date.getFullYear();
+        const currentYear = new Date().getFullYear();
+        
+        if (year === currentYear) {
+            return `${day}. ${month}`;
+        } else {
+            return `${day}. ${month} ${year}`;
+        }
+    };
+
     /**
      * Format date into a readable string in relation to the current date
      */
+    
     static formatDateInRelationToCurrent(date: Date): string {
         const now = new Date();
-
+    
+        // Helper function to get the difference in calendar days
         const differenceInCalendarDays = (date1: Date, date2: Date): number => {
             const oneDay = 24 * 60 * 60 * 1000; // Milliseconds in a day
             const diffDays = Math.round((date1.getTime() - date2.getTime()) / oneDay);
             return diffDays;
         };
-
-        const formatFinnishDate = (date: Date): string => {
-            const day = date.getDate();
-            const month = this.MonthNames[date.getMonth()];
-            return `${day}. ${month}`;
-        };
-
+    
+        // Helper function to get the weekday name in Finnish
         const getFinnishWeekdayName = (date: Date): string => {
             return this.WeekdayNames[date.getDay()];
         };
-
+    
         const daysDifference = differenceInCalendarDays(now, date);
-
+    
         if (daysDifference === 0) {
             return 'tänään';
         }
-
+        
         if (daysDifference === 1) {
             return 'eilen';
         }
-
+    
         if (daysDifference === 2) {
             return 'toissa päivänä';
         }
-
+    
         const startOfWeek = new Date(now);
-        startOfWeek.setDate(now.getDate() - now.getDay() + 1); 
-
+        startOfWeek.setDate(now.getDate() - now.getDay() + 1); // Assuming week starts on Monday
+    
         if (date >= startOfWeek && date <= now) {
             const weekdayName = getFinnishWeekdayName(date);
             return `${weekdayName}na`;
         }
-
-        return formatFinnishDate(date);
+    
+        return this.formatFinnishDate(date);
     }
 }

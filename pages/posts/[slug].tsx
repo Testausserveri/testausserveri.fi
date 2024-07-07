@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { type MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
@@ -9,6 +9,9 @@ import { H1 } from '../../components/Title/Title';
 import { AvatarRow, AvatarRowProps } from '../../components/AvatarRow/AvatarRow';
 import { getMemberAvatarUrl } from '../../utils/Member';
 import { PostDetails, PostDetailsFrontmatter } from '../../utils/types';
+import styled from 'styled-components';
+import { mdxComponents } from '../../components/mdx/mdxComponents';
+import { Footer } from '../../components/Footer/Footer';
 
 
 
@@ -57,18 +60,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-type PostPageProps = {
-  serialized: MDXRemoteSerializeResult;
-  frontmatter: PostDetails;
-};
-
-export default function PostPage({ serialized, frontmatter }: PostPageProps) {
+const PostContent = styled.div`
+  img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+`;
+export default function PostPage({ serialized, frontmatter, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   
   return (
-    <Content>
-    <H1>{frontmatter.title}</H1>
-      <MdxContent source={serialized} />
-    </Content>
+    <>
+      <Content>
+      <H1>{frontmatter.title}</H1>
+      <PostContent>
+        <MdxContent source={serialized} />
+      </PostContent>
+      </Content>
+      <Footer copyrightYear={copyrightYear} />
+    </>
+
   );
 }
 
@@ -77,5 +87,5 @@ type MdxContentProps = {
 };
 
 const MdxContent = ({ source }: MdxContentProps) => {
-  return <MDXRemote {...source} />;
+  return <MDXRemote {...source} components={mdxComponents} />;
 };
