@@ -21,7 +21,7 @@ import { getMemberAvatarUrl } from '../../utils/Member'
 import { DetailedProject, ShallowProject } from "../../utils/types";
 import Link from 'next/link'
 import Image from 'next/image'
-import { mdxComponents } from '../../components/mdx/MdxComponents'
+import { mdxComponents } from '../../components/mdx/mdxComponents'
 
 const Layout = styled.div`
   margin-top: 2rem;
