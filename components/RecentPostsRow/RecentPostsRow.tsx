@@ -16,7 +16,7 @@ function PostColumn(props: PostColumnProps) {
   return (
     <a>
       <div className={styles.post}>
-        <img src={feature_image} width="500" height="50" className={styles.image} />
+        <img src={`/posts/assets/${feature_image}`} width="500" height="50" className={styles.image} />
         <span className={styles.tag}>
           {category || ""}
         </span>

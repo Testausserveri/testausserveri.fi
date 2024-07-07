@@ -42,7 +42,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
     
     const settledTsAuthors = await Promise.allSettled(
         uniqueTsAuthorIds.map(async (id): Promise<Member> => ({
-            name: await api.getMemberDisplayName(id),
+            name: await api.getMemberDisplayName(id.replace('ts:', '')),
             _id: id
         }))
     );
@@ -50,7 +50,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
     const tsAuthors = settledTsAuthors
         .filter((p): p is PromiseFulfilledResult<Member> => p.status === 'fulfilled')
         .map(settled => settled.value);
-    
+   
     const posts = fulfilledPostDetails.map(postDetail => {
         const authorsResolved = postDetail.authors.map(id => tsAuthors.find(author => author._id === id) || {
             _id: id,
