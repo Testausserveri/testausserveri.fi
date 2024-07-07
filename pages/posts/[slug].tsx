@@ -61,19 +61,10 @@ type PostPageProps = {
 };
 
 export default function PostPage({ serialized, frontmatter }: PostPageProps) {
-  const members = frontmatter.authors.map(author => {
-    const [id, name] = author.split(":");
-    return {
-      avatar: getMemberAvatarUrl(id),
-      id,
-      name
-    }
-  })
+  
   return (
     <Content>
     <H1>{frontmatter.title}</H1>
-      <AvatarRow members={members} />
-      <hr />
       <MdxContent source={serialized} />
     </Content>
   );
