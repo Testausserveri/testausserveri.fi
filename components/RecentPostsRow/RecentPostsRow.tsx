@@ -15,7 +15,7 @@ function PostColumn(props: PostColumnProps) {
   const { authors, category, feature_image, title, excerpt, slug, datetime, readingTime } = props.post
 
   return (
-    <a>
+    <Link href={`/posts/${slug}`}>
       <div className={styles.post}>
         <div className={styles.picture}>
           <div className={styles.authors}>
@@ -42,7 +42,7 @@ function PostColumn(props: PostColumnProps) {
           </span>
         </span>
       </div>
-    </a>
+    </Link>
   )
 }
 
