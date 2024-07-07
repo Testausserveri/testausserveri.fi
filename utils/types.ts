@@ -22,8 +22,9 @@ export type OptionalExcept<T, K extends keyof T> = Partial<T> & Pick<T, K>
 export type GuildInfo<T extends GuildInfoModelOption[]> = OptionalExcept<GuildInfoAll, T[number]>
 
 export type Member = {
-  _id: string;
   name: string;
+  _id: string | number;
+  avatar?: string;
 };
 
 export type ShallowProject = {
@@ -113,6 +114,7 @@ export type PostDetailsFrontmatter = {
   authors: string[];
   datetime: Date;
   slug: string;
+  readingTime: number;
 };
 
 export type PostDetails = {
@@ -123,4 +125,5 @@ export type PostDetails = {
   authors: Member[];
   datetime: Date;
   slug: string;
+  readingTime: number;
 };

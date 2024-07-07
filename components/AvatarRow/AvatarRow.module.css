@@ -12,7 +12,7 @@
 .avatarRow li {
     display: inline-block;
     padding: 0;
-    
+    transition: margin-left 0.2s;
 }
 .avatarRow li img {
     border-radius: 2rem;
@@ -25,6 +25,12 @@
 
 .avatarRow li {
     margin-left: -7px;
+}
+.expandOnHover.avatarRow:hover li:not(:nth-child(1)) {
+    margin-left: 3px;
+}
+.expandOnHover.avatarRow:hover li:not(:nth-last-child(1)) img {
+    mask: none;
 }
 
 .tooltip {

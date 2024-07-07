@@ -27,7 +27,9 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
         const raw = await fs.readFile(filePath, 'utf-8');
         const frontmatterRaw = raw.match(/^(---[\s\S]*?---)/)[1].trim();
         const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
-        return {...serialized.frontmatter, slug} as PostDetailsFrontmatter;
+        const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 200); // 200 words per minute.
+        console.log(slug, (raw.split(' ').length - frontmatterRaw.split(' ').length ));
+        return {...serialized.frontmatter, slug, readingTime} as PostDetailsFrontmatter;
     }
     
     const settledPostDetails = await Promise.allSettled(
@@ -63,6 +65,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
             feature_image: postDetail.feature_image,
             excerpt: postDetail.excerpt,
             datetime: postDetail.datetime,
+            readingTime: postDetail.readingTime,
             authors: authorsResolved
         } as PostDetails;
     });

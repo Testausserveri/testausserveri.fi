@@ -8,16 +8,17 @@ import testausorveli from '../../assets/testausorveli.png';
 import Head from 'next/head';
 
 export type AvatarRowProps = {
-    members: Member[]
+    members: Member[];
+    expandOnHover?: Boolean
 }
 
-export function AvatarRow({ members }: AvatarRowProps) {
+export function AvatarRow({ members, expandOnHover }: AvatarRowProps) {
     return (
         <>
             {members.map(member => (
                 <Tooltip key={member.name} className={styles.tooltip} id={`avatar-row-tooltip-${member.name}`}>{member.name}</Tooltip>
             ))}
-            <ul className={styles.avatarRow}>
+            <ul className={`${styles.avatarRow} ${expandOnHover ? styles.expandOnHover  : ''}`}>
                 {members.map(member => {
                     return (
                         <li key={member._id} data-tooltip-id={`avatar-row-tooltip-${member.name}`}>
