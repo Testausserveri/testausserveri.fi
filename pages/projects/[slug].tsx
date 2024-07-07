@@ -306,7 +306,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
                 <H2>Kontribuuttorit
                   <Explanation>Projektin GitHub-repositorioihin koodia lisänneet, listattu GitHub-käyttäjät</Explanation>
                 </H2>
-                <AvatarRow members={project.contributors.map(c => ({ ...c, id: String(c.id) }))} />
+                <AvatarRow members={project.contributors.map(contributor => ({ ...contributor, _id: String(contributor.id) }))} />
               </> : null}
 
               {project.links.length > 0 ? <>
