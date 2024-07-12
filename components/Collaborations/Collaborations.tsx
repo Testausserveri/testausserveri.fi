@@ -1,5 +1,6 @@
 import styles from './Collaborations.module.css'
 
+import pvjjk from '../../assets/collaborations/pvjjk.png'
 import assembly from '../../assets/collaborations/assembly.svg'
 import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
@@ -28,6 +29,11 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
+                    <Link href="https://koodiasuomesta.fi/" target="_blank">
+                        <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
+                    </Link>
+                </li>
+                <li>
                     <Link href="https://aatos.app/" target="_blank">
                         <Image src={aatos} height={80} alt="Aatos Legal Technology logo" />
                     </Link>
@@ -38,6 +44,11 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
+                    <Link href="https://intti.fi/kybervarusmiehet" target="_blank">
+                        <Image src={pvjjk} height={80} alt="Puolustusvoimien johtamisjärjestelmäkeskus" />
+                    </Link>
+                </li>
+                <li>
                     <Link href="https://www.women4cyberfinland.com/" target="_blank">
                         <Image src={w4cfi} height={80} alt="W4CFI logo" />
                     </Link>
@@ -45,11 +56,6 @@ export function Collaborations(props: CollaborationsProps) {
                 <li>
                     <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
                         <Image src={krp} height={80} alt="KRP logo" />
-                    </Link>
-                </li>
-                <li>
-                    <Link href="https://koodiasuomesta.fi/" target="_blank">
-                        <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
                     </Link>
                 </li>
             </ul>
