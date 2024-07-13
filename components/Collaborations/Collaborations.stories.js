@@ -8,7 +8,7 @@ export default {
 const Template = (args) => <Collaborations {...args} />
 
 export const Default = {
-  args: {
+  args: { 
     
   }
 }

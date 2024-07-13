@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import TestaushostBannerImg from '../../assets/testaushost-banner.png'
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
-import { Section } from '../privacy';
+import { Section } from '../privacy/members';
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
 
 export default function HostTerms({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {

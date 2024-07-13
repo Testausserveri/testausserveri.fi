@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import styled from 'styled-components'
-import { Content } from '../components/Content/Content'
-import { H1 } from '../components/Title/Title'
+import { Content } from '../../components/Content/Content'
+import { H1 } from '../../components/Title/Title'
 import { IoIosCall, IoIosMail, IoLogoGithub } from 'react-icons/io'
-import { Footer } from '../components/Footer/Footer'
+import { Footer } from '../../components/Footer/Footer'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
 
 export const Section = styled.div`
   
@@ -75,7 +76,12 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           <meta name="description" content="Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille." />
       </Head>
       <Content>
-        <H1>Rekisteri- ja tietosuojaseloste</H1>
+        <Breadcrumbs
+          route={[
+            { path: "/privacy/", name: "Tietosuoja" },
+            { path: `/privacy/members`, name: "Jäsenrekisteri" }
+          ]} />
+        <H1>Jäsenrekisterin tietosuojaseloste</H1>
         <p>
           Tämä on Testausserveri ry:n EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen rekisteri- ja tietosuojaseloste. Laadittu 27. toukokuuta 2022. Viimeisin muutos 27. toukokuuta 2022.
         </p>

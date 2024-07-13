@@ -1,6 +1,7 @@
 import styles from './Collaborations.module.css'
 
-import saucesoft from '../../assets/collaborations/saucesoft.svg'
+import pvjjk from '../../assets/collaborations/pvjjk.png'
+import assembly from '../../assets/collaborations/assembly.svg'
 import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
@@ -28,13 +29,23 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
+                    <Link href="https://koodiasuomesta.fi/" target="_blank">
+                        <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
+                    </Link>
+                </li>
+                <li>
                     <Link href="https://aatos.app/" target="_blank">
                         <Image src={aatos} height={80} alt="Aatos Legal Technology logo" />
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://saucesoft.io" target="_blank">
-                        <Image src={saucesoft} height={80} alt="Saucesoft logo" />
+                    <Link href="https://assembly.org/" target="_blank">
+                        <Image src={assembly} height={80} alt="Assembly logo" />
+                    </Link>
+                </li>
+                <li>
+                    <Link href="https://intti.fi/kybervarusmiehet" target="_blank">
+                        <Image src={pvjjk} height={80} alt="Puolustusvoimien johtamisjärjestelmäkeskus" />
                     </Link>
                 </li>
                 <li>
@@ -45,11 +56,6 @@ export function Collaborations(props: CollaborationsProps) {
                 <li>
                     <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
                         <Image src={krp} height={80} alt="KRP logo" />
-                    </Link>
-                </li>
-                <li>
-                    <Link href="https://koodiasuomesta.fi/" target="_blank">
-                        <Image src={koodiasuomesta} height={80} alt="Koodia Suomesta logo" />
                     </Link>
                 </li>
             </ul>
