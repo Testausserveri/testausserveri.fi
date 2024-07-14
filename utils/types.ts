@@ -126,4 +126,5 @@ export type PostDetails = {
   datetime: Date;
   slug: string;
   readingTime: number;
+  url?: string;
 };

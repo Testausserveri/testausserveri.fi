@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 import { Member, PostDetails, PostDetailsFrontmatter } from './types';
 import api from './api';
+import RssParser from 'rss-parser';
 
 /**
  * List all posts
@@ -80,9 +81,53 @@ async function list(arg1?: number, arg2?: number): Promise<PostDetails[]> {
     }
 }
 
+async function listRecentTestausauto(): Promise<PostDetails[]> {
+    const rssParser = new RssParser({
+        customFields: {
+            item: ['media:content', 'content:encoded']
+        }
+    });
+    
+    const feed = await rssParser.parseURL('https://testausauto.fi/feed/');
+    const items = feed.items.slice(0,3);
+    let posts: PostDetails[] = [];
+    items.forEach(item => {   
+        const regex = /<p>(.*?)<\/p>/g;
+        let matches = [];
+        let match;
+        while ((match = regex.exec(item['content:encoded'])) !== null) {
+            matches.push(match[1]);
+        }
+        const resultString = matches.join(' ');
+        const readingTime = Math.ceil(resultString.split(' ').length / 120);     
+
+        const testausautoAuthors: {[key: string]: string} = {
+            'Ruben': 'ts:61d8a2b6955c44fe1def464c',
+            'Mikael': 'ts:61d8b737a16588f423624ed5'
+        }
+        const post: PostDetails = {
+            title: item.title,
+            category: item.categories[0],
+            feature_image: item['media:content']['$']['url'],
+            excerpt: item.contentSnippet.split('.')[0] + '.',
+            authors: [{
+                name: item.creator,
+                _id: testausautoAuthors[item.creator]
+            }],
+            datetime: new Date(item.pubDate),
+            slug: item.link,
+            readingTime: readingTime,
+            url: item.link
+        }
+        posts.push(post);
+    });  
+    return posts;
+}
+
 
 const posts = {
-    list
+    list,
+    listRecentTestausauto
 }
 
 export default posts

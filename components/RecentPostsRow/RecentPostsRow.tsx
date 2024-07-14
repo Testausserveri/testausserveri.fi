@@ -12,16 +12,16 @@ type PostColumnProps = {
 };
 
 function PostColumn(props: PostColumnProps) {
-  const { authors, category, feature_image, title, excerpt, slug, datetime, readingTime } = props.post
+  const { url, authors, category, feature_image, title, excerpt, slug, datetime, readingTime } = props.post
 
   return (
-    <Link href={`/posts/${slug}`}>
+    <Link href={url ? url : `/posts/${slug}`}>
       <div className={styles.post}>
         <div className={styles.picture}>
           <div className={styles.authors}>
             <AvatarRow members={authors} expandOnHover />
           </div>
-          <img className={styles.featureImage} src={`/posts/assets/${feature_image}`} width="500" height="50" />
+          <img className={styles.featureImage} src={feature_image.startsWith('http') ? feature_image : `/posts/assets/${feature_image}`} width="500" height="50" />
         </div>
         <span className={styles.tag}>
           <span>{category || ""}</span>
@@ -48,11 +48,12 @@ function PostColumn(props: PostColumnProps) {
 
 type PostsProps = {
   posts: PostDetails[];
+  columns?: number;
 }
 
 export function RecentPostsRow(props: PostsProps) {
   return (
-    <div className={styles.row}>
+    <div className={styles.grid} style={props.columns ? { gridTemplateColumns: "1fr ".repeat(props.columns) } : {}}>
       {props.posts.map(post => (
         <PostColumn key={post.slug} post={post} />
       ))}

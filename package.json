@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-tooltip": "^5.10.1-beta.4",
+    "rss-parser": "^3.13.0",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
