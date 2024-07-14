@@ -10,9 +10,10 @@ import { NextPageContext } from 'next/types'
 const pages = [
   { label: "Etusivu", path: "/" },
   //{ label: "Jäsenet", path: "/members" },
+  { label: "Syslog", path: "/syslog" },
   { label: "Projektit", path: "/projects" },
-  { label: "Palvelintila", path: "/host" },
-  { label: "Koneet kiertoon", path: "/koneet-kiertoon" },
+  /*{ label: "Palvelintila", path: "/host" },
+  { label: "Koneet kiertoon", path: "/koneet-kiertoon" },*/
   { label: "Tietoa meistä", path: "/about" },
   //{ label: "Tietoa", path: "/about-us" }
 ]
@@ -25,8 +26,6 @@ interface MyAppProps extends AppProps {
 function MyApp({ Component, pageProps, router, props }: MyAppProps) {
   return (
     <div className="main">
-      <Head>
-      </Head>
       <Header 
         pages={pages}
         activePath={router.route}
