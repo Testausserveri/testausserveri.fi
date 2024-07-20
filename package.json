@@ -1,14 +1,17 @@
 {
   "name": "testausserveri.fi",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run build-posts-index && npm run dump-licenses",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "build-posts-index": "tsx scripts/prebuild-posts-index.ts",
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {
@@ -16,6 +19,7 @@
     "@skyra/discord-components-react": "^3.6.0",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.268",
+    "dotenv": "^16.4.5",
     "hamburger-react": "^2.5.0",
     "next": "^13.2.4",
     "next-mdx-remote": "^4.4.1",
@@ -39,6 +43,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "eslint-plugin-storybook": "^0.6.11",
+    "license-checker": "^25.0.1",
     "storybook": "^7.0.4",
     "storybook-css-modules-preset": "^1.1.1",
     "typescript": "^5.0.2"

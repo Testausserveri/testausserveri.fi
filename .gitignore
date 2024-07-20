@@ -7,3 +7,4 @@ storybook-static
 dependency-licenses.json-e
 .env.local
 public/sitemap*
+public/posts.json
