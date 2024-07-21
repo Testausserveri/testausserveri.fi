@@ -12,16 +12,15 @@ type PostColumnProps = {
 };
 
 function PostColumn(props: PostColumnProps) {
-  const { url, authors, category, feature_image, title, excerpt, slug, datetime, readingTime } = props.post
-
+  const { url, authorsResolved, category, title, excerpt, slug, datetime, readingTime, imageDetails } = props.post
   return (
     <Link href={url ? url : `/syslog/${slug}`}>
       <div className={styles.post}>
         <div className={styles.picture}>
           <div className={styles.authors}>
-            <AvatarRow members={authors} expandOnHover />
+            <AvatarRow members={authorsResolved || []} expandOnHover />
           </div>
-          <Image alt={'Artikkelin kuva'} className={styles.featureImage} src={feature_image.startsWith('http') ? feature_image : `/syslog/assets/${feature_image}`} width="500" height="50" />
+          <Image alt={'Artikkelin kuva'} className={styles.featureImage} placeholder='blur' {...imageDetails} />
         </div>
         <span className={styles.tag}>
           <span>{category || ""}</span>

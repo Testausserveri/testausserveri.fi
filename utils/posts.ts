@@ -1,9 +1,10 @@
 import path from 'path';
 import { promises as fs } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
-import { Member, PostDetails, PostDetailsFrontmatter } from './types';
+import { Member, PostDetails } from './types';
 import api from './api';
 import RssParser from 'rss-parser';
+import { getImage } from './image';
 
 export type PostsListResult = {
     posts: PostDetails[],
@@ -35,22 +36,25 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
         const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
         const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
         const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
-        return {...serialized.frontmatter, slug, readingTime} as PostDetailsFrontmatter;
+
+        const featureImage = serialized.frontmatter.feature_image as string;
+        const imageUrl = featureImage.startsWith('http') ? featureImage : `/syslog/assets/${featureImage}`;
+        const imageDetails = await getImage(imageUrl);
+        return {...serialized.frontmatter, slug, readingTime, imageDetails} as PostDetails;
     }
     
     const settledPostDetails = await Promise.allSettled(
         postFiles.map(fileName => getPostDetails(fileName))
     );
-    
     const fulfilledPostDetails = settledPostDetails
-        .filter((p): p is PromiseFulfilledResult<PostDetailsFrontmatter> => p.status === 'fulfilled')
+        .filter((p): p is PromiseFulfilledResult<PostDetails> => p.status === 'fulfilled')
         .map(settled => settled.value);
     
-    const uniqueTsAuthorIds = Array.from(new Set(fulfilledPostDetails.flatMap(post => post.authors))).filter(item => item.startsWith("ts:"));
+    const uniqueTsAuthorIds = Array.from(new Set(fulfilledPostDetails.flatMap(post => post.authors))).filter(item => item?.startsWith("ts:"));
     const settledTsAuthors = await Promise.allSettled(
         uniqueTsAuthorIds.map(async (id): Promise<Member> => ({
-            name: await api.getMemberDisplayName(id.replace('ts:', '')),
-            _id: id
+            name: await api.getMemberDisplayName((id || "").replace('ts:', '')),
+            _id: id || ""
         }))
     );
 
@@ -59,7 +63,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
         .map(settled => settled.value);
    
     let posts = fulfilledPostDetails.map(postDetail => {
-        const authorsResolved = postDetail.authors.map(id => tsAuthors.find(author => author._id === id) || {
+        const authorsResolved = postDetail.authors?.map(id => tsAuthors.find(author => author._id === id) || {
             _id: id,
             name: id
         });
@@ -71,18 +75,18 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
             excerpt: postDetail.excerpt,
             datetime: postDetail.datetime,
             readingTime: postDetail.readingTime,
-            authors: authorsResolved
+            authorsResolved: authorsResolved,
+            imageDetails: postDetail.imageDetails
         } as PostDetails;
     });
 
     posts.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime());
-
     if (arg2 === undefined && arg1 !== undefined) { // list(count)
         posts = posts.slice(-arg1);
     } else if (arg1 && arg2) { // list(start, end)
         posts = posts.slice(arg1, arg2 + 1);
     }
-
+    
     return {
         posts, allCount
     };
@@ -124,8 +128,12 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
     // to-do: revalidate once in a while
     const feed = await rssParser.parseURL('https://testausauto.fi/feed/');
     const items = feed.items.slice(0,3);
-    let posts: PostDetails[] = [];
-    items.forEach(item => {   
+    const testausautoAuthors: {[key: string]: string} = {
+        'Ruben': 'ts:61d8a2b6955c44fe1def464c',
+        'Mikael': 'ts:61d8b737a16588f423624ed5'
+    };
+
+    const posts = await Promise.all(items.map(async (item) => {
         const regex = /<p>(.*?)<\/p>/g;
         let matches = [];
         let match;
@@ -133,28 +141,28 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
             matches.push(match[1]);
         }
         const resultString = matches.join(' ');
-        const readingTime = Math.ceil(resultString.split(' ').length / 120);     
+        const readingTime = Math.ceil(resultString.split(' ').length / 120);
 
-        const testausautoAuthors: {[key: string]: string} = {
-            'Ruben': 'ts:61d8a2b6955c44fe1def464c',
-            'Mikael': 'ts:61d8b737a16588f423624ed5'
-        }
-        const post: PostDetails = {
+        const imageDetails = await getImage(item['media:content']['$']['url']);
+
+        const post = {
             title: item.title || "",
             category: item.categories?.[0] || "",
             feature_image: item['media:content']['$']['url'],
             excerpt: item?.contentSnippet?.split('.')[0] + '.',
-            authors: [{
+            authorsResolved: [{
                 name: item.creator || "",
                 _id: testausautoAuthors[item.creator || ""]
             }],
             datetime: new Date(item.pubDate || ""),
             slug: item.link || "",
             readingTime: readingTime,
-            url: item.link
-        }
-        posts.push(post);
-    });  
+            url: item.link,
+            imageDetails
+        };
+
+        return post;
+    }));
     return posts;
 }
 

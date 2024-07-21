@@ -1,3 +1,5 @@
+import { ImageDetails } from "./image";
+
 export type ProjectLinkType = "github" | "homepage" | "link";
 export type ProjectMediaType = "image";
 
@@ -106,25 +108,16 @@ export type MemberDisplayNameResponse = {
   kind: MemberDisplayNameKind
 }
 
-export type PostDetailsFrontmatter = {
-  title: string;
-  category: string;
-  feature_image: string;
-  excerpt: string;
-  authors: string[];
-  datetime: Date;
-  slug: string;
-  readingTime: number;
-};
-
 export type PostDetails = {
   title: string;
   category: string;
   feature_image: string;
   excerpt: string;
-  authors: Member[];
+  authors?: string[];
+  authorsResolved?: Member[];
   datetime: Date;
   slug: string;
   readingTime: number;
   url?: string;
+  imageDetails: ImageDetails
 };

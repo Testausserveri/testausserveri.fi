@@ -14,6 +14,7 @@
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "@skyra/discord-components-core": "^3.6.0",
     "@skyra/discord-components-react": "^3.6.0",
     "@splinetool/react-spline": "^2.2.6",
@@ -23,12 +24,14 @@
     "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
     "next-sitemap": "^4.1.8",
+    "plaiceholder": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^4.8.0",
     "react-tooltip": "^5.27.1",
     "rss-parser": "^3.13.0",
     "sass": "^1.77.8",
+    "sharp": "^0.33.4",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {

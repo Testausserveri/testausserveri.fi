@@ -1,4 +1,10 @@
-export default () => ({
+// @ts-check
+import withPlaiceholder from "@plaiceholder/next";
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = {
   reactStrictMode: true,
   images: {
     domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com', 'testausauto.fi'],
@@ -30,5 +36,6 @@ export default () => ({
       { "source": "/host/privacy", "destination": "/privacy/host", permanent: true }
     ];
   },
-})
-
+};
+ 
+export default withPlaiceholder(config);

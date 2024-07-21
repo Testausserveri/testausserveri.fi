@@ -3,7 +3,7 @@ import { compileMDX, MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-r
 import { serialize } from 'next-mdx-remote/serialize';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { PostDetails, PostDetailsFrontmatter } from '@/utils/types';
+import { PostDetails } from '@/utils/types';
 import { FadeBackground } from '@/components/FadeBackground/FadeBackground';
 import { Content } from '@/components/Content/Content';
 import Image from 'next/image';
