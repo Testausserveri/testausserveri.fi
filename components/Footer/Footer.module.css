@@ -52,6 +52,10 @@
     text-align: right;
 }
 
+.links.linksLeft li {
+    text-align: left;
+}
+
 .links a {
     opacity: 0.74;
     transition: opacity 0.1s ease-in-out;

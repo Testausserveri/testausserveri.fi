@@ -74,6 +74,7 @@ export function Footer() {
                                         src={TestausserveriLogo}
                                         alt="Testausserveri logo"
                                         className={styles.logo}
+                                        style={{marginLeft: "-12px"}}
                                     />
                                 </Link>
                                 <span className={styles.businessId}>Y-tunnus: 3235794-4</span>
@@ -86,17 +87,25 @@ export function Footer() {
                 </FooterRow>
                 <FooterRow>
                     <div>
+                        <div>
+                        <ul className={`noLinkStyles ${styles.links} ${styles.linksLeft}`}>
+                            <li>
+                                <Link href="/credits">
+                                    Kehittäjät ja lisenssit
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="mailto:board@testausserveri.fi">
+                                    board@testausserveri.fi
+                                </Link>
+                            </li>
+                        </ul>
                         <p style={{margin: 0}}>
-                            <Link href="/credits">
-                                Kehittäjät ja lisenssit
-                            </Link> <br />
-                            <span style={{ height: ".4rem", display: "block"}} />
-                            <Link href="mailto:board@testausserveri.fi">
-                                board@testausserveri.fi
-                            </Link>
                             <br />
                             © {new Date().getFullYear()} Testausserveri ry
                         </p>
+                        </div>
+                        
                         <div>
                             <SocialMedias />
                         </div>
