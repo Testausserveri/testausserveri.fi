@@ -87,7 +87,7 @@ const AssociationMembershipCardRoot = styled.div`
 `
 
 function AssociationMembershipCard({ authenticated }: Props) {
-  const notMember = authenticated.associationMembership.status != "MEMBER"
+  const notMember = authenticated?.associationMembership?.status != "MEMBER"
 
   return (
     <AssociationMembershipCardRoot >
@@ -95,17 +95,17 @@ function AssociationMembershipCard({ authenticated }: Props) {
         <div>
           <H2>
             <GradientText>
-              {notMember ? "Testaus" : authenticated.associationMembership.firstName} {notMember ? "Koiranen" : authenticated.associationMembership.lastName}
+              {notMember ? "Testaus" : authenticated?.associationMembership?.firstName} {notMember ? "Koiranen" : authenticated?.associationMembership?.lastName}
             </GradientText>
           </H2>
           <p>
-            {notMember ? "Tuotantoserveri" : authenticated.associationMembership.city}
+            {notMember ? "Tuotantoserveri" : authenticated?.associationMembership?.city}
             <Explanation>
               Yhdistyslaki velvoittaa meitä pitämään luetteloa kunkin jäsenen nimestä ja asuinkunnasta. (Yhdistyslaki 503/1989, 11 §)
             </Explanation>
           </p>
           <p>
-            {notMember ? "hauhau@koira.testausserveri.fi" : authenticated.associationMembership.email}
+            {notMember ? "hauhau@koira.testausserveri.fi" : authenticated?.associationMembership?.email}
             <Explanation>
               Sähköpostiisi tulee mm. tärkeitä tiedotteita kuten tapahtumakutsuja.
             </Explanation>
@@ -150,7 +150,7 @@ export default function MembersAreaHome({ authenticated }: Props) {
             </p>
             <UserRow>
               <div>
-                <Image width="50" height="50" alt="Avatar" src={getMemberAvatarUrl(authenticated._id)} />
+                <Image width="50" height="50" alt="Avatar" src={getMemberAvatarUrl(authenticated._id || "")} />
               </div>
               <div>
                 {authenticated.username}
@@ -168,7 +168,7 @@ export default function MembersAreaHome({ authenticated }: Props) {
         }
 
       </Content>
-      <Footer copyrightYear={new Date().getFullYear()} />
+      <Footer />
     </article>
   )
 }

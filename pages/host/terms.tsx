@@ -72,7 +72,7 @@ export default function HostTerms({ copyrightYear }: InferGetServerSidePropsType
             <p>Tämän sopimuksen ehtoihin sovelletaan Suomen lakia. Tästä sopimuksesta johtuvat riidat pyritään ensisijaisesti ratkaisemaan osapuolten välisissä neuvotteluissa. Mikäli neuvotteluissa ei löydetä ratkaisua kolmenkymmenen (30) vuorokauden kuluessa osapuolten asiaa koskevasta kirjallisesta ilmoituksesta toiselle osapuolelle, ratkaistaan erimielisyys ensimmäisenä asteena Helsingin käräjäoikeudessa.</p>
         </Section>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }

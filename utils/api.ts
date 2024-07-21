@@ -51,7 +51,7 @@ const me = async function (cookies?: string) {
 const getMemberDisplayName = async function (id: string) {
     const response = await fetch(`${apiServer}/v1/displayName?id=${id}`, {
         headers: {
-            'X-Testausapis-Secret': process.env.INTERNAL_API_SECRET
+            'X-Testausapis-Secret': process.env.INTERNAL_API_SECRET || ""
         }
     })
     const { displayName } = await response.json() as MemberDisplayNameResponse

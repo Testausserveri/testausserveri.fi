@@ -21,7 +21,7 @@ export const InputText = forwardRef<HTMLInputElement, InputTextProps>((props, re
             autoComplete={props.autoComplete} 
             autoFocus={props.autoFocus} 
             ref={ref} 
-            list={props.municipalityList ? "municipalities" : null}
+            list={props.municipalityList ? "municipalities" : undefined}
             onChange={(e) => {
             if (props.update) {
                 props.update(e.target.value);

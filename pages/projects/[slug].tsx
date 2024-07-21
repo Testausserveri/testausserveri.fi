@@ -220,7 +220,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
                       <Link href={link.url} >
                         <ProjectLinkTitleContainer>
                           {getProjectLinkIcon(link.type)}
-                          <h3>{getProjectLinkTitle(link.type, link.name)}</h3>
+                          <h3>{getProjectLinkTitle(link.type, link.name || "")}</h3>
                         </ProjectLinkTitleContainer>
                         <span>{getProjectLinkUrl(link.type, link.url)}</span>
                       </Link>
@@ -242,7 +242,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
           </Layout>
         </Content>
       </FadeBackground>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }
@@ -256,6 +256,7 @@ export const getStaticProps: GetStaticProps<{
   suggestedProjectsData: ShallowProject[],
   copyrightYear: number
 }> = async (context) => {
+  if (context.params?.slug == undefined) throw "No slug"
   const { slug } = context.params
   if (typeof slug !== "string") throw new Error("Slug must be a string")
 

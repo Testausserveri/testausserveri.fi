@@ -46,8 +46,8 @@ export function Projects3D() {
     const [splineLoading, setSplineLoading] = useState(true)
 
     const tipCapsule = useRef<HTMLSpanElement>(null)
-    const [tipTimeout, setTipTimeout] = useState<NodeJS.Timeout | number | null>(0)
-    let previousTimeout: NodeJS.Timeout | number | null = null
+    const [tipTimeout, setTipTimeout] = useState<NodeJS.Timeout | number | undefined>(0)
+    let previousTimeout: NodeJS.Timeout | number | undefined = undefined
 
     function findProject(e: SplineEvent) {
         const id = e.target.id;
@@ -67,7 +67,7 @@ export function Projects3D() {
 
         if (tipTimeout || previousTimeout) clearTimeout(tipTimeout || previousTimeout)
         previousTimeout = setTimeout(() => {
-            setTipTimeout(null)
+            setTipTimeout(undefined)
         }, 1000)
         setTipTimeout(previousTimeout)
     }

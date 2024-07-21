@@ -417,7 +417,7 @@ export default function ComputerShare({ copyrightYear }: InferGetServerSideProps
           </p>
         </Section>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
     )
   }

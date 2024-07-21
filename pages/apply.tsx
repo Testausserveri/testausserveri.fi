@@ -127,7 +127,7 @@ export default function MembersAreaHome() {
           </Content>
         </>
       }
-      <Footer copyrightYear={new Date().getFullYear()} />
+      <Footer />
     </div>
   )
 }

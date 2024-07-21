@@ -34,6 +34,6 @@ export const getProjectLinkIcon = (type: ProjectLinkType) => {
 }
 
 export const getProjectLinkUrl = (type: ProjectLinkType, url: string) => {
-    if (type == "github") return url.match(/github.com\/([^\/]+)\/([^\/]+)/).slice(1, 3).join("/")
+    if (type == "github") return url.match(/github.com\/([^\/]+)\/([^\/]+)/)?.slice(1, 3).join("/")
     return new URL(url).hostname
 }

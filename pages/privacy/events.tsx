@@ -111,7 +111,7 @@ export default function EventsPrivacy({ copyrightYear }: InferGetServerSideProps
           <p>Rekisteröity voi tehdä henkilötietojen käsittelystä valituksen valvovalle viranomaiselle, joka on tietosuojavaltuutettu.</p>
         </Section>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }

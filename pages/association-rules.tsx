@@ -133,7 +133,7 @@ export default function AssociationRules({ copyrightYear }: InferGetServerSidePr
                     <p>Päätös sääntöjen muuttamisesta ja yhdistyksen purkamisesta on tehtävä yhdistyksen kokouksessa vähintään kolmen neljäsosan (3/4) enemmistöllä annetuista äänistä. Kokouskutsussa on mainittava sääntöjen muuttamisesta tai yhdistyksen purkamisesta. Yhdistyksen purkautuessa käytetään yhdistyksen varat yhdistyksen tarkoituksen edistämiseen purkamisesta päättävän kokouksen määräämällä tavalla. Yhdistyksen tullessa lakkautetuksi käytetään sen varat samaan tarkoitukseen.</p>
                 </Section>
             </Content>
-            <Footer copyrightYear={copyrightYear} />
+            <Footer />
         </div>
     )
 }
