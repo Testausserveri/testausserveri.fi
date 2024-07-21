@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
     <div className="main">
       <Header 
         pages={pages}
-        activePath={router.route}
         authenticated={props.authenticated} />
         {page}
     </div>

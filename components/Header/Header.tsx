@@ -1,3 +1,5 @@
+"use client";
+
 import { CapsuleButton, ButtonIcon } from '../Button/CapsuleButton'
 import { Logo } from '../Logo/Logo'
 import { Navigation } from '../Navigation/Navigation'
@@ -12,13 +14,13 @@ import Image from 'next/image'
 import { Me } from '../../utils/types'
 import Link from 'next/link'
 import { useMesiExperiment } from '../../hooks/useMesiExperiment'
+import { usePathname } from 'next/navigation'
 
 export type HeaderProps = {
     pages: {
         label: string,
         path: string
     }[],
-    activePath: string,
     authenticated: Me
 }
 
@@ -36,7 +38,7 @@ function LoginButton({authenticated = {}, style}: {authenticated: Me, style: CSS
         <>
             <Link href="/me" style={style} passHref>
                 <CapsuleButton className={styles.button} small secondary>
-                    <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id)} /> 
+                    <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id || "")} /> 
                     { authenticated.username }
                 </CapsuleButton>
             </Link>
@@ -52,14 +54,14 @@ function LoginButton({authenticated = {}, style}: {authenticated: Me, style: CSS
         </>
     ) 
 }
-export function Header({ pages, activePath, authenticated = {} }: HeaderProps) {
+export function Header({ pages, authenticated = {} }: HeaderProps) {
     const [open, setOpen] = useState(false)
-    const experimentEnabled = useMesiExperiment()
+    const experimentEnabled = useMesiExperiment()   
     console.log(process.env.LOGIN_URL)
     return (
         <div className={`${styles.header} ${open ? styles.open : ""}`}>
             <Logo className={styles.logo} link />
-            <Navigation className={styles.navigation} pages={pages} activePath={activePath} open={open} setOpen={setOpen} />
+            <Navigation className={styles.navigation} pages={pages} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
                 <LoginButton authenticated={authenticated} style={(!experimentEnabled ? {display: "none"} : {})} />
                 <a href="https://discord.testausserveri.fi">

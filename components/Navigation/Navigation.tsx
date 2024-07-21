@@ -1,10 +1,12 @@
+"use client";
+
 import Link from 'next/link'
 import styles from './Navigation.module.css'
 import Hamburger from 'hamburger-react'
 import { Logo } from '../Logo/Logo'
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { FadeIn } from '../FadeIn/FadeIn';
+import { usePathname } from 'next/navigation';
 
 export type NavigationProps = {
     className?: string,
@@ -12,14 +14,15 @@ export type NavigationProps = {
         label: string,
         path: string
     }[],
-    activePath: string,
     open: boolean,
     setOpen: (open: boolean) => void
 }
 
-export function Navigation({ className, pages, activePath, open, setOpen }: NavigationProps) {
-    const router = useRouter()
+export function Navigation({ className, pages, open, setOpen }: NavigationProps) {
+    const activePath = usePathname();
 
+    /*
+    to-do: do something about this
     useEffect(() => {
         const onHashChangeStart = () => {
             setOpen(false)
@@ -31,6 +34,7 @@ export function Navigation({ className, pages, activePath, open, setOpen }: Navi
             router.events.off("routeChangeComplete", onHashChangeStart)
         }
     }, [router.events, setOpen])
+    */
 
     useEffect(() => {
         const originalStyle = window.getComputedStyle(document.documentElement).overflowY 
