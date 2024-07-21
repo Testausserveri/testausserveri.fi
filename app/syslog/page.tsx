@@ -3,20 +3,21 @@ import Head from 'next/head'
 
 import { Content } from '@/components/Content/Content'
 import { Footer } from '@/components/Footer/Footer';
-import posts from '@/utils/posts';
-import { RecentPostsRow } from '@/components/RecentPostsRow/RecentPostsRow';
+import { PostsGrid } from '@/components/PostsGrid/PostsGrid';
 import { H2 } from '@/components/Title/Title';
 import { CapsuleButton } from '@/components/Button/CapsuleButton';
+import MorePosts from './MorePosts';
+import { PaginationResponse, perPage } from './page/[index]/route';
+import posts from '@/utils/posts';
+import Separator from '@/components/Separator/Separator';
 
 export default async function Page() {
-  //const [ loadedPosts, setLoadedPosts ] = useState<PostDetails[]>(basePosts);
+  const list = await posts.list(0, perPage - 1);
+  const { posts: basePosts } = list;
+  const morePages = Math.ceil(list.allCount / perPage) > 1;
 
-  const { posts: basePosts, allCount } = await posts.list(0,9);
   const testausautoRecentPosts = await posts.listRecentTestausauto();
 
-  function loadMore() {
-    
-  }
   return (
     <div>
         <Head>
@@ -25,13 +26,11 @@ export default async function Page() {
         </Head>
         
         <Content>
-          {basePosts.length} {allCount}
-          <RecentPostsRow posts={basePosts} columns={2} />
-          <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-            <CapsuleButton>Näytä lisää</CapsuleButton>
-          </div>
+          <PostsGrid posts={basePosts} columns={2} />
+          { morePages ? <MorePosts /> : <Separator>Loppu</Separator> } 
+            
           <H2>Testausauton uusimmat</H2>
-          <RecentPostsRow posts={testausautoRecentPosts}/>
+          <PostsGrid posts={testausautoRecentPosts}/>
 
         </Content>
       <Footer />

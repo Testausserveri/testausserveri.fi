@@ -14,6 +14,7 @@ import styles from './style.module.css';
 import { JSXElementConstructor, ReactElement } from 'react';
 
 export const dynamicParams = false;
+export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
     const postsDirectory = path.join(process.cwd(), 'posts');

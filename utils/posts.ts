@@ -121,6 +121,7 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
         }
     });
     
+    // to-do: revalidate once in a while
     const feed = await rssParser.parseURL('https://testausauto.fi/feed/');
     const items = feed.items.slice(0,3);
     let posts: PostDetails[] = [];

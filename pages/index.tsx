@@ -18,7 +18,7 @@ import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption, PostDetails } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
-import { RecentPostsRow } from '../components/RecentPostsRow/RecentPostsRow';
+import { PostsGrid } from '../components/PostsGrid/PostsGrid';
 import post from '../utils/posts';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
@@ -121,7 +121,7 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
         </Link>
       </Center>
       <Content wider>
-        <RecentPostsRow posts={recentPosts}/>
+        <PostsGrid posts={recentPosts}/>
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
@@ -145,7 +145,7 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
         </LeaderboardGroup>
         <Collaborations />
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }

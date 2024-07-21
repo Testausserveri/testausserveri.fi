@@ -1,4 +1,4 @@
-import styles from './RecentPostsRow.module.css'
+import styles from './PostsGrid.module.css'
 import Image from 'next/image';
 import { getMemberAvatarUrl } from '../../utils/Member';
 import { AvatarRow } from '../AvatarRow/AvatarRow';
@@ -51,7 +51,7 @@ type PostsProps = {
   columns?: number;
 }
 
-export function RecentPostsRow(props: PostsProps) {
+export function PostsGrid(props: PostsProps) {
   return (
     <div className={styles.grid} style={props.columns ? { gridTemplateColumns: "1fr ".repeat(props.columns) } : {}}>
       {props.posts.map(post => (
