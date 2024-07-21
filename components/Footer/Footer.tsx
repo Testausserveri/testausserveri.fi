@@ -61,11 +61,7 @@ function FooterRow({ children }: PropsWithChildren) {
     )
 }
 
-export type FooterProps = {
-    copyrightYear: number
-}
-
-export function Footer({ copyrightYear }: FooterProps) {
+export function Footer() {
     return (
         <div className={styles.footer}>
             <Content noMargin wider>
@@ -99,7 +95,7 @@ export function Footer({ copyrightYear }: FooterProps) {
                                 board@testausserveri.fi
                             </Link>
                             <br />
-                            © {copyrightYear} Testausserveri ry
+                            © {new Date().getFullYear()} Testausserveri ry
                         </p>
                         <div>
                             <SocialMedias />

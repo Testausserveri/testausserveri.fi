@@ -75,7 +75,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
         } as PostDetails;
     });
 
-    posts.sort((a, b) => b.datetime.getTime() - a.datetime.getTime());
+    posts.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime());
 
     if (arg2 === undefined) { // list(count)
         posts = posts.slice(-arg1);

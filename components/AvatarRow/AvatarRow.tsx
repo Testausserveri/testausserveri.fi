@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import styles from './AvatarRow.module.css'
 import { Tooltip } from 'react-tooltip';

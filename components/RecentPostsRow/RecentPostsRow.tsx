@@ -15,7 +15,7 @@ function PostColumn(props: PostColumnProps) {
   const { url, authors, category, feature_image, title, excerpt, slug, datetime, readingTime } = props.post
 
   return (
-    <Link href={url ? url : `/posts/${slug}`}>
+    <Link href={url ? url : `/syslog/${slug}`}>
       <div className={styles.post}>
         <div className={styles.picture}>
           <div className={styles.authors}>

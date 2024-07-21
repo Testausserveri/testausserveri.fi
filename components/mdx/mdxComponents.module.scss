@@ -1,0 +1,44 @@
+.blockquote {
+    text-align: center;
+    margin: 3rem 0;
+    color: rgba(255,255,255, 0.7);
+}
+
+.mdxImageParent {
+  position: relative;
+    &.inline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 500px;
+        @media only screen and (max-width: 800px) {
+          flex-direction: column;
+          max-height: 100%;
+          gap: 1rem;
+        }
+        .img-wrapper {
+          flex: 1;
+          height: 100%;
+          margin-right: 10px; 
+        }
+        img {
+          height: 100%;
+          width: auto;
+          object-fit: cover;
+        }
+      }
+      img {
+        max-height: 500px;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 0.5rem;
+      }
+      small {
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin: .5rem 0 1rem 0;
+      } 
+}
