@@ -1,7 +1,7 @@
 import posts, { PostsListResult } from '@/utils/posts';
 import { type NextRequest } from 'next/server';
 
-export const perPage = 10;
+const perPage = 10;
 export async function generateStaticParams() {
     const { allCount } = await posts.list(0);
     const pagesCount = Math.ceil(allCount / perPage);

@@ -20,6 +20,7 @@ import { GuildInfo, GuildInfoModelOption, PostDetails } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
 import { PostsGrid } from '../components/PostsGrid/PostsGrid';
 import post from '../utils/posts';
+import { Stat } from '@/components/Stat/StatCard';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -59,7 +60,7 @@ const TitleStaticGradientText = styled(GradientText)`
 export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
-  const [stats, setStats] = useState([])
+  const [stats, setStats] = useState<Stat[]>([])
 
   useEffect(() => {
     setStats([

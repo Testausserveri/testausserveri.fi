@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
-import { StatCard } from './StatCard'
+import { Stat, StatCard } from './StatCard'
 import styles from './StatGroup.module.css'
 
 export type StatGroupProps = {
-    stats?: { label: string, value: ReactNode }[]
+    stats?: Stat[]
 }
 
 export function StatGroup({ stats }: StatGroupProps) {

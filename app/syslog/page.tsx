@@ -7,9 +7,10 @@ import { PostsGrid } from '@/components/PostsGrid/PostsGrid';
 import { H2 } from '@/components/Title/Title';
 import { CapsuleButton } from '@/components/Button/CapsuleButton';
 import MorePosts from './MorePosts';
-import { PaginationResponse, perPage } from './page/[index]/route';
 import posts from '@/utils/posts';
 import Separator from '@/components/Separator/Separator';
+
+const perPage = 10;
 
 export default async function Page() {
   const list = await posts.list(0, perPage - 1);

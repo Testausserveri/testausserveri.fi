@@ -30,11 +30,13 @@ export function CapsuleButton(props: CapsuleButtonProps) {
     const [size, setSize] = useState(0)
 
     const onMouseMove: MouseEventHandler<HTMLButtonElement> = (e) => {
+        if (!ripple.current) return
         const rect = e.currentTarget.getBoundingClientRect()
         ripple.current.style.top = `${e.clientY - rect.top - 50}px`;
         ripple.current.style.left = `${e.clientX - rect.left - 50}px`;
     }
     const onTouchMove: TouchEventHandler<HTMLButtonElement> = (e) => {
+        if (!ripple.current) return
         const rect = e.currentTarget.getBoundingClientRect()
         const touch = e.touches[0]
         ripple.current.style.top = `${touch.clientY - rect.top - 50}px`;

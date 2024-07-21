@@ -1,7 +1,7 @@
 export default () => ({
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com'],
+    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com', 'testausauto.fi'],
   },
   async rewrites() {
 		return [

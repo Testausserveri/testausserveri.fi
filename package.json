@@ -4,14 +4,13 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run build-posts-index && npm run dump-licenses",
+    "prebuild": "npm run dump-licenses",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build-posts-index": "tsx scripts/prebuild-posts-index.ts",
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {

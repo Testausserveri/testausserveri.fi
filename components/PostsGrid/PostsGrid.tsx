@@ -21,7 +21,7 @@ function PostColumn(props: PostColumnProps) {
           <div className={styles.authors}>
             <AvatarRow members={authors} expandOnHover />
           </div>
-          <img alt={'Artikkelin kuva'} placeholder="blur" className={styles.featureImage} src={feature_image.startsWith('http') ? feature_image : `/syslog/assets/${feature_image}`} width="500" height="50" />
+          <Image alt={'Artikkelin kuva'} className={styles.featureImage} src={feature_image.startsWith('http') ? feature_image : `/syslog/assets/${feature_image}`} width="500" height="50" />
         </div>
         <span className={styles.tag}>
           <span>{category || ""}</span>

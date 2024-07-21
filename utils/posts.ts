@@ -32,7 +32,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
         const slug = fileName.replace(/\.mdx$/, '');
         const filePath = path.join(postDir, fileName);
         const raw = await fs.readFile(filePath, 'utf-8');
-        const frontmatterRaw = raw.match(/^(---[\s\S]*?---)/)[1].trim();
+        const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
         const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
         const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
         return {...serialized.frontmatter, slug, readingTime} as PostDetailsFrontmatter;
@@ -77,9 +77,9 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
 
     posts.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime());
 
-    if (arg2 === undefined) { // list(count)
+    if (arg2 === undefined && arg1 !== undefined) { // list(count)
         posts = posts.slice(-arg1);
-    } else { // list(start, end)
+    } else if (arg1 && arg2) { // list(start, end)
         posts = posts.slice(arg1, arg2 + 1);
     }
 
@@ -104,9 +104,9 @@ function listFromIndex(start: number, end: number): Promise<PostsListResult>;
 async function listFromIndex(arg1?: number, arg2?: number): Promise<PostsListResult> {
     let { posts, allCount }: PostsListResult = JSON.parse(await fs.readFile('../posts.json', 'utf-8'));
 
-    if (arg2 === undefined) { // list(count)
+    if (arg2 === undefined && arg1 !== undefined) { // list(count)
         posts = posts.slice(-arg1);
-    } else { // list(start, end)
+    } else if (arg1 && arg2) { // list(start, end)
         posts = posts.slice(arg1, arg2 + 1);
     }
     return {
@@ -140,16 +140,16 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
             'Mikael': 'ts:61d8b737a16588f423624ed5'
         }
         const post: PostDetails = {
-            title: item.title,
-            category: item.categories[0],
+            title: item.title || "",
+            category: item.categories?.[0] || "",
             feature_image: item['media:content']['$']['url'],
-            excerpt: item.contentSnippet.split('.')[0] + '.',
+            excerpt: item?.contentSnippet?.split('.')[0] + '.',
             authors: [{
-                name: item.creator,
-                _id: testausautoAuthors[item.creator]
+                name: item.creator || "",
+                _id: testausautoAuthors[item.creator || ""]
             }],
-            datetime: new Date(item.pubDate),
-            slug: item.link,
+            datetime: new Date(item.pubDate || ""),
+            slug: item.link || "",
             readingTime: readingTime,
             url: item.link
         }
