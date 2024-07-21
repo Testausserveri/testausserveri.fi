@@ -37,22 +37,15 @@ ul:not(.noLinkStyles) a,
 table:not(.noLinkStyles) a, 
 .link,
 .tip a {
-  background-color: #282828;
-  border-radius: 4px;
-  padding: 2px 6px;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  filter: url('/roundfilter.svg#roundfilter');
-  position: relative;
-  transition: background-color .1s;
+  color: oklch(57.61% 0.2321 258.23);
+  transition: color 0.1s;
 }
 
 p:not(.noLinkStyles) a:hover, 
 ul:not(.noLinkStyles) a:hover, 
 table:not(.noLinkStyles) a:hover, 
 .tip a:hover, .link:hover {
-  background-color: #333;
+  color: white;
 }
 
 .tip {
