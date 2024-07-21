@@ -64,6 +64,7 @@ async function getPost(slug: string): Promise<Post> {
 
 export default async function Page({ params }: { params: { slug: string } }) {
     const { postDetails, content } = await getPost(params.slug);
+
     return (
         <FadeBackground url={postDetails.imagePlaceholder}>
             <Content noMargin>
@@ -78,9 +79,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
                             {TimeUtil.formatDateInRelationToCurrent(new Date(postDetails.datetime))} — {postDetails.readingTime} min luku
                         </span>
                     </span>
-                    <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
-                        <CapsuleButton secondary small>Muokkaa</CapsuleButton>
-                    </Link>
+                    <div className={styles.editButton}>
+                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
+                            <CapsuleButton secondary small>Muokkaa</CapsuleButton>
+                        </Link>
+                    </div>
                 </div>
                 <p className={styles.excerpt}>{postDetails.excerpt}</p>
                 </Content>
@@ -100,9 +103,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     {content}
                 </div>
 
-                <div style={{margin: "2.5rem 0 1rem 0"}}>
+                <div style={{margin: "2.5rem 0 2.5rem 0"}}>
                     <Separator>Loppu</Separator>
                 </div>
+
+                <Link href="/syslog">
+                    <CapsuleButton style={{marginRight: ".5rem"}}>
+                        Kaikki postaukset 
+                    </CapsuleButton>
+                </Link>
+                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
+                    <CapsuleButton secondary>Muokkaa postausta</CapsuleButton>
+                </Link>
                 {/*
                 <div style={{marginTop: "2rem"}}>
                     <Breadcrumbs
