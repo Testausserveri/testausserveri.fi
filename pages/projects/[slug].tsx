@@ -22,6 +22,7 @@ import { DetailedProject, ShallowProject } from "../../utils/types";
 import Link from 'next/link'
 import Image from 'next/image'
 import { mdxComponents } from '../../components/mdx/mdxComponents'
+import { FadeBackground } from '../../components/FadeBackground/FadeBackground'
 
 const Layout = styled.div`
   margin-top: 2rem;
@@ -86,36 +87,6 @@ const ProjectLinks = styled.ul`
     font-size: 1rem;
     font-family: 'Poppins';
   }
-`
-
-const FadeBackground = styled.div`
-  &::before {
-    content: '';
-    background-image: var(--bg);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 35rem;
-    background-size: cover;
-    opacity: 0.3;
-    z-index: -10;
-    @-moz-document url-prefix() {
-      opacity: 0.15;
-    }
-  }
-  &::after {
-    content: ' ';
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-    left: 0;
-    height: 35rem;
-    z-index: -1;
-    background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(0,0,0,0.7) 40.67%, #0D0D0D 96.87%);
-    backdrop-filter: blur(5px);
-    top: 0px;
-  }  
 `
 
 const RepositoryReadme = styled.div`
@@ -183,7 +154,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       {/* @ts-ignore */}
-      <FadeBackground style={cover?.filename ? { "--bg": `url('${getProjectMediaUrl(cover.filename)}')` } : {}}>
+      <FadeBackground url={getProjectMediaUrl(cover.filename || "")}>
         <Content wider>
           <Breadcrumbs
             route={[

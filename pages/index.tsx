@@ -155,7 +155,7 @@ export const getStaticProps: GetStaticProps<{
   recentPosts: PostDetails[]
   copyrightYear: number
 }> = async () => {
-  const recentPosts = await post.list(3);
+  const { posts: recentPosts } = await post.list(3);
   const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   return {

@@ -9,6 +9,7 @@ export type PostsListResult = {
     posts: PostDetails[],
     allCount: number
 };
+
 /**
  * List all posts
  */
@@ -87,6 +88,32 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
     };
 }
 
+/**
+ * List all posts; uses prebuilt index to fetch data
+ */
+function listFromIndex(): Promise<PostsListResult>;
+/**
+ * List recent posts limited by count (e.g. for front page, "latest 3 posts"); uses prebuilt index to fetch data
+ */
+function listFromIndex(count: number): Promise<PostsListResult>;
+/**
+ * List recent posts between start and end (e.g. for pagination); uses prebuilt index to fetch data
+ */
+function listFromIndex(start: number, end: number): Promise<PostsListResult>;
+
+async function listFromIndex(arg1?: number, arg2?: number): Promise<PostsListResult> {
+    let { posts, allCount }: PostsListResult = JSON.parse(await fs.readFile('../posts.json', 'utf-8'));
+
+    if (arg2 === undefined) { // list(count)
+        posts = posts.slice(-arg1);
+    } else { // list(start, end)
+        posts = posts.slice(arg1, arg2 + 1);
+    }
+    return {
+        posts, allCount
+    };
+}
+
 async function listRecentTestausauto(): Promise<PostDetails[]> {
     const rssParser = new RssParser({
         customFields: {
@@ -133,6 +160,7 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
 
 const posts = {
     list,
+    listFromIndex,
     listRecentTestausauto
 }
 

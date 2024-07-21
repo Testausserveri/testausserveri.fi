@@ -15,8 +15,15 @@ import { PostDetails, ShallowProject } from '../utils/types';
 import posts from '../utils/posts';
 import { RecentPostsRow } from '../components/RecentPostsRow/RecentPostsRow';
 import { H2 } from '../components/Title/Title';
+import { CapsuleButton } from '../components/Button/CapsuleButton';
+import { useState } from 'react';
 
-export default function Syslog({ copyrightYear, pagePosts, testausautoRecentPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Syslog({ copyrightYear, basePosts, allCount, testausautoRecentPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [ loadedPosts, setLoadedPosts ] = useState<PostDetails[]>(basePosts);
+
+  function loadMore() {
+    
+  }
   return (
     <div>
         <Head>
@@ -25,8 +32,11 @@ export default function Syslog({ copyrightYear, pagePosts, testausautoRecentPost
         </Head>
         
         <Content>
-          <RecentPostsRow posts={pagePosts} columns={2} />
-
+          {loadedPosts.length} {allCount}
+          <RecentPostsRow posts={loadedPosts} columns={2} />
+          <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+            <CapsuleButton onClick={() => loadMore()}>Näytä lisää</CapsuleButton>
+          </div>
           <H2>Testausauton uusimmat</H2>
           <RecentPostsRow posts={testausautoRecentPosts}/>
 
@@ -38,16 +48,18 @@ export default function Syslog({ copyrightYear, pagePosts, testausautoRecentPost
 
 export const getStaticProps: GetStaticProps<{
   copyrightYear: number, 
-  pagePosts: PostDetails[],
+  basePosts: PostDetails[],
+  allCount: number,
   testausautoRecentPosts: PostDetails[]
 }> = async () => {
-  const pagePosts = await posts.list(0,10);
+  const { posts: basePosts, allCount } = await posts.list(0,9);
   const testausautoRecentPosts = await posts.listRecentTestausauto();
 
   return {
     props: {
       copyrightYear: new Date().getFullYear(),
-      pagePosts: JSON.parse(JSON.stringify(pagePosts)),
+      basePosts: JSON.parse(JSON.stringify(basePosts)),
+      allCount,
       testausautoRecentPosts: JSON.parse(JSON.stringify(testausautoRecentPosts))
     }
   }

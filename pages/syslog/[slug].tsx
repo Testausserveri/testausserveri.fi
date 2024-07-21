@@ -12,15 +12,15 @@ import { PostDetails, PostDetailsFrontmatter } from '../../utils/types';
 import styled from 'styled-components';
 import { mdxComponents } from '../../components/mdx/mdxComponents';
 import { Footer } from '../../components/Footer/Footer';
-
-
+import { FadeBackground } from '../../components/FadeBackground/FadeBackground';
+import Image from 'next/image';
 
 type Post<TFrontmatter> = {
   serialized: MDXRemoteSerializeResult;
   frontmatter: TFrontmatter;
 };
 
-async function getPost(filepath: string): Promise<Post<PostDetailsFrontmatter>> {
+async function getPost(filepath: string): Promise<Post<PostDetails>> {
   const raw = await fs.readFile(filepath, 'utf-8');
   const serialized = await serialize(raw, { parseFrontmatter: true });
   let frontmatter = serialized.frontmatter as PostDetails;
@@ -47,7 +47,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+type PostsStaticProps = {
+  serialized: MDXRemoteSerializeResult,
+  frontmatter: PostDetails,
+  copyrightYear: number
+};
+
+export const getStaticProps: GetStaticProps<PostsStaticProps> = async ({ params }) => {
   const slug = params?.slug as string;
   const filepath = path.join(process.cwd(), 'posts', `${slug}.mdx`);
   const post = await getPost(filepath);
@@ -56,6 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       serialized: post.serialized,
       frontmatter: post.frontmatter,
+      copyrightYear: new Date().getFullYear()
     },
   };
 };
@@ -66,19 +73,31 @@ const PostContent = styled.div`
     border-radius: 6px;
   }
 `;
+
+const PostImage = styled.div`
+  position: relative;
+  height: 250px;
+  img {
+    object-fit:cover;
+  }
+`;
+
 export default function PostPage({ serialized, frontmatter, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
-  
+  const feature_image = frontmatter.feature_image.startsWith('http') ? frontmatter.feature_image : `/posts/assets/${frontmatter.feature_image}`;
+
   return (
-    <>
+    <FadeBackground url={feature_image}>
       <Content>
+      <PostImage>
+        <Image src={feature_image} fill={true} alt="Artikkelin kuva" />
+      </PostImage>
       <H1>{frontmatter.title}</H1>
       <PostContent>
         <MdxContent source={serialized} />
       </PostContent>
       </Content>
       <Footer copyrightYear={copyrightYear} />
-    </>
-
+    </FadeBackground>
   );
 }
 

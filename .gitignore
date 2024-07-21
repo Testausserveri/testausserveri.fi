@@ -8,3 +8,4 @@ dependency-licenses.json-e
 .env.local
 public/sitemap*
 posts.json
+dependency-licenses.json
