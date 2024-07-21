@@ -17,6 +17,8 @@ import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs';
 import Separator from '@/components/Separator/Separator';
 import { AvatarRow } from '@/components/AvatarRow/AvatarRow';
 import { TimeUtil } from '@/utils/TimeUtil';
+import { CapsuleButton } from '@/components/Button/CapsuleButton';
+import Link from 'next/link';
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -68,7 +70,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 <H1 className={styles.title}>{postDetails.title}</H1>
                 <div className={styles.details}>
                     <AvatarRow members={postDetails.authorsResolved || []} />
-                    <span>
+                    <span className={styles.middle}>
                         <span className={styles.authorsName}>
                             {(postDetails.authorsResolved || []).map(member => member.name).join("; ")}
                         </span>
@@ -76,6 +78,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                             {TimeUtil.formatDateInRelationToCurrent(new Date(postDetails.datetime))} — {postDetails.readingTime} min luku
                         </span>
                     </span>
+                    <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
+                        <CapsuleButton secondary small>Muokkaa</CapsuleButton>
+                    </Link>
                 </div>
                 <p className={styles.excerpt}>{postDetails.excerpt}</p>
                 </Content>
