@@ -1,5 +1,3 @@
-import { ImageDetails } from "./image";
-
 export type ProjectLinkType = "github" | "homepage" | "link";
 export type ProjectMediaType = "image";
 
@@ -119,5 +117,6 @@ export type PostDetails = {
   slug: string;
   readingTime: number;
   url?: string;
-  imageDetails: ImageDetails
+  imagePlaceholder: string;
+  imageUrl: string;
 };

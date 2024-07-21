@@ -12,6 +12,7 @@ import { mdxComponents } from '@/components/mdx/mdxComponents';
 import { Footer } from '@/components/Footer/Footer';
 import styles from './style.module.css';
 import { JSXElementConstructor, ReactElement } from 'react';
+import posts from '@/utils/posts';
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -35,36 +36,42 @@ export async function generateStaticParams() {
 
 type Post = {
     content: ReactElement<any, string | JSXElementConstructor<any>>;
-    frontmatter: PostDetails;
+    postDetails: PostDetails;
 };
 
 async function getPost(slug: string): Promise<Post> {
     const filepath = path.join(process.cwd(), 'posts', `${slug}.mdx`);
     const raw = await fs.readFile(filepath, 'utf-8');
     console.log("Getting post: ", slug)
-    const { content, frontmatter } = await compileMDX<PostDetails>({
+    const { content } = await compileMDX<PostDetails>({
         source: raw,
         options: { parseFrontmatter: true },
         components: mdxComponents
       })
+    const postDetails = await posts.getPostDetails(`${slug}.mdx`);
 
     return {
         content,
-        frontmatter
+        postDetails
     };
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-    const { frontmatter, content } = await getPost(params.slug);
-    const feature_image = frontmatter.feature_image.startsWith('http') ? frontmatter.feature_image : `/syslog/assets/${frontmatter.feature_image}`;
+    const { postDetails, content } = await getPost(params.slug);
 
     return (
-        <FadeBackground url={feature_image}>
+        <FadeBackground url={postDetails.imagePlaceholder}>
             <Content>
                 <div className={styles.postImage}>
-                    <Image src={feature_image} fill={true} alt="Artikkelin kuva" />
+                    <Image 
+                        fill={true} 
+                        placeholder='blur' 
+                        blurDataURL={postDetails.imagePlaceholder}
+                        src={postDetails.imageUrl}
+                        sizes="(max-width: 800px) 100vw, 50vw"
+                        alt="Artikkelin kuva" />
                 </div>
-                <H1>{frontmatter.title}</H1>
+                <H1>{postDetails.title}</H1>
                 <div className={styles.postContent}>
                     {content}
                 </div>

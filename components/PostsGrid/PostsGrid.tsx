@@ -12,7 +12,7 @@ type PostColumnProps = {
 };
 
 function PostColumn(props: PostColumnProps) {
-  const { url, authorsResolved, category, title, excerpt, slug, datetime, readingTime, imageDetails } = props.post
+  const { url, authorsResolved, category, title, excerpt, slug, datetime, readingTime, imagePlaceholder, imageUrl } = props.post
   return (
     <Link href={url ? url : `/syslog/${slug}`}>
       <div className={styles.post}>
@@ -20,7 +20,14 @@ function PostColumn(props: PostColumnProps) {
           <div className={styles.authors}>
             <AvatarRow members={authorsResolved || []} expandOnHover />
           </div>
-          <Image alt={'Artikkelin kuva'} className={styles.featureImage} placeholder='blur' {...imageDetails} />
+          <Image 
+            alt={'Artikkelin kuva'} 
+            className={styles.featureImage} 
+            placeholder='blur' 
+            sizes="(max-width: 800px) 50vw, (max-width: 600px) 100vw, 20vw"
+            fill
+            src={imageUrl}
+            blurDataURL={imagePlaceholder} />
         </div>
         <span className={styles.tag}>
           <span>{category || ""}</span>

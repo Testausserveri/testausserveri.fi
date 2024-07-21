@@ -2,14 +2,7 @@ import { getPlaiceholder } from "plaiceholder";
 import fs from 'fs/promises';
 import path from 'path';
 
-export type ImageDetails = {
-    src: string,
-    width: number,
-    height: number,
-    blurDataURL: string
-};
-
-export const getImage = async (src: string): Promise<ImageDetails> => {
+export const getImagePlaceholder = async (src: string): Promise<string> => {
     let buffer;
 
     if (src.startsWith('http://') || src.startsWith('https://')) {
@@ -26,10 +19,5 @@ export const getImage = async (src: string): Promise<ImageDetails> => {
         ...plaiceholder
     } = await getPlaiceholder(buffer, { size: 10 });
 
-    return {
-        src,
-        height,
-        width,
-        blurDataURL: plaiceholder.base64
-    };
+    return plaiceholder.base64;
 };

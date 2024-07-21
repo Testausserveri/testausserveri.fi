@@ -4,12 +4,30 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { Member, PostDetails } from './types';
 import api from './api';
 import RssParser from 'rss-parser';
-import { getImage } from './image';
+import { getImagePlaceholder } from './image';
 
 export type PostsListResult = {
     posts: PostDetails[],
     allCount: number
 };
+
+const postDir = path.join(process.cwd(), 'posts');
+
+async function getPostDetails(fileName: string) {
+    const filePath = path.join(postDir, fileName);
+    const raw = await fs.readFile(filePath, 'utf-8');
+    
+    const slug = fileName.replace(/\.mdx$/, '');
+    const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
+    const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
+    const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
+
+    const featureImage  = serialized.frontmatter.feature_image as string;
+    const imageUrl = featureImage.startsWith('http') ? featureImage : `/syslog/assets/${featureImage}`;
+    const imagePlaceholder = await getImagePlaceholder(imageUrl);
+
+    return {...serialized.frontmatter, slug, readingTime, imagePlaceholder, imageUrl } as PostDetails;
+}
 
 /**
  * List all posts
@@ -25,24 +43,9 @@ function list(count: number): Promise<PostsListResult>;
 function list(start: number, end: number): Promise<PostsListResult>;
 
 async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
-    const postDir = path.join(process.cwd(), 'posts');
     const postFiles = (await fs.readdir(postDir)).filter(fileName => fileName.endsWith('.mdx'));
     const allCount = postFiles.length;
 
-    async function getPostDetails(fileName: string) {
-        const slug = fileName.replace(/\.mdx$/, '');
-        const filePath = path.join(postDir, fileName);
-        const raw = await fs.readFile(filePath, 'utf-8');
-        const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
-        const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
-        const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
-
-        const featureImage = serialized.frontmatter.feature_image as string;
-        const imageUrl = featureImage.startsWith('http') ? featureImage : `/syslog/assets/${featureImage}`;
-        const imageDetails = await getImage(imageUrl);
-        return {...serialized.frontmatter, slug, readingTime, imageDetails} as PostDetails;
-    }
-    
     const settledPostDetails = await Promise.allSettled(
         postFiles.map(fileName => getPostDetails(fileName))
     );
@@ -76,7 +79,8 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
             datetime: postDetail.datetime,
             readingTime: postDetail.readingTime,
             authorsResolved: authorsResolved,
-            imageDetails: postDetail.imageDetails
+            imagePlaceholder: postDetail.imagePlaceholder,
+            imageUrl: postDetail.imageUrl
         } as PostDetails;
     });
 
@@ -143,7 +147,7 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
         const resultString = matches.join(' ');
         const readingTime = Math.ceil(resultString.split(' ').length / 120);
 
-        const imageDetails = await getImage(item['media:content']['$']['url']);
+        const imagePlaceholder = await getImagePlaceholder(item['media:content']['$']['url']);
 
         const post = {
             title: item.title || "",
@@ -158,7 +162,8 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
             slug: item.link || "",
             readingTime: readingTime,
             url: item.link,
-            imageDetails
+            imagePlaceholder,
+            imageUrl: item['media:content']['$']['url']
         };
 
         return post;
@@ -170,7 +175,8 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
 const posts = {
     list,
     listFromIndex,
-    listRecentTestausauto
+    listRecentTestausauto,
+    getPostDetails
 }
 
 export default posts
