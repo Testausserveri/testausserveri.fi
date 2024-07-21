@@ -20,13 +20,18 @@ async function getPostDetails(fileName: string) {
     const slug = fileName.replace(/\.mdx$/, '');
     const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
     const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
-    const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); // 200 words per minute.
+    const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); 
 
     const featureImage  = serialized.frontmatter.feature_image as string;
     const imageUrl = featureImage.startsWith('http') ? featureImage : `/syslog/assets/${featureImage}`;
     const imagePlaceholder = await getImagePlaceholder(imageUrl);
 
-    return {...serialized.frontmatter, slug, readingTime, imagePlaceholder, imageUrl } as PostDetails;
+    const authorsResolved = await Promise.all((serialized.frontmatter.authors as string[]).map(async (id) => ({
+        name: id.startsWith('ts:') ? await api.getMemberDisplayName((id || "").replace('ts:', '')) : id,
+        _id: id || ""
+    })));
+
+    return {...serialized.frontmatter, slug, readingTime, imagePlaceholder, imageUrl, authorsResolved } as PostDetails;
 }
 
 /**
@@ -53,6 +58,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
         .filter((p): p is PromiseFulfilledResult<PostDetails> => p.status === 'fulfilled')
         .map(settled => settled.value);
     
+    /*
     const uniqueTsAuthorIds = Array.from(new Set(fulfilledPostDetails.flatMap(post => post.authors))).filter(item => item?.startsWith("ts:"));
     const settledTsAuthors = await Promise.allSettled(
         uniqueTsAuthorIds.map(async (id): Promise<Member> => ({
@@ -64,12 +70,12 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
     const tsAuthors = settledTsAuthors
         .filter((p): p is PromiseFulfilledResult<Member> => p.status === 'fulfilled')
         .map(settled => settled.value);
-   
+    */
     let posts = fulfilledPostDetails.map(postDetail => {
-        const authorsResolved = postDetail.authors?.map(id => tsAuthors.find(author => author._id === id) || {
+        /*const authorsResolved = postDetail.authors?.map(id => tsAuthors.find(author => author._id === id) || {
             _id: id,
             name: id
-        });
+        });*/
         return {
             slug: postDetail.slug,
             title: postDetail.title,
@@ -78,7 +84,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
             excerpt: postDetail.excerpt,
             datetime: postDetail.datetime,
             readingTime: postDetail.readingTime,
-            authorsResolved: authorsResolved,
+            authorsResolved: postDetail.authorsResolved,
             imagePlaceholder: postDetail.imagePlaceholder,
             imageUrl: postDetail.imageUrl
         } as PostDetails;

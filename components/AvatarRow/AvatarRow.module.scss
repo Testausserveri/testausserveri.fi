@@ -36,3 +36,13 @@
 .tooltip {
     z-index: 10;
 }
+
+.withNames {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: .5rem;
+      font-size: 0.95em;
+      flex: 1;
+    }
+}

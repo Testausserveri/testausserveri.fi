@@ -51,18 +51,6 @@ const Layout = styled.div`
     }
   } 
 `
-
-const AvatarRowExtended = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  span {
-    margin-left: .5rem;
-    font-size: 0.95em;
-    flex: 1;
-  }
-`
-
 const ProjectLinks = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -200,10 +188,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
             </div>
             <div>
               <H2>Omistajat</H2>
-              <AvatarRowExtended>
-                <AvatarRow members={project.members.map(m => ({ _id: `ts:${m._id}`, name: m.name }))} />
-                <span>{project.members.map(member => member.name).join("; ")}</span>
-              </AvatarRowExtended>
+              <AvatarRow members={project.members.map(m => ({ _id: `ts:${m._id}`, name: m.name }))} withNames />
 
               {project.contributors.length > 0 ? <>
                 <H2>Kontribuuttorit

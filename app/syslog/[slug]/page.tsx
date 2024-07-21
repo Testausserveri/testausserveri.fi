@@ -10,9 +10,13 @@ import Image from 'next/image';
 import { H1 } from '@/components/Title/Title';
 import { mdxComponents } from '@/components/mdx/mdxComponents';
 import { Footer } from '@/components/Footer/Footer';
-import styles from './style.module.css';
+import styles from './style.module.scss';
 import { JSXElementConstructor, ReactElement } from 'react';
 import posts from '@/utils/posts';
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs';
+import Separator from '@/components/Separator/Separator';
+import { AvatarRow } from '@/components/AvatarRow/AvatarRow';
+import { TimeUtil } from '@/utils/TimeUtil';
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -58,23 +62,52 @@ async function getPost(slug: string): Promise<Post> {
 
 export default async function Page({ params }: { params: { slug: string } }) {
     const { postDetails, content } = await getPost(params.slug);
-
     return (
         <FadeBackground url={postDetails.imagePlaceholder}>
-            <Content>
+            <Content noMargin>
+                <H1 className={styles.title}>{postDetails.title}</H1>
+                <div className={styles.details}>
+                    <AvatarRow members={postDetails.authorsResolved || []} />
+                    <span>
+                        <span className={styles.authorsName}>
+                            {(postDetails.authorsResolved || []).map(member => member.name).join("; ")}
+                        </span>
+                        <span>
+                            {TimeUtil.formatDateInRelationToCurrent(new Date(postDetails.datetime))} — {postDetails.readingTime} min luku
+                        </span>
+                    </span>
+                </div>
+                <p className={styles.excerpt}>{postDetails.excerpt}</p>
+                </Content>
+                <Content wider noMargin>
                 <div className={styles.postImage}>
                     <Image 
                         fill={true} 
                         placeholder='blur' 
                         blurDataURL={postDetails.imagePlaceholder}
                         src={postDetails.imageUrl}
-                        sizes="(max-width: 800px) 100vw, 50vw"
+                        sizes="(max-width: 800px) 100vw, 70vw"
                         alt="Artikkelin kuva" />
                 </div>
-                <H1>{postDetails.title}</H1>
+                </Content>
+                <Content>
                 <div className={styles.postContent}>
                     {content}
                 </div>
+
+                <div style={{margin: "2.5rem 0 1rem 0"}}>
+                    <Separator>Loppu</Separator>
+                </div>
+                {/*
+                <div style={{marginTop: "2rem"}}>
+                    <Breadcrumbs
+                        route={[
+                            { path: '/syslog', name: 'Syslog' },
+                            { path: `/syslog/category/${postDetails.category}`, name: postDetails.category },
+                            { path: `/syslog/category/${postDetails.category}/${postDetails.slug}`, name: postDetails.title }
+                        ]} />
+                </div>
+                */}
             </Content>
             <Footer />
         </FadeBackground>

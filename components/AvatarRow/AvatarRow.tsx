@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import styles from './AvatarRow.module.css'
+import styles from './AvatarRow.module.scss'
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Member } from '../../utils/types';
@@ -11,12 +11,13 @@ import Head from 'next/head';
 
 export type AvatarRowProps = {
     members: Member[];
-    expandOnHover?: Boolean
+    expandOnHover?: boolean;
+    withNames?: boolean;
 }
 
-export function AvatarRow({ members, expandOnHover }: AvatarRowProps) {
+export function AvatarRow({ members, expandOnHover, withNames }: AvatarRowProps) {
     return (
-        <>
+        <div className={withNames ? styles.withNames : ''}>
             {members.map(member => (
                 <Tooltip key={member.name} className={styles.tooltip} id={`avatar-row-tooltip-${member.name}`}>{member.name}</Tooltip>
             ))}
@@ -30,6 +31,7 @@ export function AvatarRow({ members, expandOnHover }: AvatarRowProps) {
                     )
                 })}
             </ul>
-        </>
+            { withNames ? <span>{members.map(member => member.name).join("; ")}</span> : null}
+        </div>
     )
 }

@@ -1,0 +1,42 @@
+.postContent img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.postImage {
+    position: relative;
+    height: 350px;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    img {
+        object-fit:cover;
+        border-radius: 0.5rem;
+    }
+}
+
+.title {
+    margin-bottom: 1.5rem;
+}
+.excerpt {
+    font-family: 'Poppins';
+    font-size: 1.2em;
+}
+
+.details {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    span {
+        display: flex;
+        flex-direction: column;
+        font-size: .9em;
+        color: rgba(255,255,255,.5);
+        display: flex;
+        gap: 4px;
+        .authorsName {
+            font-weight: bold;
+            color: rgba(255,255,255,.8);
+        }
+    }
+}
