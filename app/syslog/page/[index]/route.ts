@@ -8,8 +8,6 @@ export async function generateStaticParams() {
     return [...Array(pagesCount).keys()].map(i => ({index: String(i + 1)}));
 };
 
-export const dynamicParams = false;
-export const dynamic = 'force-static';
 
 export type PaginationResponse = PostsListResult & {
     count: number,

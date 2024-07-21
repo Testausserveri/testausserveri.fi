@@ -13,16 +13,22 @@ import { Footer } from '@/components/Footer/Footer';
 import styles from './style.module.css';
 import { JSXElementConstructor, ReactElement } from 'react';
 
+// seems like next.js is bugging
+// https://github.com/vercel/next.js/issues/52765
+/*
 export const dynamicParams = false;
 export const dynamic = 'force-static';
+*/
 
 export async function generateStaticParams() {
     const postsDirectory = path.join(process.cwd(), 'posts');
     const filenames = await fs.readdir(postsDirectory);
     
-    const paths = filenames.map((filename) => ({
-        params: { slug: filename.replace(/\.mdx$/, '') },
-    }));
+    const paths = filenames
+        .filter(filename => filename.endsWith('.mdx'))
+        .map((filename) => ({ slug: filename.replace(/\.mdx$/, '') }));
+
+    console.log("Generated paths for posts: ", paths)
    
     return paths
 }
@@ -35,7 +41,7 @@ type Post = {
 async function getPost(slug: string): Promise<Post> {
     const filepath = path.join(process.cwd(), 'posts', `${slug}.mdx`);
     const raw = await fs.readFile(filepath, 'utf-8');
-
+    console.log("Getting post: ", slug)
     const { content, frontmatter } = await compileMDX<PostDetails>({
         source: raw,
         options: { parseFrontmatter: true },
