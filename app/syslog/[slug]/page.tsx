@@ -103,7 +103,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         author: postDetails.authorsResolved?.map(author => ({
             "@type": "Person",
             name: author.name,
-            url: (String(author._id).startsWith('ts:') ? getMemberAvatarUrl(String(author._id).replace('ts:', '')) : testausorveli)
+            image: (String(author._id).startsWith('ts:') ? getMemberAvatarUrl(String(author._id).replace('ts:', '')) : testausorveli)
         }))
     }
 
