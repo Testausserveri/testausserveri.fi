@@ -108,12 +108,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </div>
 
                 <Link href="/syslog">
-                    <CapsuleButton style={{marginRight: ".5rem"}}>
+                    <CapsuleButton style={{marginRight: ".75em", marginTop: ".75em"}}>
                         Kaikki postaukset 
                     </CapsuleButton>
                 </Link>
                 <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
-                    <CapsuleButton secondary>Muokkaa postausta</CapsuleButton>
+                    <CapsuleButton style={{marginTop: ".75em"}} secondary>Muokkaa postausta</CapsuleButton>
                 </Link>
                 {/*
                 <div style={{marginTop: "2rem"}}>
