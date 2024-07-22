@@ -4,7 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { Member, PostDetails } from './types';
 import api from './api';
 import RssParser from 'rss-parser';
-import { getImageDetails, getImageUrl } from './image';
+import { getImageDetails } from './image';
 
 export type PostsListResult = {
     posts: PostDetails[],
