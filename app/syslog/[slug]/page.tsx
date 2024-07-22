@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, Metadata, ResolvingMetadata } from 'next';
 import { compileMDX, MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote/rsc';
 import { serialize } from 'next-mdx-remote/serialize';
 import { promises as fs } from 'fs';
@@ -19,6 +19,8 @@ import { AvatarRow } from '@/components/AvatarRow/AvatarRow';
 import { TimeUtil } from '@/utils/TimeUtil';
 import { CapsuleButton } from '@/components/Button/CapsuleButton';
 import Link from 'next/link';
+import { getMemberAvatarUrl } from '@/utils/Member';
+import testausorveli from '@/assets/testausorveli.png';
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -45,6 +47,31 @@ type Post = {
     postDetails: PostDetails;
 };
 
+export async function generateMetadata(
+    { params }: { params: { slug: string } },
+    parent: ResolvingMetadata
+  ): Promise<Metadata> {
+    const { postDetails, content } = await getPost(params.slug);
+   
+    return {
+      title: postDetails.title,
+      description: postDetails.excerpt,
+      creator: (postDetails.authorsResolved || []).map(member => member.name).join("; "),
+      keywords: [postDetails.category],
+      openGraph: {
+        title: postDetails.title,
+        description: postDetails.excerpt,
+        siteName: 'Testausserveri',
+        images: postDetails.imageUrl,
+        locale: 'fi_FI',
+        type: 'article',
+        publishedTime: new Date(postDetails.datetime).toISOString(),
+        modifiedTime: new Date(postDetails.datetime).toISOString(),
+        authors: postDetails.authorsResolved?.map(author => author.name)
+      },
+    }
+}
+
 async function getPost(slug: string): Promise<Post> {
     const filepath = path.join(process.cwd(), 'posts', `${slug}.mdx`);
     const raw = await fs.readFile(filepath, 'utf-8');
@@ -65,9 +92,28 @@ async function getPost(slug: string): Promise<Post> {
 export default async function Page({ params }: { params: { slug: string } }) {
     const { postDetails, content } = await getPost(params.slug);
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: postDetails.title,
+        image: postDetails.imageUrl,
+        description: postDetails.excerpt,
+        datePublished: postDetails.datetime,
+        dateModified: postDetails.datetime,
+        author: postDetails.authorsResolved?.map(author => ({
+            "@type": "Person",
+            name: author.name,
+            url: (String(author._id).startsWith('ts:') ? getMemberAvatarUrl(String(author._id).replace('ts:', '')) : testausorveli)
+        }))
+    }
+
     return (
         <FadeBackground url={postDetails.imagePlaceholder}>
             <Content noMargin>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
                 <H1 className={styles.title}>{postDetails.title}</H1>
                 <div className={styles.details}>
                     <AvatarRow members={postDetails.authorsResolved || []} />
