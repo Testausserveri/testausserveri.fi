@@ -36,6 +36,12 @@ const config = {
       { "source": "/host/privacy", "destination": "/privacy/host", permanent: true }
     ];
   },
+  webpack: (config, options) => {
+    config.module.rules.push({ 
+      test: /\.mdx$/, use: 'raw-loader' 
+    })
+    return config
+  }
 };
  
 export default withPlaiceholder(config);

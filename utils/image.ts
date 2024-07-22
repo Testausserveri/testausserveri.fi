@@ -1,23 +1,18 @@
 import { getPlaiceholder } from "plaiceholder";
 import fs from 'fs/promises';
 import path from 'path';
+import isValidHttpUrl from "./isValidHttpUrl";
 
-export const getImagePlaceholder = async (src: string): Promise<string> => {
+export const getImageDetails = async (src: string): Promise<ReturnType<typeof getPlaiceholder>> => {
     let buffer;
 
-    if (src.startsWith('http://') || src.startsWith('https://')) {
-        buffer = await fetch(src).then(async (res) =>
-            Buffer.from(await res.arrayBuffer())
-        );
-    } else {
-        const absolutePath = path.join('public', src);
-        buffer = await fs.readFile(absolutePath);
-    }
+    buffer = await fetch(src).then(async (res) =>
+        Buffer.from(await res.arrayBuffer())
+    );
 
-    const {
-        metadata: { height, width },
-        ...plaiceholder
-    } = await getPlaiceholder(buffer, { size: 10 });
+    const plaiceholder = await getPlaiceholder(buffer, { size: 10 });
 
-    return plaiceholder.base64;
+    return plaiceholder;
 };
+
+

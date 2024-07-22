@@ -4,7 +4,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/utils/*": ["utils/*"],
-      "@/assets/*": ["assets/*"]
+      "@/assets/*": ["assets/*"],
+      "@/posts/*": ["posts/*"]
     },
     "target": "es2015",
     "lib": [

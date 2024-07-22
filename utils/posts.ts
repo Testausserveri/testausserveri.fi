@@ -4,7 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { Member, PostDetails } from './types';
 import api from './api';
 import RssParser from 'rss-parser';
-import { getImagePlaceholder } from './image';
+import { getImageDetails, getImageUrl } from './image';
 
 export type PostsListResult = {
     posts: PostDetails[],
@@ -17,14 +17,17 @@ async function getPostDetails(fileName: string) {
     const filePath = path.join(postDir, fileName);
     const raw = await fs.readFile(filePath, 'utf-8');
     
-    const slug = fileName.replace(/\.mdx$/, '');
+    const slug = fileName.split('/')[0];
     const frontmatterRaw = (raw.match(/^(---[\s\S]*?---)/)?.[1]?.trim()) ?? '';
     const serialized = await serialize(frontmatterRaw, { parseFrontmatter: true });
     const readingTime = Math.ceil((raw.split(' ').length - frontmatterRaw.split(' ').length ) / 120); 
 
     const featureImage  = serialized.frontmatter.feature_image as string;
-    const imageUrl = featureImage.startsWith('http') ? featureImage : `/syslog/assets/${featureImage}`;
-    const imagePlaceholder = await getImagePlaceholder(imageUrl);
+    const image = require('../posts/' + slug + '/' + featureImage).default; 
+    
+    //getImageUrl('../posts/' + slug.split('/')[0] + '/' + featureImage);
+    const imageUrl = image.src;
+    const imagePlaceholder = image.blurDataURL;
 
     const authorsResolved = await Promise.all((serialized.frontmatter.authors as string[]).map(async (id) => ({
         name: id.startsWith('ts:') ? await api.getMemberDisplayName((id || "").replace('ts:', '')) : id,
@@ -48,12 +51,13 @@ function list(count: number): Promise<PostsListResult>;
 function list(start: number, end: number): Promise<PostsListResult>;
 
 async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
-    const postFiles = (await fs.readdir(postDir)).filter(fileName => fileName.endsWith('.mdx'));
+    const postFiles = (await fs.readdir(postDir)).map(fileName => fileName + '/post.mdx');
     const allCount = postFiles.length;
-
+    
     const settledPostDetails = await Promise.allSettled(
         postFiles.map(fileName => getPostDetails(fileName))
     );
+    console.log(settledPostDetails)
     const fulfilledPostDetails = settledPostDetails
         .filter((p): p is PromiseFulfilledResult<PostDetails> => p.status === 'fulfilled')
         .map(settled => settled.value);
@@ -153,7 +157,7 @@ async function listRecentTestausauto(): Promise<PostDetails[]> {
         const resultString = matches.join(' ');
         const readingTime = Math.ceil(resultString.split(' ').length / 120);
 
-        const imagePlaceholder = await getImagePlaceholder(item['media:content']['$']['url']);
+        const { base64: imagePlaceholder } = await getImageDetails(item['media:content']['$']['url']);
 
         const post = {
             title: item.title || "",

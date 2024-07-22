@@ -164,7 +164,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
               </P>
 
               {project.description.full ?
-                <MDXRemote {...mdxSerialized.fullDescription} components={mdxComponents}/>
+                <MDXRemote {...mdxSerialized.fullDescription} components={mdxComponents()}/>
                 : null}
 
               <div style={{ marginTop: "2rem" }}>

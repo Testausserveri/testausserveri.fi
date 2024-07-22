@@ -34,9 +34,7 @@ export async function generateStaticParams() {
     const postsDirectory = path.join(process.cwd(), 'posts');
     const filenames = await fs.readdir(postsDirectory);
     
-    const paths = filenames
-        .filter(filename => filename.endsWith('.mdx'))
-        .map((filename) => ({ slug: filename.replace(/\.mdx$/, '') }));
+    const paths = filenames;
 
     console.log("Generated paths for posts: ", paths)
    
@@ -74,15 +72,15 @@ export async function generateMetadata(
 }
 
 async function getPost(slug: string): Promise<Post> {
-    const filepath = path.join(process.cwd(), 'posts', `${slug}.mdx`);
+    const filepath = path.join(process.cwd(), 'posts', slug, 'post.mdx');
     const raw = await fs.readFile(filepath, 'utf-8');
     console.log("Getting post: ", slug)
     const { content } = await compileMDX<PostDetails>({
         source: raw,
         options: { parseFrontmatter: true },
-        components: mdxComponents
+        components: mdxComponents(slug)
       })
-    const postDetails = await posts.getPostDetails(`${slug}.mdx`);
+    const postDetails = await posts.getPostDetails(`${slug}/post.mdx`);
 
     return {
         content,
@@ -112,7 +110,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
     return (
         <FadeBackground url={postDetails.imagePlaceholder}>
-            <Content noMargin>
+            <Content>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -129,7 +127,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         </span>
                     </span>
                     <div className={styles.editButton}>
-                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
+                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}/post.mdx`}>
                             <CapsuleButton secondary small>Muokkaa</CapsuleButton>
                         </Link>
                     </div>
@@ -161,7 +159,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         Kaikki postaukset 
                     </CapsuleButton>
                 </Link>
-                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}.mdx`}>
+                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}/post.mdx`}>
                     <CapsuleButton style={{marginTop: ".75em"}} secondary>Muokkaa postausta</CapsuleButton>
                 </Link>
                 {/*
@@ -176,7 +174,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 */}
             </Content>
             <Content wider>
-                <PostsGrid posts={recentPosts}/>
+                <div style={{marginTop: "3.5rem"}}>
+                    <PostsGrid posts={recentPosts}/>
+                </div>
             </Content>
             <Footer />
         </FadeBackground>
