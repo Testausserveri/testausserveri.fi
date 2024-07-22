@@ -21,6 +21,7 @@ import { CapsuleButton } from '@/components/Button/CapsuleButton';
 import Link from 'next/link';
 import { getMemberAvatarUrl } from '@/utils/Member';
 import testausorveli from '@/assets/testausorveli.png';
+import { PostsGrid } from '@/components/PostsGrid/PostsGrid';
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -91,6 +92,8 @@ async function getPost(slug: string): Promise<Post> {
 
 export default async function Page({ params }: { params: { slug: string } }) {
     const { postDetails, content } = await getPost(params.slug);
+
+    const { posts: recentPosts } = await posts.list(3);
 
     const jsonLd = {
         '@context': 'https://schema.org',
@@ -171,6 +174,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         ]} />
                 </div>
                 */}
+            </Content>
+            <Content wider>
+                <PostsGrid posts={recentPosts}/>
             </Content>
             <Footer />
         </FadeBackground>

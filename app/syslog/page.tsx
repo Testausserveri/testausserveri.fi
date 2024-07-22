@@ -9,9 +9,14 @@ import { CapsuleButton } from '@/components/Button/CapsuleButton';
 import MorePosts from './MorePosts';
 import posts from '@/utils/posts';
 import Separator from '@/components/Separator/Separator';
+import { Metadata } from 'next';
 
 const perPage = 10;
 
+export const metadata: Metadata = {
+  title: "Syslog",
+  description: "Testausserverin jäsenten kirjoittamia artikkeleja teknologiasta"
+}
 export default async function Page() {
   const list = await posts.list(0, perPage - 1);
   const { posts: basePosts } = list;
@@ -30,10 +35,12 @@ export default async function Page() {
           <PostsGrid posts={basePosts} columns={2} />
           { morePages ? <MorePosts /> : <Separator>Loppu</Separator> } 
             
+        </Content>
+        <Content wider>
           <H2>Testausauton uusimmat</H2>
           <PostsGrid posts={testausautoRecentPosts}/>
-
         </Content>
+
       <Footer />
     </div>
   )
