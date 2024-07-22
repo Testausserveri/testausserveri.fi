@@ -12,7 +12,7 @@ export function Explanation({ children }: ExplanationProps) {
 
     return (
         <>
-            <Tooltip id={id} style={{maxWidth: "300px"}} className="tip">
+            <Tooltip id={id} className="tip">
                 {children}
             </Tooltip>
             <span className={styles.explanation} data-tooltip-id={id}><RiQuestionLine /></span>
