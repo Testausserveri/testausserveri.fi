@@ -21,6 +21,7 @@ export default function Privacy({ copyrightYear }: InferGetServerSidePropsType<t
         <H1>Tietosuoja</H1>
         <NavigateLink href="/privacy/members">Jäsenrekisterin tietosuojaseloste</NavigateLink>
         <NavigateLink href="/privacy/events">Tapahtumien osallistujarekisterin tietosuojaseloste</NavigateLink>
+        <NavigateLink href="/privacy/ctf">CTF-pelin tietosuojaseloste</NavigateLink>
         <NavigateLink href="/privacy/host">Testaushost tietosuojakäytäntö</NavigateLink>
       </Content>
       <Footer copyrightYear={copyrightYear} />
