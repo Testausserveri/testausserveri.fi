@@ -23,7 +23,6 @@ const MdxImageGallery = (slug: string) => ((props: { src: string[] }) => {
       return require('../../posts/' + slug + '/' + url).default
     }*/
    const imported = require('../../posts/' + slug + '/' + image).default
-   console.log("homoneekeri", imported)
    return {
     src: imported.src,
     width: imported.width,
@@ -68,4 +67,13 @@ const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
   }
 })
 
-export const mdxComponents = (slug?: string) => ({ Blockquote, Image: MdxImage(slug), ImageGallery: MdxImageGallery(slug)})
+const Empty = () => {
+  console.error("Missing slug from mdx component, see usage");
+  return <></>;
+};
+
+export const mdxComponents = (slug?: string) => ({
+   Blockquote, 
+   Image: slug ? MdxImage(slug) : Empty, 
+   ImageGallery: slug ? MdxImageGallery(slug) : Empty 
+})

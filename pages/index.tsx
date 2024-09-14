@@ -21,6 +21,7 @@ import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
 import { PostsGrid } from '../components/PostsGrid/PostsGrid';
 import post from '../utils/posts';
 import { Stat } from '@/components/Stat/StatCard';
+import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -131,6 +132,8 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
           <br /><br className="mobileBreak" />
           Lue lisää yhdistyksestämme <Link href="/about">Tietoa meistä -sivulta.</Link>
         </TextColumns>
+        <NavigateLink href="/koneet-kiertoon">Koneet kiertoon</NavigateLink>
+        <NavigateLink href="/host">Testaushost</NavigateLink>
         <LeaderboardGroup>
           <Leaderboard
             data={guildInfo.messagesLeaderboard}

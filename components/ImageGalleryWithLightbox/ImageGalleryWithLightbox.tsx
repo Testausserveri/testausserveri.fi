@@ -14,7 +14,6 @@ const breakpoints = [3840, 1920, 1080, 640, 384, 256, 128];
 
 
 export default function ImageGalleryWithLightbox({images}: { images: GalleryImage[] }) {
-  console.log("pilluperse", images)
   const slides = images.map(({ src, width, height }: GalleryImage) => ({
     src: src + `?w=${width}&q=75`,
     width,
