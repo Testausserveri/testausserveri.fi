@@ -4,6 +4,7 @@ import styles from './mdxComponents.module.scss';
 import Image from "next/image";
 import isValidHttpUrl from "@/utils/isValidHttpUrl";
 import { getImageDetails } from "@/utils/image";
+import ImageGalleryWithLightbox, { GalleryImage } from "../ImageGalleryWithLightbox/ImageGalleryWithLightbox";
 
 
 const Blockquote = ({children}: PropsWithChildren) =>  <blockquote className={styles.blockquote}>{children}</blockquote>
@@ -14,18 +15,28 @@ type MdxImageProps = {
   caption?: string
 }
 
-// to-do: should we be able to support external images?
+const MdxImageGallery = (slug: string) => ((props: { src: string[] }) => {
+  const images: GalleryImage[] = props.src.map(image => {
+    /*if (isValidHttpUrl(url)) {
+      return url;
+    } else {
+      return require('../../posts/' + slug + '/' + url).default
+    }*/
+   const imported = require('../../posts/' + slug + '/' + image).default
+   console.log("homoneekeri", imported)
+   return {
+    src: imported.src,
+    width: imported.width,
+    height: imported.height
+   }
+  })
+  return <ImageGalleryWithLightbox images={images} />
+})
+
 const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
   
   const getUrl = (url: string) => {
     if (isValidHttpUrl(url)) {
-      /*const image = await getImagePlaceholder(url);
-      
-      return {
-        width: image.metadata.width,
-        height: image.metadata.height,
-        blurDataURL: image.base64
-      }*/
       return url;
     } else {
       return require('../../posts/' + slug + '/' + url).default
@@ -57,4 +68,4 @@ const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
   }
 })
 
-export const mdxComponents = (slug?: string) => ({ Blockquote, Image: MdxImage(slug)})
+export const mdxComponents = (slug?: string) => ({ Blockquote, Image: MdxImage(slug), ImageGallery: MdxImageGallery(slug)})
