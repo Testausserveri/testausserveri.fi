@@ -21,6 +21,16 @@ p, ul, ol {
   color: rgba(255,255,255, 0.64);
 }
 
+table {
+  border-collapse: collapse;
+  color: rgba(255,255,255, 0.64);
+}
+table td, table th {
+  padding: 0.3rem;
+  border: 1px solid #222;
+
+}
+
 a {
   position: relative;
   color: inherit;
