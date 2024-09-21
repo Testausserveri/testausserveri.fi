@@ -40,6 +40,18 @@ const config = {
     config.module.rules.push({ 
       test: /\.mdx$/, use: 'raw-loader' 
     })
+    const prefix = config.assetPrefix ?? config.basePath ?? '';
+    config.module.rules.push({
+      test: /\.mp4$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          publicPath: `${prefix}/_next/static/media/`,
+          outputPath: `../${config.isServer ? '../' : ''}static/media/`,
+          name: '[name].[hash:8].[ext]',
+        },
+      }],
+    });
     return config
   }
 };

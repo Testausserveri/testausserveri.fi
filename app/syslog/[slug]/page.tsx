@@ -22,6 +22,7 @@ import Link from 'next/link';
 import { getMemberAvatarUrl } from '@/utils/Member';
 import testausorveli from '@/assets/testausorveli.png';
 import { PostsGrid } from '@/components/PostsGrid/PostsGrid';
+import remarkGfm from 'remark-gfm'
 
 // seems like next.js is bugging
 // https://github.com/vercel/next.js/issues/52765
@@ -77,7 +78,7 @@ async function getPost(slug: string): Promise<Post> {
     console.log("Getting post: ", slug)
     const { content } = await compileMDX<PostDetails>({
         source: raw,
-        options: { parseFrontmatter: true },
+        options: { parseFrontmatter: true, mdxOptions: {remarkPlugins: [remarkGfm]} },
         components: mdxComponents(slug)
       })
     const postDetails = await posts.getPostDetails(`${slug}/post.mdx`);
