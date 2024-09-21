@@ -45,3 +45,63 @@
         margin: .5rem 0 1rem 0;
       } 
 }
+
+.terminal {
+  background-color: rgba(108, 108, 108, 0.09);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  hyphens: none;
+  overflow: auto;
+  word-break: break-all;
+  &.copied {
+    filter: brightness(1); 
+    animation: loaded .4s ease-out;
+  }
+  >div:nth-child(1) {
+    flex: 1;
+    align-self: center;
+  }
+  >div:nth-child(2) {
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.15s ease-out;
+    transform: scale(1);
+    font-size: 1.2em;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active:hover {
+      transform: scale(0.9);
+    }
+  }
+  font-family: monospace;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  
+  li:before {
+    content: "$";
+    color: rgba(255,255,255, 0.15);
+    padding-right: 10px;
+  }
+}
+
+@keyframes loaded {
+  0% { filter: brightness(1); } 
+  20% { filter: brightness(4); } 
+  100% { filter: brightness(1); } 
+}
+
+.video {
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}

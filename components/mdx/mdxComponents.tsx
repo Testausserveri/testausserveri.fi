@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import { Key, PropsWithChildren } from 'react'
+import React, { Key, PropsWithChildren } from 'react'
 import styles from './mdxComponents.module.scss';
 import Image from "next/image";
 import isValidHttpUrl from "@/utils/isValidHttpUrl";
 import { getImageDetails } from "@/utils/image";
 import ImageGalleryWithLightbox, { GalleryImage } from "../ImageGalleryWithLightbox/ImageGalleryWithLightbox";
-
+import { Terminal } from "./Terminal";
 
 const Blockquote = ({children}: PropsWithChildren) =>  <blockquote className={styles.blockquote}>{children}</blockquote>
 const MdxImageParent = ({children, inline}: PropsWithChildren & {inline?: boolean}) =>  <div className={styles.mdxImageParent + (inline ? ' ' + styles.inline : '')}>{children}</div>
@@ -67,6 +67,19 @@ const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
   }
 })
 
+const MdxVideo = (slug?: string) => ({src}: {src: string}) => {
+  if (!slug) return <></>
+
+  const getUrl = (url: string) => {
+    if (isValidHttpUrl(url)) {
+      return url;
+    } else {
+      return require('../../posts/' + slug + '/' + url).default
+    }
+  };
+  return <video className={styles.video} controls src={getUrl(src)} />
+}
+
 const Empty = () => {
   console.error("Missing slug from mdx component, see usage");
   return <></>;
@@ -74,6 +87,8 @@ const Empty = () => {
 
 export const mdxComponents = (slug?: string) => ({
    Blockquote, 
-   Image: slug ? MdxImage(slug) : Empty, 
-   ImageGallery: slug ? MdxImageGallery(slug) : Empty 
+   Image: slug ? MdxImage(slug) : Empty,
+   Video: MdxVideo(slug),
+   ImageGallery: slug ? MdxImageGallery(slug) : Empty,
+   Terminal
 })
