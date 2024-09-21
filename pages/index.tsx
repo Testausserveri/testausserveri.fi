@@ -22,6 +22,7 @@ import { PostsGrid } from '../components/PostsGrid/PostsGrid';
 import post from '../utils/posts';
 import { Stat } from '@/components/Stat/StatCard';
 import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
+import { Capsule } from '@/components/Capsule/Capsule';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -133,7 +134,8 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
           Lue lisää yhdistyksestämme <Link href="/about">Tietoa meistä -sivulta.</Link>
         </TextColumns>
         <NavigateLink href="/koneet-kiertoon">Koneet kiertoon</NavigateLink>
-        <NavigateLink href="/host">Testaushost</NavigateLink>
+        <NavigateLink href="/host">Palvelintila <Capsule style={{fontSize: ".8rem", transform: "translateY(-2px)", marginLeft: "0.3em", display: "inline-block"}}>BETA</Capsule></NavigateLink>
+        <br />
         <LeaderboardGroup>
           <Leaderboard
             data={guildInfo.messagesLeaderboard}
