@@ -1,4 +1,4 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+export default {
     siteUrl: process.env.SITE_URL || 'https://testausserveri.fi'
 }

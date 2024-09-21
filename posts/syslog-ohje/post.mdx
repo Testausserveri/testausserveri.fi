@@ -1,0 +1,123 @@
+---
+title: Syslogiin julkaiseminen
+category: Oppaat
+feature_image: image.png
+excerpt: Opi postaamaan Testausserverin blogiin käyttäen tuttua Markdown-formaattia ja GitHubia! Helppoa kuin heinänteko.
+authors: 
+- ts:61d8b737a16588f423624ed5
+datetime: 2024-09-21T18:00:00+03:00
+---
+
+Testausserverin verkkoblogia kutsutaan Syslogiksi ([testausserveri.fi/syslog](https://testausserveri.fi/syslog)). Syslogin sisältöä voi muokata kuka tahansa avoimen lähdekoodin periaatteella GitHubissa. Lopullinen julkaisu edellyttää hyväksymistä, jossa repositorion ylläpitäjä tarkastaa muutokset ennen julkaisua verkkosivuille.
+
+Näillä helpoilla ohjeilla opit, miten Syslogiin luodaan sisältöä ja miten se annetaan julkaistavaksi. 
+
+## Paikallinen kehitysympäristö
+
+Ensiksi laitetaan omalle tietokoneelle pystyyn paikallinen kopio Testausserveri.fi:stä, jotta voidaan:
+- esikatsella, miltä postauksemme näyttää; ja
+- valmistella kaikki tarvittava materiaali valmiiksi julkaisua varten.
+
+Oletuksena koneellasi on oltava Node.js v20, Npm ja Git asennettuna.
+
+Kloonaa [`https://github.com/Testausserveri/testausserveri.fi`](https://github.com/Testausserveri/testausserveri.fi). Helppo tapa on Githubissa painaa vihreää *Code* nappulaa ja sieltä *Open with GitHub Desktop* (kuva alla), joka opastaa kloonaamisen kanssa. Tai nappaa tästä komento:
+
+<Terminal>
+<li>git clone https://github.com/Testausserveri/testausserveri.fi</li>
+</Terminal>
+
+<br />
+<Image src="github-clone.png" />
+
+Aja komento asentaaksesi npm-paketit:
+<Terminal>
+<li>npm install --save-dev</li>
+</Terminal>
+
+Kopioi tiedosto juuressa sijaitseva tiedosto `.example.env` tiedostoon `.env`.
+
+Käynnistä kehityspalvelin:
+<Terminal>
+<li>npm run dev</li>
+</Terminal>
+
+<br />
+<Image src="npm-run-dev.png" caption="Palvelin käynnistyi onnistuneesti." />
+
+Avaa [http://localhost:3000](http://localhost:3000) selaimessa.
+
+## Postauksen luonti
+
+Postaukset ovat kansiossa [/posts/](https://github.com/Testausserveri/testausserveri.fi/tree/coal/posts). Luo sinne uusi kansio, jonka nimeksi tulee haluamasi postauksen lyhytnimi (esim. hei-maailma, tanaan-on-hyva-paiva). Lyhytnimi tulee näkymään postauksen URL-osoitteessa, joten:
+
+* sen ei kannata olla hirveän pitkä;
+* ei ääkkösiä; ja
+* välilyönnit on korvattava väliviivoilla.
+
+Kansiorakenne näyttää seuraavalta. *Posts*-kansiossa on kansio jokaiselle postaukselle. Jokaisen kansion sisällä on oltava vähintään `posts.mdx`. 
+
+Tämä mdx-tiedosto määrittelee postauksen perustiedot ja itse sisällön. Kansioon voi laittaa muita mediatiedostoja mukaan, joita haluaa sisällyttää postaukseen. Haluat kuitenkin postaukselle vähintään yhden kuvan sen pääkuvaksi.
+
+<Image src="kansiorakenne.png" />
+
+Mdx-tiedostoon voi kirjoittaa perinteistä Markdownia, mutta lisäksi tiettyjä erikoiskomponentteja, joista kerrotaan alempana. Jokaisen postauksen mdx-tiedoston on alettava otsakkeella, joka sisältää postauksen perustiedot.
+
+Luo luomaasi kansioon `posts.mdx`. Lisää sen alkuun seuraava otsake:
+<CodeBlock>
+```
+---
+title: Postauksen otsikko
+category: Oppaat
+feature_image: postauksen-kuva.png
+excerpt: Tässä postauksessa on pelkkää asiaa!
+authors: 
+- ts:61d8b737a16588f423624ed5
+- Mörökölli
+datetime: 2024-07-07T18:00:00+03:00
+---
+```
+</CodeBlock>
+
+Otsakkeen kentät ovat kuvattu alla ja kaikki ovat pakollisia:
+
+|Kenttä|Selite|
+|---|---|
+|title|Otsikko|
+|category|Vapaamuotoinen teksti. Kannattaa katsoa muista olemassaolevista postauksista, liittyykö postaus johonkin jo käytettyyn kategoriaan, mutta jos ei, niin voi keksiä uuden. Esim. Oppaat, Ajankohtaista, Tapahtumat, Kilpailut, Haastattelut, Arvostelut.|
+|feature_image|Postauksen pääkuva. Siirrä kuvatiedosto samaan kansioon kuin post.mdx ja anna tämän kentän arvoksi sen tiedostonimi (esim. hei-maailma.jpg). Vähimmäiskoko 1920px x 1080px.|
+|excerpt|Lyhyt kuvaus|
+|authors|Kirjoittajat. Luetteloidaan ranskalaisin viivoin. Arvo voi olla joko vapaamuotoinen teksti tai viite Testausserverin jäseneen, jolloin arvo alkaa `ts:`. Kun käytetään viitettä Testausserverin jäseneen, niin postauksessa näkyy profiilikuva ja ajantasainen nimi. Viitteen saa haluamastaan jäsenestä käyttämällä Discord-palvelimella komentoa `/whois [jäsen]` ja lisäämällä `ts:` saadun tunnisteen eteen.|
+|datetime|Aikaleima ISO 8601 -muodossa. Esim. `2024-07-07T18:00:00+03:00`.|
+
+Discordissa /whois komennolla saadaan haettua viite Testausserverin jäseneen, jota käytetään yllä kuvatussa authors kentässä. Viitteeseen pitää lisätä eteen `ts:`.
+
+<Video src="komento.mp4" />
+
+Otsakkeen jälkeen voit kirjoittaa postauksesi sisällön. 
+
+Muotoiluihin käytetään Markdownia, johon voit tutustua täällä: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax.
+
+Lisäksi käytössä ovat seuraavat komponentit. Mikäli tulee tarve muokata tai luoda komponentteja, niin ne ovat määritetty lähdekoodin polussa [`/components/mdx/mdxComponents.tsx`](https://github.com/Testausserveri/testausserveri.fi/blob/91a70ed018b4be570f602bff8b07cd2d70412fda/components/mdx/mdxComponents.tsx). MDX:stä voit lukea lisää: https://mdxjs.com. 
+
+|Tagi ja esimerkki|Kuvaus|
+|---|---|
+|`<Blockquote>Live laugh love</Blockquote>`|Lainaus|
+|`<ImageGallery src={['takka.jpeg', 'saunaevas.jpeg', 'makkara.jpeg', 'evaat.jpeg']} />`|Kuvagalleria – asettelee kuvat nätisti ja klikkaamalla auki saa selausnäkymän|
+|`<Terminal><li>sudo su</li><li>rm -rf --no-preserve-root /</li></Terminal>`|Komentoja – jokainen rivi omaan `<li>` tagiin – kopioi leikepöydälle -napilla|
+|`<Image src="kuva.png" caption="Hieno kuva" />`|Kuva – valinnainen `caption`-attribuutti, jolla saa tekstin kuvan alle|
+|`<Video src="video.mp4" />`|Video|
+
+Siinä se vaikein osuus! Apua tekemiseen saa aina tarvittaessa Testausserveriltä. 
+
+## Julkaiseminen
+
+Julkaiseminen = Pull Requestin tekeminen GitHubiin.
+
+Committaa ja pushaa muutokset GitHubiin. Repositoriossa käytetään [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)- käytäntöä, ja commitin voi nimetä esimerkiksi:
+
+- `posts(hei-maailma): created` 
+- `posts(hei-maailma): fixed typo`
+
+Luo Pull Request. 
+
+Pull Requestin tekemisestä löytyy lisätietoja netistä, mutta edelleen, apua saa aina myös Discordin puolelta.

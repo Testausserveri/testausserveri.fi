@@ -264,7 +264,7 @@ export default function HostDPA({ copyrightYear }: InferGetServerSidePropsType<t
           </ol>
         </Section>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }

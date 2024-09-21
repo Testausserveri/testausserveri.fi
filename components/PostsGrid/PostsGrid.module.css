@@ -1,0 +1,107 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+}
+
+.post::before {
+  content: ' ';
+  position: absolute;
+  top: -.5rem;
+  left: -.5rem;
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  background-color: rgba(108, 108, 108, 0);
+  border-radius: 0.5rem;
+  transition: background-color 0.1s;
+  pointer-events: none;
+}
+
+.post:hover::before {
+  background-color: rgba(108, 108, 108, 0.09);
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.excerpt {
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readingTime {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.date {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tag {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8em;
+  margin-top: .4em;
+}
+
+
+.picture .featureImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  position: absolute;
+  z-index: -1;
+  transition: filter 0.3s ease-in-out;
+  filter: brightness(1);
+}
+
+.picture {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 150px;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.picture .authors {
+  top: .3em;
+  left: .3em;
+  z-index: 5;
+  position: absolute;
+  cursor: default;
+}
+
+.authors:hover~.featureImage {
+  filter: brightness(0.7);
+}

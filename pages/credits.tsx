@@ -74,7 +74,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           </tbody>
         </table>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </article>
   )
 }

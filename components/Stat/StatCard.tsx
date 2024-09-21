@@ -1,10 +1,9 @@
 import { ReactNode } from 'react'
 import styles from './StatCard.module.css'
 
-export type StatCardProps = {
-    label: ReactNode,
-    value: ReactNode
-}
+export type Stat = { label: string, value: ReactNode }
+
+export type StatCardProps = Stat
 
 export function StatCard({ label, value }: StatCardProps) {
     return (

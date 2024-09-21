@@ -2,17 +2,18 @@ import Head from 'next/head'
 import { Header } from '../components/Header/Header'
 import '../styles/globals.css'
 import { AppProps } from 'next/app'
-import { useEffect, useState } from 'react'
+import { ReactElement, ReactNode, useEffect, useState } from 'react'
 import api from '../utils/api'
 import { Me } from '../utils/types'
-import { NextPageContext } from 'next/types'
+import { NextPage, NextPageContext } from 'next/types'
 
 const pages = [
   { label: "Etusivu", path: "/" },
   //{ label: "Jäsenet", path: "/members" },
+  { label: "Syslog", path: "/syslog" },
   { label: "Projektit", path: "/projects" },
-  { label: "Palvelintila", path: "/host" },
-  { label: "Koneet kiertoon", path: "/koneet-kiertoon" },
+  /*{ label: "Palvelintila", path: "/host" },
+  { label: "Koneet kiertoon", path: "/koneet-kiertoon" },*/
   { label: "Tietoa meistä", path: "/about" },
   //{ label: "Tietoa", path: "/about-us" }
 ]
@@ -22,17 +23,25 @@ interface MyAppProps extends AppProps {
     authenticated: Me
   }
 }
-function MyApp({ Component, pageProps, router, props }: MyAppProps) {
-  return (
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+ 
+type AppPropsWithLayout = MyAppProps & {
+  Component: NextPageWithLayout
+}
+function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => 
     <div className="main">
-      <Head>
-      </Head>
       <Header 
         pages={pages}
-        activePath={router.route}
         authenticated={props.authenticated} />
-      <Component {...pageProps} authenticated={props.authenticated} />
+        {page}
     </div>
+  )
+
+  return getLayout(
+      <Component {...pageProps} authenticated={props.authenticated} />
   )
 }
 
@@ -50,8 +59,8 @@ MyApp.getInitialProps = async ({ctx}: Ctx) => {
   
   let data
   if ((ctx?.req?.headers)) {
-    if (ctx.req.headers.cookie && ctx.req.headers.cookie.includes("connect.sid=")) {
-      data = await api.membersArea.me(ctx.req.headers.cookie)
+    if (ctx.req?.headers.cookie && ctx.req?.headers?.cookie?.includes("connect.sid=")) {
+      data = await api.membersArea.me(ctx?.req?.headers.cookie)
     }
   } else {
     // we don't know CS is there connect.sid= cookie or not, only the server knows
@@ -67,7 +76,7 @@ MyApp.getInitialProps = async ({ctx}: Ctx) => {
   if (data && data.status == "error") {
     console.log("Error while fetching Me... removing token as it's invalid")
     if (ctx?.req?.headers?.cookie) {
-      ctx.res.setHeader("set-cookie", "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT")
+      ctx.res?.setHeader("set-cookie", "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT")
     } else {
       document.cookie = "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     }

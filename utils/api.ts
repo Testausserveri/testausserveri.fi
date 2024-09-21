@@ -1,8 +1,7 @@
-import { PHASE_PRODUCTION_BUILD } from "next/dist/shared/lib/constants"
-import { ApplyForm, ApplyResponse, DetailedProject, GuildInfo, GuildInfoModelOption, Me, ShallowProject } from "./types"
+import { ApplyForm, ApplyResponse, DetailedProject, GuildInfo, GuildInfoModelOption, Me, MemberDisplayNameResponse, ShallowProject } from "./types"
 
-
-export const apiServer = ( process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD ? process.env.NEXT_PUBLIC_API_SERVER : `${process.env.NEXT_PUBLIC_URL}/api`) // proxied in next.config.js
+// to-do: should we be using proxied /api/v1/* route or api.testausserveri.fi
+export const apiServer = process.env.NEXT_PUBLIC_API_SERVER
 export const apiServerMedia = process.env.NEXT_PUBLIC_API_SERVER_MEDIA
 
 export async function getGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T) {
@@ -49,6 +48,16 @@ const me = async function (cookies?: string) {
     return data
 }
 
+const getMemberDisplayName = async function (id: string) {
+    const response = await fetch(`${apiServer}/v1/displayName?id=${id}`, {
+        headers: {
+            'X-Testausapis-Secret': process.env.INTERNAL_API_SECRET || ""
+        }
+    })
+    const { displayName } = await response.json() as MemberDisplayNameResponse
+    return displayName
+}
+
 const apply = async function (applyForm: ApplyForm) {
     const response = await fetch(`${apiServer}/v1/apply/submit`, { 
         method: 'POST',
@@ -64,6 +73,7 @@ const apply = async function (applyForm: ApplyForm) {
 
 const api = {
     getGuildInfo,
+    getMemberDisplayName,
     projects: {
         all,
         suggest,

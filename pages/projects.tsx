@@ -42,7 +42,7 @@ export default function Projects({ projectsData: projects, isMobile, copyrightYe
           <ProjectRow key={project._id} project={project} />
         ))}
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }
@@ -54,7 +54,7 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async ({ req, res }) => {
   const data = await api.projects.all()
   const UA = req.headers['user-agent'];
-  const isMobile = Boolean(UA.match(
+  const isMobile = Boolean(UA?.match(
     /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
   ))
 

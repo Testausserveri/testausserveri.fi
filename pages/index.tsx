@@ -18,8 +18,11 @@ import { Collaborations } from '../components/Collaborations/Collaborations';
 import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { GuildInfo, GuildInfoModelOption, PostDetails } from '../utils/types';
 import HeroDiscordLive from '../components/DiscordLive/DiscordLive';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { PostsGrid } from '../components/PostsGrid/PostsGrid';
+import post from '../utils/posts';
+import { Stat } from '@/components/Stat/StatCard';
+import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
+import { Capsule } from '@/components/Capsule/Capsule';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -56,10 +59,10 @@ const TitleStaticGradientText = styled(GradientText)`
   }
 `
 
-export default function Home({ ssGuildInfo, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
-  const [stats, setStats] = useState([])
+  const [stats, setStats] = useState<Stat[]>([])
 
   useEffect(() => {
     setStats([
@@ -121,6 +124,7 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetStaticProps
         </Link>
       </Center>
       <Content wider>
+        <PostsGrid posts={recentPosts}/>
         <StatGroup stats={stats} />
         <TextColumns>
           Testausserveri on kaikille avoin yhteisö koodaamisesta, eettisestä hakkeroinnista ja yleisesti teknologiasta innostuneille nuorille. Kehitämme yhdessä erilaisia mielenkiintoisia projekteja, joita voit tsekata täältä.
@@ -129,6 +133,9 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetStaticProps
           <br /><br className="mobileBreak" />
           Lue lisää yhdistyksestämme <Link href="/about">Tietoa meistä -sivulta.</Link>
         </TextColumns>
+        <NavigateLink href="/koneet-kiertoon">Koneet kiertoon</NavigateLink>
+        <NavigateLink href="/host">Palvelintila <Capsule style={{fontSize: ".8rem", transform: "translateY(-2px)", marginLeft: "0.3em", display: "inline-block"}}>BETA</Capsule></NavigateLink>
+        <br />
         <LeaderboardGroup>
           <Leaderboard
             data={guildInfo.messagesLeaderboard}
@@ -144,20 +151,23 @@ export default function Home({ ssGuildInfo, copyrightYear }: InferGetStaticProps
         </LeaderboardGroup>
         <Collaborations />
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps<{
   ssGuildInfo: GuildInfo<GuildInfoModelOption[]>,
+  recentPosts: PostDetails[]
   copyrightYear: number
 }> = async () => {
+  const { posts: recentPosts } = await post.list(3);
   const guildInfo = await api.getGuildInfo(guildInfoModel)
 
   return {
     props: {
       ssGuildInfo: guildInfo,
+      recentPosts: JSON.parse(JSON.stringify(recentPosts)),
       copyrightYear: new Date().getFullYear()
     }
   }

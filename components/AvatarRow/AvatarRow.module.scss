@@ -1,0 +1,48 @@
+.avatarRow {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 7px;
+}
+
+.avatarRow {
+    margin-bottom: -4px;
+}
+
+.avatarRow li {
+    display: inline-block;
+    padding: 0;
+    transition: margin-left 0.2s;
+}
+.avatarRow li img {
+    border-radius: 2rem;
+}
+
+.avatarRow li:not(:nth-last-child(1)) img {
+    /* the values are approximated out of the place where sun doesn't shine */
+    mask: radial-gradient(circle 20px at 44px center, #0000 98%, #000);
+}
+
+.avatarRow li {
+    margin-left: -7px;
+}
+.expandOnHover.avatarRow:hover li:not(:nth-child(1)) {
+    margin-left: 3px;
+}
+.expandOnHover.avatarRow:hover li:not(:nth-last-child(1)) img {
+    mask: none;
+}
+
+.tooltip {
+    z-index: 10;
+}
+
+.withNames {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: .5rem;
+      font-size: 0.95em;
+      flex: 1;
+    }
+}

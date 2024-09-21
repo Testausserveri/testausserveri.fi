@@ -203,7 +203,7 @@ export default function Home({ copyrightYear }: InferGetServerSidePropsType<type
           </p>
         </Section>
       </Content>
-      <Footer copyrightYear={copyrightYear} />
+      <Footer />
     </div>
     )
   }

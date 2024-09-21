@@ -43,7 +43,7 @@ export default function MembersAreaHome() {
   const submitDisabled = discordData.status == "already-member" || fieldsMissing;
   
   async function submit() {
-    if (submitDisabled) return
+    if (submitDisabled || !discordData.token) return
     const { status } = await api.apply.submit({
       firstName, lastName, city, email,
       discordToken: discordData.token
@@ -127,7 +127,7 @@ export default function MembersAreaHome() {
           </Content>
         </>
       }
-      <Footer copyrightYear={new Date().getFullYear()} />
+      <Footer />
     </div>
   )
 }

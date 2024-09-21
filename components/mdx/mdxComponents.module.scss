@@ -1,0 +1,117 @@
+.blockquote {
+    text-align: center;
+    margin: 3rem 0;
+    color: rgba(255,255,255, 0.7);
+}
+
+.mdxImageParent {
+  position: relative;
+    &.inline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 500px;
+        gap: 1rem;
+
+        @media only screen and (max-width: 800px) {
+          flex-direction: column;
+          max-height: 100%;
+          gap: 1rem;
+        }
+        .img-wrapper {
+          flex: 1;
+          height: 100%;
+          margin-right: 10px; 
+        }
+        img {
+          height: 100%;
+          width: auto;
+          object-fit: cover;
+        }
+      }
+      img {
+        max-height: 500px;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 0.5rem;
+      }
+      small {
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin: .5rem 0 1rem 0;
+      } 
+}
+
+.terminal {
+  background-color: rgba(108, 108, 108, 0.09);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  hyphens: none;
+  overflow: auto;
+  word-break: break-all;
+  &.copied {
+    filter: brightness(1); 
+    animation: loaded .4s ease-out;
+  }
+  >div:nth-child(1) {
+    flex: 1;
+    align-self: center;
+  }
+  >div:nth-child(2) {
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.15s ease-out;
+    transform: scale(1);
+    font-size: 1.2em;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active:hover {
+      transform: scale(0.9);
+    }
+  }
+  font-family: monospace;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  
+  li:before {
+    content: "$";
+    color: rgba(255,255,255, 0.15);
+    padding-right: 10px;
+  }
+}
+
+@keyframes loaded {
+  0% { filter: brightness(1); } 
+  20% { filter: brightness(4); } 
+  100% { filter: brightness(1); } 
+}
+
+.video {
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.code {
+  background-color: rgba(108, 108, 108, 0.09);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: block;
+  pre {
+    margin: 0;
+  }
+}
