@@ -80,6 +80,11 @@ const MdxVideo = (slug?: string) => ({src}: {src: string}) => {
   return <video className={styles.video} controls src={getUrl(src)} />
 }
 
+const CodeBlock = ({children}: {children: React.ReactNode}) => (
+  <code className={styles.code}>
+    {children}
+  </code>
+)
 const Empty = () => {
   console.error("Missing slug from mdx component, see usage");
   return <></>;
@@ -90,5 +95,6 @@ export const mdxComponents = (slug?: string) => ({
    Image: slug ? MdxImage(slug) : Empty,
    Video: MdxVideo(slug),
    ImageGallery: slug ? MdxImageGallery(slug) : Empty,
-   Terminal
+   Terminal,
+   CodeBlock
 })

@@ -105,3 +105,13 @@
   width: 100%;
   margin-top: 0.5rem;
 }
+
+.code {
+  background-color: rgba(108, 108, 108, 0.09);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: block;
+  pre {
+    margin: 0;
+  }
+}

@@ -63,6 +63,7 @@ Tämä mdx-tiedosto määrittelee postauksen perustiedot ja itse sisällön. Kan
 Mdx-tiedostoon voi kirjoittaa perinteistä Markdownia, mutta lisäksi tiettyjä erikoiskomponentteja, joista kerrotaan alempana. Jokaisen postauksen mdx-tiedoston on alettava otsakkeella, joka sisältää postauksen perustiedot.
 
 Luo luomaasi kansioon `posts.mdx`. Lisää sen alkuun seuraava otsake:
+<CodeBlock>
 ```
 ---
 title: Postauksen otsikko
@@ -75,6 +76,7 @@ authors:
 datetime: 2024-07-07T18:00:00+03:00
 ---
 ```
+</CodeBlock>
 
 Otsakkeen kentät ovat kuvattu alla ja kaikki ovat pakollisia:
 
@@ -109,6 +111,13 @@ Siinä se vaikein osuus! Apua tekemiseen saa aina tarvittaessa Testausserverilt�
 
 ## Julkaiseminen
 
-Julkaiseminen = Pull Requestin tekeminen GitHubiin ja malttaminen, että se hyväksytään läpi.
+Julkaiseminen = Pull Requestin tekeminen GitHubiin.
 
-keskenvielä
+Committaa ja pushaa muutokset GitHubiin. Repositoriossa käytetään [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)- käytäntöä, ja commitin voi nimetä esimerkiksi:
+
+- `posts(hei-maailma): created` 
+- `posts(hei-maailma): fixed typo`
+
+Luo Pull Request. 
+
+Pull Requestin tekemisestä löytyy lisätietoja netistä, mutta edelleen, apua saa aina myös Discordin puolelta.
