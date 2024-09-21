@@ -47,7 +47,7 @@ const config = {
         loader: 'file-loader',
         options: {
           publicPath: `${prefix}/_next/static/media/`,
-          outputPath: `../${config.isServer ? '../' : ''}static/media/`,
+          outputPath: `${config.dev ? '' : '../'}${config.isServer ? '../' : ''}static/media/`,
           name: '[name].[hash:8].[ext]',
         },
       }],
