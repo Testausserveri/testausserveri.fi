@@ -34,6 +34,7 @@ import { CapsuleButton } from '../components/Button/CapsuleButton'
 import { Collaborations } from '../components/Collaborations/Collaborations'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { GuildInfo } from '../utils/types'
+import { NavigateLink } from '@/components/NavigateLink/NavigateLink'
 
 const Grid = styled.div`
   display: grid;
@@ -191,6 +192,8 @@ export default function LoginPage({ ssGuildInfo, copyrightYear }: InferGetServer
         <p>
           Testausserveri tuottaa sisältöä seuraaviin sosiaalisiin medioihin ja palveluihin. Etenkin Instagramissa pääsee tutustumaan yhteisömme kohohetkiin.
         </p>
+        <NavigateLink href='/vuosikertomus-2023.pdf'>Vuosikertomus 2023</NavigateLink>
+        <NavigateLink href='/vuosikertomus-2022.pdf'>Vuosikertomus 2022</NavigateLink>
         <Grid className="soc">
           {[
             ["Instagram", "https://instagram.com/testausserveri", InstagramIcon],
