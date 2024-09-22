@@ -54,7 +54,7 @@ export default function HostPrivacy({ copyrightYear }: InferGetServerSidePropsTy
             </div>
             <div>
               <p>
-                <b>Osphost rekisteröimätön yhteisö</b> <br /> 
+                <b>Osphost ry</b> <br /> 
                 Yhteyshenkilö: <br />
                 Jani Hiltunen <br />
                 <IoIosMail /> <a href="mailto:jmh@osphost.fi">jmh@osphost.fi</a>

@@ -30,7 +30,7 @@ export default function HostTerms({ copyrightYear }: InferGetServerSidePropsType
         <H1>Testaushost käyttöehtosopimus</H1>
         <Section>
             <h2>1. Johdanto</h2>
-            <p>Tämän sopimuksen osapuolina ovat Testausserveri ry sekä Testaushost-palveluita (jäljempänä ”Palvelu”) käyttävä yksityishenkilö (jäljempänä ”Käyttäjä”). Palveluilla tarkoitetaan Testausserveri ry:n ja Osphostin yhdessä (jäljempänä ”Palveluntarjoaja”) Käyttäjälle tarjoamia maksuttomia webhosting-, shell-, DNS-, sähköposti- tai muita internet-palveluita (jäljempänä ”Palvelinkapasiteetti”). </p>
+            <p>Tämän sopimuksen osapuolina ovat Testausserveri ry sekä Testaushost-palveluita (jäljempänä ”Palvelu”) käyttävä yksityishenkilö (jäljempänä ”Käyttäjä”). Palveluilla tarkoitetaan Testausserveri ry:n ja Osphost ry:n yhdessä (jäljempänä ”Palveluntarjoaja”) Käyttäjälle tarjoamia maksuttomia webhosting-, shell-, DNS-, sähköposti- tai muita internet-palveluita (jäljempänä ”Palvelinkapasiteetti”). </p>
             <p>Testausserveri ry tarjoaa Palveluita vain yhdistyksensä varsinaisille jäsenille.</p>
             <p>Käyttämällä Palveluita Käyttäjä sitoutuu noudattamaan näitä käyttöehtoja.</p>
         </Section>

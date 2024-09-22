@@ -176,28 +176,29 @@ export default function HostDPA({ copyrightYear }: InferGetServerSidePropsType<t
             <div>
               <p>
                 1) Nimi: Testausserveri ry<br /> 
-                Yhteyshenkilön nimi, asema ja yhteystiedot: <br />
-                <p>
-                  Mikael Hannolainen <br />
-                  Hallituksen jäsen, sihteeri <br />
-                  <IoIosMail /> <a href="mailto:mikael@testausserveri.fi">mikael@testausserveri.fi</a>
-                </p>
-                Allekirjoitus ja liittymispäivä: 14.04.2024 <br />
-                <p>Mikael Hannolainen HJ, Eemil Sinkko HPJ</p>
               </p>
+              <p>
+                Yhteyshenkilön nimi, asema ja yhteystiedot: <br />
+                Mikael Hannolainen <br />
+                Hallituksen jäsen <br />
+                <IoIosMail /> <a href="mailto:mikael@testausserveri.fi">mikael@testausserveri.fi</a>
+              </p>
+              <p>Allekirjoitus ja liittymispäivä: 14.04.2024 <br />
+                Mikael Hannolainen HJ, Eemil Sinkko HPJ</p>
             </div>
             <div>
               <p>
-                2) Nimi: Osphost rekisteröimätön yhteisö <br /> 
+                2) Nimi: Osphost ry<br /> 
+              </p>
+              <p>
                 Yhteyshenkilön nimi, asema ja yhteystiedot: <br />
-                <p>
-                  Jani Hiltunen <br />
-                  <IoIosMail /> <a href="mailto:jmh@osphost.fi">jmh@osphost.fi</a>
-                </p>
+                Jani Hiltunen <br />
+                Hallituksen jäsen <br />
+                <IoIosMail /> <a href="mailto:jmh@osphost.fi">jmh@osphost.fi</a>
+              </p>
+              <p>
                 Allekirjoitus ja liittymispäivä: 14.04.2024 <br />
-                <p>
-                  Jani Hiltunen
-                </p>
+                Jani Hiltunen HJ
               </p>
             </div>
           </TwoColumn>
