@@ -24,18 +24,18 @@ import testausorveli from '@/assets/testausorveli.png';
 import { PostsGrid } from '@/components/PostsGrid/PostsGrid';
 import remarkGfm from 'remark-gfm'
 
-// seems like next.js is bugging
-// https://github.com/vercel/next.js/issues/52765
-/*
 export const dynamicParams = false;
 export const dynamic = 'force-static';
-*/
 
 export async function generateStaticParams() {
     const postsDirectory = path.join(process.cwd(), 'posts');
     const filenames = await fs.readdir(postsDirectory);
     
-    const paths = filenames;
+    const paths = filenames.map(filename => (
+        {
+            slug: filename
+        }
+    ));
 
     console.log("Generated paths for posts: ", paths)
    
