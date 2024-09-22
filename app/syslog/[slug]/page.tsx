@@ -128,7 +128,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         </span>
                     </span>
                     <div className={styles.editButton}>
-                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}/post.mdx`}>
+                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/main/posts/${postDetails.slug}/post.mdx`}>
                             <CapsuleButton secondary small>Muokkaa</CapsuleButton>
                         </Link>
                     </div>
@@ -160,7 +160,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         Kaikki postaukset 
                     </CapsuleButton>
                 </Link>
-                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/mdx-posts-remote-feat/posts/${postDetails.slug}/post.mdx`}>
+                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/main/posts/${postDetails.slug}/post.mdx`}>
                     <CapsuleButton style={{marginTop: ".75em"}} secondary>Muokkaa postausta</CapsuleButton>
                 </Link>
                 {/*
