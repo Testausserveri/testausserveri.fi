@@ -26,6 +26,7 @@
     "next-mdx-remote": "^5.0.0",
     "next-sitemap": "^4.1.8",
     "plaiceholder": "^3.0.0",
+    "raw-loader": "^4.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^4.8.0",
