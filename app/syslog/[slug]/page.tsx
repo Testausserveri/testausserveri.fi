@@ -61,7 +61,7 @@ export async function generateMetadata(
       openGraph: {
         title: postDetails.title,
         description: postDetails.excerpt,
-        siteName: 'Testausserveri',
+        siteName: `${(postDetails.authorsResolved || []).map(member => member.name).join("; ")} | Testausserveri`,
         images: postDetails.imageUrl,
         locale: 'fi_FI',
         type: 'article',
