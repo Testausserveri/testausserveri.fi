@@ -96,7 +96,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
 
     posts.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime());
     if (arg2 === undefined && arg1 !== undefined) { // list(count)
-        posts = posts.slice(-arg1);
+        posts = posts.slice(0, arg1);
     } else if (arg1 && arg2) { // list(start, end)
         posts = posts.slice(arg1, arg2 + 1);
     }
@@ -124,7 +124,7 @@ async function listFromIndex(arg1?: number, arg2?: number): Promise<PostsListRes
 
     if (arg2 === undefined && arg1 !== undefined) { // list(count)
         posts = posts.slice(-arg1);
-    } else if (arg1 && arg2) { // list(start, end)
+    } else if (arg1 !== undefined && arg2 !== undefined) { // list(start, end)
         posts = posts.slice(arg1, arg2 + 1);
     }
     return {
