@@ -12,6 +12,7 @@ const pages = [
   //{ label: "Jäsenet", path: "/members" },
   { label: "Syslog", path: "/syslog" },
   { label: "Projektit", path: "/projects" },
+  { label: "Ideat", path: "/ideas" },
   /*{ label: "Palvelintila", path: "/host" },
   { label: "Koneet kiertoon", path: "/koneet-kiertoon" },*/
   { label: "Tietoa meistä", path: "/about" },
