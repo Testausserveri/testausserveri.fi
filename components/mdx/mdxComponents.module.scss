@@ -115,3 +115,44 @@
     margin: 0;
   }
 }
+
+.presentationCard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 10px;
+  margin-bottom: 1.5rem;
+  background-color: rgba(108,108,108,0.09);
+  border-radius: 0.5rem;
+  max-width: 800px;
+}
+.presentationCard > div > img {
+  position: relative;
+  right: 10px;
+  top: 10px;
+  width: 100px;
+  height: auto;
+}
+.presentationCard > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  width: 100%;
+}
+.presentationCard > div > h3 {
+  color: white;
+  font-size: 26px;
+  margin: 0px;
+  padding: 0px;
+}
+.presentationCard > div > code {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.presentationCard > div > p {
+  color: white;
+}
+

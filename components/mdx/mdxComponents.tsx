@@ -89,6 +89,15 @@ const Empty = () => {
   console.error("Missing slug from mdx component, see usage");
   return <></>;
 };
+const PresentationCard = (slug?: string) => ({title, author, logo, description}: {title: string, author: string, logo: string, description: string}) => (
+  <div className={styles.presentationCard}>
+    <div>
+      <h3>{title}</h3>
+      <code>{author}</code>
+      <p>{description}</p>
+    </div>
+  </div>
+)
 
 export const mdxComponents = (slug?: string) => ({
    Blockquote, 
@@ -96,5 +105,6 @@ export const mdxComponents = (slug?: string) => ({
    Video: MdxVideo(slug),
    ImageGallery: slug ? MdxImageGallery(slug) : Empty,
    Terminal,
-   CodeBlock
+   CodeBlock,
+   PresentationCard: slug ? PresentationCard(slug) : Empty,
 })
