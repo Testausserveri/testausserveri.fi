@@ -25,6 +25,7 @@
     "hamburger-react": "^2.5.0",
     "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
+    "next-plausible": "^3.12.4",
     "next-sitemap": "^4.1.8",
     "plaiceholder": "^3.0.0",
     "raw-loader": "^4.0.2",

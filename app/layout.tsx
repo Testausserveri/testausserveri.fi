@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import PlausibleProvider from 'next-plausible';
 import { Header } from "../components/Header/Header"
 import '../styles/globals.css'
 
@@ -27,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fi">
+      <head>
+        <PlausibleProvider domain="testausserveri.fi" />
+      </head>
       <body>
         <div className="main">
           <Header 
