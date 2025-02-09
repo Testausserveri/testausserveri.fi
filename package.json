@@ -11,6 +11,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "env-example": "npx env-exampler",
     "dump-licenses": "npx license-checker --json --production --customPath dependency-license-format.json > dependency-licenses.json && sed -i -e 's/\"Custom: .*\"/\"\"/g' dependency-licenses.json"
   },
   "dependencies": {

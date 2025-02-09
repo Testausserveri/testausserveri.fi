@@ -29,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="fi">
       <head>
-        <PlausibleProvider domain="testausserveri.fi" />
+        <PlausibleProvider 
+          domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? ""} 
+          customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_INSTANCE} />
       </head>
       <body>
         <div className="main">

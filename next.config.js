@@ -1,6 +1,5 @@
 // @ts-check
 import withPlaiceholder from "@plaiceholder/next";
-import { withPlausibleProxy } from "next-plausible";
 
 /**
  * @type {import('next').NextConfig}
@@ -57,10 +56,4 @@ const config = {
   }
 };
  
-export default withPlausibleProxy({
-  customDomain: 'https://nsa.testausserveri.fi'
-})(
-  withPlaiceholder(
-    config
-  )
-);
+export default withPlaiceholder(config);

@@ -43,7 +43,9 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
   )
 
   return (
-    <PlausibleProvider domain="testausserveri.fi">
+    <PlausibleProvider 
+      domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? ""} 
+      customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_INSTANCE}>
       <div className="main">
         <Header 
           pages={pages}
