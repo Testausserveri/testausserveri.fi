@@ -6,6 +6,7 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react'
 import api from '../utils/api'
 import { Me } from '../utils/types'
 import { NextPage, NextPageContext } from 'next/types'
+import PlausibleProvider from 'next-plausible'
 
 const pages = [
   { label: "Etusivu", path: "/" },
@@ -41,8 +42,15 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
     </div>
   )
 
-  return getLayout(
-      <Component {...pageProps} authenticated={props.authenticated} />
+  return (
+    <PlausibleProvider domain="testausserveri.fi">
+      <div className="main">
+        <Header 
+          pages={pages}
+          authenticated={props.authenticated} />
+        <Component {...pageProps} authenticated={props.authenticated} />
+      </div>
+    </PlausibleProvider>
   )
 }
 
