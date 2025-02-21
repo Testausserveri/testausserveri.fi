@@ -26,6 +26,7 @@ import remarkGfm from 'remark-gfm'
 import { PostFeatured3D } from '@/components/PostFeatured3D/PostFeatured3D';
 import { userAgent } from 'next/server';
 import { headers } from 'next/headers';
+import { usePlausible } from 'next-plausible';
 
 export const dynamicParams = false;
 /*
@@ -95,6 +96,8 @@ async function getPost(slug: string): Promise<Post> {
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
+    const plausible = usePlausible();
+
     const { postDetails, content } = await getPost(params.slug);
 
     const { device } = userAgent({ headers: headers() });
@@ -137,7 +140,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         </span>
                     </span>
                     <div className={styles.editButton}>
-                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/coal/posts/${postDetails.slug}/post.mdx`}>
+                        <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/coal/posts/${postDetails.slug}/post.mdx`} onClick={() => {plausible('editPost', {props: {editPostSlug: postDetails.slug, editPostSource: "beforePost"}})}}>
                             <CapsuleButton secondary small>Muokkaa</CapsuleButton>
                         </Link>
                     </div>
@@ -180,7 +183,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         Kaikki postaukset 
                     </CapsuleButton>
                 </Link>
-                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/coal/posts/${postDetails.slug}/post.mdx`}>
+                <Link href={`https://github.com/Testausserveri/testausserveri.fi/blob/coal/posts/${postDetails.slug}/post.mdx`} onClick={() => {plausible('editPost', {props: {editPostSlug: postDetails.slug, editPostSource: "afterPost"}})}}>
                     <CapsuleButton style={{marginTop: ".75em"}} secondary>Muokkaa postausta</CapsuleButton>
                 </Link>
                 {/*
