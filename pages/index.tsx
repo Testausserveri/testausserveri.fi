@@ -54,6 +54,16 @@ const TextColumns = styled.p`
   }
 `
 
+const CTAButtonRow = styled.div`
+  margin: -0.3rem 0 0.4rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  @media (max-width: 370px) {
+    flex-direction: column;
+  }
+`;
 const TitleStaticGradientText = styled(GradientText)`
   @media only screen and (max-width: 670px) {
     display: block;
@@ -115,15 +125,24 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
             <GradientText>3D-artisteille</GradientText>
           </TextLoop>
         </H1>
-        <Link href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "hero"}})}>
-          <CapsuleButton
-            style={{ margin: "-0.3rem 0 0.4rem 0" }}
-            onMouseOver={() => { setHeroFocused(true) }}
-            onMouseLeave={() => { setHeroFocused(false) }}>
-            <ButtonIcon src={DiscordIcon} alt="Discord logo" />
-            Tule juttelemaan!
-          </CapsuleButton>
-        </Link>
+        <CTAButtonRow>
+          <Link href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "hero"}})}>
+            <CapsuleButton
+              
+              onMouseOver={() => { setHeroFocused(true) }}
+              onMouseLeave={() => { setHeroFocused(false) }}>
+              <ButtonIcon src={DiscordIcon} alt="Discord logo" />
+              Tule juttelemaan!
+            </CapsuleButton>
+          </Link>
+          <Link href="/apply">
+            <CapsuleButton
+              secondary
+              >
+              Jäseneksi
+            </CapsuleButton>
+          </Link>
+        </CTAButtonRow>
       </Center>
       <Content wider>
         <PostsGrid posts={recentPosts}/>

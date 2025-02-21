@@ -15,6 +15,7 @@ import { Me } from '../../utils/types'
 import Link from 'next/link'
 import { useMesiExperiment } from '../../hooks/useMesiExperiment'
 import { usePathname } from 'next/navigation'
+import { usePlausible } from 'next-plausible';
 
 export type HeaderProps = {
     pages: {
@@ -56,6 +57,7 @@ function LoginButton({authenticated = {}, style}: {authenticated: Me, style: CSS
 }
 export function Header({ pages, authenticated = {} }: HeaderProps) {
     const [open, setOpen] = useState(false)
+    const plausible = usePlausible();
     const experimentEnabled = useMesiExperiment()   
     console.log(process.env.LOGIN_URL)
     return (
@@ -64,7 +66,7 @@ export function Header({ pages, authenticated = {} }: HeaderProps) {
             <Navigation className={styles.navigation} pages={pages} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
                 <LoginButton authenticated={authenticated} style={(!experimentEnabled ? {display: "none"} : {})} />
-                <a href="https://discord.testausserveri.fi">
+                <a href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "header"}})}>
                     <CapsuleButton className={styles.button} small>
                         <ButtonIcon alt="Discord" src={DiscordIcon} />
                         Discord
