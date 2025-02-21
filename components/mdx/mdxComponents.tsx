@@ -7,6 +7,7 @@ import { getImageDetails } from "@/utils/image";
 import ImageGalleryWithLightbox, { GalleryImage } from "../ImageGalleryWithLightbox/ImageGalleryWithLightbox";
 import { Terminal } from "./Terminal";
 import { CapsuleButton } from "../Button/CapsuleButton";
+import { NavigateLink } from "../NavigateLink/NavigateLink";
 
 const Blockquote = ({children}: PropsWithChildren) =>  <blockquote className={styles.blockquote}>{children}</blockquote>
 const MdxImageParent = ({children, inline}: PropsWithChildren & {inline?: boolean}) =>  <div className={styles.mdxImageParent + (inline ? ' ' + styles.inline : '')}>{children}</div>
@@ -108,5 +109,6 @@ export const mdxComponents = (slug?: string) => ({
    Terminal,
    CodeBlock,
    CapsuleButton,
+   NavigateLink,
    PresentationCard: slug ? PresentationCard(slug) : Empty,
 })
