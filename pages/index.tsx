@@ -23,6 +23,7 @@ import post from '../utils/posts';
 import { Stat } from '@/components/Stat/StatCard';
 import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
 import { Capsule } from '@/components/Capsule/Capsule';
+import { usePlausible } from 'next-plausible';
 
 const guildInfoModel: GuildInfoModelOption[] = ["memberCount", "membersOnline", "messagesToday", "codingLeaderboard", "messagesLeaderboard"];
 
@@ -63,6 +64,7 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
   const guildInfo = useGuildInfo(guildInfoModel, ssGuildInfo)
   const [heroFocused, setHeroFocused] = useState(false)
   const [stats, setStats] = useState<Stat[]>([])
+  const plausible = usePlausible();
 
   useEffect(() => {
     setStats([
@@ -113,7 +115,7 @@ export default function Home({ ssGuildInfo, recentPosts, copyrightYear }: InferG
             <GradientText>3D-artisteille</GradientText>
           </TextLoop>
         </H1>
-        <Link href="https://discord.testausserveri.fi">
+        <Link href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "hero"}})}>
           <CapsuleButton
             style={{ margin: "-0.3rem 0 0.4rem 0" }}
             onMouseOver={() => { setHeroFocused(true) }}

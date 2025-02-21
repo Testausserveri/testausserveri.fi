@@ -30,6 +30,9 @@ export default function RootLayout({
     <html lang="fi">
       <head>
         <PlausibleProvider 
+          trackOutboundLinks={true}
+          taggedEvents={true}
+          trackLocalhost={false}
           domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? ""} 
           customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_INSTANCE} />
       </head>

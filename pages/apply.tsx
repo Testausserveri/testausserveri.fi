@@ -8,11 +8,12 @@ import Image from "next/legacy/image"
 
 import { InputText } from '../components/InputText/InputText';
 import { AuthorizationData, InputDiscord } from '../components/InputDiscord/InputDiscord';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../utils/api';
 import { Breadcrumbs } from '../components/Breadcrumbs/Breadcrumbs';
 import testausmeetImg from '../assets/about/testausmeet2.jpeg'
 import { NavigateLink } from '../components/NavigateLink/NavigateLink';
+import { usePlausible } from 'next-plausible';
 
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
@@ -30,13 +31,26 @@ const InputFlow = styled.div`
 `
 
 export default function MembersAreaHome() {
+  const plausible = usePlausible()
+
   const [discordData, setDiscordData] = useState<AuthorizationData>({});
-  
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
+
   const [formStatus, setFormStatus] = useState("");
+  
+  // When visitor starts filling the form, send membershipApplicationBeginFill event
+  const [analyticsStartedFilling, setAnalyticsStartedFilling] = useState(false)
+  useEffect(() => {
+    if (analyticsStartedFilling) return
+    if (firstName.length > 0 || lastName.length > 0 || city.length > 0 || email.length > 0) {
+      plausible("membershipApplicationBeginFill")
+      setAnalyticsStartedFilling(true)
+    }
+  }, [firstName, lastName, city, email, analyticsStartedFilling, plausible])
 
   const fieldsMissing = firstName.trim().length == 0 || 
     lastName.trim().length == 0 || 
@@ -48,6 +62,7 @@ export default function MembersAreaHome() {
   
   async function submit() {
     if (submitDisabled || !discordData.token) return
+    plausible("membershipApplicationSubmit")
     const { status } = await api.apply.submit({
       firstName, lastName, city, email,
       discordToken: discordData.token
