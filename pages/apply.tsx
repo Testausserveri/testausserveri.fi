@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { CapsuleButton } from '../components/Button/CapsuleButton';
+import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
 import { Content } from '../components/Content/Content'
 import { Footer } from '../components/Footer/Footer'
 import { H1 } from '../components/Title/Title'
@@ -14,6 +14,8 @@ import { Breadcrumbs } from '../components/Breadcrumbs/Breadcrumbs';
 import testausmeetImg from '../assets/about/testausmeet2.jpeg'
 import { NavigateLink } from '../components/NavigateLink/NavigateLink';
 import { usePlausible } from 'next-plausible';
+import Link from 'next/link';
+import DiscordIcon from '../assets/DiscordIcon.svg'
 
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
@@ -76,55 +78,63 @@ export default function MembersAreaHome() {
   return (
     <div>
       <Head>
-        <title>Testausserveri</title>
+        <title>Liity jäseneksi | Testausserveri</title>
       </Head>
       { formStatus != "ok" ? 
-        <Content>
-          <H1>Liity jäseneksi</H1>
-          
-          <p>
-            Yhdistyksen jäsenmaksu on 0 euroa. Ilmoitamme sinulle hyväksyttyämme jäsenyytesi. 
-          </p>
-          <p>
-            Yhdistyslaki määrää, että jäsenistä on pidettävä luetteloa, johon on merkittävä kunkin jäsenen täydellinen nimi ja kotipaikka (Yhdistyslaki 503/1989 11 §). Lisäksi Testausserveri ry kerää jäsenrekisteriinsä kunkin jäsenen sähköpostiosoitteen ja Discord-käyttäjänimen yhteydenottoja sekä tunnistautumista varten.
-          </p>
-          <NavigateLink href="/association-rules">Yhdistyksen säännöt</NavigateLink>
-          <NavigateLink href="/privacy/members">Tietosuojaseloste</NavigateLink>
-          <br />
-            <InputFlow>
-              <InputText label="Etunimi" autoComplete="given-name" autoFocus={true} update={setFirstName} />
-              <InputText label="Sukunimi" autoComplete="last-name" update={setLastName} />
-              <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} municipalityList />
-              <InputText label="Sähköpostiosoite" autoComplete="email" update={setEmail} />
-            </InputFlow>
-            <InputDiscord discordData={discordData} setDiscordData={setDiscordData} />
+        <>
+          <Content>
+            <H1>Liity jäseneksi</H1>
             
-            <div style={{display: "flex", alignItems: "center", gap: "1em"}}>
-              <a onClick={() => submit()}>
-                <CapsuleButton disabled={submitDisabled}>Lähetä</CapsuleButton>
-              </a>
-              {discordData.status == "already-member" ?
-                <div>
-                  <p>
-                    Discord-käyttäjä on jo yhdistyksen jäsen {discordData.since ? ` (alkaen ${discordData.since})`: ""}. Mikäli tämä on virhe, ota yhteyttä hallituksen.
-                  </p>
-                </div>
-              : null }
-              {fieldsMissing ? 
-                <div>
-                  <p>
-                    Kaikki kentät ovat pakollisia.
-                  </p>
+            <p>
+              Yhdistyksen jäsenmaksu on 0 euroa. Ilmoitamme sinulle hyväksyttyämme jäsenyytesi. 
+            </p>
+            <p>
+              Yhdistyslaki määrää, että jäsenistä on pidettävä luetteloa, johon on merkittävä kunkin jäsenen täydellinen nimi ja kotipaikka (Yhdistyslaki 503/1989 11 §). Lisäksi Testausserveri ry kerää jäsenrekisteriinsä kunkin jäsenen sähköpostiosoitteen ja Discord-käyttäjänimen yhteydenottoja sekä tunnistautumista varten.
+            </p>
+            <NavigateLink href="/association-rules">Yhdistyksen säännöt</NavigateLink>
+            <NavigateLink href="/privacy/members">Tietosuojaseloste</NavigateLink>
+            <br />
+              <InputFlow>
+                <InputText label="Etunimi" autoComplete="given-name" autoFocus={true} update={setFirstName} />
+                <InputText label="Sukunimi" autoComplete="last-name" update={setLastName} />
+                <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} municipalityList />
+                <InputText label="Sähköpostiosoite" autoComplete="email" update={setEmail} />
+              </InputFlow>
+              <InputDiscord discordData={discordData} setDiscordData={setDiscordData} />
+              
+              <div style={{display: "flex", alignItems: "center", gap: "1em"}}>
+                <a onClick={() => submit()}>
+                  <CapsuleButton disabled={submitDisabled}>Lähetä</CapsuleButton>
+                </a>
+                {discordData.status == "already-member" ?
+                  <div>
+                    <p>
+                      Discord-käyttäjä on jo yhdistyksen jäsen {discordData.since ? ` (alkaen ${discordData.since})`: ""}. Mikäli tämä on virhe, ota yhteyttä hallituksen.
+                    </p>
+                  </div>
+                : null }
+                {fieldsMissing ? 
+                  <div>
+                    <p>
+                      Kaikki kentät ovat pakollisia.
+                    </p>
+                    </div> : null}
+                {formStatus == "error" ?
+                  <div>
+                    <p>
+                      Tapahtui virhe. Yritä myöhemmin uudelleen.
+                    </p>
                   </div> : null}
-              {formStatus == "error" ?
-                <div>
-                  <p>
-                    Tapahtui virhe. Yritä myöhemmin uudelleen.
-                  </p>
-                </div> : null}
-            </div>
-
-        </Content>
+              </div>
+          </Content>
+          <Content wider>
+            <DisplayImage
+              placeholder="blur"
+              src={testausmeetImg}
+              alt="Kuva Testausmeetistä. Noin 11 Testausserverin jäsentä istuu viihtyisässä konttorissa ja seuraa yritysesittelyä."
+            />
+          </Content>
+        </>
       :
         <>
           <Content>
@@ -134,8 +144,16 @@ export default function MembersAreaHome() {
                 { path: "/apply", name: "Vastaanotettu" }
               ]} />
             <H1>Liity jäseneksi</H1>
-            <p>Kiitos, {firstName}! Jäsenhakemuksesi on vastaanotettu ja hallitus käsittelee sen pian. </p>
-            <p>Hyväksymisestä ilmoitetaan sinulle sähköpostitse. </p>
+            <p>Kiitos, {firstName}! Jäsenhakemuksesi on vastaanotettu ja hallitus käsittelee sen pian. Hyväksymisestä ilmoitetaan sinulle sähköpostitse.</p>
+            <p>Sillä välin voit tulla hengaamaan Discordiimme!</p>
+            <div style={{margin: "2rem 0 1rem 0"}}>
+              <Link href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "postMembershipApplication"}})} >
+                <CapsuleButton>
+                  <ButtonIcon src={DiscordIcon} alt="Discord logo" />
+                  Tule juttelemaan!
+                </CapsuleButton>
+              </Link>
+            </div>
           </Content>
           <Content wider>
             <DisplayImage
