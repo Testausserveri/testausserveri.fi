@@ -5,6 +5,7 @@ import styles from './InputDiscord.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { ButtonIcon, CapsuleButton } from '../../components/Button/CapsuleButton';
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
+import { usePlausible } from 'next-plausible';
 
 export type InputDiscordProps = PropsWithChildren<{
     className?: string,
@@ -23,11 +24,13 @@ export type AuthorizationData = {
 
 export const InputDiscord = ((props: InputDiscordProps) => {
     const {discordData: data, setDiscordData: setData} = props;
+    const plausible = usePlausible();
 
     useEffect(() => {
         console.log("registered");
         const handleMessage = async (event: any) => {
             if (event.origin !== window.location.origin) return;
+            plausible("inputDiscordSuccess");
             console.log(event.data);
             setData(JSON.parse(event.data));
         };
@@ -56,7 +59,7 @@ export const InputDiscord = ((props: InputDiscordProps) => {
                 </>
             :
                 <div className={classNames.join(' ')}>
-                    <a href={process.env.NEXT_PUBLIC_LOGIN_URL_APPLY} target="_blank" rel="opener">
+                    <a href={process.env.NEXT_PUBLIC_LOGIN_URL_APPLY} target="_blank" rel="opener" onClick={() => {plausible("inputDiscordBegin")}}>
                         <CapsuleButton small>
                             <ButtonIcon alt="Discord" src={DiscordIcon} />
                             Linkitä Discord-käyttäjäsi
