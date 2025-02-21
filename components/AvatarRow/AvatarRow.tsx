@@ -36,7 +36,7 @@ export function AvatarRow({ members, expandOnHover, withNames }: AvatarRowProps)
             <ul className={`${styles.avatarRow} ${expandOnHover ? styles.expandOnHover  : ''}`}>
                 {members.map(member => {
                     return (
-                        <li key={member._id} data-tooltip-id={`avatar-row-tooltip-${member.name}`} onMouseEnter={() => {plausible("hoverAvatar", {props: {hoverAvatarName: member.name, hoverAvatarId: member._id.toString()}})}}>
+                        <li key={member._id} data-tooltip-id={`avatar-row-tooltip-${member.name}`} onMouseEnter={() => {member.name != "" ? plausible("hoverAvatar", {props: {hoverAvatarName: member.name, hoverAvatarId: member._id.toString()}}) : null}}>
                             <Image src={
                                 member.avatar ? member.avatar : (String(member._id).startsWith('ts:') ? getMemberAvatarUrl(String(member._id).replace('ts:', '')) : testausorveli)} alt={member.name} width={35} height={35} />
                         </li>
