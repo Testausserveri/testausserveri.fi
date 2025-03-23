@@ -11,3 +11,5 @@ posts.json
 dependency-licenses.json
 posts/testausmokki-2024
 test/
+.direnv
+.devenv
