@@ -1,4 +1,6 @@
+"use client";
 
+import Image from 'next/image';
 import styles from './Projects3D.module.css'
 import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
@@ -7,6 +9,15 @@ import { HiOutlineCubeTransparent } from 'react-icons/hi'
 import { SplineEvent } from '@splinetool/runtime';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import Projects3DMobile from '@/assets/projects3d/mobile.png';
+
+function checkIfMobile() {
+    const UA = typeof window !== 'undefined' ? navigator.userAgent : '';
+    return Boolean(
+      UA.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)
+    );
+}
+
 
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
     ssr: false,
@@ -20,6 +31,20 @@ const elements = {
 }
 
 export function Projects3D() {
+    const isMobile = checkIfMobile();
+
+    if (isMobile) {
+        return (
+        <div style={{ marginBottom: '4rem' }}>
+            <Image
+            src={Projects3DMobile}
+            layout="responsive"
+            alt="Kuva, jossa näkyy 3D-mallit pöydästä, USB-tikusta, herätyskellosta, tietokoneesta sekä polkupyörästä jonka kyljessä on QR-koodi"
+            />
+        </div>
+        );
+
+    }
     const projects = [
         {
             id: "a",

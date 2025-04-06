@@ -5,7 +5,8 @@
       "@/components/*": ["components/*"],
       "@/utils/*": ["utils/*"],
       "@/assets/*": ["assets/*"],
-      "@/posts/*": ["posts/*"]
+      "@/posts/*": ["posts/*"],
+      "@/contexts/*": ["contexts/*"]
     },
     "target": "es2015",
     "lib": [
