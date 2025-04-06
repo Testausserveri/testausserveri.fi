@@ -68,7 +68,7 @@ export function Header({ pages, authenticated = {} }: HeaderProps) {
             <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
-                <LoginButton authenticated={authenticated} style={(!experimentEnabled ? {display: "none"} : {})} />
+                <LoginButton style={(!experimentEnabled ? {display: "none"} : {})} />
                 <a href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "header"}})}>
                     <CapsuleButton className={styles.button} small>
                         <ButtonIcon alt="Discord" src={DiscordIcon} />
