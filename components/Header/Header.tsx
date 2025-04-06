@@ -16,6 +16,7 @@ import Link from 'next/link'
 import { useMesiExperiment } from '../../hooks/useMesiExperiment'
 import { usePathname } from 'next/navigation'
 import { usePlausible } from 'next-plausible';
+import { useAuth } from '@/contexts/AuthContext';
 
 export type HeaderProps = {
     pages: {
@@ -34,8 +35,10 @@ const Avatar = styled(Image)`
     margin-right: 0.7em;
     z-index: 50;
 `
-function LoginButton({authenticated = {}, style}: {authenticated: Me, style: CSSProperties}) {
-    return (authenticated.username ? 
+function LoginButton({style}: {style: CSSProperties}) {
+    const { authenticated } = useAuth();
+
+    return (authenticated?.username ? 
         <>
             <Link href="/me" style={style} passHref>
                 <CapsuleButton className={styles.button} small secondary>

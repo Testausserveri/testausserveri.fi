@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import PlausibleProvider from 'next-plausible';
 import { Header } from "../components/Header/Header"
 import '../styles/globals.css'
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export const metadata: Metadata = {
   title: {
@@ -27,6 +28,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Tämän häröyden tarjoaa: https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#supported-pattern-passing-server-components-to-client-components-as-props
   return (
     <html lang="fi">
       <head>
@@ -39,10 +41,12 @@ export default function RootLayout({
       </head>
       <body>
         <div className="main">
-          <Header 
-            pages={pages}
-            authenticated={{}} />
-          {children}
+          <AuthProvider>
+            <Header 
+              pages={pages}
+              authenticated={{}} />
+            {children}
+          </AuthProvider>
         </div>
       </body>
     </html>

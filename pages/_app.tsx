@@ -7,6 +7,7 @@ import api from '../utils/api'
 import { Me } from '../utils/types'
 import { NextPage, NextPageContext } from 'next/types'
 import PlausibleProvider from 'next-plausible'
+import { AuthProvider } from 'contexts/AuthContext'
 
 const pages = [
   { label: "Etusivu", path: "/" },
@@ -32,7 +33,7 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = MyAppProps & {
   Component: NextPageWithLayout
 }
-function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => 
     <div className="main">
       <Header 
@@ -49,61 +50,16 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
       trackLocalhost={false}
       domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? ""} 
       customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_INSTANCE}>
-      <div className="main">
-        <Header 
-          pages={pages}
-          authenticated={{}} />
-        <Component {...pageProps} authenticated={{}} />
-      </div>
+      <AuthProvider>
+        <div className="main">
+          <Header 
+            pages={pages}
+            authenticated={{}} />
+          <Component {...pageProps} authenticated={{}} />
+        </div>
+      </AuthProvider>
     </PlausibleProvider>
   )
 }
-
-type Ctx = {
-  ctx: NextPageContext
-}
-
-/*
-MyApp.getInitialProps = async ({ctx}: Ctx) => {
-
-  // temporary solution to disable authenticated
-  // to-do: I think this prop is on each page and it gets cached, hard to control... :D
-  return {
-    props: {
-      authenticated: {}
-    }
-  }
-  
-  let data
-  if ((ctx?.req?.headers)) {
-    if (ctx.req?.headers.cookie && ctx.req?.headers?.cookie?.includes("connect.sid=")) {
-      data = await api.membersArea.me(ctx?.req?.headers.cookie)
-    }
-  } else {
-    // we don't know CS is there connect.sid= cookie or not, only the server knows
-    // thus we have to always fetch it from SS
-
-    // ideal would be to figure out how to not invoke getInitialProps 
-    // on every shallow page change
-    data = await api.membersArea.me()
-  }
-
-  console.log(data)
-
-  if (data && data.status == "error") {
-    console.log("Error while fetching Me... removing token as it's invalid")
-    if (ctx?.req?.headers?.cookie) {
-      ctx.res?.setHeader("set-cookie", "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT")
-    } else {
-      document.cookie = "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
-    }
-  }
-
-  return {
-    props: {
-      authenticated: data
-    }
-  }
-}*/
 
 export default MyApp
