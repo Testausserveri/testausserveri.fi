@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
     <div className="main">
       <Header 
         pages={pages}
-        authenticated={props.authenticated} />
+        authenticated={{}} />
         {page}
     </div>
   )
@@ -52,8 +52,8 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
       <div className="main">
         <Header 
           pages={pages}
-          authenticated={props.authenticated} />
-        <Component {...pageProps} authenticated={props.authenticated} />
+          authenticated={{}} />
+        <Component {...pageProps} authenticated={{}} />
       </div>
     </PlausibleProvider>
   )
@@ -62,9 +62,12 @@ function MyApp({ Component, pageProps, router, props }: AppPropsWithLayout) {
 type Ctx = {
   ctx: NextPageContext
 }
+
+/*
 MyApp.getInitialProps = async ({ctx}: Ctx) => {
 
   // temporary solution to disable authenticated
+  // to-do: I think this prop is on each page and it gets cached, hard to control... :D
   return {
     props: {
       authenticated: {}
@@ -95,14 +98,12 @@ MyApp.getInitialProps = async ({ctx}: Ctx) => {
       document.cookie = "connect.sid=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     }
   }
-  
-
 
   return {
     props: {
       authenticated: data
     }
   }
-}
+}*/
 
 export default MyApp
