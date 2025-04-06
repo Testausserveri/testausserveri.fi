@@ -30,9 +30,8 @@ import { usePlausible } from 'next-plausible';
 import EditButton from './_components/EditPost';
 
 export const dynamicParams = false;
-/*
 export const dynamic = 'force-static';
-*/
+
 
 export async function generateStaticParams() {
     const postsDirectory = path.join(process.cwd(), 'posts');
