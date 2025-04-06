@@ -31,6 +31,12 @@ const elements = {
 }
 
 export function Projects3D() {
+    const [splineLoading, setSplineLoading] = useState(true)
+
+    const tipCapsule = useRef<HTMLSpanElement>(null)
+    const [tipTimeout, setTipTimeout] = useState<NodeJS.Timeout | number | undefined>(0)
+    let previousTimeout: NodeJS.Timeout | number | undefined = undefined
+    
     const isMobile = checkIfMobile();
 
     if (isMobile) {
@@ -68,11 +74,7 @@ export function Projects3D() {
         }
     ]
 
-    const [splineLoading, setSplineLoading] = useState(true)
-
-    const tipCapsule = useRef<HTMLSpanElement>(null)
-    const [tipTimeout, setTipTimeout] = useState<NodeJS.Timeout | number | undefined>(0)
-    let previousTimeout: NodeJS.Timeout | number | undefined = undefined
+    
 
     function findProject(e: SplineEvent) {
         const id = e.target.id;
