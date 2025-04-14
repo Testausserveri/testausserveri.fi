@@ -6,7 +6,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import Testausmeet2Img from '../assets/about/testausmeet2.jpeg'
 import { Section } from './privacy/members';
 
-export default function AssociationRules({ copyrightYear }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function AssociationRules() {
     return (
         <div>
             <Head>
@@ -136,19 +136,4 @@ export default function AssociationRules({ copyrightYear }: InferGetServerSidePr
             <Footer />
         </div>
     )
-}
-
-export const getServerSideProps: GetServerSideProps<{
-    copyrightYear: number
-}> = async ({ req, res }) => {
-    res.setHeader(
-        'Cache-Control',
-        'public, maxage=300, stale-if-error=300'
-    )
-
-    return {
-        props: {
-            copyrightYear: new Date().getFullYear()
-        }
-    }
 }
