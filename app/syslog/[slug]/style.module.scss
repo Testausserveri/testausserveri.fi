@@ -8,6 +8,9 @@
     height: 350px;
     border-radius: 0.5rem;
     margin: 1rem 0;
+    @media print {
+        margin: -1rem 0 1rem 0
+    }
     img {
         object-fit:cover;
         border-radius: 0.5rem;
@@ -31,12 +34,18 @@
         display: flex;
         flex-direction: column;
         font-size: .9em;
-        color: rgba(255,255,255,.5);
+        
         display: flex;
         gap: 4px;
+        span {
+            opacity: 0.6;
+            @media print {
+                opacity:1;
+            }
+        }
         .authorsName {
             font-weight: bold;
-            color: rgba(255,255,255,.8);
+            opacity: 1;
         }
     }
     .middle { flex: 1; }

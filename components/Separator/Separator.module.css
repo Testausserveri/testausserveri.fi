@@ -19,3 +19,14 @@
 .separator:not(:empty)::after {
     margin-left: 1em;
 }
+
+@media print {
+    .separator {
+        color: #000;
+    }
+
+    .separator::before,
+    .separator::after {
+        border-bottom: 1px solid #000;
+    }
+}

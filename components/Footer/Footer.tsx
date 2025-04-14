@@ -62,7 +62,7 @@ function FooterRow({ children }: PropsWithChildren) {
 
 export function Footer() {
     return (
-        <div className={styles.footer}>
+        <div className={styles.footer + " print-hide"}>
             <Content noMargin wider>
                 <FooterRow>
                     <div>

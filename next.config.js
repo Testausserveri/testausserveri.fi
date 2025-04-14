@@ -7,7 +7,7 @@ import withPlaiceholder from "@plaiceholder/next";
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com', 'testausauto.fi'],
+    domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com', 'testausauto.fi', 'cdn.discordapp.com'],
   },
   async rewrites() {
 		return [
@@ -25,7 +25,27 @@ const config = {
     styledComponents: true
   },
   async redirects() {
+    // syslog slug changes april 2025
+    const syslogSlugChanges = {
+      "stipendit-2023": "2023-stipendit",
+      "disobey-collab-2025": "2025-disobey-collab",
+      "ngh-challenge-2025": "2025-ngh-challenge",
+      "team-finland-2024": "2024-team-finland",
+      "testausmokki-2024": "2024-testausmokki",
+      "testausserveri-disobey-2025": "2025-testausserveri-disobey",
+      "testitapahtuma-1": "2025-testitapahtuma",
+      "vectorama-ctf": "2025-vectorama-ctf"
+    };
+
+    const syslogSlugChangesRules = Object.entries(syslogSlugChanges).map(([oldSlug, newSlug]) => ({
+      source: `/syslog/${oldSlug}`,
+      destination: `/syslog/${newSlug}`,
+      permanent: true
+    }));
+
+    // all rules
     return [
+      ...syslogSlugChangesRules,
       { "source": "/.well-known/webfinger", "destination": "https://mastodon.testausserveri.fi/.well-known/webfinger", permanent: true },
       { "source": "/github", "destination": "https://api.testausserveri.fi/v1/github/authorize", permanent: true },
       { "source": "/jasenhakemus", "destination": "/apply", permanent: false },

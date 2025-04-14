@@ -1,0 +1,38 @@
+
+/* Print styles */
+@media print {
+    html {
+      background-color: white;
+      color: black;
+    }
+  
+    body {
+      color: black;
+    }
+  
+    p, ul, ol, table {
+      color: black;
+    }
+  
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+  
+    table td, table th {
+      border: 1px solid black;
+    }
+  
+    small, figcaption {
+      color: black !important;
+    }
+  
+    a::after{
+      content: " (" attr(href) ") ";
+    }
+  
+    .print-hide {
+      display: none !important;
+    }
+  }
+  

@@ -28,6 +28,7 @@ import { userAgent } from 'next/server';
 import { headers } from 'next/headers';
 import { usePlausible } from 'next-plausible';
 import EditButton from './_components/EditPost';
+import './global.css';
 
 export const dynamicParams = false;
 export const dynamic = 'force-static';
@@ -132,13 +133,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     <AvatarRow members={postDetails.authorsResolved || []} />
                     <span className={styles.middle}>
                         <span className={styles.authorsName}>
-                            {(postDetails.authorsResolved || []).map(member => member.name).join("; ")}
+                            {postDetails.authorsResolved && postDetails.authorsResolved.length > 4 
+                                ? `${postDetails.authorsResolved[0].name || "?"} et al.` 
+                                : (postDetails.authorsResolved || []).map(member => member.name).join("; ")}
                         </span>
                         <span>
                             {TimeUtil.formatDateInRelationToCurrent(new Date(postDetails.datetime))} — {postDetails.readingTime} min luku
                         </span>
                     </span>
-                    <div className={styles.editButton}>
+                    <div className={styles.editButton + " print-hide"}>
                         <EditButton small slug={postDetails.slug} />
                     </div>
                 </div>
@@ -175,12 +178,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     <Separator>Loppu</Separator>
                 </div>
 
-                <Link href="/syslog">
-                    <CapsuleButton style={{marginRight: ".75em", marginTop: ".75em"}}>
-                        Kaikki postaukset 
-                    </CapsuleButton>
-                </Link>
-                <EditButton slug={postDetails.slug} />
+                <div className="print-hide">
+                    <Link href="/syslog">
+                        <CapsuleButton style={{marginRight: ".75em", marginTop: ".75em"}}>
+                            Kaikki postaukset 
+                        </CapsuleButton>
+                    </Link>
+                    <EditButton slug={postDetails.slug} />
+                </div>
                 {/*
                 <div style={{marginTop: "2rem"}}>
                     <Breadcrumbs
@@ -192,11 +197,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 </div>
                 */}
             </Content>
-            <Content wider>
-                <div style={{marginTop: "3.5rem"}}>
-                    <PostsGrid posts={recentPosts}/>
-                </div>
-            </Content>
+            <div className='print-hide'>
+                <Content wider>
+                    <div style={{marginTop: "3.5rem"}}>
+                        <PostsGrid posts={recentPosts}/>
+                    </div>
+                </Content>
+            </div>
             <Footer />
         </FadeBackground>
     );

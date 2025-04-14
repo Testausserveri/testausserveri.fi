@@ -64,7 +64,7 @@ export function Header({ pages, authenticated = {} }: HeaderProps) {
     const experimentEnabled = useMesiExperiment()   
     console.log(process.env.LOGIN_URL)
     return (
-        <div className={`${styles.header} ${open ? styles.open : ""}`}>
+        <div className={`${styles.header} ${open ? styles.open : ""} print-hide`}>
             <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>

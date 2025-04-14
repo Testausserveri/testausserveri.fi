@@ -29,3 +29,12 @@
     backdrop-filter: blur(5px);
     top: 0px;
 }  
+
+@media print {
+    .fadeBackground:before  {
+        display: none;
+    }
+    .fadeBackground:after  {
+        display: none;
+    }
+}

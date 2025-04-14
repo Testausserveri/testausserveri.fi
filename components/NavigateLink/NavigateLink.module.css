@@ -1,7 +1,6 @@
 .navigatelink {
-    color: white;
     font-family: 'Poppins';
-    color: rgba(255,255,255, 0.9);
+    opacity: 0.9;
     display: block;
     margin-bottom: 1em;
 }

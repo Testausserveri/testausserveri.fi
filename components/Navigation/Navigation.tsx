@@ -46,7 +46,7 @@ export function Navigation({ className, pages, open, setOpen }: NavigationProps)
 
     const openClassName = open ? styles.open : ""
     return (
-        <div className={className ? `${className} ${openClassName}` : openClassName}>
+        <div className={openClassName + ' ' + className}>
 
             <div className={styles.mobileHeader}>
                 {open ?
