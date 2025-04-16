@@ -133,9 +133,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     <AvatarRow members={postDetails.authorsResolved || []} />
                     <span className={styles.middle}>
                         <span className={styles.authorsName}>
-                            {postDetails.authorsResolved && postDetails.authorsResolved.length > 4 
-                                ? `${postDetails.authorsResolved[0].name || "?"} et al.` 
-                                : (postDetails.authorsResolved || []).map(member => member.name).join("; ")}
+                            {(postDetails.authorsResolved || []).map(member => member.name).join("; ")}
                         </span>
                         <span>
                             {TimeUtil.formatDateInRelationToCurrent(new Date(postDetails.datetime))} — {postDetails.readingTime} min luku
