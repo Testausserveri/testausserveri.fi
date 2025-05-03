@@ -10,7 +10,10 @@ import { CapsuleButton } from "../Button/CapsuleButton";
 import { NavigateLink } from "../NavigateLink/NavigateLink";
 
 const Blockquote = ({children}: PropsWithChildren) =>  <blockquote className={styles.blockquote}>{children}</blockquote>
-const MdxImageParent = ({children, inline}: PropsWithChildren & {inline?: boolean}) =>  <div className={styles.mdxImageParent + (inline ? ' ' + styles.inline : '')}>{children}</div>
+const MdxImageParent = ({children, inline, ...rest}: PropsWithChildren & {inline?: boolean, [key: string]: any}) =>  
+  <div className={styles.mdxImageParent + (inline ? ' ' + styles.inline : '')} {...rest}>
+    {children}
+  </div>
 
 type MdxImageProps = {
   src: string,
@@ -34,8 +37,7 @@ const MdxImageGallery = (slug: string) => ((props: { src: string[] }) => {
   return <ImageGalleryWithLightbox images={images} />
 })
 
-const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
-  
+const MdxInlineImage = (slug: string) => ((props: { src: string, [key: string]: any }) => {
   const getUrl = (url: string) => {
     if (isValidHttpUrl(url)) {
       return url;
@@ -43,29 +45,52 @@ const MdxImage = (slug?: string) => ((props: MdxImageProps) => {
       return require('../../posts/' + slug + '/' + url).default
     }
   };
+
+  const { src, ...otherProps } = props;
+
+  return <Image
+    className={styles.inlineImage}
+    src={getUrl(src)}
+    alt=""
+    {...otherProps}
+  />
+})
+const MdxImage = (slug?: string) => ((props: MdxImageProps & { [key: string]: any }) => {
+  
+  const getUrl = (url: string) => {
+  if (isValidHttpUrl(url)) {
+    return url;
+  } else {
+    return require('../../posts/' + slug + '/' + url).default
+  }
+  };
   
   // eslint-disable-next-line @next/next/no-img-element
-  const ImageComponent = ({ src, alt }: { src: string, alt: string }) => typeof src != 'string' ? <Image src={src} alt={alt} /> : <img src={src} alt={alt} />
+  const ImageComponent = ({ src, alt, ...rest }: { src: string, alt: string, [key: string]: any }) => 
+  // eslint-disable-next-line @next/next/no-img-element
+  typeof src != 'string' ? <Image src={src} alt={alt} {...rest} /> : <img src={src} alt={alt} {...rest} />
   
-  if (Array.isArray(props.src)) {
-    return <MdxImageParent inline>
-      {props.src.map((src: string, index: number)=> {
-        const url = getUrl(src);
-        return (
-          <div key={src as Key} className="img-wrapper">
-            <ImageComponent src={url} alt={`Kuva ${index} ${props?.caption ? ": " + props.caption : ""}`} />
-          </div>
-        )
-      })}
-    </MdxImageParent>
+  const { src, caption, style, ...otherProps } = props;
+
+  if (Array.isArray(src)) {
+  return <MdxImageParent inline {...otherProps}>
+    {src.map((srcItem: string, index: number) => {
+    const url = getUrl(srcItem);
+    return (
+      <div key={srcItem as Key} className="img-wrapper">
+      <ImageComponent src={url} alt={`Kuva ${index} ${caption ? ": " + caption : ""}`} />
+      </div>
+    )
+    })}
+  </MdxImageParent>
   } else {
-    const url = getUrl(props.src);
-    return <MdxImageParent>
-      <ImageComponent src={url} alt={props?.caption || ""} />
-      {props.caption ?
-        <small>{props.caption}</small>
-      : null}
-    </MdxImageParent>
+  const url = getUrl(src);
+  return <MdxImageParent {...otherProps}>
+    <ImageComponent src={url} alt={caption || ""} style={style} />
+    {caption ?
+    <small>{caption}</small>
+    : null}
+  </MdxImageParent>
   }
 })
 
@@ -104,6 +129,7 @@ const PresentationCard = (slug?: string) => ({title, author, logo, description}:
 export const mdxComponents = (slug?: string) => ({
    Blockquote, 
    Image: slug ? MdxImage(slug) : Empty,
+   InlineImage: slug ? MdxInlineImage(slug) : Empty,
    Video: MdxVideo(slug),
    ImageGallery: slug ? MdxImageGallery(slug) : Empty,
    Terminal,
