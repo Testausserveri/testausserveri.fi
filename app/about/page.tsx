@@ -13,10 +13,10 @@ import tacobellImg from '@/assets/about/grid/tacobell.jpg'
 // board pictures
 import hanBoardImg from '@/assets/about/board/han.jpeg'
 import ellBoardImg from '@/assets/about/board/ell.jpeg'
-import mkrBoardImg from '@/assets/about/board/mkr.jpeg'
 import sinBoardImg from '@/assets/about/board/sin.jpeg'
 import serBoardImg from '@/assets/about/board/ser.jpeg'
-import oikBoardImg from '@/assets/about/board/oik.jpeg'
+import porBoardImg from '@/assets/about/board/por.jpeg'
+import lepBoardImg from '@/assets/about/board/lep.jpeg'
 
 // icons
 import GithubIcon from '@/assets/GithubIcon.svg'
@@ -130,16 +130,16 @@ export default async function AboutPage() {
                 </div>
                 <H2>Yhdistysjärjestys</H2>
                 <p>
-                    Yhdistyksen hallitukseen kuuluvat toimikaudella 2024 seuraavat henkilöt (henkilökohtaiset sähköpostiosoitteet etunimi@testausserveri.fi, jollei toisin mainittu):
+                    Yhdistyksen hallitukseen kuuluvat toimikaudella 2025–2026 seuraavat henkilöt:
                 </p>
                 <div className={`${styles.grid} ${styles.board}`}>
                     {([
-                        [sinBoardImg, "Eemil Sinkko", "puheenjohtaja, talous"],
-                        [ellBoardImg, "Antti Ellilä", "varapuheenjohtaja, tietojärjestelmät"],
-                        [hanBoardImg, "Mikael Hannolainen", "sihteeri"],
-                        [mkrBoardImg, "Ruben Mkrtumyan", "hallituksen jäsen"],
-                        [serBoardImg, "Sergey Ichtchenko", "hallituksen jäsen, yhteistyöt"],
-                        [oikBoardImg, "Niilas Oikarainen", "hallituksen jäsen"]
+                        [hanBoardImg, "Mikael Hannolainen", "hallituksen puheenjohtaja"],
+                        [sinBoardImg, "Eemil Sinkko", "toiminnanjohtaja, h. vpj, talous"],
+                        [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä-<br />vastaava</>],
+                        [serBoardImg, "Sergey Ichtchenko", "yrityssuhdevastaava"],
+                        [lepBoardImg, "Aaro Leppänen", "sihteeri"],
+                        [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä-<br />vastaava</>]
                     ] as const).map(person => (
                         <div className={styles.personIntroduction} key={person[1]}>
                             <span>
