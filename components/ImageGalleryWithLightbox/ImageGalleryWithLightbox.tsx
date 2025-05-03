@@ -32,7 +32,7 @@ export default function ImageGalleryWithLightbox({images}: { images: GalleryImag
       <RowsPhotoAlbum
         photos={slides}
         rowConstraints={{
-          minPhotos: 3,
+          minPhotos: 2,
           maxPhotos: 5
         }}
         onClick={({ index: current }) => setIndex(current)}
