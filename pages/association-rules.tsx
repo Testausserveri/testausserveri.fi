@@ -82,7 +82,7 @@ export default function AssociationRules() {
                 </Section>
                 <Section>
                     <h2>6. Hallitus</h2>
-                    <p>Yhdistyksen asioita hoitaa hallitus, johon kuuluu vuosikokouksessa valitut puheenjohtaja ja 2 - 5 muuta varsinaista jäsentä.</p>
+                    <p>Yhdistyksen asioita hoitaa hallitus, johon kuuluu vuosikokouksessa valitut puheenjohtaja ja 2—5 muuta varsinaista jäsentä.</p>
                     <p>Hallituksen toimikausi on vuosikokousten välinen aika.</p>
                     <p>Hallitus valitsee keskuudestaan varapuheenjohtajan sekä otta keskuudestaan tai ulkopuoleltaan sihteerin, rahastonhoitajan ja muut tarvittavat toimihenkilöt. Hallitus kokoontuu puheenjohtajan tai hänen estyneenä ollessaan varapuheenjohtajan kutsusta, kun he katsovat siihen olevan aihetta tai kun vähintään puolet hallituksen jäsenistä sitä vaatii. Hallitus on päätösvaltainen, kun vähintään puolet sen jäsenistä, puheenjohtaja tai varapuheenjohtaja mukaanluettuna on läsnä. Äänestykset ratkaistaan ehdottomalla ääntenenemmistöllä. Äänten mennessä tasan ratkaisee puheenjohtajan ääni, vaaleissa kuitenkin arpa.</p>
                 </Section>
