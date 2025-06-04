@@ -31,6 +31,9 @@ export default function IdeaList() {
                         <b>Testaustime-lisäosa</b> sinun suosikkieditoriisi, <a href="https://testaustime.fi/extensions">lisätietoja</a>.
                     </li>
                     <li>
+                        <b>Testausserverin oma CTF-alusta</b> eri tapahtumien teemoihin sopivalla käyttöliittymällä ja innovatiivisella palvelinratkaisulla, lisätietoja Hallitukselta.
+                    </li>
+                    <li>
                         <i>Voit lisätä omia ideoitasi tänne luomalla pull requestin GitHubissa</i>
                     </li>
                 </ul>
