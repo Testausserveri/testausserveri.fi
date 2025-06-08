@@ -71,6 +71,10 @@ export type Me = {
   status?: string,
   username?: string,
   _id?: string,
+  discord: {
+    avatar: string,
+    id: string
+  },
   associationMembership?: {
       firstName?: string,
       lastName?: string,
@@ -78,6 +82,7 @@ export type Me = {
       googleWorkspaceName?: string,
       email?: string,
       handledIn?: string,
+      acceptedAt?: string,
       status?: string
   }
 }
@@ -86,8 +91,7 @@ export type ApplyForm = {
   firstName: string,
   lastName: string,
   city: string,
-  email: string,
-  discordToken: string
+  email: string
 }
 
 export type ApplyResponse = {

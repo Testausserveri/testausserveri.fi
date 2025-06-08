@@ -8,7 +8,7 @@ import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { CSSProperties, useEffect, useState } from 'react'
 import { IoMdKey } from "react-icons/io"
 import api from '../../utils/api'
-import { getMemberAvatarUrl } from '../../utils/Member'
+import { getAuthenticatedMemberAvatarUrl, getMemberAvatarUrl } from '../../utils/Member'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Me } from '../../utils/types'
@@ -42,14 +42,14 @@ function LoginButton({style}: {style: CSSProperties}) {
         <>
             <Link href="/me" style={style} passHref>
                 <CapsuleButton className={styles.button} small secondary>
-                    <Avatar alt="Avatar" width="50" height="50" src={getMemberAvatarUrl(authenticated._id || "")} /> 
+                    <Avatar alt="Avatar" width="50" height="50" src={getAuthenticatedMemberAvatarUrl(authenticated)} /> 
                     { authenticated.username }
                 </CapsuleButton>
             </Link>
         </>
     : 
         <>
-            <a href={process.env.LOGIN_URL} style={style}>
+            <a href={process.env.NEXT_PUBLIC_LOGIN_URL} style={style}>
                 <CapsuleButton className={styles.button} small secondary>
                     <IoMdKey />
                     Jäsensivut
@@ -58,11 +58,11 @@ function LoginButton({style}: {style: CSSProperties}) {
         </>
     ) 
 }
-export function Header({ pages, authenticated = {} }: HeaderProps) {
+export function Header({ pages }: HeaderProps) {
     const [open, setOpen] = useState(false)
     const plausible = usePlausible();
     const experimentEnabled = useMesiExperiment()   
-    console.log(process.env.LOGIN_URL)
+
     return (
         <div className={`${styles.header} ${open ? styles.open : ""} print-hide`}>
             <Logo className={styles.logo} link />

@@ -6,11 +6,11 @@ import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { ButtonIcon, CapsuleButton } from '../../components/Button/CapsuleButton';
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 import { usePlausible } from 'next-plausible';
+import { useAuth } from '@/contexts/AuthContext';
+import { getAuthenticatedMemberAvatarUrl } from '@/utils/Member';
 
 export type InputDiscordProps = PropsWithChildren<{
-    className?: string,
-    setDiscordData: Function,
-    discordData: AuthorizationData
+    className?: string
 }>
 
 export type AuthorizationData = {
@@ -23,8 +23,10 @@ export type AuthorizationData = {
 }
 
 export const InputDiscord = ((props: InputDiscordProps) => {
-    const {discordData: data, setDiscordData: setData} = props;
     const plausible = usePlausible();
+    const { authenticated: authenticatedData, refetch } = useAuth();
+    const authenticated = authenticatedData?.username != null;
+
 
     useEffect(() => {
         console.log("registered");
@@ -32,7 +34,7 @@ export const InputDiscord = ((props: InputDiscordProps) => {
             if (event.origin !== window.location.origin) return;
             plausible("inputDiscordSuccess");
             console.log(event.data);
-            setData(JSON.parse(event.data));
+            refetch();
         };
         window.addEventListener("message", handleMessage, false);
         return () => {
@@ -40,26 +42,31 @@ export const InputDiscord = ((props: InputDiscordProps) => {
         };
     }, []); 
 
-    const classNames = [props.className, styles.inputdiscord, data.status != null ? styles.authorized : ""]
+    const classNames = [props.className, styles.inputdiscord, authenticated ? styles.authorized : ""]
 
     return (
         <>
             <label className={styles.inputdiscordLabel}>Discord-käyttäjä</label>
-            { data.status != null ? 
+            { authenticated ? 
                 <>
                     <div className={classNames.join(' ')}>
-                        <img src={`https://cdn.discordapp.com/avatars/${data.id}/${data.avatar}`} />
+                        <img src={getAuthenticatedMemberAvatarUrl(authenticatedData)} />
                         <div>
-                            <span>{data.username}</span>
+                            <span>{authenticatedData.username}</span>
                         </div>
-                        <div onClick={() => {setData({})}}>
-                            <HiOutlineSwitchHorizontal />
+                        <div>
+                            <a onClick={async () => {
+                                await fetch('/api/v1/logout', { method: 'GET' });
+                                refetch();
+                            }}>
+                                <HiOutlineSwitchHorizontal />
+                            </a>
                         </div>
                     </div>
                 </>
             :
                 <div className={classNames.join(' ')}>
-                    <a href={process.env.NEXT_PUBLIC_LOGIN_URL_APPLY} target="_blank" rel="opener" onClick={() => {plausible("inputDiscordBegin")}}>
+                    <a href={process.env.NEXT_PUBLIC_LOGIN_URL + "&state=opener"} target="_blank" rel="opener" onClick={() => {plausible("inputDiscordBegin")}}>
                         <CapsuleButton small>
                             <ButtonIcon alt="Discord" src={DiscordIcon} />
                             Linkitä Discord-käyttäjäsi

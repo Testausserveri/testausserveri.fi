@@ -1,21 +1,24 @@
+"use client";
+
 import Head from 'next/head'
-import { ButtonIcon, CapsuleButton } from '../components/Button/CapsuleButton';
-import { Content } from '../components/Content/Content'
-import { Footer } from '../components/Footer/Footer'
-import { H1 } from '../components/Title/Title'
+import { ButtonIcon, CapsuleButton } from '@/components/Button/CapsuleButton';
+import { Content } from '@/components/Content/Content'
+import { Footer } from '@/components/Footer/Footer'
+import { H1 } from '@/components/Title/Title'
 import styled from 'styled-components'
 import Image from "next/legacy/image"
 
-import { InputText } from '../components/InputText/InputText';
-import { AuthorizationData, InputDiscord } from '../components/InputDiscord/InputDiscord';
+import { InputText } from '@/components/InputText/InputText';
+import { AuthorizationData, InputDiscord } from '@/components/InputDiscord/InputDiscord';
 import { useEffect, useState } from 'react';
-import api from '../utils/api';
-import { Breadcrumbs } from '../components/Breadcrumbs/Breadcrumbs';
-import testausmeetImg from '../assets/about/testausmeet2.jpeg'
-import { NavigateLink } from '../components/NavigateLink/NavigateLink';
+import api from '@/utils/api';
+import { Breadcrumbs } from '@/components/Breadcrumbs/Breadcrumbs';
+import testausmeetImg from '@/assets/about/testausmeet2.jpeg'
+import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
 import { usePlausible } from 'next-plausible';
 import Link from 'next/link';
-import DiscordIcon from '../assets/DiscordIcon.svg'
+import DiscordIcon from '@/assets/DiscordIcon.svg'
+import { useAuth } from '@/contexts/AuthContext';
 
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
@@ -34,8 +37,7 @@ const InputFlow = styled.div`
 
 export default function MembersAreaHome() {
   const plausible = usePlausible()
-
-  const [discordData, setDiscordData] = useState<AuthorizationData>({});
+  const auth = useAuth();
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -58,16 +60,18 @@ export default function MembersAreaHome() {
     lastName.trim().length == 0 || 
     city.trim().length == 0 || 
     email.trim().length == 0 ||
-    !/^\S+@\S+$/.test(email) ||
-    discordData.id == null;
-  const submitDisabled = discordData.status == "already-member" || fieldsMissing;
-  
+    !/^\S+@\S+$/.test(email);
+    
+    /*||
+    discordData.id == null;*/
+  //const submitDisabled = discordData.status == "already-member" || fieldsMissing;
+  const submitDisabled = fieldsMissing;
+
   async function submit() {
-    if (submitDisabled || !discordData.token) return
+    if (submitDisabled || !auth.authenticated?.username) return
     plausible("membershipApplicationSubmit")
-    const { status } = await api.apply.submit({
+    const { status } = await api.membersArea.apply({
       firstName, lastName, city, email,
-      discordToken: discordData.token
     })
     setFormStatus(status)
     if (status == "ok") {
@@ -100,16 +104,15 @@ export default function MembersAreaHome() {
                 <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} municipalityList />
                 <InputText label="Sähköpostiosoite" autoComplete="email" update={setEmail} />
               </InputFlow>
-              <InputDiscord discordData={discordData} setDiscordData={setDiscordData} />
-              
+              <InputDiscord />
               <div style={{display: "flex", alignItems: "center", gap: "1em"}}>
                 <a onClick={() => submit()}>
                   <CapsuleButton disabled={submitDisabled}>Lähetä</CapsuleButton>
                 </a>
-                {discordData.status == "already-member" ?
+                {auth.authenticated?.associationMembership?.status == "MEMBER" ?
                   <div>
                     <p>
-                      Discord-käyttäjä on jo yhdistyksen jäsen {discordData.since ? ` (alkaen ${discordData.since})`: ""}. Mikäli tämä on virhe, ota yhteyttä hallituksen.
+                        Discord-käyttäjä on jo yhdistyksen jäsen (alkaen {auth.authenticated?.associationMembership?.acceptedAt || auth.authenticated?.associationMembership?.handledIn}). Mikäli olet eri mieltä, ota yhteyttä hallituksen.
                     </p>
                   </div>
                 : null }

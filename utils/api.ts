@@ -35,18 +35,6 @@ const find = async function (slug: string) {
     return project
 }
 
-const me = async function (cookies?: string) {
-    const response = await fetch(`${apiServer}/v1/me`, {
-        credentials: 'include',
-        ...(cookies ? { 
-            headers: {
-                Cookie: cookies
-            } 
-        } : {} )
-    })
-    const data = await response.json() as Me
-    return data
-}
 
 const getMemberDisplayName = async function (id: string) {
     const response = await fetch(`${apiServer}/v1/displayName?id=${id}`, {
@@ -58,15 +46,43 @@ const getMemberDisplayName = async function (id: string) {
     return displayName
 }
 
+const withAuth = async (options: RequestInit = {}): Promise<RequestInit> => {
+    const authOptions: RequestInit = {
+        ...options,
+        credentials: typeof window !== 'undefined' ? 'include' : undefined,
+    }
+
+    if (typeof window === 'undefined') {
+        const { cookies } = await import('next/headers')
+        const cookieStore = cookies()
+        const sessionCookie = cookieStore.get('connect.sid')
+        
+        if (sessionCookie) {
+            authOptions.headers = {
+                ...authOptions.headers,
+                'Cookie': `connect.sid=${sessionCookie.value}`
+            }
+        }
+    }
+
+    return authOptions
+}
+
+const me = async function () {
+    const response = await fetch(`${apiServer}/v1/me`, await withAuth())
+    const data = await response.json() as Me
+    return data
+}
+
 const apply = async function (applyForm: ApplyForm) {
-    const response = await fetch(`${apiServer}/v1/apply/submit`, { 
+    const response = await fetch(`${apiServer}/v1/apply`, await withAuth({ 
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(applyForm)
-     })
+    }))
     const data = await response.json() as ApplyResponse
     return data
 }
@@ -81,11 +97,9 @@ const api = {
         find
     },
     membersArea: {
-        me
+        me,
+        apply
     },
-    apply: {
-        submit: apply
-    }
 }
 
 export default api
