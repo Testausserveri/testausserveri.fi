@@ -87,6 +87,26 @@ const apply = async function (applyForm: ApplyForm) {
     return data
 }
 
+const updateMember = async function (updates: { city?: string; email?: string }) {
+    const response = await fetch(`${apiServer}/v1/me`, await withAuth({
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updates)
+    }))
+
+    const data = await response.json();
+
+    if (!response.ok || (typeof data === 'object' && data?.status === 'error')) {
+        const message = typeof data === 'object' && (data.message || data.error) ? data.message || data.error : 'Virhe päivityksessä';
+        throw new Error(message);
+    }
+
+    return data;
+}
+
 const api = {
     getGuildInfo,
     getMemberDisplayName,
@@ -98,7 +118,8 @@ const api = {
     },
     membersArea: {
         me,
-        apply
+        apply,
+        updateMember
     },
 }
 

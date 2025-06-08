@@ -1,0 +1,81 @@
+.editable {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        flex: 1;
+        cursor: pointer;
+        border-radius: 0.3rem;
+        padding: 0.2rem 0.4rem;
+        margin: -0.2rem -0.4rem;
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            .icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    .text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .icon {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9em;
+        flex-shrink: 0;
+    }
+
+    .input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        font: inherit;
+        outline: none;
+        border-radius: 0.3rem;
+        padding: 0.2rem 0.4rem;
+        margin: -0.2rem -0.4rem;
+        min-width: 0;
+    }
+}
+
+.iconHidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.content.editing {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.editable :global(input[list]::-webkit-calendar-picker-indicator) {
+    display: none;
+}
+
+.editable input[list] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    padding-right: 0;
+}
+
+.editable select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

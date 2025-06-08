@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.loading {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #666;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.updated {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #4caf50; /* green */
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.error {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 0.8rem;
+    color: #e53935; /* red */
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} 

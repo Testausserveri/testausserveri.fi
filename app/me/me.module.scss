@@ -24,6 +24,7 @@
     background-color: rgba(108, 108, 108, 0.09);
     .member {
         display: flex;
+        gap: 2rem;
 
         p {
             margin: 0 0 0.5em 0;
@@ -73,4 +74,8 @@
             margin-top: 0;
         }
     }
+}
+
+.fieldRow {
+    margin: 0.5em 0;
 }

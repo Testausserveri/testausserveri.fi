@@ -20,6 +20,8 @@ import Link from 'next/link';
 import DiscordIcon from '@/assets/DiscordIcon.svg'
 import { useAuth } from '@/contexts/AuthContext';
 
+export const dynamic = 'force-dynamic';
+
 const DisplayImage = styled(Image)`
   border-radius: 0.5rem;
 `
