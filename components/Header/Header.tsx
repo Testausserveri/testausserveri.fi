@@ -7,14 +7,11 @@ import styles from './Header.module.css'
 import DiscordIcon from '../../assets/DiscordIcon.svg'
 import { CSSProperties, useEffect, useState } from 'react'
 import { IoMdKey } from "react-icons/io"
-import api from '../../utils/api'
 import { getAuthenticatedMemberAvatarUrl, getMemberAvatarUrl } from '../../utils/Member'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { Me } from '../../utils/types'
 import Link from 'next/link'
-import { useMesiExperiment } from '../../hooks/useMesiExperiment'
-import { usePathname } from 'next/navigation'
 import { usePlausible } from 'next-plausible';
 import { useAuth } from '@/contexts/AuthContext';
 
@@ -61,14 +58,13 @@ function LoginButton({style}: {style: CSSProperties}) {
 export function Header({ pages }: HeaderProps) {
     const [open, setOpen] = useState(false)
     const plausible = usePlausible();
-    const experimentEnabled = useMesiExperiment()   
 
     return (
         <div className={`${styles.header} ${open ? styles.open : ""} print-hide`}>
             <Logo className={styles.logo} link />
             <Navigation className={styles.navigation} pages={pages} open={open} setOpen={setOpen} />
             <div className={styles.navButtons}>
-                <LoginButton style={(!experimentEnabled ? {display: "none"} : {})} />
+                <LoginButton style={{}} />
                 <a href="https://discord.testausserveri.fi" onClick={() => plausible("joinDiscord", {props: {source: "header"}})}>
                     <CapsuleButton className={styles.button} small>
                         <ButtonIcon alt="Discord" src={DiscordIcon} />
