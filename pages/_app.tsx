@@ -21,28 +21,7 @@ const pages = [
   //{ label: "Tietoa", path: "/about-us" }
 ]
 
-interface MyAppProps extends AppProps {
-  props: {
-    authenticated: Me
-  }
-}
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
- 
-type AppPropsWithLayout = MyAppProps & {
-  Component: NextPageWithLayout
-}
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => 
-    <div className="main">
-      <Header 
-        pages={pages}
-        authenticated={{}} />
-        {page}
-    </div>
-  )
-
+function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
     <PlausibleProvider 
       trackOutboundLinks={true}
@@ -53,9 +32,8 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <AuthProvider>
         <div className="main">
           <Header 
-            pages={pages}
-            authenticated={{}} />
-          <Component {...pageProps} authenticated={{}} />
+            pages={pages} />
+          <Component {...pageProps} />
         </div>
       </AuthProvider>
     </PlausibleProvider>

@@ -44,7 +44,7 @@ export default function RootLayout({
           <AuthProvider>
             <Header 
               pages={pages}
-              authenticated={{}} />
+              />
             {children}
           </AuthProvider>
         </div>

@@ -19,8 +19,7 @@ export type HeaderProps = {
     pages: {
         label: string,
         path: string
-    }[],
-    authenticated: Me
+    }[]
 }
 
 const Avatar = styled(Image)`
