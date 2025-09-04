@@ -137,17 +137,19 @@ export default async function AboutPage() {
                     {([
                         [hanBoardImg, "Mikael Hannolainen", "hallituksen puheenjohtaja"],
                         [sinBoardImg, "Eemil Sinkko", "toiminnanjohtaja, h. vpj, talous"],
-                        [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä-<br />vastaava</>],
+                        [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä&shy;vastaava</>],
                         [serBoardImg, "Sergey Ichtchenko", "yrityssuhdevastaava"],
                         [lepBoardImg, "Aaro Leppänen", "sihteeri"],
-                        [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä-<br />vastaava</>]
+                        [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä&shy;vastaava</>]
                     ] as const).map(person => (
                         <div className={styles.personIntroduction} key={person[1]}>
                             <span>
                                 <Image width="64" height="64" src={person[0]} placeholder="blur" alt={person[1]} />
                             </span>
-                            <span>{person[1]}</span><br />
-                            <span>{person[2]}</span>
+                            <div className={styles.personDetails}>
+                                <span>{person[1]}</span>
+                                <span className={styles.personTitle}>{person[2]}</span>
+                            </div>
                         </div>
                     ))}
                 </div>

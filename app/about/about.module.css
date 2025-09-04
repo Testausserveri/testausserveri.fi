@@ -34,8 +34,14 @@
     }
 }
 
-.grid.board span:nth-child(4) {
-    margin-top: -1.5rem;
+.personDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.personTitle {
+    font-size: 0.9rem;
     color: rgba(255,255,255,0.5);
 }
 
