@@ -2,11 +2,10 @@ import { Content } from '../Content/Content'
 import styles from './Footer.module.css'
 import TestausserveriLogo from '../../assets/TestausserveriFullLogo.svg'
 
-import GithubIcon from '../../assets/GithubIcon.svg'
-import InstagramIcon from '../../assets/InstagramIcon.svg'
 import Image from "next/image"
 import Link from 'next/link'
 import { PropsWithChildren } from 'react'
+import { SOCIAL_MEDIA_LINKS } from '@/utils/constants'
 
 const footerLinks = [
     { label: "Tietosuoja", path: "/privacy" },
@@ -14,23 +13,10 @@ const footerLinks = [
     { label: "Yhdistyksen säännöt", path: "/association-rules" },
 ] as const
 
-const socialMedias = [
-    {
-        icon: GithubIcon,
-        name: "GitHub",
-        url: "https://github.com/Testausserveri"
-    },
-    {
-        icon: InstagramIcon,
-        name: "Instagram",
-        url: "https://instagram.com/Testausserveri"
-    }
-] as const
-
 function SocialMedias() {
     return (
         <ul className={`noLinkStyles ${styles.socials}`}>
-            {socialMedias.map(media => (
+            {SOCIAL_MEDIA_LINKS.map(media => (
                 <li key={media.name}>
                     <Link href={media.url}>
                         <Image src={media.icon} alt={`${media.name} logo`} height={24} width={24} unoptimized />

@@ -18,12 +18,6 @@ import serBoardImg from '@/assets/about/board/ser.jpeg'
 import porBoardImg from '@/assets/about/board/por.jpeg'
 import lepBoardImg from '@/assets/about/board/lep.jpeg'
 
-// icons
-import GithubIcon from '@/assets/GithubIcon.svg'
-import InstagramIcon from '@/assets/InstagramIcon.svg'
-import YoutubeIcon from '@/assets/YoutubeIcon.svg'
-import TwitterIcon from '@/assets/TwitterIcon.svg'
-
 import { GridGallery } from '@/components/GridGallery/GridGallery'
 import { Footer } from '@/components/Footer/Footer'
 import Link from 'next/link'
@@ -32,6 +26,7 @@ import { Collaborations } from '@/components/Collaborations/Collaborations'
 import { NavigateLink } from '@/components/NavigateLink/NavigateLink'
 import api from '@/utils/api'
 import Head from 'next/head'
+import { SOCIAL_MEDIA_LINKS } from '@/utils/constants'
 
 export const revalidate = 600; // 10 minutes
 
@@ -117,15 +112,10 @@ export default async function AboutPage() {
                 <NavigateLink href='/vuosikertomus-2023.pdf'>Vuosikertomus 2023</NavigateLink>
                 <NavigateLink href='/vuosikertomus-2022.pdf'>Vuosikertomus 2022</NavigateLink>
                 <div className={`${styles.grid} ${styles.soc}`}>
-                    {[
-                        ["Instagram", "https://instagram.com/testausserveri", InstagramIcon],
-                        ["Youtube", "https://youtube.com/@testausserveri", YoutubeIcon],
-                        ["Github", "https://github.com/testausserveri", GithubIcon],
-                        ["Twitter", "https://twitter.com/testausserveri", TwitterIcon],
-                    ].map((social) => (
-                        <Link href={social[1]} key={social[0]} className={styles.socialLink}>
-                            <Image src={social[2]} alt={`${social[0]} logo`} height={24} width={24} unoptimized />
-                            {social[0]}
+                    {SOCIAL_MEDIA_LINKS.map((social) => (
+                        <Link href={social.url} key={social.name} className={styles.socialLink}>
+                            <Image src={social.icon} alt={`${social.name} logo`} height={24} width={24} unoptimized />
+                            {social.name}
                         </Link>
                     ))}
                 </div>
