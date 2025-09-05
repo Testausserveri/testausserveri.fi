@@ -5,6 +5,7 @@ import assembly from '../../assets/collaborations/assembly.svg'
 import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
 import w4cfi from '../../assets/collaborations/w4cfi.png'
+import lamerfest from '../../assets/collaborations/lamerfest.svg'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
 import krp from '../../assets/collaborations/logo_krp.png'
@@ -44,13 +45,13 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://intti.fi/kybervarusmiehet" target="_blank">
-                        <Image src={pvjjk} height={80} alt="Puolustusvoimien johtamisjärjestelmäkeskus" />
+                    <Link href="https://lamerfest.fi" target="_blank">
+                        <Image src={lamerfest} height={80} alt="Lamerfest logo" />
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://www.women4cyberfinland.com/" target="_blank">
-                        <Image src={w4cfi} height={80} alt="W4CFI logo" />
+                    <Link href="https://intti.fi/kybervarusmiehet" target="_blank">
+                        <Image src={pvjjk} height={80} alt="Puolustusvoimien johtamisjärjestelmäkeskus" />
                     </Link>
                 </li>
                 <li>
