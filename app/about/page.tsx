@@ -143,6 +143,8 @@ export default async function AboutPage() {
                         </div>
                     ))}
                 </div>
+                <p>Tavoitat hallituksen sähköpostitse <a href="mailto:board@testausserveri.fi">board@testausserveri.fi</a> tai Discordissa kutsumalla <i>@board</i>.</p>
+                <p>Hallituksen PGP avain: <a href='/board.asc'>A6CB 755F 69A4 552C 5AD5  5A1E B528 9A0A 2F48 2DF3</a></p>
                 <H2>Jäsenyys yhdistyksessämme</H2>
                 <p>
                     Yhteisön toimintaan osallistuminen ei vaadi yhdistyksemme jäsenyyttä. Kaikki ovat tervetulleita! Jäsenyys mahdollistaa kuitenkin osallistumisesi toimintaamme aktiivisemmin, sekä pääsyn lukuisiin eri jäsenyysetuihin.
