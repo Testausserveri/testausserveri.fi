@@ -101,7 +101,7 @@ export default function MembersAreaHome() {
             <NavigateLink href="/privacy/members">Tietosuojaseloste</NavigateLink>
             <br />
               <InputFlow>
-                <InputText label="Etunimi" autoComplete="given-name" autoFocus={true} update={setFirstName} />
+                <InputText label="Etunimet" autoComplete="given-name" autoFocus={true} update={setFirstName} />
                 <InputText label="Sukunimi" autoComplete="last-name" update={setLastName} />
                 <InputText label="Asuinkunta" autoComplete="address-level2" autoCompleteLabel="Kaupunki" update={setCity} municipalityList />
                 <InputText label="Sähköpostiosoite" autoComplete="email" update={setEmail} />
