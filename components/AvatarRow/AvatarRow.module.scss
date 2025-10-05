@@ -18,7 +18,7 @@
     border-radius: 2rem;
 }
 
-.avatarRow li:not(:nth-last-child(1)) img {
+.avatarRow li:not(:nth-last-child(1)):not(.lastItem) img {
     /* the values are approximated out of the place where sun doesn't shine */
     mask: radial-gradient(circle 20px at 44px center, #0000 98%, #000);
 }
