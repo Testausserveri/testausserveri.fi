@@ -75,7 +75,7 @@ const config = {
                 const content = readFileSync(absoluteFilename)
                 const hash = createHash("md5").update(content).digest("hex").slice(0, 8)
                 const file = parse(absoluteFilename)
-                return `static/media/${file.name}.${hash}.${file.ext}`
+                return `static/media/${file.name}.${hash}${file.ext}`
               },
               noErrorOnMissing: true,
             },
