@@ -10,6 +10,7 @@ import { SplineEvent } from '@splinetool/runtime';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import Projects3DMobile from '@/assets/projects3d/mobile.png';
+import Spline from '@splinetool/react-spline';
 
 function checkIfMobile() {
     const UA = typeof window !== 'undefined' ? navigator.userAgent : '';
@@ -17,11 +18,6 @@ function checkIfMobile() {
       UA.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)
     );
 }
-
-
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-    ssr: false,
-});
 
 const elements = {
     "c037c85b-64a2-461c-9d8e-af49a2a5a484": "a",

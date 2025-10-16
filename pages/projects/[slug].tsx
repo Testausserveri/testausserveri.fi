@@ -127,6 +127,11 @@ const ProjectLinkTitleContainer = styled.div`
   align-items: center;
 `
 
+const ProjectReadmeLinkContainer = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+`
 
 export default function ProjectPage({ projectData: project, mdxSerialized, suggestedProjectsData: suggestedProjects, copyrightYear }: InferGetStaticPropsType<typeof getStaticProps>) {
   const cover = project.media.find(item => item.cover === true)
@@ -164,7 +169,7 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
               </P>
 
               {project.description.full ?
-                <MDXRemote {...mdxSerialized.fullDescription} components={mdxComponents()}/>
+                <MDXRemote {...mdxSerialized.fullDescription} components={mdxComponents()} />
                 : null}
 
               <div style={{ marginTop: "2rem" }}>
@@ -175,10 +180,10 @@ export default function ProjectPage({ projectData: project, mdxSerialized, sugge
                         <span>
                           README.md-dokumentaatio GitHub-repositoriolle
                         </span>
-                        <span>
-                          <FaGithub />
+                        <ProjectReadmeLinkContainer>
+                          <FaGithub style={{ color: "white" }} />
                           <a className="link" href={`https://github.com/${repository}`}>{repository}</a>
-                        </span>
+                        </ProjectReadmeLinkContainer>
                       </span>
                       <MDXRemote {...mdxSerialized.readmes[repository]} />
                     </RepositoryReadme>

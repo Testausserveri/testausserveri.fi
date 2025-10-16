@@ -27,7 +27,7 @@
   transition-property: filter;
   transition-duration: 0.5s;
   transition-delay: 2s;
-  mix-blend-mode: color-dodge;
+  // mix-blend-mode: color-dodge;
   >div {
     display: flex; justify-content: center;
   }
@@ -61,7 +61,7 @@
 }
 
 .placeholder {
-  mix-blend-mode: color-dodge;
+  // mix-blend-mode: color-dodge;
 
   position: absolute;
   top: 0; left: 0;

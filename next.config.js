@@ -1,5 +1,13 @@
 // @ts-check
-import withPlaiceholder from "@plaiceholder/next";
+import withPlaceholder from "@plaiceholder/next";
+import CopyPlugin from "copy-webpack-plugin"
+import { readFileSync } from "fs"
+import { parse } from "path"
+import { createHash } from "crypto"
+
+// Which files from posts directory will be forcefully included as assets
+// (glob list format)
+const postAssets = "splinecode,mp4,pdf"
 
 /**
  * @type {import('next').NextConfig}
@@ -57,18 +65,35 @@ const config = {
     ];
   },
   webpack: (config, options) => {
+    config.plugins.push(
+      new CopyPlugin({
+          patterns: [
+            {
+              from: `./posts/**/*.{${postAssets}}`,
+              to({ absoluteFilename }) {
+                if (!absoluteFilename) throw new Error("Tried to copy invalid post asset!")
+                const content = readFileSync(absoluteFilename)
+                const hash = createHash("md5").update(content).digest("hex").slice(0, 8)
+                const file = parse(absoluteFilename)
+                return `static/media/${file.name}.${hash}${file.ext}`
+              },
+              noErrorOnMissing: true,
+            },
+          ],
+      })
+  )
     config.module.rules.push({ 
       test: /\.mdx$/, use: 'raw-loader' 
     })
     const prefix = config.assetPrefix ?? config.basePath ?? '';
     config.module.rules.push({
-      test: /\.(mp4|splinecode|pdf)$/,
+      test: new RegExp(`\.(${postAssets.replace(/,/g, "|")})$`),
       use: [{
         loader: 'file-loader',
         options: {
           publicPath: `${prefix}/_next/static/media/`,
-          outputPath: `${config.isServer ? '../' : ''}static/media/`,
-          name: '[name].[hash:8].[ext]',
+          outputPath: 'static/media/',
+          name: '[name].[md5:contenthash:8].[ext]',
         },
       }],
     });
@@ -76,4 +101,4 @@ const config = {
   }
 };
  
-export default withPlaiceholder(config);
+export default withPlaceholder(config);
