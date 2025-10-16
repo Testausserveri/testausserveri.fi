@@ -10,6 +10,10 @@ export function useGuildInfo<T extends GuildInfoModelOption[]>(guildInfoModel: T
         setGuildInfo(await api.getGuildInfo(guildInfoModel))
     }
     useEffect(() => {
+        // Load fresh data immediately on mount
+        update()
+        
+        // Then poll every 5 seconds
         const interval = setInterval(update, 5000)
         console.log(`Hooking useGuildInfo (${guildInfoModel.join()})`, interval)
 

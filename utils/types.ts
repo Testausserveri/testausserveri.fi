@@ -12,10 +12,11 @@ type GuildInfoAll = {
   messagesLeaderboard: {
     name: string,
     value: number
-  }[]
+  }[],
+  associationMembershipCount: number
 }
 
-export type GuildInfoModelOption = "memberCount" | "membersOnline" | "messagesToday" | "codingLeaderboard" | "messagesLeaderboard"
+export type GuildInfoModelOption = "memberCount" | "membersOnline" | "messagesToday" | "codingLeaderboard" | "messagesLeaderboard" | "associationMembershipCount"
 
 export type OptionalExcept<T, K extends keyof T> = Partial<T> & Pick<T, K>
 

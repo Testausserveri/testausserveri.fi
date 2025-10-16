@@ -1,3 +1,5 @@
+"use client";
+
 import { DiscordCustomEmoji, DiscordMessage } from '@skyra/discord-components-react'
 import { ReactNode, useEffect, useState } from 'react'
 import styles from './DiscordLive.module.css'
