@@ -31,7 +31,7 @@ import { SOCIAL_MEDIA_LINKS } from '@/utils/constants'
 export const revalidate = 600; // 10 minutes
 
 export default async function AboutPage() {
-    const {memberCount} = await api.getGuildInfo(["memberCount"])
+    const {memberCount, associationMembershipCount} = await api.getGuildInfo(["memberCount", "associationMembershipCount"])
 
     return (
         <div>
@@ -102,6 +102,9 @@ export default async function AboutPage() {
                 <p>
                     Yhdistyksemme osallistuu lukuisiin tietotekniikka- ja kyberalan tapahtumiin ja kilpailuihin, kuten hackathoneihin, CTF-kilpailuihin ja hack-day tapahtumiin.
                     Kenellä tahansa yhdistyksen jäsenellä on mahdollisuus päästä osallistumaan näihin tapahtumiin ja kilpailuihin ilmaiseksi.
+                </p>
+                <p>
+                    Yhdistyksessä on tällä hetkellä {associationMembershipCount} varsinaista jäsentä.
                 </p>
 
                 <H2>Tutustu toimintaamme</H2>
