@@ -1,0 +1,44 @@
+---
+title: Testaustimeline
+category: Oppaat
+feature_image: timeline.png
+excerpt: Tuli vähän kiusattua Anttia ja kavereita päivämääristä yms. Lopputuloksena ylisuunniteltu Python-tunkki Sheets-integraatioineen.
+authors: 
+- ts:62f16b45fe70cffcac53fdea
+datetime: 2025-10-18T00:49:56+0000
+---
+
+Testausserverillä on nyt kirjoitushetkellä takanaan rutkasti yli viisi vuotta historiaa, jota ei ole dokumentoitu lähes ollenkaan. Tämä hankaloittaa ymmärrettävästi kysymysten kuten "hmm, monesko Testausmeet tämä mahtaa olla?" tai "Milloin mahtoi Testausserveri sen nykyisessä muodossaan alkaa?" esittämistä.
+
+Siispä Eliaksen kysyttyä "eiks kohta oo testausserverin viisvuotissyndet? vai onks ollu jo?", alkoi keskustelu aiheesta, jonka aikana aloin tekemään Excalidrawilla luonnosta Testausserverin alkuajoista.
+
+<Image src="luonnos.png" caption="Ensimmäinen luonnos Testausserverin historian aikajanasta" />
+
+Kuten tämänkaltaisten asioiden kanssa Testausserverillä usein käy, projekti paisui käsistä. Excalidraw-tiedosto muuttui pian Antilta kymmenten tapahtumien päivämäärien tiedustelun myötä Google Sheets -taulukoksi. Huomattuani kuitenkin Sheetsin puutteellisen kyvyn aikajanataulukon luomisessa, päätin rakentaa Python-integraation ratkaisemaan ongelman.
+
+
+## Testaustimeline
+
+<NavigateLink href="https://github.com/testausserveri/testaustimeline">Katso repo GitHubissa (testausserveri/testaustimeline)</NavigateLink>
+
+Testaustimeline toimii lataamalla Google Sheets taulukon, muuntamalla sen Pandas DataFrameksi ja käyttämällä Matplotlibin Pyplottia aikajanan luomiseen.
+
+```py
+import solution
+
+def main():
+    solution()
+
+if __name__ == "__main__":
+    main()
+```
+
+Tapahtumia hallinnoidaan [Google Sheets taulukolla](https://docs.google.com/spreadsheets/d/18frYouif8XON7jsx3Cf50qABWK4O32Dkrz9Aaqq9FUs). Jos sinulle tulee mieleen lisäyksiä tai muokkausehdotuksia, kerro asiasta minulle (@koodarimpi) <a href="https://discord.testausserveri.fi">Testausserverin Discordissa</a>.
+
+Aikajana luodaan käyttämällä Python-skribulaa, joka löytyy yllä linkatusta reposta, samoin kuin ohjeet sen suorittamiseen.
+
+<Image src="terminaali.png" />
+
+Ei mulla muuta tällä kertaa. Jonkun pitäisi päivittää nämä wikiin (https://wiki.testausserveri.fi).
+
+<Image src="timeline.png" caption="Valmis Testausserverin aikajana (viimeksi päivitetty 17.10.2025)" />
