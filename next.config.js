@@ -16,6 +16,7 @@ const config = {
   reactStrictMode: true,
   images: {
     domains: ['localhost', 'api.testausserveri.fi', 'avatars.githubusercontent.com', 'testausauto.fi', 'cdn.discordapp.com'],
+  	unoptimized: true
   },
   async rewrites() {
 		return [
