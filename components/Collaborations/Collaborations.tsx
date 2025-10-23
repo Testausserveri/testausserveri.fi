@@ -4,7 +4,8 @@ import pvjjk from '../../assets/collaborations/pvjjk.png'
 import assembly from '../../assets/collaborations/assembly.svg'
 import aatos from '../../assets/collaborations/aatos.svg'
 import nextgen from '../../assets/collaborations/nextgen.png'
-import w4cfi from '../../assets/collaborations/w4cfi.png'
+//import w4cfi from '../../assets/collaborations/w4cfi.png'
+import datatahti from '../../assets/collaborations/datatahti.svg'
 import lamerfest from '../../assets/collaborations/lamerfest.svg'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
@@ -57,6 +58,11 @@ export function Collaborations(props: CollaborationsProps) {
                 <li>
                     <Link href="https://poliisi.fi/cybercrime-exit" target="_blank">
                         <Image src={krp} height={80} alt="KRP logo" />
+                    </Link>
+                </li>
+                <li>
+                    <Link href="https://datatahti.fi/" target="_blank">
+                        <Image src={datatahti} height={80} alt="Datatähti logo" />
                     </Link>
                 </li>
             </ul>
