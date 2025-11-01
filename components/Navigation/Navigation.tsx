@@ -7,7 +7,6 @@ import { Logo } from '../Logo/Logo'
 import { useEffect } from 'react';
 import { FadeIn } from '../FadeIn/FadeIn';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation'
 
 export type NavigationProps = {
     className?: string,
