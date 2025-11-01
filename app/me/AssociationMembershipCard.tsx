@@ -32,8 +32,8 @@ export function AssociationMembershipCard({ authenticated: initialAuthenticated 
         <div className={styles.assocationMembershipCard} >
             <div className={`${styles.member} ${notMember ? styles.disabled : ""}`}>
                 <div>
-                    <H2>
-                        <GradientText>
+                    <H2 style={{ marginBottom: '0.4em' }}>
+                        <GradientText style={{ fontSize: '1.5rem' }}>
                             {notMember ? "Testaus" : authenticated?.associationMembership?.firstName} {notMember ? "Koiranen" : authenticated?.associationMembership?.lastName}
                         </GradientText>
                     </H2>

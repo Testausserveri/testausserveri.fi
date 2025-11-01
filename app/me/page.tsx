@@ -18,6 +18,7 @@ import { IoMdKey } from 'react-icons/io';
 export const dynamic = 'force-dynamic';
 
 import { AssociationMembershipCard } from './AssociationMembershipCard';
+import MembersSubnav from '@/components/MembersSubnav/MembersSubnav';
 
 export default async function MembersAreaHome() {
     const authenticated = await api.membersArea.me();
@@ -37,6 +38,7 @@ export default async function MembersAreaHome() {
                     </>
                     :
                     <>
+                        <MembersSubnav current="me" />
                         <div className={styles.userRow}>
                             <div>
                                 <Image

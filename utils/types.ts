@@ -111,6 +111,24 @@ export type MemberDisplayNameResponse = {
   kind: MemberDisplayNameKind
 }
 
+export type BankingTransaction = {
+  credit_debit_indicator: "DBIT" | "CRDT";
+  currency: string;
+  amount: number | null;
+  id: string;
+  name: string | null;
+  date: string;
+  remittance_information: string | null;
+}
+
+export type BankingResponse = {
+  balance: {
+    date: string;
+    amount: number | null;
+  } | null;
+  transactions: BankingTransaction[];
+}
+
 export type PostDetails = {
   title: string;
   category: string;

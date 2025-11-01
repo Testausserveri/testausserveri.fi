@@ -1,0 +1,38 @@
+.subnav {
+  margin-top: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px; 
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: 'Poppins';
+  font-size: 0.9em;
+}
+
+.active {
+  background-color: #F0F0F0;
+  color: black;
+}
+.active:hover {
+  background-color: #FFFFFF;
+}
+
+.secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #F0F0F0;
+}
+.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.20);
+}
+
+

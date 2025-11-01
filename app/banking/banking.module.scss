@@ -1,0 +1,113 @@
+.balanceCard {
+  margin: 24px 0;
+  padding: 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+}
+
+.balanceTitle {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.balanceAmount {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.balanceDate {
+  opacity: 0.6;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.transaction {
+  display: grid;
+  grid-template-columns: 6px 1fr auto;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.credit .line {
+  background: #90ee90; /* light green */
+}
+
+.debit .line {
+  background: #ffffff; /* white */
+}
+
+.left {
+  padding: 0 12px;
+}
+
+.right {
+  text-align: right;
+}
+
+.text {
+  font-weight: 600;
+}
+
+.subtext {
+  opacity: 0.8;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.date {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.amount {
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.censored {
+  color: #000;
+  background: #000;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 2px 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.button {
+  margin-top: 12px;
+}
+
+.inlineVideo {
+  width: 100%;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.videoWrapper {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: #000;
+}
+
+

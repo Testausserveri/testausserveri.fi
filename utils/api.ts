@@ -1,4 +1,4 @@
-import { ApplyForm, ApplyResponse, DetailedProject, GuildInfo, GuildInfoModelOption, Me, MemberDisplayNameResponse, ShallowProject } from "./types"
+import { ApplyForm, ApplyResponse, DetailedProject, GuildInfo, GuildInfoModelOption, Me, MemberDisplayNameResponse, ShallowProject, BankingResponse } from "./types"
 
 // to-do: should we be using proxied /api/v1/* route or api.testausserveri.fi
 export const apiServer = process.env.NEXT_PUBLIC_API_SERVER
@@ -74,6 +74,22 @@ const me = async function () {
     return data
 }
 
+const banking = async function () {
+    const response = await fetch(`${apiServer}/v1/banking`, await withAuth())
+    if (!response.ok) {
+        let message = 'Virhe';
+        try {
+            const body = await response.json() as any
+            message = (body?.message || body?.error || message)
+        } catch {}
+        const error: any = new Error(message)
+        error.status = response.status
+        throw error
+    }
+    const data = await response.json() as BankingResponse
+    return data
+}
+
 const apply = async function (applyForm: ApplyForm) {
     const response = await fetch(`${apiServer}/v1/apply`, await withAuth({ 
         method: 'POST',
@@ -119,7 +135,8 @@ const api = {
     membersArea: {
         me,
         apply,
-        updateMember
+        updateMember,
+        banking
     },
 }
 
