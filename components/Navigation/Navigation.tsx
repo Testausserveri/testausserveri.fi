@@ -21,20 +21,9 @@ export type NavigationProps = {
 export function Navigation({ className, pages, open, setOpen }: NavigationProps) {
     const activePath = usePathname();
 
-    /*
-    to-do: do something about this
     useEffect(() => {
-        const onHashChangeStart = () => {
-            setOpen(false)
-        }
-
-        router.events.on("routeChangeComplete", onHashChangeStart)
-
-        return () => {
-            router.events.off("routeChangeComplete", onHashChangeStart)
-        }
-    }, [router.events, setOpen])
-    */
+        setOpen(false)
+    }, [activePath])
 
     useEffect(() => {
         const originalStyle = window.getComputedStyle(document.documentElement).overflowY 
