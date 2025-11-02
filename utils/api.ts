@@ -90,6 +90,26 @@ const banking = async function () {
     return data
 }
 
+const migrateLookup = async function (email: string, migrationKey: string) {
+    const query = new URLSearchParams({ email, migrationKey }).toString()
+    const response = await fetch(`${apiServer}/v1/migrate?${query}`)
+    if (!response.ok) {
+        return null
+    }
+    return await response.json() as { firstName: string; lastName: string }
+}
+
+const migrateSubmit = async function (email: string, migrationKey: string) {
+    const query = new URLSearchParams({ email, migrationKey }).toString()
+    const response = await fetch(`${apiServer}/v1/migrate?${query}`, await withAuth({ method: 'POST' }))
+    const data = await response.json() as any
+    if (!response.ok || (typeof data === 'object' && data?.status === 'error')) {
+        const message = typeof data === 'object' && (data.message || data.error) ? data.message || data.error : 'Virhe'
+        throw new Error(message)
+    }
+    return data
+}
+
 const apply = async function (applyForm: ApplyForm) {
     const response = await fetch(`${apiServer}/v1/apply`, await withAuth({ 
         method: 'POST',
@@ -136,7 +156,9 @@ const api = {
         me,
         apply,
         updateMember,
-        banking
+        banking,
+        migrateLookup,
+        migrateSubmit
     },
 }
 
