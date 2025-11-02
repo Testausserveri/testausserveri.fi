@@ -1,5 +1,7 @@
 "use client";
 
+//export const dynamic = 'force-static';
+
 import { CapsuleButton } from '@/components/Button/CapsuleButton';
 import { Content } from '@/components/Content/Content'
 import { Footer } from '@/components/Footer/Footer'
@@ -7,11 +9,11 @@ import { H1 } from '@/components/Title/Title'
 import api from '@/utils/api';
 import { InputDiscord } from '@/components/InputDiscord/InputDiscord';
 import { IoMdKey } from 'react-icons/io';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 
-export default function MembersAreaHome() {
+function MembersAreaHome() {
     const searchParams = useSearchParams();
     const auth = useAuth();
 
@@ -107,5 +109,21 @@ export default function MembersAreaHome() {
             </Content>
             <Footer />
         </article>
+    )
+}
+
+export default function MigratePage() {
+    return (
+        <Suspense fallback={(
+            <article>
+                <Content>
+                    <H1>Yhdistä jäsenyytesi Discordiin</H1>
+                    <p>Ladataan…</p>
+                </Content>
+                <Footer />
+            </article>
+        )}>
+            <MembersAreaHome />
+        </Suspense>
     )
 }

@@ -67,7 +67,7 @@ async function list(arg1?: number, arg2?: number): Promise<PostsListResult> {
     const settledPostDetails = await Promise.allSettled(
         postFiles.map(fileName => getPostDetails(fileName))
     );
-    console.log(settledPostDetails)
+    //console.log(settledPostDetails)
     const fulfilledPostDetails = settledPostDetails
         .filter((p): p is PromiseFulfilledResult<PostDetails> => p.status === 'fulfilled')
         .map(settled => settled.value);

@@ -254,7 +254,7 @@ export const getStaticProps: GetStaticProps<{
 
   if ("status" in data) return { notFound: true }
 
-  console.log("Loaded static props for", data.slug)
+  //console.log("Loaded static props for", data.slug)
 
   const suggestedProjectsData = await api.projects.suggest(data.slug)
 
@@ -290,7 +290,7 @@ export const getStaticProps: GetStaticProps<{
 export async function getStaticPaths() {
   const data = await api.projects.slugs()
   const paths = data.map(slug => ({ params: { slug } }))
-  console.log("Loaded static paths", paths)
+  //console.log("Loaded static paths", paths)
   return {
     paths,
     fallback: "blocking"
