@@ -9,6 +9,7 @@ import { ProjectRow } from '@/components/ProjectRow/ProjectRow';
 import { Projects3D } from '@/components/Projects3D/Projects3D';
 import api from '@/utils/api';
 import { ShallowProject } from '@/utils/types';
+import { NavigateLink } from '@/components/NavigateLink/NavigateLink';
 
 export default async function Projects() {
   const data = await api.projects.all();
@@ -41,6 +42,9 @@ export default async function Projects() {
         {data.map((project: ShallowProject) => (
           <ProjectRow key={project._id} project={project} />
         ))}
+        <br />
+        <br />
+        <NavigateLink href="/ideas">Idealista</NavigateLink>
       </Content>
       <Footer />
     </div>
