@@ -160,9 +160,6 @@ export default async function AboutPage() {
                 <H2>Ketkä tukevat meitä?</H2>
                 <p>Teemme yhteistyötä tällä hetkellä seuraavien organisaatioiden kanssa:</p>
                 <Collaborations style={{ margin: "2.5rem 0" }} noTitle />
-                <p>
-                    Lisäksi, jotkut yhteisömme jäsenet ovat tukeneet meitä taloudellisesti, joten suuri kiitos myös heille. Yhdistyksen rahankäyttö on läpinäkyvää ja kaikille nähtävillä <a href="http://opencollective.com/testausserveri-ry">OpenCollective-palvelussa</a>.
-                </p>
             </Content>
             <Footer />
         </div>
