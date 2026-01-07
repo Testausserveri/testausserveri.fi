@@ -100,7 +100,6 @@ export default async function BankingPage() {
                 <div className={styles.balanceCard}>
                     <div className={styles.balanceTitle}>Saldo</div>
                     <div className={styles.balanceAmount}>{banking?.balance?.amount != null ? `${formatMoney(banking.balance.amount)} €` : '-'}</div>
-                    <div className={styles.balanceDate}>FI31 4108 0012 1028 05</div>
                 </div>
 
                 <div className={styles.transactions}>
