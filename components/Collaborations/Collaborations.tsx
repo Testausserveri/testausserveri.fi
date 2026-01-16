@@ -10,6 +10,7 @@ import lamerfest from '../../assets/collaborations/lamerfest.svg'
 import { CSSProperties } from 'react'
 import koodiasuomesta from '../../assets/collaborations/koodiasuomesta.svg'
 import krp from '../../assets/collaborations/logo_krp.png'
+import mintSecurity from '../../assets/collaborations/mint-security.png'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -36,18 +37,14 @@ export function Collaborations(props: CollaborationsProps) {
                     </Link>
                 </li>
                 <li>
-                    <Link href="https://aatos.app/" target="_blank">
-                        <Image src={aatos} height={80} alt="Aatos Legal Technology logo" />
+                    <Link href="https://mintsecurity.fi" target="_blank">
+                        <Image src={mintSecurity} height={80} alt="Mint Security logo" />
                     </Link>
                 </li>
+              
                 <li>
                     <Link href="https://assembly.org/" target="_blank">
                         <Image src={assembly} height={80} alt="Assembly logo" />
-                    </Link>
-                </li>
-                <li>
-                    <Link href="https://lamerfest.fi" target="_blank">
-                        <Image src={lamerfest} height={80} alt="Lamerfest logo" />
                     </Link>
                 </li>
                 <li>
@@ -63,6 +60,18 @@ export function Collaborations(props: CollaborationsProps) {
                 <li>
                     <Link href="https://datatahti.fi/" target="_blank">
                         <Image src={datatahti} height={80} alt="Datatähti logo" />
+                    </Link>
+                </li>
+      
+ 
+                <li>
+                    <Link href="https://aatos.app/" target="_blank">
+                        <Image src={aatos} height={80} alt="Aatos Legal Technology logo" />
+                    </Link>
+                </li>
+                <li>
+                    <Link href="https://lamerfest.fi" target="_blank">
+                        <Image src={lamerfest} height={80} alt="Lamerfest logo" />
                     </Link>
                 </li>
             </ul>
