@@ -85,7 +85,7 @@ async function getPost(slug: string): Promise<Post> {
     console.log("Getting post: ", slug)
     const { content } = await compileMDX<PostDetails>({
         source: raw,
-        options: { parseFrontmatter: true, mdxOptions: {remarkPlugins: [remarkGfm]} },
+        options: { parseFrontmatter: true, blockJS: false, mdxOptions: {remarkPlugins: [remarkGfm]} },
         components: mdxComponents(slug)
       })
     const postDetails = await posts.getPostDetails(`${slug}/post.mdx`);
