@@ -259,6 +259,7 @@ export const getStaticProps: GetStaticProps<{
   const suggestedProjectsData = await api.projects.suggest(data.slug)
 
   const mdxOptions: SerializeOptions = {
+    blockJS: false,
     mdxOptions: {
       format: "md"
     }
@@ -270,7 +271,7 @@ export const getStaticProps: GetStaticProps<{
     readmes[repository] = await serialize(data.readmes[repository], mdxOptions)
   }
 
-  const fullDescription = await serialize(data.description.full)
+  const fullDescription = await serialize(data.description.full, { blockJS: false })
 
   return {
     props:
