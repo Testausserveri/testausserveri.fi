@@ -62,7 +62,8 @@ const config = {
       { "source": "/link/jasenhakemus", "destination": "/apply", permanent: false },
       { "source": "/link/:path*", "destination": "https://link.testausserveri.fi/:path*", permanent: true },
       { "source": "/yhdistyksen-saannot.pdf", "destination": "/association-rules", permanent: true },
-      { "source": "/host/privacy", "destination": "/privacy/host", permanent: true }
+      { "source": "/host/privacy", "destination": "/privacy/host", permanent: true },
+	  { "source": "/tapahtumakalenteri.ics", "destination": "https://calendar.google.com/calendar/u/0?cid=Y18ybjF0Y2cyaDM1YmZwZTI0MjFxdG9tZGloNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t", permanent: false }
     ];
   },
   webpack: (config, options) => {
