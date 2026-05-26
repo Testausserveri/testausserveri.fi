@@ -53,6 +53,15 @@
     margin-bottom: 0.5rem;
 }
 
+.personImagePlaceholder {
+    display: block;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 0.5rem;
+    background-color: rgba(108, 108, 108, 0.25);
+}
+
 .grid.soc img {
     opacity: 0.8;
 }

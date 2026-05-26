@@ -14,9 +14,8 @@ import tacobellImg from '@/assets/about/grid/tacobell.jpg'
 import hanBoardImg from '@/assets/about/board/han.jpeg'
 import ellBoardImg from '@/assets/about/board/ell.jpeg'
 import sinBoardImg from '@/assets/about/board/sin.jpeg'
-import serBoardImg from '@/assets/about/board/ser.jpeg'
 import porBoardImg from '@/assets/about/board/por.jpeg'
-import lepBoardImg from '@/assets/about/board/lep.jpeg'
+import suhBoardImg from '@/assets/about/board/suh.jpeg'
 
 import { GridGallery } from '@/components/GridGallery/GridGallery'
 import { Footer } from '@/components/Footer/Footer'
@@ -124,20 +123,22 @@ export default async function AboutPage() {
                 </div>
                 <H2>Yhdistysjärjestys</H2>
                 <p>
-                    Yhdistyksen hallitukseen kuuluvat toimikaudella 2025–2026 seuraavat henkilöt:
+                    Yhdistyksen hallitukseen kuuluvat toimikaudella 2026–2027 seuraavat henkilöt:
                 </p>
                 <div className={`${styles.grid} ${styles.board}`}>
                     {([
                         [hanBoardImg, "Mikael Hannolainen", "hallituksen puheenjohtaja"],
-                        [sinBoardImg, "Eemil Sinkko", "toiminnanjohtaja, h. vpj, talous"],
                         [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä&shy;vastaava</>],
-                        [serBoardImg, "Sergey Ichtchenko", "yrityssuhdevastaava"],
-                        [lepBoardImg, "Aaro Leppänen", "sihteeri"],
-                        [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä&shy;vastaava</>]
+                        [sinBoardImg, "Eemil Sinkko", "toiminnanjohtaja, h. vpj, talous"],
+                        [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä&shy;vastaava</>],
+                        [suhBoardImg, "Ilari Suhonen", "hallituksen jäsen"],
+                        [null, "Nikolas Lehto", "hallituksen jäsen"]
                     ] as const).map(person => (
                         <div className={styles.personIntroduction} key={person[1]}>
                             <span>
-                                <Image width="64" height="64" src={person[0]} placeholder="blur" alt={person[1]} />
+                                {person[0]
+                                    ? <Image width="64" height="64" src={person[0]} placeholder="blur" alt={person[1]} />
+                                    : <span className={styles.personImagePlaceholder} aria-hidden="true" />}
                             </span>
                             <div className={styles.personDetails}>
                                 <span>{person[1]}</span>
