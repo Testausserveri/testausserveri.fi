@@ -36,7 +36,7 @@
     "react-icons": "^4.8.0",
     "react-photo-album": "^3.0.2",
     "react-tooltip": "^5.27.1",
-    "recharts": "^3.8.1",
+    "recharts": "^2.15.4",
     "remark-gfm": "^4.0.0",
     "rss-parser": "^3.13.0",
     "sass": "^1.77.8",
