@@ -1,0 +1,1900 @@
+{
+  "year": 2025,
+  "generatedFor": "vuosikertomus-2025 Lukuina",
+  "totals": {
+    "messages": 194427,
+    "membersStart": 256,
+    "membersEnd": 306,
+    "newMembers": 55,
+    "resignations": 5
+  },
+  "daily": [
+    {
+      "date": "2025-01-01",
+      "messages": 1160,
+      "members": 256
+    },
+    {
+      "date": "2025-01-02",
+      "messages": 492,
+      "members": 256
+    },
+    {
+      "date": "2025-01-03",
+      "messages": 1259,
+      "members": 256
+    },
+    {
+      "date": "2025-01-04",
+      "messages": 737,
+      "members": 256
+    },
+    {
+      "date": "2025-01-05",
+      "messages": 560,
+      "members": 256
+    },
+    {
+      "date": "2025-01-06",
+      "messages": 1181,
+      "members": 256
+    },
+    {
+      "date": "2025-01-07",
+      "messages": 912,
+      "members": 256
+    },
+    {
+      "date": "2025-01-08",
+      "messages": 672,
+      "members": 256
+    },
+    {
+      "date": "2025-01-09",
+      "messages": 705,
+      "members": 256
+    },
+    {
+      "date": "2025-01-10",
+      "messages": 481,
+      "members": 256
+    },
+    {
+      "date": "2025-01-11",
+      "messages": 475,
+      "members": 256
+    },
+    {
+      "date": "2025-01-12",
+      "messages": 478,
+      "members": 256
+    },
+    {
+      "date": "2025-01-13",
+      "messages": 329,
+      "members": 256
+    },
+    {
+      "date": "2025-01-14",
+      "messages": 789,
+      "members": 256
+    },
+    {
+      "date": "2025-01-15",
+      "messages": 630,
+      "members": 256
+    },
+    {
+      "date": "2025-01-16",
+      "messages": 259,
+      "members": 256
+    },
+    {
+      "date": "2025-01-17",
+      "messages": 450,
+      "members": 256
+    },
+    {
+      "date": "2025-01-18",
+      "messages": 316,
+      "members": 256
+    },
+    {
+      "date": "2025-01-19",
+      "messages": 457,
+      "members": 256
+    },
+    {
+      "date": "2025-01-20",
+      "messages": 303,
+      "members": 256
+    },
+    {
+      "date": "2025-01-21",
+      "messages": 1022,
+      "members": 256
+    },
+    {
+      "date": "2025-01-22",
+      "messages": 549,
+      "members": 256
+    },
+    {
+      "date": "2025-01-23",
+      "messages": 233,
+      "members": 256
+    },
+    {
+      "date": "2025-01-24",
+      "messages": 297,
+      "members": 256
+    },
+    {
+      "date": "2025-01-25",
+      "messages": 572,
+      "members": 256
+    },
+    {
+      "date": "2025-01-26",
+      "messages": 370,
+      "members": 256
+    },
+    {
+      "date": "2025-01-27",
+      "messages": 624,
+      "members": 256
+    },
+    {
+      "date": "2025-01-28",
+      "messages": 733,
+      "members": 256
+    },
+    {
+      "date": "2025-01-29",
+      "messages": 1148,
+      "members": 262
+    },
+    {
+      "date": "2025-01-30",
+      "messages": 913,
+      "members": 263
+    },
+    {
+      "date": "2025-01-31",
+      "messages": 1188,
+      "members": 263
+    },
+    {
+      "date": "2025-02-01",
+      "messages": 1042,
+      "members": 263
+    },
+    {
+      "date": "2025-02-02",
+      "messages": 406,
+      "members": 263
+    },
+    {
+      "date": "2025-02-03",
+      "messages": 776,
+      "members": 263
+    },
+    {
+      "date": "2025-02-04",
+      "messages": 793,
+      "members": 263
+    },
+    {
+      "date": "2025-02-05",
+      "messages": 535,
+      "members": 263
+    },
+    {
+      "date": "2025-02-06",
+      "messages": 1378,
+      "members": 263
+    },
+    {
+      "date": "2025-02-07",
+      "messages": 806,
+      "members": 267
+    },
+    {
+      "date": "2025-02-08",
+      "messages": 370,
+      "members": 267
+    },
+    {
+      "date": "2025-02-09",
+      "messages": 393,
+      "members": 269
+    },
+    {
+      "date": "2025-02-10",
+      "messages": 625,
+      "members": 268
+    },
+    {
+      "date": "2025-02-11",
+      "messages": 732,
+      "members": 268
+    },
+    {
+      "date": "2025-02-12",
+      "messages": 693,
+      "members": 270
+    },
+    {
+      "date": "2025-02-13",
+      "messages": 650,
+      "members": 271
+    },
+    {
+      "date": "2025-02-14",
+      "messages": 481,
+      "members": 273
+    },
+    {
+      "date": "2025-02-15",
+      "messages": 287,
+      "members": 273
+    },
+    {
+      "date": "2025-02-16",
+      "messages": 920,
+      "members": 273
+    },
+    {
+      "date": "2025-02-17",
+      "messages": 172,
+      "members": 273
+    },
+    {
+      "date": "2025-02-18",
+      "messages": 510,
+      "members": 273
+    },
+    {
+      "date": "2025-02-19",
+      "messages": 820,
+      "members": 272
+    },
+    {
+      "date": "2025-02-20",
+      "messages": 416,
+      "members": 272
+    },
+    {
+      "date": "2025-02-21",
+      "messages": 695,
+      "members": 273
+    },
+    {
+      "date": "2025-02-22",
+      "messages": 350,
+      "members": 274
+    },
+    {
+      "date": "2025-02-23",
+      "messages": 983,
+      "members": 274
+    },
+    {
+      "date": "2025-02-24",
+      "messages": 505,
+      "members": 274
+    },
+    {
+      "date": "2025-02-25",
+      "messages": 593,
+      "members": 274
+    },
+    {
+      "date": "2025-02-26",
+      "messages": 924,
+      "members": 274
+    },
+    {
+      "date": "2025-02-27",
+      "messages": 665,
+      "members": 275
+    },
+    {
+      "date": "2025-02-28",
+      "messages": 823,
+      "members": 275
+    },
+    {
+      "date": "2025-03-01",
+      "messages": 1691,
+      "members": 275
+    },
+    {
+      "date": "2025-03-02",
+      "messages": 942,
+      "members": 275
+    },
+    {
+      "date": "2025-03-03",
+      "messages": 1941,
+      "members": 275
+    },
+    {
+      "date": "2025-03-04",
+      "messages": 768,
+      "members": 275
+    },
+    {
+      "date": "2025-03-05",
+      "messages": 550,
+      "members": 275
+    },
+    {
+      "date": "2025-03-06",
+      "messages": 663,
+      "members": 275
+    },
+    {
+      "date": "2025-03-07",
+      "messages": 747,
+      "members": 275
+    },
+    {
+      "date": "2025-03-08",
+      "messages": 702,
+      "members": 275
+    },
+    {
+      "date": "2025-03-09",
+      "messages": 1427,
+      "members": 275
+    },
+    {
+      "date": "2025-03-10",
+      "messages": 747,
+      "members": 275
+    },
+    {
+      "date": "2025-03-11",
+      "messages": 515,
+      "members": 275
+    },
+    {
+      "date": "2025-03-12",
+      "messages": 1602,
+      "members": 276
+    },
+    {
+      "date": "2025-03-13",
+      "messages": 707,
+      "members": 276
+    },
+    {
+      "date": "2025-03-14",
+      "messages": 792,
+      "members": 276
+    },
+    {
+      "date": "2025-03-15",
+      "messages": 594,
+      "members": 276
+    },
+    {
+      "date": "2025-03-16",
+      "messages": 460,
+      "members": 276
+    },
+    {
+      "date": "2025-03-17",
+      "messages": 1005,
+      "members": 276
+    },
+    {
+      "date": "2025-03-18",
+      "messages": 736,
+      "members": 276
+    },
+    {
+      "date": "2025-03-19",
+      "messages": 1106,
+      "members": 276
+    },
+    {
+      "date": "2025-03-20",
+      "messages": 429,
+      "members": 276
+    },
+    {
+      "date": "2025-03-21",
+      "messages": 616,
+      "members": 276
+    },
+    {
+      "date": "2025-03-22",
+      "messages": 1172,
+      "members": 277
+    },
+    {
+      "date": "2025-03-23",
+      "messages": 908,
+      "members": 277
+    },
+    {
+      "date": "2025-03-24",
+      "messages": 410,
+      "members": 277
+    },
+    {
+      "date": "2025-03-25",
+      "messages": 651,
+      "members": 277
+    },
+    {
+      "date": "2025-03-26",
+      "messages": 650,
+      "members": 277
+    },
+    {
+      "date": "2025-03-27",
+      "messages": 514,
+      "members": 277
+    },
+    {
+      "date": "2025-03-28",
+      "messages": 512,
+      "members": 277
+    },
+    {
+      "date": "2025-03-29",
+      "messages": 841,
+      "members": 278
+    },
+    {
+      "date": "2025-03-30",
+      "messages": 792,
+      "members": 278
+    },
+    {
+      "date": "2025-03-31",
+      "messages": 978,
+      "members": 278
+    },
+    {
+      "date": "2025-04-01",
+      "messages": 692,
+      "members": 278
+    },
+    {
+      "date": "2025-04-02",
+      "messages": 1399,
+      "members": 278
+    },
+    {
+      "date": "2025-04-03",
+      "messages": 350,
+      "members": 278
+    },
+    {
+      "date": "2025-04-04",
+      "messages": 600,
+      "members": 278
+    },
+    {
+      "date": "2025-04-05",
+      "messages": 338,
+      "members": 278
+    },
+    {
+      "date": "2025-04-06",
+      "messages": 469,
+      "members": 278
+    },
+    {
+      "date": "2025-04-07",
+      "messages": 501,
+      "members": 278
+    },
+    {
+      "date": "2025-04-08",
+      "messages": 704,
+      "members": 278
+    },
+    {
+      "date": "2025-04-09",
+      "messages": 353,
+      "members": 278
+    },
+    {
+      "date": "2025-04-10",
+      "messages": 240,
+      "members": 278
+    },
+    {
+      "date": "2025-04-11",
+      "messages": 394,
+      "members": 279
+    },
+    {
+      "date": "2025-04-12",
+      "messages": 547,
+      "members": 279
+    },
+    {
+      "date": "2025-04-13",
+      "messages": 839,
+      "members": 279
+    },
+    {
+      "date": "2025-04-14",
+      "messages": 798,
+      "members": 280
+    },
+    {
+      "date": "2025-04-15",
+      "messages": 408,
+      "members": 280
+    },
+    {
+      "date": "2025-04-16",
+      "messages": 415,
+      "members": 280
+    },
+    {
+      "date": "2025-04-17",
+      "messages": 779,
+      "members": 281
+    },
+    {
+      "date": "2025-04-18",
+      "messages": 874,
+      "members": 281
+    },
+    {
+      "date": "2025-04-19",
+      "messages": 602,
+      "members": 281
+    },
+    {
+      "date": "2025-04-20",
+      "messages": 317,
+      "members": 281
+    },
+    {
+      "date": "2025-04-21",
+      "messages": 775,
+      "members": 281
+    },
+    {
+      "date": "2025-04-22",
+      "messages": 967,
+      "members": 281
+    },
+    {
+      "date": "2025-04-23",
+      "messages": 335,
+      "members": 281
+    },
+    {
+      "date": "2025-04-24",
+      "messages": 993,
+      "members": 281
+    },
+    {
+      "date": "2025-04-25",
+      "messages": 459,
+      "members": 281
+    },
+    {
+      "date": "2025-04-26",
+      "messages": 314,
+      "members": 281
+    },
+    {
+      "date": "2025-04-27",
+      "messages": 989,
+      "members": 282
+    },
+    {
+      "date": "2025-04-28",
+      "messages": 615,
+      "members": 282
+    },
+    {
+      "date": "2025-04-29",
+      "messages": 1065,
+      "members": 282
+    },
+    {
+      "date": "2025-04-30",
+      "messages": 571,
+      "members": 282
+    },
+    {
+      "date": "2025-05-01",
+      "messages": 503,
+      "members": 282
+    },
+    {
+      "date": "2025-05-02",
+      "messages": 739,
+      "members": 282
+    },
+    {
+      "date": "2025-05-03",
+      "messages": 1016,
+      "members": 282
+    },
+    {
+      "date": "2025-05-04",
+      "messages": 971,
+      "members": 282
+    },
+    {
+      "date": "2025-05-05",
+      "messages": 891,
+      "members": 282
+    },
+    {
+      "date": "2025-05-06",
+      "messages": 649,
+      "members": 282
+    },
+    {
+      "date": "2025-05-07",
+      "messages": 652,
+      "members": 283
+    },
+    {
+      "date": "2025-05-08",
+      "messages": 976,
+      "members": 283
+    },
+    {
+      "date": "2025-05-09",
+      "messages": 579,
+      "members": 283
+    },
+    {
+      "date": "2025-05-10",
+      "messages": 522,
+      "members": 283
+    },
+    {
+      "date": "2025-05-11",
+      "messages": 1077,
+      "members": 283
+    },
+    {
+      "date": "2025-05-12",
+      "messages": 1319,
+      "members": 283
+    },
+    {
+      "date": "2025-05-13",
+      "messages": 1245,
+      "members": 283
+    },
+    {
+      "date": "2025-05-14",
+      "messages": 449,
+      "members": 283
+    },
+    {
+      "date": "2025-05-15",
+      "messages": 458,
+      "members": 283
+    },
+    {
+      "date": "2025-05-16",
+      "messages": 540,
+      "members": 283
+    },
+    {
+      "date": "2025-05-17",
+      "messages": 428,
+      "members": 283
+    },
+    {
+      "date": "2025-05-18",
+      "messages": 616,
+      "members": 283
+    },
+    {
+      "date": "2025-05-19",
+      "messages": 320,
+      "members": 283
+    },
+    {
+      "date": "2025-05-20",
+      "messages": 530,
+      "members": 284
+    },
+    {
+      "date": "2025-05-21",
+      "messages": 306,
+      "members": 284
+    },
+    {
+      "date": "2025-05-22",
+      "messages": 375,
+      "members": 284
+    },
+    {
+      "date": "2025-05-23",
+      "messages": 390,
+      "members": 284
+    },
+    {
+      "date": "2025-05-24",
+      "messages": 326,
+      "members": 284
+    },
+    {
+      "date": "2025-05-25",
+      "messages": 883,
+      "members": 284
+    },
+    {
+      "date": "2025-05-26",
+      "messages": 697,
+      "members": 286
+    },
+    {
+      "date": "2025-05-27",
+      "messages": 340,
+      "members": 287
+    },
+    {
+      "date": "2025-05-28",
+      "messages": 279,
+      "members": 287
+    },
+    {
+      "date": "2025-05-29",
+      "messages": 665,
+      "members": 287
+    },
+    {
+      "date": "2025-05-30",
+      "messages": 410,
+      "members": 287
+    },
+    {
+      "date": "2025-05-31",
+      "messages": 364,
+      "members": 287
+    },
+    {
+      "date": "2025-06-01",
+      "messages": 570,
+      "members": 287
+    },
+    {
+      "date": "2025-06-02",
+      "messages": 734,
+      "members": 287
+    },
+    {
+      "date": "2025-06-03",
+      "messages": 991,
+      "members": 287
+    },
+    {
+      "date": "2025-06-04",
+      "messages": 278,
+      "members": 287
+    },
+    {
+      "date": "2025-06-05",
+      "messages": 592,
+      "members": 287
+    },
+    {
+      "date": "2025-06-06",
+      "messages": 800,
+      "members": 287
+    },
+    {
+      "date": "2025-06-07",
+      "messages": 385,
+      "members": 287
+    },
+    {
+      "date": "2025-06-08",
+      "messages": 523,
+      "members": 287
+    },
+    {
+      "date": "2025-06-09",
+      "messages": 653,
+      "members": 287
+    },
+    {
+      "date": "2025-06-10",
+      "messages": 231,
+      "members": 287
+    },
+    {
+      "date": "2025-06-11",
+      "messages": 802,
+      "members": 287
+    },
+    {
+      "date": "2025-06-12",
+      "messages": 420,
+      "members": 287
+    },
+    {
+      "date": "2025-06-13",
+      "messages": 327,
+      "members": 287
+    },
+    {
+      "date": "2025-06-14",
+      "messages": 740,
+      "members": 287
+    },
+    {
+      "date": "2025-06-15",
+      "messages": 572,
+      "members": 287
+    },
+    {
+      "date": "2025-06-16",
+      "messages": 387,
+      "members": 287
+    },
+    {
+      "date": "2025-06-17",
+      "messages": 363,
+      "members": 287
+    },
+    {
+      "date": "2025-06-18",
+      "messages": 586,
+      "members": 287
+    },
+    {
+      "date": "2025-06-19",
+      "messages": 967,
+      "members": 287
+    },
+    {
+      "date": "2025-06-20",
+      "messages": 1069,
+      "members": 287
+    },
+    {
+      "date": "2025-06-21",
+      "messages": 460,
+      "members": 287
+    },
+    {
+      "date": "2025-06-22",
+      "messages": 764,
+      "members": 287
+    },
+    {
+      "date": "2025-06-23",
+      "messages": 1312,
+      "members": 287
+    },
+    {
+      "date": "2025-06-24",
+      "messages": 522,
+      "members": 287
+    },
+    {
+      "date": "2025-06-25",
+      "messages": 769,
+      "members": 287
+    },
+    {
+      "date": "2025-06-26",
+      "messages": 721,
+      "members": 287
+    },
+    {
+      "date": "2025-06-27",
+      "messages": 431,
+      "members": 287
+    },
+    {
+      "date": "2025-06-28",
+      "messages": 392,
+      "members": 287
+    },
+    {
+      "date": "2025-06-29",
+      "messages": 933,
+      "members": 287
+    },
+    {
+      "date": "2025-06-30",
+      "messages": 546,
+      "members": 287
+    },
+    {
+      "date": "2025-07-01",
+      "messages": 602,
+      "members": 287
+    },
+    {
+      "date": "2025-07-02",
+      "messages": 273,
+      "members": 287
+    },
+    {
+      "date": "2025-07-03",
+      "messages": 239,
+      "members": 287
+    },
+    {
+      "date": "2025-07-04",
+      "messages": 301,
+      "members": 287
+    },
+    {
+      "date": "2025-07-05",
+      "messages": 328,
+      "members": 287
+    },
+    {
+      "date": "2025-07-06",
+      "messages": 421,
+      "members": 287
+    },
+    {
+      "date": "2025-07-07",
+      "messages": 408,
+      "members": 287
+    },
+    {
+      "date": "2025-07-08",
+      "messages": 409,
+      "members": 287
+    },
+    {
+      "date": "2025-07-09",
+      "messages": 362,
+      "members": 287
+    },
+    {
+      "date": "2025-07-10",
+      "messages": 295,
+      "members": 287
+    },
+    {
+      "date": "2025-07-11",
+      "messages": 254,
+      "members": 287
+    },
+    {
+      "date": "2025-07-12",
+      "messages": 195,
+      "members": 287
+    },
+    {
+      "date": "2025-07-13",
+      "messages": 487,
+      "members": 287
+    },
+    {
+      "date": "2025-07-14",
+      "messages": 125,
+      "members": 287
+    },
+    {
+      "date": "2025-07-15",
+      "messages": 312,
+      "members": 287
+    },
+    {
+      "date": "2025-07-16",
+      "messages": 158,
+      "members": 287
+    },
+    {
+      "date": "2025-07-17",
+      "messages": 101,
+      "members": 287
+    },
+    {
+      "date": "2025-07-18",
+      "messages": 134,
+      "members": 287
+    },
+    {
+      "date": "2025-07-19",
+      "messages": 262,
+      "members": 287
+    },
+    {
+      "date": "2025-07-20",
+      "messages": 127,
+      "members": 287
+    },
+    {
+      "date": "2025-07-21",
+      "messages": 119,
+      "members": 287
+    },
+    {
+      "date": "2025-07-22",
+      "messages": 353,
+      "members": 287
+    },
+    {
+      "date": "2025-07-23",
+      "messages": 267,
+      "members": 287
+    },
+    {
+      "date": "2025-07-24",
+      "messages": 300,
+      "members": 287
+    },
+    {
+      "date": "2025-07-25",
+      "messages": 186,
+      "members": 287
+    },
+    {
+      "date": "2025-07-26",
+      "messages": 435,
+      "members": 287
+    },
+    {
+      "date": "2025-07-27",
+      "messages": 173,
+      "members": 287
+    },
+    {
+      "date": "2025-07-28",
+      "messages": 332,
+      "members": 287
+    },
+    {
+      "date": "2025-07-29",
+      "messages": 359,
+      "members": 287
+    },
+    {
+      "date": "2025-07-30",
+      "messages": 224,
+      "members": 287
+    },
+    {
+      "date": "2025-07-31",
+      "messages": 325,
+      "members": 287
+    },
+    {
+      "date": "2025-08-01",
+      "messages": 306,
+      "members": 287
+    },
+    {
+      "date": "2025-08-02",
+      "messages": 885,
+      "members": 287
+    },
+    {
+      "date": "2025-08-03",
+      "messages": 855,
+      "members": 287
+    },
+    {
+      "date": "2025-08-04",
+      "messages": 244,
+      "members": 287
+    },
+    {
+      "date": "2025-08-05",
+      "messages": 356,
+      "members": 287
+    },
+    {
+      "date": "2025-08-06",
+      "messages": 412,
+      "members": 288
+    },
+    {
+      "date": "2025-08-07",
+      "messages": 763,
+      "members": 288
+    },
+    {
+      "date": "2025-08-08",
+      "messages": 479,
+      "members": 288
+    },
+    {
+      "date": "2025-08-09",
+      "messages": 757,
+      "members": 288
+    },
+    {
+      "date": "2025-08-10",
+      "messages": 1620,
+      "members": 288
+    },
+    {
+      "date": "2025-08-11",
+      "messages": 535,
+      "members": 288
+    },
+    {
+      "date": "2025-08-12",
+      "messages": 298,
+      "members": 288
+    },
+    {
+      "date": "2025-08-13",
+      "messages": 179,
+      "members": 288
+    },
+    {
+      "date": "2025-08-14",
+      "messages": 1349,
+      "members": 288
+    },
+    {
+      "date": "2025-08-15",
+      "messages": 344,
+      "members": 288
+    },
+    {
+      "date": "2025-08-16",
+      "messages": 222,
+      "members": 288
+    },
+    {
+      "date": "2025-08-17",
+      "messages": 755,
+      "members": 287
+    },
+    {
+      "date": "2025-08-18",
+      "messages": 332,
+      "members": 287
+    },
+    {
+      "date": "2025-08-19",
+      "messages": 572,
+      "members": 287
+    },
+    {
+      "date": "2025-08-20",
+      "messages": 721,
+      "members": 288
+    },
+    {
+      "date": "2025-08-21",
+      "messages": 296,
+      "members": 288
+    },
+    {
+      "date": "2025-08-22",
+      "messages": 324,
+      "members": 288
+    },
+    {
+      "date": "2025-08-23",
+      "messages": 628,
+      "members": 288
+    },
+    {
+      "date": "2025-08-24",
+      "messages": 429,
+      "members": 288
+    },
+    {
+      "date": "2025-08-25",
+      "messages": 262,
+      "members": 288
+    },
+    {
+      "date": "2025-08-26",
+      "messages": 155,
+      "members": 288
+    },
+    {
+      "date": "2025-08-27",
+      "messages": 424,
+      "members": 288
+    },
+    {
+      "date": "2025-08-28",
+      "messages": 614,
+      "members": 288
+    },
+    {
+      "date": "2025-08-29",
+      "messages": 231,
+      "members": 288
+    },
+    {
+      "date": "2025-08-30",
+      "messages": 228,
+      "members": 288
+    },
+    {
+      "date": "2025-08-31",
+      "messages": 293,
+      "members": 288
+    },
+    {
+      "date": "2025-09-01",
+      "messages": 305,
+      "members": 288
+    },
+    {
+      "date": "2025-09-02",
+      "messages": 415,
+      "members": 288
+    },
+    {
+      "date": "2025-09-03",
+      "messages": 661,
+      "members": 288
+    },
+    {
+      "date": "2025-09-04",
+      "messages": 296,
+      "members": 288
+    },
+    {
+      "date": "2025-09-05",
+      "messages": 273,
+      "members": 288
+    },
+    {
+      "date": "2025-09-06",
+      "messages": 338,
+      "members": 288
+    },
+    {
+      "date": "2025-09-07",
+      "messages": 422,
+      "members": 288
+    },
+    {
+      "date": "2025-09-08",
+      "messages": 561,
+      "members": 288
+    },
+    {
+      "date": "2025-09-09",
+      "messages": 695,
+      "members": 288
+    },
+    {
+      "date": "2025-09-10",
+      "messages": 586,
+      "members": 290
+    },
+    {
+      "date": "2025-09-11",
+      "messages": 486,
+      "members": 290
+    },
+    {
+      "date": "2025-09-12",
+      "messages": 407,
+      "members": 290
+    },
+    {
+      "date": "2025-09-13",
+      "messages": 443,
+      "members": 290
+    },
+    {
+      "date": "2025-09-14",
+      "messages": 301,
+      "members": 290
+    },
+    {
+      "date": "2025-09-15",
+      "messages": 629,
+      "members": 290
+    },
+    {
+      "date": "2025-09-16",
+      "messages": 333,
+      "members": 290
+    },
+    {
+      "date": "2025-09-17",
+      "messages": 354,
+      "members": 290
+    },
+    {
+      "date": "2025-09-18",
+      "messages": 134,
+      "members": 290
+    },
+    {
+      "date": "2025-09-19",
+      "messages": 305,
+      "members": 289
+    },
+    {
+      "date": "2025-09-20",
+      "messages": 316,
+      "members": 289
+    },
+    {
+      "date": "2025-09-21",
+      "messages": 510,
+      "members": 289
+    },
+    {
+      "date": "2025-09-22",
+      "messages": 690,
+      "members": 289
+    },
+    {
+      "date": "2025-09-23",
+      "messages": 467,
+      "members": 289
+    },
+    {
+      "date": "2025-09-24",
+      "messages": 438,
+      "members": 289
+    },
+    {
+      "date": "2025-09-25",
+      "messages": 581,
+      "members": 289
+    },
+    {
+      "date": "2025-09-26",
+      "messages": 184,
+      "members": 289
+    },
+    {
+      "date": "2025-09-27",
+      "messages": 278,
+      "members": 289
+    },
+    {
+      "date": "2025-09-28",
+      "messages": 533,
+      "members": 289
+    },
+    {
+      "date": "2025-09-29",
+      "messages": 319,
+      "members": 289
+    },
+    {
+      "date": "2025-09-30",
+      "messages": 385,
+      "members": 289
+    },
+    {
+      "date": "2025-10-01",
+      "messages": 279,
+      "members": 289
+    },
+    {
+      "date": "2025-10-02",
+      "messages": 278,
+      "members": 291
+    },
+    {
+      "date": "2025-10-03",
+      "messages": 626,
+      "members": 291
+    },
+    {
+      "date": "2025-10-04",
+      "messages": 260,
+      "members": 291
+    },
+    {
+      "date": "2025-10-05",
+      "messages": 86,
+      "members": 291
+    },
+    {
+      "date": "2025-10-06",
+      "messages": 587,
+      "members": 291
+    },
+    {
+      "date": "2025-10-07",
+      "messages": 210,
+      "members": 291
+    },
+    {
+      "date": "2025-10-08",
+      "messages": 193,
+      "members": 291
+    },
+    {
+      "date": "2025-10-09",
+      "messages": 152,
+      "members": 291
+    },
+    {
+      "date": "2025-10-10",
+      "messages": 284,
+      "members": 291
+    },
+    {
+      "date": "2025-10-11",
+      "messages": 183,
+      "members": 291
+    },
+    {
+      "date": "2025-10-12",
+      "messages": 207,
+      "members": 292
+    },
+    {
+      "date": "2025-10-13",
+      "messages": 266,
+      "members": 293
+    },
+    {
+      "date": "2025-10-14",
+      "messages": 434,
+      "members": 293
+    },
+    {
+      "date": "2025-10-15",
+      "messages": 559,
+      "members": 293
+    },
+    {
+      "date": "2025-10-16",
+      "messages": 906,
+      "members": 294
+    },
+    {
+      "date": "2025-10-17",
+      "messages": 513,
+      "members": 294
+    },
+    {
+      "date": "2025-10-18",
+      "messages": 216,
+      "members": 295
+    },
+    {
+      "date": "2025-10-19",
+      "messages": 145,
+      "members": 295
+    },
+    {
+      "date": "2025-10-20",
+      "messages": 295,
+      "members": 295
+    },
+    {
+      "date": "2025-10-21",
+      "messages": 233,
+      "members": 295
+    },
+    {
+      "date": "2025-10-22",
+      "messages": 272,
+      "members": 296
+    },
+    {
+      "date": "2025-10-23",
+      "messages": 238,
+      "members": 296
+    },
+    {
+      "date": "2025-10-24",
+      "messages": 112,
+      "members": 296
+    },
+    {
+      "date": "2025-10-25",
+      "messages": 166,
+      "members": 296
+    },
+    {
+      "date": "2025-10-26",
+      "messages": 320,
+      "members": 297
+    },
+    {
+      "date": "2025-10-27",
+      "messages": 913,
+      "members": 297
+    },
+    {
+      "date": "2025-10-28",
+      "messages": 582,
+      "members": 297
+    },
+    {
+      "date": "2025-10-29",
+      "messages": 655,
+      "members": 297
+    },
+    {
+      "date": "2025-10-30",
+      "messages": 292,
+      "members": 297
+    },
+    {
+      "date": "2025-10-31",
+      "messages": 406,
+      "members": 297
+    },
+    {
+      "date": "2025-11-01",
+      "messages": 976,
+      "members": 297
+    },
+    {
+      "date": "2025-11-02",
+      "messages": 313,
+      "members": 297
+    },
+    {
+      "date": "2025-11-03",
+      "messages": 175,
+      "members": 297
+    },
+    {
+      "date": "2025-11-04",
+      "messages": 198,
+      "members": 297
+    },
+    {
+      "date": "2025-11-05",
+      "messages": 450,
+      "members": 297
+    },
+    {
+      "date": "2025-11-06",
+      "messages": 439,
+      "members": 297
+    },
+    {
+      "date": "2025-11-07",
+      "messages": 355,
+      "members": 297
+    },
+    {
+      "date": "2025-11-08",
+      "messages": 215,
+      "members": 297
+    },
+    {
+      "date": "2025-11-09",
+      "messages": 125,
+      "members": 297
+    },
+    {
+      "date": "2025-11-10",
+      "messages": 416,
+      "members": 297
+    },
+    {
+      "date": "2025-11-11",
+      "messages": 392,
+      "members": 298
+    },
+    {
+      "date": "2025-11-12",
+      "messages": 739,
+      "members": 298
+    },
+    {
+      "date": "2025-11-13",
+      "messages": 255,
+      "members": 298
+    },
+    {
+      "date": "2025-11-14",
+      "messages": 181,
+      "members": 299
+    },
+    {
+      "date": "2025-11-15",
+      "messages": 162,
+      "members": 299
+    },
+    {
+      "date": "2025-11-16",
+      "messages": 199,
+      "members": 299
+    },
+    {
+      "date": "2025-11-17",
+      "messages": 208,
+      "members": 299
+    },
+    {
+      "date": "2025-11-18",
+      "messages": 551,
+      "members": 299
+    },
+    {
+      "date": "2025-11-19",
+      "messages": 409,
+      "members": 301
+    },
+    {
+      "date": "2025-11-20",
+      "messages": 392,
+      "members": 301
+    },
+    {
+      "date": "2025-11-21",
+      "messages": 150,
+      "members": 301
+    },
+    {
+      "date": "2025-11-22",
+      "messages": 373,
+      "members": 301
+    },
+    {
+      "date": "2025-11-23",
+      "messages": 388,
+      "members": 301
+    },
+    {
+      "date": "2025-11-24",
+      "messages": 291,
+      "members": 301
+    },
+    {
+      "date": "2025-11-25",
+      "messages": 312,
+      "members": 301
+    },
+    {
+      "date": "2025-11-26",
+      "messages": 326,
+      "members": 301
+    },
+    {
+      "date": "2025-11-27",
+      "messages": 286,
+      "members": 302
+    },
+    {
+      "date": "2025-11-28",
+      "messages": 337,
+      "members": 302
+    },
+    {
+      "date": "2025-11-29",
+      "messages": 677,
+      "members": 302
+    },
+    {
+      "date": "2025-11-30",
+      "messages": 709,
+      "members": 302
+    },
+    {
+      "date": "2025-12-01",
+      "messages": 380,
+      "members": 302
+    },
+    {
+      "date": "2025-12-02",
+      "messages": 470,
+      "members": 304
+    },
+    {
+      "date": "2025-12-03",
+      "messages": 627,
+      "members": 304
+    },
+    {
+      "date": "2025-12-04",
+      "messages": 345,
+      "members": 304
+    },
+    {
+      "date": "2025-12-05",
+      "messages": 528,
+      "members": 304
+    },
+    {
+      "date": "2025-12-06",
+      "messages": 574,
+      "members": 304
+    },
+    {
+      "date": "2025-12-07",
+      "messages": 385,
+      "members": 304
+    },
+    {
+      "date": "2025-12-08",
+      "messages": 426,
+      "members": 304
+    },
+    {
+      "date": "2025-12-09",
+      "messages": 305,
+      "members": 304
+    },
+    {
+      "date": "2025-12-10",
+      "messages": 469,
+      "members": 304
+    },
+    {
+      "date": "2025-12-11",
+      "messages": 704,
+      "members": 303
+    },
+    {
+      "date": "2025-12-12",
+      "messages": 536,
+      "members": 303
+    },
+    {
+      "date": "2025-12-13",
+      "messages": 177,
+      "members": 303
+    },
+    {
+      "date": "2025-12-14",
+      "messages": 371,
+      "members": 303
+    },
+    {
+      "date": "2025-12-15",
+      "messages": 479,
+      "members": 303
+    },
+    {
+      "date": "2025-12-16",
+      "messages": 462,
+      "members": 304
+    },
+    {
+      "date": "2025-12-17",
+      "messages": 422,
+      "members": 304
+    },
+    {
+      "date": "2025-12-18",
+      "messages": 610,
+      "members": 304
+    },
+    {
+      "date": "2025-12-19",
+      "messages": 374,
+      "members": 304
+    },
+    {
+      "date": "2025-12-20",
+      "messages": 264,
+      "members": 304
+    },
+    {
+      "date": "2025-12-21",
+      "messages": 430,
+      "members": 305
+    },
+    {
+      "date": "2025-12-22",
+      "messages": 961,
+      "members": 305
+    },
+    {
+      "date": "2025-12-23",
+      "messages": 498,
+      "members": 305
+    },
+    {
+      "date": "2025-12-24",
+      "messages": 404,
+      "members": 305
+    },
+    {
+      "date": "2025-12-25",
+      "messages": 207,
+      "members": 306
+    },
+    {
+      "date": "2025-12-26",
+      "messages": 152,
+      "members": 306
+    },
+    {
+      "date": "2025-12-27",
+      "messages": 329,
+      "members": 306
+    },
+    {
+      "date": "2025-12-28",
+      "messages": 294,
+      "members": 306
+    },
+    {
+      "date": "2025-12-29",
+      "messages": 156,
+      "members": 306
+    },
+    {
+      "date": "2025-12-30",
+      "messages": 364,
+      "members": 306
+    },
+    {
+      "date": "2025-12-31",
+      "messages": 616,
+      "members": 306
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2025-01",
+      "messages": 20294,
+      "members": 263
+    },
+    {
+      "month": "2025-02",
+      "messages": 18343,
+      "members": 275
+    },
+    {
+      "month": "2025-03",
+      "messages": 26168,
+      "members": 278
+    },
+    {
+      "month": "2025-04",
+      "messages": 18702,
+      "members": 282
+    },
+    {
+      "month": "2025-05",
+      "messages": 19515,
+      "members": 287
+    },
+    {
+      "month": "2025-06",
+      "messages": 18840,
+      "members": 287
+    },
+    {
+      "month": "2025-07",
+      "messages": 8866,
+      "members": 287
+    },
+    {
+      "month": "2025-08",
+      "messages": 15868,
+      "members": 288
+    },
+    {
+      "month": "2025-09",
+      "messages": 12645,
+      "members": 289
+    },
+    {
+      "month": "2025-10",
+      "messages": 10868,
+      "members": 297
+    },
+    {
+      "month": "2025-11",
+      "messages": 10999,
+      "members": 302
+    },
+    {
+      "month": "2025-12",
+      "messages": 13319,
+      "members": 306
+    }
+  ]
+}

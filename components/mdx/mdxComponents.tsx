@@ -8,6 +8,7 @@ import ImageGalleryWithLightbox, { GalleryImage } from "../ImageGalleryWithLight
 import { Terminal } from "./Terminal";
 import { CapsuleButton } from "../Button/CapsuleButton";
 import { NavigateLink } from "../NavigateLink/NavigateLink";
+import { LukuinaChart } from "./LukuinaChart";
 
 const Blockquote = ({children}: PropsWithChildren) =>  <blockquote className={styles.blockquote}>{children}</blockquote>
 const MdxImageParent = ({children, inline, ...rest}: PropsWithChildren & {inline?: boolean, [key: string]: any}) =>  
@@ -136,5 +137,6 @@ export const mdxComponents = (slug?: string) => ({
    CodeBlock,
    CapsuleButton,
    NavigateLink,
+   LukuinaChart,
    PresentationCard: slug ? PresentationCard(slug) : Empty,
 })

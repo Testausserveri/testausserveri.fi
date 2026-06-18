@@ -13,3 +13,4 @@ posts/testausmokki-2024
 test/
 .direnv
 .devenv
+scripts/vuosikertomus-dump

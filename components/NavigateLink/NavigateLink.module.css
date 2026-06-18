@@ -3,6 +3,7 @@
     opacity: 0.9;
     display: block;
     margin-bottom: 1em;
+    color: rgba(255,255,255,0.9);
 }
 
 .navigatelink svg:nth-last-child(1) {

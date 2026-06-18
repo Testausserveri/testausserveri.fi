@@ -6,6 +6,7 @@
 
 .mdxImageParent {
   position: relative;
+  margin: 2rem 0;
     &.inline {
         display: flex;
         align-items: center;
@@ -42,8 +43,8 @@
         text-align: center;
         width: 100%;
         display: block;
-        margin: .5rem 0 1rem 0;
-      } 
+        margin: .5rem 0 0 0;
+      }
 }
 
 .terminal {

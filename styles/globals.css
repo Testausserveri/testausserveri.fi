@@ -42,20 +42,20 @@ a {
   box-sizing: border-box;
 }
 
-p:not(.noLinkStyles) a, 
-ul:not(.noLinkStyles) a, 
-table:not(.noLinkStyles) a, 
+p:not(.noLinkStyles) a,
+ul:not(.noLinkStyles) a,
+table:not(.noLinkStyles) a,
 .link,
 .tip a {
-  color: oklch(57.61% 0.2321 258.23);
+  color: rgba(255,255,255,0.9);
   transition: color 0.1s;
 }
 
-p:not(.noLinkStyles) a:hover, 
-ul:not(.noLinkStyles) a:hover, 
-table:not(.noLinkStyles) a:hover, 
+p:not(.noLinkStyles) a:hover,
+ul:not(.noLinkStyles) a:hover,
+table:not(.noLinkStyles) a:hover,
 .tip a:hover, .link:hover {
-  color: white;
+  color: #fff;
 }
 
 .tip {
@@ -75,4 +75,8 @@ small, figcaption {
 
 .react-photo-album--image {
   object-fit: cover;
+}
+
+.floatImage > div {
+  margin: 0;
 }
