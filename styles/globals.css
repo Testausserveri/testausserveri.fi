@@ -80,3 +80,17 @@ small, figcaption {
 .floatImage > div {
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .floatImage {
+    float: none !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .floatImage img {
+    max-height: 320px;
+    width: auto;
+    margin: 0 auto;
+  }
+}
