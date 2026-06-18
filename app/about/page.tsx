@@ -128,8 +128,8 @@ export default async function AboutPage() {
                 <div className={`${styles.grid} ${styles.board}`}>
                     {([
                         [hanBoardImg, "Mikael Hannolainen", "hallituksen puheenjohtaja"],
-                        [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä&shy;vastaava</>],
                         [sinBoardImg, "Eemil Sinkko", "toiminnanjohtaja, h. vpj, talous"],
+                        [ellBoardImg, "Antti Ellilä", <>tietojärjestelmä&shy;vastaava</>],
                         [porBoardImg, "Luukas Pörtfors", <>tietojärjestelmä&shy;vastaava</>],
                         [suhBoardImg, "Ilari Suhonen", "hallituksen jäsen"],
                         [null, "Nikolas Lehto", "hallituksen jäsen"]
