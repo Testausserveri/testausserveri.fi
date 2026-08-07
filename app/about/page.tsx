@@ -110,6 +110,7 @@ export default async function AboutPage() {
                 <p>
                     Testausserveri tuottaa sisältöä seuraaviin sosiaalisiin medioihin ja palveluihin. Etenkin Instagramissa pääsee tutustumaan yhteisömme kohohetkiin.
                 </p>
+                <NavigateLink href='/syslog/2025-vuosikertomus'>Vuosikertomus 2025</NavigateLink>
                 <NavigateLink href='/syslog/2024-vuosikertomus'>Vuosikertomus 2024</NavigateLink>
                 <NavigateLink href='/vuosikertomus-2023.pdf'>Vuosikertomus 2023</NavigateLink>
                 <NavigateLink href='/vuosikertomus-2022.pdf'>Vuosikertomus 2022</NavigateLink>
