@@ -70,6 +70,18 @@ export class TimeUtil {
         );
     }
 
+    /**
+     * Formats a timestamp into a string representation of the date and time.
+     * 
+     * Format: DD.MM.YYYY hh.mm
+     */
+    static formatTimestamp(timestamp: number) {
+        const date = new Date(timestamp);
+        const day = date.toLocaleDateString("Fi");
+        const time = date.toLocaleTimeString("Fi", {timeStyle: "short"});
+        return `${day} ${time}`;
+    }
+
     // Helper function to format the date as "d. mmmm." or "d. mmmm yyyy."
     static formatFinnishDate = (date: Date): string => {
         const day = date.getDate();
@@ -87,7 +99,6 @@ export class TimeUtil {
     /**
      * Format date into a readable string in relation to the current date
      */
-    
     static formatDateInRelationToCurrent(date: Date): string {
         const now = new Date();
     
